@@ -56,10 +56,10 @@ You can run the development server with::
     $ npm run dev
 
 This does everything you need to get started, and should bring up an instance at
-http://localhost:8008/
+http://localhost:8080/
 
 You can view some of the test HTML on the development server as well, for
-example http://localhost:8080/examples/mockups/example.html
+example http://localhost:8080/examples/theme/
 
 Build production assets
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,4 +74,3 @@ To generate production CSS and JavaScript assets:
     $ npm run build
 
 This will create all of the necessary files in ``dist/``.
-
