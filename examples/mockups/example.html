@@ -1,16 +1,19 @@
 <html>
   <head>
-    <link rel="stylesheet" href="/css/site.css" />
-    <script src="/js/vendor.js"></script>
-    <script src="/js/site.js"></script>
+    <link rel="stylesheet" href="/dist/css/site.css" />
+    <script src="/dist/js/vendor.js"></script>
+    <script src="/dist/js/site.js"></script>
   </head>
   <body>
     <div class="ui container">
-      <h1 class="ui heading">
-        This is an example heading
-      </h1>
+      <h1 class="ui header">This is an example header</h1>
       <button class="ui primary button">And a button</button>
-      <span class="ui big text">Big text</span>
+      <span class="ui big text">And big text</span>
+      <div class="ui big inverted red segment">
+        This is a test that would use the Webpack dev server to serve the
+        development assets. You can also reference the files relatively, but
+        will lose live reloading.
+      </div>
     </div>
   </body>
 </html>

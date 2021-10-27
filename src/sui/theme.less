@@ -49,7 +49,6 @@
 @import (optional) "themes/rtd-common/globals/colors.less";
 @import (optional) "themes/@{theme}/globals/colors.less";
 
-
 // Mixins
 // ------
 //
@@ -57,7 +56,8 @@
 // same as the default theme.less.
 
 .loadFonts() when (@importGoogleFonts) {
-  @import (css) url('@{googleProtocol}fonts.googleapis.com/css2?family=@{googleFontRequest}');
+  @import (css)
+    url("@{googleProtocol}fonts.googleapis.com/css2?family=@{googleFontRequest}");
 }
 
 .loadUIOverrides() {

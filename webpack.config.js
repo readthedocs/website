@@ -122,7 +122,7 @@ module.exports = (env, argv) => {
       open: false,
       hot: false,
       liveReload: true,
-      publicPath: "/",
+      publicPath: "/dist/",
       disableHostCheck: true,
       headers: {
         "Access-Control-Allow-Origin": "*",

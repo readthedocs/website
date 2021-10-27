@@ -7,8 +7,8 @@
     "clean": "rm -rfv dist/*; exit 0",
     "build": "npm run clean && webpack --mode=production --progress --colors",
     "dev": "webpack-dev-server --mode=development",
-    "lint": "prettier -c .",
-    "format": "prettier --write .",
+    "lint": "prettier -c src/",
+    "format": "prettier --write src/",
     "test": "jest src/js/tests/"
   },
   "repository": {
