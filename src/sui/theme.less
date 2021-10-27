@@ -1,0 +1,67 @@
+// SUI theme.less
+// ==============
+//
+// This file is similar to the base theme.less, but changes the loading order to
+// include a separate themes path. We use this to include multiple theme paths
+// in our SUI theme sources.
+
+@theme: @@element;
+
+// Variable load order
+// -------------------
+//
+// This load order is altered slightly, as the default theme.less assumes the
+// only themes available are the prepacked themes. This load order is used for
+// global variables and for per-component variables.
+//
+// Variables are loaded in the following order:
+//
+// default theme
+//     Inherit the global variable definitions from the ``default`` theme first.
+//     This is the same as the default experience
+//
+// Our common theme
+//     The shared based theme is tried next. These variables and rules represent
+//     shared variables and overrides between our properties.
+//
+// Our theme globals
+//     Next, we try an optional load of theme global variables for our themes.
+//     The default experience is to load ``@site`` globals second, but we aren't
+//     using ``@site`` variables in the same way. See the default ``theme.less``
+//     for a better idea of what is happening here.
+//
+// Site globals
+//     This is still the same as the default load order, but we won't be using
+//     this. Our overrides and variables will come from our themes instead.
+
+@import "@{themesFolder}/default/globals/site.variables";
+@import (optional) "themes/rtd-common/globals/site.variables";
+@import (optional) "themes/@{theme}/globals/site.variables";
+@import (optional) "@{siteFolder}/globals/site.variables";
+
+@import "@{themesFolder}/default/@{type}s/@{element}.variables";
+@import (optional) "themes/rtd-common/@{type}s/@{element}.variables";
+@import (optional) "themes/@{theme}/@{type}s/@{element}.variables";
+@import (optional) "@{siteFolder}/@{type}s/@{element}.variables";
+
+// Color map
+@import "@{themesFolder}/default/globals/colors.less";
+@import (optional) "themes/rtd-common/globals/colors.less";
+@import (optional) "themes/@{theme}/globals/colors.less";
+
+
+// Mixins
+// ------
+//
+// Again, the altered theme path is used here, otherwise these mixins are the
+// same as the default theme.less.
+
+.loadFonts() when (@importGoogleFonts) {
+  @import (css) url('@{googleProtocol}fonts.googleapis.com/css2?family=@{googleFontRequest}');
+}
+
+.loadUIOverrides() {
+  @import (optional) "themes/rtd-common/@{type}s/@{element}.overrides";
+  @import (optional) "themes/@{theme}/@{type}s/@{element}.overrides";
+  @import (optional) "@{siteFolder}/@{type}s/@{element}.overrides";
+}

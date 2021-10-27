@@ -1,0 +1,74 @@
+{
+  "name": "site-community",
+  "version": "1.0.0",
+  "description": "Read the Docs community website",
+  "main": "src/js/index.js",
+  "scripts": {
+    "clean": "rm -rfv dist/*; exit 0",
+    "build": "npm run clean && webpack --mode=production --progress --colors",
+    "dev": "webpack-dev-server --mode=development",
+    "lint": "prettier -c .",
+    "format": "prettier --write .",
+    "test": "jest src/js/tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/readthedocs/site-community.git"
+  },
+  "author": "Read the Docs, Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/readthedocs/site-community/issues"
+  },
+  "homepage": "https://github.com/readthedocs/site-community#readme",
+  "engines": {
+    "node": "<15.0.0",
+    "npm": "<7.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "create-fomantic-icons": "^1.0.4",
+    "css-loader": "^3.1.0",
+    "file-loader": "^3.0.1",
+    "fomantic-ui": "^2.8.8",
+    "fomantic-ui-less": "^2.8.8",
+    "imports-loader": "^0.8.0",
+    "jest": "^26.4.2",
+    "jquery": "^3.4.1",
+    "lato-font": "^3.0.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "matchdep": "~1.0.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "^2.0.5",
+    "resolve-url-loader": "^2.2.1",
+    "sanitize-html": "^1.23.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.1",
+    "webpack-shell-plugin": "^0.5.0",
+    "webpack-watch-files-plugin": "^1.0.3"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "jest": {
+    "globals": {
+      "__webpack_public_path__": null
+    }
+  }
+}

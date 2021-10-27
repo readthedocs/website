@@ -1,0 +1,2 @@
+// Font path override, using the default theme font path for now.
+@fontPath : '../../../themes/default/assets/fonts';
