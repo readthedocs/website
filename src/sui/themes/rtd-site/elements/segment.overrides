@@ -4,7 +4,7 @@
 }
 
 /*******************************
-      Sections as segments
+   Sections as segments (New)
 *******************************/
 
 /*-------------------
@@ -45,10 +45,27 @@ section.ui.vertical.segment .column {
 /*******************************
        Colored variants
 *******************************/
-/* light (NEW) */
+
+/* light (New) */
+
 .ui.light.segment:not(.inverted) {
   border-top: @coloredBorderSize solid @offWhite !important;
 }
 .ui.inverted.light.segment {
   background-color: @offWhite !important;
+}
+
+/* Inverted */
+/* links
+   by default Semantic does not account for link color inside inverted segments */
+
+  & when (@variationSegmentInverted) {
+  .ui.inverted.segments a,
+  .ui.inverted.segment a {
+    color: fade(@white, 85%);
+
+    &:hover {
+      color: @white;
+    }
+  }
 }
