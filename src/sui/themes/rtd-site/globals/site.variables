@@ -1,0 +1,49 @@
+/*******************************
+     User Global Variables
+*******************************/
+@importGoogleFonts: False;
+
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+//@red;
+@orange: #e24d33;
+//@yellow;
+//@olive;
+//@green;
+//@teal;
+@blue: #1171b0;
+//@violet;
+//@purple;
+//@pink;
+//@brown;
+//@grey;
+@black: #252a31;
+
+@primaryColor: @blue;
+@secondaryColor: @orange;
+
+/*
+@positiveColor           : @olive;
+@positiveBackgroundColor : @olive;  //#FCFFF5;
+@positiveBorderColor     : darken(@olive, 10%);  //#A3C293;
+@positiveHeaderColor     : darken(@olive, 20%);  //#1A531B;
+@positiveTextColor       : @olive;  //#2C662D;
+*/
+
+
+/*--------------
+  Page Heading
+---------------*/
+
+@headerFontWeight : @bold;
+@headerLineHeight : 1.1;
+
+//@h1 : unit((28 / 14), rem);
+//@h2 : unit((24 / 14), rem);
+//@h3 : unit((18 / 14), rem);
+//@h4 : unit((15 / 14), rem);
+//@h5 : unit((14 / 14), rem);

@@ -1,0 +1,54 @@
+.ui.fieldset.segment {
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+/*******************************
+      Sections as segments
+*******************************/
+
+/*-------------------
+       General
+--------------------*/
+section.ui.vertical.segment {
+  border: none;
+}
+
+/*-------------------
+   Padded variants
+--------------------*/
+section.ui.vertical.segment {
+  padding: 1.5rem 0;
+}
+section.ui.vertical.segment.padded {
+  padding: 5rem 0;
+}
+section.ui.vertical.segment.very.padded {
+  padding: 9rem 0;
+
+}
+/*-------------------
+     Responsive
+   Padded variants
+--------------------*/
+
+/*-------------------
+      Responsive
+        Columns
+--------------------*/
+section.ui.vertical.segment .column {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+
+/*******************************
+       Colored variants
+*******************************/
+/* light (NEW) */
+.ui.light.segment:not(.inverted) {
+  border-top: @coloredBorderSize solid @offWhite !important;
+}
+.ui.inverted.light.segment {
+  background-color: @offWhite !important;
+}

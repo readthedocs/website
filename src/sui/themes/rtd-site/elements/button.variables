@@ -1,0 +1,13 @@
+/*******************************
+     Gradient Variants (new)
+*******************************/
+
+/*-------------------
+      Secondary
+      Gradient
+--------------------*/
+
+@secondaryGradientBackgroundImage: linear-gradient(240deg, rgba(231,111,34,1) 0%, rgba(222,28,81,1) 100%);
+@secondaryGradientHoverBackgroundImage: none;
+@secondaryGradientFocusBackgroundImage: @secondaryGradientHoverBackgroundImage;
+@secondaryGradientActiveBackgroundImage: @secondaryGradientHoverBackgroundImage;

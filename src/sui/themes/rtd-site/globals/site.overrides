@@ -1,0 +1,64 @@
+/*******************************
+             Page
+*******************************/
+
+
+/*******************************
+             Headers
+*******************************/
+
+
+/*******************************
+             Text
+*******************************/
+
+/*-------------------
+        Sizes
+--------------------*/
+.text.lead {
+  font-size: 1.2rem;
+  line-height: @paragraphLineHeight;
+}
+
+/*-------------------
+      Paragraph
+--------------------*/
+
+//@paragraphMargin
+
+/*-------------------
+        Links
+--------------------*/
+
+/*-------------------
+        Colors
+--------------------*/
+.ui.red.text { color: @red; }
+.ui.orange.text { color: @orange; }
+.ui.yellow.text { color: @yellow; }
+.ui.olive.text { color: @olive; }
+.ui.green.text { color: @green; }
+.ui.teal.text { color: @teal; }
+.ui.blue.text { color: @blue; }
+.ui.violet.text { color: @violet; }
+.ui.purple.text { color: @purple; }
+.ui.pink.text { color: @pink; }
+.ui.brown.text { color: @brown; }
+.ui.grey.text { color: @grey; }
+.ui.black.text { color: @black; }
+
+
+/*******************************
+         Scrollbars
+*******************************/
+
+
+/*******************************
+          Highlighting
+*******************************/
+
+
+/*******************************
+          Templates
+*******************************/
+@import "../templates/homepage.overrides";

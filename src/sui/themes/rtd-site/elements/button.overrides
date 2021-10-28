@@ -1,0 +1,84 @@
+.ui.basic.buttons form > .button {
+  &:last-child {
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  border-left: 0rem;
+}
+
+/*******************************
+     Gradient Variants (new)
+*******************************/
+
+/*-------------------
+      Secondary
+      Gradient
+--------------------*/
+
+.ui.secondary.buttons.gradient .button,
+.ui.secondary.button.gradient {
+  background-image: @secondaryGradientBackgroundImage;
+}
+.ui.secondary.buttons.gradient .button:hover,
+.ui.secondary.button.gradient:hover {
+  background-image: @secondaryGradientHoverBackgroundImage;
+}
+.ui.secondary.buttons .button:focus,
+.ui.secondary.button:focus {
+  background-image: @secondaryGradientFocusBackgroundImage;
+}
+.ui.secondary.buttons .active.button,
+.ui.secondary.buttons .active.button:active,
+.ui.secondary.active.button,
+.ui.secondary.button .active.button:active {
+  background-image: @secondaryGradientActiveBackgroundImage;
+}
+
+
+/*******************************
+     Outline Variants (new)
+*******************************/
+/* Differs from `inverted` as `inverted` is meant for dark backgrounds */
+
+.ui.outline.button {
+  box-shadow: 0px 0px 0px @invertedBorderSize @black inset !important;
+  background: transparent none;
+  color: @black;
+  text-shadow: none !important;
+}
+
+/* States */
+
+/* States: Black */
+.ui.outline.button.black:hover,
+.ui.outline.button.black:focus,
+.ui.outline.button.black.active,
+.ui.outline.button.black.active:focus {
+  background: @black;
+  color: @white;
+}
+
+/* States: Primary */
+.ui.outline.button.primary:hover,
+.ui.outline.button.primary:focus,
+.ui.outline.button.primary.active,
+.ui.outline.button.primary.active:focus {
+  box-shadow: none !important;
+  background: @primaryColor;
+  color: @white;
+}
+
+/* States: Secondary */
+.ui.outline.button.secondary:hover,
+.ui.outline.button.secondary:focus,
+.ui.outline.button.secondary.active,
+.ui.outline.button.secondary.active:focus {
+  box-shadow: none !important;
+  background: @secondaryColor;
+  color: @white;
+}

@@ -1,0 +1,71 @@
+/*---------
+    Note:
+    I'm adding page specific overrides here to create a custom style for this page but also because the Semantic UI native options do not allow for advanced responsive behaviors.
+    
+    Todo:
+    When we have a final version of this page we might be able to export some of the rules here to globals/site.overrides instead so they can be used as globals for other community marketing pages. 
+---------*/
+
+
+/*******************************
+           Sections
+*******************************/
+
+/*-------------------
+       Callout
+--------------------*/
+#callout {
+  
+
+  @media (min-width : @computerBreakpoint) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+  @media (min-width : @tabletBreakpoint) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  
+
+  @media (max-width : (@computerBreakpoint - 1px)) {
+    h1,
+    p {
+      text-align: center;
+    }
+  }
+
+}
+
+
+/*-------------------
+  Features-highlight
+--------------------*/
+#features-highlight {
+  
+}
+
+
+/*-------------------
+   Call-to-action
+--------------------*/
+#call-to-action {
+  
+}
+
+
+/*-------------------
+     How-it-works
+--------------------*/
+#how-it-works {
+  
+}
+
+
+/*-------------------
+        about
+--------------------*/
+#about {
+  
+}
