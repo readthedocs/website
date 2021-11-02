@@ -63,3 +63,5 @@
           Templates
 *******************************/
 @import "../templates/homepage.overrides";
+@import "../templates/topnav.overrides";
+@import "../templates/footer.overrides";
