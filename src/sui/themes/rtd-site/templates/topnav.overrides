@@ -1,6 +1,7 @@
 /*******************************
            Topnav
 *******************************/
+@import "../collections/menu.variables";
 
 /*-------------------
        Logo
@@ -19,4 +20,35 @@
 
 /*-------------------
        Links
+--------------------*/
+
+/* Hover
+--------------------*/
+
+.ui.menu.topnav .item {
+  position: relative;
+
+  &:hover {
+    background: none;
+  }
+  
+  &.active {
+    
+    &:after {
+      display: block;
+      content: "";
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: @itemHorizontalPadding;
+      right: @itemHorizontalPadding;
+      background: @primaryColor;
+    }
+  }
+} 
+
+/* Pressed
+--------------------*/
+
+/* Active 
 --------------------*/
