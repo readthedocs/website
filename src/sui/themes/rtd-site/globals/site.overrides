@@ -18,7 +18,6 @@
 .text.lead {
   font-size: 1.2rem;
   line-height: @paragraphLineHeight;
-  line-height: @testvar;
 }
 
 /*-------------------
