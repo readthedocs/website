@@ -39,8 +39,8 @@
       height: 3px;
       position: absolute;
       bottom: 0;
-      left: @itemHorizontalPadding;
-      right: @itemHorizontalPadding;
+      //left: @itemHorizontalPadding;
+      //right: @itemHorizontalPadding;
       background: @primaryColor;
     }
   }
