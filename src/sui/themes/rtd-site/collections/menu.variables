@@ -25,10 +25,10 @@
 //@itemHorizontalPadding: @relativeLarge;
 //@itemTextTransform: none;
 //@itemTransition:
-  background @defaultDuration @defaultEasing,
-  box-shadow @defaultDuration @defaultEasing,
-  color @defaultDuration @defaultEasing
-;
+//  background @defaultDuration @defaultEasing,
+//  box-shadow @defaultDuration @defaultEasing,
+//  color @defaultDuration @defaultEasing
+//;
 //@itemFontWeight: @normal;
 //@itemTextColor: @textColor;
 
@@ -441,9 +441,9 @@
 //@attachedBoxShadow: none;
 //@attachedBorder: @borderWidth solid @solidBorderColor;
 //@attachedBottomBoxShadow:
-  @boxShadow,
-  @attachedBoxShadow
-;
+//  @boxShadow,
+//  @attachedBoxShadow
+//;
 
 /* Resize large sizes */
 //@mini: @11px;
