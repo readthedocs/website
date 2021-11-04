@@ -1,8 +1,8 @@
 /*******************************
-       Import Templates
+    Import Custom Templates
 *******************************/
 //
-// List here our custom templates and component that extend the base framework
+// List here our custom templates and components that extend the base framework
 // and then call a function to load them
 //
 // TODO1: Make these sharable across different themes (ie: common, site and app)
@@ -47,6 +47,7 @@
 
 @import (optional) "../templates/topnav.variables";
 @import "../templates/topnav.overrides";
+
 
 
 /*******************************

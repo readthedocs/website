@@ -45,8 +45,8 @@ Add class .topnav to a .menu element to apply the additional styling.
       height: 3px;
       position: absolute;
       bottom: 0;
-      //left: @itemHorizontalPadding;
-      //right: @itemHorizontalPadding;
+      left: @itemHorizontalPadding;
+      right: @itemHorizontalPadding;
       background: @primaryColor;
     }
   }
