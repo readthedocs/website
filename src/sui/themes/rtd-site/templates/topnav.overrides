@@ -1,6 +1,12 @@
 /*******************************
            Topnav
 *******************************/
+/*------------------------------
+Topnav is an extension of the menu component.
+Add class .topnav to a .menu element to apply the additional styling.
+------------------------------*/
+
+
 
 /*-------------------
        Logo

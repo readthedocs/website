@@ -1,4 +1,55 @@
 /*******************************
+       Import Templates
+*******************************/
+//
+// List here our custom templates and component that extend the base framework
+// and then call a function to load them
+//
+// TODO1: Make these sharable across different themes (ie: common, site and app)
+// using the same inheritance hierarchy logic as the rest of the site files.
+//
+// TODO2: The mixin bellow throws a 'Recursive variable definition' exception.
+// Find what's causing it and use it instead of the current code.
+//
+// TODO3: Move this back to theme.less.
+//
+// note: Current paths in the commented code are relative to theme.less.
+//
+// Template List
+// ------
+// /* @templates: homepage topnav footer; */
+
+// Mixin
+// ------
+// /* 
+//   .loadTemplateOverrides(@list, @index:1) when (@index <= length(@list))  { 
+//   @template: extract(@list, @index);
+//   //@template: 'homepage';
+  
+//   @import (optional) "themes/rtd-site/templates/@{template}.variables";
+//   @import "themes/rtd-site/templates/@{template}.overrides";
+  
+//   .loadTemplateOverrides(@list, @index+1);
+// }
+//   .loadTemplateOverrides(@templates); */
+
+
+// Import templates
+//
+// temporary method
+// see TODO's above
+// ------
+@import (optional) "../templates/homepage.variables";
+@import "../templates/homepage.overrides";
+
+@import (optional) "../templates/topnav.variables";
+@import "../templates/topnav.overrides";
+
+@import (optional) "../templates/topnav.variables";
+@import "../templates/topnav.overrides";
+
+
+/*******************************
              Page
 *******************************/
 
@@ -57,11 +108,3 @@
 /*******************************
           Highlighting
 *******************************/
-
-
-/*******************************
-          Templates
-*******************************/
-@import "../templates/homepage.overrides";
-@import "../templates/topnav.overrides";
-@import "../templates/footer.overrides";
