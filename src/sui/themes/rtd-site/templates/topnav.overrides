@@ -33,7 +33,8 @@ Add class .topnav to a .menu element to apply the additional styling.
 .ui.menu.topnav .item {
   position: relative;
 
-  &:hover {
+  &:hover,
+  &.active {
     background: none;
   }
   
