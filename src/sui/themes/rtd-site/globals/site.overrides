@@ -54,6 +54,10 @@
              Page
 *******************************/
 
+// body {
+//   font-weight: @normal;
+// }
+
 
 /*******************************
              Headers
@@ -68,8 +72,16 @@
         Sizes
 --------------------*/
 .text.lead {
-  font-size: 1.2rem;
-  line-height: @paragraphLineHeight;
+  font-size: 20px;
+  line-height: @lineHeight;
+}
+.text.lead,
+.text.thin {
+  font-weight: 300;
+}
+/* behavior with other elements */
+.ui.header .text.lead {
+  margin-top: 1em;
 }
 
 /*-------------------
@@ -77,6 +89,10 @@
 --------------------*/
 
 //@paragraphMargin
+
+p.small {
+  font-size: @small;
+}
 
 /*-------------------
         Links

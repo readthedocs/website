@@ -40,16 +40,24 @@
 
 
 /*-------------------
-    Announcements
+  Features-highlight
 --------------------*/
-#announcements {
+#features-highlight {
   
 }
 
 
 /*-------------------
-  Features-highlight
+   Call-to-action
 --------------------*/
-#features-highlight {
+#call-to-action {
+  
+}
+
+
+/*-------------------
+     How-it-works
+--------------------*/
+#how-it-works {
   
 }

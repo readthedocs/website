@@ -34,7 +34,8 @@ Add class .topnav to a .menu element to apply the additional styling.
   position: relative;
 
   &:hover,
-  &.active {
+  &.active,
+  &.active:hover {
     background: none;
   }
   

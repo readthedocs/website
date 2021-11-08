@@ -48,10 +48,7 @@ section.ui.vertical.segment .column {
 
 /* light (New) */
 
-.ui.light.segment:not(.inverted) {
-  border-top: @coloredBorderSize solid @offWhite !important;
-}
-.ui.inverted.light.segment {
+.ui.light.segment {
   background-color: @offWhite !important;
 }
 
