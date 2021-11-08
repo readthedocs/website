@@ -75,7 +75,12 @@
   font-size: 20px;
   line-height: @lineHeight;
 }
+.text.shout {
+  font-size: 30px;
+  line-height: @lineHeight;
+}
 .text.lead,
+.text.shout,
 .text.thin {
   font-weight: 300;
 }

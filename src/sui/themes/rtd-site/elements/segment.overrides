@@ -21,10 +21,10 @@ section.ui.vertical.segment {
   padding: 1.5rem 0;
 }
 section.ui.vertical.segment.padded {
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 section.ui.vertical.segment.very.padded {
-  padding: 9rem 0;
+  padding: 8rem 0;
 
 }
 /*-------------------

@@ -17,12 +17,16 @@
 #callout {
   
 
-  @media (min-width : @computerBreakpoint) {
+  @media (min-width : @mobileBreakpoint) {
     h1 {
-      font-size: 4rem;
+      font-size: 2.5rem;
     }
   }
   @media (min-width : @tabletBreakpoint) {
+  }
+  @media (min-width : @computerBreakpoint) {
+  }
+  @media (min-width : @largeMonitorBreakpoint) {
     h1 {
       font-size: 3rem;
     }
@@ -30,9 +34,11 @@
   
 
   @media (max-width : (@computerBreakpoint - 1px)) {
-    h1,
-    p {
+    .column {
       text-align: center;
+    }
+    .column + .column {
+      display: none;
     }
   }
 
@@ -48,8 +54,8 @@
 
 
 /*-------------------
-  Features-highlight
+  Infographics
 --------------------*/
-#features-highlight {
+#infographics {
   
 }
