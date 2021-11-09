@@ -95,4 +95,9 @@
 --------------------*/
 #infographics {
   padding-top: 250px;
+
+  h2 {
+    font-size: 45px;
+    font-weight: 300;
+  }
 }
