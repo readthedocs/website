@@ -2,11 +2,16 @@
             Footer
 *******************************/
 
+
+/* Colors */
 @footerBackground       : @black;
+@footerSeparatorsColor  : fade(@white, 12%);
 
-@footerColor            : @white;
-@footerHeadingsColor    : @white;
+@footerColor            : fade(@white, 75%);
+@footerHeadingsColor    : fade(@primaryColor, 75%);
 
-@footerSeparatorsColor  : @white;
+@footerCopyrightsColor  : fade(@white, 35%);
 
-@footerCopyrightsColor  : @white;
+/* Spacings */
+@footerRowsPadding      : 40px;
+@footerColumnsPadding   : 20px;

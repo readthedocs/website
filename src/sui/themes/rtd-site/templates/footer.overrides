@@ -1,8 +1,8 @@
 /*******************************
             Footer
 *******************************/
-section.main,
-section.copyrights {
+#footer section.main,
+#footer section.copyrights {
   background-color: @footerBackground;
 }
 
@@ -10,66 +10,134 @@ section.copyrights {
 /*-----------------------------
              Main
 ------------------------------*/
-section.main .container {
+#footer section.main {
   color: @footerColor;
+  padding: 60px 0;
+}
 
-  a {
-    color: @footerColor;
+/*------------------------
+      connections
+-------------------------*/
+#footer section.main {
+
+  .connections {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: @footerRowsPadding;
   }
+
 }
 
 /*-------------------
         links
 --------------------*/
-div.links {}
+#footer section.main {
 
-ul {}
-li {}
-li.head {}
-a {}
+  div.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: @footerColumnsPadding;
+  }
+  li {}
+  li.head {
+    color: @footerHeadingsColor;
+  }
+
+  a {
+    color: @footerColor;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
 
 /*-------------------
       Newsletter
 --------------------*/
-div.newsletter {}
+#footer section.main {
+
+  div.newsletter {
+    padding: @footerColumnsPadding;
+  }
+
+}
 
 
 /*-------------------
         logo
 --------------------*/
-div.logo {}
+#footer section.main {
+
+  div.logo {
+    padding: @footerColumnsPadding;
+  }
+
+}
 
 
-/*-------------------
-      sponsors
---------------------*/
-div.sponsors {}
+/*-----------------------
+         sponsors
+-------------------------*/
+#footer section.main {
+
+  div.sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: @footerRowsPadding;
+    border-top: 1px solid @footerSeparatorsColor;
+  }
+  .sponsor {
+    padding: @footerColumnsPadding;
+  }
+}
 
 
 /*-----------------------------
           Copyrights
 ------------------------------*/
-section.copyrights .container {
-  display: flex;
-  justify-content: space-between;
+#footer section.copyrights {
   color: @footerCopyrightsColor;
+  padding: 20px 0;
+  font-size: 90%;
 
   a {
     color: @footerCopyrightsColor;
   }
 }
 
+#footer section.copyrights .container {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 /*-------------------
         left
 --------------------*/
-div.left {}
+#footer section.copyrights {
+
+  div.left {}
+
+}
 
 
 /*-------------------
         right
 --------------------*/
-div.right {}
+#footer section.copyrights {
 
-span.lang {}
-span.version {}
+  div.right {}
+
+  span.lang {}
+  span.version {}
+
+}
