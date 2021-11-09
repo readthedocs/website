@@ -1,0 +1,12 @@
+/*******************************
+            Footer
+*******************************/
+
+@footerBackground       : @black;
+
+@footerColor            : @white;
+@footerHeadingsColor    : @white;
+
+@footerSeparatorsColor  : @white;
+
+@footerCopyrightsColor  : @white;

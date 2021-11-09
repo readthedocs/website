@@ -1,7 +1,75 @@
 /*******************************
-             Topic
+            Footer
 *******************************/
+section.main,
+section.copyrights {
+  background-color: @footerBackground;
+}
+
+
+/*-----------------------------
+             Main
+------------------------------*/
+section.main .container {
+  color: @footerColor;
+
+  a {
+    color: @footerColor;
+  }
+}
 
 /*-------------------
-         sub
+        links
 --------------------*/
+div.links {}
+
+ul {}
+li {}
+li.head {}
+a {}
+
+/*-------------------
+      Newsletter
+--------------------*/
+div.newsletter {}
+
+
+/*-------------------
+        logo
+--------------------*/
+div.logo {}
+
+
+/*-------------------
+      sponsors
+--------------------*/
+div.sponsors {}
+
+
+/*-----------------------------
+          Copyrights
+------------------------------*/
+section.copyrights .container {
+  display: flex;
+  justify-content: space-between;
+  color: @footerCopyrightsColor;
+
+  a {
+    color: @footerCopyrightsColor;
+  }
+}
+
+
+/*-------------------
+        left
+--------------------*/
+div.left {}
+
+
+/*-------------------
+        right
+--------------------*/
+div.right {}
+
+span.lang {}
+span.version {}

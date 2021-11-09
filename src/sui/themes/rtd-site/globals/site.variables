@@ -1027,16 +1027,6 @@
 // @lightGreyHover           : saturate(darken(@lightGrey, 10), 10, relative);
 // @lightBlackHover          : saturate(darken(@fullBlack, 10), 10, relative);
 
-/*---  Text colors  ---*/
-// Added text colors because text usually needs to be stronger than the splash version of the same color, to accomplish the same effect.
-// Did this only for the primary colors not to overload the styles even more, and as these are the more likely colors to be used both in splash elements and text.
-// TODO: At the end of the current development, check if this ended up not being used and clean up.
-
-@textPrimary: saturate(darken(@primaryColor, 5), 10, relative);
-@textPrimaryHover: saturate(darken(@textPrimary, 5), 10, relative);
-@textSecondary: saturate(darken(@secondaryColor, 5), 10, relative);
-@textSecondaryHover: saturate(darken(@textSecondary, 5), 10, relative);
-
 
 // /*---  Emotive  ---*/
 // @positiveColorHover       : saturate(darken(@positiveColor, 5), 10, relative);

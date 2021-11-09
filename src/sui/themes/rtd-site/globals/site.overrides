@@ -45,8 +45,8 @@
 @import (optional) "../templates/topnav.variables";
 @import "../templates/topnav.overrides";
 
-@import (optional) "../templates/topnav.variables";
-@import "../templates/topnav.overrides";
+@import (optional) "../templates/footer.variables";
+@import "../templates/footer.overrides";
 
 
 
