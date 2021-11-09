@@ -146,10 +146,10 @@
        Links
 --------------------*/
 
-// @linkColor           : @textColor;//#4183C4 is default
-// @linkUnderline       : underline;//none is default
-// @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
-// @linkHoverUnderline  : @linkUnderline;
+@linkColor              : @textColor;//@textPrimary;//#4183C4 is default
+@linkUnderline          : underline;//none is default
+@linkHoverColor         : darken(saturate(@linkColor, 20), 15, relative);
+@linkHoverUnderline     : @linkUnderline;
 
 /*-------------------
     Scroll Bars
@@ -578,21 +578,16 @@
 // @transparentWhite           : rgba(255, 255, 255, 0.08);
 // @strongTransparentWhite     : rgba(255, 255, 255, 0.15);
 
-// /*-------------------
-//        Accents
-// --------------------*/
+/*-------------------
+       Accents
+--------------------*/
 
-// /* Differentiating Neutrals */
+/* Differentiating Neutrals */
 // @subtleGradient: linear-gradient(transparent, @transparentBlack);
 
 // /* Differentiating Layers */
-// @subtleShadow:
-//   0 1px 2px 0 @borderColor
-// ;
-// @floatingShadow:
-//   0 2px 4px 0 rgba(34, 36, 38, 0.12),
-//   0 2px 10px 0 rgba(34, 36, 38, 0.15)
-// ;
+// @subtleShadow: 0 1px 2px 0 @borderColor;
+@floatingShadow: -1px 1px 6px rgba(0,0,0, 0.15);
 
 // /*******************************
 //            Power-User
@@ -1031,6 +1026,17 @@
 // @lightBrownHover          : saturate(darken(@lightBrown, 10), 10, relative);
 // @lightGreyHover           : saturate(darken(@lightGrey, 10), 10, relative);
 // @lightBlackHover          : saturate(darken(@fullBlack, 10), 10, relative);
+
+/*---  Text colors  ---*/
+// Added text colors because text usually needs to be stronger than the splash version of the same color, to accomplish the same effect.
+// Did this only for the primary colors not to overload the styles even more, and as these are the more likely colors to be used both in splash elements and text.
+// TODO: At the end of the current development, check if this ended up not being used and clean up.
+
+@textPrimary: saturate(darken(@primaryColor, 5), 10, relative);
+@textPrimaryHover: saturate(darken(@textPrimary, 5), 10, relative);
+@textSecondary: saturate(darken(@secondaryColor, 5), 10, relative);
+@textSecondaryHover: saturate(darken(@textSecondary, 5), 10, relative);
+
 
 // /*---  Emotive  ---*/
 // @positiveColorHover       : saturate(darken(@positiveColor, 5), 10, relative);
