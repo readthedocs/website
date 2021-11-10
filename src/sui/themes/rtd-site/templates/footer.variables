@@ -4,14 +4,22 @@
 
 
 /* Colors */
-@footerBackground       : @black;
-@footerSeparatorsColor  : fade(@white, 12%);
+@footerBackground         : @black;
+@footerSeparatorsColor    : fade(@white, 12%);
 
-@footerColor            : fade(@white, 75%);
-@footerHeadingsColor    : fade(@primaryColor, 75%);
+@footerColor              : fade(@white, 75%);
+@footerHoverColor         : @white;
+@footerHeadingsColor      : fade(@primaryColor, 75%);
 
-@footerCopyrightsColor  : fade(@white, 35%);
+@footerCopyrightsColor    : fade(@white, 35%);
 
 /* Spacings */
-@footerRowsPadding      : 40px;
-@footerColumnsPadding   : 20px;
+@footerRowsPadding        : 40px;
+@footerColumnsPaddingH    : 20px;
+@footerColumnsPaddingV    : 15px;
+
+@footerLinksLineHeight    : 16px;
+
+/* Elements definition */
+@footerLinksColumnsCount  : 5;
+@footerLogoWidth          : 70px;

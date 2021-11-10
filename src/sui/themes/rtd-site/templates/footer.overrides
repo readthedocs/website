@@ -13,6 +13,23 @@
 #footer section.main {
   color: @footerColor;
   padding: 60px 0;
+
+  .head {
+    color: @footerHeadingsColor;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  p,
+  li,
+  .head {
+    line-height: @footerLinksLineHeight;
+    margin: floor(@footerLinksLineHeight / 2) 0 ceil(@footerLinksLineHeight / 2);
+  }
+  p,
+  li {
+    font-size: 14px;
+  }
 }
 
 /*------------------------
@@ -34,7 +51,7 @@
 --------------------*/
 #footer section.main {
 
-  div.links {
+  .links {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -43,11 +60,10 @@
   ul {
     list-style: none;
     margin: 0;
-    padding: @footerColumnsPadding;
-  }
-  li {}
-  li.head {
-    color: @footerHeadingsColor;
+    padding: @footerColumnsPaddingV @footerColumnsPaddingH;
+    // flex-basis: floor(100%/(@footerLinksColumnsCount+2));
+    // flex-grow: 1;
+    // flex-shrink: 0;
   }
 
   a {
@@ -55,29 +71,40 @@
     text-decoration: none;
   }
   a:hover {
+    color: @footerHoverColor;
     text-decoration: underline;
   }
 }
 
 /*-------------------
-      Newsletter
+      Marketing
 --------------------*/
 #footer section.main {
 
-  div.newsletter {
-    padding: @footerColumnsPadding;
+  .marketing {
   }
 
 }
 
-
-/*-------------------
-        logo
---------------------*/
+/*------------
+  Newsletter
+-------------*/
 #footer section.main {
 
-  div.logo {
-    padding: @footerColumnsPadding;
+  .newsletter {
+    padding: @footerColumnsPaddingV @footerColumnsPaddingH;
+  }
+
+}
+
+/*------------
+    social
+-------------*/
+#footer section.main {
+
+  .social {
+    padding: @footerColumnsPaddingV @footerColumnsPaddingH;
+    font-size: 22px;
   }
 
 }
@@ -88,16 +115,32 @@
 -------------------------*/
 #footer section.main {
 
-  div.sponsors {
+  .sponsors {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: @footerRowsPadding;
     border-top: 1px solid @footerSeparatorsColor;
+    position: relative;
   }
   .sponsor {
-    padding: @footerColumnsPadding;
+    padding: @footerColumnsPaddingV @footerColumnsPaddingH;
   }
+
+  .logo {
+    background-color: @footerBackground;
+    padding: 10px;
+    width: @footerLogoWidth;
+    position: absolute;
+    top: -(@footerLogoWidth / 2);
+    left: 50%;
+    margin-left: -(@footerLogoWidth / 2);
+
+    img {
+      opacity: .60;
+    }
+  }
+
 }
 
 
@@ -120,22 +163,27 @@
 }
 
 
-/*-------------------
-        left
---------------------*/
+/*------------
+     left
+-------------*/
 #footer section.copyrights {
 
-  div.left {}
+  .left {}
 
 }
 
 
-/*-------------------
-        right
---------------------*/
+/*------------
+     right
+-------------*/
 #footer section.copyrights {
 
-  div.right {}
+  .right {
+
+    a {
+      text-decoration: none;
+    }
+  }
 
   span.lang {}
   span.version {}
