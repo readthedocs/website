@@ -30,6 +30,12 @@
   li {
     font-size: 14px;
   }
+  a {
+    color: @footerColor;
+  }
+  a:hover {
+    color: @footerHoverColor;
+  }
 }
 
 /*------------------------
@@ -42,6 +48,8 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-bottom: @footerRowsPadding;
+    border-bottom: 1px solid @footerSeparatorsColor;
+    position: relative;
   }
 
 }
@@ -57,7 +65,7 @@
     align-items: flex-start;
   }
 
-  ul {
+  .links ul {
     list-style: none;
     margin: 0;
     padding: @footerColumnsPaddingV @footerColumnsPaddingH;
@@ -66,12 +74,10 @@
     // flex-shrink: 0;
   }
 
-  a {
-    color: @footerColor;
+  .links a {
     text-decoration: none;
   }
-  a:hover {
-    color: @footerHoverColor;
+  .links a:hover {
     text-decoration: underline;
   }
 }
@@ -109,6 +115,22 @@
 
 }
 
+/*-------------------
+        logo
+--------------------*/
+.logo {
+  background-color: @footerBackground;
+  padding: 10px;
+  width: @footerLogoWidth;
+  position: absolute;
+  bottom: -(@footerLogoWidth / 2);
+  left: 50%;
+  margin-left: -(@footerLogoWidth / 2);
+
+  img {
+    opacity: .18;
+  }
+}
 
 /*-----------------------
          sponsors
@@ -117,28 +139,21 @@
 
   .sponsors {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+
+    max-width: 700px;
+    margin: 0 auto;
     padding-top: @footerRowsPadding;
-    border-top: 1px solid @footerSeparatorsColor;
-    position: relative;
   }
   .sponsor {
     padding: @footerColumnsPaddingV @footerColumnsPaddingH;
+    flex: 0 1 (100% / 6);
+    opacity: .3;
   }
-
-  .logo {
-    background-color: @footerBackground;
-    padding: 10px;
-    width: @footerLogoWidth;
-    position: absolute;
-    top: -(@footerLogoWidth / 2);
-    left: 50%;
-    margin-left: -(@footerLogoWidth / 2);
-
-    img {
-      opacity: .60;
-    }
+  .sponsor:hover {
+    opacity: .5;
   }
 
 }
@@ -162,7 +177,6 @@
   justify-content: space-between;
 }
 
-
 /*------------
      left
 -------------*/
@@ -171,7 +185,6 @@
   .left {}
 
 }
-
 
 /*------------
      right
