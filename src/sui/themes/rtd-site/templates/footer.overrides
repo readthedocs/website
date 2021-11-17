@@ -88,6 +88,7 @@
 #footer section.main {
 
   .marketing {
+    flex: 1 1 400px;
   }
 
 }
