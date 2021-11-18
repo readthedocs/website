@@ -11,53 +11,60 @@
            Sections
 *******************************/
 
-/*-------------------
-       Callout
---------------------*/
-#callout {
-  
-
-  @media (min-width : @computerBreakpoint) {
-    h1 {
-      font-size: 4rem;
-    }
-  }
-  @media (min-width : @tabletBreakpoint) {
-    h1 {
-      font-size: 3rem;
-    }
-  }
-  
-
-  @media (max-width : (@computerBreakpoint - 1px)) {
-    h1,
-    p {
-      text-align: center;
-    }
-  }
-
-}
-
-
-/*-------------------
-  Features-highlight
---------------------*/
-#features-highlight {
-  
-}
-
-
-/*-------------------
-   Call-to-action
---------------------*/
-#call-to-action {
-  
-}
-
 
 /*-------------------
      How-it-works
 --------------------*/
 #how-it-works {
   
+}
+
+
+/*-------------------
+   User Segments
+--------------------*/
+#user-segments {
+  
+}
+
+
+/*-------------------
+      Features
+--------------------*/
+@featuresMarginHorizontal: 15px;
+
+#features {
+
+  h2 {
+    font-size: 45px;
+    font-weight: 300;
+  }
+
+  h4{
+    font-size: 25px;
+    font-weight: 400;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -@featuresMarginHorizontal;
+  }
+  .feature {
+    width:	calc(50% - @featuresMarginHorizontal * 2);
+    background: @white;
+    margin: @featuresMarginHorizontal;
+    padding: 40px 30px 20px;
+    border-radius: @defaultBorderRadius;
+    border: @borderWidth solid @borderColor;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .taglist {
+    margin-top: 30px;
+  }
+  .tag {}
 }

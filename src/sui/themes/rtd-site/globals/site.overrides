@@ -39,14 +39,17 @@
 // temporary method
 // see TODO's above
 // ------
-@import (optional) "../templates/homepage.variables";
-@import "../templates/homepage.overrides";
-
 @import (optional) "../templates/topnav.variables";
 @import "../templates/topnav.overrides";
 
 @import (optional) "../templates/footer.variables";
 @import "../templates/footer.overrides";
+
+@import (optional) "../templates/homepage.variables";
+@import "../templates/homepage.overrides";
+
+@import (optional) "../templates/product.variables";
+@import "../templates/product.overrides";
 
 
 
@@ -54,9 +57,10 @@
              Page
 *******************************/
 
-// body {
-//   font-weight: @normal;
-// }
+body {
+  //font-weight: @normal;
+  padding: @topnavHeight 0 0;
+}
 
 
 /*******************************
@@ -130,3 +134,10 @@ p.small {
 /*******************************
           Highlighting
 *******************************/
+
+
+/*******************************
+        Fancy Lists (New)
+*******************************/
+.taglist {}
+.checklist {}

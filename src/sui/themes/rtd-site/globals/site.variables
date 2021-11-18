@@ -1,6 +1,11 @@
 @importGoogleFonts: False;
 
 /*******************************
+        Theme Variables
+*******************************/
+@topnavHeight: 74px;// the rendered height of the topnav. It will be used for distancing the contents and floating elements from the top so they don't overlap with the nav.
+
+/*******************************
          Site Settings
 *******************************/
 
@@ -119,7 +124,7 @@
 // @mediumSize      : (14 / 14);
 // @largeSize       : (16 / 14);
 // @bigSize         : (18 / 14);
-// @hugeSize        : (20 / 14);
+@hugeSize           : 3em;//(20 / 14) is default
 // @massiveSize     : (24 / 14);
 
 

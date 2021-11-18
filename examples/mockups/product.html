@@ -39,61 +39,8 @@
     <!-- Contents 
     ----------------------------------- -->
 
-    <!-- Features highlight -->
-    <section class="ui vertical segment light padded" id="features-highlight">
-
-      <div class="ui container">
-        <div class="ui grid stackable three column">
-
-          <div class="column">
-            <div class="ui basic segment center aligned">
-              <div class="ui icon header">
-                <i class="rocket icon light"></i>
-                <h3>Webhooks</h3>
-              </div>
-              <p>
-                Whenever you push code to your favorite version control system,
-                whether that is Git, Mercurial, Bazaar, or Subversion, we will
-                automatically build your docs so your code and documentation are
-                never out of sync.
-              </p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="ui basic segment center aligned">
-              <div class="ui icon header">
-                <i class="cubes icon light"></i>
-                <h3>Multiple formats</h3>
-              </div>
-              <p>
-                Of course we build and host your docs for the web, but they are
-                also vieweable as PDFs, as single page HTML, and for eReaders.
-                No additional configuration is required.
-              </p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="ui basic segment center aligned">
-              <div class="ui icon header">
-                <i class="code branch icon light"></i>
-                <h3>Multiple versions</h3>
-              </div>
-              <p>
-                We can host and build multiple versions of your docs so having a
-                1.0 version of your docs and a 2.0 version of your docs is as easy
-                as having a separate branch or tag in your version control system.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-
     <!-- How it works -->
-    <section class="ui vertical segment inverted very padded" id="how-it-works">
+    <section class="ui vertical segment very padded" id="how-it-works">
 
       <div class="ui container">
         <div class="ui grid centered">
@@ -103,6 +50,142 @@
         </div>
       </div>
 
+    </section>
+
+    <!-- User Segments -->
+    <section class="ui vertical segment inverted padded" id="user-segments">
+
+      <div class="ui container">
+        <div class="ui grid stackable three column">
+
+          <div class="column">
+            <div class="ui basic segment center aligned">
+              <h3>Lorem ispum</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis vestibulum justo. Maecenas nulla enim, pretium sed tincidunt nec, cursus sit amet lectus. Nunc in lacinia ligula.
+              </p>
+              <a href="" class="ui button primary">Learn about the engineering workflow</a><!-- points to page aimed for software engineers -->
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui basic segment center aligned">
+              <h3>Lorem ispum</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis vestibulum justo. Maecenas nulla enim, pretium sed tincidunt nec, cursus sit amet lectus. Nunc in lacinia ligula.
+              </p>
+              <a href="" class="ui button secondary">Learn about using RTD as a technical writer</a><!-- points to page aimed for technical writers -->
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui basic segment center aligned">
+              <h3>Lorem ispum</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis vestibulum justo. Maecenas nulla enim, pretium sed tincidunt nec, cursus sit amet lectus. Nunc in lacinia ligula.
+              </p>
+              <a href="" class="ui button yellow">Learn about how RTD works for teams</a><!-- points to page aimed for managers -->
+            </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="ui vertical segment light padded" id="features">
+      <div class="ui container">
+        <h2 class="ui header">Features</h2>
+
+        <div class="wrapper">
+
+          <div class="feature">
+            <div>
+              <h4>Webhooks</h4>
+              <p>
+                Whenever you push code to your favorite version control system,
+                whether that is Git, Mercurial, Bazaar, or Subversion, we will
+                automatically build your docs so your code and documentation are
+                never out of sync.
+              </p>
+            </div>
+            <div class="ui labels taglist">
+              <span class="ui label basic large"><i class="icon primary github"></i> GitHub</span>
+              <span class="ui label basic large"><i class="icon primary gitlab"></i> GitLab</span>
+              <span class="ui label basic large"><i class="icon primary bitbucket"></i> BitBucket</span>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div>
+              <h4>Multiple formats</h4>
+              <p>
+                Of course we build and host your docs for the web, but they are
+                also vieweable as PDFs, as single page HTML, and for eReaders.
+                No additional configuration is required.
+              </p>
+            </div>
+            <div class="ui labels taglist">
+              <span class="ui label basic large"><i class="icon primary code"></i> html</span>
+              <span class="ui label basic large"><i class="icon primary file alternate outline"></i> pdf</span>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div>
+              <h4>Multiple versions</h4>
+              <p>
+                We can host and build multiple versions of your docs so having a
+                1.0 version of your docs and a 2.0 version of your docs is as easy
+                as having a separate branch or tag in your version control system.
+              </p>
+            </div>
+            <div class="ui labels taglist">
+              <span class="ui label basic large"><i class="icon primary hourglass outline"></i> Version control</span>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div>
+              <h4>You Write docs with Sphinx or Mkdocs</h4>
+              <p>
+                Documentation can be written in Markdown or reStructuredText. Write just prose documentation, or automatically pull in documentation that is written inside your code (eg. Python docstrings).
+              </p>
+            </div>
+            <div class="ui labels taglist">
+              <span class="ui label basic large"><i class="icon primary hourglass outline"></i> reStructuredText</span>
+              <span class="ui label basic large"><i class="icon primary hourglass outline"></i> Markdown</span>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div>
+              <h4>We Build your docs on every Pull Request or merge</h4>
+              <p>
+                Whenever you push a commit, we build your full set of documentation and provide a fully working preview. If you decide to merge into a production version, we will update that on merge. Your docs are always up to date with your code.
+              </p>
+            </div>
+            <div class="ui labels taglist">
+              <span class="ui label basic large"><i class="icon primary hourglass outline"></i> Always up to date</span>
+              <span class="ui label basic large"><i class="icon primary hourglass outline"></i> Automation</span>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div>
+              <h4>The same tools your team is already using</h4>
+              <p>
+                All too often, when documentation is lacking, it's because maintaining documentation is too difficult. Using developer tools like git lowers the bar contributing documentation, meaning your docs will get better, faster.
+              </p>
+            </div>
+            <div class="ui labels taglist">
+              <span class="ui label basic large"><i class="icon primary hourglass outline"></i> Your own tools</span>
+              <span class="ui label basic large"><i class="icon primary hourglass outline"></i> Docs as code</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <!-- end Contents
