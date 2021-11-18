@@ -34,6 +34,7 @@
 @featuresMarginHorizontal: 15px;
 
 #features {
+  padding-bottom: 7rem;
 
   h2 {
     font-size: 45px;

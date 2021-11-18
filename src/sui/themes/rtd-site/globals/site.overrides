@@ -69,8 +69,21 @@ body {
 
 
 /*******************************
-             Text
+          Emphasis
 *******************************/
+.weight.light {
+  font-weight: 300;
+}
+.weight.regular {
+  font-weight: 400;
+}
+.weight.bold {
+  font-weight: 600;
+}
+
+/*-------------------
+        Sizes
+--------------------*/
 
 /*-------------------
         Sizes
@@ -139,5 +152,16 @@ p.small {
 /*******************************
         Fancy Lists (New)
 *******************************/
-.taglist {}
-.checklist {}
+//.taglist {}
+
+.checklist {
+  list-style: none;
+  
+  li {
+    position: relative;
+  }
+  li .icon {
+    position: absolute;
+    left: 0;
+  }
+}
