@@ -69,9 +69,6 @@
     list-style: none;
     margin: 0;
     padding: @footerColumnsPaddingV @footerColumnsPaddingH;
-    // flex-basis: floor(100%/(@footerLinksColumnsCount+2));
-    // flex-grow: 1;
-    // flex-shrink: 0;
   }
 
   .links a {
