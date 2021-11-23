@@ -49,56 +49,9 @@
 @import "../templates/footer.overrides";
 
 
-
-/*******************************
-             Page
-*******************************/
-
-
-/*******************************
-             Headers
-*******************************/
-
-
 /*******************************
              Text
 *******************************/
-
-/*-------------------
-        Sizes
---------------------*/
-.text.lead {
-  font-size: 20px;
-  line-height: @lineHeight;
-}
-.text.shout {
-  font-size: 30px;
-  line-height: @lineHeight;
-}
-.text.lead,
-.text.shout,
-.text.thin {
-  font-weight: 300;
-}
-/* behavior with other elements */
-.ui.header .text.lead {
-  margin-top: 1em;
-}
-
-/*-------------------
-      Paragraph
---------------------*/
-
-//@paragraphMargin
-
-p.small {
-  font-size: @small;
-}
-
-/*-------------------
-        Links
---------------------*/
-
 
 /*-------------------
         Colors
@@ -116,13 +69,3 @@ p.small {
 .ui.brown.text { color: @brown; }
 .ui.grey.text { color: @grey; }
 .ui.black.text { color: @black; }
-
-
-/*******************************
-         Scrollbars
-*******************************/
-
-
-/*******************************
-          Highlighting
-*******************************/
