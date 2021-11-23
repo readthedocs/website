@@ -1,0 +1,45 @@
+/*******************************
+             Icon
+*******************************/
+
+/*--------------
+   Font Files
+---------------*/
+
+/* Solid Icons */
+@fontName: 'icons';
+@fontAwesomePath: "../assets/fonts";
+@src:
+  url("@{fontAwesomePath}/@{fontName}.eot?#iefix") format('embedded-opentype'),
+  url("@{fontAwesomePath}/@{fontName}.woff2") format('woff2'),
+  url("@{fontAwesomePath}/@{fontName}.woff") format('woff'),
+  url("@{fontAwesomePath}/@{fontName}.ttf") format('truetype'),
+  url("@{fontAwesomePath}/@{fontName}.svg#icons") format('svg')
+;
+@fallbackSRC: url("@{fontAwesomePath}/@{fontName}.eot");
+
+/* Outline Icons */
+@importOutlineIcons: true;
+@outlineFontName: 'outline-icons';
+@outlineSrc:
+  url("@{fontAwesomePath}/@{outlineFontName}.eot?#iefix") format('embedded-opentype'),
+  url("@{fontAwesomePath}/@{outlineFontName}.woff2") format('woff2'),
+  url("@{fontAwesomePath}/@{outlineFontName}.woff") format('woff'),
+  url("@{fontAwesomePath}/@{outlineFontName}.ttf") format('truetype'),
+  url("@{fontAwesomePath}/@{outlineFontName}.svg#icons") format('svg')
+;
+@outlineFallbackSRC: url("@{fontAwesomePath}/@{outlineFontName}.eot");
+
+
+
+/* Brand Icons */
+@importBrandIcons: true;
+@brandFontName: 'brand-icons';
+@brandSrc:
+  url("@{fontAwesomePath}/@{brandFontName}.eot?#iefix") format('embedded-opentype'),
+  url("@{fontAwesomePath}/@{brandFontName}.woff2") format('woff2'),
+  url("@{fontAwesomePath}/@{brandFontName}.woff") format('woff'),
+  url("@{fontAwesomePath}/@{brandFontName}.ttf") format('truetype'),
+  url("@{fontAwesomePath}/@{brandFontName}.svg#icons") format('svg')
+;
+@brandFallbackSRC: url("@{fontAwesomePath}/@{brandFontName}.eot");
