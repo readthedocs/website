@@ -1,10 +1,6 @@
 @import (optional) "../templates/homepage.variables";
 @import "../templates/homepage.overrides";
 
-@import (optional) "../templates/footer.variables";
-@import "../templates/footer.overrides";
-
-
 /*******************************
              Text
 *******************************/
