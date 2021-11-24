@@ -1,6 +1,3 @@
-@import (optional) "../templates/homepage.variables";
-@import "../templates/homepage.overrides";
-
 /*******************************
              Text
 *******************************/
@@ -67,5 +64,82 @@ footer {
   .ui.horizontal.divider {
     color: gray;
     margin-bottom: 40px;
+  }
+}
+
+
+/*******************************
+           homepage
+*******************************/
+
+/*-------------------
+       Callout
+--------------------*/
+#callout {
+
+  @media (max-width : (@computerBreakpoint - 1px)) {
+    .column {
+      text-align: center;
+    }
+    .column + .column {
+      display: none;
+    }
+  }
+
+}
+
+/*-------------------
+    Announcements
+--------------------*/
+#announcements {
+  padding: 0;
+
+  .container > .ui.segment {
+    z-index: 10;
+    margin: -80px 0 -200px;
+    box-shadow: @floatingShadow;
+  }
+  .column {
+    position: relative;
+    padding: 20px 20px 15px;
+  }
+  .column:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    right: 0;
+    width: 1px;
+    background-color: @internalBorderColor;
+  }
+  .column:last-child:after {
+    display: none;
+  }
+  @media (max-width : @largestMobileScreen) {
+    .column:after {
+      top: auto;
+      bottom: 0;
+      right: 20px;
+      left: 20px; 
+      width: auto;
+      height: 1px;
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+}
+
+/*-------------------
+  Infographics
+--------------------*/
+#infographics {
+  padding-top: 250px;
+
+  h2 {
+    font-size: 45px;
+    font-weight: 300;
   }
 }
