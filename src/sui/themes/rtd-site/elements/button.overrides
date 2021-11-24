@@ -25,24 +25,28 @@
       Gradient
 --------------------*/
 
-.ui.secondary.buttons.gradient .button,
-.ui.secondary.button.gradient {
-  background-image: @secondaryGradientBackgroundImage;
-}
-.ui.secondary.buttons.gradient .button:hover,
-.ui.secondary.button.gradient:hover {
-  background-image: @secondaryGradientHoverBackgroundImage;
-}
-.ui.secondary.buttons .button:focus,
-.ui.secondary.button:focus {
-  background-image: @secondaryGradientFocusBackgroundImage;
-}
-.ui.secondary.buttons .active.button,
-.ui.secondary.buttons .active.button:active,
-.ui.secondary.active.button,
-.ui.secondary.button .active.button:active {
-  background-image: @secondaryGradientActiveBackgroundImage;
-}
+.ui.secondary
+ {
+  &.buttons.gradient .button,
+  &.button.gradient {
+    background-image: @secondaryGradientBackgroundImage;
+  }
+  &.buttons.gradient .button:hover,
+  &.button.gradient:hover {
+    background-image: @secondaryGradientHoverBackgroundImage;
+  }
+  &.buttons .button:focus,
+  &.button:focus {
+    background-image: @secondaryGradientFocusBackgroundImage;
+  }
+  &.buttons .active.button,
+  &.buttons .active.button:active,
+  &.active.button,
+  &.button .active.button:active {
+    background-image: @secondaryGradientActiveBackgroundImage;
+  }
+ }
+
 
 
 /*******************************
@@ -81,16 +85,4 @@
   &.blue      { .buttonOutlineState(@primaryColor) }
   &.green      { .buttonOutlineState(@green) }
 
-}
-
-/*******************************
-        Size Variants
-*******************************/
-.ui.tiny.button {
-  padding: (@tinyVerticalPadding + .05) @tinyHorizontalPadding @tinyVerticalPadding;
-  font-weight: @normal;
-}
-.ui.mini.button {
-  padding: (@miniVerticalPadding + .05) @miniHorizontalPadding @miniVerticalPadding;
-  font-weight: @normal;
 }
