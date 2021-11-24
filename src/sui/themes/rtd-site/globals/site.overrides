@@ -25,3 +25,51 @@
 .ui.brown.text { color: @brown; }
 .ui.grey.text { color: @grey; }
 .ui.black.text { color: @black; }
+
+
+/*******************************
+             Footer
+*******************************/
+footer {
+  color: @footerColor;
+
+  .ui.sub.header {
+    color: @footerHeadingsColor;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .ui.header .sub.header {
+    color: @footerHeadingsColor;
+  }
+  p,
+  .ui.list {
+    font-size: 14px;
+  }
+  a {
+    color: @footerColor;
+    text-decoration: none;
+  }
+  a:hover {
+    color: @footerHoverColor;
+    text-decoration: none;
+  }
+  .ui.list a.item:hover {
+    text-decoration: underline;
+  }
+  .ui.horizontal.list > .item {
+    > .icon {
+      color: @grey;
+    }
+    .header,
+    .sub.header,
+    .description {
+      color: @grey;
+      font-size: 13px;
+    }
+  }
+  .ui.horizontal.divider {
+    color: gray;
+    margin-bottom: 40px;
+  }
+}

@@ -83,3 +83,18 @@
        Accents
 --------------------*/
 @floatingShadow: -1px 1px 6px rgba(0,0,0, 0.15);
+
+
+/*-------------------
+       Footer
+--------------------*/
+
+/* Colors */
+@footerBackground         : @black;
+@footerSeparatorsColor    : fade(@white, 12%);
+
+@footerColor              : fade(@white, 75%);
+@footerHoverColor         : @white;
+@footerHeadingsColor      : fade(@primaryColor, 75%);
+
+@footerCopyrightsColor    : fade(@white, 35%);

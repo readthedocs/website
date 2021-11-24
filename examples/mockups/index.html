@@ -208,121 +208,179 @@
     ----------------------------------- -->
 
 
-    <!-- Footer 
-    ----------------------------------- -->
-    <footer id="footer">
-        
-      <section class="main">
-        <div class="ui container">
-
-          <div class="connections">
-
-            <div class="links">
-
-              <ul>
-                <li class="head">Product</li>
-                <li><a href="product.html">How it works</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="https://readthedocs.com/">for business</a></li>
-                <li><a href="https://www.ethicalads.io/advertisers/?ref=rtd">Advertise with Us</a></li>
-              </ul>
-              
-              <ul>
-                <li class="head">Company</li>
-                <li><a href="#">About</a></li>
-                <li><a href="https://docs.readthedocs.io/page/team.html">Meet the team</a></li>
-                <li><a href="https://blog.readthedocs.com/jobs/">Jobs</a></li>
-                <li><a href="https://blog.readthedocs.com/">Blog</a></li>
-              </ul>
-              
-              <ul>
-                <li class="head">Developers</li>
-                <li><a href="https://docs.readthedocs.io/en/stable/development/index.html">Developer documentation</a></li>
-                <li><a href="https://read-the-docs-guidelines.readthedocs-hosted.com/">Branding & Media Kit</a></li>
-                <li><a href="https://readthedocs.org/sustainability/">Going Ad-free</a></li>
-              </ul>
-              
-              <ul>
-                <li class="head">Getting Started</li>
-                <li><a href="https://docs.readthedocs.io/page/tutorial/">Tutorial</a></li>
-                <li><a href="https://docs.readthedocs.io/">Documentation</a></li>
-                <li class="head">Contributing</li>
-                <li><a href="https://docs.readthedocs.io/en/stable/contribute.html">to Read the Docs</a></li>
-                <li><a href="https://sphinx-rtd-theme.readthedocs.io/en/latest/contributing.html">to Our Sphinx theme</a></li>
-              </ul>
-              
-              <ul>
-                <li class="head">Support</li>
-                <li><a href="#">Github support guidelines</a></li>
-                <li><a href="https://readthedocs.org/support/">Site support</a></li>
-              </ul>
-
-            </div>
-
-            
-            <div class="marketing">
-
-              <div class="newsletter">
-                <h4 class="head">Stay updated</h4>
-                <p>Sign up for our newsletter to get our latest <a href="https://blog.readthedocs.com/">blog</a> updates delivered to your inbox weekly.</p>
-
-                <div class="ui input action fluid inverted">
-                  <input type="text" placeholder="email@host.com">
-                  <div class="ui button primary">Subscribe</div>
+    <!-- New Footer -->
+    <footer class="ui basic inverted segment very padded">
+      <div class="ui container">
+    
+          <div class="ui three column stackable doubling grid information very padded">
+    
+            <div class="column">
+              <h4 class="ui sub header">Stay Updated</h4>
+    
+              <div class="ui list">
+                <a href="https://blog.readthedocs.com/" class="item">Blog</a>
+                <div class="item">
+                  <a href="https://github.com/rtfd/readthedocs.org" rel="noopener noreferrer"><i class="icon large light github"></i></a>
+                  <a href="https://twitter.com/readthedocs" rel="noopener noreferrer"><i class="icon large light twitter"></i></a>
                 </div>
               </div>
-
-              <div class="social">
-                <i class="icon github"></i>
-                <i class="icon twitter"></i>
+    
+              <div class="ui form">
+                <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <p>Sign up for our newsletter to get our latest blog updates delivered to your inbox weekly.</p>
+    
+                  <div class="field">
+                    <label for="mce-EMAIL">Email</label>
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="you@example.com">
+                  </div>
+    
+                  <div id="mce-responses">
+                    <div class="ui hidden response" id="mce-error-response"></div>
+                    <div class="ui hidden response" id="mce-success-response"></div>
+                  </div>
+    
+                  <input class="ui primary button" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </form>
               </div>
-
             </div>
-
-            <div class="logo">
-              <img src="./images/logo-light.svg"/>
+    
+            <div class="column">
+              <h4 class="ui sub header">Get Involved</h4>
+    
+              <div class="ui list">
+                <a class="item" href="https://docs.readthedocs.io/page/intro/getting-started-with-sphinx.html">Getting Started Guide</a>
+                <a class="item" href="https://docs.readthedocs.io">Documentation</a>
+                <a class="item" href="https://docs.readthedocs.io/page/contribute.html">Contributing</a>
+                <a class="item" href="https://docs.readthedocs.io/page/team.html">Team</a>
+                <a class="item" href="https://docs.readthedocs.io/page/open-source-philosophy.html">Open Source Philosophy</a>
+              </div>
             </div>
-
+    
+            <div class="column">
+              <h4 class="ui sub header">Business Info</h4>
+    
+              <div class="ui list">
+                <a class="item" href="{{ advertising_url | default:'https://readthedocs.org/sustainability/advertising/' }}">Advertise with Us</a>
+                <a class="item" href="https://readthedocs.com">Read the Docs for Business</a>
+                <a class="item" href='{{ donate_url }}'>Supporters</a>
+                <a class="item" href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+                <a class="item" href="https://docs.readthedocs.io/page/terms-of-service.html">Terms of Service</a>
+                <a class="item" href="https://read-the-docs-guidelines.readthedocs-hosted.com/">Branding</a>
+              </div>
+            </div>
+    
           </div>
-          
-          <div class="sponsors">
-
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-            <a class="sponsor" href="#"><img src="./images/sponsors/sponsor-logo-light.svg" alt="Sponsor Name"></a>
-
+    
+          <div class="ui basic center aligned segment">
+            <div class="ui very relaxed horizontal list">
+              <div class="left aligned item">
+                <i class="large copyright outline middle aligned icon"></i>
+                <div class="content">
+                  <div class="header">Copyright</div>
+                  <div class="description">2021, Read the Docs, Inc & contributors</div>
+                </div>
+              </div>
+              <div class="left aligned item">
+                <i class="large code branch icon"></i>
+                <div class="content">
+                  <div class="header">Version</div>
+                  <div class="description">
+                    <a href="http://docs.readthedocs.io/page/changelog.html">
+                      <b>6.1.0</b>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="left aligned item">
+                <i class="large language icon"></i>
+                <div class="content">
+                  <div class="header">Language</div>
+                  <div class="description">
+                      <form action="/i18n/setlang/" method="post">
+                        <div class="field">
+                          <input name="next" type="hidden" value="/" />
+                        </div>
+                        <div class="ui dropdown">
+                          <span class="text">English</span>
+                          <i class="dropdown icon"></i>
+                          <div class="menu">
+                              <div class="item active">
+                              </div>
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-        </div>
-      </section>
-
-      
-      <section class="copyrights">
-        <div class="ui container">
-          <div class="left">
-            © Copyright 2021, Read the Docs, Inc & contributors | <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a> | <a href="https://docs.readthedocs.io/page/terms-of-service.html">Terms of Service</a>
+    
+          <div class="ui horizontal divider very padded">
+            Sponsored by
           </div>
-          <div class="right">
-            <span class="version">Version <b>6.1.0</b></span>&emsp;
-            <a class="status popup" title="Site status" href="https://status.readthedocs.com/"><i class="icon circle green"></i></a>
-            <a class="lang popup" title="Select language" href="#"><i class="icon world"></i></a>
+    
+    
+          <div class="ui six column doubling grid container">
+            <div class="column bottom aligned centered">
+              <div class="ui tiny header centered">
+                <a href="https://azure.microsoft.com" rel="noopener" target="_blank">
+                  <img class="ui tiny centered image" src="./images/sponsors/sponsor-logo-light.svg" alt="Microsoft Azure" />
+                  Microsoft Azure
+                  <div class="sub header">Cloud Computing</div>
+                </a>
+              </div>
+            </div>
+            <div class="column bottom aligned centered">
+              <div class="ui tiny header centered">
+                <a href="https://cloudflare.com" rel="noopener" target="_blank">
+                  <img class="ui tiny centered image" src="./images/sponsors/sponsor-logo-light.svg" alt="CloudFlare">
+                  Cloudflare
+                  <div class="sub header">DNS &amp; SSL</div>
+                </a>
+              </div>
+            </div>
+            <div class="column bottom aligned centered">
+              <div class="ui tiny header centered">
+                <a href="https://sentry.io/" rel="noopener" target="_blank">
+                  <img class="ui tiny centered image" src="./images/sponsors/sponsor-logo-light.svg" alt="Sentry">
+                  Sentry
+                  <div class="sub header">Monitoring</div>
+                </a>
+              </div>
+            </div>
+            <div class="column bottom aligned centered">
+              <div class="ui tiny header centered">
+                <a href="https://www.elastic.co/" rel="noopener" target="_blank">
+                  <img class="ui tiny centered image" src="./images/sponsors/sponsor-logo-light.svg" alt="Elastic">
+                  Elastic
+                  <div class="sub header">Search</div>
+                </a>
+              </div>
+            </div>
+            <div class="column bottom aligned centered">
+              <div class="ui tiny header centered">
+                <a href="https://newrelic.com/" rel="noopener" target="_blank">
+                  <img class="ui tiny centered image" src="./images/sponsors/sponsor-logo-light.svg" alt="New Relic">
+                  New Relic
+                  <div class="sub header">Performance</div>
+                </a>
+              </div>
+            </div>
+            <div class="column bottom aligned centered">
+              <div class="ui tiny header centered">
+                <a href="https://www.pagerduty.com/" rel="noopener" target="_blank">
+                  <img class="ui tiny centered image" src="./images/sponsors/sponsor-logo-light.svg" alt="PagerDuty">
+                  PagerDuty
+                  <div class="sub header">Monitoring</div>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
+    
+      </div>
     </footer>
-    <!-- end Footer
-    ----------------------------------- -->
+    <!-- end New Footer -->
+
 
   </body>
 </html>
