@@ -94,7 +94,6 @@
 @footerSeparatorsColor    : fade(@white, 12%);
 
 @footerColor              : fade(@white, 75%);
-@footerHoverColor         : @white;
 @footerHeadingsColor      : fade(@primaryColor, 75%);
 
 @footerCopyrightsColor    : fade(@white, 35%);

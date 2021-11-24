@@ -59,13 +59,14 @@ section.ui.vertical.segment .column {
   & when (@variationSegmentInverted) {
   .ui.inverted.segments a,
   .ui.inverted.segment a {
-    color: fade(@white, 85%);
+    color: @white;
+    opacity: .85;
 
     &:hover,
     &:focus,
     &:active,
     &.active {
-      color: @white;
+      opacity: 1;
     }
   }
 }

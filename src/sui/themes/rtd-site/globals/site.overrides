@@ -39,12 +39,8 @@ footer {
   .ui.list {
     font-size: 14px;
   }
-  a {
-    color: @footerColor;
-    text-decoration: none;
-  }
+  a,
   a:hover {
-    color: @footerHoverColor;
     text-decoration: none;
   }
   .ui.list a.item:hover {
