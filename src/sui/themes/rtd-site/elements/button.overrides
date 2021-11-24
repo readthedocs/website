@@ -94,20 +94,3 @@
   padding: (@miniVerticalPadding + .05) @miniHorizontalPadding @miniVerticalPadding;
   font-weight: @normal;
 }
-
-/*******************************
-      Group Wrapper (new)
-*******************************/
-.group.wrapper {
-  .ui.button {
-    margin-bottom: @horizontalMargin;
-  }
-  .ui.button.large {
-    margin-right: 6px;
-    margin-bottom: 8px;
-  }
-}
-/* behavior with other elements */
-.text.lead + .group.wrapper {
-  margin-top: 2em;
-}
