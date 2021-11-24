@@ -1,36 +1,27 @@
 /*******************************
-           Topnav
+          Overrides
 *******************************/
-/*------------------------------
-Topnav is an extension of the menu component.
-Add class .topnav to a .menu element to apply the additional styling.
-------------------------------*/
-
-
-
-/*-------------------
-       Logo
---------------------*/
-.topnav .readthedocs-logo {
-  width: 220px;
-}
-
-/*-------------------
-       Menu
---------------------*/
-.ui.menu.topnav {
+.ui.menu.fixed {
   border: none;
   box-shadow: 0 4px 8px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
+}
+
+/*******************************
+           Topnav
+*******************************/
+// Topnav is an extension of .menu
+
+/*-------------------
+        Logo
+--------------------*/
+#topnav .readthedocs-logo {
+  width: 220px;
 }
 
 /*-------------------
        Links
 --------------------*/
-
-/* Hover
---------------------*/
-
-.ui.menu.topnav .item {
+#topnav.ui.menu .item {
   position: relative;
 
   &:hover,
@@ -53,9 +44,3 @@ Add class .topnav to a .menu element to apply the additional styling.
     }
   }
 } 
-
-/* Pressed
---------------------*/
-
-/* Active 
---------------------*/
