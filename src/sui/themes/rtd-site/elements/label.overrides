@@ -1,6 +1,0 @@
-// Used for form errors, match error color of field
-.ui.negative.label {
-  color: @negativeTextColor;
-  border-color: @negativeBorderColor;
-  background-color: @negativeBackgroundColor;
-}
