@@ -1,8 +1,0 @@
-.ui.popupcard.popup {
-  padding: 0px;
-
-  > .ui.card {
-    box-shadow: none;
-    border: none;
-  }
-}

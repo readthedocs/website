@@ -1,125 +1,6 @@
 /*******************************
-    Import Custom Templates
+             Text
 *******************************/
-//
-// List here our custom templates and components that extend the base framework
-// and then call a function to load them
-//
-// TODO1: Make these sharable across different themes (ie: common, site and app)
-// using the same inheritance hierarchy logic as the rest of the site files.
-//
-// TODO2: The mixin bellow throws a 'Recursive variable definition' exception.
-// Find what's causing it and use it instead of the current code.
-//
-// TODO3: Move this back to theme.less.
-//
-// note: Current paths in the commented code are relative to theme.less.
-//
-// Template List
-// ------
-// /* @templates: homepage topnav footer; */
-
-// Mixin
-// ------
-// /* 
-//   .loadTemplateOverrides(@list, @index:1) when (@index <= length(@list))  { 
-//   @template: extract(@list, @index);
-//   //@template: 'homepage';
-  
-//   @import (optional) "themes/rtd-site/templates/@{template}.variables";
-//   @import "themes/rtd-site/templates/@{template}.overrides";
-  
-//   .loadTemplateOverrides(@list, @index+1);
-// }
-//   .loadTemplateOverrides(@templates); */
-
-
-// Import templates
-//
-// temporary method
-// see TODO's above
-// ------
-@import (optional) "../templates/topnav.variables";
-@import "../templates/topnav.overrides";
-
-@import (optional) "../templates/footer.variables";
-@import "../templates/footer.overrides";
-
-@import (optional) "../templates/homepage.variables";
-@import "../templates/homepage.overrides";
-
-@import (optional) "../templates/product.variables";
-@import "../templates/product.overrides";
-
-
-
-/*******************************
-             Page
-*******************************/
-
-body {
-  //font-weight: @normal;
-  padding: @topnavHeight 0 0;
-}
-
-
-/*******************************
-             Headers
-*******************************/
-
-
-/*******************************
-          Emphasis
-*******************************/
-.weight.light {
-  font-weight: 300;
-}
-.weight.regular {
-  font-weight: 400;
-}
-.weight.bold {
-  font-weight: 600;
-}
-
-/*-------------------
-        Sizes
---------------------*/
-
-/*-------------------
-        Sizes
---------------------*/
-.text.lead {
-  font-size: 20px;
-  line-height: @lineHeight;
-}
-.text.shout {
-  font-size: 30px;
-  line-height: @lineHeight;
-}
-.text.lead,
-.text.shout,
-.text.thin {
-  font-weight: 300;
-}
-/* behavior with other elements */
-.ui.header .text.lead {
-  margin-top: 1em;
-}
-
-/*-------------------
-      Paragraph
---------------------*/
-
-//@paragraphMargin
-
-p.small {
-  font-size: @small;
-}
-
-/*-------------------
-        Links
---------------------*/
-
 
 /*-------------------
         Colors
@@ -140,28 +21,184 @@ p.small {
 
 
 /*******************************
-         Scrollbars
+             Footer
 *******************************/
+footer {
+  color: @footerColor;
+
+  .ui.sub.header {
+    color: @footerHeadingsColor;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .ui.header .sub.header {
+    color: @footerHeadingsColor;
+  }
+  p,
+  .ui.list {
+    font-size: 14px;
+  }
+  a,
+  a:hover {
+    text-decoration: none;
+  }
+  .ui.list a.item:hover {
+    text-decoration: underline;
+  }
+  .ui.horizontal.list > .item {
+    > .icon {
+      color: @grey;
+    }
+    .header,
+    .sub.header,
+    .description {
+      color: @grey;
+      font-size: 13px;
+    }
+  }
+  .ui.horizontal.divider {
+    color: gray;
+    margin-bottom: 40px;
+  }
+}
 
 
 /*******************************
-          Highlighting
+           homepage
 *******************************/
 
+/*-------------------
+       Callout
+--------------------*/
+#callout {
 
-/*******************************
-        Fancy Lists (New)
-*******************************/
-//.taglist {}
+  @media (max-width : (@computerBreakpoint - 1px)) {
+    .column {
+      text-align: center;
+    }
+    .column + .column {
+      display: none;
+    }
+  }
 
-.checklist {
-  list-style: none;
-  
-  li {
+}
+
+/*-------------------
+    Announcements
+--------------------*/
+#announcements {
+  padding: 0;
+
+  .container > .ui.segment {
+    z-index: 10;
+    margin: -80px 0 -200px;
+    box-shadow: @floatingShadow;
+  }
+  .column {
     position: relative;
+    padding: 20px 20px 15px;
   }
-  li .icon {
+  .column:after {
+    display: block;
+    content: "";
     position: absolute;
-    left: 0;
+    top: 20px;
+    bottom: 20px;
+    right: 0;
+    width: 1px;
+    background-color: @internalBorderColor;
   }
+  .column:last-child:after {
+    display: none;
+  }
+  @media (max-width : @largestMobileScreen) {
+    .column:after {
+      top: auto;
+      bottom: 0;
+      right: 20px;
+      left: 20px; 
+      width: auto;
+      height: 1px;
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+}
+
+/*-------------------
+  Infographics
+--------------------*/
+#infographics {
+  padding-top: 250px;
+
+  h2 {
+    font-size: 45px;
+    font-weight: 300;
+  }
+}
+
+/*******************************
+           Product
+*******************************/
+
+
+/*-------------------
+     How-it-works
+--------------------*/
+#how-it-works {
+  
+}
+
+
+/*-------------------
+   User Segments
+--------------------*/
+#user-segments {
+  
+}
+
+
+/*-------------------
+      Features
+--------------------*/
+@featuresMarginHorizontal: 15px;
+
+#features {
+  padding-bottom: 7rem;
+
+  h2 {
+    font-size: 45px;
+    font-weight: 300;
+  }
+
+  h4{
+    font-size: 25px;
+    font-weight: 400;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -@featuresMarginHorizontal;
+  }
+  .feature {
+    width:	calc(50% - @featuresMarginHorizontal * 2);
+    background: @white;
+    margin: @featuresMarginHorizontal;
+    padding: 40px 30px 20px;
+    border-radius: @defaultBorderRadius;
+    border: @borderWidth solid @borderColor;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .taglist {
+    margin-top: 30px;
+  }
+  .tag {}
 }

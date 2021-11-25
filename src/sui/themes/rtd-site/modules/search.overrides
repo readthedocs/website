@@ -1,5 +1,0 @@
-// Fix a bug with display of a square icon in search. This bug was found on the
-// project creation page, in the search dropdown.
-.ui.search > .results .result .image {
-  width: auto;
-}

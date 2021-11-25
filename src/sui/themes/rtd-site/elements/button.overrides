@@ -25,89 +25,66 @@
       Gradient
 --------------------*/
 
-.ui.secondary.buttons.gradient .button,
-.ui.secondary.button.gradient {
-  background-image: @secondaryGradientBackgroundImage;
-}
-.ui.secondary.buttons.gradient .button:hover,
-.ui.secondary.button.gradient:hover {
-  background-image: @secondaryGradientHoverBackgroundImage;
-}
-.ui.secondary.buttons .button:focus,
-.ui.secondary.button:focus {
-  background-image: @secondaryGradientFocusBackgroundImage;
-}
-.ui.secondary.buttons .active.button,
-.ui.secondary.buttons .active.button:active,
-.ui.secondary.active.button,
-.ui.secondary.button .active.button:active {
-  background-image: @secondaryGradientActiveBackgroundImage;
-}
+.ui.secondary
+ {
+  &.buttons.gradient .button,
+  &.button.gradient {
+    background-image: @secondaryGradientBackgroundImage;
+  }
+  &.buttons.gradient .button:hover,
+  &.button.gradient:hover {
+    background-image: @secondaryGradientHoverBackgroundImage;
+  }
+  &.buttons .button:focus,
+  &.button:focus {
+    background-image: @secondaryGradientFocusBackgroundImage;
+  }
+  &.buttons .active.button,
+  &.buttons .active.button:active,
+  &.active.button,
+  &.button .active.button:active {
+    background-image: @secondaryGradientActiveBackgroundImage;
+  }
+ }
+
 
 
 /*******************************
-     Outline Variants (new)
+        Basic Variants
 *******************************/
-/* 
-  TODO1: Override .basic buttons with these styles and remove the .outline class.
-  TODO2: Add the full list of .basic buttons to our /examples/theme/index.html.
-*/
-
-.ui.outline.button {
-  background: transparent none;
-  text-shadow: none !important;
+.ui.basic.button {
   transition: box-shadow @defaultDuration;
 }
-/* Mixin for .outline states */
-.buttonOutlineState(@color) {
-  box-shadow: 0px 0px 0px 1px @color inset !important;
-  color: @color;
-
+/* Mixin for .basic states */
+.buttonBasicState(@color) {
   &:hover,
   &:focus,
   &.active,
   &.active:focus {
-    box-shadow: 0px 0px 0px 2px @color inset !important;
-    background: none !important;
+    box-shadow: 0px 0px 0px 2px @color inset;
   }
 }
 
 /* States */
-.ui.outline.button {
+.ui.basic.button {
 
-  &.black     { .buttonOutlineState(@black) }
-  &.primary   { .buttonOutlineState(@primaryColor) }
-  &.secondary { .buttonOutlineState(@secondaryColor) }
-  &.blue      { .buttonOutlineState(@primaryColor) }
-  &.green      { .buttonOutlineState(@green) }
+  &.primary   { .buttonBasicState(@primaryColor) }
+  &.secondary { .buttonBasicState(@secondaryColor) }
+  &.positive  { .buttonBasicState(@positiveColor) }
+  &.negative  { .buttonBasicState(@negativeColor) }
 
-}
+   &.red      { .buttonBasicState(@red) }
+   &.orange   { .buttonBasicState(@orange) }
+   &.yellow   { .buttonBasicState(@yellow) }
+   &.olive    { .buttonBasicState(@olive) }
+   &.green    { .buttonBasicState(@green) }
+   &.teal     { .buttonBasicState(@teal) }
+   &.blue     { .buttonBasicState(@blue) }
+   &.violet   { .buttonBasicState(@violet) }
+   &.purple   { .buttonBasicState(@purple) }
+   &.pink     { .buttonBasicState(@pink) }
+   &.brown    { .buttonBasicState(@brown) }
+   &.grey     { .buttonBasicState(@grey) }
+   &.black    { .buttonBasicState(@black) }
 
-/*******************************
-        Size Variants
-*******************************/
-.ui.tiny.button {
-  padding: (@tinyVerticalPadding + .05) @tinyHorizontalPadding @tinyVerticalPadding;
-  font-weight: @normal;
-}
-.ui.mini.button {
-  padding: (@miniVerticalPadding + .05) @miniHorizontalPadding @miniVerticalPadding;
-  font-weight: @normal;
-}
-
-/*******************************
-      Group Wrapper (new)
-*******************************/
-.group.wrapper {
-  .ui.button {
-    margin-bottom: @horizontalMargin;
-  }
-  .ui.button.large {
-    margin-right: 6px;
-    margin-bottom: 8px;
-  }
-}
-/* behavior with other elements */
-.text.lead + .group.wrapper {
-  margin-top: 2em;
 }
