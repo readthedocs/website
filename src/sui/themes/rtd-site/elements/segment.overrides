@@ -53,20 +53,37 @@ section.ui.vertical.segment .column {
 }
 
 /* Inverted */
-/* links
-   by default Semantic does not account for link color inside inverted segments */
+// by default Semantic does not account for several elements' color inside inverted segments
 
-  & when (@variationSegmentInverted) {
-  .ui.inverted.segments a,
-  .ui.inverted.segment a {
-    color: @white;
-    opacity: .85;
+& when (@variationSegmentInverted) {
+  .ui.inverted.segments,
+  .ui.inverted.segment {
 
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      opacity: 1;
+    // Headers
+    .ui.header {
+      color: @white;
+    }
+
+    // links
+    a {
+      color: @white;
+      opacity: .85;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    // Lists
+    .ui.list {
+      .list > .item .description,
+      > .item .description {
+        color: @white;
+      }
     }
   }
+
 }

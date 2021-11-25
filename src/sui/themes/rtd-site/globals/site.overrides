@@ -23,8 +23,9 @@
 /*******************************
              Footer
 *******************************/
-footer {
+#footer {
   color: @footerColor;
+  margin-top: 0;;
 
   .ui.sub.header {
     color: @footerHeadingsColor;
@@ -141,64 +142,44 @@ footer {
 }
 
 /*******************************
-           Product
+Product
 *******************************/
 
-
 /*-------------------
-     How-it-works
---------------------*/
-#how-it-works {
-  
-}
-
-
-/*-------------------
-   User Segments
+User Segments
 --------------------*/
 #user-segments {
-  
-}
 
-
-/*-------------------
-      Features
---------------------*/
-@featuresMarginHorizontal: 15px;
-
-#features {
-  padding-bottom: 7rem;
-
-  h2 {
-    font-size: 45px;
-    font-weight: 300;
-  }
-
-  h4{
-    font-size: 25px;
-    font-weight: 400;
-  }
-  
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -@featuresMarginHorizontal;
-  }
-  .feature {
-    width:	calc(50% - @featuresMarginHorizontal * 2);
-    background: @white;
-    margin: @featuresMarginHorizontal;
-    padding: 40px 30px 20px;
-    border-radius: @defaultBorderRadius;
-    border: @borderWidth solid @borderColor;
-    
+  .ui.container > .grid > .column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .taglist {
-    margin-top: 30px;
+  .ui.list {
+    margin: 30px 0 40px;
   }
-  .tag {}
+}
+
+/*-------------------
+Features
+--------------------*/
+#features {
+  h2 {
+    font-size: 45px;
+    font-weight: 300;
+  }
+  h4{
+    font-size: 25px;
+    font-weight: 400;
+  }  
+  .ui.cards > .card {
+    padding: 20px 14px 8px;
+    > .content {
+      border-top: none;
+    }
+    > .extra {
+      border-top: none !important;// needs !important because SUI already sets this rule with !important
+    }
+  }
 }
