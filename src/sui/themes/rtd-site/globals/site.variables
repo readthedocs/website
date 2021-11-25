@@ -23,7 +23,7 @@
 /*-------------------
     Borders
 --------------------*/
-@borderColor           : rgba(122 124 126, 0.25);// Make it a stronger gray so it can work on inverted backgrounds too
+@borderColor           : rgba(122, 124, 126, .25);// Make it a stronger gray so it can work on inverted backgrounds too
 
 /*-------------------
     Brand Colors
