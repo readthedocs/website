@@ -1,0 +1,7 @@
+.card .label.ribbon {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.card > .content > .ui.header {
+  margin: @headerLineHeightOffset 0 0;
+}

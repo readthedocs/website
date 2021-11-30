@@ -1,2 +1,2 @@
 /* Ribbon */
-@ribbonTriangleSize: .8em;
+@ribbonTriangleSize: .6em;

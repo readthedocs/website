@@ -192,21 +192,18 @@ Pricing
 /*-------------------
 Tables
 --------------------*/
-.ui.card .label.ribbon {
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
 #pricing #tables {
 
-  .button.fluid {
-    margin: 40px 0;
+  .ui.header.divider {
+    margin-top: 42px;
   }
 
+  .card .button.fluid {
+    margin: 40px 0;
+  }
   .card > .content > .description {
     margin: 50px 0 20px;
   }
-  
   .card {
     > .extra {
       border-top: none !important;// needs !important because SUI already sets this rule with !important
