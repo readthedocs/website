@@ -1,0 +1,43 @@
+version: 2.1
+
+commands:
+  run-lint:
+    description: "Run code linter"
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run lint
+  run-build:
+    description: "Ensure built assets are up to date"
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build
+      - run:
+          name: Ensure built assets are up to date
+          command: |
+            if [[ `git status dist/ --porcelain` ]]
+            then
+              echo "ERROR: assets are out of date. Make sure to run 'npm run build' on your branch."
+              git status dist/ --porcelain
+              exit 1
+            fi
+
+jobs:
+  lint:
+    docker:
+      - image: 'cimg/node:14.18'
+    steps:
+      - run-lint: {}
+  build:
+    docker:
+      - image: 'cimg/node:14.18'
+    steps:
+      - run-build: {}
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - lint
+      - build

@@ -49,7 +49,7 @@ You should be able to execute the various npm commands below at this point.
 Running the development server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can run the development server with::
+You can run the development server with:
 
 .. code:: console
 
@@ -60,6 +60,25 @@ http://localhost:8080/
 
 You can view some of the test HTML on the development server as well, for
 example http://localhost:8080/examples/theme/
+
+Running linting and formatting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Similar to other front end projects, and our Python code, we use automatic
+linting and formatting for styling code to a unified format. For CSS/JS, we use
+``prettier``, which is opinionated but mostly makes good code style choices.
+
+To run linting checks, which will only report errors:
+
+.. code:: console
+
+    $ npm run lint
+
+To automatically format code:
+
+.. code:: console
+
+    $ npm run format
 
 Build production assets
 ~~~~~~~~~~~~~~~~~~~~~~~
