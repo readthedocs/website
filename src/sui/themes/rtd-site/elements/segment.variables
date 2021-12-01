@@ -1,0 +1,11 @@
+// TODO figure this one out. Attached bits are too wide.
+//@attachedHorizontalOffset: -@borderWidth;
+
+/*******************************
+             Types
+*******************************/
+
+/* Placeholder */
+@placeholderPadding: @padding;
+@placeholderBorderColor: @borderColor;
+@placeholderBoxShadow: none;

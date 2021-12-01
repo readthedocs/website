@@ -1,0 +1,46 @@
+/*******************************
+          Overrides
+*******************************/
+.ui.menu.fixed {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
+}
+
+/*******************************
+           Topnav
+*******************************/
+// Topnav is an extension of .menu
+
+/*-------------------
+        Logo
+--------------------*/
+#topnav .readthedocs-logo {
+  width: 220px;
+}
+
+/*-------------------
+       Links
+--------------------*/
+#topnav.ui.menu .item {
+  position: relative;
+
+  &:hover,
+  &.active,
+  &.active:hover {
+    background: none;
+  }
+  
+  &.active {
+    
+    &:after {
+      display: block;
+      content: "";
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: @itemHorizontalPadding;
+      right: @itemHorizontalPadding;
+      background: @primaryColor;
+    }
+  }
+} 

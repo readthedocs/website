@@ -1,0 +1,22 @@
+@import "icon.font.overrides";
+
+/*******************************
+           Variations
+*******************************/
+
+/*-------------------
+       Colors
+--------------------*/
+
+/* Light */
+i.light.icon {
+  color: @lightGrey !important;
+}
+i.inverted.light.icon {
+  color: @grey !important;
+}
+i.inverted.bordered.light.icon,
+i.inverted.circular.light.icon {
+  background-color: @lightGrey !important;
+  color: @black !important;
+}
