@@ -1,0 +1,28 @@
+# This is the Read the Docs configuration file. This file support per-version configuration
+# of our project. This file is required in each active branch, to configure the build process
+# and all of our dependencies
+#
+version: 2
+
+# We need PDF and ePUB output for several customers
+formats:
+  - epub
+  - pdf
+
+# We're using the latest Python for our project, and so also require this for
+# our documentation. All of our dependencies are installed to build our API
+# documentation.
+build:
+  os: ubuntu-20.04
+  tools:
+    python: "3.10"
+
+python:
+  install:
+    - pip: '.'
+
+search:
+  ranking:
+    # Our tutorials are our most helpful content, make sure users find this
+    # first when searching
+    tutorials/*: +5
