@@ -23,8 +23,9 @@
 /*******************************
              Footer
 *******************************/
-footer {
+#footer {
   color: @footerColor;
+  margin-top: 0;
 
   .ui.sub.header {
     color: @footerHeadingsColor;
@@ -137,5 +138,48 @@ footer {
   h2 {
     font-size: 45px;
     font-weight: 300;
+  }
+}
+
+/*******************************
+Product
+*******************************/
+
+/*-------------------
+User Segments
+--------------------*/
+#user-segments {
+
+  .ui.container > .grid > .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ui.list {
+    margin: 30px 0 40px;
+  }
+}
+
+/*-------------------
+Features
+--------------------*/
+#features {
+  h2 {
+    font-size: 45px;
+    font-weight: 300;
+  }
+  h4{
+    font-size: 25px;
+    font-weight: 400;
+  }  
+  .ui.cards > .card {
+    padding: 20px 14px 8px;
+    > .content {
+      border-top: none;
+    }
+    > .extra {
+      border-top: none !important;// needs !important because SUI already sets this rule with !important
+    }
   }
 }

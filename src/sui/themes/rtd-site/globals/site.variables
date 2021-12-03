@@ -21,8 +21,9 @@
 
 
 /*-------------------
-    Border Radius
+    Borders
 --------------------*/
+@borderColor           : rgba(122, 124, 126, .25);// Make it a stronger gray so it can work on inverted backgrounds too
 
 /*-------------------
     Brand Colors
@@ -75,7 +76,7 @@
 
 /*---  Colors  ---*/
 @orange              : #e24d33;
-@green               : #159e29;
+@green               : #479830;
 @blue                : #1171b0;
 @black               : #252a31;
 
