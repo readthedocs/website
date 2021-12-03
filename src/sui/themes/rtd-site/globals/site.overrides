@@ -25,7 +25,7 @@
 *******************************/
 #footer {
   color: @footerColor;
-  margin-top: 0;;
+  margin-top: 0;
 
   .ui.sub.header {
     color: @footerHeadingsColor;
