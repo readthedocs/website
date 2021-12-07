@@ -1,4 +1,12 @@
 /*******************************
+          Scafolding
+*******************************/
+body {
+  padding-top: @topnavRenderedHeight;
+}
+
+
+/*******************************
              Text
 *******************************/
 
@@ -72,7 +80,7 @@
 /*-------------------
        Callout
 --------------------*/
-#callout {
+#homepage #callout {
 
   @media (max-width : (@computerBreakpoint - 1px)) {
     .column {
@@ -93,7 +101,7 @@
 
   .container > .ui.segment {
     z-index: 10;
-    margin: -80px 0 -200px;
+    margin: -20px 0 -200px;
     box-shadow: @floatingShadow;
   }
   .column {

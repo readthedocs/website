@@ -3,6 +3,7 @@
 /*******************************
          Site Settings
 *******************************/
+@topnavRenderedHeight: 74px;// This does not set the height of the topnav, instead, it can be used for distancing the body and floating elements from the topnav. Note that when the topnav is made responsive the same height should not be used on mobile.
 
 /*-------------------
        Fonts

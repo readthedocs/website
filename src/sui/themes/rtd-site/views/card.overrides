@@ -5,3 +5,13 @@
 .card > .content > .ui.header {
   margin: @headerLineHeightOffset 0 0;
 }
+
+.ui.cards > .card:not(.borderless) > .image > img,
+.ui.card:not(.borderless) > .image > img {
+  width: calc(100% + 2px);
+  margin: -1px;
+}
+.ui.cards > .card.borderless,
+.ui.card.borderless {
+  box-shadow: none;
+}
