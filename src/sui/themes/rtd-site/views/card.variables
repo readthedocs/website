@@ -1,0 +1,7 @@
+// Header
+@headerFontWeight: 600;
+@headerFontSize: 1.1em;
+@headerLineHeight: @headerLineHeight;
+
+// Meta
+@metaFontSize: .92em;
