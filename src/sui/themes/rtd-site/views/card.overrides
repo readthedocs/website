@@ -22,3 +22,8 @@
     padding-right: 0;
   }
 }
+
+.ui.cards > .card .meta,
+.ui.card .meta {
+  line-height: @headerLineHeight;
+}
