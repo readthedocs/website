@@ -4,7 +4,7 @@
     <script src="/dist/js/vendor.js"></script>
     <script src="/dist/js/site.js"></script>
   </head>
-  <body>
+  <body id="company">
     
     <!-- Top Menu -->
     <div class="ui menu fixed borderless" id="topnav">
@@ -67,7 +67,7 @@
 
           <div class="column">
             <div class="ui basic segment center aligned">
-              <h3>Our mission</h3>
+              <h3 class="ui header big">Our mission</h3>
               <p>
                 Technical teams rely on up-to-date documentation and require solid methods and tools to help creating continuous documentation that will improve team efficiency and productivity.
               </p>
@@ -79,7 +79,7 @@
 
           <div class="column">
             <div class="ui basic segment center aligned">
-              <h3>We've grown</h3>
+              <h3 class="ui header big">We've grown</h3>
               <p>
                 Read the Docs has grown substantially since its beginning as a weekend project and is closing in on being a top-1000 site on the internet.
               </p>
@@ -91,10 +91,7 @@
 
           <div class="column">
             <div class="ui basic segment center aligned">
-              <h3>Community</h3>
-              <p>
-                We fund our operations through <a>advertising</a>, corporate-hosted documentation with <a>Read the Docs for Business</a>, donations, and we are supported by a number of generous <a>sponsors</a>.
-              </p>
+              <h3 class="ui header big">Community</h3>
               <p>
                 Read the Docs is open source and community supported. It depends on users like you to contribute to development, support, and operations. You can learn more about how to <a href="https://docs.readthedocs.io/page/contribute.html">contribute</a> in our
                 docs. Thanks so much to our wonderful <a href="https://docs.readthedocs.io/page/team.html">community team</a> who helps us
@@ -136,7 +133,7 @@
               </div>
               <div class="content">
                 <div class="header">Eric Holscher</div>
-                <div class="meta">All teams</div>
+                <div class="meta">Job Title</div>
               </div>
             </div>
 
@@ -146,7 +143,7 @@
               </div>
               <div class="content">
                 <div class="header">Anthony Johnson</div>
-                <div class="meta">All teams</div>
+                <div class="meta">Job Title</div>
               </div>
             </div>
 
@@ -156,7 +153,7 @@
               </div>
               <div class="content">
                 <div class="header">Manuel Kaufmann</div>
-                <div class="meta">Backend, Operations, Support</div>
+                <div class="meta">Job Title</div>
               </div>
             </div>
 
@@ -166,7 +163,7 @@
               </div>
               <div class="content">
                 <div class="header">Santos Gallegos</div>
-                <div class="meta">Backend, Operations, Support</div>
+                <div class="meta">Job Title</div>
               </div>
             </div>
 
@@ -176,7 +173,7 @@
               </div>
               <div class="content">
                 <div class="header">Juan Luis Cano</div>
-                <div class="meta">Advocacy, Support</div>
+                <div class="meta">Job Title</div>
               </div>
             </div>
 
@@ -186,109 +183,44 @@
               </div>
               <div class="content">
                 <div class="header">Ana Costa</div>
-                <div class="meta">Frontend</div>
+                <div class="meta">Job Title</div>
               </div>
             </div>
 
           </div>
         </div>
-
 
         <div class="ui vertical basic segment padded">
-          <div class="ui cards three doubling">
+          <div class="ui segment very padded raised">
+
+            <h3 class="ui header"><small><i class="icon heart"></i></small> Contributors</h3>
             
-            <div class="ui raised card">
-              <div class="content">
-                <div class="ui basic vertical segment compact">
-                  <h4 class="ui header">Backend Team</h4>
+            <div class="ui segment vertical padded">
+              <div class="ui grid stackable">
+                <div class="six wide column">
+                  <p>
+                    We are also honored to have several external contributors that have kept with us for a long time and helped us a lot along the way. Here we list just a few but the full list can be found at <a href="https://github.com/readthedocs/readthedocs.org/graphs/contributors">Github</a>.
+                  </p>
+                  <p>
+                    A heart felt thanks to all of you!
+                  </p>
                 </div>
-                <div class="description">
-                  <p>The Backend folks develop the Django code that powers the backend of the project.</p>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui segment compact tiny">
-                  <i class="icon users"></i> 
-                  Eric Holscher, Anthony Johnson, Manuel Kaufmann, Santos Gallegos
-                </div>
-              </div>
-            </div>
-            
-            <div class="ui raised card">
-              <div class="content">
-                <div class="ui basic vertical segment compact">
-                  <h4 class="ui header">Frontend Team</h4>
-                </div>
-                <div class="description">
-                  <p>The members of the Frontend Team care about UX, CSS, HTML, and JavaScript, and they maintain the project UI as well as the Sphinx theme.</p>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui segment compact tiny">
-                  <i class="icon users"></i> 
-                  Eric Holscher, Anthony Johnson, Ana Costa
-                </div>
-              </div>
-            </div>
-            
-            <div class="ui raised card">
-              <div class="content">
-                <div class="ui basic vertical segment compact">
-                  <h4 class="ui header">Operations Team</h4>
-                </div>
-                <div class="description">
-                  <p>As part of operating the site, members of the Operations Team maintain a 24/7 on-call rotation. This means that folks have to be available and have their phone in service.</p>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui segment compact tiny">
-                  <i class="icon users"></i> 
-                  Eric Holscher, Anthony Johnson, Manuel Kaufmann, Santos Gallegos
-                </div>
-              </div>
-            </div>
-            
-            <div class="ui raised card">
-              <div class="content">
-                <div class="ui basic vertical segment compact">
-                  <h4 class="ui header">Advocacy Team</h4>
-                </div>
-                <div class="description">
-                  <p>The members of the Advocacy Team spread the word about all the work we do, and seek to understand the users priorities and feedback.</p>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui segment compact tiny">
-                  <i class="icon users"></i> 
-                  Eric Holscher, Anthony Johnson, Juan Luis Cano
-                </div>
-              </div>
-            </div>
-            
-            <div class="ui raised card">
-              <div class="content">
-                <div class="ui basic vertical segment compact">
-                  <h4 class="ui header">Support Team</h4>
-                </div>
-                <div class="description">
-                  <p>Helps our thousands of users using the service, addressing tasks like resetting passwords, enable experimental features, or troubleshooting build errors.</p>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui segment compact tiny">
-                  <i class="icon users"></i> 
-                  Eric Holscher, Anthony Johnson, Manuel Kaufmann, Santos Gallegos, Juan Luis Cano
-                </div>
-              </div>
-            </div>
-            
-            <div class="ui raised card">
-              <div class="content">
-                <div class="ui basic vertical segment compact">
-                  <h4 class="ui header"><i class="icon heart"></i> Contributors</h4>
-                </div>
-                <div class="description">
-                  <p>We are also honored to have several external contributors that have kept with us for a long time and helped us a lot along the way.</p>
+                <div class="ten wide column">
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
+                  <a class="ui avatar" href=""><img class="ui avatar image" src="./images/team/default-avatar.svg"><span>Username</span></a>
                 </div>
               </div>
             </div>
@@ -300,138 +232,67 @@
     </section>
 
 
-    <!--  -->
-    <section class="ui vertical light segment very padded" id="">
+    <!-- Resources -->
+    <section class="ui vertical light segment padded" id="resources">
+
       <div class="ui container">
+        <div class="ui grid stackable three column">
 
-        <h1 class="ui header massive center aligned">
-          History
-        </h1>
-        <div class="ui basic vertical huge segment center aligned">
-          <p>
-            We can include a longer history here and break it up in columns and add exiting images.
-          </p>
+          <div class="column">
+            <div class="ui basic segment">
+              <h3 class="ui header huge">Our Blog</h3>
+              <p>
+                This is where we post all the week to week progress updates, announcements and news. If it's something meriting extra visibility we might also display in the website or inside the app, depending of the specific scope but, if it's written somewhere, you can always be sure to also find it in <a href="https://blog.readthedocs.com/">our blog</a>.
+              </p>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="ui basic segment">
+              <h3 class="ui header huge">Our docs</h3>
+              <p>
+                The docs is where you'll find in-depth documentation about Read the Docs. From <i>"How to"</i> style guides to common usages, troubleshooting and advanced knowledge on how to work with our application, you'll find it all and probably more — <i>because we</i> <small><i class="ui icon heart"></i></small> <i>documentation</i> — in <a href="https://docs.readthedocs.io/">our docs</a>.
+              </p>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="ui basic segment">
+              <h3 class="ui header small">Subscribe our Newsletter</h3>
+              <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="ui form validate" target="_blank" novalidate>
+                <p>Stray up to date with our latest blog updates delivered weekly to your inbox.</p>
+  
+                <div class="field">
+                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="you@example.com">
+                </div>
+  
+                <div id="mce-responses">
+                  <div class="ui hidden response" id="mce-error-response"></div>
+                  <div class="ui hidden response" id="mce-success-response"></div>
+                </div>
+  
+                <input class="ui primary button" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+              </form>
+            </div>
+          </div>
+
         </div>
-
       </div>
+
     </section>
 
 
     <!--  -->
     <section class="ui vertical segment very padded" id="">
-      <div class="ui container">
-
-        <h1 class="ui header massive center aligned">
-          Great teams
-        </h1>
-        <div class="ui basic vertical huge segment center aligned">
-          <p>
-            Some of the world's best technical teams rely on Read the Docs for their documentation.
-          </p>
-          <p>
-            < lets show some logos with links here. >
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!--  -->
-    <section class="ui vertical light segment very padded" id="">
-      <div class="ui container">
-
-        <h1 class="ui header massive center aligned">
-          In the News
-        </h1>
-        <div class="ui basic vertical huge segment center aligned">
-          <p>
-            < lets show news articles here, with selection by year. >
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!--  -->
-    <section class="ui vertical segment very padded" id="">
-      <div class="ui container">
-
-        <h1 class="ui header massive center aligned">
-          Awards and Accolades
-        </h1>
-        <div class="ui basic vertical huge segment center aligned">
-          <p>
-            < lets also show some here. They are great! >
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!--  -->
-    <section class="ui vertical light segment very padded" id="">
-      <div class="ui container">
-
-        <h1 class="ui header massive center aligned">
-          Blog
-        </h1>
-        <div class="ui basic vertical huge segment center aligned">
-          <p>
-            < Shortly present our blog and link there. >
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!--  -->
-    <section class="ui vertical light segment very padded" id="">
-      <div class="ui container">
-
-        <h1 class="ui header massive center aligned">
-          Docs
-        </h1>
-        <div class="ui basic vertical huge segment center aligned">
-          <p>
-            < Shortly present our docs and link there. >
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!--  -->
-    <section class="ui vertical segment very padded" id="">
-      <div class="ui container">
-
-        <h1 class="ui header massive center aligned">
-          Careers
-        </h1>
-        <div class="ui basic vertical huge segment center aligned">
-          <p>
-            < Lets show open roles here, or a message when there's no open roles and also informing how to proceed with a spontaneous application. >
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!--  -->
-    <section class="ui vertical light segment very padded" id="">
       <div class="ui container">
 
         <h1 class="ui header massive center aligned">
           Brand Assets
         </h1>
-        <div class="ui basic vertical huge segment center aligned">
+        <div class="ui basic vertical segment center aligned">
           <p>
-            < "want to use our logo?" send users to the docs page on this. >
+            Want to display our logo in your project?<br>
+            Download our brand assets and learn how to use them in our&emsp;<a class="ui button mini black">brand guidelines</a>
           </p>
         </div>
 

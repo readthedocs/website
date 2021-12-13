@@ -218,3 +218,24 @@ Tables
     }
   }
 }
+
+/*******************************
+Company
+*******************************/
+#company #team {
+  z-index: 1;
+}
+#company #resources {
+  margin-top: -250px;
+  padding-top: 250px;
+
+  > .container > .grid > .column:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    form {
+      margin-bottom: 0;
+    }
+  }
+}
