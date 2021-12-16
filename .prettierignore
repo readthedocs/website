@@ -1,0 +1,8 @@
+dist/
+examples/
+*.rst
+*.eot
+*.woff
+*.woff2
+*.ttf
+*.svg

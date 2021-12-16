@@ -7,8 +7,8 @@
     "clean": "rm -rfv dist/*; exit 0",
     "build": "npm run clean && webpack --mode=production --progress --colors",
     "dev": "webpack-dev-server --mode=development",
-    "lint": "prettier -c src/",
-    "format": "prettier --write src/",
+    "lint": "prettier --check 'src/**' '*.js' '*.json'",
+    "format": "prettier --write 'src/**' '*.js' '*.json'",
     "test": "jest src/js/tests/"
   },
   "repository": {
@@ -25,7 +25,9 @@
     "node": "<15.0.0",
     "npm": "<7.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prettier": "^2.5.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
@@ -34,7 +36,6 @@
     "create-fomantic-icons": "^1.0.4",
     "css-loader": "^3.1.0",
     "file-loader": "^3.0.1",
-    "fomantic-ui": "^2.8.8",
     "fomantic-ui-less": "^2.8.8",
     "imports-loader": "^0.8.0",
     "jest": "^26.4.2",
@@ -45,7 +46,6 @@
     "matchdep": "~1.0.1",
     "mini-css-extract-plugin": "^0.6.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "prettier": "^2.0.5",
     "resolve-url-loader": "^2.2.1",
     "sanitize-html": "^1.23.0",
     "style-loader": "^0.23.1",
@@ -70,5 +70,19 @@
     "globals": {
       "__webpack_public_path__": null
     }
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": [
+          "src/**/*.overrides",
+          "src/**/*.variables",
+          "src/sui/theme.config"
+        ],
+        "options": {
+          "parser": "less"
+        }
+      }
+    ]
   }
 }
