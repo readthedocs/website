@@ -199,10 +199,10 @@ Tables
   }
 
   .card .button.fluid {
-    margin: 40px 0;
+    margin: 25px 0;
   }
   .card > .content > .description {
-    margin: 50px 0 20px;
+    margin: 35px 0 20px;
   }
   .card {
     > .extra {
