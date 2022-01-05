@@ -1,2 +1,9 @@
 node_modules/
+.nodenv
 .node-version
+.python-version
+.ropeproject/
+
+__pycache__
+
+output/
