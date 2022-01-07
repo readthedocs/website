@@ -1,0 +1,6 @@
+// Header
+@headerFontWeight: 600;
+@headerFontSize: 1.1em;
+
+// Meta
+@metaFontSize: .92em;
