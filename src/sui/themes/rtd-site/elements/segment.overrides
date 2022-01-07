@@ -1,6 +1,6 @@
 .ui.fieldset.segment {
-    padding-left: 0rem;
-    padding-right: 0rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
 /*******************************
@@ -25,7 +25,6 @@ section.ui.vertical.segment.padded {
 }
 section.ui.vertical.segment.very.padded {
   padding: 8rem 0;
-
 }
 /*-------------------
      Responsive
@@ -40,7 +39,6 @@ section.ui.vertical.segment .column {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-
 
 /*******************************
        Colored variants
@@ -58,7 +56,6 @@ section.ui.vertical.segment .column {
 & when (@variationSegmentInverted) {
   .ui.inverted.segments,
   .ui.inverted.segment {
-
     // Headers
     .ui.header {
       color: @white;
@@ -67,7 +64,7 @@ section.ui.vertical.segment .column {
     // links
     a {
       color: @white;
-      opacity: .85;
+      opacity: 0.85;
 
       &:hover,
       &:focus,
@@ -85,5 +82,4 @@ section.ui.vertical.segment .column {
       }
     }
   }
-
 }

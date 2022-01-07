@@ -5,7 +5,6 @@ body {
   padding-top: @topnavRenderedHeight;
 }
 
-
 /*******************************
              Text
 *******************************/
@@ -13,20 +12,45 @@ body {
 /*-------------------
         Colors
 --------------------*/
-.ui.red.text { color: @red; }
-.ui.orange.text { color: @orange; }
-.ui.yellow.text { color: @yellow; }
-.ui.olive.text { color: @olive; }
-.ui.green.text { color: @green; }
-.ui.teal.text { color: @teal; }
-.ui.blue.text { color: @blue; }
-.ui.violet.text { color: @violet; }
-.ui.purple.text { color: @purple; }
-.ui.pink.text { color: @pink; }
-.ui.brown.text { color: @brown; }
-.ui.grey.text { color: @grey; }
-.ui.black.text { color: @black; }
-
+.ui.red.text {
+  color: @red;
+}
+.ui.orange.text {
+  color: @orange;
+}
+.ui.yellow.text {
+  color: @yellow;
+}
+.ui.olive.text {
+  color: @olive;
+}
+.ui.green.text {
+  color: @green;
+}
+.ui.teal.text {
+  color: @teal;
+}
+.ui.blue.text {
+  color: @blue;
+}
+.ui.violet.text {
+  color: @violet;
+}
+.ui.purple.text {
+  color: @purple;
+}
+.ui.pink.text {
+  color: @pink;
+}
+.ui.brown.text {
+  color: @brown;
+}
+.ui.grey.text {
+  color: @grey;
+}
+.ui.black.text {
+  color: @black;
+}
 
 /*******************************
              Footer
@@ -72,7 +96,6 @@ body {
   }
 }
 
-
 /*******************************
            homepage
 *******************************/
@@ -81,8 +104,7 @@ body {
        Callout
 --------------------*/
 #homepage #callout {
-
-  @media (max-width : (@computerBreakpoint - 1px)) {
+  @media (max-width: (@computerBreakpoint - 1px)) {
     .column {
       text-align: center;
     }
@@ -90,7 +112,6 @@ body {
       display: none;
     }
   }
-
 }
 
 /*-------------------
@@ -121,12 +142,12 @@ body {
   .column:last-child:after {
     display: none;
   }
-  @media (max-width : @largestMobileScreen) {
+  @media (max-width: @largestMobileScreen) {
     .column:after {
       top: auto;
       bottom: 0;
       right: 20px;
-      left: 20px; 
+      left: 20px;
       width: auto;
       height: 1px;
     }
@@ -157,7 +178,6 @@ Product
 User Segments
 --------------------*/
 #user-segments {
-
   .ui.container > .grid > .column {
     display: flex;
     flex-direction: column;
@@ -177,7 +197,7 @@ Features
     font-size: 45px;
     font-weight: 300;
   }
-  h4{
+  h4 {
     font-size: 25px;
     font-weight: 400;
   }
@@ -187,11 +207,10 @@ Features
       border-top: none;
     }
     > .extra {
-      border-top: none !important;// needs !important because SUI already sets this rule with !important
+      border-top: none !important; // needs !important because SUI already sets this rule with !important
     }
   }
 }
-
 
 /*******************************
 Pricing
@@ -201,7 +220,6 @@ Pricing
 Tables
 --------------------*/
 #pricing #tables {
-
   .ui.header.divider {
     margin-top: 42px;
   }
@@ -214,7 +232,7 @@ Tables
   }
   .card {
     > .extra {
-      border-top: none !important;// needs !important because SUI already sets this rule with !important
+      border-top: none !important; // needs !important because SUI already sets this rule with !important
     }
   }
 }

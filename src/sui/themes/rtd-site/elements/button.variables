@@ -7,7 +7,11 @@
       Gradient
 --------------------*/
 
-@secondaryGradientBackgroundImage: linear-gradient(240deg, rgba(231,111,34,1) 0%, rgba(222,28,81,1) 100%);
+@secondaryGradientBackgroundImage: linear-gradient(
+  240deg,
+  rgba(231, 111, 34, 1) 0%,
+  rgba(222, 28, 81, 1) 100%
+);
 @secondaryGradientHoverBackgroundImage: none;
 @secondaryGradientFocusBackgroundImage: @secondaryGradientHoverBackgroundImage;
 @secondaryGradientActiveBackgroundImage: @secondaryGradientHoverBackgroundImage;
@@ -16,8 +20,8 @@
 //        Element
 // --------------------*/
 
-@tinyVerticalPadding  : .5em;// NEW
-@tinyHorizontalPadding: 1em;// NEW
+@tinyVerticalPadding: 0.5em; // NEW
+@tinyHorizontalPadding: 1em; // NEW
 
-@miniVerticalPadding  : .35em;// NEW
-@miniHorizontalPadding: .55em;// NEW
+@miniVerticalPadding: 0.35em; // NEW
+@miniHorizontalPadding: 0.55em; // NEW

@@ -14,7 +14,6 @@
 @height: 1em;
 @distanceFromText: 0.25rem;
 
-
 /* Variations */
 @linkOpacity: 0.8;
 @linkDuration: 0.3s;
@@ -31,18 +30,14 @@
 
 @cornerIconSize: 0.45em;
 @cornerIconStroke: 1px;
-@cornerIconShadow:
-  -@cornerIconStroke -@cornerIconStroke 0 @white,
-   @cornerIconStroke -@cornerIconStroke 0 @white,
-  -@cornerIconStroke  @cornerIconStroke 0 @white,
-   @cornerIconStroke  @cornerIconStroke 0 @white
-;
-@cornerIconInvertedShadow:
-  -@cornerIconStroke -@cornerIconStroke 0 @black,
-   @cornerIconStroke -@cornerIconStroke 0 @black,
-  -@cornerIconStroke  @cornerIconStroke 0 @black,
-   @cornerIconStroke  @cornerIconStroke 0 @black
-;
+@cornerIconShadow: -@cornerIconStroke -@cornerIconStroke 0 @white,
+  @cornerIconStroke -@cornerIconStroke 0 @white,
+  -@cornerIconStroke @cornerIconStroke 0 @white,
+  @cornerIconStroke @cornerIconStroke 0 @white;
+@cornerIconInvertedShadow: -@cornerIconStroke -@cornerIconStroke 0 @black,
+  @cornerIconStroke -@cornerIconStroke 0 @black,
+  -@cornerIconStroke @cornerIconStroke 0 @black,
+  @cornerIconStroke @cornerIconStroke 0 @black;
 
 @mini: 0.4em;
 @tiny: 0.5em;
