@@ -1,4 +1,12 @@
 /*******************************
+          Scafolding
+*******************************/
+body {
+  padding-top: @topnavRenderedHeight;
+}
+
+
+/*******************************
              Text
 *******************************/
 
@@ -72,7 +80,7 @@
 /*-------------------
        Callout
 --------------------*/
-#callout {
+#homepage #callout {
 
   @media (max-width : (@computerBreakpoint - 1px)) {
     .column {
@@ -93,7 +101,7 @@
 
   .container > .ui.segment {
     z-index: 10;
-    margin: -80px 0 -200px;
+    margin: -20px 0 -200px;
     box-shadow: @floatingShadow;
   }
   .column {
@@ -172,7 +180,7 @@ Features
   h4{
     font-size: 25px;
     font-weight: 400;
-  }  
+  }
   .ui.cards > .card {
     padding: 20px 14px 8px;
     > .content {
@@ -180,6 +188,54 @@ Features
     }
     > .extra {
       border-top: none !important;// needs !important because SUI already sets this rule with !important
+    }
+  }
+}
+
+
+/*******************************
+Pricing
+*******************************/
+
+/*-------------------
+Tables
+--------------------*/
+#pricing #tables {
+
+  .ui.header.divider {
+    margin-top: 42px;
+  }
+
+  .card .button.fluid {
+    margin: 25px 0;
+  }
+  .card > .content > .description {
+    margin: 35px 0 20px;
+  }
+  .card {
+    > .extra {
+      border-top: none !important;// needs !important because SUI already sets this rule with !important
+    }
+  }
+}
+
+/*******************************
+Company
+*******************************/
+#company #team {
+  z-index: 1;
+}
+#company #resources {
+  margin-top: -250px;
+  padding-top: 250px;
+
+  > .container > .grid > .column:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    form {
+      margin-bottom: 0;
     }
   }
 }

@@ -1,0 +1,4 @@
+/* Header after a divider header */
+.ui.header.divider + .ui.header {
+  margin-top: e(%("calc(-1rem + %d)", @headerLineHeightOffset));
+}
