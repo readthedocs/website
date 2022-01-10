@@ -19,10 +19,7 @@ module.exports = (env, argv) => {
       filename: "js/[name].js?[hash]",
       chunkFilename: "js/[name].js?[hash]",
       publicPath: "./",
-      path: path.join(
-        __dirname,
-        "dist",
-      ),
+      path: path.join(__dirname, "dist"),
     },
     optimization: {
       minimize: is_production,
@@ -97,10 +94,10 @@ module.exports = (env, argv) => {
         chunkFilename: "css/[name].css?[hash]",
       }),
       new webpack.ProvidePlugin({
-        $: 'jquery',
-        jquery: 'jquery',
-        'window.jQuery': 'jquery',
-        jQuery: 'jquery'
+        $: "jquery",
+        jquery: "jquery",
+        "window.jQuery": "jquery",
+        jQuery: "jquery",
       }),
     ],
     resolve: {
@@ -114,9 +111,7 @@ module.exports = (env, argv) => {
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000,
-      ignored: [
-        "./node_modules/",
-      ],
+      ignored: ["./node_modules/"],
     },
     devServer: {
       open: false,

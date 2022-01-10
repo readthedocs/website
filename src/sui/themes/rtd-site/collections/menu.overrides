@@ -3,7 +3,7 @@
 *******************************/
 .ui.menu.fixed {
   border: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /*******************************
@@ -29,9 +29,8 @@
   &.active:hover {
     background: none;
   }
-  
+
   &.active {
-    
     &:after {
       display: block;
       content: "";
@@ -43,4 +42,4 @@
       background: @primaryColor;
     }
   }
-} 
+}

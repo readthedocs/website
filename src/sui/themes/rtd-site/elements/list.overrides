@@ -1,11 +1,17 @@
 .ui.horizontal.list > .item {
-  &.left.aligned { text-align: left; }
-  &.right.aligned { text-align: right; }
-  &.center.aligned { text-align: center; }
+  &.left.aligned {
+    text-align: left;
+  }
+  &.right.aligned {
+    text-align: right;
+  }
+  &.center.aligned {
+    text-align: center;
+  }
 }
 
 .ui.list > .item.disabled > * {
-  opacity: .35;
+  opacity: 0.35;
 }
 .ui.list > .item > .content > .header {
   font-weight: 400;

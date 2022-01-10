@@ -3,4 +3,4 @@
 @headerFontSize: 1.1em;
 
 // Meta
-@metaFontSize: .92em;
+@metaFontSize: 0.92em;
