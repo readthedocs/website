@@ -12,7 +12,7 @@ commands:
     steps:
       - checkout
       - run: npm ci
-      - run: npm run build
+      - run: npm run build-assets
       - run:
           name: Ensure built assets are up to date
           command: |

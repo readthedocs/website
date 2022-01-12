@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const NodemonPlugin = require("nodemon-webpack-plugin");
 
 // Use export as a function to inspect `--mode`
 module.exports = (env, argv) => {
@@ -19,7 +20,7 @@ module.exports = (env, argv) => {
       filename: "js/[name].js?[hash]",
       chunkFilename: "js/[name].js?[hash]",
       publicPath: "./",
-      path: path.join(__dirname, "dist"),
+      path: path.join(__dirname, "readthedocs-theme", "static"),
     },
     optimization: {
       minimize: is_production,
@@ -99,6 +100,18 @@ module.exports = (env, argv) => {
         "window.jQuery": "jquery",
         jQuery: "jquery",
       }),
+      new NodemonPlugin({
+        exec: "pelican content",
+        script: "",
+        args: [],
+        watch: [
+          path.join(__dirname, "readthedocs-theme"),
+          path.join(__dirname, "content"),
+        ],
+        ext: "md,rst,html",
+        delay: "1000",
+        verbose: true,
+      }),
     ],
     resolve: {
       alias: {
@@ -115,13 +128,16 @@ module.exports = (env, argv) => {
     },
     devServer: {
       open: false,
+      openPage: "index.html",
       hot: false,
       liveReload: true,
-      publicPath: "/dist/",
+      publicPath: "/theme/",
       disableHostCheck: true,
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
+      contentBase: [path.join(__dirname, "output")],
+      watchContentBase: true,
     },
   };
 };

@@ -1,0 +1,14 @@
+{% extends "page.html" %}
+
+{% block content %}
+  <div class="ui container">
+    <div class="ui segment">
+      <h1 class="ui header">
+        {{ page.title }}
+        {% if page.subtitle %}<div class="sub header">{{ page.subtitle }}</div>{% endif %}
+      </h1>
+
+      {{ page.content }}
+    </div>
+  </div>
+{% endblock content %}
