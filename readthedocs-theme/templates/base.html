@@ -40,12 +40,9 @@
   {% endblock head %}
 </head>
 
-<body {% block body_attributes %}{% endblock %}>
-  {% block topnav %}
-  {% endblock %}
-  {% block content %}
-  {% endblock %}
-  {% block footer %}
-  {% endblock %}
+<body id="{% block body_id %}home{% endblock body_id %}">
+  {% include 'includes/topnav.html' %}
+  
+  <main>{% block content %}{% endblock %}</main>
 </body>
 </html>
