@@ -41,11 +41,8 @@
 </head>
 
 <body id="{% block body_id %}home{% endblock body_id %}">
-  {% block topnav %}
-  {% endblock %}
-  {% block content %}
-  {% endblock %}
-  {% block footer %}
-  {% endblock %}
+  {% include 'includes/topnav.html' %}
+  
+  <main>{% block content %}{% endblock %}</main>
 </body>
 </html>
