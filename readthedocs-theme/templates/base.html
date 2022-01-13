@@ -40,7 +40,7 @@
   {% endblock head %}
 </head>
 
-<body {% block body_attributes %}{% endblock %}>
+<body id="{% block body_id %}home{% endblock body_id %}">
   {% block topnav %}
   {% endblock %}
   {% block content %}
