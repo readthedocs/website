@@ -1,5 +1,6 @@
-title: Read the Docs - Product
+title: Product
+subtitle: 
 template: readthedocs/product
 save_as: product.html
 status: hidden
-description: Read the Docs - Product
+description: 
