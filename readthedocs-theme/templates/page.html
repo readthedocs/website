@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block html_lang %}{{ page.lang }}{% endblock %}
+
+
+{% block title %}{% if page.title %}{{ page.title|striptags }} - {% endif %}{{ SITENAME }}{%endblock%}
