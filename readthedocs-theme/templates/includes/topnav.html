@@ -1,14 +1,14 @@
 <div class="ui menu fixed borderless" id="topnav">
   <div class="ui container">
 
-    <a class="header item" href="">
-      <div class="ui image readthedocs-logo"><img src="/theme/img/logo-wordmark-dark.svg"/></div>
+    <a class="header item" href="{{ SITEURL }}/">
+      <div class="ui image readthedocs-logo"><img src="{{ SITEURL }}/theme/img/logo-wordmark-dark.svg"/></div>
     </a>
 
-    <a class="item active" href="">Product</a>
-    <a class="item" href="">Pricing</a>
-    <a class="item" href="">Company</a>
-    <a class="item" href="">Resources</a>
+    <a class="item{% if output_file == page.save_as %} active{% endif %}" href="{{ SITEURL }}/product.html">Product{% if output_file == page.save_as %} <span class="sr-only">(current)</span>{% endif %}</a>
+    <a class="item{% if output_file == page.save_as %} active{% endif %}" href="{{ SITEURL }}/pricing.html">Pricing{% if output_file == page.save_as %} <span class="sr-only">(current)</span>{% endif %}</a>
+    <a class="item{% if output_file == page.save_as %} active{% endif %}" href="{{ SITEURL }}/company.html">Company{% if output_file == page.save_as %} <span class="sr-only">(current)</span>{% endif %}</a>
+    <a class="item{% if output_file == page.save_as %} active{% endif %}" href="">Resources{% if output_file == page.save_as %} <span class="sr-only">(current)</span>{% endif %}</a>
 
     <div class="right menu">
       <a class="item" href="">Support</a>
