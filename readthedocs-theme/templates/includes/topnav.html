@@ -5,10 +5,10 @@
       <div class="ui image readthedocs-logo"><img src="{{ SITEURL }}/theme/img/logo-wordmark-dark.svg"/></div>
     </a>
 
-    <a class="item{% if output_file == page.save_as %} active{% endif %}" href="{{ SITEURL }}/product.html">Product{% if output_file == page.save_as %} <span class="sr-only">(current)</span>{% endif %}</a>
-    <a class="item{% if output_file == page.save_as %} active{% endif %}" href="{{ SITEURL }}/pricing.html">Pricing{% if output_file == page.save_as %} <span class="sr-only">(current)</span>{% endif %}</a>
-    <a class="item{% if output_file == page.save_as %} active{% endif %}" href="{{ SITEURL }}/company.html">Company{% if output_file == page.save_as %} <span class="sr-only">(current)</span>{% endif %}</a>
-    <a class="item{% if output_file == page.save_as %} active{% endif %}" href="">Resources{% if output_file == page.save_as %} <span class="sr-only">(current)</span>{% endif %}</a>
+    <a class="item{% if page and page.slug == "product" %} active{% endif %}" href="{{ SITEURL }}/product.html">Product</a>
+    <a class="item{% if page and page.slug == "pricing" %} active{% endif %}" href="{{ SITEURL }}/pricing.html">Pricing</a>
+    <a class="item{% if page and page.slug == "company" %} active{% endif %}" href="{{ SITEURL }}/company.html">Company</a>
+    <a class="item{% if page and page.slug == "resources" %} active{% endif %}" href="">Resources</a>
 
     <div class="right menu">
       <a class="item" href="">Support</a>
