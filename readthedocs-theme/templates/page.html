@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block html_lang %}{{ page.lang }}{% endblock %}
 
+{% block body_id %}page-{{ page.slug }}{% endblock body_id %}
 
 {% block title %}{% if page.title %}{{ page.title|striptags }} - {% endif %}{{ SITENAME }}{%endblock%}
