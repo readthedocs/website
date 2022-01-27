@@ -5,10 +5,10 @@
       <div class="ui image readthedocs-logo"><img src="{{ SITEURL }}/theme/img/logo-wordmark-dark.svg"/></div>
     </a>
 
-    <a class="item{% if page and page.slug == "product" %} active{% endif %}" href="{{ SITEURL }}/product.html">Product{% if page and page.slug == "product" %} <span class="sr-only">(current)</span>{% endif %}</a>
-    <a class="item{% if page and page.slug == "pricing" %} active{% endif %}" href="{{ SITEURL }}/pricing.html">Pricing{% if page and page.slug == "pricing" %} <span class="sr-only">(current)</span>{% endif %}</a>
-    <a class="item{% if page and page.slug == "company" %} active{% endif %}" href="{{ SITEURL }}/company.html">Company{% if page and page.slug == "company" %} <span class="sr-only">(current)</span>{% endif %}</a>
-    <a class="item{% if page and page.slug == "resources" %} active{% endif %}" href="">Resources{% if page and page.slug == "resources" %} <span class="sr-only">(current)</span>{% endif %}</a>
+    <a class="item{% if page and page.slug == 'product' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/product.html">Product</a>
+    <a class="item{% if page and page.slug == 'pricing' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/pricing.html">Pricing</a>
+    <a class="item{% if page and page.slug == 'company' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/company.html">Company</a>
+    <a class="item{% if page and page.slug == 'resources' %} active" aria-current="page{% endif %}" href="">Resources</a>
 
     <div class="right menu">
       <a class="item" href="">Support</a>
