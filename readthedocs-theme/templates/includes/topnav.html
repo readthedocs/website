@@ -1,14 +1,14 @@
 <div class="ui menu fixed borderless" id="topnav">
   <div class="ui container">
 
-    <a class="header item" href="">
-      <div class="ui image readthedocs-logo"><img src="/theme/img/logo-wordmark-dark.svg"/></div>
+    <a class="header item" href="{{ SITEURL }}/">
+      <div class="ui image readthedocs-logo"><img src="{{ SITEURL }}/theme/img/logo-wordmark-dark.svg"/></div>
     </a>
 
-    <a class="item active" href="">Product</a>
-    <a class="item" href="">Pricing</a>
-    <a class="item" href="">Company</a>
-    <a class="item" href="">Resources</a>
+    <a class="item{% if page and page.slug == 'product' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/product.html">Product</a>
+    <a class="item{% if page and page.slug == 'pricing' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/pricing.html">Pricing</a>
+    <a class="item{% if page and page.slug == 'company' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/company.html">Company</a>
+    <a class="item{% if page and page.slug == 'resources' %} active" aria-current="page{% endif %}" href="">Resources</a>
 
     <div class="right menu">
       <a class="item" href="">Support</a>
