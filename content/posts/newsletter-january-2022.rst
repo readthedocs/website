@@ -41,15 +41,10 @@ Among the major user-facing changes:
   to `a session cookie that is deleted when the browser is
   closed <https://github.com/readthedocs/readthedocs.org/pull/8694>`_.
   This will result in less data collected from users.
-- We split the developer documentation from the user documentation to avoid confusion
-  and made our :doc:`Read the Docs for Business docs <readthedocs:commercial/index>` more visible.
-- We expanded our user documentation with more examples on how to use MyST Markdown
-  and a :doc:`guide to migrate from reST to MyST <readthedocs:guides/migrate-rest-myst>`
-  (:doc:`more about our committment to support MyST in our blog </sphinx-markdown-2021>`).
 
 Thanks to our external contributor `Çağatay Yiğit Şahin`_.
 
-You can always see the latest changes to our platforms in our :doc:`Read the Docs
+You can always see the latest changes to our platforms in our `Read the Docs
 Changelog <readthedocs:changelog>`.
 
 .. _Çağatay Yiğit Şahin: https://github.com/cagatay-y
