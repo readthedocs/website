@@ -1,0 +1,20 @@
+{% if DEFAULT_PAGINATION %}
+  {% set first_page = articles_paginator.page(1) %}
+  {% set last_page = articles_paginator.page(articles_paginator.num_pages) %}
+
+  <div class="ui segment basic clearing">
+    {% if articles_page.has_previous() %}
+      <a href="{{ SITEURL }}/{{ articles_previous_page.url }}" class="ui labeled icon button left floated primary">
+        <i class="left arrow icon"></i>
+        Newer posts
+      </a>
+    {% endif %}
+    {% if articles_page.has_next() %}
+      <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="ui right labeled icon button right floated">
+        <i class="right arrow icon"></i>
+        Older posts
+      </a>
+    {% endif %}
+  </div>
+
+{% endif %}
