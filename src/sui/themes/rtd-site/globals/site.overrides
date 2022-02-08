@@ -74,6 +74,7 @@ body {
   }
   a,
   a:hover {
+    color: @footerHoverColor;
     text-decoration: none;
   }
   .ui.list a.item:hover {
