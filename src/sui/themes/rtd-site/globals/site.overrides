@@ -257,3 +257,28 @@ Company
     }
   }
 }
+
+/*******************************
+Article (blog)
+*******************************/
+
+#article {
+
+  /*-------------------
+  Sections
+  --------------------*/
+  .section {
+    margin: @baseVerticalMargin*2 0;
+  }
+
+  /*-------------------
+  Code
+  --------------------*/
+  pre {
+    background-color: @offWhite;
+    border: 1px solid @lightGrey;
+    border-radius: @defaultBorderRadius * .75;
+    padding: @inputPadding;
+    overflow-x: scroll;
+  }
+}
