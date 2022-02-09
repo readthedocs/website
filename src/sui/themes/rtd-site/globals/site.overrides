@@ -280,4 +280,25 @@ Article (blog)
     padding: @inputPadding;
     overflow-x: scroll;
   }
+  code,
+  tt {
+    background-color: @offWhite;
+    border: 1px solid @lightGrey;
+    border-radius: @defaultBorderRadius * 0.75;
+    padding: 0.15em 0.25em;
+  }
+
+  /*-------------------
+  Lists
+  --------------------*/
+  dl {
+    margin: 1em 0;
+  }
+  dt {
+    margin-top: 1em;
+    font-weight: @bold;
+  }
+  dd {
+    margin: 1em;
+  }
 }
