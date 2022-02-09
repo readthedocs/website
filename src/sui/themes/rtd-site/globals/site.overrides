@@ -263,7 +263,6 @@ Article (blog)
 *******************************/
 
 #article {
-
   /*-------------------
   Sections
   --------------------*/
@@ -277,7 +276,7 @@ Article (blog)
   pre {
     background-color: @offWhite;
     border: 1px solid @lightGrey;
-    border-radius: @defaultBorderRadius * .75;
+    border-radius: @defaultBorderRadius * 0.75;
     padding: @inputPadding;
     overflow-x: scroll;
   }
