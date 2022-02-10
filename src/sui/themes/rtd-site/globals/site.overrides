@@ -74,10 +74,10 @@ body {
   }
   a,
   a:hover {
-    color: @footerHoverColor;
     text-decoration: none;
   }
   .ui.list a.item:hover {
+    color: @footerHoverColor;
     text-decoration: underline;
   }
   .ui.horizontal.list > .item {
