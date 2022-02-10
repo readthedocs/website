@@ -27,3 +27,8 @@
 .ui.card .meta {
   line-height: @headerLineHeight;
 }
+
+a.card,
+a.card:hover {
+  text-decoration: none;
+}
