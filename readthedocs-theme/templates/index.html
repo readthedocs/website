@@ -97,15 +97,11 @@
     </div>
   </section>
   
-  <section class="ui vertical segment padded" id="articles-list">
+  <section class="ui vertical segment">
     <div class="ui container">
-      <div class="ui segment basic">
-
-        {% if articles_page.has_other_pages() %}
-          {% include 'pagination.html' %}
-        {% endif %}
-
-      </div>
+      {% if articles_page.has_other_pages() %}
+        {% include 'includes/pagination.html' %}
+      {% endif %}
     </div>
   </section>
 

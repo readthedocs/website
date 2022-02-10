@@ -1,0 +1,18 @@
+{% if DEFAULT_PAGINATION %}
+
+  <div class="ui segment basic clearing">
+    {% if articles_page.has_previous() %}
+      <a href="{{ SITEURL }}/{{ articles_previous_page.url }}" class="ui labeled icon button left floated primary">
+        <i class="left arrow icon"></i>
+        Newer posts
+      </a>
+    {% endif %}
+    {% if articles_page.has_next() %}
+      <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="ui right labeled icon button right floated">
+        <i class="right arrow icon"></i>
+        Older posts
+      </a>
+    {% endif %}
+  </div>
+
+{% endif %}
