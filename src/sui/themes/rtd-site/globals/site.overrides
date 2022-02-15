@@ -305,7 +305,7 @@ Article (blog)
   /*-------------------
   Images
   --------------------*/
-  img:not(.ui.image){
+  img:not(.ui.image) {
     width: 100%;
     margin: 20px 0 10px;
   }
