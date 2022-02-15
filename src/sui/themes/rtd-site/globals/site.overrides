@@ -257,3 +257,16 @@ Company
     }
   }
 }
+
+/*******************************
+Index (blog)
+*******************************/
+#articles-list {
+  .ui.card > .image img {
+    height: 190px;
+    object-fit: cover;
+  }
+  .ui.two.cards .ui.card > .image img {
+    height: 280px;
+  }
+}
