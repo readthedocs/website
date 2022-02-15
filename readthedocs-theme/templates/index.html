@@ -34,11 +34,9 @@
           {% for article in articles_page.object_list %}
             {% if not articles_previous_page and loop.index <= 2 %}
               <a class="ui card" href="/{{ article.url }}">
-                {% if article.image %}
-                  <div class="image">
-                    <img src="{{ article.image }}">
-                  </div>
-                {% endif %}
+                <div class="image">
+                  <img src="{{ article.image  or '/theme/img/defaults/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg'}}">
+                </div>
                 <div class="content">
                   <div class="header">{{ article.title }}</div>
                   <div class="meta">
@@ -68,7 +66,7 @@
             {% if articles_previous_page or not loop.index <= 2 %}
               <a class="ui card" href="/{{ article.url }}">
                 <div class="image">
-                  <img src="{{ article.image }}">
+                  <img src="{{ article.image or '/theme/img/defaults/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg' }}">
                 </div>
                 <div class="content">
                   <div class="header">{{ article.title }}</div>
