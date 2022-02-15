@@ -301,4 +301,31 @@ Article (blog)
   dd {
     margin: 1em;
   }
+
+  /*-------------------
+  Images
+  --------------------*/
+  img:not(.ui.image){
+    width: 100%;
+    margin: 20px 0 10px;
+  }
+  p > img:not(.ui.image) {
+    margin-bottom: 0;
+  }
+  p + p > img:not(.ui.image) {
+    margin-top: 10px;
+  }
+  figure img:not(.ui.image) {
+    margin: 0;
+    display: block;
+  }
+  figure {
+    width: 100%;
+    margin: 20px 0;
+  }
+  figcaption {
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+  }
 }
