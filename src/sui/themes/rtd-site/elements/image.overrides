@@ -3,3 +3,11 @@
   display: inline-block;
   padding: @avatarMargin;
 }
+
+.ui.images.overlapping {
+  padding-left: 12px;
+  > a,
+  > img {
+    margin-left: -12px;
+  }
+}
