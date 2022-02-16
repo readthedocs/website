@@ -44,7 +44,7 @@ MENUITEMS_CTA = []
 PATH = 'content'
 PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['posts']
-STATIC_PATHS = []
+STATIC_PATHS = ['images']
 
 # URL settings
 PAGE_URL = '{slug}/'

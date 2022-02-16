@@ -35,7 +35,7 @@
             {% if not articles_previous_page and loop.index <= 2 %}
               <a class="ui card" href="/{{ article.url }}">
                 <div class="image">
-                  <img src="{{ article.image  or '/theme/img/defaults/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg'}}">
+                  <img src="{{ article.image  or '/images/posts/default-{:.0f}.png'.format(article.date.strftime('%Y%m%d') | int % 7) }}">
                 </div>
                 <div class="content">
                   <div class="header">{{ article.title }}</div>
@@ -66,7 +66,7 @@
             {% if articles_previous_page or not loop.index <= 2 %}
               <a class="ui card" href="/{{ article.url }}">
                 <div class="image">
-                  <img src="{{ article.image or '/theme/img/defaults/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg' }}">
+                  <img src="{{ article.image  or '/images/posts/default-{:.0f}.png'.format(article.date.strftime('%Y%m%d') | int % 7) }}">
                 </div>
                 <div class="content">
                   <div class="header">{{ article.title }}</div>

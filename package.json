@@ -30,9 +30,7 @@
     "node": "<15.0.0",
     "npm": "<7.0.0"
   },
-  "dependencies": {
-    "prettier": "^2.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
@@ -52,9 +50,11 @@
     "mini-css-extract-plugin": "^0.6.0",
     "nodemon-webpack-plugin": "^4.7.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "^2.5.0",
     "resolve-url-loader": "^2.2.1",
     "sanitize-html": "^1.23.0",
     "style-loader": "^0.23.1",
+    "trianglify": "^4.1.1",
     "url-loader": "^0.6.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.10",
