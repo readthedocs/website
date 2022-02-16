@@ -26,7 +26,7 @@
             <div class="ui basic vertical segment right floated"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>
           </div>
 
-          <img class="ui fluid image" src="{{ article.image or '/theme/img/defaults/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg' }}">
+          <img class="ui fluid image" src="{{ article.image or '/theme/img/defaults/article.jpg' }}">
           {% if article.image and article.image_credit %}
             <div class="ui basic vertical segment center aligned">
               <p class="ui"><i>{{ article.image_credit}}</i></p>
