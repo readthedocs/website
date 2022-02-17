@@ -258,21 +258,25 @@ Company
   }
 }
 
-/*******************************
-Article (blog)
-*******************************/
+// Index (blog)
+#articles-list {
+  .ui.card > .image img {
+    height: 190px;
+    object-fit: cover;
+  }
+  .ui.two.cards .ui.card > .image img {
+    height: 280px;
+  }
+}
 
+// Article (blog)
 #article {
-  /*-------------------
-  Sections
-  --------------------*/
+  // Sections
   .section {
     margin: @baseVerticalMargin*2 0;
   }
 
-  /*-------------------
-  Code
-  --------------------*/
+  // Code
   pre {
     background-color: @offWhite;
     border: 1px solid @lightGrey;
@@ -288,9 +292,7 @@ Article (blog)
     padding: 0.15em 0.25em;
   }
 
-  /*-------------------
-  Lists
-  --------------------*/
+  // Lists
   dl {
     margin: 1em 0;
   }
@@ -302,9 +304,7 @@ Article (blog)
     margin: 1em;
   }
 
-  /*-------------------
-  Images
-  --------------------*/
+  // Images
   img:not(.ui.image) {
     width: 100%;
     margin: 20px 0 10px;
