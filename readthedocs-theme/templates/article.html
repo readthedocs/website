@@ -17,7 +17,7 @@
 
 
           <h1 class="ui header">
-            <span class="ui header big">{{ article.title }}</span>
+            <span class="ui header">{{ article.title }}</span>
           </h1>
 
           <div class="ui basic vertical segment clearing">
@@ -26,13 +26,11 @@
             <div class="ui basic vertical segment right floated"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>
           </div>
 
-          {% if article.image %}
-              <img class="ui fluid image" src="{{ article.image }}">
-              {% if article.image_credit %}
-                <div class="ui basic vertical segment center aligned">
-                  <p class="ui"><i>{{ article.image_credit }}</i></p>
-                </div>
-              {% endif %}
+          <img class="ui fluid image" src="{{ article.image or '/images/posts/default.jpg' }}">
+          {% if article.image and article.image_credit %}
+            <div class="ui basic vertical segment center aligned">
+              <p class="ui"><i>{{ article.image_credit}}</i></p>
+            </div>
           {% endif %}
 
           <div class="ui basic vertical segment padded">
