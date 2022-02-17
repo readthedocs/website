@@ -258,3 +258,75 @@ Company
     }
   }
 }
+
+// Index (blog)
+#articles-list {
+  .ui.card > .image img {
+    height: 190px;
+    object-fit: cover;
+  }
+  .ui.two.cards .ui.card > .image img {
+    height: 280px;
+  }
+}
+
+// Article (blog)
+#article {
+  // Sections
+  .section {
+    margin: @baseVerticalMargin*2 0;
+  }
+
+  // Code
+  pre {
+    background-color: @offWhite;
+    border: 1px solid @lightGrey;
+    border-radius: @defaultBorderRadius * 0.75;
+    padding: @inputPadding;
+    overflow-x: scroll;
+  }
+  code,
+  tt {
+    background-color: @offWhite;
+    border: 1px solid @lightGrey;
+    border-radius: @defaultBorderRadius * 0.75;
+    padding: 0.15em 0.25em;
+  }
+
+  // Lists
+  dl {
+    margin: 1em 0;
+  }
+  dt {
+    margin-top: 1em;
+    font-weight: @bold;
+  }
+  dd {
+    margin: 1em;
+  }
+
+  // Images
+  img:not(.ui.image) {
+    width: 100%;
+    margin: 20px 0 10px;
+  }
+  p > img:not(.ui.image) {
+    margin-bottom: 0;
+  }
+  p + p > img:not(.ui.image) {
+    margin-top: 10px;
+  }
+  figure img:not(.ui.image) {
+    margin: 0;
+    display: block;
+  }
+  figure {
+    width: 100%;
+    margin: 20px 0;
+  }
+  figcaption {
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+  }
+}

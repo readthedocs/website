@@ -21,6 +21,12 @@
 @fontSize: @emSize;
 
 /*-------------------
+    Base Spacing
+--------------------*/
+
+@baseVerticalMargin: 20px;
+
+/*-------------------
     Borders
 --------------------*/
 @borderColor: rgba(

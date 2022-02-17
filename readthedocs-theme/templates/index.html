@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{# This is the blog index, not the home page template #}
+
+
+{% block content %}
+
+  <!-- Intro -->
+  <section class="ui vertical segment" id="blog-intro">
+    <div class="ui container">
+      <div class="ui segment basic">
+
+        {% block content_title %}
+          <div class="ui basic vertical big segment">
+          <h1 class="ui header">
+            <span class="ui header">Read the Docs Blog</span>
+          </h1>
+            <p>
+              This is where we post all the week to week progress updates and announcements.
+            </p>
+          </div>
+        {% endblock %}
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="ui vertical segment" id="articles-list">
+    <div class="ui container">
+      <div class="ui segment basic">
+
+        <!-- Latest  2 articles -->
+        <div class="ui two cards stackable">
+          {% for article in articles_page.object_list %}
+            {% if not articles_previous_page and loop.index <= 2 %}
+              <a class="ui card" href="/{{ article.url }}">
+                <div class="image">
+                  <img src="{{ article.image  or '/images/posts/default.jpg'}}">
+                </div>
+                <div class="content">
+                  <div class="header">{{ article.title }}</div>
+                  <div class="meta">
+                    <span class="date"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
+                  </div>
+                  <div class="description">
+                    {% if article.description %}
+                      {{ article.description|striptags|escape }}
+                    {% else %}
+                      {{ article.summary|striptags|escape }}
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div>
+                    {% for author in article.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %}
+                  </div>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- Articles list -->
+        <div class="ui three cards stackable">
+          {% for article in articles_page.object_list %}
+            {% if articles_previous_page or not loop.index <= 2 %}
+              <a class="ui card" href="/{{ article.url }}">
+                <div class="image">
+                  <img src="{{ article.image or '/images/posts/default.jpg' }}">
+                </div>
+                <div class="content">
+                  <div class="header">{{ article.title }}</div>
+                  <div class="meta">
+                    <span class="date"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
+                  </div>
+                  <div class="description">
+                    {% if article.description %}
+                      {{ article.description|striptags|escape }}
+                    {% else %}
+                      {{ article.summary|striptags|escape }}
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div>
+                    {% for author in article.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %}
+                  </div>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <section class="ui vertical segment">
+    <div class="ui container">
+      {% if articles_page.has_other_pages() %}
+        {% include 'includes/pagination.html' %}
+      {% endif %}
+    </div>
+  </section>
+
+
+{% endblock content %}
