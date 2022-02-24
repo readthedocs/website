@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  aws-s3: circleci/aws-s3@3.0
+
 commands:
   run-lint:
     description: "Run code linter"
@@ -22,6 +25,25 @@ commands:
               git status dist/ --porcelain
               exit 1
             fi
+  run-publish:
+    description: "Publish site on main merge"
+    parameters:
+      bucket:
+        type: string
+    steps:
+      - checkout
+      - run: pip install -r requirements.txt
+      - run: pelican content -s publishconf.py
+      - aws-s3/sync:
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=3600"
+          # Configured with envvars
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: output
+          to: "<<parameters.bucket>>"
 
 jobs:
   lint:
@@ -34,6 +56,12 @@ jobs:
       - image: 'cimg/node:14.18'
     steps:
       - run-build: {}
+  publish:
+    docker:
+      - image: 'cimg/python:3.9'
+    steps:
+      - run-publish:
+          bucket: "s3://readthedocs-static-dev.s3.us-east-2.amazonaws.com/sites/community"
 
 workflows:
   version: 2
@@ -41,3 +69,12 @@ workflows:
     jobs:
       - lint
       - build
+  publish:
+    filters:
+      branches:
+        only: main
+    requires:
+      - lint
+      - build
+    jobs:
+      - publish
