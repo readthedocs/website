@@ -57,7 +57,7 @@ jobs:
       - image: "cimg/python:3.9"
     steps:
       - run-publish:
-          bucket: "s3://readthedocs-static-dev.s3.us-east-2.amazonaws.com/sites/community"
+          bucket: "s3://readthedocs-static-dev/sites/community"
 
 workflows:
   version: 2
