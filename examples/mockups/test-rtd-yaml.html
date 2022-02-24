@@ -1,0 +1,29 @@
+<div class="highlight"><pre><span></span><span class="c1"># This is the Read the Docs configuration file. This file support per-version configuration</span>
+<span class="c1"># of our project. This file is required in each active branch, to configure the build process</span>
+<span class="c1"># and all of our dependencies</span>
+<span class="c1">#</span>
+<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+
+<span class="c1"># We need PDF and ePUB output for several customers</span>
+<span class="nt">formats</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">epub</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pdf</span>
+
+<span class="c1"># We&#39;re using the latest Python for our project, and so also require this for</span>
+<span class="c1"># our documentation. All of our dependencies are installed to build our API</span>
+<span class="c1"># documentation.</span>
+<span class="nt">build</span><span class="p">:</span>
+  <span class="nt">os</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-20.04</span>
+  <span class="nt">tools</span><span class="p">:</span>
+    <span class="nt">python</span><span class="p">:</span> <span class="s">&quot;3.10&quot;</span>
+
+<span class="nt">python</span><span class="p">:</span>
+  <span class="nt">install</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">pip</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
+
+<span class="nt">search</span><span class="p">:</span>
+  <span class="nt">ranking</span><span class="p">:</span>
+    <span class="c1"># Our tutorials are our most helpful content, make sure users find this</span>
+    <span class="c1"># first when searching</span>
+    <span class="nt">tutorials/*</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">+5</span>
+</pre></div>
