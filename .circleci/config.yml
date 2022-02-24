@@ -38,27 +38,23 @@ commands:
           arguments: |
             --acl public-read \
             --cache-control "max-age=3600"
-          # Configured with envvars
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-region: AWS_REGION
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: output
-          to: "<<parameters.bucket>>"
+          to: <<parameters.bucket>>
 
 jobs:
   lint:
     docker:
-      - image: 'cimg/node:14.18'
+      - image: "cimg/node:14.18"
     steps:
       - run-lint: {}
   build:
     docker:
-      - image: 'cimg/node:14.18'
+      - image: "cimg/node:14.18"
     steps:
       - run-build: {}
   publish:
     docker:
-      - image: 'cimg/python:3.9'
+      - image: "cimg/python:3.9"
     steps:
       - run-publish:
           bucket: "s3://readthedocs-static-dev.s3.us-east-2.amazonaws.com/sites/community"
