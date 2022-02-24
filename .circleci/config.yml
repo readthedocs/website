@@ -65,16 +65,14 @@ jobs:
 
 workflows:
   version: 2
-  tests:
+  build:
     jobs:
       - lint
       - build
-  publish:
-    filters:
-      branches:
-        only: main
-    requires:
-      - lint
-      - build
-    jobs:
-      - publish
+      - publish:
+          filters:
+            branches:
+              only: main
+          requires:
+            - lint
+            - build
