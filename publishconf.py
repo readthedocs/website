@@ -1,7 +1,5 @@
 """
 Read the Docs website Pelican configuration for publshing.
-
-This configuration is only used when running ``inv preview`` or ``inv publish``
 """
 
 import os
@@ -14,9 +12,9 @@ try:
 except ImportError:
     raise
 
-# If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = 'https://www.readthedocs.org'
-RELATIVE_URLS = False
+# TODO We're still figuring out a URL
+# SITEURL = 'https://www.readthedocs.org'
+# RELATIVE_URLS = False
 DELETE_OUTPUT_DIRECTORY = True
 
 # Feed settings
