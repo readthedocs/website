@@ -1,6 +1,7 @@
 Title: Testing the new blog article template
 Date: Feb 1, 2022
-Tags: readthedocs, blog, article
+category: Announcement
+Tags: readthedocs, blog, article, homepage
 Authors: Anthony Johnson, Ana Costa
 Summary: Some mock content to test the new blog article template
 description: Some mock content to test the new blog article template
