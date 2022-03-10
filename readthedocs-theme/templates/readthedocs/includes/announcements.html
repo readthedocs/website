@@ -17,7 +17,7 @@
                     {% endif %}
                   </span>
                 </div>
-                <h4>{{ article.title }}</h4>
+                <h4><a href="/{{ article.url }}">{{ article.title }}</a></h4>
                 <p>
                   {% if article.description %}
                     {{ article.description|striptags|escape }}
