@@ -2,7 +2,8 @@ Sphinx 4.4 release and other ecosystem news
 ###########################################
 
 :date: January 26, 2022
-:tags: sphinx, release
+:category: News
+:tags: sphinx, release, homepage
 :authors: Juan Luis
 :description: In this post we talk about the latest release of Sphinx 4.4 and include other relevant news from the Sphinx ecosystem of extensions and themes.
 :image: 
