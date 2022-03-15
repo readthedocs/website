@@ -61,33 +61,63 @@ Responsive alignment
   .text.center.mobile {
     text-align: center;
   }
+  .text.align.left.mobile {
+    text-align: left;
+  }
+  .text.align.right.mobile {
+    text-align: right;
+  }
 }
 
 /* Tablet Only */
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
-  .text.center.tablet {
+  .text.align.center.tablet {
     text-align: center;
+  }
+  .text.align.left.tablet {
+    text-align: left;
+  }
+  .text.align.right.tablet {
+    text-align: right;
   }
 }
 
 /* Computer Only */
 @media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
-  .text.center.computer {
+  .text.align.center.computer {
     text-align: center;
+  }
+  .text.align.left.computer {
+    text-align: left;
+  }
+  .text.align.right.computer {
+    text-align: right;
   }
 }
 
 /* Large Screen Only */
 @media only screen and (min-width: @largeMonitorBreakpoint) and (max-width: @largestLargeMonitor) {
-  .text.center.large.screen {
+  .text.align.center.large.screen {
     text-align: center;
+  }
+  .text.align.left.large.screen {
+    text-align: left;
+  }
+  .text.align.right.large.screen {
+    text-align: right;
   }
 }
 
 /* Widescreen Only */
 @media only screen and (min-width: @widescreenMonitorBreakpoint) {
-  .text.center.widescreen {
+  .text.align.center.widescreen {
     text-align: center;
+  }
+  .text.align.left.widescreen {
+    text-align: left;
+  }
+  .text.align.right.widescreen {
+    text-align: right;
   }
 }
 
