@@ -52,6 +52,45 @@ body {
   color: @black;
 }
 
+/*-------------------
+Responsive alignment
+--------------------*/
+
+/* Mobile Only */
+@media only screen and (max-width: @largestMobileScreen) {
+  .text.center.mobile {
+    text-align: center;
+  }
+}
+
+/* Tablet Only */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  .text.center.tablet {
+    text-align: center;
+  }
+}
+
+/* Computer Only */
+@media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+  .text.center.computer {
+    text-align: center;
+  }
+}
+
+/* Large Screen Only */
+@media only screen and (min-width: @largeMonitorBreakpoint) and (max-width: @largestLargeMonitor) {
+  .text.center.large.screen {
+    text-align: center;
+  }
+}
+
+/* Widescreen Only */
+@media only screen and (min-width: @widescreenMonitorBreakpoint) {
+  .text.center.widescreen {
+    text-align: center;
+  }
+}
+
 /*******************************
              Footer
 *******************************/
