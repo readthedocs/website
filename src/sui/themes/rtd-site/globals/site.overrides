@@ -58,7 +58,7 @@ Responsive alignment
 
 /* Mobile Only */
 @media only screen and (max-width: @largestMobileScreen) {
-  .text.center.mobile {
+  .text.align.center.mobile {
     text-align: center;
   }
   .text.align.left.mobile {
