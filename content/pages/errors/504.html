@@ -1,0 +1,27 @@
+{#
+  This is the error for both 504/504 responses from AWS ALB. When we emit this
+  status, there is a problem with our instances, our load, or a significant
+  issue with our application code.
+#}
+<html>
+  <head>
+    <title>Service unavailable</title>
+    <meta name="subtitle" content="Read the Docs is currently unavailable" />
+    <meta name="template" content="error" />
+    <meta name="slug" content="errors/504" />
+    <meta name="status" content="hidden" />
+    <meta name="icon" content="fa-skull-crossbones" />
+  </head>
+  <body>
+{% markdown %}
+
+We have encountered a problem and Read the Docs is currently unavailable.
+Try again shortly, or if you continue to notice this error, feel free to
+[contact support](/support)
+
+You can also watch [our status dashboard](https://status.readthedocs.com)
+to monitor the status of our services.
+
+{% endmarkdown %}
+  </body>
+</html>

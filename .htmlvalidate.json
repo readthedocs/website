@@ -7,7 +7,12 @@
     "no-inline-style": [
       "error",
       {
-        "allowedProperties": ["--fa-secondary-opacity", "--fa-secondary-color"]
+        "allowedProperties": [
+          "--fa-primary-opacity",
+          "--fa-primary-color",
+          "--fa-secondary-opacity",
+          "--fa-secondary-color"
+        ]
       }
     ]
   }

@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Unauthorized request</title>
+    <meta name="subtitle" content="Authentication is required" />
+    <meta name="template" content="error" />
+    <meta name="slug" content="errors/401" />
+    <meta name="status" content="hidden" />
+    <meta name="icon" content="fa-eye-slash" />
+  </head>
+  <body>
+{% markdown %}
+
+Your account may not have the necessary permissions to view this page.
+Try logging in again or logging in with a different account.
+
+If this does not help, verify that your account has access to this page.
+
+{% endmarkdown %}
+
+    {# TODO make this play nicely with two platforms #}
+    <a class="ui primary button" href="/accounts/logout/?next=/accounts/login">
+      <i class="fad fa-right-to-bracket icon"></i>
+      Retry log in
+    </a>
+  </body>
+</html>
