@@ -52,6 +52,84 @@ body {
   color: @black;
 }
 
+/*-------------------
+Responsive alignment
+--------------------*/
+/* 
+    Usage:
+    - Add classes "text align <alignment> <viewport [viewport] [viewport] [viewport]>" to an element to selectively align its text on the specified viewport(s).
+    - Alignment options: left/center/right
+    - Viewport options:  mobile/tablet/computer/large screen/widescreen
+    Notes:
+    - Allows multiple viewports.
+    - Preferably, do not use on elements that are part of a .grid scaffolding (ie: elements with class .grid, .row or .column) as that might produce conflicted outcomes.
+  */
+
+/* Mobile Only */
+@media only screen and (max-width: @largestMobileScreen) {
+  .text.align.center.mobile {
+    text-align: center;
+  }
+  .text.align.left.mobile {
+    text-align: left;
+  }
+  .text.align.right.mobile {
+    text-align: right;
+  }
+}
+
+/* Tablet Only */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  .text.align.center.tablet {
+    text-align: center;
+  }
+  .text.align.left.tablet {
+    text-align: left;
+  }
+  .text.align.right.tablet {
+    text-align: right;
+  }
+}
+
+/* Computer Only */
+@media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+  .text.align.center.computer {
+    text-align: center;
+  }
+  .text.align.left.computer {
+    text-align: left;
+  }
+  .text.align.right.computer {
+    text-align: right;
+  }
+}
+
+/* Large Screen Only */
+@media only screen and (min-width: @largeMonitorBreakpoint) and (max-width: @largestLargeMonitor) {
+  .text.align.center.large.screen {
+    text-align: center;
+  }
+  .text.align.left.large.screen {
+    text-align: left;
+  }
+  .text.align.right.large.screen {
+    text-align: right;
+  }
+}
+
+/* Widescreen Only */
+@media only screen and (min-width: @widescreenMonitorBreakpoint) {
+  .text.align.center.widescreen {
+    text-align: center;
+  }
+  .text.align.left.widescreen {
+    text-align: left;
+  }
+  .text.align.right.widescreen {
+    text-align: right;
+  }
+}
+
 /*******************************
              Footer
 *******************************/
