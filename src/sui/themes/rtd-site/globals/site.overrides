@@ -55,6 +55,15 @@ body {
 /*-------------------
 Responsive alignment
 --------------------*/
+/* 
+    Usage:
+    - Add classes "text align <alignment> <viewport [viewport] [viewport] [viewport]>" to an element to selectively align its text on the specified viewport(s).
+    - Alignment options: left/center/right
+    - Viewport options:  mobile/tablet/computer/large screen/widescreen
+    Notes:
+    - Allows multiple viewports.
+    - Preferably, do not use on elements that are part of a .grid scaffolding (ie: elements with class .grid, .row or .column) as that might produce conflicted outcomes.
+  */
 
 /* Mobile Only */
 @media only screen and (max-width: @largestMobileScreen) {
