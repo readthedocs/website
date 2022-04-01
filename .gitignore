@@ -4,6 +4,7 @@ node_modules/
 .python-version
 .tool-versions
 .direnv/
+.env
 .envrc
 .ropeproject/
 
