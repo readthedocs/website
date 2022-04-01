@@ -1,4 +1,4 @@
-<div class="ui menu fixed borderless" id="topnav">
+<div class="ui menu fixed stackable borderless" id="topnav">
   <div class="ui container">
 
     <a class="header item" href="{{ SITEURL }}/">
@@ -7,11 +7,19 @@
 
     <a class="item{% if page and page.slug == 'product' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/product.html">Product</a>
     <a class="item{% if page and page.slug == 'pricing' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/pricing.html">Pricing</a>
-    <a class="item{% if page and page.slug == 'company' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/company.html">Company</a>
-    <a class="item" href="https://docs.readthedocs.io">Resources</a>
 
     <div class="right menu">
-      <a class="item" href="https://readthedocs.org/support">Support</a>
+      <div class="ui dropdown item computer only grid">
+        Help
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="https://readthedocs.org/support">Support</a>
+          <a class="item" href="https://docs.readthedocs.io">Docs</a>
+          <a class="item" href="https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started">Getting started</a>
+          <a class="item" href="https://docs.readthedocs.io/en/stable/config-file/index.html">Configuration file</a>
+          <a class="item" href="http://status.readthedocs.com">Status</a>
+        </div>
+      </div>
       <div class="item">
         <a class="ui button primary" href="https://readthedocs.org/dashboard/">
           Open Application
