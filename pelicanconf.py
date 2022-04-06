@@ -1,8 +1,14 @@
 """Read the Docs website Pelican configuration."""
 
+import os
+
 AUTHOR = 'Read the Docs, Inc'
 SITENAME = 'Read the Docs'
 SITEURL = ''
+
+rtd_version = os.environ.get('READTHEDOCS_VERSION')
+if rtd_version:
+    SITEURL = f'/en/{rtd_version}/'
 
 TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = 'en'
