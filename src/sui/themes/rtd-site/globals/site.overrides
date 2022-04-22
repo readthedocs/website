@@ -1,17 +1,5 @@
-/*******************************
-          Scafolding
-*******************************/
-body {
-  padding-top: @topnavRenderedHeight;
-}
+// Text colors
 
-/*******************************
-             Text
-*******************************/
-
-/*-------------------
-        Colors
---------------------*/
 .ui.red.text {
   color: @red;
 }
@@ -165,8 +153,7 @@ Responsive alignment
     .header,
     .sub.header,
     .description {
-      color: @grey;
-      font-size: 13px;
+      color: @grey; font-size: 13px;
     }
   }
   .ui.horizontal.divider {

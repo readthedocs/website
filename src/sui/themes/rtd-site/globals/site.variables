@@ -1,109 +1,39 @@
 @importGoogleFonts: False;
 
-/*******************************
-         Site Settings
-*******************************/
-@topnavRenderedHeight: 74px; // This does not set the height of the topnav, instead, it can be used for distancing the body and floating elements from the topnav. Note that when the topnav is made responsive the same height should not be used on mobile.
-
-/*-------------------
-       Fonts
---------------------*/
-@bold: 600;
-
-/*-------------------
-      Base Sizes
---------------------*/
-
-/* This is the single variable that controls them all */
-@emSize: 16px;
-
-/* The size of page text  */
-@fontSize: @emSize;
-
-/*-------------------
-    Base Spacing
---------------------*/
-
+// Spacing
 @baseVerticalMargin: 20px;
+@floatingShadow: -1px 1px 6px rgba(0, 0, 0, 0.15);
+@borderColor: rgba(122, 124, 126, 0.25);
 
-/*-------------------
-    Borders
---------------------*/
-@borderColor: rgba(
-  122,
-  124,
-  126,
-  0.25
-); // Make it a stronger gray so it can work on inverted backgrounds too
-
-/*-------------------
-    Brand Colors
---------------------*/
-
-@secondaryColor: @orange;
-
-/*--------------
-  Page Heading
----------------*/
-
-@headerLineHeight: 1.2;
-
-/*-------------------
-        Page
---------------------*/
-
-@lineHeight: 1.5em;
+// Colors
 @textColor: @black;
-
-/*-------------------
-      Paragraph
---------------------*/
-
-@paragraphMarginBottom: 0.75em;
-@paragraphMargin: 0 0 @paragraphMarginBottom;
-
-@paragraphLineHeight: 1.72;
-
-/*-------------------
-       Links
---------------------*/
-
-@linkColor: @textColor;
-@linkUnderline: underline;
-@linkHoverColor: darken(saturate(@linkColor, 20), 15, relative);
-@linkHoverUnderline: @linkUnderline;
-
-/*-------------------
-     Transitions
---------------------*/
-
-@defaultDuration: 0.18s;
-
-/*-------------------
-      Site Colors
---------------------*/
-
-/*---  Colors  ---*/
+@secondaryColor: @orange;
 @orange: #e24d33;
 @green: #479830;
 @blue: #1171b0;
 @black: #252a31;
 
-/*-------------------
-       Accents
---------------------*/
-@floatingShadow: -1px 1px 6px rgba(0, 0, 0, 0.15);
+// Fonts
+@bold: 600;
+@emSize: 16px;
+@fontSize: @emSize;
+@headerLineHeight: 1.2;
+@lineHeight: 1.5em;
 
-/*-------------------
-       Footer
---------------------*/
+@paragraphMarginBottom: 0.75em;
+@paragraphMargin: 0 0 @paragraphMarginBottom;
+@paragraphLineHeight: 1.72;
 
-/* Colors */
+// Links
+@linkColor: @textColor;
+@linkUnderline: underline;
+@linkHoverColor: darken(saturate(@linkColor, 20), 15, relative);
+@linkHoverUnderline: @linkUnderline;
+
+// Footer variables
 @footerBackground: @black;
 @footerSeparatorsColor: fade(@white, 12%);
-
 @footerColor: fade(@white, 75%);
 @footerHoverColor: @white;
 @footerHeadingsColor: fade(@primaryColor, 75%);
-
 @footerCopyrightsColor: fade(@white, 35%);
