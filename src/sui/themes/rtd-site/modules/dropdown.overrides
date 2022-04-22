@@ -1,0 +1,5 @@
+// Dropdown
+
+#topnav .right.menu > .ui.dropdown > .menu {
+  width: 20rem;
+}

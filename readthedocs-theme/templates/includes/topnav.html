@@ -9,15 +9,35 @@
     <a class="item{% if page and page.slug == 'pricing' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/pricing.html">Pricing</a>
 
     <div class="right menu">
-      <div class="ui dropdown item computer only grid">
-        Help
+      <div class="ui dropdown item" data-module="dropdown" data-action="select">
+        <span class="text">Help</span>
         <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="item" href="https://readthedocs.org/support">Support</a>
-          <a class="item" href="https://docs.readthedocs.io">Docs</a>
-          <a class="item" href="https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started">Getting started</a>
-          <a class="item" href="https://docs.readthedocs.io/en/stable/config-file/index.html">Configuration file</a>
-          <a class="item" href="http://status.readthedocs.com">Status</a>
+          <a class="item" href="https://readthedocs.org/support">
+            <i class="primary envelope icon"></i>
+            Support
+          </a>
+          <a class="item" href="https://docs.readthedocs.io">
+            <i class="primary book icon"></i>
+            Docs
+            <span class="description">
+              <i class="external link icon"></i>
+            </span>
+          </a>
+          <a class="item" href="https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started">
+            <i class="primary rocket icon"></i>
+            Getting started
+            <span class="description">
+              <i class="external link icon"></i>
+            </span>
+          </a>
+          <a class="item" href="http://status.readthedocs.com">
+            <i class="green circle check icon"></i>
+            Status
+            <span class="description">
+              <span class="ui green text">Online</span>
+            </span>
+          </a>
         </div>
       </div>
       <div class="item">

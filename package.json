@@ -2,7 +2,7 @@
   "name": "site-community",
   "version": "1.0.0",
   "description": "Read the Docs community website",
-  "main": "src/js/index.js",
+  "main": "src/js/site.js",
   "scripts": {
     "clean": "npm run clean-assets && npm run clean-html",
     "clean-assets": "rm -rfv readthedocs-theme/static/{css,js}; exit 0",
@@ -14,7 +14,7 @@
     "livereload": "npm run dev",
     "lint": "prettier --check 'src/**' '*.js' '*.json'",
     "format": "prettier --write 'src/**' '*.js' '*.json'",
-    "test": "jest src/js/tests/"
+    "test": "jest --silent false src/js/tests/"
   },
   "repository": {
     "type": "git",
@@ -75,7 +75,10 @@
   "jest": {
     "globals": {
       "__webpack_public_path__": null
-    }
+    },
+    "setupFiles": [
+      "./src/js/tests/setup.js"
+    ]
   },
   "prettier": {
     "overrides": [
