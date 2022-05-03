@@ -32,8 +32,9 @@ commands:
         type: string
     steps:
       - checkout
-      - run: pip install -r requirements.txt
-      - run: pelican content -s publishconf.py
+      - run: pip install poetry
+      - run: poetry install
+      - run: poetry run pelican content -s publishconf.py
       - aws-s3/sync:
           arguments: |
             --acl public-read \

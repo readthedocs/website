@@ -61,9 +61,8 @@ jquery(document).ready((foo) => {
  *     only for now.
  */
 jquery.fn.sui_module = function () {
-  this.each(() => {
-    const elem = this;
-    const data = elem.data();
+  return this.each((index, elem) => {
+    const data = $(elem).data();
     const module = data.module;
 
     // This is the data-module attribute, hopefully there are no overlaps with
@@ -77,3 +76,17 @@ jquery.fn.sui_module = function () {
     }
   });
 };
+
+/**
+ * Mailerlite plugin, for managing the embedded newsletter subscription UI
+ */
+jquery.fn.mailerlite = function () {
+  return this.each((index, elem) => {
+    const $elem = $(elem);
+    const data = $elem.data();
+
+    window['ml_webform_success_' + data.mailerliteId] = () => {
+      $elem.find('.ui.success.message').show();
+    };
+  });
+}

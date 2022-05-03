@@ -14,7 +14,7 @@ TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = 'en'
 DEFAULT_DATE_FORMAT = '%b %-d, %Y'
 
-THEME = 'readthedocs-theme'
+THEME = 'readthedocs_theme'
 SUMMARY_MAX_LENGTH = 20  # Words
 
 # Add non-default markdown extensions
@@ -29,7 +29,7 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
-PLUGINS = ['related_posts']
+PLUGINS = ['related_posts', 'jinja2content', 'readthedocs_theme.plugins.html_directive']
 
 # Feed (RSS/Atom) settings
 FEED_ALL_ATOM = None

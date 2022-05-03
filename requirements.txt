@@ -1,5 +1,0 @@
-Jinja2~=3.0.3
-pelican==4.5.0
-Markdown==3.1.1
-pelican-related-posts==1.0.0
-pre-commit==2.16.0

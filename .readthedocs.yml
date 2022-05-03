@@ -10,9 +10,10 @@ build:
     nodejs: "14"
   jobs:
     pre_build:
-      - pip install -r requirements.txt
+      - pip install poetry
+      - poetry install
       - npm ci
-      - npm run build-html
+      - poetry run npm run build-html
     post_build:
       - rm -rfv ../../artifacts/${READTHEDOCS_VERSION}/sphinx
       - mv -v ./output/ ../../artifacts/${READTHEDOCS_VERSION}/sphinx
