@@ -24,3 +24,8 @@ i.inverted.circular.light.icon {
   background-color: @lightGrey !important;
   color: @black !important;
 }
+
+/* Shadowed */
+i.shadowed.icon {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
