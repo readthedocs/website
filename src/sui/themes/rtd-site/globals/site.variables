@@ -22,10 +22,3 @@
 @headerLineHeight: 1.2;
 @lineHeight: 1.5em;
 @monospaceFontName: "monospace";
-
-// Footer variables
-@footerBackground: @black;
-@footerSeparatorsColor: fade(@white, 12%);
-@footerColor: fade(@white, 75%);
-@footerHoverColor: @white;
-@footerHeadingsColor: fade(@primaryColor, 75%);
