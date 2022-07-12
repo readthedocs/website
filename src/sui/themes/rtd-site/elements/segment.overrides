@@ -1,58 +1,17 @@
-.ui.fieldset.segment {
-  padding-left: 0rem;
-  padding-right: 0rem;
-}
-
-/*******************************
-   Sections as segments (New)
-*******************************/
-
-/*-------------------
-       General
---------------------*/
-section.ui.vertical.segment {
-  border: none;
-}
-
-/*-------------------
-   Padded variants
---------------------*/
-section.ui.vertical.segment {
-  padding: 1.5rem 0;
-}
-section.ui.vertical.segment.padded {
-  padding: 4rem 0;
-}
-section.ui.vertical.segment.very.padded {
-  padding: 8rem 0;
-}
-/*-------------------
-     Responsive
-   Padded variants
---------------------*/
-
-/*-------------------
-      Responsive
-        Columns
---------------------*/
-section.ui.vertical.segment .column {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-/*******************************
-       Colored variants
-*******************************/
-
-/* light (New) */
-
+/* Light */
 .ui.light.segment {
   background-color: @offWhite !important;
 }
 
+// Hero segment with additional spacing and padding
+.ui.hero.segment {
+  padding: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 /* Inverted */
 // by default Semantic does not account for several elements' color inside inverted segments
-
 & when (@variationSegmentInverted) {
   .ui.inverted.segments,
   .ui.inverted.segment {

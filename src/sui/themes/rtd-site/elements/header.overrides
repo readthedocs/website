@@ -2,3 +2,8 @@
 .ui.header.divider + .ui.header {
   margin-top: e(%("calc(-1rem + %d)", @headerLineHeightOffset));
 }
+
+.ui.monospace.header {
+  font-family: @monospaceFontName;
+  font-weight: 500;
+}

@@ -1,0 +1,33 @@
+/* Padded containers instead of padded segments */
+.ui.padded.container {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+.ui.very.padded.container {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+/* Wide container is for content that has horizontal constraints and could look
+ * better with some staggered vertical alignment */
+.ui.ui.ui.ui.wide.container {
+  width: 100%;
+  max-width: initial;
+}
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.ui.ui.ui.wide.container {
+    width: @mobileWidth;
+    max-width: @mobileWidth;
+  }
+}
+@media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+  .ui.ui.ui.ui.wide.container {
+    max-width: @computerBreakpoint * 1.30;
+  }
+}
+/* Large Monitor */
+@media only screen and (min-width: @largeMonitorBreakpoint) {
+  .ui.ui.ui.ui.wide.container {
+    max-width: @largeMonitorBreakpoint * 1.30;
+  }
+}

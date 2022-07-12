@@ -1,5 +1,5 @@
 // Dropdown
 
-#topnav .right.menu > .ui.dropdown > .menu {
+.ui.wide.dropdown > .menu {
   width: 20rem;
 }

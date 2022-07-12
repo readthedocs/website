@@ -1,3 +1,21 @@
+// Flat card extra content
+//
+// Don't show the border between the content and extra content. Used in feature
+// cards
+.ui.cards > .card > .flat.extra.content,
+.ui.card > .flat.extra.content {
+  border-top: none !important;
+}
+
+// Card with icon instead of image
+//
+// Reuse segments without bottom margin to accomplish a background color
+.card > .ui.segment:first-child {
+  margin-bottom: 0rem;
+}
+
+// Pricing page ribbon
+// TODO might not be used anymore
 .card .label.ribbon {
   margin-top: 10px;
   margin-bottom: 30px;
@@ -6,6 +24,7 @@
   margin: @headerLineHeightOffset 0 0;
 }
 
+// TODO remove, probably not used anymore
 .ui.cards > .card:not(.borderless) > .image > img,
 .ui.card:not(.borderless) > .image > img {
   width: calc(100% + 2px);
@@ -28,6 +47,7 @@
   line-height: @headerLineHeight;
 }
 
+// TODO remove likely a variable already.
 a.card,
 a.card:hover {
   text-decoration: none;

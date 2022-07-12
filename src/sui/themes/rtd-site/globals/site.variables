@@ -6,12 +6,14 @@
 @borderColor: rgba(122, 124, 126, 0.25);
 
 // Colors
-@textColor: @black;
-@secondaryColor: @orange;
 @orange: #e24d33;
 @green: #479830;
 @blue: #1171b0;
 @black: #252a31;
+//@teal: #00857E;
+@teal: average(#00B5AD, @blue);
+@textColor: @black;
+@secondaryColor: @teal;
 
 // Fonts
 @bold: 600;
@@ -19,16 +21,7 @@
 @fontSize: @emSize;
 @headerLineHeight: 1.2;
 @lineHeight: 1.5em;
-
-@paragraphMarginBottom: 0.75em;
-@paragraphMargin: 0 0 @paragraphMarginBottom;
-@paragraphLineHeight: 1.72;
-
-// Links
-@linkColor: @textColor;
-@linkUnderline: underline;
-@linkHoverColor: darken(saturate(@linkColor, 20), 15, relative);
-@linkHoverUnderline: @linkUnderline;
+@monospaceFontName: "monospace";
 
 // Footer variables
 @footerBackground: @black;
@@ -36,4 +29,3 @@
 @footerColor: fade(@white, 75%);
 @footerHoverColor: @white;
 @footerHeadingsColor: fade(@primaryColor, 75%);
-@footerCopyrightsColor: fade(@white, 35%);

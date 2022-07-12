@@ -1,5 +1,4 @@
 // Text colors
-
 .ui.red.text {
   color: @red;
 }
@@ -118,111 +117,11 @@ Responsive alignment
   }
 }
 
-/*******************************
-             Footer
-*******************************/
-#footer {
-  color: @footerColor;
-  margin-top: 0;
+// Pages
+// =====
 
-  .ui.sub.header {
-    color: @footerHeadingsColor;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .ui.header .sub.header {
-    color: @footerHeadingsColor;
-  }
-  p,
-  .ui.list {
-    font-size: 14px;
-  }
-  a,
-  a:hover {
-    text-decoration: none;
-  }
-  .ui.list a.item:hover {
-    color: @footerHoverColor;
-    text-decoration: underline;
-  }
-  .ui.horizontal.list > .item {
-    > .icon {
-      color: @grey;
-    }
-    .header,
-    .sub.header,
-    .description {
-      color: @grey; font-size: 13px;
-    }
-  }
-  .ui.horizontal.divider {
-    color: gray;
-    margin-bottom: 40px;
-  }
-}
-
-/*******************************
-           homepage
-*******************************/
-
-/*-------------------
-       Callout
---------------------*/
-#homepage #callout {
-  @media (max-width: (@computerBreakpoint - 1px)) {
-    .column {
-      text-align: center;
-    }
-    .column + .column {
-      display: none;
-    }
-  }
-}
-
-/*-------------------
-    Announcements
---------------------*/
-#announcements {
-  padding: 0;
-
-  .container > .ui.segment {
-    z-index: 10;
-    margin: -20px 0 -200px;
-    box-shadow: @floatingShadow;
-  }
-  .column {
-    position: relative;
-    padding: 20px 20px 15px;
-  }
-  .column:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 20px;
-    bottom: 20px;
-    right: 0;
-    width: 1px;
-    background-color: @internalBorderColor;
-  }
-  .column:last-child:after {
-    display: none;
-  }
-  @media (max-width: @largestMobileScreen) {
-    .column:after {
-      top: auto;
-      bottom: 0;
-      right: 20px;
-      left: 20px;
-      width: auto;
-      height: 1px;
-    }
-  }
-
-  h4 {
-    font-size: 18px;
-  }
-}
+// Homepage
+// --------
 
 /*-------------------
   Infographics
@@ -233,48 +132,6 @@ Responsive alignment
   h2 {
     font-size: 45px;
     font-weight: 300;
-  }
-}
-
-/*******************************
-Product
-*******************************/
-
-/*-------------------
-User Segments
---------------------*/
-#user-segments {
-  .ui.container > .grid > .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .ui.list {
-    margin: 30px 0 40px;
-  }
-}
-
-/*-------------------
-Features
---------------------*/
-#features {
-  h2 {
-    font-size: 45px;
-    font-weight: 300;
-  }
-  h4 {
-    font-size: 25px;
-    font-weight: 400;
-  }
-  .ui.cards > .card {
-    padding: 20px 14px 8px;
-    > .content {
-      border-top: none;
-    }
-    > .extra {
-      border-top: none !important; // needs !important because SUI already sets this rule with !important
-    }
   }
 }
 

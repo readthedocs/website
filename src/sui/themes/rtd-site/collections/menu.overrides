@@ -1,20 +1,7 @@
 // Top navigation
-#topnav.ui.menu {
-  margin-bottom: 0rem;
-  border-bottom: 0rem;
-
-  .readthedocs-logo {
-    width: 220px;
-  }
-
+.ui.underlined.menu {
   .item {
     position: relative;
-
-    &:hover,
-    &.active,
-    &.active:hover {
-      background: none;
-    }
 
     &.active {
       &:after {

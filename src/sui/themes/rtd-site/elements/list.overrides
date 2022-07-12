@@ -16,6 +16,3 @@
 .ui.list > .item > .content > .header {
   font-weight: 400;
 }
-.ui.list > .item > .content > .description {
-  font-weight: 300;
-}
