@@ -13,7 +13,9 @@
 //@teal: #00857E;
 @teal: average(#00B5AD, @blue);
 @textColor: @black;
-@secondaryColor: @teal;
+@primaryColor: @teal;
+@secondaryColor: @violet;
+@linkColor: @primaryColor;
 
 // Fonts
 @bold: 600;
