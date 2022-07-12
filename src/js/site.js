@@ -85,8 +85,8 @@ jquery.fn.mailerlite = function () {
     const $elem = $(elem);
     const data = $elem.data();
 
-    window['ml_webform_success_' + data.mailerliteId] = () => {
-      $elem.find('.ui.success.message').show();
+    window["ml_webform_success_" + data.mailerliteId] = () => {
+      $elem.find(".ui.success.message").show();
     };
   });
-}
+};

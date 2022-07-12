@@ -22,12 +22,12 @@
 }
 @media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
   .ui.ui.ui.ui.wide.container {
-    max-width: @computerBreakpoint * 1.30;
+    max-width: @computerBreakpoint * 1.3;
   }
 }
 /* Large Monitor */
 @media only screen and (min-width: @largeMonitorBreakpoint) {
   .ui.ui.ui.ui.wide.container {
-    max-width: @largeMonitorBreakpoint * 1.30;
+    max-width: @largeMonitorBreakpoint * 1.3;
   }
 }
