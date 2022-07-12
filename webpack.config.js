@@ -20,7 +20,7 @@ module.exports = (env, argv) => {
       filename: "js/[name].js?[hash]",
       chunkFilename: "js/[name].js?[hash]",
       publicPath: "./",
-      path: path.join(__dirname, "readthedocs-theme", "static"),
+      path: path.join(__dirname, "readthedocs_theme", "static"),
     },
     optimization: {
       minimize: is_production,
@@ -105,7 +105,7 @@ module.exports = (env, argv) => {
         script: "",
         args: [],
         watch: [
-          path.join(__dirname, "readthedocs-theme"),
+          path.join(__dirname, "readthedocs_theme"),
           path.join(__dirname, "content"),
         ],
         ext: "md,rst,html",

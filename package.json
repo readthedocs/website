@@ -5,7 +5,7 @@
   "main": "src/js/site.js",
   "scripts": {
     "clean": "npm run clean-assets && npm run clean-html",
-    "clean-assets": "rm -rfv readthedocs-theme/static/{css,js}; exit 0",
+    "clean-assets": "rm -rfv readthedocs_theme/static/{css,js}; exit 0",
     "clean-html": "rm -rfv output/*; exit 0",
     "build": "npm run build-assets && npm run build-html",
     "build-assets": "npm run clean-assets && webpack --mode=production --progress --colors",
