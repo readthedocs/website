@@ -67,6 +67,20 @@ in the Nodemon process to force a Pelican build.
     Removing and adding files sometimes is not recognized by Nodemon. You might
     need to restart the ``npm run dev`` command periodically.
 
+Building content only
+~~~~~~~~~~~~~~~~~~~~~
+
+If you run into issues building CSS or JS, you can work around this temporarily
+by running Pelican directly and viewing the output locally:
+
+.. code-block:: console
+
+    $ npm run build-html
+    $ firefox output/index.html
+
+You will lose out on all of the nice features of Webpack this way, so it is
+recommneded to use the standard development flow instead.
+
 Building assets
 ~~~~~~~~~~~~~~~
 
