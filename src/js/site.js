@@ -29,10 +29,20 @@ require("fomantic-ui-less/definitions/modules/dropdown.js");
 require("fomantic-ui-less/definitions/globals/site.js");
 
 jquery(document).ready((foo) => {
-  jquery.fn.site({ debug: true, verbose: true });
-  jquery.fn.site("normalize");
-  jquery.fn.site("enable debug");
-  jquery.fn.site("enable verbose");
+  /**
+   * Show debug logs from SUI modules
+   *
+   * This value comes from Webpack DefinePlugin
+   */
+  if (DEBUG_MODE) {
+    console.debug("Debug mode enabled.");
+    jquery.fn.site({ debug: true, verbose: true });
+    jquery.fn.site("normalize");
+    // Enable debug logs from all modules enabled by site module
+    jquery.fn.site("enable debug");
+    jquery.fn.site("enable verbose");
+  }
+
   jquery("[data-module]").sui_module();
 });
 

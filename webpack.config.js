@@ -90,6 +90,9 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
+      new webpack.DefinePlugin({
+        DEBUG_MODE: !is_production,
+      }),
       new MiniCssExtractPlugin({
         filename: "css/[name].css?[hash]",
         chunkFilename: "css/[name].css?[hash]",
