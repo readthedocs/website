@@ -79,7 +79,7 @@ jquery.fn.sui_module = function () {
     delete data.module;
 
     if (jquery.fn[module]) {
-      this[module](data);
+      $(elem)[module](data);
     } else {
       jquery.fn.site("error", "SUI module not available: " + module);
     }
