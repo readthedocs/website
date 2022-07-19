@@ -5,6 +5,7 @@ import os
 AUTHOR = 'Read the Docs, Inc'
 SITENAME = 'Read the Docs'
 SITEURL = ''
+RELATIVE_URLS = True
 
 rtd_version = os.environ.get('READTHEDOCS_VERSION')
 if rtd_version:
