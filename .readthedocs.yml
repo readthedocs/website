@@ -1,19 +1,14 @@
 version: 2
 
-sphinx:
-  configuration: "./conf.py"
-
 build:
-  os: ubuntu-20.04
+  os: ubuntu-22.04
   tools:
-    python: "3.8"
+    python: "3.10"
     nodejs: "14"
-  jobs:
-    pre_build:
-      - pip install poetry
-      - poetry install
-      - npm ci
-      - poetry run npm run build-html
-    post_build:
-      - rm -rfv ../../artifacts/${READTHEDOCS_VERSION}/sphinx
-      - mv -v ./output/ ../../artifacts/${READTHEDOCS_VERSION}/sphinx
+  commands:
+    - pip install poetry
+    - poetry install
+    - npm ci
+    - poetry run npm run build-html
+    - mkdir -p _readthedocs/html/
+    - cp -r output/* _readthedocs/html/

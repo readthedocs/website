@@ -10,7 +10,7 @@
 
   <!-- Article -->
   <section class="ui vertical segment padded" id="article">
-    
+
     <div class="ui container">
       <div class="ui grid centered">
         <div class="column twelve wide computer fourteen wide tablet sixteen wide mobile">
@@ -26,7 +26,7 @@
             <div class="ui basic vertical segment right floated"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>
           </div>
 
-          <img class="ui fluid image" src="{{ article.image or '/images/posts/default.jpg' }}">
+          <img class="ui fluid image" src="{{ article.image or '/images/posts/default.jpg' }}" alt="{{ article.image_credit }}">
           {% if article.image and article.image_credit %}
             <div class="ui basic vertical segment center aligned">
               <p class="ui"><i>{{ article.image_credit}}</i></p>

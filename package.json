@@ -14,6 +14,7 @@
     "livereload": "npm run dev",
     "lint": "prettier --check 'src/**' '*.js' '*.json'",
     "format": "prettier --write 'src/**' '*.js' '*.json'",
+    "validate": "npm run build-html && html-validate --formatter codeframe output/",
     "test": "jest --silent false src/js/tests/"
   },
   "repository": {
@@ -42,6 +43,7 @@
     "css-loader": "^3.1.0",
     "file-loader": "^3.0.1",
     "fomantic-ui-less": "^2.8.8",
+    "html-validate": "^7.1.2",
     "imports-loader": "^0.8.0",
     "jest": "^26.4.2",
     "jquery": "^3.4.1",

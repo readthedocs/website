@@ -7,6 +7,10 @@
   padding-top: 3em;
   padding-bottom: 3em;
 }
+.ui.padded.hero.container {
+  padding-top: 6em;
+  padding-bottom: 4em;
+}
 
 /* Wide container is for content that has horizontal constraints and could look
  * better with some staggered vertical alignment */
