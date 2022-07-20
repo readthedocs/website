@@ -1,0 +1,163 @@
+{# Modal for site selection. Broken out for reuse #}
+{% macro signup_modal(element_id="homepage-modal") %}
+  <div class="ui modal"
+       id="{{ element_id }}"
+       data-module="modal"
+       data-inverted="true">
+    <div class="header">Get started with Read the Docs</div>
+    <div class="content">
+      <div class="ui center aligned basic fitted segment">
+        <p>
+          Which site best fits your project?
+        </p>
+      </div>
+
+      <div class="ui stacking centered grid">
+
+        <div class="seven wide computer sixteen wide tablet column">
+          <div class="ui raised segment">
+            <div class="ui header">
+              Read the Docs Community
+              <div class="sub header">
+                For free and open-source projects
+              </div>
+            </div>
+
+            <div class="ui relaxed list">
+              <div class="item">
+                <i class="fad fa-lock-open primary icon"></i>
+                Clone public repositories
+              </div>
+              <div class="item">
+                <i class="fad fa-eye primary icon"></i>
+                Public documentation
+              </div>
+              <div class="item">
+                <i class="fad fa-rectangle-ad primary icon"></i>
+                Ads supported hosting
+              </div>
+            </div>
+
+            <div class="ui center aligned basic fitted segment">
+              <p>
+                <b>Free</b> for open-source software.
+              </p>
+
+              <a class="ui primary center aligned button"
+                 href="https://readthedocs.org/accounts/signup/">
+                Sign up
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="seven wide computer sixteen wide tablet column">
+          <div class="ui raised segment">
+            <div class="ui header">
+              Read the Docs for Business
+              <div class="sub header">
+                For commercial and non-free projects
+              </div>
+            </div>
+
+            <div class="ui relaxed list">
+              <div class="item">
+                <i class="fad fa-lock-keyhole primary icon"></i>
+                Clone private and public repositories
+              </div>
+              <div class="item">
+                <i class="fad fa-eye-slash primary icon"></i>
+                Public and private documentation
+              </div>
+              <div class="item">
+                <i class="fad fa-users primary icon"></i>
+                Team management for your organization
+              </div>
+            </div>
+
+            <div class="ui center aligned basic fitted segment">
+              <p>
+                Plans starting at <b>$50/month</b>.
+              </p>
+
+              <a class="ui primary center aligned button"
+                 href="https://readthedocs.com/accounts/signup">
+                Sign up
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="http://127.0.0.1" class="ui cancel button">Learn more</a>
+    </div>
+  </div>
+{% endmacro %}
+
+{# Feature/highlight items at the top of the page #}
+{% macro highlight_item(icon, header, color="black", icon_attr=None) %}
+  <div class="five wide computer twelve wide tablet left aligned column">
+    <div class="ui inverted {{ color }} stacked very padded large segment">
+      <i class="fad {{ icon }} big shadowed icon" {%- if icon_attr %}{{ icon_attr }}{% endif %}></i>
+      <h2 class="ui small left aligned monospace header">
+        {{ header }}
+      </h2>
+
+      {{ caller() }}
+
+    </div>
+  </div>
+{% endmacro %}
+
+{# For features list section. A left floated icon and supporting header/text #}
+{% macro feature_detail_item(header, icon, paid=False) %}
+  <div class="sixteen wide mobile five wide computer column">
+    <div class="ui padded grid">
+      <div class="three wide computer two wide tablet three wide mobile right aligned column">
+        <i class="{{ icon }} big teal icon"></i>
+      </div>
+      <div class="thirteen wide computer fourteen wide tablet thirteen wide mobile left aligned column">
+        <h3 class="ui small header">
+          {{ header }} 
+          {% if paid %}
+          <span class="sub header">
+            <i class="fad fa-square-dollar violet icon"></i>
+            <span class="ui violet text">Paid plan feature</span>
+          </span>
+          {% endif %}
+        </h3>
+        <p>
+          {{ caller() }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{# For resource/blog post listing at the bottom of the page #}
+{% macro resource(title, link, icon, color="primary", image=None) %}
+  <div class="five wide computer twelve wide tablet column">
+    <div class="ui padded grid">
+      <div class="three wide right aligned column">
+        <i class="{{ icon }} big {{ color }} icon"></i>
+      </div>
+
+      <div class="thirteen wide left aligned column">
+        {% if image %}
+          <p>
+            <img src="{{ image }}" class="ui fluid rounded image" />
+          </p>
+        {% endif %}
+        <a class="ui small {{ color }} header" href="{{ link }}">
+          {{ title }}
+        </a>
+        <p>
+          {{ caller() }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
