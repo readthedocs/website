@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   aws-s3: circleci/aws-s3@3.0
+  node: circleci/node@5.0.2
 
 commands:
   run-lint:
@@ -11,9 +12,11 @@ commands:
       - run: npm ci
       - run: npm run lint
   run-build:
-    description: "Ensure built assets are up to date"
+    description: "Ensure built assets and HTML are up to date and valid"
     steps:
       - checkout
+      - node/install:
+          node-version: '14.18'
       - run: npm ci
       - run: npm run build-assets
       - run:
@@ -25,16 +28,16 @@ commands:
               git status dist/ --porcelain
               exit 1
             fi
+      - run: pip install poetry
+      - run: poetry install
+      - run: poetry run pelican content -s publishconf.py
+      - run: npx html-validate --formatter codeframe output/
   run-publish:
     description: "Publish site on main merge"
     parameters:
       bucket:
         type: string
     steps:
-      - checkout
-      - run: pip install poetry
-      - run: poetry install
-      - run: poetry run pelican content -s publishconf.py
       - aws-s3/sync:
           arguments: |
             --acl public-read \
@@ -50,13 +53,19 @@ jobs:
       - run-lint: {}
   build:
     docker:
-      - image: "cimg/node:14.18"
+      - image: "cimg/python:3.9"
     steps:
+      - attach_workspace:
+          at: ~/
       - run-build: {}
+      - persist_to_workspace:
+          root: ~/
   publish:
     docker:
       - image: "cimg/python:3.9"
     steps:
+      - attach_workspace:
+          at: ~/
       - run-publish:
           bucket: "s3://readthedocs-static-dev/sites/community"
 
@@ -66,10 +75,12 @@ workflows:
     jobs:
       - lint
       - build
+      - validate
       - publish:
-          filters:
-            branches:
-              only: main
           requires:
             - lint
             - build
+            - validate
+        #filters:
+        #  branches:
+        #    only: main

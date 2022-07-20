@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "void-style": "off",
+    "no-dup-class": "off",
+    "no-trailing-whitespace": "off",
+    "no-inline-style": [
+      "error",
+      {
+        "allowedProperties": [
+          "--fa-secondary-opacity",
+          "--fa-secondary-color"
+        ]
+      }
+    ]
+  }
+}
