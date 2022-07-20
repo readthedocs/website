@@ -75,12 +75,10 @@ workflows:
     jobs:
       - lint
       - build
-      - validate
       - publish:
           requires:
             - lint
             - build
-            - validate
         #filters:
         #  branches:
         #    only: main
