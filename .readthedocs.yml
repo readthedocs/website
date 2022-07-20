@@ -8,7 +8,7 @@ build:
   commands:
     - pip install poetry
     - poetry install
-    - FONTAWESOME_NPM_AUTH_TOKEN="${FONTAWESOME_NPM_AUTH_TOKEN}" npm ci
+    - npm ci
     - poetry run npm run build-html
     - mkdir -p _readthedocs/html/
     - cp -r output/* _readthedocs/html/
