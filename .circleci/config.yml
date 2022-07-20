@@ -12,7 +12,7 @@ commands:
       - run: npm ci
       - run: npm run lint
   run-build:
-    description: "Ensure built assets and HTML are up to date and valid"
+    description: "Ensure compiled assets are up to date and HTML is valid"
     steps:
       - checkout
       - node/install:
