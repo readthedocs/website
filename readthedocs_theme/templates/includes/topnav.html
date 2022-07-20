@@ -42,6 +42,22 @@
   </a>
 {% endmacro %}
 
+{# Application links to log in #}
+{% macro menu_log_in() %}
+  <a class="item" href="https://readthedocs.org/dashboard/">
+    <i class="fad fa-people-group primary icon"></i>
+    Read the Docs Community
+  </a>
+  <a class="item" href="https://readthedocs.com/dashboard/">
+    <i class="fad fa-building secondary icon"></i>
+    Read the Docs for Business
+  </a>
+  <a class="item" href="{{ SITE_URL }}/product.html">
+    <i class="fad fa-circle-question grey icon"></i>
+    Learn more
+  </a>
+{% endmacro %}
+
 <div class="ui basic fitted attached segment">
   <div class="ui container">
     <div class="ui middle aligned vertically padded grid">
@@ -62,18 +78,21 @@
           <div class="ui wide dropdown" data-module="dropdown" data-action="select">
             <i class="fad fa-bars large icon" style="--fa-secondary-opacity: 0.8;"></i>
             <div class="menu">
+
+              <div class="header">Log in</div>
+              {{ menu_log_in() }}
+
+              <div class="divider"></div>
+
               <div class="header">Navigation</div>
               <a class="item{% if page and page.slug == 'homepage' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/index.html">Home</a>
               {{ menu_main() }}
+
               <div class="divider"></div>
+
               <div class="header">Help</div>
               {{ menu_help() }}
-              <div class="divider"></div>
-              <div class="item">
-                <a class="ui primary fluid button" href="https://readthedocs.org/dashboard/">
-                  Open Application
-                </a>
-              </div>
+
             </div>
           </div>
         </div>
@@ -88,7 +107,7 @@
             {{ menu_main() }}
 
             <div class="right menu">
-              <div class="ui wide dropdown item" data-module="dropdown" data-action="select">
+              <div class="ui wide dropdown item" data-module="dropdown" data-action="select" data-display-type="block">
                 <span class="text">Help</span>
                 <i class="fad fa-caret-down icon"></i>
                 <div class="menu">
@@ -96,9 +115,15 @@
                 </div>
               </div>
               <div class="item">
-                <a class="ui button primary" href="https://readthedocs.org/dashboard/">
-                  Open Application
-                </a>
+
+                <div class="ui fluid dropdown primary button" data-module="dropdown" data-action="select" data-display-type="block">
+                  <i class="fad fa-right-to-bracket icon"></i>
+                  <span class="text">Log in</span>
+                  <div class="menu">
+                    {{ menu_log_in() }}
+                  </div>
+                </div>
+
               </div>
             </div>
 
