@@ -60,7 +60,7 @@ jobs:
       - run-build: {}
       - persist_to_workspace:
           root: ~/
-          paths: output/
+          paths: project
   publish:
     docker:
       - image: "cimg/python:3.10"
