@@ -6,6 +6,7 @@ War in Ukraine and what it means for Read the Docs
 :tags: stats, year-in-review, homepage
 :authors: David Fischer
 :description: With news surrounding the invasion of Ukraine evolving rapidly, we felt it was necessary to provide an update. 
+:status: draft
 :image: 
 :image_credit:
 

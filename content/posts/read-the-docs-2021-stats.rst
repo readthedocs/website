@@ -6,6 +6,7 @@ Read the Docs 2021 Stats
 :tags: stats, year-in-review, homepage
 :authors: Eric Holscher, David Fischer
 :description: 2021 continued in the realm of being a tough year. That said, Read the Docs had a lot of good things happen this year.
+:status: draft
 :image: 
 :image_credit:
 
