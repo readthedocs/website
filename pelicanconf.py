@@ -30,6 +30,14 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
+JINJA_ENVIRONMENT = {
+    "trim_blocks": True,
+    "lstrip_blocks": True,
+    "extensions": [
+        'jinja_markdown.MarkdownExtension'
+    ]
+}
+
 PLUGINS = ['related_posts', 'jinja2content', 'readthedocs_theme.plugins.html_directive']
 
 # Feed (RSS/Atom) settings
