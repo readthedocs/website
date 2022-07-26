@@ -1,0 +1,87 @@
+{#
+
+All of these blocks expect to be inside a `ui container` element. This element
+provides the responsive, single column view, and causes the content to be in
+a static width, centered column.
+
+See templates/pages/basic for more.
+
+#}
+
+{#
+  An image header, used for very prominent headers on pages
+
+  Not quite a hero header, but it takes up a similar footprint on the page. Two
+  column image and header element, and responsive down to mobile.
+
+  :param header: Header test
+  :param image: Image URL
+  :param large_image: Use large image? Default: True
+  :param vertical_align: Vertical alignment of columns. Default: "top"
+  :param image_alt: Alt text for image, required for validation
+  :param header_level: Header level. Default: "h1"
+
+#}
+{% macro header_image(header, image, use_large_image=True, vertical_align="top", image_alt=None, header_level="h1") %}
+  <div class="ui horizontally padded hero container">
+    <div class="ui relaxed centered computer reversed grid">
+      <div class="{{ vertical_align }} aligned row">
+
+        <div class="{% if use_large_image %}eight{% else %}six{% endif %} wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui basic vertical segment">
+            <img class="ui rounded fluid image" src="{{ image }}" {%- if image_alt is defined %} alt="{{ image_alt }}"{% endif %} />
+          </div>
+        </div>
+
+        <div class="{% if use_large_image %}eight{% else %}ten{% endif %} wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui large left aligned basic vertical segment">
+            <{{ header_level }} class="ui huge header">{{ header }}</{{ header_level }}>
+
+            {{ caller() }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{#
+  Stand-alone icon header
+
+  This is a useful block for breaking up content, it adds an icon in the header
+  for a little bit more visual impact than just text.
+
+  :param header: Header text
+  :param icon: Font Awesome icon class name and any other SUI icon classes
+  :param size: Size of the header. Default: "large"
+  :param subheader: Subheader text
+  :param icon_style: Inline styles for Font Awesome icon
+#}
+{% macro header_icon(header, icon, size="large", subheader="", icon_style=None) %}
+  <div class="ui basic very padded vertical segment">
+    <h3 class="ui {{ size }} header">
+      <i class="fad {{ icon }} icon"
+         {%- if icon_style %} style="{{ icon_style }}"{% endif %}></i>
+      <span class="content">
+        {{ header }}
+        {% if subheader %}
+          <span class="sub header">{{ subheader }}</span>
+        {% endif %}
+      </span>
+    </h3>
+  </div>
+{% endmacro %}
+
+
+{#
+  Basic centered and rounded image helper
+
+  :param image: Image URL
+  :param alt: Image alt text
+#}
+{% macro image_centered(image, alt=None) %}
+  <div class="ui text container">
+    <img class="ui fluid rounded image" src="{{ image }}" {%- if alt %} alt="{{ alt }}"{% endif -%} />
+  </div>
+{% endmacro %}

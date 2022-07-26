@@ -1,0 +1,413 @@
+<html>
+  <head>
+    <title>Example marketing page</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="examples/marketing" />
+    <meta name="status" content="draft" />
+    <meta name="description" content="An example marketing page" />
+  </head>
+  <body>
+
+{#
+  View this page at http://localhost:8080/drafts/pages/examples/marketing.html
+#}
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/technical.html" as technical %}
+
+<section>
+  {% call basic.header_image(
+    header="Here's an example of a large image header",
+    image="https://picsum.photos/640/480",
+    image_alt="Marketing introduction header",
+    vertical_align="middle")
+  %}
+    <p>
+      It is very prominent, and is meant as a first level header.
+      You should put some supporting text below the header,
+      but keep this copy short and clear.
+      Below this we can dive into more detail.
+    </p>
+
+    <p>
+      If you need some buttons, throw them in.
+    </p>
+
+    <p class="ui basic padded vertical segment">
+      <a href="#" class="ui large stackable primary button">
+        <i class="fad fa-cat-space icon"></i>
+        Get started!
+      </a>
+      <a href="#" class="ui large stackable button">
+        <i class="fad fa-dumpster-fire icon"></i>
+        Or don't!
+      </a>
+    </p>
+  {% endcall %}
+</section>
+
+<section id="features">
+  {% call marketing.highlight_list() %}
+    {% call marketing.highlight_item(
+        icon="olive fa-cauldron",
+        icon_style="--fa-secondary-color: violet; --fa-secondary-opacity: 1;",
+        header="Features are fine",
+        color="primary") %}
+{% markdown %}
+You can use highlight sections to provide a horizontal, *prominent*, three point
+list of items. One use case might be to explain three similar features.
+{% endmarkdown %}
+
+      <div class="ui basic inverted button">
+        Learn more
+      </div>
+
+    {% endcall %}
+    {% call marketing.highlight_item(
+        icon="yellow fa-chart-line",
+        icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
+        header="Numbers are nice",
+        color="secondary") %}
+{% markdown %}
+You could also use these lists for some important metrics that you want to highlight.
+{% endmarkdown %}
+
+      <div class="ui inverted two small statistics">
+        <div class="ui statistic">
+          <div class="value">425</div>
+          <div class="label">Degrees</div>
+        </div>
+        <div class="ui statistic">
+          <div class="value">30</div>
+          <div class="label">Minutes</div>
+        </div>
+      </div>
+    {% endcall %}
+    {% call marketing.highlight_item(
+        icon="fa-image-landscape",
+        header="Graphics are good",
+        color="violet") %}
+{% markdown %}
+You could even put some graphics in these blocks if you'd like to illustrate
+something instead.
+
+![Alt text for a random image](https://picsum.photos/400/150){.ui .fluid .rounded .image}
+{% endmarkdown %}
+    {% endcall %}
+  {% endcall %}
+</section>
+
+<div class="ui padded text container">
+{% markdown %}
+
+## Text container
+
+Text containers center and restrict the size of content to a nice, readable
+width. These containers are also responsive down to mobile.  It is recommended
+that the page width vary for a nicer look.
+
+You'll want to add some classes to your images or they will not scale responsively.
+
+![Alt text for a large, random image](https://picsum.photos/640/240){.ui .fluid .rounded .image}
+
+{% endmarkdown %}
+</div>
+
+
+<div class="ui very padded text container">
+{% markdown %}
+
+## Container spacing
+
+Vertical spacing is also really important to maintain. The best way to do this
+is with padded containers. This provides a break in the content to give the
+reader some reference point in the document.
+
+{% endmarkdown %}
+</div>
+
+
+<div class="ui very padded container">
+{% markdown %}
+
+## Standard container
+
+Standard containers have a wider width and smaller default text size.
+These containers are what you'd use for anything that might be wider and isn't
+just prose text content.
+
+Here are some examples of content you might put into this wider container:
+
+{% endmarkdown %}
+
+{# Row of images, though you may want cards instead #}
+<div class="ui basic very padded vertical center aligned segment">
+  <div class="ui medium rounded images">
+    <img src="https://picsum.photos/320/240" class="ui image" alt="A random image" />
+    <img src="https://picsum.photos/320/240" class="ui image" alt="A random image" />
+    <img src="https://picsum.photos/320/240" class="ui image" alt="A random image" />
+  </div>
+</div>
+
+{{ basic.header_icon(
+  header="Case studies",
+  subheader="Case studies by Read the Docs users and customers.",
+  icon="purple fa-message-lines",
+  icon_style="--fa-secondary-color: blueviolet;"
+) }}
+
+{#
+  Cards for an articles or case studies view
+
+  See https://fomantic-ui.com/views/card.html
+#}
+<div class="ui three link stackable cards">
+  {% for startup in ["Tooter", "Tomblr", "Instagrub"] %}
+    <a href="#" class="card">
+      <div class="image">
+        <img src="https://picsum.photos/320/240" alt="A random image">
+      </div>
+      <div class="content">
+        <div class="header">{{ startup }} documentation</div>
+        <div class="meta">
+          Case study
+        </div>
+        <div class="description">
+          This is a case study done by a long time user and customer of Read the Docs, <i>{{ startup }}</i>.
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated date">Published July 2022</span>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+<div class="ui very padded basic vertical segment">
+  <div class="ui horizontal divider">Or use some segments</div>
+</div>
+
+{# Grid view stuff #}
+<div class="ui stackable equal width grid">
+  <div class="stretched row">
+    <div class="column">
+      <div class="ui very padded raised large segment">
+        <h4 class="ui header">
+          For a little emphasis
+        </h4>
+        <p>
+          This is a great way to separate out content, good for placement in a
+          standard container. Maybe there is specific data or content to show.
+        </p>
+
+        {#
+
+        Statistics are nice for important numbers
+        https://fomantic-ui.com/views/statistic.html
+
+        #}
+        <div class="ui two small statistics">
+          <div class="statistic">
+            <div class="value">
+              5M
+            </div>
+            <div class="label">
+              Pageviews
+            </div>
+          </div>
+          <div class="statistic">
+            <div class="value">
+              40k
+            </div>
+            <div class="label">
+              Builds
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="ui very padded inverted violet large segment">
+        <h4 class="ui header">
+          <i class="fad fa-chart-line-up icon"></i>
+          Or even more emphasis
+        </h4>
+
+        <p>
+          On average, our customers build and release documentation
+          <b>20 times</b> per day. That's <b>{{ 20 * 5 * 52 }} times per year!</b>
+          Most documentation projects are over <b>100 pages</b>, and have more than
+          <b>10 authors</b>.
+        </p>
+
+        <p>
+          When it's easy for your team to collaborate, your docs get updated
+          <b>more frequently</b> and with <b>less effort</b>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui very padded basic vertical segment">
+  <div class="ui horizontal divider">
+    <i class="fad fa-face-thinking icon"></i>
+    Still not convinced?
+  </div>
+</div>
+
+{# Testimonial blocks #}
+<div class="ui stackable equal width grid">
+  <div class="stretched row">
+    <div class="column">
+      <div class="ui very padded raised large segment">
+        {% call marketing.testimonial(
+            name="Johnny Castle",
+            title="CEO",
+            company="Tomblr",
+            image="https://i.pravatar.cc/150?u=1") %}
+          Nobody puts docs in a corner.
+        {% endcall %}
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="ui very padded inverted secondary large segment">
+        {% call marketing.testimonial(
+            name="Bodhi Bodhisattva",
+            title="CEO",
+            company="Survesup",
+            image="https://i.pravatar.cc/150?u=2") %}
+          If you want the ultimate documentation, you've got to be willing to
+          pay the ultimate price. It's not tragic to document what you love.
+        {% endcall %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui very padded basic vertical segment">
+  <div class="ui horizontal divider">
+    Multiple content columns
+  </div>
+</div>
+
+{#
+  Multiple content columns
+
+  This uses an SUI trick. Use `computer reversed` class on the `ui grid` to
+  reverse the column order on desktop sized viewports. On mobile and tablet,
+  the grid will stack with the image column first, but on computers it will
+  be the right column in a two column layout.
+#}
+<div class="ui computer reversed centered grid">
+  <div class="stretched row">
+
+    <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
+      <img class="ui fluid rounded image" src="https://picsum.photos/640/480" alt="A random image" />
+    </div>
+
+    <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
+      <div class="ui very padded basic vertical large segment">
+{% markdown %}
+A two column layout can also work well for supporting text beside some
+illustrative content like code examples, video, or image content.
+
+If your page is content heavy, this can be a good way to break up the content
+flow and provide some vertical variance in the content width.
+{% endmarkdown %}
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+{# And some Markdown authored content in a text container #}
+<div class="ui very padded text container">
+{% markdown %}
+
+## Minor elements
+
+Let's write in markdown for a little while. Here are some of the minor elements
+you might include manually on pages:
+
+### Buttons
+
+<a class="ui button" href="https://fomantic-ui.com/elements/button.html">
+  <i class="fad fa-books icon"></i>
+  Fomantic UI docs on buttons
+</a>
+
+The classes `primary`, `secondary`, and color names like `olive`
+all control the colors of the buttons. There are plenty of styles to work with
+here.
+
+<button href="#" class="ui small primary button" type="button">Primary</button>
+<button href="#" class="ui small secondary button" type="button">Secondary</button>
+<button href="#" class="ui large olive icon basic button" type="button" aria-label="An olive button">
+  <i class="fad fa-olive icon"></i>
+</button>
+
+### Icons
+
+We deviate here and instead use Font Awesome Duotone, where SUI uses Font Awesome
+Free. So icon definitions look a little different.
+
+<i class="fad fa-cat-space big icon"></i>
+
+    <i class="fad fa-cat-space big icon"></i>
+
+Classes like colors, size, etc all work, but just require the Font Awesome
+supplied name instead of the normalized SUI-specific icon names.
+
+### Emoji :man_dancing:
+
+Emoji even work if you want them, though this is not SUI. Duotone icons are
+best for most graphic elements though.
+
+### Code
+
+The native Markdown blocks won't look good, but they technically work. This is
+because we want some additional elements surrounding the code block to provide
+a few more structural elements.
+
+Here's a basic code block:
+
+    import os
+    print(os.path)
+
+To get some nice styling, do this instead:
+
+{% endmarkdown %}
+
+{# Stylized code blocks #}
+{% call technical.code_block(title="<code>.readthedocs.yaml</code>", icon="fa-file") %}
+{% markdown %}
+
+```yaml
+version: 2
+
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.10"
+    nodejs: "14"
+  commands:
+    - pip install poetry
+    - poetry install
+    - npm ci
+    - poetry run npm run build-html
+    - mkdir -p _readthedocs/html/
+    - cp -r output/* _readthedocs/html/
+```
+
+{% endmarkdown %}
+{% endcall %}
+
+</div>
+
+  </body>
+</html>

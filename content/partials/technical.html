@@ -1,0 +1,29 @@
+{#
+  Stylized code block
+
+  :param title: Title for the code block, maybe a filename
+  :param icon: Icon name for block title
+
+  Example:
+
+      {% call code_block(title="<code>.readthedocs.yaml</code>", icon="fa-file") %}
+      {% markdown %}
+      ```yaml
+      build:
+        commands:
+          - true
+      ```
+      {% endmarkdown %}
+      {% endcall %}
+#}
+{% macro code_block(title, icon=None) %}
+  <div class="ui inverted padded segment">
+    <div class="ui top attached label">
+      {% if icon %}
+        <i class='fad {{ icon }} icon'></i>
+      {% endif %}
+      {{ title }}
+    </div>
+    {{ caller() }}
+  </div>
+{% endmacro %}

@@ -97,21 +97,6 @@
   </div>
 {% endmacro %}
 
-{# Feature/highlight items at the top of the page #}
-{% macro highlight_item(icon, header, color="black", icon_attr=None) %}
-  <div class="five wide computer twelve wide tablet left aligned column">
-    <div class="ui inverted {{ color }} stacked very padded large segment">
-      <i class="fad {{ icon }} big shadowed icon" {%- if icon_attr %}{{ icon_attr }}{% endif %}></i>
-      <h2 class="ui small left aligned monospace header">
-        {{ header }}
-      </h2>
-
-      {{ caller() }}
-
-    </div>
-  </div>
-{% endmacro %}
-
 {# For features list section. A left floated icon and supporting header/text #}
 {% macro feature_detail_item(header, icon, paid=False) %}
   <div class="sixteen wide mobile five wide computer column">
