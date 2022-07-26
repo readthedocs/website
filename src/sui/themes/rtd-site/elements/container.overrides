@@ -7,9 +7,15 @@
   padding-top: 3em;
   padding-bottom: 3em;
 }
-.ui.padded.hero.container {
+.ui.hero.padded.container {
   padding-top: 6em;
   padding-bottom: 4em;
+}
+@media only screen and (max-width: @largestTabletScreen) {
+  .ui.ui.ui.hero.padded.container {
+    padding-top: @mobileGutter;
+    padding-bottom: @mobileGutter;
+  }
 }
 
 /* Wide container is for content that has horizontal constraints and could look
