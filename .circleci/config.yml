@@ -6,11 +6,12 @@ orbs:
 
 commands:
   run-lint:
-    description: "Run code linter"
+    description: "Run basic checks"
     steps:
       - checkout
       - run: npm ci
       - run: npm run lint
+      - run: npm run test
   run-build:
     description: "Ensure compiled assets are up to date and HTML is valid"
     steps:

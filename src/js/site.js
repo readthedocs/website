@@ -85,3 +85,6 @@ jquery.fn.sui_module = function () {
     }
   });
 };
+
+// Mostly for testing
+export { jquery };

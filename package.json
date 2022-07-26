@@ -15,7 +15,8 @@
     "lint": "prettier --check 'src/**' '*.js' '*.json'",
     "format": "prettier --write 'src/**' '*.js' '*.json'",
     "validate": "npm run build-html && html-validate --formatter codeframe output/",
-    "test": "jest --silent false src/js/tests/"
+    "test": "jest --silent false src/js/tests/",
+    "checks": "npm run lint && npm run test && npm run validate"
   },
   "repository": {
     "type": "git",
@@ -80,10 +81,7 @@
   "jest": {
     "globals": {
       "__webpack_public_path__": null
-    },
-    "setupFiles": [
-      "./src/js/tests/setup.js"
-    ]
+    }
   },
   "prettier": {
     "overrides": [

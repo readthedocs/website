@@ -1,0 +1,10 @@
+root = true
+
+[**/*.html]
+indent_style = space
+indent_size = 2
+vim_filetype = jinja2.html
+
+[**/*.js]
+indent_style = space
+indent_size = 2
