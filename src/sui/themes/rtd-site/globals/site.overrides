@@ -3,6 +3,11 @@ body > main {
   min-height: 55vh;
 }
 
+// Nice scrolling
+html {
+  scroll-behavior: smooth;
+}
+
 // Text colors
 .ui.red.text {
   color: @red;

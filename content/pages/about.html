@@ -1,0 +1,369 @@
+<html>
+  <head>
+    <title>About</title>
+    <meta name="template" content="page" />
+    <meta name="status" content="hidden" />
+    <meta name="slug" content="about" />
+  </head>
+  <body>
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/homepage.html" as homepage %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/about.html" as about %}
+
+<section>
+  <div class="ui horizontally very padded container">
+    <div class="ui very padded centered grid">
+      <div class="middle aligned row">
+
+        <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+          <div class="ui large left aligned basic vertical segment">
+            <h1 class="ui huge header">
+              How documentation automation works with Read the Docs
+            </h1>
+
+            {% markdown %}
+            Read the Docs builds on top of all of the **same tools** that you are
+            already using to develop software, and brings the power of version
+            control and your favorite editor to your documentation.
+
+            Changes to your documentation happen quickly and easily because we
+            build on top of a collaborative platform. When it's easy for your
+            team to collaborate, your docs get updated **more frequently** and
+            with **less effort**.
+            {% endmarkdown %}
+
+          </div>
+        </div>
+
+        <div class="six wide computer twelve wide tablet sixteen wide mobile column">
+          {#
+            TODO this would be a good spot for a nice screenshot of our UI
+            building documentation, or perhaps even an animation of the
+            building process.
+          #}
+          <div class="ui very padded basic segment">
+            <div class="ui relaxed list">
+
+              {%- set header_1 = "Maintain docs as code" %}
+              {%- set icon_1 = "fa-code-branch" -%}
+              <a href="#author" class="ui small teal header item">
+                <i class="fad {{ icon_1 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_1 }}
+                  <span class="sub header">Use all your favorite development tools to manage your documentation</span>
+                </span>
+              </a>
+
+              {%- set header_2 = "Build automatically" %}
+              {%- set icon_2 = "fa-gears" -%}
+              <a href="#build" class="ui small header item">
+                <i class="fad {{ icon_2 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_2 }}
+                  <span class="sub header">Update your documentation whenever you update your code</span>
+                </span>
+              </a>
+
+              {%- set header_3 = "Preview your changes" %}
+              {%- set icon_3 = "fa-code-compare" -%}
+              <a href="#review" class="ui small header item">
+                <i class="fad {{ icon_3 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_3 }}
+                  <span class="sub header">Verify changes to your documentation during review</span>
+                </span>
+              </a>
+
+              {%- set header_4 = "Everything in one place" %}
+              {%- set icon_4 = "fa-box-check" -%}
+              <a href="#serve" class="ui small header item">
+                <i class="fad {{ icon_4 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_4 }}
+                  <span class="sub header">We manage hosting, authentication, search, and analytics</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% macro about_divide() %}
+  <div class="ui text container">
+    <div class="ui divider">
+    </div>
+  </div>
+{% endmacro %}
+
+{{ about_divide() }}
+
+{#
+  This section should be limited to 4 or so points. We don't want to overwhelm
+  the reader here. This is a high level explanation for general use, we can
+  highlight groups of features and individual features below.
+#}
+<section id="how-it-works">
+  <div class="ui very padded container">
+    <div class="ui vertically padded centered grid" id="author">
+
+      {% call about.step(
+          header=header_1,
+          image="/images/about/author.png",
+          icon=icon_1) %}
+        <p>
+          Manage software documentation using all of the same tools you're already using for development.
+          Write docs with your favorite editor and commit changes using version control.
+        </p>
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Bring your own tools", icon="fad fa-book-copy") %}
+        Integrated support for tools like <b>Sphinx</b>, <b>MkDocs</b>, <b>Jupyter Book</b>, and more.
+        Use what works best for your project.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Versioning", icon="fad fa-layer-group") %}
+        Maintain multiple versions of your documentation using version control.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Localization", icon="fad fa-language") %}
+        Use common localization tools to translate your documentation in multiple languages.
+      {% endcall %}
+
+      {% block author_details %}
+        <div class="ui stackable equal width grid">
+          <div class="stretched row">
+
+            {% block author_details_providers %}
+              <div class="left aligned column">
+                <div class="ui very padded raised inverted teal large segment">
+                  <h4 class="ui header">
+                    <i class="fad fa-layer-group fa-swap-opacity icon"></i>
+                    Maintain versioned documentation
+                  </h4>
+
+                  {% markdown %}
+                  Give your users documentation that won't go out of date using
+                  documentation versioning. Build multiple versions from commits,
+                  branches, or tags in your repository.
+                  {% endmarkdown %}
+                </div>
+              </div>
+
+              <div class="left aligned column">
+                <div class="ui very padded basic segment">
+                  <h5 class="ui small header">
+                    Some example configurations
+                  </h5>
+
+                  {% markdown %}
+                  * Write **Markdown** with **Sphinx** and **MyST**
+                  * Add reference docs from **Python** code
+                  * Document your REST API with **OpenAPI**
+                  * Include a **Jupyter Notebook** in your docs
+                  * [Learn more]()
+                  {% endmarkdown %}
+                </div>
+              </div>
+            {% endblock author_details_providers %}
+
+          </div>
+        </div>
+      {% endblock author_details %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="build">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_2,
+          image="/images/about/build.png",
+          icon=icon_2) %}
+        <p>
+          Build your documentation with each commit and pull request,
+          and iterate on your docs quicker.
+        </p>
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Build customization", icon="fad fa-sparkles") %}
+        Customize your documentation build to fit your needs. Install and run custom processes.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Build configuration", icon="fad fa-gears") %}
+        Install any dependencies and tools that you need to build your documentation and run custom commands.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Private cloning", icon="fad fa-lock", paid=True) %}
+        Clone private repositories using a connected GitHub, GitLab, or Bitbucket account.
+      {% endcall %}
+
+    {% block build_details %}
+      <div class="ui stackable equal width grid">
+        <div class="stretched middle aligned row">
+
+          {% block build_details_providers %}
+            <div class="left aligned column">
+              <div class="ui very padded raised inverted teal large segment">
+
+                <h4 class="ui header">
+                  <i class="fad fa-cloud-check icon"></i>
+                  Connect to all of your repositories
+                </h4>
+
+                {% markdown %}
+                Read the Docs integrates with **GitHub**, **GitLab**, and **Bitbucket**
+                and can clone and build documentation from any hosted repository.
+                You can also manually connect to any repository provider that supports
+                **Git**.
+                {% endmarkdown %}
+
+
+              </div>
+            </div>
+          {% endblock build_details_providers %}
+
+          {% block build_details_tools %}
+            <div class="column">
+              <div class="ui five column center aligned vertically padded grid">
+                <div class="column">
+                  <div class="ui mini icon primary header">
+                    <i class="fab fa-github icon"></i>
+                    <div class="content">
+                      GitHub
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui mini icon primary header">
+                    <i class="fab fa-gitlab icon"></i>
+                    <div class="content">
+                      GitLab
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui mini icon primary header">
+                    <i class="fab fa-bitbucket icon"></i>
+                    <div class="content">
+                      Bitbucket
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endblock build_details_tools %}
+        </div>
+      </div>
+    {% endblock build_details %}
+
+
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="review">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_3,
+          image="/images/about/review.png",
+          icon=icon_3) %}
+        {% markdown %}
+        Rebuild your documentation and preview changes in every pull request.
+        Share changes easily and help catch errors before shipping documentaiton updates.
+
+        Supported on **GitHub** and **GitLab** repositories.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/en/stable/pull-requests.html">
+          Learn more
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="serve">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_4,
+          image=None,
+          icon=icon_4) %}
+        <p>
+          Focus on your documentation, not hosting your documentation.
+          We support custom domains, redirects, and authentication for private documentation.
+        </p>
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
+        Help your users find what the need with integrated search across all your projects and versions.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", paid=True) %}
+        Control who has access to your documentation with integrated authentation.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-at", paid=True) %}
+        Use your own custom domain for your documentation project.
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
+
+{{ about_divide() }}
+
+<div class="ui text container">
+  {% call basic.header_lead(header="Customize your automation", header_level="h2") %}
+    <p>
+      Get creative with even more features for your documentation.
+    </p>
+  {% endcall %}
+</div>
+
+{% block features %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui centered grid">
+
+        {% call homepage.feature_detail_item(header="Automation rules", icon="fad fa-robot") %}
+          Automatically increment your documentation versions, and rebuild on new version releases.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Webhooks", icon="fad fa-satellite-dish") %}
+          Webhooks can be sent after your project builds, so you can add new functionality.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Offline formats", icon="fad fa-file-pdf") %}
+          Output PDF and EPUB formats for your documentation, for offline and cross-device viewing.
+        {% endcall %}
+
+      </div>
+    </div>
+  </section>
+{% endblock features %}
+
+<div class="ui padded basic center aligned segment">
+  <p>
+    Get started now!
+  </p>
+  <a href="#" class="ui primary large button"><i class="fad fa-sparkles icon"></i>Get started!</a>
+</div>
+
+
+  </body>
+</html>
