@@ -23,10 +23,10 @@ commands:
       - run:
           name: Ensure built assets are up to date
           command: |
-            if [[ `git status dist/ --porcelain` ]]
+            if [[ `git status readthedocs_theme/ --porcelain` ]]
             then
               echo "ERROR: assets are out of date. Make sure to run 'npm run build' on your branch."
-              git status dist/ --porcelain
+              git status readthedocs_theme/ --porcelain
               exit 1
             fi
       - run: pip install poetry
