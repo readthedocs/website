@@ -33,14 +33,25 @@ You will need to specify the ``FONTAWESOME_NPM_AUTH_TOKEN`` environment variable
 before installing Node dependenvies. You should be using ``direnv`` locally for
 secret management and encryption. Ask for this token, it's private.
 
-You need to be using Node<=14 and at least Python 3.6+, but Python 3.10 is
-preferred. Using ``asdf`` is recommended here. With both configured, you can
-install all the dependencies with:
+You need to be using Node<=14 and Python 3.10.
+Using ``asdf`` is a great option for adding Python 3.10 to a system that doesn't have it. 
+h both configured, you can install all the dependencies with:
 
 .. code-block:: console
 
     $ poetry install
     $ npm install
+
+Running in Docker
+~~~~~~~~~~~~~~~~~
+
+If you have Docker with docker-compose available, you can run a local development server like this:
+
+.. code-block:: console
+
+    $ # invoke direnv to add secret environment
+    $ docker-compose build  # builds the server
+    $ docker-compose up 
 
 Local development and authoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

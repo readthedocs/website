@@ -1,0 +1,18 @@
+version: '3'
+
+volumes:
+  build:
+
+services:
+
+  server:
+    # Image used for all the other services (proxito, web, celery, build)
+    build:
+      context: ${PWD}
+      dockerfile: ./Dockerfile
+    environment:
+      - FONTAWESOME_NPM_AUTH_TOKEN=${FONTAWESOME_NPM_AUTH_TOKEN}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ${PWD}/:/project
