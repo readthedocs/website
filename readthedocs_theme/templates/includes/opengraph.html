@@ -4,7 +4,7 @@
 {%- set og_object = article|default(page)|default(None) %}
 {%- set og_title = og_object.title|default("Read the Docs", true)|striptags|escape %}
 {%- set og_description = og_object.description|default("Read the Docs simplifies software documentation by building, versioning, and hosting of your docs, automatically.")|striptags|escape %}
-{%- set og_image = og_object.image|default("/images/logo-opengraph.svg") %}
+{%- set og_image = og_object.image|default("/images/logo-opengraph.png") %}
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ og_title }}" />
