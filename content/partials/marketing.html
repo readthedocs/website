@@ -1,0 +1,88 @@
+{#
+  Testimonial quote from a user
+
+  :param name: Name of the person being quoted
+  :param title: Title of the person being quoted
+  :param image: Image source URL for avatar
+  :param company: Name of the company/organization featured
+
+#}
+{% macro testimonial(name, title, image, company) %}
+  <i class="fad fa-quotes big icon"></i>
+  <blockquote class="ui big text">
+    {{ caller() }}
+  </blockquote>
+
+  <div class="ui small header">
+    <img src="{{ image }}" class="ui avatar image" alt="{{ name }}, {{ title }}, {{ company }}" />
+    <div class="content">
+      {{ name }}
+      <div class="sub header">
+        {{ title }}, <i>{{ company }}</i>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{#
+  Highlight list is a prominent row of inverted blocks, used to focus the reader
+
+  Usually used in a three column layout. This row will stack on mobile and
+  tablet, so keep vertical height in mind. See `highlight_list` for more.
+
+  Usage:
+
+      {% call highlight_list() %}
+        {% call highlight_item(...) %}
+          <p>...</p>
+        {% endcall %}
+      {% endcall %}
+
+#}
+{% macro highlight_list() %}
+  <div class="ui very padded wide container">
+    <div class="ui padded relaxed stretched stackable centered grid">
+      {{ caller() }}
+    </div>
+  </div>
+{% endmacro %}
+
+{#
+  Highlight items are columns in a highlight list
+
+  :param icon: Font Awesome icon name, plus any other classes to add, such as the icon color
+  :param header: Header text
+  :param color: Block background color, default: "primary"
+  :param icon_style: Inline styles for Font Awesome icon
+
+  .. note::
+      The one exclusion allowed for inline styles are styles for Font Awesome
+      icons. Duotone icons have several CSS attributes for controlling opacity
+      and color. See https://fontawesome.com/docs/web/style/duotone for more.
+
+  Example:
+
+      {% call highlight_item(
+          icon="violet fa-display-group",
+          header="Header",
+          color="secondary",
+          icon_style="--fa-secondary-opacity: 1;") %}
+        <p>Body text</p>
+      {% endcall %}
+
+#}
+{% macro highlight_item(icon, header, color="primary", icon_style=None) %}
+  <div class="five wide computer twelve wide tablet left aligned column">
+    <div class="ui inverted {{ color }} stacked very padded large segment">
+      <i class="fad {{ icon }} big shadowed icon"
+         {%- if icon_style %} style="{{ icon_style }}"{% endif %}></i>
+
+      <h2 class="ui small left aligned monospace header">
+        {{ header }}
+      </h2>
+
+      {{ caller() }}
+
+    </div>
+  </div>
+{% endmacro %}

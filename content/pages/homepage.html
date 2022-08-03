@@ -11,6 +11,7 @@
   <body>
 
     {% import "partials/homepage.html" as homepage %}
+    {% import "partials/marketing.html" as marketing %}
 
     {% block homepage_callout_wrapper %}
       <section>
@@ -63,47 +64,41 @@
     {% endblock homepage_callout_wrapper %}
 
     {% block homepage_highlight %}
-      <div class="ui very padded wide container">
-        <div class="ui padded relaxed stretched stackable centered grid">
+      {% call marketing.highlight_list() %}
+        {% call marketing.highlight_item(
+            icon="olive fa-terminal",
+            header="Docs as code",
+            color="black") %}
+          <p>
+            Write documentation without changing your workflow or your tools.
+            Use your favorite editor and commit changes using version control.
+          </p>
+        {% endcall %}
 
-          {% block homepage_highlight_list %}
-            {% call homepage.highlight_item(
-                icon="olive fa-terminal",
-                header="Docs as code",
-                color="black") %}
-              <p>
-                Write documentation without changing your workflow or your tools.
-                Use your favorite editor and commit changes using version control.
-              </p>
-            {% endcall %}
+        {% call marketing.highlight_item(
+            icon="white fa-user-robot",
+            icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
+            header="Fully automated",
+            color="grey") %}
+          <p>
+            Automatically release your documentation with every commit,
+            and preview documentation changes with every pull request.
+          </p>
+        {% endcall %}
 
-            {% call homepage.highlight_item(
-                icon="white fa-user-robot",
-                icon_attr='style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0"',
-                header="Fully automated",
-                color="grey") %}
-              <p>
-                Automatically release your documentation with every commit,
-                and preview documentation changes with every pull request.
-              </p>
-            {% endcall %}
-
-            {% call homepage.highlight_item(
-                icon="white fa-rocket-launch",
-                icon_attr='style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0"',
-                header="Ship docs fast",
-                color="violet") %}
-              <p>
-                Serve documentation publicly or privately,
-                manage multiple releases of your product with versions,
-                and search across projects with integrated search.
-                Focus on your docs, not on managing infrastructure.
-              </p>
-            {% endcall %}
-          {% endblock homepage_highlight_list %}
-
-        </div>
-      </div>
+        {% call marketing.highlight_item(
+            icon="white fa-rocket-launch",
+            icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
+            header="Ship docs fast",
+            color="violet") %}
+          <p>
+            Serve documentation publicly or privately,
+            manage multiple releases of your product with versions,
+            and search across projects with integrated search.
+            Focus on your docs, not on managing infrastructure.
+          </p>
+        {% endcall %}
+      {% endcall %}
     {% endblock homepage_highlight %}
 
     <div class="ui divider"></div>
