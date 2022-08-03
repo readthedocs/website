@@ -1,0 +1,17 @@
+name: Read the Docs pull request preview
+on:
+  pull_request_target:
+    types:
+      - opened
+
+permissions:
+  pull-requests: write
+
+jobs:
+  documentation-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: readthedocs/readthedocs-preview@main
+        with:
+          project-slug: "read-the-docs-site-community"
+
