@@ -1,0 +1,25 @@
+<meta property="og:site_name" content="{{ SITENAME }}" />
+
+{%- set site_url = "" if SITEURL == "." else SITEURL %}
+{%- set og_object = article|default(page)|default(None) %}
+{%- set og_title = og_object.title|default("Read the Docs", true)|striptags|escape %}
+{%- set og_description = og_object.description|default("Read the Docs simplifies software documentation by building, versioning, and hosting of your docs, automatically.")|striptags|escape %}
+{%- set og_image = og_object.image|default("/images/logo-opengraph.png") %}
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ og_title }}" />
+<meta property="twitter:title" content="{{ og_title }}" />
+<meta name="description" content="{{ og_description }}" />
+<meta property="og:description" content="{{ og_description }}" />
+<meta property="twitter:description" content="{{ og_description }}" />
+<meta property="og:image" content="{{ site_url }}{{ og_image }}" />
+<meta property="twitter:image" content="{{ site_url }}{{ og_image }}" />
+{% for tag in og_object.tags %}
+<meta name="tags" content="{{ tag }}" />
+{% endfor %}
+{% for author in og_object.authors %}
+<meta name="author" content="{{ author }}" />
+{% endfor %}
+{% if og_object.date %}
+<meta property="article:published_time" content="{{ og_object.date.strftime('%Y-%m-%d') }}" />
+{% endif %}
