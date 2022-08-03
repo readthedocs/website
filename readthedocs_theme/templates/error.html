@@ -1,0 +1,36 @@
+{% extends "page.html" %}
+
+{% macro page_icon(icon, icon_style="--fa-secondary-opacity: .5;", size="big") %}
+  <i class="fad {{ icon }} {{ size }} black inverted shadowed circular icon"
+     {%- if icon_style %} style="{{ icon_style }}"{% endif %}></i>
+{% endmacro %}
+
+{% block content %}
+  <section>
+    <div class="ui hero padded container">
+      <div class="ui very padded text container">
+        <div class="ui vertically padded centered grid">
+          <div class="ui computer only tablet only right aligned three wide computer three wide tablet column">
+            {{ page_icon(page.icon, page.icon_style) }}
+          </div>
+          <div class="ui mobile only center aligned sixteen wide column">
+            {{ page_icon(page.icon, page.icon_style) }}
+          </div>
+          <div class="ui ten wide computer eleven wide tablet sixteen wide mobile column">
+            <h1 class="ui small left aligned monospace header">
+              {{ page.title }}
+              {% if page.subtitle %}
+              <span class="sub header">
+                {{ page.subtitle }}
+              </span>
+              {% endif %}
+            </h1>
+
+            {{ page.content }}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
