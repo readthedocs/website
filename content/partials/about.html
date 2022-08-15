@@ -1,36 +1,13 @@
-{% macro old_step(image, header, icon=None) %}
-  <div class="ui sixteen wide computer sixteen wide tablet sixteen wide mobile column">
-    <div x-class="ui very padded large segment">
-      <div class="ui vertically padded top aligned grid">
+{#
+  The header and supporting image for each about section/step
 
-        <div class="sixteen wide mobile eleven wide computer column">
-          <div class="ui grid">
-            <div class="right aligned three wide tablet three wide computer only column">
-              {% if icon %}
-              <i class="fad {{ icon }} big inverted circular shadowed secondary icon"></i>
-              {% endif %}
-            </div>
-            <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer column">
-              <h2 class="ui medium header">
-                {{ header }}
-              </h2>
-
-              {{ caller() }}
-
-            </div>
-          </div>
-        </div>
-
-        <div class="center aligned sixteen wide mobile sixteen wide tablet five wide computer column">
-          <img src="{{ image }}" class="ui rounded centered image" />
-        </div>
-
-      </div>
-    </div>
-  </div>
-{% endmacro %}
-
-{% macro step(image, header, icon=None) %}
+  :param image: Image to use on the right side of the header. Can be `None` to
+                manually control the column as well.
+  :param header: Header text
+  :param icon: Font Awesome icon for the icon header.
+  :param image_alt: Alt text for the image
+#}
+{% macro step(image, header, icon=None, image_alt=None) %}
 <div class="sixteen wide mobile sixteen wide tablet ten wide computer column">
     <div class="ui grid">
       <div class="right aligned three wide tablet three wide computer only column">
@@ -49,10 +26,10 @@
     </div>
   </div>
 
-  <div class="center aligned sixteen wide mobile eight wide tablet six wide computer column">
-    {% if image %}
-      <img src="{{ image }}" class="ui rounded centered image" />
-    {% endif %}
-  </div>
+  {% if image %}
+    <div class="center aligned sixteen wide mobile eight wide tablet six wide computer column">
+      <img src="{{ image }}" class="ui rounded centered image" alt="{{ image_alt }}" />
+    </div>
+  {% endif %}
 {% endmacro %}
 

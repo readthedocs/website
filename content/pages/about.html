@@ -7,9 +7,7 @@
   </head>
   <body>
 
-{% import "partials/basic.html" as basic %}
 {% import "partials/homepage.html" as homepage %}
-{% import "partials/marketing.html" as marketing %}
 {% import "partials/about.html" as about %}
 
 <section>
@@ -85,15 +83,15 @@
   </div>
 </section>
 
-{% macro about_divide() %}
+{% macro about_divide(text=None) %}
   <div class="ui text container">
-    <div class="ui divider">
+    <div class="ui {%- if text %} horizontal {%- endif %} divider">
+      {% if text %}{{ text }}{% endif %}
     </div>
   </div>
 {% endmacro %}
 
 {{ about_divide() }}
-
 
 <section>
   <div class="ui very padded container">
@@ -102,6 +100,7 @@
       {% call about.step(
           header=header_1,
           image="/images/about/authoring.png",
+          image_alt="Terminal window showing commands to commit documentation changes",
           icon=icon_1) %}
         {% markdown %}
         Manage software documentation using all of the **same tools and workflow**
@@ -174,20 +173,23 @@
       {% call about.step(
           header=header_2,
           image="/images/about/building.png",
+          image_alt="Project building on Read the Docs",
           icon=icon_2) %}
         {% markdown %}
-        Your project's documentation is rebuilt whenever a change is detected in your repository.
+        Your documentation is rebuilt whenever a change is detected in your repository,
+        so every version of your documentation is **always up to date**.
+
         Whether your project is **Python** or **Node.js**, your project controls
         what dependencies to install and how to generate your documentation.
         {% endmarkdown %}
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="xxxxxxx xxxxxxxxxxxx", icon="fad fa-lock", paid=True) %}
-        Clone private repositories using a connected GitHub, GitLab, or Bitbucket account.
-      {% endcall %}
-
       {% call homepage.feature_detail_item(header="Build customization", icon="fad fa-sparkles") %}
         Customize your documentation build to fit your needs. Install your own dependencies and run custom commands.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Configuration file", icon="fad fa-file-code") %}
+        Set up your project and track your project's configuration from your repository.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Offline formats", icon="fad fa-file-pdf") %}
@@ -267,6 +269,7 @@
       {% call about.step(
           header=header_3,
           image="/images/about/review.png",
+          image_alt="Read the Docs pull request review checks in a GitHub pull request",
           icon=icon_3) %}
         {% markdown %}
         Rebuild your documentation and preview changes in every pull request.
@@ -302,65 +305,78 @@
         Control who has access to your documentation with integrated authentation.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-at", paid=True) %}
-        Use your own custom domain for your documentation project.
+      {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-at") %}
+        Use your own custom domain for your hosted documentation, with SSL automatically configured.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
         Help your users find what the need with integrated search across all your projects and versions.
       {% endcall %}
 
+      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
+        Avoid broken links by adding redirects for pages that have been moved or deleted. 
+      {% endcall %}
+
     </div>
   </div>
 </section>
 
-{{ about_divide() }}
-
-<div class="ui text container">
-  {% call basic.header_lead(header="Customize your automation", header_level="h2") %}
-    <p>
-      Get creative with even more features for your documentation.
-    </p>
-  {% endcall %}
-</div>
-
-{% block features %}
-  <section>
-    <div class="ui very padded container">
-      <div class="ui centered grid">
-
-        {% call homepage.feature_detail_item(header="Configuration file", icon="fad fa-file-code") %}
-          Track your project's configuration from your repository with our configuration file.
-        {% endcall %}
-
-        {% call homepage.feature_detail_item(header="Automation rules", icon="fad fa-robot") %}
-          Automatically increment your documentation versions, and rebuild on new version releases.
-        {% endcall %}
-
-        {% call homepage.feature_detail_item(header="Environment variables", icon="fad fa-shield-keyhole") %}
-          Use environment variables to provide secrets to your project's build commands.
-        {% endcall %}
-
-        {% call homepage.feature_detail_item(header="Analytics", icon="fad fa-chart-column") %}
-          Track search query and documentation page traffic data with no additional services.
-        {% endcall %}
-
-        {% call homepage.feature_detail_item(header="Webhooks", icon="fad fa-satellite-dish") %}
-          Webhooks can be sent after your project builds, so you can add new functionality.
-        {% endcall %}
-
+<section>
+  <div class="ui padded container">
+    <div class="ui vertically padded centered grid">
+      <div class="center aligned column">
+        <div class="ui very padded raised inverted teal large segment">
+          <p>
+            Automate your documentation with Read the Docs
+            <a href="#" class="ui large inverted button"><i class="fad fa-sparkles icon"></i>Get started now</a>
+          </p>
+        </div>
       </div>
     </div>
-  </section>
-{% endblock features %}
+  </div>
+</section>
 
-<div class="ui padded basic center aligned segment">
-  <p>
-    Get started now!
-  </p>
-  <a href="#" class="ui primary large button"><i class="fad fa-sparkles icon"></i>Get started!</a>
-</div>
+{{ about_divide("And more features") }}
 
+<section>
+  <div class="ui very padded container" id="more">
+    <div class="ui vertically padded centered grid">
+
+      {% call homepage.feature_detail_item(header="Automation rules", icon="fad fa-robot") %}
+        Automatically increment your documentation versions, and rebuild on new version releases.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Subprojects", icon="fad fa-folder-tree") %}
+        Subprojects can share a search index and a custom domain, and can help logically group sets of multiple projects.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Environment variables", icon="fad fa-shield-keyhole") %}
+        Use environment variables to provide secrets to your project's build commands.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Analytics", icon="fad fa-chart-column") %}
+        Track search query and documentation page traffic data with no additional services.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Webhooks", icon="fad fa-satellite-dish") %}
+        Webhooks can be sent after your project builds, so you can add new functionality.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Notifications", icon="fad fa-satellite-dish") %}
+        Webhooks can be sent after your project builds, so you can add new functionality.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Audit log", icon="fad fa-clipboard-list", paid=True) %}
+        Track and review authentication attempts for your organization and all of your private documentation projects.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Team management", icon="fad fa-people-group", paid=True) %}
+        Control access to your projects within your organization and group projects by teams.
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
 
   </body>
 </html>
