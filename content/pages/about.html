@@ -325,18 +325,31 @@
   <div class="ui padded container">
     <div class="ui vertically padded centered grid">
       <div class="center aligned column">
-        <div class="ui very padded raised inverted teal large segment">
+        <div class="ui very padded raised inverted secondary large segment">
           <p>
-            Automate your documentation with Read the Docs
-            <a href="#" class="ui large inverted button"><i class="fad fa-sparkles icon"></i>Get started now</a>
+            Start automating your documentation with Read the Docs.
           </p>
+          <p>
+            <button
+               class="ui large inverted button"
+               onclick="jQuery('#about-modal').modal('show');">
+              <i class="fad fa-play icon"></i>
+              Get started now
+            </button>
+          </p>
+
         </div>
       </div>
     </div>
   </div>
 </section>
 
-{{ about_divide("And more features") }}
+{% block homepage_modal %}
+  {{ homepage.signup_modal("about-modal") }}
+{% endblock homepage_modal %}
+
+
+{{ about_divide("Additional features") }}
 
 <section>
   <div class="ui very padded container" id="more">
