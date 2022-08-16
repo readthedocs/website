@@ -1,0 +1,116 @@
+{#
+  It's not yet clear if the community plan features on the feature table help
+  explain the difference between community/commercial, or if it makes it less
+  obvious that community is only for open source projects.
+#}
+{% set show_community_features = True %}
+
+{#
+  Main plan block
+#}
+{% macro plan(name, description, price, is_community=False, color="teal") %}
+  <div class="{% if not price %} computer only {%- endif %} column">
+    <div class="ui {%- if price %} raised {{ color }} {%- elif is_community %} inverted {{ color }} {%- else %} basic {%- endif %} segment">
+
+      <h2 class="ui small monospace center aligned header">
+        {{ name }}
+      </h2>
+
+      {% if price %}
+        <div class="ui horizontally fitted basic small segment">
+          <div class="ui tiny center aligned one statistics">
+            <div class="statistic">
+            <div class="value">
+              {{ price }}
+            </div>
+            <div class="label">
+              <span class="category">per month</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {{ caller() }}
+
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro plan_feature(name, description, icon, color=None) %}
+  <div class="left aligned item">
+    <i class="fad {{ color }} {{ icon }} medium middle aligned icon"></i>
+    <div class="content">
+      <div class="header">{{ name }}</div>
+      <div class="description">{{ description }}</div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro feature_table() %}
+  <table class="ui mini celled table">
+    <thead>
+      <tr>
+        <th class="eight wide"></th>
+        {% if show_community_features %}
+          <th class="two wide center aligned">
+            <a class="ui teal button" href="./#/community">Community</a>
+          </th>
+        {% endif %}
+        <th class="two wide center aligned">
+          <a class="ui violet button" href="./#/business">Basic</a>
+        </th>
+        <th class="two wide center aligned">
+          <a class="ui violet button" href="./#/business">Advanced</a>
+        </th>
+        <th class="two wide center aligned">
+          <a class="ui violet button" href="./#/business">Pro</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ caller() }}
+    </tbody>
+  </table>
+{% endmacro %}
+
+{% macro feature_row(name, description, icon, on_community=True, on_basic=True, on_advanced=True, on_pro=True) %}
+  <tr>
+    <td>
+      <div class="ui small header">
+        <i class="fad {{ icon }} icon"></i>
+        <div class="content">
+          {{ name }}
+          <div class="sub header">
+            {{ description }}
+          </div>
+        </div>
+      </div>
+    </td>
+    {% if show_community_features %}
+      {{ feature_row_cell(on_community) }}
+    {% endif %}
+    {{ feature_row_cell(on_basic) }}
+    {{ feature_row_cell(on_advanced) }}
+    {{ feature_row_cell(on_pro) }}
+  </tr>
+{% endmacro %}
+
+{% macro feature_row_cell(value) %}
+  {% if value == True %}
+    <td class="center aligned positive"><i class="fad fa-circle-check large icon"></i></td>
+  {% elif value %}
+    <td class="center aligned">{{ value }}</td>
+  {% else %}
+    <td class="center aligned disabled"><i class="fad fa-circle-xmark large icon"></i></td>
+  {% endif %}
+{% endmacro %}
+
+{% macro header_row(name, icon) %}
+  <tr>
+    <td colspan="5" class="inverted grey">
+      <i class="fad {{ icon }} large icon"></i>
+      {{ name }}
+    </td>
+  </tr>
+{% endmacro %}
