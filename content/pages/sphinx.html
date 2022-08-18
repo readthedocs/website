@@ -1,0 +1,243 @@
+<html>
+  <head>
+    <title>Easily build and deploy your Sphinx docs</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="landing/sphinx" />
+    <meta name="status" content="hidden" />
+    <meta name="description" content="Learn more about Sphinx & Read the Docs hosting" />
+  </head>
+  <body>
+
+{#
+  View this page at http://localhost:8080/landing/sphinx/index.html
+#}
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/technical.html" as technical %}
+
+<section>
+  {% call basic.header_image(
+    header="Quickly deploy your Sphinx docs across multiple versions",
+    image="https://cdn.dribbble.com/users/876899/screenshots/2141696/readthedocs-thumb.png",
+    image_alt="Marketing introduction header",
+    vertical_align="middle")
+  %}
+    <p>
+        Beautiful docs for your team are just a <code>git push</code> away.
+    </p>
+
+    <p class="ui basic padded vertical segment">
+      <a href="#" class="ui large stackable primary button">
+        Register an account
+      </a>
+      <a href="https://docs.readthedocs.io/en/stable/tutorial/index.html" class="ui large stackable button">
+        Start our tutorial
+      </a>
+    </p>
+  {% endcall %}
+</section>
+
+<section id="features">
+  {% call marketing.highlight_list() %}
+    {% call marketing.highlight_item(
+        icon="olive fa-cauldron",
+        icon_style="--fa-secondary-color: violet; --fa-secondary-opacity: 1;",
+        header="Preview each pull request",
+        color="primary") %}
+    {% markdown %}
+    Every time you create a new Pull Request on GitHub or GitLab,
+    we rebuild your docs and give you a live preview of the changes.
+    **Documentation review has never been this easy**.
+    {% endmarkdown %}
+    {% endcall %}
+
+    {% call marketing.highlight_item(
+        icon="yellow fa-paintbrush",
+        icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
+        header="Customize the theme & domain",
+        color="secondary") %}
+    {% markdown %}
+    You can host the docs on your own domain (``docs.company.com``),
+    and fully customize the HTML theme.
+    {% endmarkdown %}
+    {% endcall %}
+
+    {% call marketing.highlight_item(
+        icon="fa-image-landscape",
+        header="Multiple docs versions",
+        color="violet") %}
+    {% markdown %}
+    Host the docs for all the supported versions of your software,
+    so that users can access the exact one they need.
+    Works great for different development workflows,
+    as well as public documentation.
+    {% endmarkdown %}
+        {% endcall %}
+    {% endcall %}
+</section>
+
+<div class="ui very padded container">
+
+{{ basic.header_icon(
+  header="Some of our users",
+  subheader="Thousands of businesses and open source projects use Read the Docs daily",
+  icon="purple fa-message-lines",
+  icon_style="--fa-secondary-color: blueviolet;"
+) }}
+
+{#
+  Cards for an articles or case studies view
+
+  See https://fomantic-ui.com/views/card.html
+#}
+<div class="ui three link stackable cards">
+    <a href="https://flask.palletsprojects.com/en/2.2.x/" class="card">
+    <div class="ui small centered image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="A random image">
+      </div>
+      <div class="content">
+        <div class="header">Flask</div>
+        <div class="meta">
+          Case study
+        </div>
+        <div class="description">
+            Flask is a Python web framework built with a small core and easy-to-extend philosophy.
+        </div>
+      </div>
+    </a>
+
+    <a href="https://docs.jupyter.org/en/latest/" class="card">
+    <div class="ui medium centered image">
+        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/jupyter_logo_icon_169453.png" alt="A random image">
+      </div>
+      <div class="content">
+        <div class="header">Jupyter</div>
+        <div class="meta">
+          Case study
+        </div>
+        <div class="description">
+            Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
+        </div>
+      </div>
+    </a>
+
+    <a href="https://docs.ceph.com/" class="card">
+    <div class="ui small centered image">
+        <img src="https://ceph.io/assets/bitmaps/Ceph_Logo_Standard_RGB_Black_120411_fa.png" alt="A random image">
+      </div>
+      <div class="content">
+        <div class="header">Ceph</div>
+        <div class="meta">
+          Case study
+        </div>
+        <div class="description">
+            Ceph uniquely delivers object, block, and file storage in one unified system.
+        </div>
+      </div>
+    </a>
+</div>
+
+<div class="ui very padded basic vertical segment">
+  <div class="ui horizontal divider">Proven across time</div>
+</div>
+
+{# Grid view stuff #}
+<div class="ui stackable equal width grid">
+  <div class="stretched row">
+    <div class="column">
+      <div class="ui very padded raised large segment">
+        <h4 class="ui header large">
+          1 million served. Every day.
+        </h4>
+
+        {#
+
+        Statistics are nice for important numbers
+        https://fomantic-ui.com/views/statistic.html
+
+        #}
+        <div class="ui two small statistics">
+          <div class="statistic">
+            <div class="value">
+              100K
+            </div>
+            <div class="label">
+              Projects
+            </div>
+          </div>
+          <div class="statistic">
+            <div class="value">
+              750M
+            </div>
+            <div class="label">
+              Yearly pageviews
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="ui very padded inverted violet large segment">
+        <h4 class="ui header large">
+          <i class="fad fa-chart-line-up icon"></i>
+           Grow with us
+        </h4>
+
+        <p>
+            We have customers that range from tiny companies and projects,
+            to some of the largest in the world.
+            Read the Docs grows with you,
+            staying our of your way at a small size,
+            but has advanced authoring features when you need them.
+        </p>
+
+        <p>
+          When it's easy for your team to collaborate, your docs get updated
+          <b>more frequently</b> and with <b>less effort</b>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% block homepage_bottom_callout %}
+<section>
+  <div class="ui very padded container">
+    <div class="ui grid center aligned">
+
+      <div class="row">
+        <div class="column twelve wide computer sixteen wide tablet">
+
+          {#
+            TODO replace this block with something more actionable. It's
+            not saying anything new at this point in the page, and the call
+            to action is not strong.
+          #}
+          <div class="ui basic vertical huge segment">
+            <p>
+              Whenever you push code,
+              we automatically build and host your documentation.
+
+              <b>Get your docs online in 5 minutes.</b>
+            </p>
+
+            <p>
+              <a class="ui primary large button" href="#">Get started</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock homepage_bottom_callout %}
+
+
+
+  </body>
+</html>
