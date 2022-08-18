@@ -104,7 +104,7 @@ module.exports = (env, argv) => {
         jQuery: "jquery",
       }),
       new NodemonPlugin({
-        exec: "pelican content",
+        exec: "poetry run pelican content",
         script: "",
         args: [],
         watch: [
