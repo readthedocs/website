@@ -1,4 +1,5 @@
 import jquery from "jquery";
+import Plausible from "plausible-tracker";
 
 // Even though we do this at Webpack to give a jQuery global, seems we also have
 // to do this again here.
@@ -27,7 +28,7 @@ require("fomantic-ui-less/definitions/modules/progress.js");
 require("fomantic-ui-less/definitions/modules/toast.js");
 require("fomantic-ui-less/definitions/globals/site.js");
 
-jquery(document).ready((foo) => {
+jquery(document).ready(() => {
   /**
    * Show debug logs from SUI modules
    *
@@ -40,9 +41,12 @@ jquery(document).ready((foo) => {
     // Enable debug logs from all modules enabled by site module
     jquery.fn.site("enable debug");
     jquery.fn.site("enable verbose");
+  } else {
+    console.debug = () => {};
   }
 
   jquery("[data-module]").sui_module();
+  jquery("[data-analytics]").plausible();
 });
 
 /**
@@ -82,6 +86,76 @@ jquery.fn.sui_module = function () {
       $(elem)[module](data);
     } else {
       jquery.fn.site("error", "SUI module not available: " + module);
+    }
+  });
+};
+
+/**
+ * Plausible tracking module
+ *
+ * This reuses jQuery to provide explicit tracking of events at Plausible. To
+ * use events, add the ``data-analytics`` attribute to an element. In most
+ * cases, this should be a link element, however in the case of other UI
+ * components, it may be a ``<div>`` or ``<button>``:
+ *
+ *     <button class="ui button" data-analytics="some-event-id">Something</button>
+ *
+ * In the case of a link with a ``href`` attribute, the link will continue
+ * redirecting after the callback from Plausible fires off.
+ */
+jquery.fn.plausible = function () {
+  let plausible_settings = { domain: "about.readthedocs.org" };
+  if (DEBUG_MODE) {
+    plausible_settings.trackLocalhost = true;
+  }
+  const { trackEvent } = Plausible(plausible_settings);
+  return this.each((index, elem) => {
+    elem.addEventListener("click", on_click_event);
+    elem.addEventListener("auxclick", on_click_event);
+
+    function on_click_event(event) {
+      const event_names = elem.getAttribute("data-analytics").split(/,(.+)/);
+      const is_link =
+        elem.tagName != undefined && elem.tagName.toLowerCase() == "a";
+      const is_middle_click = event.type == "auxclick" && event.which == 2;
+      const is_click = event.type == "click";
+      const is_link_click =
+        is_link &&
+        is_click &&
+        !elem.target &&
+        !(event.ctrlKey || event.metaKey || event.shiftKey);
+
+      if (is_middle_click || is_click) {
+        function redirect_link() {
+          if (is_link_click && elem.href && elem.href != "#") {
+            console.debug("Plausible: resuming redirect to", elem.href);
+            location.href = elem.href;
+          }
+        }
+        for (const event_name of event_names) {
+          trackEvent(event_name, {
+            callback: () => {
+              console.debug("Plausible: tracked event", event_name);
+              redirect_link();
+            },
+          });
+          setTimeout(() => {
+            console.debug(
+              "Plausible: didn't receive response, continuing anyways"
+            );
+            redirect_link();
+          }, 150);
+        }
+      }
+
+      // If this is a normal click of an anchor element, prevent the default
+      // event from propagating and instead wait until the callback
+      // returns/expires to redirect the current page URL. If the user held
+      // control/shift/meta while clicking, we're assuming the browser is doing
+      // something special instead and will not block the default event.
+      if (is_link_click) {
+        event.preventDefault();
+      }
     }
   });
 };
