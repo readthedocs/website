@@ -9,14 +9,36 @@ See templates/pages/basic for more.
 #}
 
 {#
+  A large leading header, basic header_image without an image
+
+  Useful for when you don't have an image to take up some of the lead space on
+  a page.
+
+  :param header: Header text
+  :param header_level: Header level. Default: "h1"
+
+#}
+{% macro header_lead(header, header_level="h1") %}
+  <div class="ui horizontally padded hero container">
+    <div class="ui text container">
+      <div class="ui large left aligned basic vertical segment">
+        <{{ header_level }} class="ui huge header">{{ header }}</{{ header_level }}>
+
+        {{ caller() }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{#
   An image header, used for very prominent headers on pages
 
   Not quite a hero header, but it takes up a similar footprint on the page. Two
   column image and header element, and responsive down to mobile.
 
-  :param header: Header test
+  :param header: Header text
   :param image: Image URL
-  :param large_image: Use large image? Default: True
+  :param use_large_image: Use large image? Default: True
   :param vertical_align: Vertical alignment of columns. Default: "top"
   :param image_alt: Alt text for image, required for validation
   :param header_level: Header level. Default: "h1"

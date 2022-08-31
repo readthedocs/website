@@ -67,7 +67,7 @@
     "webpack-watch-files-plugin": "^1.0.3"
   },
   "optionalDependencies": {
-    "@fortawesome/fontawesome-pro": "^6.1.1"
+    "@fortawesome/fontawesome-pro": "^6.1.2"
   },
   "babel": {
     "env": {
