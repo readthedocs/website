@@ -44,11 +44,11 @@
 
 {# Application links to log in #}
 {% macro menu_log_in() %}
-  <a class="item" href="https://readthedocs.org/dashboard/">
+  <a class="item" data-analytics="community-login" href="https://readthedocs.org/dashboard/">
     <i class="fad fa-people-group primary icon"></i>
     Read the Docs Community
   </a>
-  <a class="item" href="https://readthedocs.com/dashboard/">
+  <a class="item" data-analytics="commercial-login" href="https://readthedocs.com/dashboard/">
     <i class="fad fa-building secondary icon"></i>
     Read the Docs for Business
   </a>
@@ -79,7 +79,7 @@
             <i class="fad fa-bars large icon" style="--fa-secondary-opacity: 0.8;"></i>
             <div class="menu">
 
-              <div class="header">Log in</div>
+              <div data-analytics="login-modal" class="header">Log in</div>
               {{ menu_log_in() }}
 
               <div class="divider"></div>

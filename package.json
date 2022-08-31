@@ -55,6 +55,7 @@
     "mini-css-extract-plugin": "^0.6.0",
     "nodemon-webpack-plugin": "^4.7.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "plausible-tracker": "^0.3.8",
     "resolve-url-loader": "^2.2.1",
     "sanitize-html": "^1.23.0",
     "style-loader": "^0.23.1",
