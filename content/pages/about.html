@@ -295,14 +295,45 @@
           header=header_4,
           image=None,
           icon=icon_4) %}
-        <p>
-          Focus on your documentation, not hosting your documentation.
-          We support custom domains, redirects, and authentication for private documentation.
-        </p>
+        {% markdown %}
+        Everything you need to deliver documentation to your users and customers
+        is already included with your project. You can easily deploy multiple versions
+        of your documentation, with everything from authentication to cross-project
+        search, without configuring any additional services.
+        {% endmarkdown %}
       {% endcall %}
 
+      <div class="center aligned sixteen wide mobile eight wide tablet six wide computer column">
+        <div class="ui left aligned padded segment">
+          <h3 class="ui small header">
+            For every project type
+          </h3>
+
+          <div class="ui list">
+            <div class="item">
+              <i class="fad fa-earth-americas icon"></i>
+              <div class="content">
+                Host <b>public</b> documentation for users
+              </div>
+            </div>
+            <div class="item">
+              <i class="fad fa-people-group icon"></i>
+              <div class="content">
+                Share documentation internally using <b>teams</b>
+              </div>
+            </div>
+            <div class="item">
+              <i class="fad fa-shield-keyhole icon"></i>
+              <div class="content">
+                Grant access using <b>sharing tokens</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", paid=True) %}
-        Control who has access to your documentation with integrated authentation.
+        Control who has access to your documentation with integrated authentation and sharing tokens.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-at") %}
@@ -311,10 +342,6 @@
 
       {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
         Help your users find what the need with integrated search across all your projects and versions.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
-        Avoid broken links by adding redirects for pages that have been moved or deleted. 
       {% endcall %}
 
     </div>
@@ -349,10 +376,10 @@
   {{ homepage.signup_modal("about-modal") }}
 {% endblock homepage_modal %}
 
+<section id="additional-features">
 
-{{ about_divide("Additional features") }}
+  {{ about_divide("Additional features") }}
 
-<section>
   <div class="ui very padded container" id="more">
     <div class="ui vertically padded centered grid">
 
@@ -366,6 +393,10 @@
 
       {% call homepage.feature_detail_item(header="Environment variables", icon="fad fa-shield-keyhole") %}
         Use environment variables to provide secrets to your project's build commands.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
+        Avoid broken links by adding redirects for pages that have been moved or deleted.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Analytics", icon="fad fa-chart-column") %}
