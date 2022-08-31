@@ -104,7 +104,7 @@ jquery.fn.sui_module = function () {
  * redirecting after the callback from Plausible fires off.
  */
 jquery.fn.plausible = function () {
-  let plausible_settings = { domain: "about.readthedocs.org" };
+  let plausible_settings = { domain: "about.readthedocs.com" };
   if (DEBUG_MODE) {
     plausible_settings.trackLocalhost = true;
   }
