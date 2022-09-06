@@ -109,10 +109,10 @@ jquery.fn.plausible = function () {
     plausible_settings.trackLocalhost = true;
   }
   const { trackEvent } = Plausible(plausible_settings);
-  const { trackPageview } = Plausible(plausible_settings)
+  const { trackPageview } = Plausible(plausible_settings);
 
   // Track pageview for all pages
-  trackPageview()
+  trackPageview();
 
   return this.each((index, elem) => {
     elem.addEventListener("click", on_click_event);
