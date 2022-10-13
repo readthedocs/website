@@ -1,10 +1,15 @@
+{# 
+  The goal of this page is to sell users who are already authoring in Sphinx on the benefits of our hosting.
+  We aren't focusing on generic Sphinx benefits,
+  but the unique differentiation of our platform.
+#}
 <html>
   <head>
-    <title>Easily build and deploy your Sphinx docs</title>
+    <title>Supercharge your Sphinx docs hosting</title>
     <meta name="template" content="page" />
     <meta name="slug" content="landing/sphinx" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="Learn more about Sphinx & Read the Docs hosting" />
+    <meta name="description" content="Learn more about the best Sphinx hosting option in the world 🎉" />
   </head>
   <body>
 
@@ -15,21 +20,30 @@
 {% import "partials/basic.html" as basic %}
 {% import "partials/marketing.html" as marketing %}
 {% import "partials/technical.html" as technical %}
+{% import "partials/homepage.html" as homepage %}
+
+{% block signup_modal %}
+  {{ homepage.signup_modal("signup_modal") }}
+{% endblock signup_modal %}
 
 <section>
   {% call basic.header_image(
-    header="Quickly deploy your Sphinx docs across multiple versions",
+    header="Supercharge your Sphinx docs and impress your readers",
     image="https://cdn.dribbble.com/users/876899/screenshots/2141696/readthedocs-thumb.png",
     image_alt="Marketing introduction header",
     vertical_align="middle")
   %}
+  {# TODO: Add a GIF of using hoverxref & livesearch #}
     <p>
-        Beautiful docs for your team are just a <code>git push</code> away.
+        Our powerful Sphinx hosting improves the reading and authoring experience for everyone who interacts with your docs.
     </p>
 
     <p class="ui basic padded vertical segment">
-      <a href="#" class="ui large stackable primary button">
-        Register an account
+      <a class="ui large teal stackable button"
+      data-analytics="signup-modal"
+       onclick="jQuery('#signup_modal').modal('show');">
+        <i class="fad fa-play icon"></i>
+        Create an account
       </a>
       <a href="https://docs.readthedocs.io/en/stable/tutorial/index.html" class="ui large stackable button">
         Start our tutorial
@@ -41,37 +55,39 @@
 <section id="features">
   {% call marketing.highlight_list() %}
     {% call marketing.highlight_item(
-        icon="olive fa-cauldron",
+        icon="olive fa-people-arrows",
         icon_style="--fa-secondary-color: violet; --fa-secondary-opacity: 1;",
-        header="Preview each pull request",
+        header="Collaborate with deploy previews",
         color="primary") %}
     {% markdown %}
-    Every time you create a new Pull Request on GitHub or GitLab,
-    we rebuild your docs and give you a live preview of the changes.
-    **Documentation review has never been this easy**.
+    Receive feedback from your team,
+    and <strong>have confidence in changes</strong> before they go live.
     {% endmarkdown %}
     {% endcall %}
 
     {% call marketing.highlight_item(
-        icon="yellow fa-paintbrush",
+        icon="yellow fa-magnifying-glass",
         icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
-        header="Customize the theme & domain",
+        header="Always find what you need",
         color="secondary") %}
     {% markdown %}
-    You can host the docs on your own domain (``docs.company.com``),
-    and fully customize the HTML theme.
+    Search across all your projects with our search-as-you-type interface,
+    and get results broken out by code objects and paragraph. 
+    <strong>Never lose documentation again</strong>.
     {% endmarkdown %}
     {% endcall %}
 
     {% call marketing.highlight_item(
-        icon="fa-image-landscape",
-        header="Multiple docs versions",
+        icon="fa-eye",
+        header="Never lose focus with link previews",
         color="violet") %}
+
+    {# TODO: Add link preview to the `link previews` docs #}
+
     {% markdown %}
-    Host the docs for all the supported versions of your software,
-    so that users can access the exact one they need.
-    Works great for different development workflows,
-    as well as public documentation.
+    Get instant context on every internal link in your docs.
+    With instant link previews, 
+    <strong>skim the content without opening *another* tab</strong>.
     {% endmarkdown %}
         {% endcall %}
     {% endcall %}
@@ -80,11 +96,13 @@
 <div class="ui very padded container">
 
 {{ basic.header_icon(
-  header="Some of our users",
-  subheader="Thousands of businesses and open source projects use Read the Docs daily",
+  header="Join thousands of happy users",
+  subheader="",
   icon="purple fa-message-lines",
   icon_style="--fa-secondary-color: blueviolet;"
 ) }}
+
+{# TODO: Turn these into testomonials. #}
 
 {#
   Cards for an articles or case studies view
@@ -94,12 +112,12 @@
 <div class="ui three link stackable cards">
     <a href="https://flask.palletsprojects.com/en/2.2.x/" class="card">
     <div class="ui small centered image">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="A random image">
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="A random image"> -->
       </div>
       <div class="content">
         <div class="header">Flask</div>
         <div class="meta">
-          Case study
+          Web Framework
         </div>
         <div class="description">
             Flask is a Python web framework built with a small core and easy-to-extend philosophy.
@@ -109,12 +127,12 @@
 
     <a href="https://docs.jupyter.org/en/latest/" class="card">
     <div class="ui medium centered image">
-        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/jupyter_logo_icon_169453.png" alt="A random image">
+        <!-- <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/jupyter_logo_icon_169453.png" alt="A random image"> -->
       </div>
       <div class="content">
         <div class="header">Jupyter</div>
         <div class="meta">
-          Case study
+          Data Science Environment
         </div>
         <div class="description">
             Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
@@ -122,85 +140,116 @@
       </div>
     </a>
 
-    <a href="https://docs.ceph.com/" class="card">
+    <a href="https://docs.godotengine.org/en/stable/index.html" class="card">
     <div class="ui small centered image">
-        <img src="https://ceph.io/assets/bitmaps/Ceph_Logo_Standard_RGB_Black_120411_fa.png" alt="A random image">
+        <!-- <img src="https://ceph.io/assets/bitmaps/Ceph_Logo_Standard_RGB_Black_120411_fa.png" alt="A random image"> -->
       </div>
       <div class="content">
-        <div class="header">Ceph</div>
+        <div class="header">Godot Engine</div>
         <div class="meta">
-          Case study
+          Game Engine
         </div>
         <div class="description">
-            Ceph uniquely delivers object, block, and file storage in one unified system.
+          Godot Engine is a free and open source community-driven 2D and 3D game engine.
         </div>
       </div>
     </a>
 </div>
 
 <div class="ui very padded basic vertical segment">
-  <div class="ui horizontal divider">Proven across time</div>
+  <div class="ui horizontal divider">Try it out</div>
 </div>
 
-{# Grid view stuff #}
-<div class="ui stackable equal width grid">
-  <div class="stretched row">
-    <div class="column">
-      <div class="ui very padded raised large segment">
-        <h4 class="ui header large">
-          1 million served. Every day.
-        </h4>
+<div class="ui horizontally container">
+  <div class="ui very padded centered grid">
+    <div class="middle aligned row">
 
-        {#
+      <h2 class="ui huge header">
+        Everything you need, and nothing you don't.
+      </h2>
 
-        Statistics are nice for important numbers
-        https://fomantic-ui.com/views/statistic.html
+      <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+        <div class="ui large left aligned basic vertical segment">
 
-        #}
-        <div class="ui two small statistics">
-          <div class="statistic">
-            <div class="value">
-              100K
-            </div>
-            <div class="label">
-              Projects
-            </div>
-          </div>
-          <div class="statistic">
-            <div class="value">
-              750M
-            </div>
-            <div class="label">
-              Yearly pageviews
-            </div>
+          {# Stylized code blocks #}
+          {% call technical.code_block(title="<code>.readthedocs.yaml</code>", icon="fa-file") %}
+          {% markdown %}
+
+          ```yaml
+          version: 2
+          build:
+            os: ubuntu-22.04
+            tools:
+              python: "3.10"
+              # You can also specify other tool versions:
+              # nodejs: "16"
+          
+          # Build documentation in the docs/ directory with Sphinx
+          sphinx:
+             configuration: docs/conf.py
+          
+          # Requirements required to build your docs
+          python:
+             install:
+             - requirements: docs/requirements.txt
+          ```
+
+          {% endmarkdown %}
+          {% endcall %}
+        </div>
+      </div>
+
+      <div class="six wide computer twelve wide tablet sixteen wide mobile column">
+        <div class="ui padded basic segment">
+          <div class="ui relaxed list">
+
+            {%- set header_1 = "Create an account" %}
+            {%- set icon_1 = "fa-square-1" -%}
+            <span class="ui small teal header item">
+              <i class="fad {{ icon_1 }} secondary big icon"></i>
+              <span class="content">
+                {{ header_1 }}
+                <span class="sub header">Sign up with GitHub or your email.</span>
+              </span>
+            </span>
+
+            {%- set header_2 = "Import your project" %}
+            {%- set icon_2 = "fa-square-2" -%}
+            <span class="ui small header item">
+              <i class="fad {{ icon_2 }} secondary big icon"></i>
+              <span class="content">
+                {{ header_2 }}
+                <span class="sub header">Select your existing git repositories with a 1-click interface.</span>
+              </span>
+            </span>
+
+            {%- set header_3 = "Add YAML config" %}
+            {%- set icon_3 = "fa-square-3" -%}
+            <span class="ui small header item">
+              <i class="fad {{ icon_3 }} secondary big icon"></i>
+              <span class="content">
+                {{ header_3 }}
+                <span class="sub header">Copy this one, it probably does what you want :)</span>
+              </span>
+            </span>
+
+            {%- set header_4 = "Your docs build on every commit" %}
+            {%- set icon_4 = "fa-square-4" -%}
+            <span class="ui small header item">
+              <i class="fad {{ icon_4 }} secondary big icon"></i>
+              <span class="content">
+                {{ header_4 }}
+                <span class="sub header">Like magic.</span>
+              </span>
+            </span>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="column">
-      <div class="ui very padded inverted violet large segment">
-        <h4 class="ui header large">
-          <i class="fad fa-chart-line-up icon"></i>
-           Grow with us
-        </h4>
-
-        <p>
-            We have customers that range from tiny companies and projects,
-            to some of the largest in the world.
-            Read the Docs grows with you,
-            staying our of your way at a small size,
-            but has advanced authoring features when you need them.
-        </p>
-
-        <p>
-          When it's easy for your team to collaborate, your docs get updated
-          <b>more frequently</b> and with <b>less effort</b>.
-        </p>
-      </div>
     </div>
   </div>
 </div>
+</section>
 
 
 {% block homepage_bottom_callout %}
@@ -218,14 +267,16 @@
           #}
           <div class="ui basic vertical huge segment">
             <p>
-              Whenever you push code,
-              we automatically build and host your documentation.
-
               <b>Get your docs online in 5 minutes.</b>
             </p>
 
             <p>
-              <a class="ui primary large button" href="#">Get started</a>
+              <a class="ui large teal stackable button"
+              data-analytics="signup-modal"
+               onclick="jQuery('#signup_modal').modal('show');">
+              <i class="fad fa-play icon"></i>
+              Create an account
+            </a>
             </p>
           </div>
 
