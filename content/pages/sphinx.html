@@ -7,7 +7,7 @@
   <head>
     <title>Supercharge your Sphinx docs hosting</title>
     <meta name="template" content="page" />
-    <meta name="slug" content="landing/sphinx" />
+    <meta name="slug" content="content/pages/tools/sphinx" />
     <meta name="status" content="hidden" />
     <meta name="description" content="Learn more about the best Sphinx hosting option in the world 🎉" />
   </head>
@@ -29,13 +29,13 @@
 <section>
   {% call basic.header_image(
     header="Supercharge your Sphinx docs and impress your readers",
-    image="https://cdn.dribbble.com/users/876899/screenshots/2141696/readthedocs-thumb.png",
-    image_alt="Marketing introduction header",
+    image="/images/readthedocs-thumb.png",
+    image_alt="Examples of Read the Docs hosted documentation",
     vertical_align="middle")
   %}
   {# TODO: Add a GIF of using hoverxref & livesearch #}
     <p>
-        Our powerful Sphinx hosting improves the reading and authoring experience for everyone who interacts with your docs.
+        Our powerful Sphinx hosting improves the reading and authoring experience for everyone who interacts with your documentation.
     </p>
 
     <p class="ui basic padded vertical segment">
@@ -58,7 +58,7 @@
         icon="olive fa-people-arrows",
         icon_style="--fa-secondary-color: violet; --fa-secondary-opacity: 1;",
         header="Collaborate with deploy previews",
-        color="primary") %}
+        color="violet") %}
     {% markdown %}
     Receive feedback from your team,
     and <strong>have confidence in changes</strong> before they go live.
@@ -69,31 +69,125 @@
         icon="yellow fa-magnifying-glass",
         icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
         header="Always find what you need",
-        color="secondary") %}
+        color="violet") %}
     {% markdown %}
     Search across all your projects with our search-as-you-type interface,
-    and get results broken out by code objects and paragraph. 
+    and quickly find the documentation and API reference information you need.
     <strong>Never lose documentation again</strong>.
     {% endmarkdown %}
     {% endcall %}
 
     {% call marketing.highlight_item(
         icon="fa-eye",
-        header="Never lose focus with link previews",
+        header="Keep your focus with link previews",
         color="violet") %}
 
     {# TODO: Add link preview to the `link previews` docs #}
 
     {% markdown %}
-    Get instant context on every internal link in your docs.
-    With instant link previews, 
-    <strong>skim the content without opening *another* tab</strong>.
+    Provide context on every internal link in your docs with instant preview links.
+    <strong>Skim the content without opening *another* tab</strong>.
     {% endmarkdown %}
         {% endcall %}
     {% endcall %}
 </section>
 
-<div class="ui very padded container">
+<div class="ui container">
+
+
+<div class="ui basic vertical segment">
+  <div class="ui horizontal divider">Try it out</div>
+</div>
+
+<div class="ui horizontally container">
+  <div class="ui very padded centered grid">
+    <div class="middle aligned row">
+
+      <h2 class="ui huge header">
+        Everything you need, and nothing you don't.
+      </h2>
+
+      <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+        <div class="ui large left aligned basic vertical segment">
+
+          {# Stylized code blocks #}
+          {% call technical.code_block(title="<code>.readthedocs.yaml</code>", icon="fa-file") %}
+          {% markdown %}
+
+          ```yaml
+          version: 2
+          build:
+            os: ubuntu-22.04
+            tools:
+              python: "3.10"
+              # You can also specify other tool versions:
+              # nodejs: "16"
+
+          # Build documentation in the docs/ directory with Sphinx
+          sphinx:
+             configuration: docs/conf.py
+
+          # Requirements required to build your docs
+          python:
+             install:
+             - requirements: docs/requirements.txt
+          ```
+
+          {% endmarkdown %}
+          {% endcall %}
+        </div>
+      </div>
+
+      <div class="six wide computer twelve wide tablet sixteen wide mobile column">
+        <div class="ui padded basic segment">
+          <div class="ui relaxed list">
+
+            {%- set header_1 = "Create an account" %}
+            {%- set icon_1 = "fa-square-1" -%}
+            <span class="ui small teal header item">
+              <i class="fad {{ icon_1 }} secondary big icon"></i>
+              <span class="content">
+                {{ header_1 }}
+                <span class="sub header">Sign up with GitHub or your email.</span>
+              </span>
+            </span>
+
+            {%- set header_2 = "Import your project" %}
+            {%- set icon_2 = "fa-square-2" -%}
+            <span class="ui small header item">
+              <i class="fad {{ icon_2 }} secondary big icon"></i>
+              <span class="content">
+                {{ header_2 }}
+                <span class="sub header">Select your existing Git repositories with a 1-click interface.</span>
+              </span>
+            </span>
+
+            {%- set header_3 = "Add YAML config" %}
+            {%- set icon_3 = "fa-square-3" -%}
+            <span class="ui small header item">
+              <i class="fad {{ icon_3 }} secondary big icon"></i>
+              <span class="content">
+                {{ header_3 }}
+                <span class="sub header">Copy this example, it probably does what you want 😉</span>
+              </span>
+            </span>
+
+            {%- set header_4 = "Your docs build on every commit" %}
+            {%- set icon_4 = "fa-square-4" -%}
+            <span class="ui small header item">
+              <i class="fad {{ icon_4 }} secondary big icon"></i>
+              <span class="content">
+                {{ header_4 }}
+                <span class="sub header">Like magic.</span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 {{ basic.header_icon(
   header="Join thousands of happy users",
@@ -102,7 +196,7 @@
   icon_style="--fa-secondary-color: blueviolet;"
 ) }}
 
-{# TODO: Turn these into testomonials. #}
+{# TODO: Turn these into testimonials. #}
 
 {#
   Cards for an articles or case studies view
@@ -154,100 +248,6 @@
         </div>
       </div>
     </a>
-</div>
-
-<div class="ui very padded basic vertical segment">
-  <div class="ui horizontal divider">Try it out</div>
-</div>
-
-<div class="ui horizontally container">
-  <div class="ui very padded centered grid">
-    <div class="middle aligned row">
-
-      <h2 class="ui huge header">
-        Everything you need, and nothing you don't.
-      </h2>
-
-      <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
-        <div class="ui large left aligned basic vertical segment">
-
-          {# Stylized code blocks #}
-          {% call technical.code_block(title="<code>.readthedocs.yaml</code>", icon="fa-file") %}
-          {% markdown %}
-
-          ```yaml
-          version: 2
-          build:
-            os: ubuntu-22.04
-            tools:
-              python: "3.10"
-              # You can also specify other tool versions:
-              # nodejs: "16"
-          
-          # Build documentation in the docs/ directory with Sphinx
-          sphinx:
-             configuration: docs/conf.py
-          
-          # Requirements required to build your docs
-          python:
-             install:
-             - requirements: docs/requirements.txt
-          ```
-
-          {% endmarkdown %}
-          {% endcall %}
-        </div>
-      </div>
-
-      <div class="six wide computer twelve wide tablet sixteen wide mobile column">
-        <div class="ui padded basic segment">
-          <div class="ui relaxed list">
-
-            {%- set header_1 = "Create an account" %}
-            {%- set icon_1 = "fa-square-1" -%}
-            <span class="ui small teal header item">
-              <i class="fad {{ icon_1 }} secondary big icon"></i>
-              <span class="content">
-                {{ header_1 }}
-                <span class="sub header">Sign up with GitHub or your email.</span>
-              </span>
-            </span>
-
-            {%- set header_2 = "Import your project" %}
-            {%- set icon_2 = "fa-square-2" -%}
-            <span class="ui small header item">
-              <i class="fad {{ icon_2 }} secondary big icon"></i>
-              <span class="content">
-                {{ header_2 }}
-                <span class="sub header">Select your existing git repositories with a 1-click interface.</span>
-              </span>
-            </span>
-
-            {%- set header_3 = "Add YAML config" %}
-            {%- set icon_3 = "fa-square-3" -%}
-            <span class="ui small header item">
-              <i class="fad {{ icon_3 }} secondary big icon"></i>
-              <span class="content">
-                {{ header_3 }}
-                <span class="sub header">Copy this one, it probably does what you want :)</span>
-              </span>
-            </span>
-
-            {%- set header_4 = "Your docs build on every commit" %}
-            {%- set icon_4 = "fa-square-4" -%}
-            <span class="ui small header item">
-              <i class="fad {{ icon_4 }} secondary big icon"></i>
-              <span class="content">
-                {{ header_4 }}
-                <span class="sub header">Like magic.</span>
-              </span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </div>
 </section>
 
