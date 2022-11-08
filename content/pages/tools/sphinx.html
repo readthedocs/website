@@ -93,19 +93,16 @@
 </section>
 
 <div class="ui container">
-
-
-<div class="ui basic vertical segment">
   <div class="ui horizontal divider">Try it out</div>
 </div>
 
-<div class="ui horizontally container">
-  <div class="ui very padded centered grid">
-    <div class="middle aligned row">
+<section id="try-it-out">
+  <div class="ui padded container">
+    <h2 class="ui huge center aligned header">
+      Upgrade your documentation with Read the Docs
+    </h2>
 
-      <h2 class="ui huge header">
-        Everything you need, and nothing you don't.
-      </h2>
+    <div class="ui very padded centered grid">
 
       <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
         <div class="ui large left aligned basic vertical segment">
@@ -127,7 +124,7 @@
           sphinx:
              configuration: docs/conf.py
 
-          # Requirements required to build your docs
+          # Dependencies required to build your docs
           python:
              install:
              - requirements: docs/requirements.txt
@@ -138,7 +135,7 @@
         </div>
       </div>
 
-      <div class="six wide computer twelve wide tablet sixteen wide mobile column">
+      <div class="middle aligned left aligned six wide computer twelve wide tablet sixteen wide mobile column">
         <div class="ui padded basic segment">
           <div class="ui relaxed list">
 
@@ -187,62 +184,64 @@
 
     </div>
   </div>
-</div>
+</section>
 
-{{ basic.header_icon(
-  header="Join thousands of happy users",
-  subheader="",
-  icon="purple fa-message-lines",
-  icon_style="--fa-secondary-color: blueviolet;"
-) }}
 
 {# TODO: Turn these into testimonials. #}
 <section>
-  <div class="ui three link stackable cards">
-    <a href="https://flask.palletsprojects.com/en/2.2.x/" class="card">
-      <div class="content">
-        <div class="ui center aligned basic segment">
-          <img class="ui small image" src="{{ SITE_URL }}/images/flask-logo.png" alt="Flask logo" />
+  <div class="ui container">
+    {{ basic.header_icon(
+      header="Join thousands of happy users",
+      subheader="",
+      icon="purple fa-message-lines",
+      icon_style="--fa-secondary-color: blueviolet;"
+    ) }}
+    <div class="ui three link stackable cards">
+      <a href="https://flask.palletsprojects.com/en/2.2.x/" class="card">
+        <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/flask-logo.png" alt="Flask logo" />
+          </div>
+          <div class="header">Flask</div>
+          <div class="meta">
+            Web Framework
+          </div>
+          <div class="description">
+            Flask is a Python web framework built with a small core and easy-to-extend philosophy.
+          </div>
         </div>
-        <div class="header">Flask</div>
-        <div class="meta">
-          Web Framework
-        </div>
-        <div class="description">
-          Flask is a Python web framework built with a small core and easy-to-extend philosophy.
-        </div>
-      </div>
-    </a>
+      </a>
 
-    <a href="https://docs.jupyter.org/en/latest/" class="card">
-      <div class="content">
-        <div class="ui center aligned basic segment">
-          <img class="ui small image" src="{{ SITE_URL }}/images/jupyter-logo.png" alt="Jupyter logo">
+      <a href="https://docs.jupyter.org/en/latest/" class="card">
+        <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/jupyter-logo.png" alt="Jupyter logo">
+          </div>
+          <div class="header">Jupyter</div>
+          <div class="meta">
+            Data Science Environment
+          </div>
+          <div class="description">
+            Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
+          </div>
         </div>
-        <div class="header">Jupyter</div>
-        <div class="meta">
-          Data Science Environment
-        </div>
-        <div class="description">
-          Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
-        </div>
-      </div>
-    </a>
+      </a>
 
-    <a href="https://docs.godotengine.org/en/stable/index.html" class="card">
-      <div class="content">
-        <div class="ui center aligned basic segment">
-          <img class="ui small image" src="{{ SITE_URL }}/images/godot-logo.png" alt="Godot Engine logo">
+      <a href="https://docs.godotengine.org/en/stable/index.html" class="card">
+        <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/godot-logo.png" alt="Godot Engine logo">
+          </div>
+          <div class="header">Godot Engine</div>
+          <div class="meta">
+            Game Engine
+          </div>
+          <div class="description">
+            Godot Engine is a free and open source community-driven 2D and 3D game engine.
+          </div>
         </div>
-        <div class="header">Godot Engine</div>
-        <div class="meta">
-          Game Engine
-        </div>
-        <div class="description">
-          Godot Engine is a free and open source community-driven 2D and 3D game engine.
-        </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 </section>
 
