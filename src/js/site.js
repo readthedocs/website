@@ -27,6 +27,7 @@ require("fomantic-ui-less/definitions/modules/embed.js");
 require("fomantic-ui-less/definitions/modules/progress.js");
 require("fomantic-ui-less/definitions/modules/toast.js");
 require("fomantic-ui-less/definitions/globals/site.js");
+require("jquery-address");
 
 jquery(document).ready(() => {
   /**
@@ -191,6 +192,21 @@ jquery.fn.plausible = function () {
         event.preventDefault();
       }
     }
+  });
+};
+
+/*
+ * Tab group SUI module helper
+ *
+ * The tab module is instantiated on a group of `.menu .item` elements by
+ * iterating over the query selector used to call the `tab` jQuery module. This
+ * conflicts with the pattern above, as the tab module gets instantiated once
+ * for each `.menu .item` element. Instead, this module sets up the module on a
+ * single menu element.
+ */
+jquery.fn.tabmenu = function (settings) {
+  return this.each((index, elem) => {
+    $(elem).find(".item").tab(settings);
   });
 };
 
