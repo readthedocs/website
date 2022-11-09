@@ -239,3 +239,26 @@
     }
   }
 }
+
+/**
+ * Links in standard colored segments
+ *
+ * By default, SUI doesn't color links inside a segment that is colored, though
+ * it does for inverted segments.
+ */
+.ui.segment:not(.inverted) {
+  &.teal a {
+    color: @tealTextColor;
+
+    &:hover {
+      color: @tealHoverTextColor;
+    }
+  }
+  &.violet a {
+    color: @violetTextColor;
+
+    &:hover {
+      color: @violetHoverTextColor;
+    }
+  }
+}
