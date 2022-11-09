@@ -50,40 +50,69 @@ jquery(document).ready(() => {
 });
 
 /**
- * Instantiate SUI module
+ * Get module settings from element attributes
  *
- * This uses ``data`` attribute bindings to configure the module settings.
- * Normally this needs to be done using attributes to the jQuery module call,
- * but that is highly invconvenient.
- *
- * An example of this is:
+ * This uses the jQuery `data()` method to get data attributes in a normalized
+ * fashion. An example of HTML with attributes is:
  *
  * .. code:: html
  *
- *     <div class="ui dropdown" data-module="dropdown" data-action="select"></div>
+ *     <div class="ui dropdown" data-module="dropdown" data-module-action="select" data-module-ignore-case="true"></div>
  *
  * This would effectively be similar to calling:
  *
  * .. code:: javascript
  *
- *     $('.ui.dropdown').dropdown({action: 'select'})
+ *     element.dropdown({action: 'select', ignoreCase: true})
  *
  * .. note::
  *     Not all properties are available this way, as some properties need a
  *     complex or nested object, or expect a function. This is for basic usage
  *     only for now.
  */
+function get_settings_from_data(data) {
+  let uses_new_pattern = false;
+
+  // Remove prefix of `module` from attributes. From the above example, `data()`
+  // will populate the attribute `moduleIgnoreCase`, but we want to pass in
+  // `ignoreCase` instead.
+  let data_new = {};
+  for (const attr of Object.keys(data)) {
+    if (/^module[A-Z]+/.test(attr)) {
+      const attr_short = attr[6].toLowerCase() + attr.substr(7);
+      data_new[attr_short] = data[attr];
+      uses_new_pattern = true;
+    }
+  }
+
+  if (uses_new_pattern) {
+    return data_new;
+  }
+
+  // This is an shorter for of the above pattern, that doesn't use `module` as a
+  // prefix for attributes that we want to pass in to the jQuery plugins. This
+  // causes problems when there are unprefixed attributes we *don't* want passed
+  // in to the jQuery plugins. Prefixing solves this.
+  // TODO refactor old code pattern away
+  delete data.module;
+  return data;
+}
+
+/**
+ * Instantiate SUI module
+ *
+ * Directly call SUI modules
+ *
+ * .. note::
+ *     The tab module is slightly more annoying. See `tabgroup` plugin below.
+ */
 jquery.fn.sui_module = function () {
   return this.each((index, elem) => {
     const data = $(elem).data();
     const module = data.module;
-
-    // This is the data-module attribute, hopefully there are no overlaps with
-    // module settings here.
-    delete data.module;
-
+    const settings = get_settings_from_data(data);
     if (jquery.fn[module]) {
-      $(elem)[module](data);
+      $(elem)[module](settings);
     } else {
       jquery.fn.site("error", "SUI module not available: " + module);
     }
