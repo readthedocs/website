@@ -7,3 +7,12 @@
   font-family: @monospaceFontName;
   font-weight: 500;
 }
+
+/* Treat a header in a center aligned column as a block */
+.ui.grid,
+.ui.grid > .row {
+  & > .center.aligned.column .ui.inline.header {
+    text-align: left;
+    display: inline-block;
+  }
+}
