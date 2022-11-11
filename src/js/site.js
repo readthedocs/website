@@ -206,6 +206,9 @@ jquery.fn.plausible = function () {
  */
 jquery.fn.tabmenu = function (settings) {
   return this.each((index, elem) => {
+    settings.onLoad = () => {
+      $(elem).get(0).scrollIntoView();
+    };
     $(elem).find(".item").tab(settings);
   });
 };
