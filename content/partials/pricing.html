@@ -45,10 +45,12 @@
 #}
 {% macro plan_feature(name, description, icon, color=None) %}
   <div class="left aligned item">
-    <i class="fad {{ color }} {{ icon }} medium middle aligned icon"></i>
+    <i class="fad {%- if color %} {{ color }} {%- endif %} {{ icon }} medium middle aligned icon"></i>
     <div class="content">
       <div class="header">{{ name }}</div>
-      <div class="description">{{ description }}</div>
+      {% if description %}
+        <div class="description">{{ description }}</div>
+      {% endif %}
     </div>
   </div>
 {% endmacro %}
@@ -62,8 +64,9 @@
   plans illustrated side by side, or if we see more business customers leak over.
 #}
 {% macro feature_table() %}
-  <table class="ui mini unstackable celled table">
-    <thead>
+  <table class="ui mini unstackable celled table" id="feature-table">
+
+    {% macro _feature_table_row() %}
       <tr>
         <th class="eight wide" scope="col"></th>
         {% if show_community_features %}
@@ -81,10 +84,17 @@
           <a class="ui violet button" href="./#/business/pro">Pro</a>
         </th>
       </tr>
+    {% endmacro %}
+
+    <thead class="ui sticky" data-module="sticky" data-module-context="#feature-table">
+      {{ _feature_table_row() }}
     </thead>
     <tbody>
       {{ caller() }}
     </tbody>
+    <tfoot>
+      {{ _feature_table_row() }}
+    </tfoot>
   </table>
 {% endmacro %}
 
@@ -139,7 +149,7 @@
   {% if value == True %}
     <td class="center aligned positive"><i class="fad fa-circle-check large icon"></i></td>
   {% elif value %}
-    <td class="center aligned">{{ value }}</td>
+    <td class="center aligned positive">{{ value }}</td>
   {% else %}
     <td class="center aligned disabled"><i class="fad fa-circle-xmark large icon"></i></td>
   {% endif %}
@@ -152,9 +162,9 @@
   table. It adds a mostly blank row, with just a header.
 #}
 {% macro header_row(name, icon) %}
-  <tr>
-    <td colspan="5" class="inverted grey">
-      <i class="fad {{ icon }} large icon"></i>
+  <tr class="grey">
+    <td colspan="5">
+      <i class="fad {{ icon }} large black icon"></i>
       {{ name }}
     </td>
   </tr>

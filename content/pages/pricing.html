@@ -38,7 +38,7 @@
       <h1 class="ui medium header">
         Plan pricing
         <span class="sub header">
-          Pricing plans and plan features
+          Read the Docs plan features and pricing
         </span>
       </h1>
     </div>
@@ -137,7 +137,7 @@
           ) %}
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("Public versions", "Publicly accessible projects only", "fa-shield-keyhole") }}
-              {{ pricing.plan_feature("Ad free", "Documentation ads are removed", "fa-ad") }}
+              {{ pricing.plan_feature("Ad free", "Turn off ads on your projects", "fa-ad", color="light grey") }}
             </div>
           {% endcall %}
 
@@ -147,20 +147,31 @@
                 <h3 class="ui small header">
                   <i class="fad fa-circle-question icon"></i>
                   <span class="content">
-                    Looking for more?
+                    Which platform?
                   </span>
                 </h3>
 
                 <p>
-                  Read the Docs Community is intended for <b>open source</b> and <b>free</b> software.
-                  Read the Docs for Business has more features for commercial use:
+                  Read the Docs Community is intended for <b>open source</b> and <b>free</b> software,
+                  and is supported by <b><a href="https://www.ethicalads.io/">EthicalAds<i class="fad fa-square-arrow-up-right icon"></i></a></b>,
+                  our <b>privacy-first</b> advertising network.
+                </p>
+
+                <p>
+                  <a href="./#/business">Read the Docs for Business</a> includes
+                  features for hosting <b>commercial</b> and <b>private</b> documentation,
+                  such as:
                 </p>
 
                 <div class="ui inverted list relaxed divided">
-                  {{ pricing.plan_feature("Private repositories", "Clone private repositories", "fa-code-branch") }}
-                  {{ pricing.plan_feature("Authentication", "Require readers to log in", "fa-shield-keyhole") }}
-                  {{ pricing.plan_feature("Team management", "Control team access in your organization", "fa-users") }}
+                  {{ pricing.plan_feature("Reader authentication and sharing", None, "fa-shield-keyhole fa-swap-opacity") }}
+                  {{ pricing.plan_feature("Team management and SSO", None, "fa-users") }}
+                  {{ pricing.plan_feature("Email support and support SLAs", None, "fa-life-ring") }}
                 </div>
+
+                <p class="ui center aligned basic segment">
+                  <a class="ui inverted button" href="./#/business">See all features</a>
+                </p>
               </div>
             </div>
           {% endblock pricing_choosing %}
@@ -181,40 +192,44 @@
   <div class="ui padded container">
 
     {% call pricing.feature_table() %}
-      {{ pricing.feature_row("Unlimited projects", "Add as many projects as you need", "fa-infinity") }}
-      {% if pricing.show_community_features %}
-        {{ pricing.feature_row("Closed source documentation", "Support for proprietary and non-free documentation", "fa-robot", on_community=False) }}
-      {% endif %}
-      {{ pricing.feature_row("Team management", "", "fa-message-question", None, "2 business days", "2 business days", "1 business day") }}
-      {{ pricing.feature_row("Email support", "Support response time", "fa-message-question", None, "2 business days", "2 business days", "1 business day") }}
+      {{ pricing.feature_row("Team management", "Control organization access with team permissions", "fa-users", on_community=False) }}
+      {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", None, "2 business days", "2 business days", "1 business day") }}
       {{ pricing.feature_row("API access", "Write your own integrations", "fa-sparkles") }}
 
-      {{ pricing.header_row("Authoring", "fa-gear") }}
+      {{ pricing.header_row("Authoring", "fa-typewriter") }}
+      {{ pricing.feature_row("Unlimited projects", "Manage and build any number of projects", "fa-infinity") }}
       {{ pricing.feature_row("Public repositories", "Clone public repositories", "fa-globe") }}
       {{ pricing.feature_row("Private repositories", "Clone private repositories", "fa-eye-slash", on_community=False) }}
       {{ pricing.feature_row("Pull request preview", "Preview changes in review", "fa-code-compare") }}
 
-      {{ pricing.header_row("Documentation building", "fa-gear") }}
+      {{ pricing.header_row("Documentation building", "fa-gears") }}
       {{ pricing.feature_row("Automatic building", "Build every commit", "fa-gears") }}
-      {{ pricing.feature_row("Monthly build hours", "Included build hours each subscription period", "fa-infinity", 400, 800, 1600, 3200) }}
       {{ pricing.feature_row("Build concurrency", "Concurrent build processes", "fa-rectangle-vertical-history fa-swap-opacity", 2, 2, 4, 6) }}
-      {{ pricing.feature_row("Notifications", "Get email notifications on failures", "fa-envelope-dot") }}
-      {{ pricing.feature_row("Environment variables", "Inject secrets to builds", "fa-shield-keyhole") }}
-      {{ pricing.feature_row("Automation rules", "Mange versions automatically", "fa-robot") }}
+      {{ pricing.feature_row("Notifications", "Receive notifications build events", "fa-envelope-dot") }}
+      {{ pricing.feature_row("Environment variables", "Inject secrets into builds", "fa-lock-keyhole") }}
+      {{ pricing.feature_row("Automation rules", "Automatically manage versions", "fa-robot") }}
 
-      {{ pricing.header_row("Hosting", "fa-gear") }}
-      {{ pricing.feature_row("Authentication", "Control access to your documentation", "fa-shield-keyhole", on_community=False) }}
-      {{ pricing.feature_row("Sharing", "Alternative authentication for private documentation", "fa-shield-keyhole", on_community=False) }}
+      {{ pricing.header_row("Documentation hosting", "fa-browser") }}
       {{ pricing.feature_row("Documentation versioning", "Host multiple versions of your project", "fa-layer-group") }}
-      {{ pricing.feature_row("Documentation localization", "Host multiple translations of your project", "fa-language") }}
-      {{ pricing.feature_row("Subprojects", "Organize projects using project nesting", "fa-gears") }}
+      {{ pricing.feature_row("Documentation localization", "Host your project localized in multiple locales", "fa-language") }}
+      {{ pricing.feature_row("Reader authentication", "Require access to view your documentation", "fa-shield-keyhole", on_community=False) }}
+      {{ pricing.feature_row("Single sign-on", "Sign on with using external provider", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro="GitHub, GitLab, and Google") }}
+      {{ pricing.feature_row("Sharing", "Provide temporary access to private documentation", "fa-user-shield", on_community=False) }}
+      {{ pricing.feature_row("CDN hosting", "Reduce load times for your projects", "fa-clouds", on_community=True, on_basic="Public projects only", on_advanced="Public projects only", on_pro="Public projects only") }}
+      {{ pricing.feature_row("Custom domains", "Host projects on custom domain name", "fa-at", on_basic=False) }}
       {{ pricing.feature_row("Ad supported", "Documentation includes advertising placements", "fa-ad", on_basic=False, on_advanced=False, on_pro=False) }}
+      {{ pricing.feature_row("Subprojects", "Organize projects using project nesting", "fa-diagram-nested") }}
       {{ pricing.feature_row("Integrated search", "Search across all of your projects", "fa-magnifying-glass") }}
       {{ pricing.feature_row("Offline formats", "Download offline PDF and EPUB formats", "fa-file-pdf") }}
-      {{ pricing.feature_row("Single sign-on", "Supported single sign-on providers", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro="GitHub, GitLab, and Google") }}
-      {{ pricing.feature_row("Sitemap generation", "Automatically generated sitemaps", "fa-gears") }}
-      {{ pricing.feature_row("Customizable error pages", "Manage your own HTTP error pages", "fa-circle-exclamation") }}
-      {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-circle-exclamation") }}
+      {{ pricing.feature_row("Request redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right") }}
+      {{ pricing.feature_row("Sitemap generation", "Automatically update your project's sitemap", "fa-sitemap") }}
+      {{ pricing.feature_row("Customizable error pages", "Manage your own HTTP error pages", "fa-palette") }}
+      {{ pricing.feature_row("Status badges", "Embeddable badges showing your project's status", "fa-badge-check") }}
+      {{ pricing.feature_row("Google analytics integration", "Track visits to your project", "fa-chart-line") }}
+      {{ pricing.feature_row("Pageview analytics", "Collect statistics on visits to your projects", "fa-chart-line", on_community="30 days", on_basic="30 days", on_advanced="30 days", on_pro="90 days") }}
+      {{ pricing.feature_row("Search analytics", "Collect statistics on search queries for your projects", "fa-chart-line", on_community="30 days", on_basic="30 days", on_advanced="30 days", on_pro="90 days") }}
+      {{ pricing.feature_row("Content embedding", "Embed your documentation in outside sources", "fa-object-subtract", on_basic=False) }}
+      {{ pricing.feature_row("URL customization", "Fine tune URLs used for your projects", "fa-route", on_community=False, on_basic=False, on_advanced=False, on_pro=True) }}
     {% endcall %}
 
   </div>
@@ -232,7 +247,7 @@
       </h3>
 
       <p>
-        We offer customized plans for enterprise organizations, and can support
+        We offer customized enterprise plans for organizations, and can support
         <b>customized authentication</b>, hosting and support <b>service level agreements</b>,
         <b>unlimited audit tracking and analytics</b>, and <b>more</b>.
       </p>
