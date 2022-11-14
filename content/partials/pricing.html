@@ -136,6 +136,10 @@
 
   This is the logic for each plan's cell for each feature. Values are:
 
+  (value, cell_class_name)
+    Pass in an optional class name for the cell, ``value`` is processed using
+    the same rules as a non-tuple ``value``.
+
   True
     Show a check
 
@@ -146,10 +150,13 @@
     Show an xmark
 #}
 {% macro feature_row_cell(value) %}
+  {% if value is iterable and value is not string and value | length == 2 %}
+    {% set (value, class_name) = value %}
+  {% endif %}
   {% if value == True %}
-    <td class="center aligned positive"><i class="fad fa-circle-check large icon"></i></td>
+    <td class="center aligned {{ class_name|default("positive") }}"><i class="fad fa-circle-check large icon"></i></td>
   {% elif value %}
-    <td class="center aligned positive">{{ value }}</td>
+    <td class="center aligned {{ class_name|default("positive") }}">{{ value }}</td>
   {% else %}
     <td class="center aligned disabled"><i class="fad fa-circle-xmark large icon"></i></td>
   {% endif %}
