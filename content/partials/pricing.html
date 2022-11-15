@@ -1,0 +1,178 @@
+{#
+  It's not yet clear if the community plan features on the feature table help
+  explain the difference between community/commercial, or if it makes it less
+  obvious that community is only for open source projects.
+#}
+{% set show_community_features = True %}
+
+{#
+  Main plan block for commercial/community plan cards
+#}
+{% macro plan(name, price, color="teal") %}
+  <div class="{% if not price %} computer only {%- endif %} column">
+    <div class="ui {%- if price %} raised {{ color }} {%- else %} basic {%- endif %} segment">
+
+      <h2 class="ui small monospace center aligned header">
+        {{ name }}
+      </h2>
+
+      {% if price %}
+        <div class="ui horizontally fitted basic small segment">
+          <div class="ui tiny center aligned one statistics">
+            <div class="statistic">
+            <div class="value">
+              {{ price }}
+            </div>
+            <div class="label">
+              <span class="category">per month</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {{ caller() }}
+
+    </div>
+  </div>
+{% endmacro %}
+
+{#
+  A row in the plan() block
+
+  Includes an icon, header text, and description line of text. Each item should
+  have all of these defined.
+#}
+{% macro plan_feature(name, description, icon, color=None) %}
+  <div class="left aligned item">
+    <i class="fad {%- if color %} {{ color }} {%- endif %} {{ icon }} medium middle aligned icon"></i>
+    <div class="content">
+      <div class="header">{{ name }}</div>
+      {% if description %}
+        <div class="description">{{ description }}</div>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}
+
+
+{#
+  The plan feature comparison table
+
+  This uses the global `show_community_features` for now. This is so we have a
+  quick switch to flip if it is too confusing to have community and commercial
+  plans illustrated side by side, or if we see more business customers leak over.
+#}
+{% macro feature_table() %}
+  <table class="ui mini unstackable celled table" id="feature-table">
+
+    {% macro _feature_table_row() %}
+      <tr>
+        <th class="eight wide" scope="col"></th>
+        {% if show_community_features %}
+          <th class="two wide center aligned" scope="col">
+            <a class="ui teal button" href="./#/community">Community</a>
+          </th>
+        {% endif %}
+        <th class="two wide center aligned" scope="col">
+          <a class="ui violet button" href="./#/business/basic">Basic</a>
+        </th>
+        <th class="two wide center aligned" scope="col">
+          <a class="ui violet button" href="./#/business/advanced">Advanced</a>
+        </th>
+        <th class="two wide center aligned" scope="col">
+          <a class="ui violet button" href="./#/business/pro">Pro</a>
+        </th>
+      </tr>
+    {% endmacro %}
+
+    <thead class="ui sticky" data-module="sticky" data-module-context="#feature-table">
+      {{ _feature_table_row() }}
+    </thead>
+    <tbody>
+      {{ caller() }}
+    </tbody>
+    <tfoot>
+      {{ _feature_table_row() }}
+    </tfoot>
+  </table>
+{% endmacro %}
+
+{#
+  Feature row in the feature table
+
+  Similar to plan features list above, each item has an icon, header, and
+  description line of text. The remaining parameters control what is shown
+  for each plan. These can be binary values to output check marks, `None` to
+  be blank, or a string to output text to the plan's cell.
+
+  Again, this supports the `show_community_features` global, until we confirm
+  this mixed display is not confusing.
+#}
+{% macro feature_row(name, description, icon, on_community=True, on_basic=True, on_advanced=True, on_pro=True) %}
+  <tr>
+    <td>
+      <div class="ui small header">
+        <i class="fad {{ icon }} icon"></i>
+        <div class="content">
+          {{ name }}
+          <div class="sub header">
+            {{ description }}
+          </div>
+        </div>
+      </div>
+    </td>
+    {% if show_community_features %}
+      {{ feature_row_cell(on_community) }}
+    {% endif %}
+    {{ feature_row_cell(on_basic) }}
+    {{ feature_row_cell(on_advanced) }}
+    {{ feature_row_cell(on_pro) }}
+  </tr>
+{% endmacro %}
+
+{#
+  Feature row cell helper
+
+  This is the logic for each plan's cell for each feature. Values are:
+
+  (value, cell_class_name)
+    Pass in an optional class name for the cell, ``value`` is processed using
+    the same rules as a non-tuple ``value``.
+
+  True
+    Show a check
+
+  Anything truthy
+    Show the string representation
+
+  False
+    Show an xmark
+#}
+{% macro feature_row_cell(value) %}
+  {% if value is iterable and value is not string and value | length == 2 %}
+    {% set (value, class_name) = value %}
+  {% endif %}
+  {% if value == True %}
+    <td class="center aligned {{ class_name|default("positive") }}"><i class="fad fa-circle-check large icon"></i></td>
+  {% elif value %}
+    <td class="center aligned {{ class_name|default("positive") }}">{{ value }}</td>
+  {% else %}
+    <td class="center aligned disabled"><i class="fad fa-circle-xmark large icon"></i></td>
+  {% endif %}
+{% endmacro %}
+
+{#
+  Feature table dividing header row
+
+  This is an optional way to break up the feature table into a more scannable
+  table. It adds a mostly blank row, with just a header.
+#}
+{% macro header_row(name, icon) %}
+  <tr class="grey">
+    <td colspan="5">
+      <i class="fad {{ icon }} large black icon"></i>
+      {{ name }}
+    </td>
+  </tr>
+{% endmacro %}
