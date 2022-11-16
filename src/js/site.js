@@ -207,7 +207,13 @@ jquery.fn.plausible = function () {
 jquery.fn.tabmenu = function (settings) {
   return this.each((index, elem) => {
     settings.onLoad = () => {
-      $(elem).get(0).scrollIntoView();
+      // Only scroll to the plan block when it is not on screen. We also inspect
+      // the URL hash to ensure we're not scrolling on navigating to the page.
+      // If there is a page hash, something was clicked to select the plans tab.
+      const is_on_screen = $(elem).visibility("is on screen");
+      if (!is_on_screen && window.location.hash) {
+        $(elem).get(0).scrollIntoView();
+      }
     };
     $(elem).find(".item").tab(settings);
   });
