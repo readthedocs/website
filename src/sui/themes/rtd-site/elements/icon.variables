@@ -1,9 +1,0 @@
-@fontAwesomePath: "~@fortawesome/fontawesome-pro/webfonts";
-
-/* Null src to skip supplied Font Awesome, use from node_modules instead,
- * through overrides */
-@src: "";
-@fallbackSRC: "";
-
-@importOutlineIcons: false;
-@importBrandIcons: false;

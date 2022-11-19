@@ -39,6 +39,7 @@
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
+    "@readthedocs/sui-common-theme": "git+https://github.com/readthedocs/sui-common-theme.git#cc51322",
     "babel-loader": "^8.1.0",
     "create-fomantic-icons": "^1.0.4",
     "css-loader": "^3.1.0",
@@ -67,9 +68,6 @@
     "webpack-merge": "^4.2.1",
     "webpack-shell-plugin": "^0.5.0",
     "webpack-watch-files-plugin": "^1.0.3"
-  },
-  "optionalDependencies": {
-    "@fortawesome/fontawesome-pro": "^6.1.2"
   },
   "babel": {
     "env": {

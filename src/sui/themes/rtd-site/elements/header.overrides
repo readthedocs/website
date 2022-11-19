@@ -3,11 +3,6 @@
   margin-top: e(%("calc(-1rem + %d)", @headerLineHeightOffset));
 }
 
-.ui.monospace.header {
-  font-family: @monospaceFontName;
-  font-weight: 500;
-}
-
 /* Treat a header in a center aligned column as a block */
 .ui.grid,
 .ui.grid > .row {

@@ -35,18 +35,18 @@
 //     this. Our overrides and variables will come from our themes instead.
 
 @import "@{themesFolder}/default/globals/site.variables";
-@import (optional) "themes/rtd-common/globals/site.variables";
+@import (optional) "~@readthedocs/sui-common-theme/globals/site.variables";
 @import (optional) "themes/@{theme}/globals/site.variables";
 @import (optional) "@{siteFolder}/globals/site.variables";
 
 @import "@{themesFolder}/default/@{type}s/@{element}.variables";
-@import (optional) "themes/rtd-common/@{type}s/@{element}.variables";
+@import (optional) "~@readthedocs/sui-common-theme/@{type}s/@{element}.variables";
 @import (optional) "themes/@{theme}/@{type}s/@{element}.variables";
 @import (optional) "@{siteFolder}/@{type}s/@{element}.variables";
 
 // Color map
 @import "@{themesFolder}/default/globals/colors.less";
-@import (optional) "themes/rtd-common/globals/colors.less";
+@import (optional) "~@readthedocs/sui-common-theme/globals/colors.less";
 @import (optional) "themes/@{theme}/globals/colors.less";
 
 // Mixins
@@ -61,8 +61,13 @@
 }
 
 .loadUIOverrides() {
-  @import "@{themesFolder}/default/@{type}s/@{element}.overrides";
-  @import (optional) "themes/rtd-common/@{type}s/@{element}.overrides";
+  // Skip the default theme icon overrides file, because this conflicts with
+  // using Font Awesome directly, and establishes a lot of class definitions
+  // we'll never use. This requires setting up Font Awesome manually however.
+  & when not (@element = "icon") {
+    @import (optional) "@{themesFolder}/default/@{type}s/@{element}.overrides";
+  }
+  @import (optional) "~@readthedocs/sui-common-theme/@{type}s/@{element}.overrides";
   @import (optional) "themes/@{theme}/@{type}s/@{element}.overrides";
   @import (optional) "@{siteFolder}/@{type}s/@{element}.overrides";
 }

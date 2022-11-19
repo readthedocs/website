@@ -1,5 +1,0 @@
-// Dropdown
-
-.ui.wide.dropdown > .menu {
-  width: 20rem;
-}
