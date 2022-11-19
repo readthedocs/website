@@ -2,7 +2,6 @@ node_modules/
 .nodenv
 .node-version
 .python-version
-.tool-versions
 .direnv/
 .env
 .envrc

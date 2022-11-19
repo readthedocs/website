@@ -29,13 +29,22 @@ Setting up your environment
 This package uses Poetry to manage Python dependencies and CSS and JS assets are
 built using a number of Node dependencies.
 
-You will need to specify the ``FONTAWESOME_NPM_AUTH_TOKEN`` environment variable
-before installing Node dependenvies. You should be using ``direnv`` locally for
-secret management and encryption. Ask for this token, it's private.
+You will need the following requirements:
 
-You need to be using Node<=14 and at least Python 3.6+, but Python 3.10 is
-preferred. Using ``asdf`` is recommended here. With both configured, you can
-install all the dependencies with:
+* Node.js version ``14``
+* Python version ``3.10`` (any release ``>=3.6`` works)
+* Poetry version ``1.2`` (any release ``>=1.1`` works)
+
+Using ``asdf`` is recommended but optional. The ``asdf`` commands below will
+install all system level dependencies for you, including Poetry.
+
+.. code-block:: console
+
+    $ asdf install
+    $ asdf reshim
+
+With the correct system dependencies configured, either with ``asdf`` or
+manually, you can install all package level dependencies with:
 
 .. code-block:: console
 
