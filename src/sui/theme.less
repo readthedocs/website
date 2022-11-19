@@ -40,7 +40,8 @@
 @import (optional) "@{siteFolder}/globals/site.variables";
 
 @import "@{themesFolder}/default/@{type}s/@{element}.variables";
-@import (optional) "~@readthedocs/sui-common-theme/@{type}s/@{element}.variables";
+@import (optional)
+  "~@readthedocs/sui-common-theme/@{type}s/@{element}.variables";
 @import (optional) "themes/@{theme}/@{type}s/@{element}.variables";
 @import (optional) "@{siteFolder}/@{type}s/@{element}.variables";
 
@@ -67,7 +68,8 @@
   & when not (@element = "icon") {
     @import (optional) "@{themesFolder}/default/@{type}s/@{element}.overrides";
   }
-  @import (optional) "~@readthedocs/sui-common-theme/@{type}s/@{element}.overrides";
+  @import (optional)
+    "~@readthedocs/sui-common-theme/@{type}s/@{element}.overrides";
   @import (optional) "themes/@{theme}/@{type}s/@{element}.overrides";
   @import (optional) "@{siteFolder}/@{type}s/@{element}.overrides";
 }
