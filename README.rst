@@ -40,6 +40,7 @@ install all system level dependencies for you, including Poetry.
 
 .. code-block:: console
 
+    $ cp .tool-versions-example .tool-versions
     $ asdf install
     $ asdf reshim
 
