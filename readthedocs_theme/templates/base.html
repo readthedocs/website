@@ -44,6 +44,13 @@
     {% endif %}
 
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/site.css" />
+    {#
+      This is our only external dependency. It's a fast way to get all the
+      versions of Font Awesome, and doesn't require spreading around a Font
+      Awesome Pro key.
+    #}
+    <script src="https://kit.fontawesome.com/53af4251af.js" crossorigin="anonymous"></script>
+
     <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
     <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     <script src="{{ SITEURL }}/theme/js/vendor.js"></script>
