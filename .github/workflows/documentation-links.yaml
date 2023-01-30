@@ -15,4 +15,4 @@ jobs:
         with:
           project-slug: "read-the-docs-site-community"
           platform: "business"
-
+          single-version: "true" # Has to be a string value. 
