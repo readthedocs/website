@@ -109,15 +109,9 @@
                 python: "3.10"
                 # You can also specify other tool versions:
                 # nodejs: "16"
-
-            # Build documentation in the docs/ directory with Sphinx
-            sphinx:
-               configuration: docs/conf.py
-
-            # Dependencies required to build your docs
-            python:
-               install:
-               - requirements: docs/requirements.txt
+              commands:
+                - pip install mkdocs-material
+                - mkdocs build --site-dir $READTHEDOCS_OUTPUT/html
             ```
 
             {% endmarkdown %}
@@ -155,7 +149,7 @@
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
-                  <span class="sub header">Copy this example, it probably does what you want 😉</span>
+                  <span class="sub header">Copy this example, and update the commands as necessary</span>
                 </span>
               </span>
 
