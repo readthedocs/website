@@ -1,84 +1,81 @@
-{# 
-    The goal of this page is to sell users who are already authoring in Sphinx on the benefits of our hosting.
-    We aren't focusing on generic Sphinx benefits,
-    but the unique differentiation of our platform.
-  #}
-  <html>
-    <head>
-      <title>Read the Docs vs. GitHub Pages comparison</title>
-      <meta name="template" content="page" />
-      <meta name="slug" content="tools/sphinx" />
-      <meta name="status" content="hidden" />
-      <meta name="description" content="" />
-    </head>
-    <body>
-  
-  {#
-    View this page at http://localhost:8080/tools/sphinx/index.html
-  #}
+{# View this page at http://localhost:8080/comparisons/github-pages/ #}
+
+<html>
+  <head>
+    <title>Read the Docs vs. GitHub Pages comparison</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="comparisons/github-pages" />
+    <meta name="status" content="hidden" />
+    <meta name="description" content="" />
+  </head>
+  <body>
   
   {% import "partials/basic.html" as basic %}
-  {% import "partials/marketing.html" as marketing %}
   {% import "partials/technical.html" as technical %}
   {% import "partials/homepage.html" as homepage %}
-  
+  {% import "partials/comparisons.html" as comparison %}
+
   {% block signup_modal %}
     {{ homepage.signup_modal("signup_modal") }}
   {% endblock signup_modal %}
   
   <section>
-    {% call basic.header_image(
-      header="Supercharge your Sphinx docs and impress your readers",
-      image="/images/readthedocs-thumb.png",
-      image_alt="Examples of Read the Docs hosted documentation",
-      vertical_align="middle")
+    {% call basic.header_lead(
+      header="GitHub 💩 vs Read the Docs 🚀")
     %}
     {# TODO: Add a GIF of using hoverxref & livesearch #}
-      <p>
-          Our powerful Sphinx hosting improves the reading and authoring experience for everyone who interacts with your documentation.
-      </p>
-  
-      <p class="ui basic padded vertical segment">
-        <a class="ui large teal stackable button"
-        data-analytics="signup-modal"
-         onclick="jQuery('#signup_modal').modal('show');">
-          <i class="fad fa-play icon"></i>
-          Create an account
-        </a>
-        <a href="https://docs.readthedocs.io/en/stable/tutorial/index.html" class="ui large stackable button">
-          Start our tutorial
-        </a>
-      </p>
+      <p>Supercharge your documentation with Read the Docs and impress your readers.</p>
     {% endcall %}
   </section>
 
 
-  # Comparing Read the Docs and GitHub Pages
+{#
+  The most important way to think about these two products is what value they provide to you as a user:
 
-The most important way to think about these two products is what value they provide to you as a user:
+  * GitHub Pages provides static file hosting, with no backend API or feature set
+  * Read the Docs is a full platform for documentation hosting, with versions and backend APIs
 
-* GitHub Pages provides static file hosting, with no backend API or feature set
-* Read the Docs is a full platform for documentation hosting, with versions and backend APIs
+  * **Documentation platform**: Read the Docs provides a full set of features for documentation hosting, instead of just static hosting
+  * **Open source**: Read the Docs source code is fully open source
+  * **Hosting Features**:
+#}
 
-* **Documentation platform**: Read the Docs provides a full set of features for documentation hosting, instead of just static hosting
-* **Open source**: Read the Docs source code is fully open source
-* **Hosting Features**: 
+{#
+  Compare plan features with a table
 
-* Building: GitHub Actions
-* Hosting: GitHub Pages
+  * Building: GitHub Actions
+  * Hosting: GitHub Pages
 
-* Search | Algolia
-* Versions | GitHub Actions customization
-* PR Previews | GitHub Actions customization
-* Page analytics | Google Analytics
-* Redirects | Impossible
-* Custom 404 pages | Impossible
-* Translation | Impossible
-* Private docs | Impossible
+  * Search | Algolia
+  * Versions | GitHub Actions customization
+  * PR Previews | GitHub Actions customization
+  * Page analytics | Google Analytics
+  * Redirects | Impossible
+  * Custom 404 pages | Impossible
+  * Translation | Impossible
+  * Private docs | Impossible
 
+#}
+<section id="compare">
+  <div class="ui padded container">
 
-  
+    {% call comparison.feature_table() %}
+    {{ comparison.feature_row("Static hosting", "Publish any static content", "fa-page", on_github=True) }}
+    {{ comparison.feature_row("Build your site on the cloud", "Generate the site's content on the cloud", "fa-gears", on_github=True) }}
+    {{ comparison.feature_row("Deploy previews", "Solve style-issues before deploying", "fa-rocket-launch") }}
+    {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass") }}
+    {{ comparison.feature_row("Multiple versions", "Publish multiple versions of our documentation", "fa-books") }}
+    {{ comparison.feature_row("Redirects", "Redirect users to the right page", "fa-arrows-turn-right") }}
+    {{ comparison.feature_row("Custom 404 pages", "Style 404 pages with context-related information", "fa-xmark") }}
+    {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed") }}
+    {{ comparison.feature_row("Search analytics", "Explore what people search for in your docs", "fa-chart-simple") }}
+    {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language") }}
+    {{ comparison.feature_row("Private documention", "Give access only to trusted people", "fa-lock") }}
+    {{ comparison.feature_row("Open Source", "Maintained by the community", "fa-osi") }}
+    {% endcall %}
 
+  </div>
+</section>
   <div class="ui container">
     <div class="ui horizontal divider">Try it out</div>
   </div>
@@ -173,65 +170,6 @@ The most important way to think about these two products is what value they prov
     </div>
   </section>
   
-  
-  {# TODO: Turn these into testimonials. #}
-  <section>
-    <div class="ui container">
-      {{ basic.header_icon(
-        header="Join thousands of happy users",
-        subheader="",
-        icon="purple fa-message-lines",
-        icon_style="--fa-secondary-color: blueviolet;"
-      ) }}
-      <div class="ui three link stackable cards">
-        <a href="https://flask.palletsprojects.com/en/2.2.x/" class="card">
-          <div class="content">
-            <div class="ui center aligned basic segment">
-              <img class="ui small image" src="{{ SITE_URL }}/images/flask-logo.png" alt="Flask logo" />
-            </div>
-            <div class="header">Flask</div>
-            <div class="meta">
-              Web Framework
-            </div>
-            <div class="description">
-              Flask is a Python web framework built with a small core and easy-to-extend philosophy.
-            </div>
-          </div>
-        </a>
-  
-        <a href="https://docs.jupyter.org/en/latest/" class="card">
-          <div class="content">
-            <div class="ui center aligned basic segment">
-              <img class="ui small image" src="{{ SITE_URL }}/images/jupyter-logo.png" alt="Jupyter logo">
-            </div>
-            <div class="header">Jupyter</div>
-            <div class="meta">
-              Data Science Environment
-            </div>
-            <div class="description">
-              Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
-            </div>
-          </div>
-        </a>
-  
-        <a href="https://docs.godotengine.org/en/stable/index.html" class="card">
-          <div class="content">
-            <div class="ui center aligned basic segment">
-              <img class="ui small image" src="{{ SITE_URL }}/images/godot-logo.png" alt="Godot Engine logo">
-            </div>
-            <div class="header">Godot Engine</div>
-            <div class="meta">
-              Game Engine
-            </div>
-            <div class="description">
-              Godot Engine is a free and open source community-driven 2D and 3D game engine.
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-  
   {% block homepage_bottom_callout %}
   <section>
     <div class="ui very padded container">
@@ -272,4 +210,3 @@ The most important way to think about these two products is what value they prov
   
     </body>
   </html>
-  
