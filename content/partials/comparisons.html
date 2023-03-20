@@ -43,7 +43,11 @@
   <tr>
     <td>
       <div class="ui small header">
+        {% if "fa-osi" in icon %}
+        <i class="{{ icon }} icon"></i>
+        {% else %}
         <i class="fad {{ icon }} icon"></i>
+        {% endif %}
         <div class="content">
           {{ name }}
           <div class="sub header">

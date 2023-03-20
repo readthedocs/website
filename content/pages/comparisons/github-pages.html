@@ -73,11 +73,12 @@
     {{ comparison.feature_row("Multiple versions", "Publish multiple versions of our documentation", "fa-books") }}
     {{ comparison.feature_row("Redirects", "Redirect users to the right page", "fa-arrows-turn-right") }}
     {{ comparison.feature_row("Custom 404 pages", "Style 404 pages with context-related information", "fa-xmark") }}
+    {{ comparison.feature_row("Custom \"robots.txt\"", "Improve your SEO by telling bots how to explore your site", "fa-robot") }}
     {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed") }}
     {{ comparison.feature_row("Search analytics", "Explore what people search for in your docs", "fa-chart-simple") }}
     {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language") }}
     {{ comparison.feature_row("Private documention", "Give access only to trusted people", "fa-lock") }}
-    {{ comparison.feature_row("Open Source", "Maintained by the community", "fa-osi") }}
+    {{ comparison.feature_row("Open Source", "Maintained by the community", "fa-brands fa-osi") }}
     {% endcall %}
 
   </div>
@@ -104,9 +105,9 @@
             ```yaml
             version: 2
             build:
-              os: ubuntu-22.04
+              os: "ubuntu-22.04"
               tools:
-                python: "3.10"
+                python: "3"
                 # You can also specify other tool versions:
                 # nodejs: "16"
               commands:
@@ -149,7 +150,7 @@
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
-                  <span class="sub header">Copy this example, and update the commands as necessary</span>
+                  <span class="sub header">Save this file as <code>.readthedocs.yaml</code>, and update the commands as necessary</span>
                 </span>
               </span>
 
