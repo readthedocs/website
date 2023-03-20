@@ -30,7 +30,7 @@ commands:
               exit 1
             fi
       - run: pip install poetry
-      - run: poetry install
+      - run: poetry -vvv install
       - run: poetry run pelican content -s publishconf.py
       - run: npx html-validate --formatter codeframe output/
   run-publish:
