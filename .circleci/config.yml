@@ -1,7 +1,6 @@
 version: 2.1
 
 orbs:
-  aws-s3: circleci/aws-s3@3.0
   node: circleci/node@5.0.2
 
 commands:
@@ -33,18 +32,6 @@ commands:
       - run: poetry --no-ansi install
       - run: poetry run pelican content -s publishconf.py
       - run: npx html-validate --formatter codeframe output/
-  run-publish:
-    description: "Publish site on main merge"
-    parameters:
-      bucket:
-        type: string
-    steps:
-      - aws-s3/sync:
-          arguments: |
-            --acl public-read \
-            --cache-control "max-age=3600"
-          from: output
-          to: <<parameters.bucket>>
 
 jobs:
   lint:
@@ -62,14 +49,6 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths: project
-  publish:
-    docker:
-      - image: "cimg/python:3.10"
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run-publish:
-          bucket: "s3://readthedocs-static-dev/sites/community"
 
 workflows:
   version: 2
@@ -77,10 +56,3 @@ workflows:
     jobs:
       - lint
       - build
-      - publish:
-          requires:
-            - lint
-            - build
-          filters:
-            branches:
-              only: main
