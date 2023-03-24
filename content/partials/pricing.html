@@ -8,7 +8,7 @@
 {#
   Main plan block for commercial/community plan cards
 #}
-{% macro plan(name, price, color="teal") %}
+{% macro plan(name, price, contact, color="teal") %}
   <div class="{% if not price %} computer only {%- endif %} column">
     <div class="ui {%- if price %} raised {{ color }} {%- else %} basic {%- endif %} segment">
 
@@ -28,6 +28,13 @@
             </div>
             </div>
           </div>
+        </div>
+      {% endif %}
+
+      {% if contact %}
+        <div class="ui basic center aligned padded segment">
+          <a class="ui violet button" href="#enterprise"
+            data-analytics="commercial-signup">Contact us</a>
         </div>
       {% endif %}
 

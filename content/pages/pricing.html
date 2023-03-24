@@ -87,7 +87,7 @@
 
             {% call pricing.plan(
               name="Enterprise plan",
-              price="$500+",
+              contact=true,
               color="green",
               ) %}
               <div class="ui list relaxed divided">
@@ -108,7 +108,7 @@
 
         <div class="ui basic center aligned padded segment">
           <a class="ui violet button" href="https://readthedocs.com/accounts/signup"
-            data-analytics="commercial-signup">Sign up for an account</a>
+            data-analytics="commercial-signup">Start your 30-day free trial!</a>
         </div>
 
       </div>
@@ -292,33 +292,42 @@
   <section id="enterprise">
     <div class="ui very padded text container">
       <div class="ui inverted center aligned padded segment">
-        <h3 class="ui small header centered">
-          <span class="centered content">
-            Enterprise Plans
-          </span>
-        </h3>
 
-        <form method="POST" name="fa-form-1" class="ui form"
+        {#  Create semantic UI form for inbound sales prospects #}
+
+        <form method="POST" name="fa-form-1" class="ui inverted form"
           action="https://webhook.frontapp.com/forms/036c4169294f3b04abaa/Jd5Qy6b7AYZHFZ-iHZ9OtRFlYyZqTGhYZEYBmrsrhHaiRaYLlKHF9nqccJg7pewDwFUbEZ0klqlNdSs7BcUAoJO7aPapcC7JQBlYV5S1GZ04oPvbkzVvriejZRY"
           enctype="multipart/form-data" accept-charset="utf-8">
-          <div class="inverted field">
-            <label for="name">Name</label>
-            <input type="text" name="name">
-          </div>
-
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" name="email">
-          </div>
-
-          <div class="field">
-            <label for="body">What needs do you have?</label>
-            <textarea name="body"></textarea>
-          </div>
-
-          <div>
-            <input type="submit" value="Send">
-          </div>
+            <h2 class="ui dividing header">Enterprise Plans</h2>
+            <p>
+              Our Enterprise plans have a number of additional features that are not available in our standard plans.
+              Let us know what you're looking for and we'll work with you to find the right solution.
+            </p>
+            <div class="field">
+              <label>Name</label>
+              <input type="text" name="name" placeholder="Name">
+            </div>
+            <div class="field">
+              <label>Company Email Address</label>
+              <input type="email" name="email" placeholder="Company Email Address">
+            </div>
+            <div class="field">
+              <label>What type of documentation are you interested in?</label>
+              <select class="ui dropdown" name="documentation-type">
+                <option value="">Select type of documentation</option>
+                <option value="Developer Docs">Developer Docs</option>
+                <option value="User Guides">User Guides</option>
+                <option value="API Documentation">API Documentation</option>
+                <option value="Internal Docs">Internal team documentation</option>
+                <option value="Public docs">Public-facing documentation</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Do you have any specific requirements or questions?</label>
+              <textarea name="message" rows="2"></textarea>
+            </div>
+            <button class="ui button" type="submit">Submit</button>
+          
         </form>
       </div>
     </div>
