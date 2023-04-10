@@ -1,12 +1,10 @@
-Read the Docs - community website
-=================================
-
-.. note::
-    This repository is only for our community website for now. This may change
-    in the future.
+Read the Docs website
+=====================
 
 This repository contains the site content and static assets used to build the
-Read the Docs community website. This includes:
+Read the Docs website. You can view this site at https://about.readthedocs.com
+
+This repository includes:
 
 A Pelican project for our site content
     This includes our site content as well as our blog.

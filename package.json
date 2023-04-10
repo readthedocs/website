@@ -1,7 +1,7 @@
 {
-  "name": "site-community",
+  "name": "website",
   "version": "1.0.0",
-  "description": "Read the Docs community website",
+  "description": "Read the Docs website",
   "main": "src/js/site.js",
   "scripts": {
     "clean": "npm run clean-assets && npm run clean-html",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/readthedocs/site-community.git"
+    "url": "git+https://github.com/readthedocs/website.git"
   },
   "author": "Read the Docs, Inc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/readthedocs/site-community/issues"
+    "url": "https://github.com/readthedocs/website/issues"
   },
-  "homepage": "https://github.com/readthedocs/site-community#readme",
+  "homepage": "https://github.com/readthedocs/website#readme",
   "engines": {
     "node": "<15.0.0",
     "npm": "<7.0.0"
