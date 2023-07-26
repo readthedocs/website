@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "site-community"
-version = "0.1.0"
+name = "website"
+version = "1.0.0"
 description = "Read the Docs website"
 authors = ["Read the Docs, Inc"]
 

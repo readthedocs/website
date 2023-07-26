@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: readthedocs/actions/preview@v1
         with:
-          project-slug: "read-the-docs-site-community"
+          project-slug: "read-the-docs-website"
           platform: "business"
-
+          single-version: "true" # Has to be a string value. 
