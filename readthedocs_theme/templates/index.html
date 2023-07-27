@@ -1,107 +1,90 @@
 {% extends "base.html" %}
 {# This is the blog index, not the home page template #}
 
+{#
+  In order to split up the rows into multiple sizes (2 column and 3 column) we
+  use this macro for the redundant card definitions.
+#}
+{% macro article_card(article) %}
+  <a class="ui card" href="/{{ article.url }}">
+    <div class="image">
+      <img src="{{ article.image  or '/images/posts/default.svg'}}" alt="{{ article.image_credit }}">
+    </div>
+      <div class="content">
+      <div class="header">{{ article.title }}</div>
+      <div class="meta">
+        <span class="date"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
+      </div>
+      <div class="description">
+        {% if article.description %}
+          {{ article.description|striptags|escape }}
+        {% else %}
+          {{ article.summary|striptags|escape }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="right floated">
+        {% for author in article.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %}
+      </div>
+      <div class="left">
+        {% if article.category %}
+          <span class="ui secondary label">
+            {{ article.category }}
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+{% endmacro %}
 
 {% block content %}
 
-  <!-- Intro -->
-  <section class="ui vertical segment" id="blog-intro">
-    <div class="ui container">
-      <div class="ui segment basic">
+  <section>
+    <div class="ui very padded container">
 
-        {% block content_title %}
-          <div class="ui basic vertical big segment">
-          <h1 class="ui header">
-            <span class="ui header">Read the Docs Blog</span>
-          </h1>
-            <p>
-              This is where we post all the week to week progress updates and announcements.
-            </p>
-          </div>
-        {% endblock %}
+      {% block content_breadcrumbs %}
+        <div class="ui breadcrumb">
+          <a class="section" href="/">Home</a>
+          <div class="divider"> / </div>
+          <div class="active section">Blog</div>
+        </div>
+      {% endblock content_breadcrumbs %}
 
-      </div>
+      {% block content_title %}
+        <div class="ui header">
+          Latest blog posts
+        </div>
+      {% endblock content_title %}
     </div>
   </section>
 
+  <section>
+    <div class="ui very padded container">
 
-  <section class="ui vertical segment" id="articles-list">
-    <div class="ui container">
-      <div class="ui segment basic">
-
-        <!-- Latest  2 articles -->
-        <div class="ui two cards stackable">
-          {% for article in articles_page.object_list %}
-            {% if not articles_previous_page and loop.index <= 2 %}
-              <a class="ui card" href="/{{ article.url }}">
-                <div class="image">
-                  <img src="{{ article.image  or '/images/posts/default.jpg'}}" alt="{{ article.image_credit }}">
-                </div>
-                <div class="content">
-                  <div class="header">{{ article.title }}</div>
-                  <div class="meta">
-                    <span class="date"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
-                  </div>
-                  <div class="description">
-                    {% if article.description %}
-                      {{ article.description|striptags|escape }}
-                    {% else %}
-                      {{ article.summary|striptags|escape }}
-                    {% endif %}
-                  </div>
-                </div>
-                <div class="extra content">
-                  <div>
-                    {% for author in article.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %}
-                  </div>
-                </div>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
-
-        <!-- Articles list -->
-        <div class="ui three cards stackable">
-          {% for article in articles_page.object_list %}
-            {% if articles_previous_page or not loop.index <= 2 %}
-              <a class="ui card" href="/{{ article.url }}">
-                <div class="image">
-                  <img src="{{ article.image or '/images/posts/default.jpg' }}" alt="{{ article.image_credit }}">
-                </div>
-                <div class="content">
-                  <div class="header">{{ article.title }}</div>
-                  <div class="meta">
-                    <span class="date"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
-                  </div>
-                  <div class="description">
-                    {% if article.description %}
-                      {{ article.description|striptags|escape }}
-                    {% else %}
-                      {{ article.summary|striptags|escape }}
-                    {% endif %}
-                  </div>
-                </div>
-                <div class="extra content">
-                  <div>
-                    {% for author in article.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %}
-                  </div>
-                </div>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
-
+      {# Latest two posts are large, use 2 columns #}
+      <div class="ui two cards stackable">
+        {% for article in articles_page.object_list[0:2]  %}
+          {{ article_card(article) }}
+        {% endfor %}
       </div>
+
+      {# The remaining blog posts are smaller, use 3 columns #}
+      <div class="ui three cards stackable">
+        {% for article in articles_page.object_list[2:] %}
+          {{ article_card(article) }}
+        {% endfor %}
+      </div>
+
     </div>
   </section>
-  
-  <section class="ui vertical segment">
-    <div class="ui container">
+
+  <section>
+    <div class="ui very padded container">
       {% if articles_page.has_other_pages() %}
         {% include 'includes/pagination.html' %}
       {% endif %}
     </div>
   </section>
-
 
 {% endblock content %}

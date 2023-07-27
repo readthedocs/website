@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content_breadcrumbs %}
+  <div class="ui breadcrumb">
+    <a class="section" href="/">Home</a>
+    <div class="divider"> / </div>
+    <a class="section" href="/blog/">Blog</a>
+    <div class="divider"> / </div>
+    <div class="active section">Tag: {{ tag }}</div>
+  </div>
+{% endblock content_breadcrumbs %}
+
+{% block content_title %}
+  <div class="ui header">
+    Blog posts tagged: {{ tag }}
+  </div>
+{% endblock %}

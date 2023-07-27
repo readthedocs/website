@@ -28,23 +28,10 @@
   padding-top: 250px;
 }
 
-// Blog index
-// TODO native SUI here too
-#articles-list {
-  .ui.card > .image img {
-    height: 190px;
-    object-fit: cover;
-  }
-  .ui.two.cards .ui.card > .image img {
-    height: 280px;
-  }
-}
-
-// Article reST styles
-#article {
-  // Sections
+// Article styles for docutils reST and Markdown
+.ui.docutils.segment {
   .section {
-    margin: @baseVerticalMargin*2 0;
+    margin: (@baseVerticalMargin * 2) 0;
   }
 
   // Code
@@ -55,11 +42,7 @@
     padding: @inputPadding;
     overflow-x: scroll;
   }
-  code,
-  tt {
-    background-color: @offWhite;
-    border: 1px solid @lightGrey;
-    border-radius: @defaultBorderRadius * 0.75;
+  code, tt {
     padding: 0.15em 0.25em;
   }
 
