@@ -42,7 +42,8 @@
     padding: @inputPadding;
     overflow-x: scroll;
   }
-  code, tt {
+  code,
+  tt {
     padding: 0.15em 0.25em;
   }
 
