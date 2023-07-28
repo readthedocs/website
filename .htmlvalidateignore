@@ -1,2 +1,5 @@
 # Unfinished pages
 output/company/index.html
+
+# Can have docutils output included, which includes lots of errors
+output/blog/**/*.html
