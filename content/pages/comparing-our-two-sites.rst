@@ -1,5 +1,6 @@
 :title: Comparing our two sites
 :description: Learn more about our two different deployments
+:template: docutils_page
 
 .. TODO: Figure out how to reuse substitions
 
