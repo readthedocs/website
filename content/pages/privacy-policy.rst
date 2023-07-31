@@ -1,7 +1,3 @@
-.. This is linked from the footer of readthedocs.org
-.. and from the version (flyout) menu on docs sites
-
-
 Privacy Policy
 ==============
 

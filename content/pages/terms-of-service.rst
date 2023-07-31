@@ -1,5 +1,5 @@
-Read the Docs Terms of Service
-==============================
+Terms of Service
+================
 
 Effective date: **September 30, 2019**
 
