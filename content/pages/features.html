@@ -1,14 +1,14 @@
 <html>
   <head>
-    <title>About</title>
+    <meta name="title" content="Product Features" />
     <meta name="template" content="page" />
     <meta name="status" content="hidden" />
-    <meta name="slug" content="about" />
+    <meta name="slug" content="features" />
   </head>
   <body>
 
 {% import "partials/homepage.html" as homepage %}
-{% import "partials/about.html" as about %}
+{% import "partials/features.html" as features %}
 
 <section>
   <div class="ui horizontally very padded container">
@@ -83,7 +83,32 @@
   </div>
 </section>
 
-{% macro about_divide(text=None) %}
+<!-- First CTA -->
+<section>
+  <div class="ui padded container">
+    <div class="ui vertically padded centered grid">
+      <div class="center aligned column">
+        <div class="ui very padded raised inverted secondary large segment">
+          <p>
+            Start automating your documentation with Read the Docs.
+          </p>
+          <p>
+            <button
+               class="ui large inverted button"
+               onclick="jQuery('#features-modal').modal('show');"
+               type="button">
+              <i class="fad fa-play icon"></i>
+              Get started now
+            </button>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% macro features_divide(text=None) %}
   <div class="ui text container">
     <div class="ui {%- if text %} horizontal {%- endif %} divider">
       {% if text %}{{ text }}{% endif %}
@@ -91,15 +116,15 @@
   </div>
 {% endmacro %}
 
-{{ about_divide() }}
+{{ features_divide() }}
 
 <section>
   <div class="ui very padded container">
     <div class="ui vertically padded centered grid" id="authoring">
 
-      {% call about.step(
+      {% call features.step(
           header=header_1,
-          image="/images/about/authoring.png",
+          image="/images/features/authoring.png",
           image_alt="Terminal window showing commands to commit documentation changes",
           icon=icon_1) %}
         {% markdown %}
@@ -164,14 +189,14 @@
     </div>
   </div>
 
-  {{ about_divide() }}
+  {{ features_divide() }}
 
   <div class="ui very padded container" id="building">
     <div class="ui vertically padded centered grid">
 
-      {% call about.step(
+      {% call features.step(
           header=header_2,
-          image="/images/about/building.png",
+          image="/images/features/building.png",
           image_alt="Project building on Read the Docs",
           icon=icon_2) %}
         {% markdown %}
@@ -260,14 +285,14 @@
     </div>
   </div>
 
-  {{ about_divide() }}
+  {{ features_divide() }}
 
   <div class="ui very padded container" id="review">
     <div class="ui vertically padded centered grid">
 
-      {% call about.step(
+      {% call features.step(
           header=header_3,
-          image="/images/about/review.png",
+          image="/images/features/review.png",
           image_alt="Read the Docs pull request review checks in a GitHub pull request",
           icon=icon_3) %}
         {% markdown %}
@@ -285,12 +310,12 @@
     </div>
   </div>
 
-  {{ about_divide() }}
+  {{ features_divide() }}
 
   <div class="ui very padded container" id="hosting">
     <div class="ui vertically padded centered grid">
 
-      {% call about.step(
+      {% call features.step(
           header=header_4,
           image=None,
           icon=icon_4) %}
@@ -347,21 +372,22 @@
   </div>
 </section>
 
+<!-- Second CTA -->
 <section>
   <div class="ui padded container">
     <div class="ui vertically padded centered grid">
       <div class="center aligned column">
         <div class="ui very padded raised inverted secondary large segment">
           <p>
-            Start automating your documentation with Read the Docs.
+            Automate your documentation deployments with Read the Docs.
           </p>
           <p>
             <button
                class="ui large inverted button"
-               onclick="jQuery('#about-modal').modal('show');"
+               onclick="jQuery('#features-modal').modal('show');"
                type="button">
               <i class="fad fa-play icon"></i>
-              Get started now
+              Get started free
             </button>
           </p>
 
@@ -371,13 +397,13 @@
   </div>
 </section>
 
-{% block homepage_modal %}
-  {{ homepage.signup_modal("about-modal") }}
-{% endblock homepage_modal %}
+{% block features_modal %}
+  {{ homepage.signup_modal("features-modal") }}
+{% endblock features_modal %}
 
 <section id="additional-features">
 
-  {{ about_divide("Additional features") }}
+  {{ features_divide("Additional features") }}
 
   <div class="ui very padded container" id="more">
     <div class="ui vertically padded centered grid">
