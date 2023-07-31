@@ -5,5 +5,9 @@
 {% block title %}{% if page.title %}{{ page.title|striptags }} - {% endif %}{{ SITENAME }}{%endblock%}
 
 {% block content %}
+<section>
+  <div class="ui padded container">
   {{ page.content }}
+  </div>
+</section>
 {% endblock content %}
