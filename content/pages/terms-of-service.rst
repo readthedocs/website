@@ -1,3 +1,6 @@
+:title: Terms of Service
+:template: docutils_page
+
 Terms of Service
 ================
 
@@ -28,10 +31,10 @@ There's not going to be a test on it, but it's still useful information.*
 1. The "Agreement" refers, collectively, to all the terms, conditions, notices
    contained or referenced in this document (the "Terms of Service" or the "Terms")
    and all other operating rules, policies
-   (including our `privacy-policy`)
+   (including our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_)
    and procedures that we may publish from time to time on our sites.
 2. Our "Service" or "Services" refers to the applications, software, products, and services provided by Read the Docs
-   (see `Our services <terms-of-service:Our services>`).
+   (see `Our services`_).
 3. The "Website" or "Websites" refers to Read the Docs' websites located at
    readthedocs.org, readthedocs.com, Documentation Sites,
    and all content, services, and products provided by Read the Docs at or through those Websites.
@@ -53,7 +56,7 @@ There's not going to be a test on it, but it's still useful information.*
    alone or together with other information, personally identify him or her.
    Information such as a user name and password, an email address,
    a real name, and a photograph are examples of User Personal Information.
-   Our `privacy-policy` goes into more details on User Personal Information,
+   Our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_ goes into more details on User Personal Information,
    what data Read the Docs collects, and why we collect it.
 
 
@@ -102,7 +105,7 @@ Required information
 You must provide a valid email address in order to complete the signup process.
 Any other information requested, such as your real name, is optional,
 unless you are accepting these terms on behalf of a legal entity (in which case we need more information about the legal entity)
-or if you opt for a `paid Account <terms-of-service:Payment>`, in which case additional information will be necessary for billing purposes.
+or if you opt for a `paid Account <#payment>`_, in which case additional information will be necessary for billing purposes.
 
 Account requirements
 ~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +143,7 @@ You are responsible for keeping your Account secure while you use our Service.
 - You are responsible for all content posted and activity that occurs under your Account.
 - You are responsible for maintaining the security of your Account and password.
   Read the Docs cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.
-- You will promptly `notify Read the Docs </security>` if you become aware of any unauthorized use of,
+- You will promptly `notify Read the Docs <https://docs.readthedocs.io/page/security.html>`_ if you become aware of any unauthorized use of,
   or access to, our Services through your Account, including any unauthorized use of your password or Account.
 
 Additional terms
@@ -201,9 +204,9 @@ and that you will fully comply with any third party licenses relating to Content
 
 Because you retain ownership of and responsibility for Your Content,
 we need you to grant us — and other Read the Docs Users — certain legal permissions,
-listed below (in `License grant to us <terms-of-service:License grant to us>`,
-`License grant to other users <terms-of-service:License grant to other users>` and
-`Moral rights <terms-of-service:Moral rights>`). These license grants apply to Your Content.
+listed below (in `License grant to us`_,
+`License grant to other users`_ and
+`Moral rights`_). These license grants apply to Your Content.
 If you upload Content that already comes with a license granting Read the Docs the permissions we need to run our Service,
 no additional license is required.
 You understand that you will not receive any payment for any of the rights granted.
@@ -236,7 +239,7 @@ You retain all moral rights to Your Content that you upload,
 publish, or submit to any part of our Services,
 including the rights of integrity and attribution.
 However, you waive these rights and agree not to assert them against us,
-to enable us to reasonably exercise the rights granted in `License grant to us <terms-of-service:License grant to us>`, but not otherwise.
+to enable us to reasonably exercise the rights granted in `License grant to us`_, but not otherwise.
 
 To the extent this agreement is not enforceable by applicable law,
 you grant Read the Docs the rights we need to use Your Content without attribution and to make reasonable adaptations of Your Content
@@ -275,7 +278,7 @@ Exclusions
 
 If we have reason to believe the contents of a private project are in violation of the law or of these Terms,
 we have the right to access, review, and remove them.
-Additionally, we may be `compelled by law <privacy-policy:How we respond to compelled disclosure>`
+Additionally, we may be `compelled by law <{filename}/pages/privacy-policy.rst#how-we-respond-to-compelled-disclosure>`_
 to disclose the contents of your private projects.
 
 
@@ -283,7 +286,7 @@ Copyright infringement and DMCA policy
 --------------------------------------
 
 If you believe that content on our website violates your copyright or other rights,
-please contact us in accordance with our `Digital Millennium Copyright Act Policy </dmca/index>`.
+please contact us in accordance with our `Digital Millennium Copyright Act Policy <https://docs.readthedocs.io/page/dmca/>`_.
 There may be legal consequences for sending a false or frivolous takedown notice.
 Before sending a takedown request, you must consider legal uses such as fair use and licensed uses.
 
@@ -332,7 +335,7 @@ You may not share API tokens to exceed Read the Docs' rate limitations.
 You may not use the API to download data or Content from Read the Docs for spamming purposes,
 including for the purposes of selling Read the Docs users' personal information, such as to recruiters, headhunters, and job boards.
 
-All use of the Read the Docs API is subject to these Terms of Service and our `privacy-policy`.
+All use of the Read the Docs API is subject to these Terms of Service and our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_.
 
 Read the Docs may offer subscription-based access to our API for those Users who require high-throughput access
 or access that would result in resale of Read the Docs' Service.
@@ -366,7 +369,7 @@ or User-Generated Content and integrates with the Service through Read the Docs'
 OAuth mechanism, or otherwise ("Developer Product"), and make it available for other Users,
 then you must comply with the following requirements:
 
-- You must comply with this Agreement and our `privacy-policy`.
+- You must comply with this Agreement and our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_.
 - Except as otherwise permitted, such as by law or by a license,
   you must limit your usage of the User Personal Information or User-Generated Content you collect
   to that purpose for which the User has authorized its collection.
@@ -623,9 +626,9 @@ and the laws of the State of Oregon, without regard to conflict of law provision
 Non-assignability
 ~~~~~~~~~~~~~~~~~
 
-Read the Docs may assign or delegate these Terms of Service and/or our `privacy-policy`,
+Read the Docs may assign or delegate these Terms of Service and/or our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_,
 in whole or in part, to any person or entity at any time with or without your consent,
-including the license grant in `License grant to us <terms-of-service:License grant to us>`.
+including the license grant in `License grant to us`_.
 You may not assign or delegate any rights or obligations under the Terms of Service or Privacy Policy without our prior written consent,
 and any unauthorized assignment and delegation by you is void.
 
@@ -648,8 +651,8 @@ Amendments; complete agreement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This Agreement may only be modified by a written amendment signed by an authorized representative of Read the Docs,
-or by the posting by Read the Docs of a revised version in accordance with `Changes to these terms <terms-of-service:Changes to these terms>`.
-These Terms of Service, together with our `privacy-policy`,
+or by the posting by Read the Docs of a revised version in accordance with `Changes to these terms`_.
+These Terms of Service, together with our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_,
 represent the complete and exclusive statement of the agreement between you and us.
 This Agreement supersedes any proposal or prior agreement oral or written,
 and any other communications between you and Read the Docs relating to the subject matter of these terms
