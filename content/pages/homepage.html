@@ -9,8 +9,10 @@
   </head>
   <body>
 
+    {% import "partials/basic.html" as basic %}
     {% import "partials/homepage.html" as homepage %}
     {% import "partials/marketing.html" as marketing %}
+    {% import "partials/technical.html" as technical %}
 
     {% block homepage_callout_wrapper %}
       <section>
@@ -22,13 +24,12 @@
                 {% block homepage_callout %}
                   <div class="ui large left aligned basic vertical segment">
                     <h1 class="ui huge header">
-                      Write documentation,<br />
-                      we'll do the rest
+                      You write documentation,<br />
+                      we handle the deployment.
                     </h1>
                     <p>
                       Make documentation part of your development workflow with
-                      simplified processes that automate building, versioning,
-                      and hosting of your docs.
+                      Read the Docs. Simplify operations and collaboration by automatically building and publishing docs for every commit.
                     </p>
 
                     {% block homepage_callout_buttons %}
@@ -66,35 +67,33 @@
       {% call marketing.highlight_list() %}
         {% call marketing.highlight_item(
             icon="olive fa-terminal",
-            header="Docs as code",
+            header="Ideal developer experience",
             color="black") %}
-          <p>
-            Write documentation without changing your workflow or your tools.
-            Use your favorite editor and commit changes using version control.
+          <p class="small" >
+            Write documentation without changing your workflow or your tools
+            using <strong>docs as code</strong>.
           </p>
         {% endcall %}
 
         {% call marketing.highlight_item(
             icon="white fa-user-robot",
             icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-            header="Fully automated",
+            header="Easy deploys & previews",
             color="grey") %}
           <p>
-            Automatically release your documentation with every commit,
-            and preview documentation changes with every pull request.
+            Release documentation to your users when you merge.
+            Preview changes on every commit to your pull requests.
           </p>
         {% endcall %}
 
         {% call marketing.highlight_item(
             icon="white fa-rocket-launch",
             icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
-            header="Ship docs fast",
+            header="Work privately or publicly",
             color="violet") %}
           <p>
-            Serve documentation publicly or privately,
-            manage multiple releases of your product with versions,
-            and search across projects with integrated search.
-            Focus on your docs, not on managing infrastructure.
+            Easily share within your team or with the whole world.
+            Manage permissions yourself or automatically with GitHub.
           </p>
         {% endcall %}
       {% endcall %}
@@ -112,28 +111,33 @@
 
           <div class="ui centered vertically padded container stackable grid">
 
-            {% call homepage.feature_detail_item(header="Multiple builders", icon="fad fa-terminal") %}
-              Integrated support for Sphinx, MkDocs, and Jupyter Book. Use what works best for your project.
+            {% call homepage.feature_detail_item(header="Supports any doc tool", icon="fad fa-terminal") %}
+              Integrated support for Sphinx, MkDocs, and Jupyter Book.
+              Flexible enough to work with any documentation tool.
+            {% endcall %}
+
+            {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
+              Easily search all your docs via our dashboard,
+              and offer your users a more powerful search with our  search API.
+            {% endcall %}
+
+            {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-gears") %}
+              Preview each pull request with a unique URL,
+              allowing fast collaboration across your organization.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
               Match your product release cycle with multiple versions of your docs. Automatically build versions from any branch or tag.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Build constantly", icon="fad fa-gears") %}
-              Preview every pull request, and build with every commit. Keep your docs up to date, automatically.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
-              Help your users find what the need with integrated search across all your projects and versions.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="Private cloning", icon="fad fa-lock", paid=True) %}
-              Clone private repositories using a connected GitHub, GitLab, or Bitbucket account.
+            {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
+              Clone private repositories using a connected GitHub account,
+              or any Git provider with an SSH key.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", paid=True) %}
-              Control who has access to your documentation with integrated authentation.
+              Flexible permission system built in.
+              Enable <strong>SSO with GitHub or GitLab</strong> to easily manage permissions in one place.
             {% endcall %}
 
             {% block features_cta %}
@@ -154,97 +158,200 @@
       </section>
     {% endblock homepage_feature_detail %}
 
-    <div class="ui divider"></div>
-
-    {% block homepage_bottom_callout %}
-      <section>
-        <div class="ui very padded container">
-          <div class="ui grid center aligned">
-
-            <div class="row">
-              <div class="column twelve wide computer sixteen wide tablet">
-
-                {#
-                  TODO replace this block with something more actionable. It's
-                  not saying anything new at this point in the page, and the call
-                  to action is not strong.
-                #}
-                <div class="ui basic vertical huge segment">
-                  <p>
-                    Whenever you push code,
-                    we automatically build and host your documentation.
-
-                    <b>Get your docs online in 5 minutes.</b>
-                  </p>
-
-                  <p>
-                    <a class="ui large teal stackable button"
-                    data-analytics="signup-modal"
-                     onclick="jQuery('#homepage-modal').modal('show');">
-                    <i class="fad fa-play icon"></i>
-                    Get started
-                  </a>
-                  </p>
-                </div>
-
+<div class="ui container">
+      <div class="ui horizontal divider">Try it out</div>
+    </div>
+    
+    <section id="try-it-out">
+      <div class="ui padded container">
+        <h2 class="ui huge center aligned header">
+          Upgrade your documentation with Read the Docs
+        </h2>
+    
+        <div class="ui very padded centered grid">
+    
+          <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+            <div class="ui large left aligned basic vertical segment">
+    
+              {# Stylized code blocks #}
+              {% call technical.code_block(title="<code>.readthedocs.yaml</code>", icon="fa-file") %}
+              {% markdown %}
+    
+              ```yaml
+              version: 2
+              build:
+                os: ubuntu-22.04
+                tools:
+                  python: "3.10"
+                  # You can also specify other tool versions:
+                  # nodejs: "16"
+    
+              # Build documentation in the docs/ directory with Sphinx
+              sphinx:
+                 configuration: docs/conf.py
+    
+              # Dependencies required to build your docs
+              python:
+                 install:
+                 - requirements: docs/requirements.txt
+              ```
+    
+              {% endmarkdown %}
+              {% endcall %}
+            </div>
+          </div>
+    
+          <div class="middle aligned left aligned six wide computer twelve wide tablet sixteen wide mobile column">
+            <div class="ui padded basic segment">
+              <div class="ui relaxed list">
+    
+                {%- set header_1 = "Create an account" %}
+                {%- set icon_1 = "fa-square-1" -%}
+                <span class="ui small teal header item">
+                  <i class="fad {{ icon_1 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_1 }}
+                    <span class="sub header">
+                      <a data-analytics="signup-modal"
+                       onclick="jQuery('#homepage-modal').modal('show');">
+                        Sign up
+                      </a>
+                      with GitHub or your email.
+                    </span>
+                  </span>
+                </span>
+    
+                {%- set header_2 = "Import your project" %}
+                {%- set icon_2 = "fa-square-2" -%}
+                <span class="ui small header item">
+                  <i class="fad {{ icon_2 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_2 }}
+                    <span class="sub header">Select your existing Git repositories with a 1-click interface.</span>
+                  </span>
+                </span>
+    
+                {%- set header_3 = "Add YAML config" %}
+                {%- set icon_3 = "fa-square-3" -%}
+                <span class="ui small header item">
+                  <i class="fad {{ icon_3 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_3 }}
+                    <span class="sub header">Copy this example, it probably does what you want 😉</span>
+                  </span>
+                </span>
+    
+                {%- set header_4 = "Your docs build on every commit" %}
+                {%- set icon_4 = "fa-square-4" -%}
+                <span class="ui small header item">
+                  <i class="fad {{ icon_4 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_4 }}
+                    <span class="sub header">Like magic.</span>
+                  </span>
+                </span>
               </div>
             </div>
-
           </div>
+    
         </div>
-      </section>
+      </div>
+    </section>
+    
+    
+    {# TODO: Turn these into testimonials. #}
+    <section>
+      <div class="ui container">
+        {{ basic.header_icon(
+          header="Join thousands of happy users",
+          subheader="",
+          icon="purple fa-message-lines",
+          icon_style="--fa-secondary-color: blueviolet;"
+        ) }}
+        <div class="ui three link stackable cards">
+          <a href="https://flask.palletsprojects.com/en/2.2.x/" class="card">
+            <div class="content">
+              <div class="ui center aligned basic segment">
+                <img class="ui small image" src="{{ SITE_URL }}/images/flask-logo.png" alt="Flask logo" />
+              </div>
+              <div class="header">Flask</div>
+              <div class="meta">
+                Web Framework
+              </div>
+              <div class="description">
+                Flask is a Python web framework built with a small core and easy-to-extend philosophy.
+              </div>
+            </div>
+          </a>
+    
+          <a href="https://docs.jupyter.org/en/latest/" class="card">
+            <div class="content">
+              <div class="ui center aligned basic segment">
+                <img class="ui small image" src="{{ SITE_URL }}/images/jupyter-logo.png" alt="Jupyter logo">
+              </div>
+              <div class="header">Jupyter</div>
+              <div class="meta">
+                Data Science Environment
+              </div>
+              <div class="description">
+                Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
+              </div>
+            </div>
+          </a>
+    
+          <a href="https://docs.godotengine.org/en/stable/index.html" class="card">
+            <div class="content">
+              <div class="ui center aligned basic segment">
+                <img class="ui small image" src="{{ SITE_URL }}/images/godot-logo.png" alt="Godot Engine logo">
+              </div>
+              <div class="header">Godot Engine</div>
+              <div class="meta">
+                Game Engine
+              </div>
+              <div class="description">
+                Godot Engine is a free and open source community-driven 2D and 3D game engine.
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    {% block homepage_bottom_callout %}
+    <section>
+      <div class="ui very padded container">
+        <div class="ui grid center aligned">
+    
+          <div class="row">
+            <div class="column twelve wide computer sixteen wide tablet">
+    
+              {#
+                TODO replace this block with something more actionable. It's
+                not saying anything new at this point in the page, and the call
+                to action is not strong.
+              #}
+              <div class="ui basic vertical huge segment">
+                <p>
+                  <b>Get your docs online in 5 minutes.</b>
+                </p>
+    
+                <p>
+                  <a class="ui large teal stackable button"
+                  data-analytics="signup-modal"
+                   onclick="jQuery('#signup_modal').modal('show');">
+                  <i class="fad fa-play icon"></i>
+                  Create an account
+                </a>
+                </p>
+              </div>
+    
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
     {% endblock homepage_bottom_callout %}
-
-    <div class="ui divider"></div>
-
-    {% block homepage_resources %}
-      {#
-        A static list of resources, like docs and guide content. Eventually
-        should be blog content.
-      #}
-      <section id="resources">
-        <div class="ui very padded container">
-          <h3 class="ui large monospace header">
-            Resources
-          </h3>
-
-          <div class="ui centered padded relaxed container stackable grid">
-
-            {% call homepage.resource(
-                title="Read the Docs Tutorial",
-                link="https://docs.readthedocs.io/en/stable/tutorial/index.html",
-                color="teal",
-                icon="fad fa-sparkles") %}
-
-                Set up your first project using one of our repository templates.
-                This is the easiest way to try using Read the Docs.
-
-            {% endcall %}
-
-            {% call homepage.resource(
-                title="Getting Started with Sphinx",
-                link="https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html",
-                color="teal",
-                icon="fad fa-terminal") %}
-
-                Build your first documentation project using the Sphinx documentation engine.
-
-            {% endcall %}
-
-            {% call homepage.resource(
-                title="Read our Docs",
-                link="https://docs.readthedocs.io/en/stable/index.html",
-                color="teal",
-                icon="fad fa-books fa-swap-opacity") %}
-
-                Learn how to configure and manage your project with Read the Docs.
-
-            {% endcall %}
-
-          </div>
-        </div>
-      </section>
-    {% endblock homepage_resources %}
 
   </body>
 </html>
