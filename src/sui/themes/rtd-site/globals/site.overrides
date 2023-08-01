@@ -29,8 +29,9 @@
 }
 
 // Article styles for docutils reST and Markdown
+.ui.docutils.container,
 .ui.docutils.segment {
-  .section {
+  div.section {
     margin: (@baseVerticalMargin * 2) 0;
   }
 
