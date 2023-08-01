@@ -1,5 +1,5 @@
-:title: Comparing our two sites
-:description: Learn more about our two different deployments
+:title: Choosing a platform
+:description: Learn more about our two different platforms and which one is right for you.
 :template: docutils_page
 
 .. TODO: Figure out how to reuse substitions
@@ -7,8 +7,8 @@
 .. |org_brand| replace:: Read the Docs Community
 .. |com_brand| replace:: Read the Docs for Business
 
-Choosing between our two platforms
-==================================
+Choosing a platform
+===================
 
 Users often ask what the differences are between |org_brand| and |com_brand|.
 
