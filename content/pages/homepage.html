@@ -24,12 +24,11 @@
                 {% block homepage_callout %}
                   <div class="ui large left aligned basic vertical segment">
                     <h1 class="ui huge header">
-                      You write documentation,<br />
-                      we handle the deployment.
+                      You write the docs,<br />
+                      we handle the rest.
                     </h1>
                     <p>
-                      Make documentation part of your development workflow with
-                      Read the Docs. Simplify operations and collaboration by automatically building and publishing docs for every commit.
+                      Automate your documentation workflow with our full-featured documentation deployment solution.
                     </p>
 
                     {% block homepage_callout_buttons %}
@@ -65,15 +64,6 @@
 
     {% block homepage_highlight %}
       {% call marketing.highlight_list() %}
-        {% call marketing.highlight_item(
-            icon="olive fa-terminal",
-            header="Ideal developer experience",
-            color="black") %}
-          <p class="small" >
-            Write documentation without changing your workflow or your tools
-            using <strong>docs as code</strong>.
-          </p>
-        {% endcall %}
 
         {% call marketing.highlight_item(
             icon="white fa-user-robot",
@@ -81,10 +71,20 @@
             header="Easy deploys & previews",
             color="grey") %}
           <p>
-            Release documentation to your users when you merge.
             Preview changes on every commit to your pull requests.
+            Release documentation to your users on each merge.
           </p>
         {% endcall %}
+
+        {% call marketing.highlight_item(
+          icon="olive fa-terminal",
+          header="Ideal developer experience",
+          color="black") %}
+        <p class="small" >
+          Write documentation without changing your workflow or your tools
+          using <strong>docs as code</strong>.
+        </p>
+      {% endcall %}
 
         {% call marketing.highlight_item(
             icon="white fa-rocket-launch",
