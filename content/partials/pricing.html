@@ -66,7 +66,7 @@
 {% macro feature_table() %}
   <table class="ui mini unstackable celled table" id="feature-table">
 
-    {% macro _feature_table_row() %}
+    {% macro _feature_table_header() %}
       <tr>
         <th class="eight wide" scope="col"></th>
         {% if show_community_features %}
@@ -85,15 +85,29 @@
         </th>
       </tr>
     {% endmacro %}
+  
+    {% macro _feature_table_footer() %}
+      <tr>
+        <th class="eight wide" scope="col"></th>
+        {% if show_community_features %}
+          <th class="two wide center aligned" scope="col">
+            <a class="ui teal button" href="./#/community">Sign up</a>
+          </th>
+        {% endif %}
+        <th class="six wide center aligned" scope="col" colspan="3">
+          <a class="ui violet button" href="./#/business/pro">Sign up</a>
+        </th>
+      </tr>
+    {% endmacro %}
 
     <thead class="ui sticky" data-module="sticky" data-module-context="#feature-table">
-      {{ _feature_table_row() }}
+      {{ _feature_table_header() }}
     </thead>
     <tbody>
       {{ caller() }}
     </tbody>
     <tfoot>
-      {{ _feature_table_row() }}
+      {{ _feature_table_footer() }}
     </tfoot>
   </table>
 {% endmacro %}
