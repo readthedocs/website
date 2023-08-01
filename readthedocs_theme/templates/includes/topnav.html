@@ -4,13 +4,16 @@
 {% endmacro %}
 
 {% macro menu_help() %}
-  <a class="item" href="https://readthedocs.org/support">
+  <a class="item" href="https://docs.readthedocs.io/page/support.html">
     <i class="fad fa-envelope primary icon"></i>
     Support
+    <span class="description">
+      <i class="fad fa-external-link icon"></i>
+    </span>
   </a>
   <a class="item" href="https://docs.readthedocs.io">
     <i class="fad fa-book primary icon"></i>
-    Docs
+    Documentation
     <span class="description">
       <i class="fad fa-external-link icon"></i>
     </span>
@@ -67,6 +70,27 @@
   </a>
 {% endmacro %}
 
+{# Application links to sign up #}
+{% macro menu_sign_up() %}
+  <a class="item" data-analytics="community-signup" href="https://readthedocs.org/accounts/signup/">
+    <i class="fad fa-people-group primary icon"></i>
+    Read the Docs Community
+
+    <p class="ui mini grey text">
+      <code>https://readthedocs.org</code>
+    </p>
+  </a>
+  <a class="item" data-analytics="commercial-login" href="https://readthedocs.com/accounts/signup/">
+    <i class="fad fa-building secondary icon"></i>
+    Read the Docs for Business
+
+    <p class="ui mini grey text">
+      <code>https://readthedocs.com</code>
+    </p>
+  </a>
+{% endmacro %}
+
+
 <div class="ui basic fitted attached segment">
   <div class="ui container">
     <div class="ui middle aligned grid">
@@ -95,14 +119,19 @@
 
               <div class="divider"></div>
 
+              <div data-analytics="login-modal" class="header">Sign Up</div>
+              {{ menu_sign_up() }}
+
+              <div class="divider"></div>
+
               <div class="header">Navigation</div>
               <a class="item{% if page and page.slug == 'homepage' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/index.html">Home</a>
               {{ menu_main() }}
 
               <div class="divider"></div>
 
-              <div class="header">Help</div>
-              {{ menu_help() }}
+              {# <div class="header">Help</div>
+              {{ menu_help() }} #}
 
             </div>
           </div>
@@ -118,20 +147,32 @@
             {{ menu_main() }}
 
             <div class="right menu">
-              <div class="ui wide dropdown item" data-module="dropdown" data-action="select" data-display-type="block">
+
+              {# <div class="ui wide dropdown item" data-module="dropdown" data-action="select" data-display-type="block">
                 <span class="text">Help</span>
                 <i class="fad fa-caret-down icon"></i>
                 <div class="menu">
                   {{ menu_help() }}
                 </div>
-              </div>
+              </div> #}
+
               <div class="item">
 
-                <div class="ui fluid dropdown primary button" data-module="dropdown" data-action="select" data-display-type="block">
+                <div class="ui fluid dropdown button" data-module="dropdown" data-action="select" data-display-type="block">
                   <i class="fad fa-right-to-bracket icon"></i>
                   <span class="text">Log in</span>
                   <div class="menu">
                     {{ menu_log_in() }}
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="ui fluid dropdown primary button" data-module="dropdown" data-action="select" data-display-type="block">
+                  <i class="fad fa-play icon"></i>
+                  <span class="text">Sign up</span>
+                  <div class="menu">
+                    {{ menu_sign_up() }}
                   </div>
                 </div>
 
