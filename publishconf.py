@@ -1,20 +1,18 @@
 """
-Read the Docs website Pelican configuration for publshing.
+Read the Docs website Pelican configuration for publishing.
 """
 
 import os
 import sys
 
-try:
-    # Trick isort using a code block to avoid resorting this incorrectly.
-    sys.path.append(os.curdir)
-    from pelicanconf import *  # noqa: F401,F403
-except ImportError:
-    raise
+# Trick isort using a code block to avoid resorting this incorrectly.
+sys.path.append(os.curdir)
+from pelicanconf import *  # noqa: F401,F403
 
-# TODO We're still figuring out a URL
-# SITEURL = 'https://www.readthedocs.org'
-# RELATIVE_URLS = False
+SITEURL = 'https://about.readthedocs.com'
+RELATIVE_URLS = False
+
+# Generate from scratch when building for production
 DELETE_OUTPUT_DIRECTORY = True
 
 # Feed settings

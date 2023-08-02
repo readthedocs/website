@@ -26,7 +26,8 @@
               <h4 class="ui sub header">Learn more</h4>
               <a class="item" href="https://docs.readthedocs.io">Documentation</a>
               <a class="item" href="https://docs.readthedocs.io/page/tutorial/index.html">Getting started guide</a>
-              <a class="item" href="https://docs.readthedocs.io/page/config-file/v2.html">Configure your project</a>
+              <a class="item" href="https://docs.readthedocs.io/page/config-file/index.html">Configure your project</a>
+              <a class="item" href="/comparisons/github-pages/">Comparison to GitHub Pages</a>
             {% endblock menu_learn %}
           </div>
         </div>
@@ -34,12 +35,12 @@
         <div class="column">
           <div class="ui vertical inverted text menu">
             {% block menu_services %}
-              <h4 class="ui sub header">Services</h4>
+              <h4 class="ui sub header">Product</h4>
+              <a class="item" href="/features/">Features</a>
               <a class="item" href="/pricing/">Pricing</a>
-              <a class="item" href="/about/">Features</a>
-              <a class="item" href="https://www.ethicalads.io/advertisers/?ref=rtd">Advertise with Us</a>
-              <a class="item" href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
-              <a class="item" href="https://docs.readthedocs.io/page/terms-of-service.html">Terms of Service</a>
+              <a class="item" href="/privacy-policy">Privacy Policy</a>
+              <a class="item" href="/terms-of-service/">Terms of Service</a>
+
             {% endblock menu_services %}
           </div>
         </div>
@@ -47,14 +48,11 @@
         <div class="column">
           <div class="ui vertical inverted text menu">
             {% block menu_about %}
-              <h4 class="ui sub header">About us</h4>
-              <a class="item" href="{{ SITEURL }}/company/">Company</a>
-              <a class="item" href="https://docs.readthedocs.io/page/team.html">Team</a>
-              <a class="item" href="https://dev.readthedocs.io/page/contribute.html">Contributing</a>
-              <h4 class="ui sub header">Tools</h4>
-              <a class="item" href="/tools/sphinx/">Sphinx</a>
-              <h4 class="ui sub header">Comparisons</h4>
-              <a class="item" href="/comparisons/github-pages/">GitHub Pages</a>
+              <h4 class="ui sub header">Company</h4>
+              <a class="item" href="{{ SITEURL }}/company/">About us</a>
+              <a class="item" href="https://www.ethicalads.io/advertisers/?ref=rtd">Advertise with Us</a>
+              <a class="item" href="https://dev.readthedocs.io/page/contribute.html">Contribute</a>
+
             {% endblock menu_about %}
           </div>
         </div>
