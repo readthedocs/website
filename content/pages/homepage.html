@@ -68,7 +68,7 @@
         {% call marketing.highlight_item(
             icon="white fa-user-robot",
             icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-            header="Easy deploys & previews",
+            header="Easy previews and deploys",
             color="grey") %}
           <p>
             Preview changes on every commit to your pull requests.
@@ -82,7 +82,7 @@
           color="black") %}
         <p class="small" >
           Write documentation without changing your workflow or your tools
-          using <strong>docs as code</strong>.
+          using a <strong>docs as code</strong> approach.
         </p>
       {% endcall %}
 
@@ -122,8 +122,8 @@
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-gears") %}
-              Preview each pull request with a unique URL,
-              allowing fast collaboration across your organization.
+              Preview each pull request before releasing any changes,
+              allowing for fast collaboration across your organization.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
@@ -131,8 +131,8 @@
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
-              Clone private repositories using a connected GitHub account,
-              or any Git provider with an SSH key.
+              Clone private repositories using a connected GitHub, GitLab, or Bitbucket account,
+              or clone from any Git provider with an SSH key.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", paid=True) %}
