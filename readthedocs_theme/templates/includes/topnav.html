@@ -20,7 +20,7 @@
   </a>
   <a class="item" href="https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started">
     <i class="fad fa-rocket primary icon"></i>
-    Getting started
+    Tutorial
     <span class="description">
       <i class="fad fa-external-link icon"></i>
     </span>
@@ -122,8 +122,8 @@
 
               <div class="divider"></div>
 
-              {# <div class="header">Help</div>
-              {{ menu_help() }} #}
+              <div class="header">Help</div>
+              {{ menu_help() }}
 
             </div>
           </div>
@@ -142,9 +142,14 @@
 
               <div class="item">
                 {# TODO: Add support page to marketing website #}
-                <a class="ui circular basic icon button" href="https://docs.readthedocs.io/page/support.html" aria-label="Get Support">
-                  <i class="fa-solid fa-message-question icon"></i>
-                </a>
+                <div class="ui wide dropdown item" data-module="dropdown" data-action="select" data-display-type="block">
+                  <a class="ui circular basic icon button">
+                    <i class="fa-solid fa-message-question icon"></i>
+                  </a>
+                  <div class="menu">
+                    {{ menu_help() }}
+                  </div>
+                </div>
               </div>
 
               <div class="item">
