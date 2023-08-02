@@ -7,10 +7,6 @@ SITENAME = 'Read the Docs'
 SITEURL = ''
 RELATIVE_URLS = True
 
-rtd_version = os.environ.get('READTHEDOCS_VERSION')
-if rtd_version:
-    SITEURL = f'/en/{rtd_version}/'
-
 TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = 'en'
 DEFAULT_DATE_FORMAT = '%b %-d, %Y'
@@ -41,6 +37,10 @@ JINJA_ENVIRONMENT = {
 PLUGINS = ['related_posts', 'jinja2content', 'readthedocs_theme.plugins.html_directive']
 
 # Feed (RSS/Atom) settings
+FEED_DOMAIN = SITEURL
+FEED_RSS = FEED_RSS_URL = "blog/feed.rss"
+FEED_ATOM = FEED_ATOM_URL = "blog/atom.xml"
+FEED_MAX_ITEMS = 1
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
@@ -69,8 +69,8 @@ ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
 INDEX_SAVE_AS = 'blog/index.html'
 # URLs to skip, we don't use these templates yet, and probably don't need them.
 AUTHOR_URL = AUTHOR_SAVE_AS = ''
-CATEGORY_URL = CATEGORY_SAVE_AS = ''
-TAG_URL = TAG_SAVE_AS = ''
+CATEGORY_URL = CATEGORY_SAVE_AS = 'blog/category/{slug}.html'
+TAG_URL = TAG_SAVE_AS = 'blog/tag/{slug}.html'
 ARCHIVES_SAVE_AS = ''
 AUTHORS_SAVE_AS = ''
 CATEGORIES_SAVE_AS = ''

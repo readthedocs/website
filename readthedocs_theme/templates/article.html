@@ -1,47 +1,75 @@
 {% extends "base.html" %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
 
-
 {% block title %}{{ article.title|striptags  }} - {{ SITENAME }}{% endblock %}
 
-
 {% block content %}
+  <section>
+    <div class="ui very padded docutils text container">
 
-
-  <!-- Article -->
-  <section class="ui vertical segment padded" id="article">
-
-    <div class="ui container">
-      <div class="ui grid centered">
-        <div class="column twelve wide computer fourteen wide tablet sixteen wide mobile">
-
-
-          <h1 class="ui header">
-            <span class="ui header">{{ article.title }}</span>
-          </h1>
-
-          <div class="ui basic vertical segment clearing">
-            <div class="ui fitted divider"></div>
-            <div class="ui basic vertical segment left floated">{% for author in article.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %}</div>
-            <div class="ui basic vertical segment right floated"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>
-          </div>
-
-          <img class="ui fluid image" src="{{ article.image or '/images/posts/default.jpg' }}" alt="{{ article.image_credit }}">
-          {% if article.image and article.image_credit %}
-            <div class="ui basic vertical segment center aligned">
-              <p class="ui"><i>{{ article.image_credit}}</i></p>
-            </div>
-          {% endif %}
-
-          <div class="ui basic vertical segment padded">
-            {{ article.content }}
-          </div>
-
-        </div>
-
+      <div class="ui breadcrumb">
+        <a class="section" href="/">Home</a>
+        <div class="divider"> / </div>
+        <a class="section" href="/blog/">Blog</a>
+        <div class="divider"> / </div>
+        {% if article.category %}
+          <a class="section" href="/blog/category/{{ article.category.slug }}.html">{{ article.category }}</a>
+          <div class="divider"> / </div>
+        {% endif %}
+        <div class="active section">{{ article.title }}</div>
       </div>
+
+      <div class="ui medium header">
+        {{ article.title }}
+      </div>
+      
+      <div class="ui text menu">
+        <time class="item" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+
+        {% if article.tags %}
+          <div class="item">
+            <div class="ui dropdown" data-module="dropdown">
+              <i class="fas fa-tag icon"></i>
+              <i class="fas fa-caret-down icon"></i>
+              <div class="menu">
+                <div class="header">Tagged</div>
+                {% for tag in article.tags %}
+                  <a class="item" href="/blog/tag/{{ tag.slug }}.html">
+                    <i class="fas fa-tag icon"></i>
+                    {{ tag }}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="right menu">
+          <div class="item">
+            {% for author in article.authors %}{{ author }}{% if not loop.last %}, {% endif %}{% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="ui divider"></div>
+
+      <img class="ui big rounded centered image" src="{{ article.image or '/images/posts/default.svg' }}" alt="{{ article.image_credit }}">
+      {% if article.image and article.image_credit %}
+        <div class="ui basic center aligned segment">
+          <p><i>{{ article.image_credit}}</i></p>
+        </div>
+      {% endif %}
+
+      <div class="ui basic padded segment">
+        {{ article.content }}
+      </div>
+
+      <div class="ui basic paddded center aligned segment">
+        <a href="/blog/" class="ui primary basic button">
+          See more posts from our blog
+        </a>
+      </div>
+
     </div>
-
   </section>
-
 {% endblock content %}

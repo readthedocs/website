@@ -1,5 +1,5 @@
 {% macro menu_main() %}
-  <a class="item{% if page and page.slug == 'about' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/about/">About</a>
+  <a class="item{% if page and page.slug == 'features' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/features/">Features</a>
   <a class="item{% if page and page.slug == 'pricing' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/pricing/">Pricing</a>
 {% endmacro %}
 
@@ -47,12 +47,21 @@
   <a class="item" data-analytics="community-login" href="https://readthedocs.org/dashboard/">
     <i class="fad fa-people-group primary icon"></i>
     Read the Docs Community
+
+    <p class="ui mini grey text">
+      <code>https://readthedocs.org</code>
+    </p>
   </a>
   <a class="item" data-analytics="commercial-login" href="https://readthedocs.com/dashboard/">
     <i class="fad fa-building secondary icon"></i>
     Read the Docs for Business
+
+    <p class="ui mini grey text">
+      <code>https://readthedocs.com</code>
+    </p>
   </a>
-  <a class="item" href="{{ SITE_URL }}/about/">
+  <div class="ui divider"></div>
+  <a class="item" href="/choosing-a-platform/">
     <i class="fad fa-circle-question grey icon"></i>
     Learn more
   </a>
@@ -60,13 +69,15 @@
 
 <div class="ui basic fitted attached segment">
   <div class="ui container">
-    <div class="ui middle aligned vertically padded grid">
+    <div class="ui middle aligned grid">
 
       {% block topnav_logo %}
         <div class="four wide computer five wide tablet eleven wide mobile left aligned column">
-          <a class="header item" href="{{ SITEURL }}/" aria-label="Read the Docs homepage">
-            <img class="ui image" src="{{ SITEURL }}/theme/img/logo-wordmark-dark.svg" width="220" alt="Read the Docs logo"/>
-          </a>
+          <div class="ui horizontally fitted basic segment">
+            <a href="{{ SITEURL }}/" aria-label="Read the Docs homepage">
+              <img class="ui image" src="{{ SITEURL }}/theme/img/logo-wordmark-dark.svg" width="220" alt="Read the Docs logo"/>
+            </a>
+          </div>
         </div>
       {% endblock topnav_logo %}
 
