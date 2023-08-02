@@ -87,7 +87,7 @@
       {% endcall %}
 
         {% call marketing.highlight_item(
-            icon="white fa-rocket-launch",
+            icon="white fa-key-skeleton",
             icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
             header="Work privately or publicly",
             color="violet") %}
@@ -121,7 +121,7 @@
               and offer your users a more powerful search with our  search API.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-gears") %}
+            {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-code-compare") %}
               Preview each pull request before releasing any changes,
               allowing for fast collaboration across your organization.
             {% endcall %}
@@ -135,8 +135,8 @@
               or clone from any Git provider with an SSH key.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", paid=True) %}
-              Flexible permission system built in.
+            {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
+              Control who has access to your documentation with integrated authentication.
               Enable <strong>SSO with GitHub or GitLab</strong> to easily manage permissions in one place.
             {% endcall %}
 
