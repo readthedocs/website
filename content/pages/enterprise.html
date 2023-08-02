@@ -2,11 +2,11 @@
 
 <html>
   <head>
-    <title>Read the Docs Enterprise Plans</title>
+    <title>Enterprise Plans</title>
     <meta name="template" content="page" />
     <meta name="slug" content="pricing/enterprise" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="Need more than our self-serve plans? Our Enterprise pricing gives you more options." />
+    <meta name="description" content="Need more than our self-serve plans? Our Enterprise plans gives you more options." />
   </head>
   <body>
 
@@ -26,11 +26,12 @@
     header="Read the Docs is the <em><strong>all-in-one</strong></em> solution you're looking for your documentation")
     %}
     <p>
-        We offer customized enterprise plans for organizations,
-        and can support many different customizations.
-        Works with our team to find the plan that's right for you.
+        We offer customized enterprise plans for organizations of all sizes.
+        Work with our team to find the plan that's right for you.
     </p>
-      <a class="ui center aligned padded segment button" href="/pricing/enterprise/#enterprise-inquiry">Get started on an Enterprise plan</a>
+      <p class="ui center aligned basic segment">
+        <a class="ui large teal button" href="/pricing/enterprise/#enterprise-inquiry">Get started on an Enterprise plan</a>
+      </p>
       </div>
     {% endcall %}
   </section>
@@ -46,8 +47,8 @@
       <div class="ui vertically padded centered grid">
   
         {% call homepage.feature_detail_item(header="Custom builders", icon="fad fa-robot") %}
-            Get additional memory or CPU in your builds,
-            to support your larger documentation builds.
+            Add a dedicated, cutom builder to your organization to support large or frequently built documentation projects.
+            Custom builders can include additional memory and more compute resources.
         {% endcall %}
   
         {% call homepage.feature_detail_item(header="Support SLA", icon="fad fa-folder-tree") %}
@@ -64,8 +65,8 @@
           We can provide custom Docker images for your builds to keep them fast and reliable.
         {% endcall %}
   
-        {% call homepage.feature_detail_item(header="Additional Audit Tracking", icon="fad fa-signs-post") %}
-            If you need longer term storage for your Audit Logging and Analytics information,
+        {% call homepage.feature_detail_item(header="Additional audit tracking", icon="fad fa-signs-post") %}
+            If you need longer term storage for your audit logging and analytics information,
             we can provide that.
             This is great for compliance requirements.
         {% endcall %}
@@ -83,14 +84,14 @@
   {# Enterprise customer callout #}
   <section id="enterprise-inquiry">
     <div class="ui very padded text container">
-      <div class="ui inverted center aligned padded segment">
+      <div class="ui inverted padded segment">
 
         {#  Create semantic UI form for inbound sales prospects #}
 
         <form method="POST" name="fa-form-1" class="ui inverted form"
           action="https://webhook.frontapp.com/forms/036c4169294f3b04abaa/Jd5Qy6b7AYZHFZ-iHZ9OtRFlYyZqTGhYZEYBmrsrhHaiRaYLlKHF9nqccJg7pewDwFUbEZ0klqlNdSs7BcUAoJO7aPapcC7JQBlYV5S1GZ04oPvbkzVvriejZRY"
           enctype="multipart/form-data" accept-charset="utf-8">
-            <h2 class="ui dividing header">Enterprise plan inquiry</h2>
+            <h2 class="ui center aligned dividing header">Enterprise plan inquiry</h2>
             <p>
               Our Enterprise plans have a number of additional features that are not available in our standard plans.
               Let us know what you're looking for and we'll work with you to find the right solution.
@@ -119,7 +120,7 @@
               <label>Do you have any specific requirements or questions?</label>
               <textarea name="message" rows="2"></textarea>
             </div>
-            <button class="ui button" type="submit">Submit</button>
+            <button class="ui inverted button" type="submit">Contact us</button>
           
         </form>
       </div>
