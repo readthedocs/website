@@ -71,18 +71,6 @@
 {% endmacro %}
 
 {# Application links to sign up #}
-{% macro menu_sign_up() %}
-  <a class="item" data-analytics="community-signup" href="https://readthedocs.org/accounts/signup/">
-    <i class="fad fa-people-group primary icon"></i>
-    Read the Docs Community
-  </a>
-  <a class="item" data-analytics="commercial-login" href="https://readthedocs.com/accounts/signup/">
-    <i class="fad fa-building secondary icon"></i>
-    Read the Docs for Business
-  </a>
-{% endmacro %}
-
-
 <div class="ui basic fitted attached segment">
   <div class="ui container">
     <div class="ui middle aligned grid">
@@ -112,7 +100,13 @@
               <div class="divider"></div>
 
               <div data-analytics="login-modal" class="header">Sign Up</div>
-              {{ menu_sign_up() }}
+              <div class="item">
+                <a class="ui button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                  Sign up
+                </a>
+              </div>
 
               <div class="divider"></div>
 

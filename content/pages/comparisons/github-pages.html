@@ -15,10 +15,6 @@
   {% import "partials/homepage.html" as homepage %}
   {% import "partials/comparisons.html" as comparison %}
 
-  {% block signup_modal %}
-    {{ homepage.signup_modal("signup_modal") }}
-  {% endblock signup_modal %}
-
   <section>
     {% call basic.header_lead(
     header="Read the Docs is the <em><strong>all-in-one</strong></em> solution you're looking for your documentation")
@@ -190,7 +186,7 @@
               <p>
                 <a class="ui large teal stackable button"
                 data-analytics="signup-modal"
-                 onclick="jQuery('#signup_modal').modal('show');">
+                 onclick="jQuery('#signup-modal').modal('show');">
                 <i class="fad fa-rocket icon"></i>
                 Get started for free
               </a>

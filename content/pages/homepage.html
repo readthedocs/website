@@ -50,15 +50,11 @@
                     {% block homepage_callout_buttons %}
                       <a class="ui large teal stackable button"
                         data-analytics="signup-modal"
-                         onclick="jQuery('#homepage-modal').modal('show');">
+                         onclick="jQuery('#signup-modal').modal('show');">
                         <i class="fad fa-play icon"></i>
                         Sign up now
                       </a>
                     {% endblock homepage_callout_buttons %}
-
-                    {% block homepage_modal %}
-                      {{ homepage.signup_modal("homepage-modal") }}
-                    {% endblock homepage_modal %}
 
                   </div>
                 {% endblock homepage_callout %}
@@ -201,7 +197,7 @@
                 <p>
                   <a class="ui large teal stackable button"
                   data-analytics="signup-modal"
-                   onclick="jQuery('#signup_modal').modal('show');">
+                   onclick="jQuery('#signup-modal').modal('show');">
                   <i class="fad fa-play icon"></i>
                   Create an account
                 </a>
