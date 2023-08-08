@@ -4,28 +4,28 @@
 {% endmacro %}
 
 {% macro menu_help() %}
-  <a class="item" href="https://docs.readthedocs.io/page/support.html">
+  <a class="item" href="https://docs.readthedocs.io/page/support.html" target="_blank">
     <i class="fad fa-envelope primary icon"></i>
     Support
     <span class="description">
       <i class="fad fa-external-link icon"></i>
     </span>
   </a>
-  <a class="item" href="https://docs.readthedocs.io">
+  <a class="item" href="https://docs.readthedocs.io" target="_blank">
     <i class="fad fa-book primary icon"></i>
     Documentation
     <span class="description">
       <i class="fad fa-external-link icon"></i>
     </span>
   </a>
-  <a class="item" href="https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started">
+  <a class="item" href="https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started" target="_blank">
     <i class="fad fa-rocket primary icon"></i>
     Tutorial
     <span class="description">
       <i class="fad fa-external-link icon"></i>
     </span>
   </a>
-  <a class="item" href="http://status.readthedocs.com">
+  <a class="item" href="http://status.readthedocs.com" target="_blank">
     {% block menu_help_status %}
       {% if has_status_check %}
         {# TODO get some data from status page API to light this up #}
