@@ -28,6 +28,12 @@
   padding-top: 250px;
 }
 
+// TODO move this to common theme
+.ui.ui.ui.inverted.segment > div.highlight {
+  margin-top: 1rem;
+  overflow-x: scroll;
+}
+
 // Article styles for docutils reST and Markdown
 .ui.docutils.container,
 .ui.docutils.segment {
