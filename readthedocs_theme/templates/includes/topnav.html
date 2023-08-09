@@ -93,19 +93,15 @@
             <i class="fad fa-bars large icon" style="--fa-secondary-opacity: 0.8;"></i>
             <div class="menu">
 
-              <div data-analytics="login-modal" class="header">Log in</div>
+              <div class="header">Log in</div>
               {{ menu_log_in() }}
 
-              <div class="divider"></div>
-
-              <div data-analytics="login-modal" class="header">Sign Up</div>
-              <div class="item">
-                <a class="ui button"
-                data-analytics="signup-modal"
+              <a class="item"
+                 data-analytics="signup-modal"
                  onclick="jQuery('#signup-modal').modal('show');">
-                  Sign up
-                </a>
-              </div>
+                <i class="fas fa-plus primary icon"></i>
+                Sign up
+              </a>
 
               <div class="divider"></div>
 
