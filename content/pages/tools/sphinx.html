@@ -22,10 +22,6 @@
 {% import "partials/technical.html" as technical %}
 {% import "partials/homepage.html" as homepage %}
 
-{% block signup_modal %}
-  {{ homepage.signup_modal("signup_modal") }}
-{% endblock signup_modal %}
-
 <section>
   {% call basic.header_image(
     header="Supercharge your Sphinx docs and impress your readers",
@@ -41,7 +37,7 @@
     <p class="ui basic padded vertical segment">
       <a class="ui large teal stackable button"
       data-analytics="signup-modal"
-       onclick="jQuery('#signup_modal').modal('show');">
+       onclick="jQuery('#signup-modal').modal('show');">
         <i class="fad fa-play icon"></i>
         Create an account
       </a>
@@ -119,7 +115,7 @@
             <p>
               <a class="ui large teal stackable button"
               data-analytics="signup-modal"
-               onclick="jQuery('#signup_modal').modal('show');">
+               onclick="jQuery('#signup-modal').modal('show');">
               <i class="fad fa-play icon"></i>
               Create an account
             </a>
