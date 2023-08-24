@@ -1,0 +1,140 @@
+{# 
+    The goal of this page is to sell users who are already authoring in Mkdocs on the benefits of our hosting.
+    We aren't focusing on generic Mkdocs benefits,
+    but the unique differentiation of our platform.
+  #}
+
+  {#
+    View this page at http://localhost:8080/tools/mkdocs/
+  #}
+  
+
+  <html>
+    <head>
+      <title>Supercharge your Mkdocs docs hosting</title>
+      <meta name="template" content="page" />
+      <meta name="slug" content="tools/mkdocs" />
+      <meta name="status" content="hidden" />
+      <meta name="description" content="Best Mkdocs deployments with Read the Docs" />
+    </head>
+    <body>
+  
+  {% import "partials/basic.html" as basic %}
+  {% import "partials/marketing.html" as marketing %}
+  {% import "partials/technical.html" as technical %}
+  {% import "partials/homepage.html" as homepage %}
+  
+  <section>
+    {% call basic.header_image(
+      header="The best deployment solution for Mkdocs projects",
+      image="/images/homepage.png",
+      image_alt="Examples of Read the Docs hosted documentation",
+      vertical_align="middle")
+    %}
+    {# TODO: Add a GIF of using hoverxref & livesearch #}
+      <p>
+          Automatically deploy powerful search, versioning, and collaboration to your Mkdocs projects.
+      </p>
+  
+      <p class="ui basic padded vertical segment">
+        <a class="ui large teal stackable button"
+        data-analytics="signup-modal"
+         onclick="jQuery('#signup-modal').modal('show');">
+          <i class="fad fa-play icon"></i>
+          Create an account
+        </a>
+        <a href="https://example-mkdocs-basic.readthedocs.io/en/latest/" class="ui large stackable button">
+          <i class="fad fa-camera-retro icon"></i>
+          See a demo
+        </a>
+      </p>
+    {% endcall %}
+  </section>
+  
+  <section id="features">
+    {% call marketing.highlight_list() %}
+
+      {% call marketing.highlight_item(
+          icon="olive fa-people-arrows",
+          icon_style="--fa-secondary-color: violet; --fa-secondary-opacity: 1;",
+          header="Easily share with deploy previews",
+          color="violet") %}
+        {% markdown %}
+        Receive feedback from your team,
+        and <strong>have confidence in changes</strong> before they go live.
+        {% endmarkdown %}
+      {% endcall %}
+  
+      {% call marketing.highlight_item(
+          icon="yellow fa-magnifying-glass",
+          icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
+          header="Always find what you need",
+          color="violet") %}
+        {% markdown %}
+        Search across all your projects with our search-as-you-type interface,
+        and <strong>never lose documentation again</strong>.
+        {% endmarkdown %}
+      {% endcall %}
+  
+      {% call marketing.highlight_item(
+          icon="fa-image",
+          header="Supports any Mkdocs theme",
+          color="violet") %}
+        {% markdown %}
+        We support all themes, including the popular <a href="https://squidfunk.github.io/mkdocs-material/">Material for Mkdocs</a>.
+        {% endmarkdown %}
+      {% endcall %}
+
+    {% endcall %}
+  </section>
+  
+  {# Try it out code block #}
+  {% include "includes/try-it-out-mkdocs.html" %}
+  
+  {# Mkdocs user testimonials #}
+  {# 
+    Don't show this yet until we curate users more
+    {% include "includes/users-mkdocs.html" %}
+  #}
+  
+  {% block homepage_bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+  
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+  
+            {#
+              TODO replace this block with something more actionable. It's
+              not saying anything new at this point in the page, and the call
+              to action is not strong.
+            #}
+            <div class="ui basic vertical huge segment">
+              <p>
+                <b>Import your Mkdocs project today.</b>
+              </p>
+  
+              <p>
+                <a class="ui large teal stackable button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-play icon"></i>
+                Create an account
+              </a>
+              </p>
+            </div>
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  {% endblock homepage_bottom_callout %}
+  
+  
+  
+    </body>
+  </html>
+  

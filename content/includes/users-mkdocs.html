@@ -1,0 +1,59 @@
+{% import "partials/basic.html" as basic %}
+
+{# TODO: Turn these into testimonials. #}
+<section id="testimonials">
+    <div class="ui container">
+    {{ basic.header_icon(
+        header="Join thousands of happy users",
+        subheader="",
+        icon="purple fa-message-lines",
+        icon_style="--fa-secondary-color: blueviolet;"
+    ) }}
+    <div class="ui three link stackable cards">
+        <a href="https://ddev.readthedocs.io/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/ddev-logo.svg" alt="DDEV logo" />
+            </div>
+            <div class="header">DDEV</div>
+            <div class="meta">
+                Docker-based environments
+            </div>
+            <div class="description">
+                DDEV is an open source tool for running local web development environments for PHP, Python and Node.js, ready in minutes.
+            </div>
+        </div>
+        </a>
+
+        <a href="https://docs.jupyter.org/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/jupyter-logo.png" alt="Jupyter logo">
+            </div>
+            <div class="header">Jupyter</div>
+            <div class="meta">
+            Data Science Environment
+            </div>
+            <div class="description">
+            Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
+            </div>
+        </div>
+        </a>
+
+        <a href="https://docs.godotengine.org/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/godot-logo.png" alt="Godot Engine logo">
+            </div>
+            <div class="header">Godot Engine</div>
+            <div class="meta">
+            Game Engine
+            </div>
+            <div class="description">
+            Godot Engine is a free and open source community-driven 2D and 3D game engine.
+            </div>
+        </div>
+        </a>
+    </div>
+    </div>
+</section>
