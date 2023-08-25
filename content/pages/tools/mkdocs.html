@@ -1,41 +1,41 @@
-{# 
-    The goal of this page is to sell users who are already authoring in Mkdocs on the benefits of our hosting.
-    We aren't focusing on generic Mkdocs benefits,
+{#
+    The goal of this page is to sell users who are already authoring in MkDocs on the benefits of our hosting.
+    We aren't focusing on generic MkDocs benefits,
     but the unique differentiation of our platform.
   #}
 
   {#
     View this page at http://localhost:8080/tools/mkdocs/
   #}
-  
+
 
   <html>
     <head>
-      <title>Supercharge your Mkdocs docs hosting</title>
+      <title>The best deployment solution for MkDocs</title>
       <meta name="template" content="page" />
       <meta name="slug" content="tools/mkdocs" />
       <meta name="status" content="hidden" />
-      <meta name="description" content="Best Mkdocs deployments with Read the Docs" />
+      <meta name="description" content="The best MkDocs deployments with Read the Docs" />
     </head>
     <body>
-  
+
   {% import "partials/basic.html" as basic %}
   {% import "partials/marketing.html" as marketing %}
   {% import "partials/technical.html" as technical %}
   {% import "partials/homepage.html" as homepage %}
-  
+
   <section>
     {% call basic.header_image(
-      header="The best deployment solution for Mkdocs projects",
+      header="The best deployment solution for MkDocs projects",
       image="/images/homepage.png",
       image_alt="Examples of Read the Docs hosted documentation",
       vertical_align="middle")
     %}
     {# TODO: Add a GIF of using hoverxref & livesearch #}
       <p>
-          Automatically deploy powerful search, versioning, and collaboration to your Mkdocs projects.
+          Automatically deploy powerful search, versioning, and collaboration to your MkDocs projects.
       </p>
-  
+
       <p class="ui basic padded vertical segment">
         <a class="ui large teal stackable button"
         data-analytics="signup-modal"
@@ -50,7 +50,7 @@
       </p>
     {% endcall %}
   </section>
-  
+
   <section id="features">
     {% call marketing.highlight_list() %}
 
@@ -64,7 +64,7 @@
         and <strong>have confidence in changes</strong> before they go live.
         {% endmarkdown %}
       {% endcall %}
-  
+
       {% call marketing.highlight_item(
           icon="yellow fa-magnifying-glass",
           icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
@@ -75,36 +75,39 @@
         and <strong>never lose documentation again</strong>.
         {% endmarkdown %}
       {% endcall %}
-  
+
       {% call marketing.highlight_item(
           icon="fa-image",
-          header="Supports any Mkdocs theme",
+          header="Supports any MkDocs theme",
           color="violet") %}
         {% markdown %}
-        We support all themes, including the popular <a href="https://squidfunk.github.io/mkdocs-material/">Material for Mkdocs</a>.
+        We support all themes, including the popular <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.
         {% endmarkdown %}
       {% endcall %}
 
     {% endcall %}
   </section>
-  
+
   {# Try it out code block #}
   {% include "includes/try-it-out-mkdocs.html" %}
-  
-  {# Mkdocs user testimonials #}
-  {# 
-    Don't show this yet until we curate users more
-    {% include "includes/users-mkdocs.html" %}
+
+  {#
+    MkDocs user testimonials
+
+    In [5]: Project.objects.filter(documentation_type='mkdocs').annotate(n_views=Count('page_views__view_count')).order_by('-n_views').values_list('slug', flat=True)[:15]
+    Out[5]: <ProjectQuerySetBase ['argo-cd', 'carla', 'mcforge', 'ddev', 'gluster', 'fate', 'nautobot', 'freqtrade', 'orchardcore', 'appium', 'nodemcu', 'plantcv', 'fiware-orion', 'yii2-framework', 'netbox']>
   #}
-  
+
+  {% include "includes/users-mkdocs.html" %}
+
   {% block homepage_bottom_callout %}
   <section>
     <div class="ui very padded container">
       <div class="ui grid center aligned">
-  
+
         <div class="row">
           <div class="column twelve wide computer sixteen wide tablet">
-  
+
             {#
               TODO replace this block with something more actionable. It's
               not saying anything new at this point in the page, and the call
@@ -112,9 +115,9 @@
             #}
             <div class="ui basic vertical huge segment">
               <p>
-                <b>Import your Mkdocs project today.</b>
+                <b>Import your MkDocs project today.</b>
               </p>
-  
+
               <p>
                 <a class="ui large teal stackable button"
                 data-analytics="signup-modal"
@@ -124,17 +127,16 @@
               </a>
               </p>
             </div>
-  
+
           </div>
         </div>
-  
+
       </div>
     </div>
   </section>
   {% endblock homepage_bottom_callout %}
-  
-  
-  
+
+
+
     </body>
   </html>
-  
