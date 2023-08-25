@@ -1,10 +1,10 @@
-{# View this page at http://localhost:8080/comparisons/github-pages/ #}
+{# View this page at http://localhost:8080/comparisons/gitbook/ #}
 
 <html>
   <head>
-    <title>Read the Docs vs. GitHub Pages comparison</title>
+    <title>Read the Docs vs. GitBook comparison</title>
     <meta name="template" content="page" />
-    <meta name="slug" content="comparisons/github-pages" />
+    <meta name="slug" content="comparisons/gitbook" />
     <meta name="status" content="hidden" />
     <meta name="description" content="" />
   </head>
@@ -20,9 +20,8 @@
     header="Read the Docs is the <em><strong>all-in-one</strong></em> solution you're looking for your documentation")
     %}
     <p>
-      GitHub Pages is great. We used to use it and <em>we loved it</em>.
-      However, it's just for static hosting with no features at all.
-      When talking about documentation, <strong>Read the Docs</strong> is <em>the</em> perfect solution for it.
+      GitBook is great. However, it lacks many features we consider <em>essentials</em> for technical teams.
+      When talking about technical documentation, <strong>Read the Docs</strong> is <em>the</em> perfect solution for it.
     </p>
     <p>
       Let's compare it to know what you can expect when deploying your project's documentation to Read the Docs.
@@ -31,50 +30,26 @@
   </section>
 
 
-{#
-  The most important way to think about these two products is what value they provide to you as a user:
-
-  * GitHub Pages provides static file hosting, with no backend API or feature set
-  * Read the Docs is a full platform for documentation hosting, with versions and backend APIs
-
-  * **Documentation platform**: Read the Docs provides a full set of features for documentation hosting, instead of just static hosting
-  * **Open source**: Read the Docs source code is fully open source
-  * **Hosting Features**:
-#}
-
-{#
-  Compare plan features with a table
-
-  * Building: GitHub Actions
-  * Hosting: GitHub Pages
-
-  * Search | Algolia
-  * Versions | GitHub Actions customization
-  * PR Previews | GitHub Actions customization
-  * Page analytics | Google Analytics
-  * Redirects | Impossible
-  * Custom 404 pages | Impossible
-  * Translation | Impossible
-  * Private docs | Impossible
-
-#}
 <section id="compare">
   <div class="ui padded container">
 
-    {% call comparison.feature_table(other_img="/images/github-logo.svg", other_img_alt="GitHub Pages logo") %}
-    {{ comparison.feature_row("Static hosting", "Publish any static content", "fa-page", on_other=True) }}
+    {% call comparison.feature_table(other_img="/images/gitbook-logo.svg", other_img_alt="GitBook logo") %}
+    {{ comparison.feature_row("Static hosting", "Publish any static content", "fa-page") }}
     {{ comparison.feature_row("Build your site on the cloud", "Generate your site's content on the cloud", "fa-gears", on_other=True) }}
-    {{ comparison.feature_row("Deploy previews", "Solve style issues before deploying", "fa-rocket-launch") }}
-    {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass") }}
-    {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books") }}
-    {{ comparison.feature_row("Redirects", "Redirect users to the right page", "fa-arrows-turn-right") }}
+    {{ comparison.feature_row("Deploy previews", "Solve style issues before deploying", "fa-rocket-launch", on_other=True) }}
+    {{ comparison.feature_row("Visual diff on deploy previews", "Visualize differences directly on the rendered version", "fa-face-monocle") }}
+    {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass", on_other=True) }}
+    {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books", on_other=True) }}
+    {{ comparison.feature_row("Redirects", "Redirect users to the right page", "fa-arrows-turn-right", on_other=True) }}
     {{ comparison.feature_row("Custom 404 pages", "Style 404 pages with context-related information", "fa-xmark") }}
     {{ comparison.feature_row("Custom \"robots.txt\"", "Improve your SEO by telling bots how to explore your site", "fa-robot") }}
-    {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed") }}
+    {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed", on_other=True) }}
     {{ comparison.feature_row("Search analytics", "Explore what people search for in your docs", "fa-chart-simple") }}
-    {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language") }}
-    {{ comparison.feature_row("Private documention", "Give access only to trusted people", "fa-lock") }}
+    {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language", on_other=True) }}
+    {{ comparison.feature_row("Private documention", "Give access only to trusted people", "fa-lock", on_other=True) }}
     {{ comparison.feature_row("Open Source", "Maintained by the community", "fa-brands fa-osi") }}
+    {{ comparison.feature_row("Documentation tool agnostic", "Use the documentation tool your team prefers (Sphinx, MkDocs, Docusaurus, etc)", "fa-book") }}
+    {{ comparison.feature_row("Custom theme", "Style the documentation as you like", "fa-pen-swirl") }}
     {% endcall %}
 
   </div>
@@ -103,12 +78,20 @@
             build:
               os: "ubuntu-22.04"
               tools:
-                python: "3"
+                nodejs: "18"
                 # You can also specify other tool versions:
-                # nodejs: "16"
-              commands:
-                - pip install mkdocs-material
-                - mkdocs build --site-dir $READTHEDOCS_OUTPUT/html
+                # python: "3"
+            commands:
+                # "docs/" was created following the Docusaurus tutorial:
+                # npx create-docusaurus@latest docs classic
+                #
+                # Install Docusaurus dependencies
+                - cd docs/ && npm install
+                # Build the site
+                - cd docs/ && npm run build
+                # Copy generated files into Read the Docs directory
+                - mkdir --parents $READTHEDOCS_OUTPUT/html/
+                - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
             ```
 
             {% endmarkdown %}
@@ -178,8 +161,8 @@
               </h2>
 
               <p>
-                GitHub Pages can be useful for static hosting of simple web sites.
-                However, for publishing <em>good documentation</em> it lacks many features that your readers will want.
+                GitBook can be useful only if you are in-love with <strong>their own non open source software solution</strong>.
+                However, for publishing <em>good documentation</em> without vendor lock-in and plenty of features that your readers will want,
                 Read the Docs is the all-in-one solution that gets you started with all those features from the beginning.
               </p>
 
