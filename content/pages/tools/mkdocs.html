@@ -91,11 +91,14 @@
   {# Try it out code block #}
   {% include "includes/try-it-out-mkdocs.html" %}
 
-  {# MkDocs user testimonials #}
   {#
-    Don't show this yet until we curate users more
-    {% include "includes/users-mkdocs.html" %}
+    MkDocs user testimonials
+
+    In [5]: Project.objects.filter(documentation_type='mkdocs').annotate(n_views=Count('page_views__view_count')).order_by('-n_views').values_list('slug', flat=True)[:15]
+    Out[5]: <ProjectQuerySetBase ['argo-cd', 'carla', 'mcforge', 'ddev', 'gluster', 'fate', 'nautobot', 'freqtrade', 'orchardcore', 'appium', 'nodemcu', 'plantcv', 'fiware-orion', 'yii2-framework', 'netbox']>
   #}
+
+  {% include "includes/users-mkdocs.html" %}
 
   {% block homepage_bottom_callout %}
   <section>
