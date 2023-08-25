@@ -1,14 +1,14 @@
 {#
   The SaaS feature comparison table
 #}
-{% macro feature_table() %}
+{% macro feature_table(other_img, other_img_alt) %}
   <table class="ui mini unstackable celled table" id="feature-table">
 
     {% macro _feature_table_row() %}
       <tr>
         <th class="eight wide" scope="col"></th>
         <th class="two wide center aligned" scope="col">
-          <img class="center aligned" src="{{ SITE_URL }}/images/github-logo.svg" width="80%" alt="GitHub Pages">
+          <img class="center aligned" src="{{ SITE_URL }}{{other_img}}" width="80%" alt="{{ other_img_alt }}">
         </th>
         <th class="two wide center aligned" scope="col">
           <img class="center aligned" src="{{ SITE_URL }}/theme/img/logo-wordmark-dark.svg" alt="Read the Docs">
@@ -39,7 +39,7 @@
   Again, this supports the `show_community_features` global, until we confirm
   this mixed display is not confusing.
 #}
-{% macro feature_row(name, description, icon, on_github=False, on_readthedocs=True) %}
+{% macro feature_row(name, description, icon, on_other=False, on_readthedocs=True) %}
   <tr>
     <td>
       <div class="ui small header">
@@ -56,7 +56,7 @@
         </div>
       </div>
     </td>
-    {{ feature_row_cell(on_github) }}
+    {{ feature_row_cell(on_other) }}
     {{ feature_row_cell(on_readthedocs) }}
   </tr>
 {% endmacro %}
