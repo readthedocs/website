@@ -1,4 +1,4 @@
-{# 
+{#
     The goal of this page is to sell users who are already authoring in MkDocs on the benefits of our hosting.
     We aren't focusing on generic MkDocs benefits,
     but the unique differentiation of our platform.
@@ -7,7 +7,7 @@
   {#
     View this page at http://localhost:8080/tools/mkdocs/
   #}
-  
+
 
   <html>
     <head>
@@ -18,12 +18,12 @@
       <meta name="description" content="Best MkDocs deployments with Read the Docs" />
     </head>
     <body>
-  
+
   {% import "partials/basic.html" as basic %}
   {% import "partials/marketing.html" as marketing %}
   {% import "partials/technical.html" as technical %}
   {% import "partials/homepage.html" as homepage %}
-  
+
   <section>
     {% call basic.header_image(
       header="The best deployment solution for MkDocs projects",
@@ -35,7 +35,7 @@
       <p>
           Automatically deploy powerful search, versioning, and collaboration to your MkDocs projects.
       </p>
-  
+
       <p class="ui basic padded vertical segment">
         <a class="ui large teal stackable button"
         data-analytics="signup-modal"
@@ -50,7 +50,7 @@
       </p>
     {% endcall %}
   </section>
-  
+
   <section id="features">
     {% call marketing.highlight_list() %}
 
@@ -64,7 +64,7 @@
         and <strong>have confidence in changes</strong> before they go live.
         {% endmarkdown %}
       {% endcall %}
-  
+
       {% call marketing.highlight_item(
           icon="yellow fa-magnifying-glass",
           icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
@@ -75,7 +75,7 @@
         and <strong>never lose documentation again</strong>.
         {% endmarkdown %}
       {% endcall %}
-  
+
       {% call marketing.highlight_item(
           icon="fa-image",
           header="Supports any MkDocs theme",
@@ -87,24 +87,24 @@
 
     {% endcall %}
   </section>
-  
+
   {# Try it out code block #}
   {% include "includes/try-it-out-mkdocs.html" %}
-  
+
   {# MkDocs user testimonials #}
-  {# 
+  {#
     Don't show this yet until we curate users more
     {% include "includes/users-mkdocs.html" %}
   #}
-  
+
   {% block homepage_bottom_callout %}
   <section>
     <div class="ui very padded container">
       <div class="ui grid center aligned">
-  
+
         <div class="row">
           <div class="column twelve wide computer sixteen wide tablet">
-  
+
             {#
               TODO replace this block with something more actionable. It's
               not saying anything new at this point in the page, and the call
@@ -114,7 +114,7 @@
               <p>
                 <b>Import your MkDocs project today.</b>
               </p>
-  
+
               <p>
                 <a class="ui large teal stackable button"
                 data-analytics="signup-modal"
@@ -124,16 +124,16 @@
               </a>
               </p>
             </div>
-  
+
           </div>
         </div>
-  
+
       </div>
     </div>
   </section>
   {% endblock homepage_bottom_callout %}
-  
-  
-  
+
+
+
     </body>
   </html>
