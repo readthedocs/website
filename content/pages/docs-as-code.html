@@ -17,14 +17,10 @@
 #}
 
 {% import "partials/basic.html" as basic %}
-{% import "partials/about.html" as about %}
+{% import "partials/features.html" as about %}
 {% import "partials/marketing.html" as marketing %}
 {% import "partials/technical.html" as technical %}
 {% import "partials/homepage.html" as homepage %}
-
-{% block signup_modal %}
-  {{ homepage.signup_modal("signup_modal") }}
-{% endblock signup_modal %}
 
 <section>
   <div class="ui horizontally very padded container">
@@ -60,7 +56,7 @@
               </a>
 
               {%- set header_2 = "Notifications" %}
-              {%- set icon_2 = "fa-triangle-exclamation" -%}
+              {%- set icon_2 = "fa-messages" -%}
               <a href="#building" class="ui small header item">
                 <i class="fad {{ icon_2 }} secondary big icon"></i>
                 <span class="content">
@@ -119,64 +115,53 @@
           icon=icon_1) %}
         {% markdown %}
       Explore traffic analytics and understand what are the pages your readers read the most.
-      Prioritize the work to improve them on those pages.
+      Prioritize the work to improve them before other pages with less traffic.
       Find out what are the terms your users search the most and write documentation pages
       that include those terms so they can easily find them.
         {% endmarkdown %}
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Versioning", icon="fad fa-layer-group") %}
-        Give your users documentation that won't go out of date.
-        Build multiple versions from commits, branches, or tags in your repository.
-      {% endcall %}
+      <!-- {% block authoring_details %}
+           <div class="ui stackable equal width grid">
+           <div class="stretched row">
 
-      {% call homepage.feature_detail_item(header="Localization", icon="fad fa-language") %}
-        Integrate with localization tools to translate your documentation in multiple languages.
-      {% endcall %}
+           {% block authoring_details_providers %}
+           <div class="left aligned column">
+           <div class="ui very padded raised inverted teal large segment">
+           <h4 class="ui header">
+           <i class="fad fa-screwdriver-wrench icon"></i>
+           Bring your own tools
+           </h4>
 
-      {% call homepage.feature_detail_item(header="Track change history", icon="fad fa-code-commit") %}
-        Use the same version control system that you use for development to retain change history for your documentation.
-      {% endcall %}
+           {% markdown %}
+           Integrate with any documentation tool or static site generator you want,
+           and track changes with **Git**.
+           Use the tools that work best for your project.
+           {% endmarkdown %}
+           </div>
+           </div>
 
-      {% block authoring_details %}
-        <div class="ui stackable equal width grid">
-          <div class="stretched row">
+           <div class="left aligned column">
+           <div class="ui padded basic segment">
 
-            {% block authoring_details_providers %}
-              <div class="left aligned column">
-                <div class="ui very padded raised inverted teal large segment">
-                  <h4 class="ui header">
-                    <i class="fad fa-screwdriver-wrench icon"></i>
-                    Bring your own tools
-                  </h4>
+           {% markdown %}
+           * Write **reStructuredText** with **Sphinx**
+           * Or write **Markdown** with **Sphinx** and **MyST**
+           * Use **Docusaurus** as your documentation tool
+           * Add reference docs from **Python**, **JavaScript** or **C** code
+           * Document a RESTful API with **OpenAPI** tools
+           * Include a **Jupyter Notebook** in your docs
+           * ... and much more!
+           {% endmarkdown %}
 
-                  {% markdown %}
-                  Integrate with tools like **Sphinx**, **MkDocs**, and **Jupyter Book**,
-                  and track changes with **Git** or **Mercurial**.
-                  Use the tools that work best for your project.
-                  {% endmarkdown %}
-                </div>
-              </div>
+           </div>
+           </div>
+           {% endblock authoring_details_providers %}
 
-              <div class="left aligned column">
-                <div class="ui padded basic segment">
-
-                  {% markdown %}
-                  * Write **reStructuredText** with **Sphinx**
-                  * Or write **Markdown** with **Sphinx** and **MyST**
-                  * Add reference docs from **Python** code
-                  * Document a RESTful API with **OpenAPI** tools
-                  * Include a **Jupyter Notebook** in your docs
-                  {% endmarkdown %}
-
-                </div>
-              </div>
-            {% endblock authoring_details_providers %}
-
-          </div>
-        </div>
-      {% endblock authoring_details %}
-
+           </div>
+           </div>
+           {% endblock authoring_details %}
+      -->
     </div>
   </div>
 
@@ -187,91 +172,14 @@
 
       {% call about.step(
           header=header_2,
-          image="/images/about/building.png",
-          image_alt="Project building on Read the Docs",
+          image="/images/docs-as-code/notification.png",
+          image_alt="Notification on a old version",
           icon=icon_2) %}
         {% markdown %}
-        Your documentation is rebuilt whenever a change is detected in your repository,
-        so every version of your documentation is **always up to date**.
-
-        Whether your project is **Python** or **Node.js**, your project controls
-        what dependencies to install and how to generate your documentation.
+        Clearly communicate readers they are reading an outdated version of the documentation,
+        and **reduce support requests** from older version of your product.
         {% endmarkdown %}
       {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Build customization", icon="fad fa-sparkles") %}
-        Customize your documentation build to fit your needs. Install your own dependencies and run custom commands.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Configuration file", icon="fad fa-file-code") %}
-        Set up your project and track your project's configuration from your repository.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Offline formats", icon="fad fa-file-pdf") %}
-        Output PDF and EPUB formats for your documentation, for offline and cross-device viewing.
-      {% endcall %}
-
-      {% block building_details %}
-        <div class="ui stackable equal width grid">
-          <div class="stretched top aligned row">
-
-            {% block building_details_providers %}
-              <div class="left aligned column">
-                <div class="ui very padded raised inverted teal large segment">
-
-                  <h4 class="ui header">
-                    <i class="fad fa-cloud-check icon"></i>
-                    Connect to all of your repositories
-                  </h4>
-
-                  {% markdown %}
-                  Read the Docs integrates with **GitHub**, **GitLab**, and **Bitbucket**
-                  and can clone and build documentation from any hosted repository.
-                  You can also manually connect to any repository provider that supports
-                  **Git**.
-                  {% endmarkdown %}
-
-                <div class="ui five column center aligned vertically padded grid">
-                  <div class="column">
-                    <i class="fab fa-github large icon"></i>
-                  </div>
-                  <div class="column">
-                    <i class="fab fa-gitlab large icon"></i>
-                  </div>
-                  <div class="column">
-                    <i class="fab fa-bitbucket large icon"></i>
-                  </div>
-                </div>
-
-                </div>
-              </div>
-
-              <div class="left aligned column">
-                <div class="ui very padded large basic segment">
-
-                  <h4 class="ui header">
-                    <i class="fad fa-lock primary icon"></i>
-                    <span class="content">
-                      Private repository support
-                      <span class="sub header">
-                        <i class="fad fa-square-dollar violet icon"></i>
-                        <span class="ui violet text">Paid plan feature</span>
-                      </span>
-                    </span>
-                  </h4>
-
-                  {% markdown %}
-                  Clone from private repositories hosted on GitHub, GitLab, and Bitbucket,
-                  or connect another provider by manually connecting using a provided key.
-                  {% endmarkdown %}
-
-                </div>
-              </div>
-            {% endblock building_details_providers %}
-
-          </div>
-        </div>
-      {% endblock building_details %}
 
     </div>
   </div>
@@ -283,19 +191,13 @@
 
       {% call about.step(
           header=header_3,
-          image="/images/about/review.png",
+          image="/images/docs-as-code/search.png",
           image_alt="Read the Docs pull request review checks in a GitHub pull request",
           icon=icon_3) %}
         {% markdown %}
-        Rebuild your documentation and preview changes in every pull request.
-        Share changes easily and help catch errors before shipping documentaiton updates.
-
-        Supported on **GitHub** and **GitLab** repositories.
+        Always find what you are looking for at the tip of your fingers with our powerful ElasticSearch engine.
+        Search on a single or accross multiple projects at once.
         {% endmarkdown %}
-
-        <a class="ui basic primary button" href="https://docs.readthedocs.io/en/stable/pull-requests.html">
-          Learn more
-        </a>
       {% endcall %}
 
     </div>
@@ -307,181 +209,57 @@
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
-          header=header_4,
-          image=None,
-          icon=icon_4) %}
-        {% markdown %}
-        Everything you need to deliver documentation to your users and customers
-        is already included with your project. You can easily deploy multiple versions
-        of your documentation, with everything from authentication to cross-project
-        search, without configuring any additional services.
-        {% endmarkdown %}
+      header=header_4,
+      image="/images/docs-as-code/visual-diff.png",
+      image_alt="Visual diff between two versions",
+      icon=icon_4) %}
+      {% markdown %}
+      Visuallize documentation changes "in situ" from pull requests before merging them.
+      Understand what exacly changed in a simple and visual way.
+      {% endmarkdown %}
       {% endcall %}
 
-      <div class="center aligned sixteen wide mobile eight wide tablet six wide computer column">
-        <div class="ui left aligned padded segment">
-          <h3 class="ui small header">
-            For every project type
-          </h3>
+    </div>
+  </div>
+</section>
 
-          <div class="ui list">
-            <div class="item">
-              <i class="fad fa-earth-americas icon"></i>
-              <div class="content">
-                Host <b>public</b> documentation for users
-              </div>
-            </div>
-            <div class="item">
-              <i class="fad fa-people-group icon"></i>
-              <div class="content">
-                Share documentation internally using <b>teams</b>
-              </div>
-            </div>
-            <div class="item">
-              <i class="fad fa-shield-keyhole icon"></i>
-              <div class="content">
-                Grant access using <b>sharing tokens</b>
-              </div>
+
+{# Try it out code block #}
+{% include "includes/try-it-out-docusaurus.html" %}
+
+{% block homepage_bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Still not convinced? Try it yourself  <i class="fad fa-rocket icon"></i>
+              </h2>
+
+              <p>
+                {% markdown %}
+                Import your existing project or create one following our [tutorial](https://docs.readthedocs.io/en/stable/tutorial/),
+                and try it yourself. All these features will be enabled by default when using the ``build.commands`` config key as shown in the example.
+                {% endmarkdown %}
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-rocket icon"></i>
+                Get started for free
+              </a>
+              </p>
             </div>
           </div>
         </div>
       </div>
-
-      {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", paid=True) %}
-        Control who has access to your documentation with integrated authentation and sharing tokens.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-at") %}
-        Use your own custom domain for your hosted documentation, with SSL automatically configured.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
-        Help your users find what the need with integrated search across all your projects and versions.
-      {% endcall %}
-
     </div>
-  </div>
-</section>
-
-<section id="try-it-out">
-  <div class="ui padded container">
-    <h2 class="ui huge center aligned header">
-      Upgrade your documentation with Read the Docs
-    </h2>
-
-    <div class="ui very padded centered grid">
-
-      <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
-        <div class="ui large left aligned basic vertical segment">
-
-          {# Stylized code blocks #}
-          {% call technical.code_block(title="<code>.readthedocs.yaml</code>", icon="fa-file") %}
-          {% markdown %}
-
-          ```yaml
-          version: 2
-          build:
-            os: ubuntu-22.04
-            tools:
-              python: "3.10"
-              # You can also specify other tool versions:
-              # nodejs: "16"
-
-          # Build documentation in the docs/ directory with Sphinx
-          sphinx:
-             configuration: docs/conf.py
-
-          # Dependencies required to build your docs
-          python:
-             install:
-             - requirements: docs/requirements.txt
-          ```
-
-          {% endmarkdown %}
-          {% endcall %}
-        </div>
-      </div>
-
-      <div class="middle aligned left aligned six wide computer twelve wide tablet sixteen wide mobile column">
-        <div class="ui padded basic segment">
-          <div class="ui relaxed list">
-
-            {%- set header_1 = "Create an account" %}
-            {%- set icon_1 = "fa-square-1" -%}
-            <span class="ui small teal header item">
-              <i class="fad {{ icon_1 }} secondary big icon"></i>
-              <span class="content">
-                {{ header_1 }}
-                <span class="sub header">Sign up with GitHub or your email.</span>
-              </span>
-            </span>
-
-            {%- set header_2 = "Import your project" %}
-            {%- set icon_2 = "fa-square-2" -%}
-            <span class="ui small header item">
-              <i class="fad {{ icon_2 }} secondary big icon"></i>
-              <span class="content">
-                {{ header_2 }}
-                <span class="sub header">Select your existing Git repositories with a 1-click interface.</span>
-              </span>
-            </span>
-
-            {%- set header_3 = "Add YAML config" %}
-            {%- set icon_3 = "fa-square-3" -%}
-            <span class="ui small header item">
-              <i class="fad {{ icon_3 }} secondary big icon"></i>
-              <span class="content">
-                {{ header_3 }}
-                <span class="sub header">Copy this example, it probably does what you want 😉</span>
-              </span>
-            </span>
-
-            {%- set header_4 = "Your docs build on every commit" %}
-            {%- set icon_4 = "fa-square-4" -%}
-            <span class="ui small header item">
-              <i class="fad {{ icon_4 }} secondary big icon"></i>
-              <span class="content">
-                {{ header_4 }}
-                <span class="sub header">Like magic.</span>
-              </span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<section>
-  <div class="ui padded container">
-    <div class="ui vertically padded centered grid">
-      <div class="center aligned column">
-        <div class="ui very padded raised inverted secondary large segment">
-          <p>
-            Start automating your documentation with Read the Docs.
-          </p>
-          <p>
-            <button
-              class="ui large inverted button"
-              onclick="jQuery('#about-modal').modal('show');"
-              type="button">
-              <i class="fad fa-play icon"></i>
-              Get started now
-            </button>
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{% block homepage_modal %}
-{{ homepage.signup_modal("about-modal") }}
-{% endblock homepage_modal %}
-
+  </section>
+  {% endblock homepage_bottom_callout %}
 
   </body>
 </html>
