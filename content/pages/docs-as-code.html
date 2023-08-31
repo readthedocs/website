@@ -84,6 +84,16 @@
                   <span class="sub header">Review PR changes visually</span>
                 </span>
               </a>
+
+              {%- set header_5 = "Read the Docs authentic flyout" %}
+              {%- set icon_5 = "fa-bars" -%}
+              <a href="#hosting" class="ui small header item">
+                <i class="fad {{ icon_5 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_5 }}
+                  <span class="sub header">Select between multiple versions and translations</span>
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -209,13 +219,31 @@
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
-      header=header_4,
-      image="/images/docs-as-code/visual-diff.png",
-      image_alt="Visual diff between two versions",
-      icon=icon_4) %}
+          header=header_4,
+          image="/images/docs-as-code/visual-diff.png",
+          image_alt="Visual diff between two versions",
+          icon=icon_4) %}
       {% markdown %}
       Visuallize documentation changes "in situ" from pull requests before merging them.
       Understand what exacly changed in a simple and visual way.
+      {% endmarkdown %}
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="hosting">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_5,
+          image="/images/docs-as-code/flyout.png",
+          image_alt="Read the Docs authentic flyout",
+          icon=icon_5) %}
+      {% markdown %}
+      Let your users select between multiple versions and translations of your documentation.
       {% endmarkdown %}
       {% endcall %}
 
