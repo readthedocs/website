@@ -95,7 +95,7 @@
           <p>
             <button
                class="ui large inverted button"
-               onclick="jQuery('#features-modal').modal('show');"
+               onclick="jQuery('#signup-modal').modal('show');"
                type="button">
               <i class="fad fa-play icon"></i>
               Get started now
@@ -160,8 +160,8 @@
                   </h4>
 
                   {% markdown %}
-                  Integrate with tools like **Sphinx**, **MkDocs**, and **Jupyter Book**,
-                  and track changes with **Git** or **Mercurial**.
+                  Integrate with tools like **[Sphinx](/tools/sphinx/)**, **[MkDocs](/tools/mkdocs/)**, and **Jupyter Book**,
+                  and track changes with **Git**.
                   Use the tools that work best for your project.
                   {% endmarkdown %}
                 </div>
@@ -384,10 +384,10 @@
           <p>
             <button
                class="ui large inverted button"
-               onclick="jQuery('#features-modal').modal('show');"
+               onclick="jQuery('#signup-modal').modal('show');"
                type="button">
               <i class="fad fa-play icon"></i>
-              Start your 1 month trial
+              Start your 30-day free trial
             </button>
           </p>
 
@@ -396,10 +396,6 @@
     </div>
   </div>
 </section>
-
-{% block features_modal %}
-  {{ homepage.signup_modal("features-modal") }}
-{% endblock features_modal %}
 
 <section id="additional-features">
 

@@ -15,10 +15,6 @@
   {% import "partials/homepage.html" as homepage %}
   {% import "partials/comparisons.html" as comparison %}
 
-  {% block signup_modal %}
-    {{ homepage.signup_modal("signup_modal") }}
-  {% endblock signup_modal %}
-
   <section>
     {% call basic.header_lead(
     header="Read the Docs is the <em><strong>all-in-one</strong></em> solution you're looking for your documentation")
@@ -65,9 +61,9 @@
 <section id="compare">
   <div class="ui padded container">
 
-    {% call comparison.feature_table() %}
-    {{ comparison.feature_row("Static hosting", "Publish any static content", "fa-page", on_github=True) }}
-    {{ comparison.feature_row("Build your site on the cloud", "Generate your site's content on the cloud", "fa-gears", on_github=True) }}
+    {% call comparison.feature_table(other_img="/images/github-logo.svg", other_img_alt="GitHub Pages logo") %}
+    {{ comparison.feature_row("Static hosting", "Publish any static content", "fa-page", on_other=True) }}
+    {{ comparison.feature_row("Build your site on the cloud", "Generate your site's content on the cloud", "fa-gears", on_other=True) }}
     {{ comparison.feature_row("Deploy previews", "Solve style issues before deploying", "fa-rocket-launch") }}
     {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass") }}
     {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books") }}
@@ -190,7 +186,7 @@
               <p>
                 <a class="ui large teal stackable button"
                 data-analytics="signup-modal"
-                 onclick="jQuery('#signup_modal').modal('show');">
+                 onclick="jQuery('#signup-modal').modal('show');">
                 <i class="fad fa-rocket icon"></i>
                 Get started for free
               </a>

@@ -1,7 +1,6 @@
 <html>
   <head>
-    <!-- Intentionally left blank. Gives a truncated title in output -->
-    <title></title>
+    <meta name="title" content="Full featured documentation deployment platform" />
     <meta name="template" content="page" />
     <meta name="save_as" content="index.html" />
     <meta name="slug" content="homepage" />
@@ -9,8 +8,28 @@
   </head>
   <body>
 
+    {% import "partials/basic.html" as basic %}
     {% import "partials/homepage.html" as homepage %}
     {% import "partials/marketing.html" as marketing %}
+    {% import "partials/technical.html" as technical %}
+
+    {% block homepage_notification %}
+      <div class="ui padded container">
+        {# This is a temporary, hard coded notification. Only shown on the homepage as it is not dismissable. #}
+        <div class="ui info small center aligned message">
+          <i class="fad fa-sparkles icon"></i>
+          <a href="https://blog.readthedocs.com/website-migration/" target="_blank">
+            <strong>
+              We updated our website! 
+            </strong>
+            <span>
+              You can read more about what has changed on our blog.
+            </span>
+          </a>
+          <i class="fad fa-sparkles icon"></i>
+        </div>
+      </div>
+    {% endblock homepage_notification %}
 
     {% block homepage_callout_wrapper %}
       <section>
@@ -22,27 +41,20 @@
                 {% block homepage_callout %}
                   <div class="ui large left aligned basic vertical segment">
                     <h1 class="ui huge header">
-                      Write documentation,<br />
-                      we'll do the rest
+                      Documentation simplified
                     </h1>
                     <p>
-                      Make documentation part of your development workflow with
-                      simplified processes that automate building, versioning,
-                      and hosting of your docs.
+                      Build, host, and share documentation, all with a single platform.
                     </p>
 
                     {% block homepage_callout_buttons %}
                       <a class="ui large teal stackable button"
                         data-analytics="signup-modal"
-                         onclick="jQuery('#homepage-modal').modal('show');">
+                         onclick="jQuery('#signup-modal').modal('show');">
                         <i class="fad fa-play icon"></i>
                         Sign up now
                       </a>
                     {% endblock homepage_callout_buttons %}
-
-                    {% block homepage_modal %}
-                      {{ homepage.signup_modal("homepage-modal") }}
-                    {% endblock homepage_modal %}
 
                   </div>
                 {% endblock homepage_callout %}
@@ -64,37 +76,36 @@
 
     {% block homepage_highlight %}
       {% call marketing.highlight_list() %}
-        {% call marketing.highlight_item(
-            icon="olive fa-terminal",
-            header="Docs as code",
-            color="black") %}
-          <p>
-            Write documentation without changing your workflow or your tools.
-            Use your favorite editor and commit changes using version control.
-          </p>
-        {% endcall %}
 
         {% call marketing.highlight_item(
             icon="white fa-user-robot",
             icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-            header="Fully automated",
+            header="Easy previews and deploys",
             color="grey") %}
           <p>
-            Automatically release your documentation with every commit,
-            and preview documentation changes with every pull request.
+            Preview changes on every commit to your pull requests.
+            Release documentation to your users on each merge.
           </p>
         {% endcall %}
 
         {% call marketing.highlight_item(
-            icon="white fa-rocket-launch",
+          icon="olive fa-terminal",
+          header="Ideal developer experience",
+          color="black") %}
+        <p class="small" >
+          Write documentation without changing your workflow or your tools
+          using a <strong>docs as code</strong> approach.
+        </p>
+      {% endcall %}
+
+        {% call marketing.highlight_item(
+            icon="white fa-key-skeleton",
             icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
-            header="Ship docs fast",
+            header="Work privately or publicly",
             color="violet") %}
           <p>
-            Serve documentation publicly or privately,
-            manage multiple releases of your product with versions,
-            and search across projects with integrated search.
-            Focus on your docs, not on managing infrastructure.
+            Easily share within your team or with the whole world.
+            Manage permissions yourself or automatically with GitHub.
           </p>
         {% endcall %}
       {% endcall %}
@@ -112,28 +123,33 @@
 
           <div class="ui centered vertically padded container stackable grid">
 
-            {% call homepage.feature_detail_item(header="Multiple builders", icon="fad fa-terminal") %}
-              Integrated support for Sphinx, MkDocs, and Jupyter Book. Use what works best for your project.
+            {% call homepage.feature_detail_item(header="Supports any doc tool", icon="fad fa-terminal") %}
+              Integrated support for Sphinx, MkDocs, and Jupyter Book.
+              Flexible enough to work with any documentation tool.
+            {% endcall %}
+
+            {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
+              Easily search all your docs via our dashboard,
+              and offer your users a more powerful search with our  search API.
+            {% endcall %}
+
+            {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-code-compare") %}
+              Preview each pull request before releasing any changes,
+              allowing for fast collaboration across your organization.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
               Match your product release cycle with multiple versions of your docs. Automatically build versions from any branch or tag.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Build constantly", icon="fad fa-gears") %}
-              Preview every pull request, and build with every commit. Keep your docs up to date, automatically.
+            {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
+              Clone private repositories using a connected GitHub, GitLab, or Bitbucket account,
+              or clone from any Git provider with an SSH key.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
-              Help your users find what the need with integrated search across all your projects and versions.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="Private cloning", icon="fad fa-lock", paid=True) %}
-              Clone private repositories using a connected GitHub, GitLab, or Bitbucket account.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", paid=True) %}
-              Control who has access to your documentation with integrated authentation.
+            {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
+              Control who has access to your documentation with integrated authentication.
+              Enable <strong>SSO with GitHub or GitLab</strong> to easily manage permissions in one place.
             {% endcall %}
 
             {% block features_cta %}
@@ -154,97 +170,47 @@
       </section>
     {% endblock homepage_feature_detail %}
 
-    <div class="ui divider"></div>
-
+    {# Try it out code block #}
+    {% include "includes/try-it-out.html" %}
+    
+    {# Sphinx user testimonials #}
+    {% include "includes/users-sphinx.html" %}
+    
     {% block homepage_bottom_callout %}
-      <section>
-        <div class="ui very padded container">
-          <div class="ui grid center aligned">
-
-            <div class="row">
-              <div class="column twelve wide computer sixteen wide tablet">
-
-                {#
-                  TODO replace this block with something more actionable. It's
-                  not saying anything new at this point in the page, and the call
-                  to action is not strong.
-                #}
-                <div class="ui basic vertical huge segment">
-                  <p>
-                    Whenever you push code,
-                    we automatically build and host your documentation.
-
-                    <b>Get your docs online in 5 minutes.</b>
-                  </p>
-
-                  <p>
-                    <a class="ui large teal stackable button"
-                    data-analytics="signup-modal"
-                     onclick="jQuery('#homepage-modal').modal('show');">
-                    <i class="fad fa-play icon"></i>
-                    Get started
-                  </a>
-                  </p>
-                </div>
-
+    <section>
+      <div class="ui very padded container">
+        <div class="ui grid center aligned">
+    
+          <div class="row">
+            <div class="column twelve wide computer sixteen wide tablet">
+    
+              {#
+                TODO replace this block with something more actionable. It's
+                not saying anything new at this point in the page, and the call
+                to action is not strong.
+              #}
+              <div class="ui basic vertical huge segment">
+                <p>
+                  <b>Get your docs online in 5 minutes.</b>
+                </p>
+    
+                <p>
+                  <a class="ui large teal stackable button"
+                  data-analytics="signup-modal"
+                   onclick="jQuery('#signup-modal').modal('show');">
+                  <i class="fad fa-play icon"></i>
+                  Create an account
+                </a>
+                </p>
               </div>
+    
             </div>
-
           </div>
+    
         </div>
-      </section>
+      </div>
+    </section>
     {% endblock homepage_bottom_callout %}
-
-    <div class="ui divider"></div>
-
-    {% block homepage_resources %}
-      {#
-        A static list of resources, like docs and guide content. Eventually
-        should be blog content.
-      #}
-      <section id="resources">
-        <div class="ui very padded container">
-          <h3 class="ui large monospace header">
-            Resources
-          </h3>
-
-          <div class="ui centered padded relaxed container stackable grid">
-
-            {% call homepage.resource(
-                title="Read the Docs Tutorial",
-                link="https://docs.readthedocs.io/en/stable/tutorial/index.html",
-                color="teal",
-                icon="fad fa-sparkles") %}
-
-                Set up your first project using one of our repository templates.
-                This is the easiest way to try using Read the Docs.
-
-            {% endcall %}
-
-            {% call homepage.resource(
-                title="Getting Started with Sphinx",
-                link="https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html",
-                color="teal",
-                icon="fad fa-terminal") %}
-
-                Build your first documentation project using the Sphinx documentation engine.
-
-            {% endcall %}
-
-            {% call homepage.resource(
-                title="Read our Docs",
-                link="https://docs.readthedocs.io/en/stable/index.html",
-                color="teal",
-                icon="fad fa-books fa-swap-opacity") %}
-
-                Learn how to configure and manage your project with Read the Docs.
-
-            {% endcall %}
-
-          </div>
-        </div>
-      </section>
-    {% endblock homepage_resources %}
 
   </body>
 </html>

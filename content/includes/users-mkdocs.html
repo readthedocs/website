@@ -1,0 +1,59 @@
+{% import "partials/basic.html" as basic %}
+
+{# TODO: Turn these into testimonials. #}
+<section id="testimonials">
+    <div class="ui container">
+    {{ basic.header_icon(
+        header="Join thousands of happy users",
+        subheader="",
+        icon="purple fa-message-lines",
+        icon_style="--fa-secondary-color: blueviolet;"
+    ) }}
+    <div class="ui three link stackable cards">
+        <a href="https://ddev.readthedocs.io/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/ddev-logo.png" alt="DDEV logo" />
+            </div>
+            <div class="header">DDEV</div>
+            <div class="meta">
+                Docker-based environments
+            </div>
+            <div class="description">
+                DDEV is an open source tool for running local web development environments for PHP, Python and Node.js, ready in minutes.
+            </div>
+        </div>
+        </a>
+
+        <a href="https://docs.gluster.org/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/gluster-logo.png" alt="GlusterFS logo">
+            </div>
+            <div class="header">GlusterFS</div>
+            <div class="meta">
+            Scalable network filesystem
+            </div>
+            <div class="description">
+              GlusterFS is a scalable network filesystem suitable for data-intensive tasks such as cloud storage and media streaming.
+            </div>
+        </div>
+        </a>
+
+        <a href="https://docs.orchardcore.net/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/orchard-core-logo.png" alt="Orchard Core logo">
+            </div>
+            <div class="header">Orchard Core</div>
+            <div class="meta">
+            Content Management System (CMS)
+            </div>
+            <div class="description">
+              Orchard Core is an open-source modular and multi-tenant application framework built with ASP.NET Core, and a content management system (CMS) built on top of that framework.
+            </div>
+        </div>
+        </a>
+    </div>
+    </div>
+</section>
