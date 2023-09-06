@@ -1,6 +1,6 @@
 {#
-  The goal of this page is to sell users docs-as-code in a simple way
-  and Read the Docs as the "All in one" solution.
+  The goal of this page is to sell Read the Docs to users already using the docs-as-code pattern.
+  Highlighting that without doing anything extra, they get lot of features for free.
 #}
 <html>
   <head>
@@ -30,12 +30,12 @@
         <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
           <div class="ui large left aligned basic vertical segment">
             <h1 class="ui huge header">
-              Docs-as-code has never been that easy
+              <em>Docs as code</em> has never been that easy
             </h1>
 
             {% markdown %}
-            Follow docs-as-code pattern with your favourite documentation tool using Read the Docs,
-            and get an "all in one" solution with the most relevant features integrated by default with zero effort.
+            Follow the <a href="https://docs-as-co.de/" target="_blank" rel="nofollow">docs as code pattern</a> with your favourite documentation tool using Read the Docs,
+            and get an *"all in one"* solution with the most relevant features integrated by default with zero effort.
             {% endmarkdown %}
 
           </div>
@@ -51,7 +51,7 @@
                 <i class="fad {{ icon_1 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_1 }}
-                  <span class="sub header">Know more about how your readers use your documentation</span>
+                  <span class="sub header">Know more about how your readers use your documentation.</span>
                 </span>
               </a>
 
@@ -61,7 +61,7 @@
                 <i class="fad {{ icon_2 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_2 }}
-                  <span class="sub header">Warn readers about not reading the latest version of the documentation</span>
+                  <span class="sub header">Warn readers about reading and old version of the documentation.</span>
                 </span>
               </a>
 
@@ -71,7 +71,7 @@
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
-                  <span class="sub header">Quickly find exactly what you are looking for</span>
+                  <span class="sub header">Quickly find exactly what you are looking for.</span>
                 </span>
               </a>
 
@@ -81,7 +81,7 @@
                 <i class="fad {{ icon_4 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_4 }}
-                  <span class="sub header">Review PR changes visually</span>
+                  <span class="sub header">Review PR changes visually.</span>
                 </span>
               </a>
 
@@ -91,7 +91,7 @@
                 <i class="fad {{ icon_5 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_5 }}
-                  <span class="sub header">Select between multiple versions and translations</span>
+                  <span class="sub header">Select between multiple versions and translations.</span>
                 </span>
               </a>
             </div>
@@ -125,53 +125,12 @@
           icon=icon_1) %}
         {% markdown %}
       Explore traffic analytics and understand what are the pages your readers read the most.
-      Prioritize the work to improve them before other pages with less traffic.
+      **Prioritize the work** to improve them before other pages with less traffic.
       Find out what are the terms your users search the most and write documentation pages
       that include those terms so they can easily find them.
         {% endmarkdown %}
       {% endcall %}
 
-      <!-- {% block authoring_details %}
-           <div class="ui stackable equal width grid">
-           <div class="stretched row">
-
-           {% block authoring_details_providers %}
-           <div class="left aligned column">
-           <div class="ui very padded raised inverted teal large segment">
-           <h4 class="ui header">
-           <i class="fad fa-screwdriver-wrench icon"></i>
-           Bring your own tools
-           </h4>
-
-           {% markdown %}
-           Integrate with any documentation tool or static site generator you want,
-           and track changes with **Git**.
-           Use the tools that work best for your project.
-           {% endmarkdown %}
-           </div>
-           </div>
-
-           <div class="left aligned column">
-           <div class="ui padded basic segment">
-
-           {% markdown %}
-           * Write **reStructuredText** with **Sphinx**
-           * Or write **Markdown** with **Sphinx** and **MyST**
-           * Use **Docusaurus** as your documentation tool
-           * Add reference docs from **Python**, **JavaScript** or **C** code
-           * Document a RESTful API with **OpenAPI** tools
-           * Include a **Jupyter Notebook** in your docs
-           * ... and much more!
-           {% endmarkdown %}
-
-           </div>
-           </div>
-           {% endblock authoring_details_providers %}
-
-           </div>
-           </div>
-           {% endblock authoring_details %}
-      -->
     </div>
   </div>
 
@@ -187,7 +146,7 @@
           icon=icon_2) %}
         {% markdown %}
         Clearly communicate readers they are reading an outdated version of the documentation,
-        and **reduce support requests** from older version of your product.
+        and **reduce support requests** from old version of your product.
         {% endmarkdown %}
       {% endcall %}
 
@@ -206,7 +165,7 @@
           icon=icon_3) %}
         {% markdown %}
         Always find what you are looking for at the tip of your fingers with our powerful ElasticSearch engine.
-        Search on a single or accross multiple projects at once.
+        Search on a **single or accross multiple projects** at once.
         {% endmarkdown %}
       {% endcall %}
 
@@ -224,8 +183,8 @@
           image_alt="Visual diff between two versions",
           icon=icon_4) %}
       {% markdown %}
-      Visuallize documentation changes "in situ" from pull requests before merging them.
-      Understand what exacly changed in a simple and visual way.
+      Visuallize documentation changes *"in situ"* from pull requests before merging them.
+      **Understand what exacly changed** in a simple and visual way.
       {% endmarkdown %}
       {% endcall %}
 
@@ -243,7 +202,7 @@
           image_alt="Read the Docs authentic flyout",
           icon=icon_5) %}
       {% markdown %}
-      Let your users select between multiple versions and translations of your documentation.
+      Let your users select between **multiple versions and translations** of your documentation in a quick way using the flyout menu.
       {% endmarkdown %}
       {% endcall %}
 
@@ -269,7 +228,10 @@
               <p>
                 {% markdown %}
                 Import your existing project or create one following our [tutorial](https://docs.readthedocs.io/en/stable/tutorial/),
-                and try it yourself. All these features will be enabled by default when using the ``build.commands`` config key as shown in the example.
+                and try it yourself.
+                All these features will be enabled by default when using the
+                [``build.commands``](https://docs.readthedocs.io/en/latest/config-file/v2.html#build-commands)
+                config key as shown in the example.
                 {% endmarkdown %}
               </p>
 
