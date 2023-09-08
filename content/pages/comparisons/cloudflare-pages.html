@@ -1,0 +1,96 @@
+{# View this page at http://localhost:8080/comparisons/cloudflare-pages/ #}
+
+<html>
+  <head>
+    <title>Read the Docs vs. Cloudflare Pages comparison</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="comparisons/cloudflare-pages" />
+    <meta name="status" content="hidden" />
+    <meta name="description" content="" />
+  </head>
+  <body>
+
+  {% import "partials/basic.html" as basic %}
+  {% import "partials/technical.html" as technical %}
+  {% import "partials/homepage.html" as homepage %}
+  {% import "partials/comparisons.html" as comparison %}
+
+  <section>
+    {% call basic.header_lead(
+    header="Read the Docs is the <em><strong>all-in-one</strong></em> solution you're looking for your documentation")
+    %}
+    <p>
+      Cloudflare Pages is great for hosting SPA (<em>Single Page Application</em>) for frontend developers.
+      However, when talking about <strong>technical writers</strong> and <strong>documentation projects</strong>,
+      Read the Docs is <em>the</em> perfect solution.
+    </p>
+    <p>
+      Let's compare it to know what you can expect when deploying your project's documentation to Read the Docs.
+    </p>
+    {% endcall %}
+  </section>
+
+<section id="compare">
+  <div class="ui padded container">
+
+    {% call comparison.feature_table(other_img="/images/cloudflare-pages-logo.svg", other_img_alt="Cloudflare Pages logo") %}
+    {{ comparison.feature_row("Build your site on the cloud", "Generate your site's content on the cloud", "fa-gears", on_other=True) }}
+    {{ comparison.feature_row("Deploy previews", "Solve style issues before deploying", "fa-rocket-launch", on_other=True) }}
+    {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed", on_other=True) }}
+    {{ comparison.feature_row("Redirects", "Redirect users to the right page", "fa-arrows-turn-right", on_other=True) }}
+    {{ comparison.feature_row("Static hosting", "Publish any static content", "fa-page", on_other=True) }}
+    {{ comparison.feature_row("Custom 404 pages", "Style 404 pages with context-related information", "fa-xmark", on_other=True) }}
+    {{ comparison.feature_row("Documentation tool agnostic", "Use the documentation tool your team prefers (Sphinx, MkDocs, Docusaurus, etc)", "fa-book", on_other=True) }}
+    {{ comparison.feature_row("Custom theme", "Style the documentation as you like", "fa-pen-swirl", on_other=True) }}
+    {{ comparison.feature_row("Private documention", "Give access only to trusted people", "fa-lock", on_other=True) }}
+    {{ comparison.feature_row("Advanced collaboration", "Unlimited users", "fa-people-group", on_other=True) }}
+    {{ comparison.feature_row("Unlimited builds per month", "Trigger as many builds as you need", "fa-infinity") }}
+    {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books") }}
+    {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language") }}
+    {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass") }}
+    {{ comparison.feature_row("Visual diff on deploy previews", "Visualize differences directly on the rendered version", "fa-face-monocle") }}
+    {{ comparison.feature_row("Custom \"robots.txt\"", "Improve your SEO by telling bots how to explore your site", "fa-robot") }}
+    {{ comparison.feature_row("Search analytics", "Explore what people search for in your docs", "fa-chart-simple") }}
+    {{ comparison.feature_row("Open Source", "No lock in and contribute back", "fa-brands fa-osi") }}
+    {% endcall %}
+
+  </div>
+</section>
+
+{# Try it out code block #}
+{% include "includes/try-it-out-pelican.html" %}
+
+  {% block homepage_bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Still not convinced? Try it yourself  <i class="fad fa-rocket icon"></i>
+              </h2>
+
+              <p>
+                Cloudflare Pages is a great product, but it's more thought for deploying SPA (Single Page Applications) with fewer options for documentation sites.
+                For publishing great documentation <strong>without having to build the features yourself</strong>,
+                Read the Docs is the <em>all-in-one solution</em> that provides everything you need out of the box!
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-rocket icon"></i>
+                Get started for free
+              </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock homepage_bottom_callout %}
+  </body>
+</html>
