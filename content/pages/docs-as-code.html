@@ -34,8 +34,9 @@
             </h1>
 
             <p>
-            Treat your documentation in the same way as you treat your code by following the
-            <a href="https://docs-as-co.de/" target="_blank" rel="nofollow">docs as code pattern</a>:
+              Treat your documentation in the same way as you treat your code by following the
+              <a href="https://docs-as-co.de/" target="_blank" rel="nofollow">docs as code pattern</a>:
+            </p>
 
             <div class="ui list">
               <div class="item"><i class="fad fa-check secondary icon"></i>Write documentation using a rich ecosystem of tools (MkDocs, Docusaurus, etc).</div>
@@ -45,8 +46,9 @@
               <div class="item"><i class="fad fa-check secondary icon"></i>Automate the publication process.</div>
             </div>
 
-            Read the Docs is the <em>"all in one"</em> solution that helps you to make this process easy providing
-            integrated features with zero effort.
+            <p>
+              Read the Docs is the <em>"all in one"</em> solution that helps you to make this process easy providing
+              integrated features with zero effort.
             </p>
 
           </div>
@@ -58,7 +60,7 @@
 
               {%- set header_1 = "Traffic and search analytics" %}
               {%- set icon_1 = "fa-chart-mixed" -%}
-              <a href="#authoring" class="ui small teal header item">
+              <a href="#analytics" class="ui small teal header item">
                 <i class="fad {{ icon_1 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_1 }}
@@ -68,7 +70,7 @@
 
               {%- set header_2 = "Notifications" %}
               {%- set icon_2 = "fa-messages" -%}
-              <a href="#building" class="ui small header item">
+              <a href="#notifications" class="ui small header item">
                 <i class="fad {{ icon_2 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_2 }}
@@ -78,7 +80,7 @@
 
               {%- set header_3 = "Search as you type" %}
               {%- set icon_3 = "fa-magnifying-glass" -%}
-              <a href="#review" class="ui small header item">
+              <a href="#search" class="ui small header item">
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
@@ -88,7 +90,7 @@
 
               {%- set header_4 = "Visual diff on pull requests" %}
               {%- set icon_4 = "fa-file-plus-minus" -%}
-              <a href="#hosting" class="ui small header item">
+              <a href="#visual-diff" class="ui small header item">
                 <i class="fad {{ icon_4 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_4 }}
@@ -98,7 +100,7 @@
 
               {%- set header_5 = "Read the Docs authentic flyout" %}
               {%- set icon_5 = "fa-bars" -%}
-              <a href="#hosting" class="ui small header item">
+              <a href="#flyout" class="ui small header item">
                 <i class="fad {{ icon_5 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_5 }}
@@ -127,7 +129,7 @@
 
 <section>
   <div class="ui very padded container">
-    <div class="ui vertically padded centered grid" id="authoring">
+    <div class="ui vertically padded centered grid" id="analytics">
 
       {% call about.step(
           header=header_1,
@@ -147,7 +149,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="building">
+  <div class="ui very padded container" id="notification">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -166,7 +168,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="review">
+  <div class="ui very padded container" id="search">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -185,7 +187,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="hosting">
+  <div class="ui very padded container" id="visual-diff">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -204,7 +206,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="hosting">
+  <div class="ui very padded container" id="flyout">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -236,7 +238,6 @@
                 Still not convinced? Try it yourself  <i class="fad fa-rocket icon"></i>
               </h2>
 
-              <p>
                 {% markdown %}
                 Import your existing project or create one following our [tutorial](https://docs.readthedocs.io/en/stable/tutorial/),
                 and try it yourself.
@@ -244,15 +245,14 @@
                 [``build.commands``](https://docs.readthedocs.io/en/latest/config-file/v2.html#build-commands)
                 config key as shown in the example.
                 {% endmarkdown %}
-              </p>
 
               <p>
                 <a class="ui large teal stackable button"
                 data-analytics="signup-modal"
                  onclick="jQuery('#signup-modal').modal('show');">
-                <i class="fad fa-rocket icon"></i>
-                Get started for free
-              </a>
+                  <i class="fad fa-rocket icon"></i>
+                  Get started for free
+                </a>
               </p>
             </div>
           </div>
