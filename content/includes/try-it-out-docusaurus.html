@@ -25,17 +25,17 @@
                 nodejs: "18"
                 # You can also specify other tool versions:
                 # python: "3"
-            commands:
-                # "docs/" was created following the Docusaurus tutorial:
-                # npx create-docusaurus@latest docs classic
-                #
-                # Install Docusaurus dependencies
-                - cd docs/ && npm install
-                # Build the site
-                - cd docs/ && npm run build
-                # Copy generated files into Read the Docs directory
-                - mkdir --parents $READTHEDOCS_OUTPUT/html/
-                - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
+              commands:
+                  # "docs/" was created following the Docusaurus tutorial:
+                  # npx create-docusaurus@latest docs classic
+                  #
+                  # Install Docusaurus dependencies
+                  - cd docs/ && npm install
+                  # Build the site
+                  - cd docs/ && npm run build
+                  # Copy generated files into Read the Docs directory
+                  - mkdir --parents $READTHEDOCS_OUTPUT/html/
+                  - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
             ```
 
             {% endmarkdown %}
