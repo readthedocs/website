@@ -117,7 +117,6 @@
           ) %}
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("Ad free projects", "Disable ads on your projects", "fa-ad", color="light grey") }}
-              {{ pricing.plan_feature("Forced Redirects", "Support redirects on all pages", "fa-arrow-right", color="light grey") }}
               {{ pricing.plan_feature("Support Read the Docs", "Keep our Community site sustainable", "fa-heart", color="red") }}
             </div>
           {% endcall %}
@@ -224,7 +223,7 @@
       {{ pricing.feature_row("Subprojects", "Organize projects using project nesting", "fa-diagram-nested") }}
       {{ pricing.feature_row("Integrated search", "Search across all of your projects", "fa-magnifying-glass") }}
       {{ pricing.feature_row("Offline formats", "Download offline PDF and EPUB formats", "fa-file-pdf") }}
-      {{ pricing.feature_row("Request redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right") }}
+      {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right", 100, 50, 250, (500, "olive")) }}
       {{ pricing.feature_row("Sitemap generation", "Automatically update your project's sitemap", "fa-sitemap") }}
       {{ pricing.feature_row("Customizable error pages", "Manage your own HTTP error pages", "fa-palette") }}
       {{ pricing.feature_row("Status badges", "Embeddable badges showing your project's status", "fa-badge-check") }}
