@@ -32,7 +32,7 @@ Important points:
 * Email support included only for issues with our platform
 * Documentation is organized by projects
 
-You can sign up for an account at https://readthedocs.org.
+You can sign up for an account at https://readthedocs.org/accounts/signup/
 
 Read the Docs for Business
 --------------------------
@@ -53,7 +53,7 @@ Important points:
 * Includes 24x5 email support, with 24x7 SLA support available
 * Documentation is organized by organization, giving more control over permissions
 
-You can sign up for an account at https://readthedocs.com.
+You can sign up for an account at https://readthedocs.com/accounts/signup/
 
 Questions?
 ----------
