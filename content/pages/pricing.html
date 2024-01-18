@@ -127,7 +127,7 @@
                   {{ pricing.plan_feature("Public projects", "Host public documentation", "fa-globe") }}
                   {{ pricing.plan_feature("Public repositories", "Clone public repositories", "fa-globe") }}
                   {{ pricing.plan_feature("Custom domain", "Use your own domain", "fa-at") }}
-                  {{ pricing.plan_feature("Ad supported", "Hosted documentation includes ads", "fa-ad") }}
+                  {{ pricing.plan_feature("Ad supported", "Hosted documentation with ads", "fa-ad") }}
                 </div>
               </div>
             </div>
@@ -219,8 +219,8 @@
     {% call pricing.feature_table() %}
       {{ pricing.feature_row("Team management", "Control organization access with team permissions", "fa-users", on_community=False) }}
       {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", "Best effort", "2 business days", "2 business days", ("1 business day", "olive")) }}
+      {{ pricing.feature_row("Ad free", "Documentation without ads", "fa-ad", on_community=False) }}
       {{ pricing.feature_row("API access", "Write your own integrations", "fa-sparkles") }}
-      {{ pricing.feature_row("Ad supported", "Documentation includes advertising placements", "fa-ad", on_basic=False, on_advanced=False, on_pro=False) }}
 
       {{ pricing.header_row("Documentation authoring", "fa-typewriter") }}
       {{ pricing.feature_row("Unlimited projects", "Manage and build any number of projects", "fa-infinity") }}
