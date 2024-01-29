@@ -42,7 +42,6 @@
 
   <section>
     <div class="ui very padded container">
-
       {% block content_breadcrumbs %}
         <div class="ui breadcrumb">
           <a class="section" href="/">Home</a>
@@ -54,6 +53,39 @@
       {% block content_title %}
         <div class="ui header">
           Latest blog posts
+        </div>
+
+        <div class="ui info message">
+          <div class="header">
+            Welcome to our new blog
+          </div>
+          <div>
+            <p>
+              We will be adding news and updates here in the future.
+              Make sure to subscribe if you would like to be notified of new posts.
+            </p>
+
+            <div class="ui list">
+              <div class="item">
+                <i class="fad fa-envelope icon"></i>
+                <div class="content">
+                  Subscribe to <a href="https://landing.mailerlite.com/webforms/landing/t0a9l4" target="_blank">our newsletter</a>.
+                </div>
+              </div>
+              <div class="item">
+                <i class="fad fa-feed icon"></i>
+                <div class="content">
+                  Subscribe to <a href="/blog/feed.rss">our RSS feed</a> or <a href="/blog/atom.xml" target="_blank">our Atom feed</a> with your favorite reader.
+                </div>
+              </div>
+              <div class="item">
+                <i class="fad fa-clock-rotate-left icon"></i>
+                <div class="content">
+                  Find our past posts and updates on <a href="https://blog.readthedocs.com" target="_blank">our archived blog</a>.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       {% endblock content_title %}
     </div>
