@@ -37,8 +37,8 @@ PLUGINS = ['related_posts', 'jinja2content', 'readthedocs_theme.plugins.html_dir
 
 # Feed (RSS/Atom) settings
 FEED_DOMAIN = SITEURL
-FEED_ATOM = "blog/atom.xml"
-FEED_RSS = "blog/feed.rss"
+FEED_ATOM = "feeds/atom.xml"
+FEED_RSS = "feeds/feed.rss"
 FEED_MAX_ITEMS = 1
 FEED_ALL_ATOM = None  # No translation
 TRANSLATION_FEED_ATOM = None  # No translation
