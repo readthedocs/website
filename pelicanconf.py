@@ -1,6 +1,5 @@
 """Read the Docs website Pelican configuration."""
 
-import os
 
 AUTHOR = 'Read the Docs, Inc'
 SITENAME = 'Read the Docs'
@@ -38,13 +37,12 @@ PLUGINS = ['related_posts', 'jinja2content', 'readthedocs_theme.plugins.html_dir
 
 # Feed (RSS/Atom) settings
 FEED_DOMAIN = SITEURL
-FEED_RSS = FEED_RSS_URL = "blog/feed.rss"
-FEED_ATOM = FEED_ATOM_URL = "blog/atom.xml"
+FEED_ATOM = "blog/atom.xml"
+FEED_RSS = "blog/feed.rss"
 FEED_MAX_ITEMS = 1
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
+FEED_ALL_ATOM = None  # No translation
+TRANSLATION_FEED_ATOM = None  # No translation
+AUTHOR_FEED_ATOM = None  # No per author feed
 AUTHOR_FEED_RSS = None
 
 # Menu settings
