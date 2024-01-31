@@ -1,0 +1,58 @@
+{% import "partials/basic.html" as basic %}
+
+<section id="testimonials">
+    <div class="ui container">
+    {{ basic.header_icon(
+        header="Join thousands of happy users",
+        subheader="",
+        icon="purple fa-message-lines",
+        icon_style="--fa-secondary-color: blueviolet;"
+    ) }}
+    <div class="ui three link stackable cards">
+      <a href="https://jupyterbook.org/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/jupyter-book-large-logo.png" alt="Jupyter Book logo" />
+            </div>
+            <div class="header">Jupyter Book</div>
+            <div class="meta">
+            Publishing
+            </div>
+            <div class="description">
+            Jupyter Book is an authoring tool to build beautiful, publication-quality books and documents from computational content.
+            </div>
+        </div>
+      </a>
+
+      <a href="https://jupysql.ploomber.io/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/jupysql-logo.png" alt="JupySQL logo">
+            </div>
+            <div class="header">JupySQL</div>
+            <div class="meta">
+            Jupyter plugin
+            </div>
+            <div class="description">
+            JupySQL allows you to run SQL and plot large datasets in Jupyter via a %sql, %%sql, and %sqlplot magics.
+            </div>
+        </div>
+      </a>
+
+      <a href="https://myst-parser.readthedocs.io/" class="card">
+        <div class="content">
+            <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/myst-parser-logo.png" alt="MyST parser logo">
+            </div>
+            <div class="header">MyST parser</div>
+            <div class="meta">
+            Documentation
+            </div>
+            <div class="description">
+            A Sphinx and Docutils extension to parse MyST, a rich and extensible flavour of Markdown for authoring technical and scientific documentation.
+            </div>
+        </div>
+      </a>
+    </div>
+    </div>
+</section>

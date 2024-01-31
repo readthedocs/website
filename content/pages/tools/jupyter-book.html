@@ -1,0 +1,137 @@
+{#
+  View this page at http://localhost:8080/tools/jupyter-book/
+#}
+<html>
+  <head>
+    <title>Publish your book on the internet with Read the Docs</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="tools/jupyter-book" />
+    <meta name="status" content="hidden" />
+    <meta name="description" content="Create an HTML version of your book and publish it online." />
+  </head>
+  <body>
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/technical.html" as technical %}
+{% import "partials/homepage.html" as homepage %}
+
+<section>
+
+  {% call basic.header_image(
+    header="Publish your book on the internet",
+    image="/images/jupyter-book-logo.png",
+    image_alt="Jupyter Book logo",
+    vertical_align="middle")
+  %}
+    <p>
+        Jupyter Book works hand by hand with Read the Docs to allow your book to be published online
+        and always available to your readers anytime they need it.
+    </p>
+
+    <p class="ui basic padded vertical segment">
+      <a class="ui large teal stackable button"
+      data-analytics="signup-modal"
+       onclick="jQuery('#signup-modal').modal('show');">
+        <i class="fad fa-play icon"></i>
+        Create an account
+      </a>
+      <a href="https://docs.readthedocs.io/en/stable/tutorial/index.html" class="ui large stackable button">
+        Start our tutorial
+      </a>
+    </p>
+  {% endcall %}
+</section>
+
+<section id="features">
+  {% call marketing.highlight_list() %}
+    {% call marketing.highlight_item(
+        icon="olive fa-people-arrows",
+        icon_style="--fa-secondary-color: violet; --fa-secondary-opacity: 1;",
+        header="Pair-review the changes with deploy previews",
+        color="violet") %}
+    {% markdown %}
+    Receive feedback from your team,
+    and <strong>have confidence in changes</strong> before they go live.
+    {% endmarkdown %}
+    {% endcall %}
+
+    {% call marketing.highlight_item(
+        icon="yellow fa-magnifying-glass",
+        icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
+        header="Always find what you need",
+        color="violet") %}
+    {% markdown %}
+    Search across all your books and projects with our search-as-you-type interface,
+    and quickly find the paragraph, documentation and API reference information you need.
+    <strong>Never lose documentation again</strong>.
+    {% endmarkdown %}
+    {% endcall %}
+
+    {% call marketing.highlight_item(
+        icon="fa-eye",
+        header="Keep your focus with link previews",
+        color="violet") %}
+
+    {% markdown %}
+    Provide context on every internal link in your docs with instant preview links.
+    <strong>Skim the content without opening *another* tab</strong>.
+    {% endmarkdown %}
+        {% endcall %}
+    {% endcall %}
+</section>
+
+{# Try it out code block #}
+{% include "includes/try-it-out-jupyter-book.html" %}
+
+{#
+  Jupyter Book users
+  https://ethicalads.metabaseapp.com/question/240-projects-using-jupyter-book
+
+  SELECT DISTINCT data->'project'->'slug'
+  FROM "telemetry_builddata"
+  WHERE data @? '$.packages.pip.all ? (@.name == "jupyter-book")'
+  ORDER BY data->'project'->'slug';
+#}
+{% include "includes/users-jupyter-book.html" %}
+
+{% block homepage_bottom_callout %}
+<section>
+  <div class="ui very padded container">
+    <div class="ui grid center aligned">
+
+      <div class="row">
+        <div class="column twelve wide computer sixteen wide tablet">
+
+          {#
+            TODO replace this block with something more actionable. It's
+            not saying anything new at this point in the page, and the call
+            to action is not strong.
+          #}
+          <div class="ui basic vertical huge segment">
+            <p>
+              <b>Get your docs online in 5 minutes.</b>
+            </p>
+
+            <p>
+              <a class="ui large teal stackable button"
+              data-analytics="signup-modal"
+               onclick="jQuery('#signup-modal').modal('show');">
+              <i class="fad fa-play icon"></i>
+              Create an account
+            </a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock homepage_bottom_callout %}
+
+
+
+  </body>
+</html>
