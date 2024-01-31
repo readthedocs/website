@@ -1,6 +1,7 @@
 {% macro menu_main() %}
   <a class="item{% if page and page.slug == 'features' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/features/">Features</a>
   <a class="item{% if page and page.slug == 'pricing' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/pricing/">Pricing</a>
+  <a class="item{% if page and 'blog' in page.slug %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/blog/">Blog</a>
 {% endmacro %}
 
 {% macro menu_help() %}
@@ -65,7 +66,7 @@
   </a>
   <a class="item" href="/choosing-a-platform/">
     <i class="fad fa-circle-question grey icon"></i>
-    Choosing a platform 
+    Choosing a platform
   </a>
 {% endmacro %}
 
