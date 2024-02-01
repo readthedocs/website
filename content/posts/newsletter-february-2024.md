@@ -13,6 +13,7 @@ status: published
 * We shipped an update that allows [Sphinx builds to share environments](https://github.com/readthedocs/readthedocs.org/pull/11073). This should make builds of multiple formats faster.
 * We shipped a few different security fixes that were found by Santos Gallegos, a member of our team. You can read more about them in our [security advisories](https://github.com/readthedocs/readthedocs.org/security/advisories)
 * We shipped an [updated settings page for Addons](https://github.com/readthedocs/readthedocs.org/pull/11031) in our new beta dashboard. This allows enabling and disabling each addon.
+* We updated our `build.tools` versions to use the Node.js for latest LTS version (`v20.11.0`) and added support for Go 1.21 and Rust 1.75.
 
 You can always see the latest changes to our platforms in our [changelog 📃](https://docs.readthedocs.io/page/changelog.html).
 
