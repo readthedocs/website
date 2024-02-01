@@ -8,7 +8,7 @@
 {% macro article_card(article) %}
   <a class="ui card" href="/{{ article.url }}">
     <div class="image">
-      <img src="{{ article.image  or '/images/posts/default.svg'}}" alt="{{ article.image_credit }}">
+      <img src="{{ article.image  or '/images/posts/default.svg'}}">
     </div>
       <div class="content">
       <div class="header">{{ article.title }}</div>
