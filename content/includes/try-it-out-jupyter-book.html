@@ -1,0 +1,105 @@
+<div class="ui container">
+    <div class="ui horizontal divider">Try it out</div>
+</div>
+
+<section id="try-it-out">
+    <div class="ui padded container">
+      <h2 class="ui huge center aligned header">
+        Publish your book online with Read the Docs
+      </h2>
+
+      <div class="ui very padded centered grid">
+
+        <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+          <div class="ui large left aligned basic vertical segment">
+
+            {# Stylized code blocks #}
+            {% call technical.code_block(title="<code>.readthedocs.yaml</code>", icon="fa-file") %}
+            {% markdown %}
+
+            ```yaml
+            version: 2
+            build:
+              os: ubuntu-22.04
+              tools:
+                python: "3.11"
+              jobs:
+                pre_build:
+                  # Generate the Sphinx configuration for
+                  # this Jupyter Book so it builds.
+                  - "jupyter-book config sphinx docs/"
+
+            # Dependencies required to build your docs
+            python:
+               install:
+                 - method: pip
+                   path: .
+                   extra_requirements:
+                     - sphinx
+
+            sphinx:
+              builder: html
+              configuration: docs/conf.py
+              fail_on_warning: true
+            ```
+            {% endmarkdown %}
+            {% endcall %}
+          </div>
+        </div>
+
+        <div class="middle aligned left aligned six wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui padded basic segment">
+            <div class="ui relaxed list">
+
+              {%- set header_1 = "Create an account" %}
+              {%- set icon_1 = "fa-square-1" -%}
+              <span class="ui small teal header item">
+                <i class="fad {{ icon_1 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_1 }}
+                  <span class="sub header">
+                    <a data-analytics="signup-modal"
+                     onclick="jQuery('#signup-modal').modal('show');">
+                      Sign up
+                    </a>
+                    with GitHub or your email.
+                  </span>
+                </span>
+              </span>
+
+              {%- set header_2 = "Import your project" %}
+              {%- set icon_2 = "fa-square-2" -%}
+              <span class="ui small header item">
+                <i class="fad {{ icon_2 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_2 }}
+                  <span class="sub header">Select your existing Git repositories with a 1-click interface.</span>
+                </span>
+              </span>
+
+              {%- set header_3 = "Add YAML config" %}
+              {%- set icon_3 = "fa-square-3" -%}
+              <span class="ui small header item">
+                <i class="fad {{ icon_3 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_3 }}
+                  <span class="sub header">Copy this example, it probably does what you want 😉</span>
+                </span>
+              </span>
+
+              {%- set header_4 = "Your docs build on every commit" %}
+              {%- set icon_4 = "fa-square-4" -%}
+              <span class="ui small header item">
+                <i class="fad {{ icon_4 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_4 }}
+                  <span class="sub header">Like magic.</span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</section>
