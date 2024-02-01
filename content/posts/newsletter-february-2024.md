@@ -5,6 +5,9 @@ category: Newsletter
 tags: newsletter, community
 authors: Eric Holscher
 status: published
+image: /images/feb-2024.jpg
+image_credit: Photo by <a href="https://unsplash.com/@kevinoetiker?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kevin Oetiker</a> on <a href="https://unsplash.com/photos/snow-covered-brown-trees-_AL1zHGc5_Q?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 
 ## News and updates
 
