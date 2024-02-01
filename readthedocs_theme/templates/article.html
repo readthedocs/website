@@ -53,7 +53,7 @@
 
       <div class="ui divider"></div>
 
-      <img class="ui big rounded centered image" src="{{ article.image or '/images/posts/default.svg' }}">
+      <img class="ui big rounded centered image" src="{{ article.image or '/images/posts/default.svg' }}" alt="{{ article.image }}">
       {% if article.image and article.image_credit %}
         <div class="ui basic center aligned segment">
           <p><i>{{ article.image_credit}}</i></p>
