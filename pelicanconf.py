@@ -1,10 +1,18 @@
 """Read the Docs website Pelican configuration."""
 
+import os
 
 AUTHOR = 'Read the Docs, Inc'
 SITENAME = 'Read the Docs'
-SITEURL = ''
 RELATIVE_URLS = True
+
+if os.environ.get("READTHEDOCS_VERSION_TYPE") == "external":
+    # Make all URLs "domainless" in the RTD PR preview
+    # https://docs.readthedocs.io/en/stable/reference/environment-variables.html
+    SITEURL = ""
+else:
+    # This setting is needed to make the RSS/Atom feeds generate correctly
+    SITEURL = "https://https://about.readthedocs.com"
 
 TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = 'en'
