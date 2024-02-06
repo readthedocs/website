@@ -12,7 +12,7 @@ if os.environ.get("READTHEDOCS_VERSION_TYPE") == "external":
     SITEURL = ""
 else:
     # This setting is needed to make the RSS/Atom feeds generate correctly
-    SITEURL = "https://https://about.readthedocs.com"
+    SITEURL = "https://about.readthedocs.com"
 
 TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = 'en'
