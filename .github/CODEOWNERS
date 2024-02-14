@@ -1,1 +1,5 @@
-*       @readthedocs/frontend
+*.js    @readthedocs/frontend
+*.html  @readthedocs/frontend
+*.css   @readthedocs/frontend
+*.less   @readthedocs/frontend
+/content/  @readthedocs/advocacy
