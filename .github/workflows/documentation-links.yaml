@@ -14,4 +14,4 @@ jobs:
       - uses: readthedocs/actions/preview@v1
         with:
           project-slug: "readthedocs-about"
-          single-version: "true" # Has to be a string value. 
+          single-version: "true" # Has to be a string value.
