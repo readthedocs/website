@@ -68,6 +68,7 @@ ARTICLE_PATHS = ['posts']
 STATIC_PATHS = ['images']
 
 # URL settings
+SLUGIFY_SOURCE = "basename"
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}/'
