@@ -4,15 +4,15 @@ import os
 
 AUTHOR = 'Read the Docs, Inc'
 SITENAME = 'Read the Docs'
-RELATIVE_URLS = True
 
-if os.environ.get("READTHEDOCS_VERSION_TYPE") == "external":
-    # Make all URLs "domainless" in the RTD PR preview
-    # https://docs.readthedocs.io/en/stable/reference/environment-variables.html
-    SITEURL = ""
-else:
-    # This setting is needed to make the RSS/Atom feeds generate correctly
-    SITEURL = "https://about.readthedocs.com"
+# Use relavitve URLs for local development only.
+if not os.environ.get("READTHEDOCS"):
+    RELATIVE_URLS = True
+
+# Use the correct domain for the site URL (canonical or PR preview),
+# this setting is needed to make the RSS/Atom feeds generate correctly
+# https://docs.readthedocs.io/en/stable/reference/environment-variables.html.
+SITEURL = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
 
 TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = 'en'
