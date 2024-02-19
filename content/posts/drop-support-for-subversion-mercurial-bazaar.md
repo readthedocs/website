@@ -17,10 +17,10 @@ Besides, those VCSs are not feature-complete in our platform compared to Git and
 
 We understand this change will affect some of our users, so we have a timeline to communicate this deprecation to our users effectively.
 
-* Monday, April 1, 2024: Do the first brownout (temporarily enforce this deprecation) for 12 hours: 00:01 PST to 11:59 PST (noon)
-* Monday, May 6, 2024: Do a second brownout (temporarily enforce this deprecation) for 24 hours: 00:01 PST to 23:59 PST (midnight)
-* Monday, May 20, 2024: Do a third and final brownout (temporarily enforce this deprecation) for 48 hours: 00:01 PST to May 21, 2024 23:59 PST (midnight)
-* Monday, June 3, 2024: Fully remove support for building documentation using “build.image” on the configuration file
+* **Monday, April 1, 2024**: Do the first brownout (temporarily enforce this deprecation) for 12 hours: 00:01 PST to 11:59 PST (noon)
+* **Monday, May 6, 2024**: Do a second brownout (temporarily enforce this deprecation) for 24 hours: 00:01 PST to 23:59 PST (midnight)
+* **Monday, May 20, 2024**: Do a third and final brownout (temporarily enforce this deprecation) for 48 hours: 00:01 PST to May 21, 2024 23:59 PST (midnight)
+* **Monday, June 3, 2024**: Fully remove support for building documentation using “build.image” on the configuration file
 
 
 ## Possible workarounds
