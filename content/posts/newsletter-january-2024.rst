@@ -3,6 +3,9 @@
 :tags: newsletter, python
 :category: Newsletter
 :author: Eric
+:image: /images/jan-2024.jpg
+:image_credit: Photo by <a href="https://unsplash.com/@glencarrie?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Glen Carrie</a> on <a href="https://unsplash.com/photos/january-scrabble-words-TGeFx4x4NHU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 
 Read the Docs newsletter - January 2024
 ========================================
