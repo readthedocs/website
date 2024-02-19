@@ -109,8 +109,10 @@
           <div class="ui centered vertically padded container stackable grid">
 
             {% call homepage.feature_detail_item(header="Supports any doc tool", icon="fad fa-terminal") %}
-              Integrated support for Sphinx, MkDocs, and Jupyter Book.
-              Flexible enough to work with any documentation tool.
+              {% markdown %}
+                Integrated support for **[Sphinx](/tools/sphinx/)**, **[MkDocs](/tools/mkdocs/)**, and **[Jupyter Book](/tools/jupyter-book/)**.
+                Flexible enough to work with any documentation tool.
+              {% endmarkdown %}
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
