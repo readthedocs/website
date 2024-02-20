@@ -20,7 +20,7 @@ We understand this change will affect some of our users, so we have a timeline t
 * **Monday, April 1, 2024**: Do the first brownout (temporarily enforce this deprecation) for 12 hours: 00:01 PDT to 11:59 PDT (noon)
 * **Monday, May 6, 2024**: Do a second brownout (temporarily enforce this deprecation) for 24 hours: 00:01 PDT to 23:59 PDT (midnight)
 * **Monday, May 20, 2024**: Do a third and final brownout (temporarily enforce this deprecation) for 48 hours: 00:01 PDT to May 21, 2024 23:59 PDT (midnight)
-* **Monday, June 3, 2024**: Fully remove support for building documentation using “build.image” on the configuration file
+* **Monday, June 3, 2024**: Fully remove support for building documentation using Subversion, Mercurial or Bazaar VCSs.
 
 
 ## Possible workarounds
@@ -38,7 +38,7 @@ GitHub has some guides to help you in this process:
   * [Import your Mercurial repository](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/importing-a-mercurial-repository)
 
 
-### Create a simple Git repository only clone the original one
+### Create an intermediate Git repository only clone the original one
 
 If you want to keep using Bazaar, Mercurial or Subversion on your side,
 you can create an intermediate Git repository with a `.readthedocs.yaml` file
@@ -69,4 +69,4 @@ if you want to trigger a build each time a push is done to the original reposito
 ## Contact us
 
 [Contact us](https://readthedocs.org/support/) if you have any questions,
-and let us know if you are having trouble using a this new config key for any reason.
+and let us know any inconvenient you may have with this change.
