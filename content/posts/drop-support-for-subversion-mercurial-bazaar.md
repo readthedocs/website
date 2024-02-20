@@ -10,7 +10,7 @@ We are announcing the deprecation of support for Bazaar, Mercurial, and Subversi
 After this date, only Git repositories will be continue to be supported by our application.
 
 We've made this hard decision because [99% of our projects](https://github.com/readthedocs/readthedocs.org/issues/8840) use Git
-and we can't cover the maintenance cost we were spending on Bazaar, Mercurial and Subversion for a handful amount of projects.
+and we can't cover the product complexity and the maintenance cost we were spending on Bazaar, Mercurial and Subversion for a handful amount of projects.
 Besides, those VCSs are not feature-complete in our platform compared to Git and the service provided is degraded for them.
 
 ## Deprecation timeline
