@@ -4,6 +4,8 @@ category: Changelog
 tags: builders, deprecation
 authors: Manuel Kaufmann
 status: published
+image: /images/drop-support-for-subversion-mercurial-bazaar.jpg
+image_credit: Photo by <a href="https://unsplash.com/@redmirror?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Red Mirror</a> on <a href="https://unsplash.com/photos/wall-with-paints-f303VzauP6w?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 
 We are announcing the deprecation of support for Bazaar, Mercurial, and Subversion version control systems starting on **Monday, June 3rd, 2024**.
