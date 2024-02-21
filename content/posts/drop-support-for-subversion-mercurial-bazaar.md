@@ -41,8 +41,13 @@ GitHub has some guides to help you in this process:
 
 ### Create an intermediate Git repository only clone the original one
 
-If you want to keep using Bazaar, Mercurial or Subversion on your side,
-you can create an intermediate Git repository with a `.readthedocs.yaml` file
+
+If you cannot use Git for your documentation repository,
+an intermediate Git repository could at least allow your project to build.
+Understand however that this is not a supported configuration and
+many of our features may not work (e.g. versions) or might require extra setup steps.
+
+This intermediate repository should contain a `.readthedocs.yaml` file
 that clones your original repository and builds your project's documentation.
 
 Here you have a small example using Mercurial to clone the original repository.
@@ -55,14 +60,15 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.12"
-  commands:
-    - hg clone https://original.mercurial.vcs/respository/
-    - pip install -r repository/docs/requirements.txt
-    - mkdir $READTHEDOCS_OUTPUT/html
-    - sphinx-build -b html repository/docs $READTHEDOCS_OUTPUT/html
+  jobs:
+    post_checkout:
+      - hg clone https://original.mercurial.vcs/respository/ .
+
+sphinx:
+  configuration: docs/conf.py
 ```
 
-This could be a good starting point, but note that you will also need to configure the incoming webhooks manually on the original repository,
+This could be a starting point, but note that you will also need to configure the incoming webhooks manually on the original repository,
 if you want to trigger a build each time a push is done to the original repository.
 [Follow this guide](https://docs.readthedocs.io/en/stable/guides/setup/git-repo-manual.html) to achieve this.
 
