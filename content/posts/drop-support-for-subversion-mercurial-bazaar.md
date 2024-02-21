@@ -27,8 +27,7 @@ We understand this change will affect some of our users, so we have a timeline t
 
 ## Possible workarounds
 
-Unfortunately, there is no direct workaround on the Read the Docs side that you can follow to keep building your documentation using these VCSs.
-However, we consider one of the following options can be worth to consider:
+To continue building your project, you could consider one of the following options:
 
 
 ### Convert your repository to Git
