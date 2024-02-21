@@ -9,11 +9,13 @@ image_credit: Photo by <a href="https://unsplash.com/@redmirror?utm_content=cred
 
 
 We are announcing the deprecation of support for Bazaar, Mercurial, and Subversion version control systems starting on **Monday, June 3rd, 2024**.
-After this date, only Git repositories will be continue to be supported by our application.
+After this date, only Git repositories will be continue to be supported for building documentation projects.
 
 We've made this hard decision because [99% of our projects](https://github.com/readthedocs/readthedocs.org/issues/8840) use Git
-and we can't cover the product complexity and the maintenance cost we were spending on Bazaar, Mercurial and Subversion for a handful amount of projects.
-Besides, those VCSs are not feature-complete in our platform compared to Git and the service provided is degraded for them.
+and we can't cover the product complexity, documentation complexity, and maintenance cost we were spending on Bazaar, Mercurial and Subversion for a small number of projects.
+Our platform has long had fewer features for VCS systems other than Git,
+slowly adding confusion to our product,
+and slowing down the features we could build for the vast majority of our users on Git.
 
 ## Deprecation timeline
 
@@ -39,7 +41,7 @@ GitHub has some guides to help you in this process:
   * [Import your Mercurial repository](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/importing-a-mercurial-repository)
 
 
-### Create an intermediate Git repository only clone the original one
+### Create an intermediate Git repository only for initial clone
 
 
 If you cannot use Git for your documentation repository,
