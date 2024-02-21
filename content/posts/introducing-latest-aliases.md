@@ -4,6 +4,8 @@ category: Changelog
 tags: configuration-file, config-file
 authors: Santos Gallegos
 status: published
+image: /images/introducing-latest-aliases.jpg
+image_credit: Photo by <a href="https://unsplash.com/@ballonandon?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ben Allan</a> on <a href="https://unsplash.com/photos/grayscale-photo-of-crane-in-front-of-building-BIeC4YK2MTA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 We generally recommend projects pin specific versions of their dependencies,
 so that builds are [reproducible](https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html) over time.
