@@ -9,12 +9,12 @@ image_credit: Photo by <a href="https://unsplash.com/@jasondeblooisphotography?u
 
 
 We are happy to announce that **support for Ruby is now available** as an option for our pre-defined building tools ([`build.tools`](https://docs.readthedocs.io/en/stable/config-file/v2.html#build-tools)).
-Now, projects requiring Ruby to build their documentation are officially supported on Read the Docs 🎉
+Projects requiring Ruby to build their documentation are officially supported on Read the Docs 🎉
 
 ## Demo project using Jekyll
 
-As an example of a project using Ruby, [here you have a demo of the default Jekyll blog](https://test-builds.readthedocs.io/en/jekyll/) built and hosted on Read the Docs.
-The following code is the `readthedocs.yaml` configuration file used to build it:
+As an example of a project using Ruby, [see a demo of the default Jekyll blog](https://test-builds.readthedocs.io/en/jekyll/) built and hosted on Read the Docs.
+The following code is the `.readthedocs.yaml` configuration file used to build it:
 
 
 ```yaml
@@ -43,7 +43,7 @@ like [Jekyll](https://jekyllrb.com/), [Asciidoctor](https://asciidoctor.org/), [
 ## Try it out and give us feedback
 
 We encourage you to give Read the Docs a try if you are using any of these documentation tools,
-and take advantage of lot of extra features we provide that will empower your documentation workflow,
-like [pull request previews](https://docs.readthedocs.io/en/stable/pull-requests.html), among others.
+and take advantage of the extra features we provide to empower your documentation workflow,
+like [pull request previews](https://docs.readthedocs.io/en/stable/pull-requests.html) and [Git-based versioning](https://docs.readthedocs.io/en/stable/versions.html).
 
-Please, [let us know](mailto:support@readthedocs.com) how was your experience with any of these Ruby documentation tools and if you have any issue in the process.
+Please [let us know](mailto:support@readthedocs.com) how your experience is with any of these Ruby documentation tools, and how we might improve our support.
