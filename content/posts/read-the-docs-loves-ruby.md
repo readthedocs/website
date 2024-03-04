@@ -1,6 +1,6 @@
 title: Read the Docs ❤️ Ruby
 date: 2024-03-05
-category: feature announcement
+category: Feature announcement
 tags: builders, tools
 authors: Manuel Kaufmann
 status: published
