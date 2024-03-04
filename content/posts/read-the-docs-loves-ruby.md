@@ -13,7 +13,7 @@ Now, projects requiring Ruby to build their documentation are officially support
 
 ## Demo project using Jekyll
 
-As an example of a project using Ruby, [here you have a demo of the default blog created by Jekyll](https://test-builds.readthedocs.io/en/jekyll/) built and hosted on Read the Docs.
+As an example of a project using Ruby, [here you have a demo of the default Jekyll blog](https://test-builds.readthedocs.io/en/jekyll/) built and hosted on Read the Docs.
 The following code is the `readthedocs.yaml` configuration file used to build it:
 
 
@@ -43,7 +43,7 @@ like [Jekyll](https://jekyllrb.com/), [Asciidoctor](https://asciidoctor.org/), [
 ## Try it out and give us feedback
 
 We encourage you to give Read the Docs a try if you are using any of these documentation tools,
-and take advantage of lot extra features we provide that will empower your documentation workflow,
+and take advantage of lot of extra features we provide that will empower your documentation workflow,
 like [pull request previews](https://docs.readthedocs.io/en/stable/pull-requests.html), among others.
 
 Please, [let us know](mailto:support@readthedocs.com) how was your experience with any of these Ruby documentation tools and if you have any issue in the process.
