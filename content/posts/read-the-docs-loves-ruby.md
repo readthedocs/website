@@ -1,5 +1,5 @@
 title: Read the Docs ❤️ Ruby
-date: 2024-02-27
+date: 2024-03-05
 category: feature announcement
 tags: builders, tools
 authors: Manuel Kaufmann
