@@ -39,7 +39,7 @@ Page views
 Unfortunately we don't have page view stats for 2023,
 since we decided not to migrate to Google Analytics 4.
 
-We are working to improve our stats tracking with plausible,
+We are working to improve our stats tracking with Plausible,
 but haven't fully expanded it to all our doc serving due to cost.
 
 Site stats
@@ -71,10 +71,10 @@ This year, we had:
 
 Our overall support workload feels pretty steady,
 but unfortunately we haven't seen the growth in our community that we would like.
-We continue to expand the number of repos we have,
+We expanded the number of repos we have,
 so it's hard to get a full measure of these numbers.
 
-Things like our theme and Addons see more contribution,
+Projects like our theme and Addons see more contribution,
 since they are generally easier to contribute to.
 
 ..  git rev-list --count --all --after="2022-12-31" --before="2024-01-01"
@@ -91,14 +91,14 @@ Funding
 * 7 paid staff (5 full-time)
 
 Overall our community site continues to be sustainable,
-and we're excited to be able to work on open source with a small team everyway.
+and we're excited to be able to work on open source with a small team everyday.
 
 We have additional revenue from our `Read the Docs for Business`_ & EthicalAds_.
-Both of these continue to be a great source of revenue for us,
+Both of these continue to be great sources of revenue for us,
 and we're excited to continue proving the concept of ethical advertising.
 
 .. _EthicalAds: https://www.ethicalads.io/
-.. _Read the Docs for Business: https://readthedocs.com/
+.. _Read the Docs for Business: https://about.readthedocs.com/
 
 .. The advertising revenue is ad revenue for RTD itself. Gotten from the Read the Docs publisher on EthicalAds.
 
