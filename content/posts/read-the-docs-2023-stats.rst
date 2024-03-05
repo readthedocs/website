@@ -1,12 +1,12 @@
 Read the Docs 2023 Stats
 ========================
 
-:date: Mar 1, 2024
+:date: Mar 6, 2024
 :category: Updates
 :tags: stats, year-in-review, homepage
 :authors: Eric Holscher
-:image:
-:image_credit:
+:image: images/stats-2023.jpg
+:image_credit: Photo by <a href="https://unsplash.com/@mokngr?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Moritz Knöringer</a> on <a href="https://unsplash.com/photos/a-black-and-white-logo-rrw0MtEqQoU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 2023 was a steady year for Read the Docs.
 We continue to see growth in our user base,
@@ -100,6 +100,7 @@ and we're excited to continue proving the concept of ethical advertising.
 .. _EthicalAds: https://www.ethicalads.io/
 .. _Read the Docs for Business: https://readthedocs.com/
 
+.. The advertising revenue is ad revenue for RTD itself. Gotten from the Read the Docs publisher on EthicalAds.
 
 Conclusion
 ----------
