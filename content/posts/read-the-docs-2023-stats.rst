@@ -5,7 +5,7 @@ Read the Docs 2023 Stats
 :category: Updates
 :tags: stats, year-in-review, homepage
 :authors: Eric Holscher
-:image: images/stats-2023.jpg
+:image: /images/stats-2023.jpg
 :image_credit: Photo by <a href="https://unsplash.com/@mokngr?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Moritz Knöringer</a> on <a href="https://unsplash.com/photos/a-black-and-white-logo-rrw0MtEqQoU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 2023 was a steady year for Read the Docs.
