@@ -2,7 +2,7 @@ Read the Docs 2023 Stats
 ========================
 
 :date: Mar 6, 2024
-:category: Updates
+:category: Stats
 :tags: stats, year-in-review, homepage
 :authors: Eric Holscher
 :image: /images/stats-2023.jpg
