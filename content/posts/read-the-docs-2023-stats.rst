@@ -18,7 +18,7 @@ and we're excited to continue providing a world-class documentation platform and
 
 	You can always see our stats for the last `30 days`_.
 
-	Our posts from 2013_, 2014_, 2015_, 2016_, 2017_, 2018_, 2019_, 2020_, 2023_ are also available.
+	Our posts from 2013_, 2014_, 2015_, 2016_, 2017_, 2018_, 2019_, 2020_, 2021_ are also available.
 
 .. _Read the Docs: https://readthedocs.org/
 .. _30 days: http://www.seethestats.com/site/readthedocs.org
@@ -30,7 +30,7 @@ and we're excited to continue providing a world-class documentation platform and
 .. _2018: https://blog.readthedocs.com/read-the-docs-2018-stats/
 .. _2019: https://blog.readthedocs.com/read-the-docs-2019-stats/
 .. _2020: https://blog.readthedocs.com/read-the-docs-2020-stats/
-.. _2023: https://blog.readthedocs.com/read-the-docs-2023-stats/
+.. _2021: https://about.readthedocs.com/blog/2022/03/read-the-docs-2021-stats/
 
 
 Page views
