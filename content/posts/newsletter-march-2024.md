@@ -10,7 +10,7 @@ image_credit: Photo by <a href="https://unsplash.com/@catrionaobrian?utm_content
 
 ## News and updates
 
-- We added [support for "latest"](https://about.readthedocs.com/blog/2024/02/introducing-latest-aliases/) in a number of build tools, allowing you to always be up to date.
+- We added [support for "latest"](https://about.readthedocs.com/blog/2024/02/introducing-latest-aliases/) in all of the build tools, allowing you to always be up to date.
 - We added [support for Ruby as a build tool](https://about.readthedocs.com/blog/2024/03/read-the-docs-loves-ruby/), based on feedback from our community.
 - We shipped our first official links to our new beta dashboards in our application, linking users to our [much improved build detail page](https://beta.readthedocs.org/projects/test-builds/builds/23655124/). This means both of our beta dashboards are officially in public beta!
 - We made [Sphinx builds share their environment between builds](https://github.com/readthedocs/readthedocs.org/pull/11073), which should make builds of multiple formats faster.
