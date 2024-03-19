@@ -1,4 +1,4 @@
-title: Stop manipulating `mkdocs.yml`
+title: Stop manipulating "mkdocs.yml"
 date: 2024-03-25
 category: Changelog
 tags: builders, deprecation, mkdocs, addons
