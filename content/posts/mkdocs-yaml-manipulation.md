@@ -1,4 +1,4 @@
-title: Stop manipulating "mkdocs.yml"
+title: Build process change: removing changes to mkdocs.yml
 date: 2024-03-25
 category: Changelog
 tags: builders, deprecation, mkdocs, addons
@@ -9,7 +9,7 @@ image_credit: Photo by <a href="https://unsplash.com/@flowforfrank?utm_content=c
 
 
 We are announcing the deprecation of the `mkdocs.yml` manipulation done by Read the Docs at build time on **Monday, April 15th, 2024**.
-After this date, there will be some changes in the behavior:
+After this date, there will be some changes in build process behavior:
 
 * MkDocs default theme will be used if your documentation is not defining one on its `mkdocs.yml` file.
   If you want to continue using the `readthedocs` theme, read [Choosing your Theme](https://www.mkdocs.org/user-guide/choosing-your-theme/) MkDocs' documentation
@@ -17,10 +17,10 @@ After this date, there will be some changes in the behavior:
 * [The new beta Read the Docs Addons](https://blog.readthedocs.com/addons-flyout-menu-beta/) will be enabled by default.
 
 
-We've made this decision towards a simplification of the build process executed on Read th Docs,
+We've made this decision to simplify the build process executed on Read the Docs,
 allowing our users to get the same results when building their documentation locally and on our platform.
-Besides, this simplification allows more complex configuration in the YAML by using the special `!!` syntax
-[that wasn't supported due to security reasons](https://github.com/readthedocs/readthedocs.org/issues/8529).
+This simplification allows more complex configuration in the YAML by using the special `!!` syntax
+[that wasn't previously supported due to security reasons](https://github.com/readthedocs/readthedocs.org/issues/8529).
 
 
 [Contact us](https://readthedocs.org/support/) if you have any questions,
