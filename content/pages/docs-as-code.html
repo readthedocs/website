@@ -8,7 +8,7 @@
     <meta name="template" content="page" />
     <meta name="slug" content="docs-as-code" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="Use docs as code pattern with Read the Docs and supercharge your docs" />
+    <meta name="description" content="Our docs as code hosting is used by thousands of projects successfully. Don't reinvent the wheel." />
   </head>
   <body>
 
@@ -30,12 +30,13 @@
         <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
           <div class="ui large left aligned basic vertical segment">
             <h1 class="ui huge header">
-              <em>Docs as code</em> has never been that easy
+              Take the confusion out of <em>docs as code</em>
             </h1>
 
             <p>
-              Treat your documentation in the same way as you treat your code by following the
-              <a href="https://docs-as-co.de/" target="_blank" rel="nofollow">docs as code pattern</a>:
+              Read the Docs is the go-to solution for open source projects and businesses for <em>docs as code</em> hosting.
+              Use our standard process to build, publish, and host your documentation.
+              Giving you all the features you care about <strong>without having to reinvent the wheel</strong>.
             </p>
 
             <div class="ui list">
@@ -47,8 +48,7 @@
             </div>
 
             <p>
-              Read the Docs is the <em>"all in one"</em> solution that helps you to make this process easy providing
-              integrated features with zero effort.
+              Read the Docs is the <em>"all in one"</em> solution for docs as code.
             </p>
 
           </div>
@@ -58,55 +58,46 @@
           <div class="ui padded basic segment">
             <div class="ui relaxed list">
 
-              {%- set header_1 = "Traffic and search analytics" %}
-              {%- set icon_1 = "fa-chart-mixed" -%}
-              <a href="#analytics" class="ui small teal header item">
+              {%- set header_1 = "Versioning" %}
+              {%- set icon_1 = "fa-layer-group" -%}
+              <a href="#versioning" class="ui small teal header item">
                 <i class="fad {{ icon_1 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_1 }}
-                  <span class="sub header">Know more about how your readers use your documentation.</span>
+                  <span class="sub header">Give your users documentation that won't go out of date.</span>
                 </span>
               </a>
 
-              {%- set header_2 = "Notifications" %}
-              {%- set icon_2 = "fa-messages" -%}
-              <a href="#notifications" class="ui small header item">
+              {%- set header_2 = "Git integration" %}
+              {%- set icon_2 = "fa-code-commit" -%}
+              <a href="#git" class="ui small header item">
                 <i class="fad {{ icon_2 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_2 }}
-                  <span class="sub header">Warn readers about reading and old version of the documentation.</span>
+                  <span class="sub header">Use the same version control system that you use for development to retain change history for your documentation.</span>
                 </span>
               </a>
 
-              {%- set header_3 = "Search as you type" %}
-              {%- set icon_3 = "fa-magnifying-glass" -%}
-              <a href="#search" class="ui small header item">
+              {%- set header_3 = "Preview your changes" %}
+              {%- set icon_3 = "fa-file-plus-minus" -%}
+              <a href="#visual-diff" class="ui small header item">
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
-                  <span class="sub header">Quickly find exactly what you are looking for.</span>
+                  <span class="sub header">Verify changes to your documentation during review.</span>
                 </span>
               </a>
 
-              {%- set header_4 = "Visual diff on pull requests" %}
-              {%- set icon_4 = "fa-file-plus-minus" -%}
-              <a href="#visual-diff" class="ui small header item">
+              {%- set header_4 = "Deploy your docs" %}
+              {%- set icon_4 = "fa-gears" -%}
+              <a href="#building" class="ui small header item">
                 <i class="fad {{ icon_4 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_4 }}
-                  <span class="sub header">Review PR changes visually.</span>
+                  <span class="sub header">Deploy any time you merge to main</span>
                 </span>
               </a>
 
-              {%- set header_5 = "Read the Docs flyout" %}
-              {%- set icon_5 = "fa-bars" -%}
-              <a href="#flyout" class="ui small header item">
-                <i class="fad {{ icon_5 }} secondary big icon"></i>
-                <span class="content">
-                  {{ header_5 }}
-                  <span class="sub header">Select between multiple versions and translations.</span>
-                </span>
-              </a>
             </div>
           </div>
         </div>
@@ -137,10 +128,9 @@
           image_alt="Graph showing traffic and search analytics in a period",
           icon=icon_1) %}
         {% markdown %}
-      Explore traffic analytics and understand what are the pages your readers read the most.
-      **Prioritize the work** to improve them before other pages with less traffic.
-      Find out what are the terms your users search the most and write documentation pages
-      that include those terms so they can easily find them.
+        Read the Docs can host multiple versions of your docs.
+        Keep your 1.0 and 2.0 documentation online,
+        so your yours can always find the right version.
         {% endmarkdown %}
       {% endcall %}
 
@@ -158,8 +148,9 @@
           image_alt="Notification on a old version",
           icon=icon_2) %}
         {% markdown %}
-        Clearly communicate readers they are reading an outdated version of the documentation,
-        and **reduce support requests** from old version of your product.
+        Integrating directly with Git allows developers and documentation authors to collaborate seemlessly.
+        You can author your documentation in any text editor,
+        and using whatever format is most comfortable for you.
         {% endmarkdown %}
       {% endcall %}
 
@@ -173,12 +164,13 @@
 
       {% call about.step(
           header=header_3,
-          image="/images/docs-as-code/search.png",
-          image_alt="Read the Docs pull request review checks in a GitHub pull request",
+          image="/images/docs-as-code/visual-diff.png",
+          image_alt="Visual diff between two versions",
           icon=icon_3) %}
         {% markdown %}
-        Always find what you are looking for at the tip of your fingers with our powerful ElasticSearch engine.
-        Search on a **single or accross multiple projects** at once.
+        Once you have your documentation in Git, you can preview changes before merging them.
+        Every time you push a commit to a Pull Request,
+        Read the Docs will build your documentation and show you the changes.
         {% endmarkdown %}
       {% endcall %}
 
@@ -196,71 +188,19 @@
           image_alt="Visual diff between two versions",
           icon=icon_4) %}
       {% markdown %}
-      Visuallize documentation changes *"in situ"* from pull requests before merging them.
-      **Understand what exacly changed** in a simple and visual way.
+      Once you're reviewed your changes, you can deploy the exact same way you do with your code.
+      When you merge to main, Read the Docs will automatically update your docs in production.
       {% endmarkdown %}
       {% endcall %}
 
     </div>
   </div>
 
-  {{ about_divide() }}
-
-  <div class="ui very padded container" id="flyout">
-    <div class="ui vertically padded centered grid">
-
-      {% call about.step(
-          header=header_5,
-          image="/images/docs-as-code/flyout.png",
-          image_alt="Read the Docs flyout",
-          icon=icon_5) %}
-      {% markdown %}
-      Let your users select between **multiple versions and translations** of your documentation in a quick way using the flyout menu.
-      {% endmarkdown %}
-      {% endcall %}
-
-    </div>
-  </div>
 </section>
 
 
 {# Try it out code block #}
-{% include "includes/try-it-out-docusaurus.html" %}
-
-{% block homepage_bottom_callout %}
-  <section>
-    <div class="ui very padded container">
-      <div class="ui grid center aligned">
-        <div class="row">
-          <div class="column twelve wide computer sixteen wide tablet">
-            <div class="ui basic vertical huge segment">
-              <h2 class="ui center aligned header">
-                Still not convinced? Try it yourself  <i class="fad fa-rocket icon"></i>
-              </h2>
-
-                {% markdown %}
-                Import your existing project or create one following our [tutorial](https://docs.readthedocs.io/en/stable/tutorial/),
-                and try it yourself.
-                All these features will be enabled by default when using the
-                [``build.commands``](https://docs.readthedocs.io/en/latest/config-file/v2.html#build-commands)
-                config key as shown in the example.
-                {% endmarkdown %}
-
-              <p>
-                <a class="ui large teal stackable button"
-                data-analytics="signup-modal"
-                 onclick="jQuery('#signup-modal').modal('show');">
-                  <i class="fad fa-rocket icon"></i>
-                  Get started for free
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endblock homepage_bottom_callout %}
+{% include "includes/try-it-out.html" %}
 
   </body>
 </html>
