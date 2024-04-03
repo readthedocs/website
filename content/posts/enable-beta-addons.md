@@ -23,11 +23,29 @@ Consider also https://about.readthedocs.com/docs-as-code/
 -->
 
 ### Analytics
+
+![Analytics Addons](/images/addons-analytics.png)
+
+Analytics allows you to explore your documentation traffic to understand what are the pages your readers read the most.
+With this data, your team is able to prioritize the work on these pages first over other with less traffic.
+Besides, you can find out what are the terms your users search the most and
+write documentation pages that include those terms so they can easily find them.
+
 ### DocDiff
+
+![Docdiff Addons](/images/addons-docdiff.gif)
+
 ### Pull request notification
 ### Flyout
+
+![Flyout Addons](/images/addons-flyout.png)
+
 ### Non-stable notification
+
+![Non-stable notification](/images/addons-non-stable-notification.png)
+
 ### Latest version notification
+
 ### Search as you type
 ### Sponsorship
 
