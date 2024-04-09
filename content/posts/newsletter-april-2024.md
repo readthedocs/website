@@ -22,16 +22,16 @@ You can always see the latest changes to our platforms in our [changelog 📃](h
 
 - We're working on a large project to integrate SAML auth support, which would give us support for Okta and other SAML providers. This will be a great addition for our enterprise users.
 - With the public beta of our new dashboards, we are working on the final touches and hope to have it available for all users soon.
-- We are getting close to custom event support in Addons, which allows a number of custom integrations on top of our flyout data.
+- We are getting close to custom event support in Addons, which allows a number of custom integrations on top of the project's data.
 
 Want to follow along with our development progress? View our [development roadmap 📍️](https://github.com/orgs/readthedocs/projects/156/views/1)
 
 ## Possible issues
 
-- We are [removing Mkdocs customizations on April 15](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/), so all Mkdocs configurations should now be supported.
+- We are [removing automatic MkDocs customizations on April 15](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/), so all MkDocs configurations should now be supported.
 - We have officially announced removal of support for VCS systems other than Git. [Read our blog post](https://about.readthedocs.com/blog/2024/02/drop-support-for-subversion-mercurial-bazaar/) for more information.
 - We have [defaulted traffic analytics off](https://github.com/readthedocs/readthedocs.org/pull/11056) for users of our new Addons. This default is to save on resources for projects that aren't looking at our analytics data.
-- Our [beta dashboard](https://beta.readthedocs.org/) continues to be tested in public beta, and new functionality for Addons configuration is only be available in that new interface.
+- Our [beta dashboard](https://beta.readthedocs.org/) continues to be tested in public beta, and new functionality for Addons configuration is only available in that new interface.
 
 -----
 
