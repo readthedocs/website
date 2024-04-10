@@ -1,10 +1,55 @@
-{% macro menu_main() %}
-  <a class="item{% if page and page.slug == 'features' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/features/">Features</a>
-  <a class="item{% if page and page.slug == 'pricing' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/pricing/">Pricing</a>
-  <a class="item{% if page and 'blog' in page.slug %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/blog/">Blog</a>
+{# The main product menu, for all high priority information #}
+{% macro menu_product(with_more=False) %}
+  <div class="header">About</div>
+  <a class="item" href="{{ SITEURL }}/pricing/">
+    <i class="fad fa-diagram-venn primary icon"></i>
+    Pricing
+  </a>
+  <a class="item" href="{{ SITEURL }}/features/">
+    <i class="fad fa-arrow-progress primary icon"></i>
+    How Read the Docs works
+  </a>
+
+  <div class="header">Features</div>
+  <a class="item" href="{{ SITEURL }}/features/#authoring">
+    <i class="fad fa-pencil primary icon"></i>
+    Authoring features
+  </a>
+  <a class="item" href="{{ SITEURL }}/features/#building">
+    <i class="fad fa-gears primary icon"></i>
+    Building features
+  </a>
+  <a class="item" href="{{ SITEURL }}/features/#hosting">
+    <i class="fad fa-browser primary icon"></i>
+    Hosting features
+  </a>
+  <a class="item" href="{{ SITEURL }}/features/#reading">
+    <i class="fad fa-glasses primary icon"></i>
+    Reader features
+  </a>
+
+  {#
+    This is useful to link to, but submenus don't work as nicely on mobile and
+    this isn't that high priority to put in the mobile menu.
+  #}
+  {% if with_more %}
+    <div class="header">More</div>
+    <div class="item">
+      <i class="fad fa-rectangle-terminal primary icon"></i>
+      Supported tools
+      <i class="dropdown fad fa-caret-right icon"></i>
+      <div class="menu">
+        <a class="item" href="{{ SITEURL }}/tools/sphinx">Sphinx</a>
+        <a class="item" href="{{ SITEURL }}/tools/mkdocs">Mkdocs</a>
+        <a class="item" href="{{ SITEURL }}/tools/jupyter-book">Jupyter Book</a>
+      </div>
+    </div>
+  {% endif %}
 {% endmacro %}
 
-{% macro menu_help() %}
+{# Resources menu for secondary information and pages for search ranking #}
+{% macro menu_resources() %}
+  <div class="header">Help</div>
   <a class="item" href="https://docs.readthedocs.io/page/support.html" target="_blank">
     <i class="fad fa-envelope primary icon"></i>
     Support
@@ -26,6 +71,15 @@
       <i class="fad fa-external-link icon"></i>
     </span>
   </a>
+
+  <div class="header">Updates</div>
+  <a class="item" href="{{ SITEURL }}/blog/" target="_blank">
+    <i class="fad fa-newspaper fa-swap-opacity primary icon"></i>
+    Blog
+    <span class="description">
+      <i class="fad fa-external-link icon"></i>
+    </span>
+  </a>
   <a class="item" href="http://status.readthedocs.com" target="_blank">
     {% block menu_help_status %}
       {% if has_status_check %}
@@ -36,7 +90,7 @@
           <span class="ui green text">Online</span>
         </span>
       {% else %}
-        <i class="fad fa-circle-check primary icon"></i>
+        <i class="fad fa-circle-check fa-swap-opacity primary icon"></i>
         Status
         <span class="description">
           <i class="fad fa-external-link icon"></i>
@@ -47,7 +101,8 @@
 {% endmacro %}
 
 {# Application links to log in #}
-{% macro menu_log_in() %}
+{% macro menu_log_in(with_signup=False) %}
+  <div class="header">Log in</div>
   <a class="item" data-analytics="community-login" href="https://readthedocs.org/dashboard/">
     <i class="fad fa-people-group primary icon"></i>
     Read the Docs Community
@@ -64,6 +119,15 @@
       <code>https://readthedocs.com</code>
     </p>
   </a>
+  {% if with_signup %}
+    <a class="item"
+      data-analytics="signup-modal"
+      onclick="jQuery('#signup-modal').modal('show');">
+      <i class="fas fa-plus primary icon"></i>
+      Sign up
+    </a>
+  {% endif %}
+
   <a class="item" href="/choosing-a-platform/">
     <i class="fad fa-circle-question grey icon"></i>
     Choosing a platform
@@ -94,26 +158,11 @@
             <i class="fad fa-bars large icon" style="--fa-secondary-opacity: 0.8;"></i>
             <div class="menu">
 
-              <div class="header">Log in</div>
-              {{ menu_log_in() }}
-
-              <a class="item"
-                 data-analytics="signup-modal"
-                 onclick="jQuery('#signup-modal').modal('show');">
-                <i class="fas fa-plus primary icon"></i>
-                Sign up
-              </a>
-
+              {{ menu_log_in(with_signup=True) }}
               <div class="divider"></div>
-
-              <div class="header">Navigation</div>
-              <a class="item{% if page and page.slug == 'homepage' %} active" aria-current="page{% endif %}" href="{{ SITEURL }}/index.html">Home</a>
-              {{ menu_main() }}
-
+              {{ menu_product(with_more=False) }}
               <div class="divider"></div>
-
-              <div class="header">Help</div>
-              {{ menu_help() }}
+              {{ menu_resources() }}
 
             </div>
           </div>
@@ -125,20 +174,44 @@
       #}
       {% block topnav_menu %}
         <div class="twelve wide computer eleven wide tablet left aligned tablet only computer only column">
-          <div class="ui huge borderless secondary menu">
-            {{ menu_main() }}
+          <div class="ui big borderless secondary menu">
+
+            <div
+                class="ui wide dropdown item"
+                {#
+                  TODO this needs more flexibility to support more
+                  class="ui wide dropdown item{% if page and page.slug == 'features' %} active"
+                  aria-current="page{% endif %}"
+                #}
+                data-module="dropdown"
+                data-module-on="hover">
+
+              Product
+              <i class="dropdown fad fa-caret-down icon"></i>
+
+              <div class="menu">
+                {{ menu_product(with_more=True) }}
+              </div>
+            </div>
+
+            <a class="item" href="{{ SITEURL }}/pricing/">
+              Pricing
+            </a>
+
+            <div
+                class="ui wide dropdown item"
+                data-module="dropdown"
+                data-module-on="hover">
+
+              Resources
+              <i class="dropdown fad fa-caret-down icon"></i>
+
+              <div class="menu">
+                {{ menu_resources() }}
+              </div>
+            </div>
 
             <div class="right menu">
-
-              <div class="item">
-                {# TODO: Add support page to marketing website #}
-                <div class="ui circular basic icon wide pointing top right dropdown button" data-module="dropdown" data-action="select" data-display-type="block">
-                  <i class="fa-solid fa-message-question icon"></i>
-                  <div class="menu">
-                    {{ menu_help() }}
-                  </div>
-                </div>
-              </div>
 
               <div class="item">
                 <div class="ui floating top right pointing dropdown" data-module="dropdown" data-action="select" data-display-type="block">
@@ -146,7 +219,7 @@
                     Log in
                   </a>
                   <div class="menu">
-                    {{ menu_log_in() }}
+                    {{ menu_log_in(with_signup=False) }}
                   </div>
                 </div>
               </div>
