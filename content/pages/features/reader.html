@@ -1,19 +1,18 @@
 {#
-  The goal of this page is to sell Read the Docs to users already using the docs-as-code pattern.
-  Highlighting that without doing anything extra, they get lot of features for free.
+  The goal of this page is to highlight reader features.
 #}
 <html>
   <head>
-    <title>Documentation page features</title>
+    <title>Documentation reader features</title>
     <meta name="template" content="page" />
-    <meta name="slug" content="addons" />
-    <meta name="status" content="hidden" />
-    <meta name="description" content="We build and host your docs, allowing us to add features your readers love." />
+    <meta name="slug" content="features/reader" />
+    {# <meta name="status" content="hidden" /> #}
+    <meta name="description" content="Give your documentation readers a number of in-documentation features that they'll love. Powered by Read the Docs APIs and Javascript integrations." />
   </head>
   <body>
 
 {#
-  View this page at http://localhost:8080/addons/index.html
+  View this page at http://localhost:8080/features/reader/
 #}
 
 {% import "partials/basic.html" as basic %}
@@ -39,7 +38,7 @@
             </p>
 
             <div class="ui list">
-              <div class="item"><i class="fad fa-check secondary icon"></i>Search as your type</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Search as you type</div>
               <div class="item"><i class="fad fa-check secondary icon"></i>Out of date version notifications</div>
               <div class="item"><i class="fad fa-check secondary icon"></i>Docs for the exact version they're using</div>
               <div class="item"><i class="fad fa-check secondary icon"></i>PDF and HTML downloads</div>
@@ -131,7 +130,7 @@
 
       {% call about.step(
           header=header_1,
-          image="/images/docs-as-code/analytics.png",
+          image="/images/features/analytics.png",
           image_alt="Graph showing traffic and search analytics in a period",
           icon=icon_1) %}
         {% markdown %}
@@ -152,7 +151,7 @@
 
       {% call about.step(
           header=header_2,
-          image="/images/docs-as-code/notification.png",
+          image="/images/features/notification.png",
           image_alt="Notification on a old version",
           icon=icon_2) %}
         {% markdown %}
@@ -171,7 +170,7 @@
 
       {% call about.step(
           header=header_3,
-          image="/images/docs-as-code/search.png",
+          image="/images/features/search.png",
           image_alt="Read the Docs pull request review checks in a GitHub pull request",
           icon=icon_3) %}
         {% markdown %}
@@ -190,7 +189,7 @@
 
       {% call about.step(
           header=header_4,
-          image="/images/docs-as-code/visual-diff.png",
+          image="/images/features/visual-diff.png",
           image_alt="Visual diff between two versions",
           icon=icon_4) %}
       {% markdown %}
@@ -209,7 +208,7 @@
 
       {% call about.step(
           header=header_5,
-          image="/images/docs-as-code/flyout.png",
+          image="/images/features/flyout.png",
           image_alt="Read the Docs flyout",
           icon=icon_5) %}
       {% markdown %}
