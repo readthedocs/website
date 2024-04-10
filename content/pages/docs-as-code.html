@@ -1,14 +1,15 @@
+
 {#
   The goal of this page is to sell Read the Docs to users already using the docs-as-code pattern.
   Highlighting that without doing anything extra, they get lot of features for free.
 #}
 <html>
   <head>
-    <title>Docs as code made easy</title>
+    <title>Host your docs as code project with standard ecosystem tools</title>
     <meta name="template" content="page" />
     <meta name="slug" content="docs-as-code" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="Our docs as code hosting is used by thousands of projects successfully. Don't reinvent the wheel." />
+    <meta name="description" content="Our docs as code hosting is used by thousands of projects. Don't reinvent the wheel." />
   </head>
   <body>
 
@@ -34,7 +35,7 @@
             </h1>
 
             <p>
-              Read the Docs is the go-to solution for open source projects and businesses for <em>docs as code</em> hosting.
+              Read the Docs is the go-to solution for open source and business for <em>docs as code</em> hosting.
               Use our standard process to build, publish, and host your documentation.
               Giving you all the features you care about <strong>without having to reinvent the wheel</strong>.
             </p>
@@ -60,7 +61,7 @@
 
               {%- set header_1 = "Versioning" %}
               {%- set icon_1 = "fa-layer-group" -%}
-              <a href="#versioning" class="ui small teal header item">
+              <a href="#{{ header_1 }}" class="ui small teal header item">
                 <i class="fad {{ icon_1 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_1 }}
@@ -70,7 +71,7 @@
 
               {%- set header_2 = "Git integration" %}
               {%- set icon_2 = "fa-code-commit" -%}
-              <a href="#git" class="ui small header item">
+              <a href="#{{ header_2 }}" class="ui small header item">
                 <i class="fad {{ icon_2 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_2 }}
@@ -80,7 +81,7 @@
 
               {%- set header_3 = "Preview your changes" %}
               {%- set icon_3 = "fa-file-plus-minus" -%}
-              <a href="#visual-diff" class="ui small header item">
+              <a href="#{{ header_3 }}" class="ui small header item">
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
@@ -90,7 +91,7 @@
 
               {%- set header_4 = "Deploy your docs" %}
               {%- set icon_4 = "fa-gears" -%}
-              <a href="#building" class="ui small header item">
+              <a href="#{{ header_4 }}" class="ui small header item">
                 <i class="fad {{ icon_4 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_4 }}
@@ -120,12 +121,12 @@
 
 <section>
   <div class="ui very padded container">
-    <div class="ui vertically padded centered grid" id="analytics">
+    <div class="ui vertically padded centered grid" id="{{ header_1 }}">
 
       {% call about.step(
           header=header_1,
-          image="/images/docs-as-code/analytics.png",
-          image_alt="Graph showing traffic and search analytics in a period",
+          image="/images/docs-as-code/flyout-zoomed.png",
+          image_alt="Flyout showing versions of a documentation project",
           icon=icon_1) %}
         {% markdown %}
         Read the Docs can host multiple versions of your docs.
@@ -139,16 +140,16 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="notification">
+  <div class="ui very padded container" id="{{ header_2 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
           header=header_2,
-          image="/images/docs-as-code/notification.png",
-          image_alt="Notification on a old version",
+          image="/images/docs-as-code/gh-integration.png",
+          image_alt="Read the Docs checks on GitHub",
           icon=icon_2) %}
         {% markdown %}
-        Integrating directly with Git allows developers and documentation authors to collaborate seemlessly.
+        Integrating directly with GitHub allows developers and documentation authors to collaborate seemlessly.
         You can author your documentation in any text editor,
         and using whatever format is most comfortable for you.
         {% endmarkdown %}
@@ -159,7 +160,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="search">
+  <div class="ui very padded container" id="{{ header_3 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -179,13 +180,13 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="visual-diff">
+  <div class="ui very padded container" id="{{ header_4 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
           header=header_4,
-          image="/images/docs-as-code/visual-diff.png",
-          image_alt="Visual diff between two versions",
+          image="/images/docs-as-code/deploy.png",
+          image_alt="Page showing build success",
           icon=icon_4) %}
       {% markdown %}
       Once you're reviewed your changes, you can deploy the exact same way you do with your code.
