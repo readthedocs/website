@@ -1,5 +1,6 @@
 title: Empower your documentation with addons
-date: 2024-03-27
+date: 2024-04-18
+description: Read the Docs Addons let documentation authors add features to their documentation such as analytics, version feedback, and search as you type to documentation in a modular way where authors have control.
 category: Changelog
 tags: addons, hosting
 authors: Manuel Kaufmann
@@ -31,7 +32,7 @@ Consider also https://about.readthedocs.com/docs-as-code/
 
 ![Analytics Addons](/images/addons-analytics.png)
 
-Analytics allows you to explore your documentation traffic to understand what are the pages your readers read the most.
+Analytics allows authors to explore your documentation traffic to understand what are the pages readers read the most.
 With this data, your team is able to **prioritize the work on pages with high traffic** over others with less.
 Besides, you can find out what are the terms your users search the most and
 write documentation pages that include those terms so they can easily find them.
@@ -40,7 +41,7 @@ write documentation pages that include those terms so they can easily find them.
 
 ![Docdiff Addons](/images/addons-docdiff.gif)
 
-DocDiff shows changes made on the rendered versions by **visually highlighing the differences between
+DocDiff shows changes made on the rendered versions by **visually highlighting the differences between
 the current pull request and the latest version of the project's documentation**.
 This addons allows reviewers to quickly find what has changed on this pull request
 but also find style/rendering issues before accepting and merging the pull request.
@@ -57,15 +58,15 @@ comes from a pull request to clearly distinguish this version from the official 
 
 ![Flyout Addons](/images/addons-flyout.png)
 
-We call _flyout_ to the small floating Read the Docs section where all the documentation versions and translations are listed.
-This allows readers to **find the exact version they are looking for** and also read the documention on their own language if it's available.
-Besides, it contains useful links to go to the project's home, builds page and offline formats.
+The _flyout_ is the small floating Read the Docs section where all the documentation versions and translations are listed.
+This allows readers to **find the exact version they are looking for** and also read the documention in their own language if it's available.
+Besides, it contains useful links to go to the project's home, builds page and offline formats such as PDFs and ebooks.
 
 ### Non-stable notification
 
 ![Non-stable notification](/images/addons-non-stable-notification.png)
 
-A notification on all _non-stable_ version is shown to clearly communicate readers
+A notification on all _non-stable_ versions is shown to clearly communicate to readers
 they may be reading an outdated version of the documentation.
 This helps readers to avoid confusions and quickly jump into the _latest_ version of the documentation.
 Besides, it **reduces support requests from old version of your product**.
@@ -75,16 +76,16 @@ Besides, it **reduces support requests from old version of your product**.
 
 ![Latest notification](/images/addons-latest-notification.png)
 
-A notification shown on _latest_ version to tell readers
+A notification shown on the _latest_ version tells readers
 they are reading the _latest/development_ version of the documentation that may include features not yet deployed.
-This will help your readers to avoid confusions on the version they are using and the one they are reading,
-while letting your project to expose these yet unrelease features.
+This will help your readers to avoid confusion on the version they are using and the one they are reading,
+while letting your project to expose these yet unreleased features.
 
 ### Search as you type
 
 ![Search](/images/addons-search.gif)
 
-Search _as-you-type_ powered by an Elastic backend that allows users to quickly find exactly what they are looking for while typing.
+Search _as-you-type_ is powered by an Elasticsearch backend that allows users to quickly find exactly what they are looking for while typing.
 It also **saves recent searches to have them at the tip of your fingers**.
 
 
@@ -101,10 +102,10 @@ and link to that page.
 
 ![EthicalAds](/images/addons-ethical-ads.png)
 
-EthicalAds is the business model that makes Read the Docs to continue being a free web service.
+EthicalAds is the business model that allows Read the Docs to continue being a free web service.
 It respects users while providing value to advertisers.
 We don’t track you, sell your data, or anything else.
-We simply show ads to users, based on the content of the pages you look at.
+We simply show ads to users, based on the content of the page you're currently looking at.
 
 
 ## How to enable addons in your project
@@ -117,7 +118,7 @@ To enable Read the Docs Addons in your project follow these steps:
 1. Check **Enable Addons**.
 
 Now you have Read the Docs Addons enabled,
-user of your documentation can start using these features.
+readers of your documentation can start using these features.
 
 ## Moving forward
 
@@ -130,10 +131,10 @@ We are also open to suggestions for new addons, let's us know if you have an ide
 
 ## Conclusion
 
-Read the Docs provides a lot of feature for documentation authors to simplify their workflow to keep the documentation updated,
-providing pull request previews, automatition rules, versioning, translation, and many other features.
+Read the Docs provides a lot of features for documentation authors to simplify their workflow and to keep the documentation updated,
+providing pull request previews, automation rules, versioning, translation, and many other features.
 
-The introduction of Read the Docs Addons, empowers the readers experience as well, closing the circle between authors and readers.
+The introduction of Read the Docs Addons, empowers the readers' experience as well, closing the circle between authors and readers.
 Addons give readers a quick way to find what they are looking for,
 notifies them about reading the _latest_ version which may have features that are not yet implemented or,
 an old version that may be deprecated.
