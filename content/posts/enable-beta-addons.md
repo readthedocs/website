@@ -19,6 +19,19 @@ always knowing the versions they are reading avoiding confusions.
 
 Continue reading to explore the full list of addons and how to enable them in your project.
 
+## How to enable addons in your project
+
+To enable Read the Docs Addons in your project follow these steps:
+
+1. Go to the [new beta dashboard](https://beta.readthedocs.org).
+1. Click on the project you want to enable addons.
+1. Go to **Settings**, then **Addons (Beta)** from the left bar.
+1. Check **Enable Addons**.
+
+Now you have Read the Docs Addons enabled,
+readers of your documentation can start using these features.
+
+
 ## Full list of addons
 
 
@@ -93,18 +106,6 @@ It respects users while providing value to advertisers.
 We don’t track you, sell your data, or anything else.
 We simply show ads to users, based on the content of the page you're currently looking at.
 
-
-## How to enable addons in your project
-
-To enable Read the Docs Addons in your project follow these steps:
-
-1. Go to the [new beta dashboard](https://beta.readthedocs.org).
-1. Click on the project you want to enable addons.
-1. Go to **Settings**, then **Addons (Beta)** from the left bar.
-1. Check **Enable Addons**.
-
-Now you have Read the Docs Addons enabled,
-readers of your documentation can start using these features.
 
 ## Moving forward
 
