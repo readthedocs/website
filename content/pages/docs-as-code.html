@@ -60,8 +60,9 @@
             <div class="ui relaxed list">
 
               {%- set header_1 = "Versioning" %}
+              {%- set slug_1 = "versioning" %}
               {%- set icon_1 = "fa-layer-group" -%}
-              <a href="#{{ header_1 }}" class="ui small teal header item">
+              <a href="#{{ slug_1 }}" class="ui small teal header item">
                 <i class="fad {{ icon_1 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_1 }}
@@ -70,8 +71,9 @@
               </a>
 
               {%- set header_2 = "Git integration" %}
+              {%- set slug_2 = "git-integration" %}
               {%- set icon_2 = "fa-code-commit" -%}
-              <a href="#{{ header_2 }}" class="ui small header item">
+              <a href="#{{ slug_2 }}" class="ui small header item">
                 <i class="fad {{ icon_2 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_2 }}
@@ -80,8 +82,9 @@
               </a>
 
               {%- set header_3 = "Pull request previews" %}
+              {%- set slug_3 = "pull-request-previews" %}
               {%- set icon_3 = "fa-file-plus-minus" -%}
-              <a href="#{{ header_3 }}" class="ui small header item">
+              <a href="#{{ slug_3 }}" class="ui small header item">
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
@@ -90,8 +93,9 @@
               </a>
 
               {%- set header_4 = "One-click deployment" %}
+              {%- set slug_4 = "One-click-deployment" %}
               {%- set icon_4 = "fa-gears" -%}
-              <a href="#{{ header_4 }}" class="ui small header item">
+              <a href="#{{ slug_4 }}" class="ui small header item">
                 <i class="fad {{ icon_4 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_4 }}
@@ -121,7 +125,7 @@
 
 <section>
   <div class="ui very padded container">
-    <div class="ui vertically padded centered grid" id="{{ header_1 }}">
+    <div class="ui vertically padded centered grid" id="{{ slug_1 }}">
 
       {% call about.step(
           header=header_1,
@@ -144,7 +148,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="{{ header_2 }}">
+  <div class="ui very padded container" id="{{ slug_2 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -170,7 +174,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="{{ header_3 }}">
+  <div class="ui very padded container" id="{{ slug_3 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -196,7 +200,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="{{ header_4 }}">
+  <div class="ui very padded container" id="{{ slug_4 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(

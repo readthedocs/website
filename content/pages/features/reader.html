@@ -58,8 +58,9 @@
             <div class="ui relaxed list">
 
               {%- set header_2 = "Notifications" %}
+              {%- set slug_2 = "notifications" %}
               {%- set icon_2 = "fa-messages" -%}
-              <a href="#{{ header_2 }}" class="ui small header item">
+              <a href="#{{ slug_2 }}" class="ui small header item">
                 <i class="fad {{ icon_2 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_2 }}
@@ -68,8 +69,9 @@
               </a>
 
               {%- set header_3 = "Search as you type" %}
+              {%- set slug_3 = "search-as-you-type" %}
               {%- set icon_3 = "fa-magnifying-glass" -%}
-              <a href="#{{ header_3 }}" class="ui small header item">
+              <a href="#{{ slug_3 }}" class="ui small header item">
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
@@ -78,8 +80,9 @@
               </a>
 
               {%- set header_4 = "Offline formats" %}
+              {%- set slug_4 = "offline-formats" %}
               {%- set icon_4 = "fa-file-pdf" -%}
-              <a href="#{{ header_4 }}" class="ui small header item">
+              <a href="#{{ slug_4 }}" class="ui small header item">
                 <i class="fad {{ icon_4 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_4 }}
@@ -88,8 +91,9 @@
               </a>
 
               {%- set header_5 = "Read the Docs Flyout" %}
+              {%- set slug_5 = "read-the-docs-Flyout" %}
               {%- set icon_5 = "fa-bars" -%}
-              <a href="#{{ header_5 }}" class="ui small header item">
+              <a href="#{{ slug_5 }}" class="ui small header item">
                 <i class="fad {{ icon_5 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_5 }}
@@ -118,7 +122,7 @@
 
 <section>
 
-  <div class="ui very padded container" id="{{ header_2 }}">
+  <div class="ui very padded container" id="{{ slug_2 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -137,7 +141,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="{{ header_3 }}">
+  <div class="ui very padded container" id="{{ slug_3 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -156,7 +160,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="{{ header_4 }}">
+  <div class="ui very padded container" id="{{ slug_4 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -176,7 +180,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="{{ header_5 }}">
+  <div class="ui very padded container" id="{{ slug_5 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
