@@ -1,7 +1,7 @@
 title: Empower your documentation with addons
-date: 2024-04-18
+date: 2024-04-24
 description: Read the Docs Addons let documentation authors add features to their documentation such as analytics, version feedback, and search as you type to documentation in a modular way where authors have control.
-category: Changelog
+category: Feature announcement
 tags: addons, hosting
 authors: Manuel Kaufmann
 status: published
@@ -11,7 +11,7 @@ image_credit: Photo by <a href="https://unsplash.com/@impatrickt?utm_content=cre
 
 In the last year, we have been focusing ourselves on providing a better experience for authors and readers of the documentation.
 Today, we are thrilled to introduce our latest feature,
-designed on top of users' feedback to build a better experience for them in our platform: **Read the Docs Addons**.
+designed around user feedback to build a better user experience: **Read the Docs Addons**.
 
 Read the Docs Addons helps authors to keep their documentation updated by focusing on the most relevant pages,
 while simplifying the review process --and also helps readers to navigate the documentation in a simple way,
@@ -68,7 +68,7 @@ Besides, it contains useful links to go to the project's home, builds page and o
 
 A notification on all _non-stable_ versions is shown to clearly communicate to readers
 they may be reading an outdated version of the documentation.
-This helps readers to avoid confusions and quickly jump into the _latest_ version of the documentation.
+This helps readers to avoid confusion and quickly jump into the _stable_ version of the documentation.
 Besides, it **reduces support requests from old version of your product**.
 
 
@@ -127,7 +127,7 @@ There are plans to keep adding more addons to this list and also re-implement so
 (e.g. [`sphinx-hoverxref`](https://github.com/readthedocs/sphinx-hoverxref)) as an addon,
 making it compatible with non-Sphinx projects.
 
-We are also open to suggestions for new addons, let's us know if you have an idea!
+We are also open to suggestions for new addons, [let us](https://github.com/readthedocs/addons/issues) know if you have an idea!
 
 ## Conclusion
 
