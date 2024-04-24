@@ -21,12 +21,6 @@ Continue reading to explore the full list of addons and how to enable them in yo
 
 ## Full list of addons
 
-<!--
-TODO describe each of the addons into its own section,
-similar to what we have in https://github.com/readthedocs/addons/blob/main/README.md
-
-Consider also https://about.readthedocs.com/docs-as-code/
--->
 
 ### Analytics
 
@@ -91,14 +85,6 @@ It also **saves recent searches to have them at the tip of your fingers**.
 
 ### Sponsorship
 
-<!--
-
-TODO: not sure if it's worth to explain this here or not.
-Maybe we can have a paragraph similar to the first one in
-https://docs.readthedocs.io/en/stable/advertising/ethical-advertising.html
-and link to that page.
-
--->
 
 ![EthicalAds](/images/addons-ethical-ads.png)
 
