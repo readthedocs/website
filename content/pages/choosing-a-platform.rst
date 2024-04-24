@@ -1,5 +1,5 @@
 :title: Choosing a platform
-:description: Learn more about our two different platforms and which one is right for you.
+:description: Learn more about the differences between Read the Docs community and Read the Docs for Business and which one is right for you.
 :template: docutils_page
 
 .. TODO: Figure out how to reuse substitions
