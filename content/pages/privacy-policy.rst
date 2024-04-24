@@ -1,5 +1,6 @@
 :title: Privacy Policy
 :template: docutils_page
+:description: Read the Docs believes in protecting the privacy of users, authors and readers. These policies are governed by this policy.
 
 Privacy Policy
 ==============

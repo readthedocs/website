@@ -1,5 +1,6 @@
 :title: Terms of Service
 :template: docutils_page
+:description: Read the Docs is governed by these terms of service.
 
 Terms of Service
 ================
