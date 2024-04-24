@@ -56,19 +56,9 @@
           <div class="ui padded basic segment">
             <div class="ui relaxed list">
 
-              {%- set header_1 = "Traffic and search analytics" %}
-              {%- set icon_1 = "fa-chart-mixed" -%}
-              <a href="#analytics" class="ui small teal header item">
-                <i class="fad {{ icon_1 }} secondary big icon"></i>
-                <span class="content">
-                  {{ header_1 }}
-                  <span class="sub header">Know more about how your readers use your documentation.</span>
-                </span>
-              </a>
-
               {%- set header_2 = "Notifications" %}
               {%- set icon_2 = "fa-messages" -%}
-              <a href="#notifications" class="ui small header item">
+              <a href="#{{ header_2 }}" class="ui small header item">
                 <i class="fad {{ icon_2 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_2 }}
@@ -78,7 +68,7 @@
 
               {%- set header_3 = "Search as you type" %}
               {%- set icon_3 = "fa-magnifying-glass" -%}
-              <a href="#search" class="ui small header item">
+              <a href="#{{ header_3 }}" class="ui small header item">
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
@@ -86,23 +76,23 @@
                 </span>
               </a>
 
-              {%- set header_4 = "Visual diff on pull requests" %}
-              {%- set icon_4 = "fa-file-plus-minus" -%}
-              <a href="#visual-diff" class="ui small header item">
+              {%- set header_4 = "Offline formats" %}
+              {%- set icon_4 = "fa-file-pdf" -%}
+              <a href="#{{ header_4 }}" class="ui small header item">
                 <i class="fad {{ icon_4 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_4 }}
-                  <span class="sub header">Review PR changes visually.</span>
+                  <span class="sub header">Easily download docs in PDF or HTML for offline use</span>
                 </span>
               </a>
 
-              {%- set header_5 = "Read the Docs flyout" %}
+              {%- set header_5 = "Read the Docs Flyout" %}
               {%- set icon_5 = "fa-bars" -%}
-              <a href="#flyout" class="ui small header item">
+              <a href="#{{ header_5 }}" class="ui small header item">
                 <i class="fad {{ icon_5 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_5 }}
-                  <span class="sub header">Select between multiple versions and translations.</span>
+                  <span class="sub header">Provide quick access to all reader features</span>
                 </span>
               </a>
             </div>
@@ -126,28 +116,8 @@
 {{ about_divide() }}
 
 <section>
-  <div class="ui very padded container">
-    <div class="ui vertically padded centered grid" id="analytics">
 
-      {% call about.step(
-          header=header_1,
-          image="/images/features/analytics.png",
-          image_alt="Graph showing traffic and search analytics in a period",
-          icon=icon_1) %}
-        {% markdown %}
-      Explore traffic analytics and understand what are the pages your readers read the most.
-      **Prioritize the work** to improve them before other pages with less traffic.
-      Find out what are the terms your users search the most and write documentation pages
-      that include those terms so they can easily find them.
-        {% endmarkdown %}
-      {% endcall %}
-
-    </div>
-  </div>
-
-  {{ about_divide() }}
-
-  <div class="ui very padded container" id="notification">
+  <div class="ui very padded container" id="{{ header_2 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -166,13 +136,13 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="search">
+  <div class="ui very padded container" id="{{ header_3 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
           header=header_3,
           image="/images/features/search.png",
-          image_alt="Read the Docs pull request review checks in a GitHub pull request",
+          image_alt="Search as you type",
           icon=icon_3) %}
         {% markdown %}
         Always find what you are looking for at the tip of your fingers with our powerful ElasticSearch engine.
@@ -185,17 +155,18 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="visual-diff">
+  <div class="ui very padded container" id="{{ header_4 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
           header=header_4,
-          image="/images/features/visual-diff.png",
-          image_alt="Visual diff between two versions",
+          image="/images/features/offline-formats-django.png",
+          image_alt="Offline formats",
           icon=icon_4) %}
       {% markdown %}
-      Visuallize documentation changes *"in situ"* from pull requests before merging them.
-      **Understand what exacly changed** in a simple and visual way.
+      Your users might need to send documentation in an email, or read it on a plane.
+      Offline formats like PDF and Zipped HTML are a great way to **make your documentation portable**.
+      It also makes storing a full copy easy for regulatory compliance and archiving.
       {% endmarkdown %}
       {% endcall %}
 
@@ -204,7 +175,7 @@
 
   {{ about_divide() }}
 
-  <div class="ui very padded container" id="flyout">
+  <div class="ui very padded container" id="{{ header_5 }}">
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
@@ -225,7 +196,7 @@
 {# Try it out code block #}
 {% include "includes/try-it-out-docusaurus.html" %}
 
-{% block homepage_bottom_callout %}
+{% block bottom_callout %}
   <section>
     <div class="ui very padded container">
       <div class="ui grid center aligned">
@@ -233,23 +204,15 @@
           <div class="column twelve wide computer sixteen wide tablet">
             <div class="ui basic vertical huge segment">
               <h2 class="ui center aligned header">
-                Still not convinced? Try it yourself  <i class="fad fa-rocket icon"></i>
+                Automate your docs with Read the Docs
               </h2>
-
-                {% markdown %}
-                Import your existing project or create one following our [tutorial](https://docs.readthedocs.io/en/stable/tutorial/),
-                and try it yourself.
-                All these features will be enabled by default when using the
-                [``build.commands``](https://docs.readthedocs.io/en/latest/config-file/v2.html#build-commands)
-                config key as shown in the example.
-                {% endmarkdown %}
 
               <p>
                 <a class="ui large teal stackable button"
                 data-analytics="signup-modal"
                  onclick="jQuery('#signup-modal').modal('show');">
                   <i class="fad fa-rocket icon"></i>
-                  Get started for free
+                  Sign up
                 </a>
               </p>
             </div>
@@ -258,7 +221,8 @@
       </div>
     </div>
   </section>
-  {% endblock homepage_bottom_callout %}
+  {% endblock bottom_callout %}
+
 
   </body>
 </html>
