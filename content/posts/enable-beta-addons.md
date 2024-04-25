@@ -1,5 +1,5 @@
 title: Empower your documentation with addons
-date: 2024-04-24
+date: 2024-04-25
 description: Read the Docs Addons let documentation authors add features to their documentation such as analytics, version feedback, and search as you type to documentation in a modular way where authors have control.
 category: Feature announcement
 tags: addons, hosting
@@ -23,7 +23,9 @@ Continue reading to explore the full list of addons and how to enable them in yo
 
 To enable Read the Docs Addons in your project follow these steps:
 
-1. Go to the [new beta dashboard](https://beta.readthedocs.org).
+1. Go to the new beta dashboard:
+  * [Community](https://beta.readthedocs.org)
+  * [Business](https://beta.readthedocs.com)
 1. Click on the project you want to enable addons.
 1. Go to **Settings**, then **Addons (Beta)** from the left bar.
 1. Check **Enable Addons**.
@@ -52,6 +54,8 @@ DocDiff shows changes made on the rendered versions by **visually highlighting t
 the current pull request and the latest version of the project's documentation**.
 This addons allows reviewers to quickly find what has changed on this pull request
 but also find style/rendering issues before accepting and merging the pull request.
+To show the differences on a pull request against the _latest_ version,
+the reader can press `d` on their keyboard to enable/disable.
 
 ### Pull request notification
 
