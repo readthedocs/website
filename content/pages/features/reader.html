@@ -1,0 +1,249 @@
+{#
+  The goal of this page is to highlight reader features.
+#}
+<html>
+  <head>
+    <title>Documentation reader features</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="features/reader" />
+    {# <meta name="status" content="hidden" /> #}
+    <meta name="description" content="Give your documentation readers a number of in-documentation features that they'll love. Powered by Read the Docs APIs and Javascript integrations." />
+  </head>
+  <body>
+
+{#
+  View this page at http://localhost:8080/features/reader/
+#}
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/features.html" as about %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/technical.html" as technical %}
+{% import "partials/homepage.html" as homepage %}
+
+<section>
+  <div class="ui horizontally very padded container">
+    <div class="ui very padded centered grid">
+      <div class="middle aligned row">
+
+        <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+          <div class="ui large left aligned basic vertical segment">
+            <h1 class="ui huge header">
+                Give your documentation readers a great experience
+            </h1>
+
+            <p>
+              Documentation UX is as important as the content itself.
+              Give your readers a number of in-documentation features that they'll love.
+
+            </p>
+
+            {# This should be a list of benefits, not features, since we have a feature listing in the side nav #}
+            <div class="ui list">
+              <div class="item"><i class="fad fa-check secondary icon"></i>Easily find content with great search</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Allow users to browser docs for the exact version they're using</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Alert users who are using old versions</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Easily download docs before their flight</div>
+            </div>
+
+            <p>
+              Read the Docs is the <em>"all in one"</em> solution that gives you all these features with minimal configuration.
+            </p>
+
+          </div>
+        </div>
+
+        <div class="six wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui padded basic segment">
+            <div class="ui relaxed list">
+
+              {%- set header_2 = "Notifications" %}
+              {%- set slug_2 = "notifications" %}
+              {%- set icon_2 = "fa-messages" -%}
+              <a href="#{{ slug_2 }}" class="ui small header item">
+                <i class="fad {{ icon_2 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_2 }}
+                  <span class="sub header">Warn readers about reading and old version of the documentation.</span>
+                </span>
+              </a>
+
+              {%- set header_3 = "Search as you type" %}
+              {%- set slug_3 = "search-as-you-type" %}
+              {%- set icon_3 = "fa-magnifying-glass" -%}
+              <a href="#{{ slug_3 }}" class="ui small header item">
+                <i class="fad {{ icon_3 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_3 }}
+                  <span class="sub header">Quickly find exactly what you are looking for.</span>
+                </span>
+              </a>
+
+              {%- set header_4 = "Offline formats" %}
+              {%- set slug_4 = "offline-formats" %}
+              {%- set icon_4 = "fa-file-pdf" -%}
+              <a href="#{{ slug_4 }}" class="ui small header item">
+                <i class="fad {{ icon_4 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_4 }}
+                  <span class="sub header">Easily download docs in PDF or HTML for offline use</span>
+                </span>
+              </a>
+
+              {%- set header_5 = "Read the Docs Flyout" %}
+              {%- set slug_5 = "read-the-docs-flyout" %}
+              {%- set icon_5 = "fa-bars" -%}
+              <a href="#{{ slug_5 }}" class="ui small header item">
+                <i class="fad {{ icon_5 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_5 }}
+                  <span class="sub header">Provide quick access to all reader features</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% macro about_divide(text=None) %}
+  <div class="ui text container">
+    <div class="ui {%- if text %} horizontal {%- endif %} divider">
+      {% if text %}{{ text }}{% endif %}
+    </div>
+  </div>
+{% endmacro %}
+
+{{ about_divide() }}
+
+<section>
+
+  <div class="ui very padded container" id="{{ slug_2 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_2,
+          image="/images/features/notification.png",
+          image_alt="Notification on a old version",
+          icon=icon_2) %}
+        {% markdown %}
+        Clearly communicate readers they are reading an outdated version of the documentation,
+        and **reduce support requests** from old version of your product.
+        {% endmarkdown %}
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/page/versions.html#version-warning">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_3 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_3,
+          image="/images/features/search.png",
+          image_alt="Search as you type",
+          icon=icon_3) %}
+        {% markdown %}
+        Always find what you are looking for at the tip of your fingers with our powerful ElasticSearch engine.
+        Search on a **single or accross multiple projects** at once.
+        {% endmarkdown %}
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/page/server-side-search/index.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_4 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_4,
+          image="/images/features/offline-formats-django.png",
+          image_alt="Offline formats",
+          icon=icon_4) %}
+      {% markdown %}
+      Your users might need to send documentation in an email, or read it on a plane.
+      Offline formats like PDF and Zipped HTML are a great way to **make your documentation portable**.
+      It also makes storing a full copy easy for regulatory compliance and archiving.
+      {% endmarkdown %}
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/page/downloadable-documentation.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_5 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_5,
+          image="/images/features/flyout.png",
+          image_alt="Read the Docs flyout",
+          icon=icon_5) %}
+      {% markdown %}
+      Let your users select between **multiple versions and translations** of your documentation in a quick way using the flyout menu.
+      {% endmarkdown %}
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/page/flyout-menu.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
+
+
+{# Try it out code block #}
+{% include "includes/try-it-out-docusaurus.html" %}
+
+{% block bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Automate your docs with Read the Docs
+              </h2>
+
+              <p>
+                <a class="ui large teal stackable button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                  <i class="fad fa-rocket icon"></i>
+                  Sign up
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock bottom_callout %}
+
+
+  </body>
+</html>
