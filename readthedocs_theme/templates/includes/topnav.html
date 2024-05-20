@@ -1,13 +1,17 @@
 {# The main product menu, for all high priority information #}
 {% macro menu_product(with_more=False) %}
   <div class="header">About</div>
+  <a class="item" href="{{ SITEURL }}/features/">
+    <i class="fad fa-arrow-progress primary icon"></i>
+    How Read the Docs works
+  </a>
   <a class="item" href="{{ SITEURL }}/pricing/">
     <i class="fad fa-diagram-venn primary icon"></i>
     Pricing
   </a>
-  <a class="item" href="{{ SITEURL }}/features/">
-    <i class="fad fa-arrow-progress primary icon"></i>
-    How Read the Docs works
+  <a class="item" href="{{ SITEURL }}/pricing/enterprise/">
+    <i class="fad fa-briefcase primary icon"></i>
+    Enterprise plans
   </a>
 
   <div class="header">Features</div>
