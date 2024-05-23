@@ -22,6 +22,8 @@ We understand this change will affect a few hundred of projects, so we have a ti
 * **Monday, June 24, 2024**: Do a third and final brownout (temporarily enforce this deprecation) for 48 hours: 00:01 PST to 23:59 PST (midnight)
 * **Monday, July 1, 2024**: Fully remove support for building documentation without configuration file v2.
 
+We strongly recommend to update your projects before July 1st, 2024 to avoid any downtime.
+
 ### How to update your project
 
 There are different approaches that can be followed depending on the configuration of your project.
