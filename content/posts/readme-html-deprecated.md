@@ -16,7 +16,7 @@ After this date, projects not outputting an `index.html` file will [fail their b
 
 We understand this change will affect a few hundred of projects, so we have a timeline to communicate this deprecation to our users effectively.
 
-* **Monday, May 27, 2024**: Email project owners using this deprecated feature so they can take action.
+* **Tuesday, May 28, 2024**: Email project owners using this deprecated feature so they can take action.
 * **Monday, June 10, 2024**: Do the first brownout (temporarily enforce this deprecation) for 12 hours: 00:01 PST to 11:59 PST (noon)
 * **Monday, June 17, 2024**: Do a second brownout (temporarily enforce this deprecation) for 24 hours: 00:01 PST to 23:59 PST (midnight)
 * **Monday, June 24, 2024**: Do a third and final brownout (temporarily enforce this deprecation) for 48 hours: 00:01 PST to 23:59 PST (midnight)
