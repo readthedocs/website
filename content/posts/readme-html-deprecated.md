@@ -1,4 +1,4 @@
-title: Stop redirecting root documentation URL to "README.html"
+title: Deprecation: Removal of redirect for root documentation URL to "README.html"
 date: 2024-05-27
 category: Changelog
 tags: hosting, deprecation
