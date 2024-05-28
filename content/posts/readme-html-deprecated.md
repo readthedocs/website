@@ -20,7 +20,7 @@ We understand this change will affect a few hundred of projects, so we have a ti
 * **Monday, June 10, 2024**: Do the first brownout (temporarily enforce this deprecation) for 12 hours: 00:01 PST to 11:59 PST (noon)
 * **Monday, June 17, 2024**: Do a second brownout (temporarily enforce this deprecation) for 24 hours: 00:01 PST to 23:59 PST (midnight)
 * **Monday, June 24, 2024**: Do a third and final brownout (temporarily enforce this deprecation) for 48 hours: 00:01 PST to 23:59 PST (midnight)
-* **Monday, July 1, 2024**: Fully remove support for building documentation without configuration file v2.
+* **Monday, July 1, 2024**: Fully remove of redirecting root URLs to `/README/html`
 
 We strongly recommend to update your projects before July 1st, 2024 to avoid any downtime.
 
