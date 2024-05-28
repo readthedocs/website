@@ -1,4 +1,4 @@
-title: Deprecation: Removal of redirect for root documentation URL to "README.html"
+title: Deprecation: Removal of redirect for index documentation URL to "README.html"
 date: 2024-05-27
 category: Changelog
 tags: hosting, deprecation
@@ -7,7 +7,7 @@ status: published
 image: /images/readme-html-deprecated.jpg
 image_credit: Photo by <a href="https://unsplash.com/@introspectivedsgn?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Erik Mclean</a> on <a href="https://unsplash.com/photos/black-asus-laptop-computer-showing-3-00-sxiSod0tyYQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-We are announcing the **deprecation of redirecting root URLs (`/`) to `/README.html`**
+We are announcing the **deprecation of redirecting index URLs (ending in `/`) to `/README.html`**
 for all the projects that don't output an `index.html` file when building the documentation.
 The deprecation date is set on **Monday, July 1st, 2024**.
 After this date, projects not outputting an `index.html` file will [fail their builds](https://blog.readthedocs.com/builds-without-index/).
@@ -20,7 +20,7 @@ We understand this change will affect a few hundred of projects, so we have a ti
 * **Monday, June 10, 2024**: Do the first brownout (temporarily enforce this deprecation) for 12 hours: 00:01 PST to 11:59 PST (noon)
 * **Monday, June 17, 2024**: Do a second brownout (temporarily enforce this deprecation) for 24 hours: 00:01 PST to 23:59 PST (midnight)
 * **Monday, June 24, 2024**: Do a third and final brownout (temporarily enforce this deprecation) for 48 hours: 00:01 PST to 23:59 PST (midnight)
-* **Monday, July 1, 2024**: Fully remove of redirecting root URLs to `/README/html`
+* **Monday, July 1, 2024**: Fully remove of redirecting index URLs to `/README/html`
 
 We strongly recommend to update your projects before July 1st, 2024 to avoid any downtime.
 
