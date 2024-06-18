@@ -8,7 +8,7 @@
 {#
   Main plan block for commercial/community plan cards
 #}
-{% macro plan(name, price, color="teal") %}
+{% macro plan(name, price, color="teal", highlight=False) %}
   <div class="{% if not price %} computer only {%- endif %} column">
     <div class="ui {%- if price %} raised {{ color }} {%- else %} basic {%- endif %} segment">
 
@@ -32,6 +32,13 @@
       {% endif %}
 
       {{ caller() }}
+
+        {% if highlight %}
+        <div class="ui teal bottom attached label">
+          <i class="fas fa-fire icon"></i>
+          Our most popular plan
+        </div>
+        {% endif %}
 
     </div>
   </div>
