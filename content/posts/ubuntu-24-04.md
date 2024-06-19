@@ -11,7 +11,7 @@ image_credit: Photo by <a href="https://unsplash.com/@6heinz3r?utm_content=credi
 We are happy to announce that we added support for the latest Ubuntu 24.04 LTS version released on April, 2024.
 This new image is available to build documentation projects by using the YAML config `build.os: "ubuntu-24.04"`.
 
-We plan to update the `build.os: "latest"` alias after some weeks of testing the this image image.
+We plan to update the `build.os: "latest"` alias after some weeks of testing the this image.
 
 [Let us know](https://readthedocs.org/support/) any feedback you may have about this new Ubuntu 24.04 LTS image,
 or if your documentation project special needs that are not covered by Ubuntu images.
