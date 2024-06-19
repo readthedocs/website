@@ -26,15 +26,14 @@
 
   <section>
     {% call basic.header_lead(
-    header="Read the Docs is the <em><strong>all-in-one</strong></em> solution you're looking for your documentation")
+    header="Read the Docs is the <em><strong>all-in-one</strong></em> solution for Enterprise software documentation")
     %}
     <p>
-      We offer customized enterprise plans for organizations of all sizes.
-      Work with our team to find the plan that's right for you.
+      If your organization has specific needs that aren't met by our self-serve plans,
+      we offer Enterprise plans that can be customized to your requirements.
     </p>
     <p class="ui center aligned basic segment">
-      <a class="ui large teal button" href="/pricing/enterprise/#enterprise-inquiry">Get started on an Enterprise
-        plan</a>
+      <a class="ui large teal button" href="/pricing/enterprise/#enterprise-inquiry">Tell us about your requirements</a>
     </p>
     {% endcall %}
   </section>
@@ -50,33 +49,32 @@
       <div class="ui vertically padded centered grid">
 
         {% call homepage.feature_detail_item(header="Custom builders", icon="fad fa-robot") %}
-        Add a dedicated, cutom builder to your organization to support large or frequently built documentation projects.
-        Custom builders can include additional memory and more compute resources.
+        Add a dedicated, custom builder to your organization to support large or frequently built documentation projects.
+        Custom builders can include <strong>additional memory and compute resources</strong>.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Support SLA", icon="fad fa-question") %}
-        Get guaranteed support response times for your most important documentation projects.
+        Get <strong>guaranteed support response times</strong> for your most important documentation projects.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Custom SSO", icon="fad fa-shield-keyhole") %}
-        If you have SSO needs outside of our Git integrations,
-        we can integrate with custom SSO providers to keep your docs secure.
+        {% call homepage.feature_detail_item(header="SAML SSO", icon="fad fa-shield-keyhole") %}
+        We support custom SAML SSO integrations, including <strong>Okta or Active Directory</strong>.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Custom build images", icon="fad fa-forklift") %}
-        Does your documentation have specific build requirements?
-        We can provide custom Docker images for your builds to keep them fast and reliable.
+        Does your documentation have <strong>specific build requirements or need GPU support</strong>?
+        We support custom Docker images for your builds to keep them fast and reliable.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Additional audit tracking", icon="fad fa-eyes") %}
-        If you need longer term storage for your audit logging and analytics information,
-        we can provide that.
-        This is great for compliance requirements.
+        {% call homepage.feature_detail_item(header="Advanced audit tracking", icon="fad fa-eyes") %}
+        If you have compliance requirements or need to track who is accessing your documentation,
+        our <strong>forever audit logs and analytics data</strong> can help.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Custom Requirements", icon="fad fa-lightbulb") %}
+        {% call homepage.feature_detail_item(header="Custom Integrations", icon="fad fa-lightbulb") %}
         Have additional needs that we haven't addressed here?
-        We're happy to work with you to provide additional functionality as required for your documentation solution.
+        We're happy to work with your team to work with additional requirements you have,
+        tell us about them below.
         {% endcall %}
 
       </div>
@@ -94,36 +92,42 @@
         <form method="POST" name="fa-form-1" class="ui inverted form"
           action="https://webhook.frontapp.com/forms/036c4169294f3b04abaa/Jd5Qy6b7AYZHFZ-iHZ9OtRFlYyZqTGhYZEYBmrsrhHaiRaYLlKHF9nqccJg7pewDwFUbEZ0klqlNdSs7BcUAoJO7aPapcC7JQBlYV5S1GZ04oPvbkzVvriejZRY"
           enctype="multipart/form-data" accept-charset="utf-8">
-          <h2 class="ui center aligned dividing header">Enterprise plan inquiry</h2>
+          <h2 class="ui center aligned dividing header">Talk with a sales rep about an Enterprise plan</h2>
           <p>
-            Our Enterprise plans have a number of additional features that are not available in our standard plans.
             Let us know what you're looking for and we'll work with you to find the right solution.
           </p>
           <div class="field">
             <label>Name</label>
-            <input type="text" name="name">
+            <input type="text" name="name" placeholder="Jane Smith">
           </div>
           <div class="field">
             <label>Company email address</label>
-            <input type="email" name="email">
+            <input type="email" name="email" placeholder="name@company.com">
+          </div>
+          <div class="field">
+            <label for="referral">How did you hear about us?</label>
+            <input type="email" name="referral" placeholder="My friend David from the Flask project recommended you">
           </div>
           <div class="field">
             <label>What type of documentation are you interested in?</label>
             <select class="ui dropdown" name="documentation-type">
               <option value="">Select type of documentation</option>
-              <option value="Developer Docs">Developer documentation</option>
-              <option value="User Guides">User guides</option>
-              <option value="API Documentation">API documentation</option>
               <option value="Internal Docs">Internal team documentation</option>
-              <option value="Public docs">SaaS product documentation</option>
-              <option value="Other docs">Something else!</option>
+              <option value="Public docs">Public product documentation</option>
+              <option value="Public docs">Open source project documentation</option>
+              <option value="Other docs">Something else (explain below)</option>
             </select>
           </div>
           <div class="field">
             <label>Do you have any specific requirements or questions?</label>
-            <textarea name="body" rows="2" required></textarea>
+            <textarea name="body" rows="2" required placeholder="We really need SAML support with Okta"></textarea>
           </div>
-          <button class="ui inverted button" type="submit">Contact us</button>
+          <button class="ui inverted button" type="submit">Submit information</button>
+          <p>
+            <em>
+            A sales rep will reach out to you within 24 hours to discuss your requirements.
+            </em>
+          </p>
         </form>
       </div>
     </div>
