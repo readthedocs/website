@@ -1,5 +1,5 @@
 title: Ubuntu 24.04 LTS available
-date: 2024-06-19
+date: 2024-06-21
 description: The latest Ubuntu 24.04 LTS version is available to build documentation projects on Read the Docs.
 category: Changelog
 tags: builders, docker, images
