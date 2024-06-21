@@ -16,7 +16,7 @@ commands:
     steps:
       - checkout
       - node/install:
-          node-version: '14.18'
+          node-version: '20.14.0'
       - run: npm ci
       - run: npm run build-assets
       - run:
@@ -36,7 +36,7 @@ commands:
 jobs:
   lint:
     docker:
-      - image: "cimg/node:14.18"
+      - image: "cimg/node:20.14.0"
     steps:
       - run-lint: {}
   build:
