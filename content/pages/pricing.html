@@ -57,7 +57,7 @@
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("<em>Includes all <b>Basic plan</b> features</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
               {{ pricing.plan_feature("Concurrent builds", "4 concurrent builds", "fa-rectangle-vertical-history fa-swap-opacity") }}
-              {{ pricing.plan_feature("Custom domains", "Use your own domain", "fa-at") }}
+              {{ pricing.plan_feature("Custom domains", "5 custom domains", "fa-at") }}
               {{ pricing.plan_feature("Search and pageview analytics", "30 day retention", "fa-line-chart") }}
             </div>
           {% endcall %}
@@ -70,6 +70,7 @@
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("<em>Includes all <b>Advanced plan</b> features</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
               {{ pricing.plan_feature("Concurrent builds", "6 concurrent builds", "fa-rectangle-vertical-history fa-swap-opacity") }}
+              {{ pricing.plan_feature("Custom domains", "15 custom domains", "fa-at") }}
               {{ pricing.plan_feature("Support", "1 business day response", "fa-message-question") }}
               {{ pricing.plan_feature("Search and pageview analytics", "90 day retention", "fa-line-chart") }}
               {{ pricing.plan_feature("Authentication auditing", "90 day retention", "fa-user-check") }}
@@ -127,7 +128,7 @@
                   {{ pricing.plan_feature("Concurrent builds", "2 concurrent builds", "fa-rectangle-vertical-history fa-swap-opacity") }}
                   {{ pricing.plan_feature("Public projects", "Host public documentation", "fa-globe") }}
                   {{ pricing.plan_feature("Public repositories", "Clone public repositories", "fa-globe") }}
-                  {{ pricing.plan_feature("Custom domain", "Use your own domain", "fa-at") }}
+                  {{ pricing.plan_feature("Custom domain", "2 custom domains", "fa-at") }}
                   {{ pricing.plan_feature("Ad supported", "Hosted documentation includes ads", "fa-ad") }}
                 </div>
               </div>
@@ -243,7 +244,7 @@
       {{ pricing.feature_row("Single sign-on", "Sign on with using external provider", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro=("GitHub, GitLab, and Google", "olive")) }}
       {{ pricing.feature_row("Sharing", "Provide temporary access to private documentation", "fa-user-shield", on_community=False) }}
       {{ pricing.feature_row("CDN hosting", "Reduce load times for your projects", "fa-clouds", on_community=True, on_basic="Public projects only", on_advanced="Public projects only", on_pro="Public projects only") }}
-      {{ pricing.feature_row("Custom domains", "Host projects on custom domain name", "fa-at", on_basic=False) }}
+      {{ pricing.feature_row("Custom domains", "Host projects on your own custom domain names", "fa-at", on_community="2", on_basic=False, on_advanced="5", on_pro="15") }}
       {{ pricing.feature_row("Subprojects", "Organize projects using project nesting", "fa-diagram-nested") }}
       {{ pricing.feature_row("Integrated search", "Search across all of your projects", "fa-magnifying-glass") }}
       {{ pricing.feature_row("Offline formats", "Download offline PDF and EPUB formats", "fa-file-pdf") }}
