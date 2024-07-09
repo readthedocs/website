@@ -15,6 +15,7 @@ We missed a couple of newsletter updates because of travel and other commitments
 * **New dashboard**: We are close to fully launching our new dashboard, and it's now living at https://app.readthedocs.org and https://app.readthedocs.com. The last pieces are swapping over our documentation hosting ("proxito") to the new system, and then we'll update the links on our website to point here, and officially deprecate the old dashboard.
 * **SAML SSO**: We continue to work on SAML support, with an initial implementation available for testing. We are planning updates to our login pages to support this new authentication method, which is the last major step before we can release this feature.
 * **Addons**: Addons are now fully rolled out to everyone except users of our Sphinx builds. Migration for all Sphinx projects is coming soon, and there will be some backwards incompatibles around the build process.
+* **Build process**: Our support for fully custom builds with ``build.commands`` is no longer in beta, and it generally available. We also support ``ubuntu-22.04`` as a ``build.image``, and this will be the ``latest`` image after more testing.
 
 You can always see the latest changes to our platforms in our [changelog 📃](https://docs.readthedocs.io/page/changelog.html).
 
@@ -30,6 +31,7 @@ Want to follow along with our development progress? View our [development roadma
 ## Possible issues
 
 - Our deprecation of injected Sphinx context is happening soon. A blog post will be coming up with that information.
+- We deprecated all VCS tools except for Git: https://about.readthedocs.com/blog/2024/02/drop-support-for-subversion-mercurial-bazaar/
 
 -----
 
