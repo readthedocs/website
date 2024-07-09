@@ -49,7 +49,7 @@ We've been enabling Read the Docs Addons by default on all projects using `build
 -- which was a workaround for those users wanting to skip this "behind the scenes" config manipulation,
 and it has shown worked great.
 
-Another step towards this direction was the removal of [YAML manipulation](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/) for all MkDocs projects, on Aril 2024.
+Another step towards this direction was the [removal of YAML manipulation for all MkDocs projects](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/), on Aril 2024.
 Since then, all projects building with MkDocs are already using Read the Docs Addons and they haven't reported any big issues.
 
 All of this step-by-step changes have given us the confidence to make the last step and **plan the removal of the config manipulation for Sphinx projects** as well,
