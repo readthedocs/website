@@ -32,11 +32,11 @@ since results may differ from when building locally.
 The introduction of Read the Docs Addons [last year](https://blog.readthedocs.com/addons-flyout-menu-beta/),
 has proved that all these features can be added on top of the documentation without having to manipulate project's configuration at build time,
 removing these differences between building locally and on Read the Docs;
-making users to always get the result they were expecting.
+making users always get the result they were expecting.
 
-We've been enabling Read the Docs Addons by default to all projects using `build.commands` since then
---which was a workaround for those users wanting to skip this "behind the scenes" config manipulation,
-and it also showed great success.
+We've been enabling Read the Docs Addons by default on all projects using `build.commands` since then
+-- which was a workaround for those users wanting to skip this "behind the scenes" config manipulation,
+and it has shown worked great.
 
 Another step towards this direction was the removal of [YAML manipulation](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/) for all MkDocs projects, on Aril 2024.
 Since then, all projects building with MkDocs are already using Read the Docs Addons and they haven't reported any big issues.
@@ -58,7 +58,7 @@ Keep these dates in mind and prepare your projects for the changes:
 
 ## How does it affect my projects?
 
-It's worth to note there are two big different types of changes that will affect your projects:
+There are two big different types of changes that will affect your projects:
 at build time, and visually.
 Depending on the configuration of your project, it could be affected by one, both or none of them.
 
@@ -76,7 +76,7 @@ to allow keeping the "behind the scenes" manipulation behavior at build time whi
 
 ### Visual changes
 
-Even if the build has completed successfully, there may be some visual changes you noticed.
+Even if the build has completed successfully, there may be some visual changes.
 Version and pull request notifications were completely re-designed and the flyout menu has been moved to a floating position in the bottom right,
 for example.
 
@@ -89,7 +89,7 @@ Expect news around this visual changes in the following months.
 ## How to opt-in to addons _now_
 
 Read the Docs Addons is already available for all users that want to start using it on their projects.
-In case they want to prepare themselves for the migration, or make usage of the new features from Read the Docs Addons, like the [DocDiff](https://docs.readthedocs.io/page/pull-requests.html) for example.
+In case they want to prepare themselves for the migration, or make usage of the new features from Read the Docs Addons, like the [DocDiff addon](https://docs.readthedocs.io/page/pull-requests.html).
 If you want to enable Read the Docs Addons in your project, [follow these steps from our documentation](https://docs.readthedocs.io/page/addons.html#enabling-read-the-docs-addons).
 
 
