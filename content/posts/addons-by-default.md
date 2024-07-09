@@ -12,8 +12,19 @@ We are announcing the introduction of [Read the Docs Addons](https://about.readt
 Read the Docs Addons is the new modular implementation of all the features Read the Docs adds on top of your documentation:
 analytics, flyout menu, notifications and search, among others.
 
-Since Read the Docs started, every time it ran a build,
-a set of extra configuration were automatically added to make the integration easier.
+----
+
+> _**TL;DR:**
+> Read the Docs has stopped adding extra context and configuration on Sphinx builds.
+> This may affect your documentation builds.
+> If you are experimenting any issue with this change,
+> read [How does it affect my projects?](#how-does-it-affect-my-projects) section and
+> try installing [`sphinx-build-compatibility`](https://github.com/readthedocs/sphinx-build-compatibility) extension in your project to mitigate them._
+
+----
+
+Since Read the Docs started,
+every time it ran a build, a set of extra configuration were automatically added to make the integration easier.
 This manipulation happened at Sphinx's `conf.py` and MkDocs's `mkdocs.yml` configuration files,
 and included the following:
 
