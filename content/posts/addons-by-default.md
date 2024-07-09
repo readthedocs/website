@@ -80,8 +80,22 @@ This means that if your project were using any of these extra configuration,
 those won't be available at build time anymore and some features may not work as expected,
 or the build could fail completely.
 
+The following are the most common changes you may need to do in your Sphinx's configuration file:
+
+```python
+import os
+
+# Define the canonical URL if you are using a custom domain on Read the Docs
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
+
+# Tell Jinja2 templates the build is running on Read the Docs
+if os.environ.get("READTHEDOCS", "") == "True":
+    html_context["READTHEDOCS"] = True
+```
+
 In case you've found any difference in behavior after Read the Docs Addons has been enabled
 (see [How to opt-in to addons _now_](#how-to-opt-in-to-addons-now) to enable addons manually),
+and you've already added the previous chunk of code to your Sphinx's `conf.py` file,
 you can try installing the [`sphinx-build-compatibility`](https://github.com/readthedocs/sphinx-build-compatibility/) extension we've created
 to allow keeping the "behind the scenes" manipulation behavior at build time while you can dig more on these changes and perform the migration gradually.
 
