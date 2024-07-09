@@ -66,11 +66,11 @@
         {% call marketing.highlight_item(
             icon="white fa-user-robot",
             icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-            header="Easy previews and deploys",
+            header="Automatic deploy previews",
             color="grey") %}
           <p>
-            Preview changes on every commit to your pull requests.
-            Release documentation to your users on each merge.
+            Preview your documentation on every pull request.
+            Never guess what you're shipping again.
           </p>
         {% endcall %}
 
@@ -79,8 +79,8 @@
           header="Ideal developer experience",
           color="black") %}
         <p class="small" >
-          Write documentation without changing your workflow or your tools
-          using a <strong>docs as code</strong> approach.
+          Write documentation with Git and your favorite text editor.
+          Developers and writers both love <strong>docs as code</strong>.
         </p>
       {% endcall %}
 
@@ -90,12 +90,16 @@
             header="Work privately or publicly",
             color="violet") %}
           <p>
-            Easily share within your team or with the whole world.
-            Manage permissions yourself or automatically with GitHub.
+            Share content with just your team, or with the whole world.
+            Sync permissions from GitHub, or manage custom permissions for your projects.
           </p>
         {% endcall %}
       {% endcall %}
     {% endblock homepage_highlight %}
+
+    {# Logos of businesses that use our product. #}
+    {% include "includes/business-logos.html" %}
+
 
     <div class="ui divider"></div>
 
