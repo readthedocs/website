@@ -31,7 +31,7 @@ Want to follow along with our development progress? View our [development roadma
 ## Possible issues
 
 - Our deprecation of injected Sphinx context is happening soon. A blog post will be coming up with that information.
-- We deprecated all VCS tools except for Git: <https://about.readthedocs.com/blog/2024/02/drop-support-for-subversion-mercurial-bazaar/>
+- We [deprecated all VCS tools except for Git](<https://about.readthedocs.com/blog/2024/02/drop-support-for-subversion-mercurial-bazaar/>) in June. We haven't heard much feedback here, but that post has pretty solid workarounds for most users.
 
 -----
 
