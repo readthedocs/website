@@ -24,7 +24,7 @@ analytics, flyout menu, notifications and search, among others.
 ----
 
 Since Read the Docs started,
-every time it ran a build, a set of extra configuration were automatically added to make the integration easier.
+every time it ran a build, extra configuration options were automatically added to make integration easier.
 This manipulation happened at Sphinx's `conf.py` and MkDocs's `mkdocs.yml` configuration files,
 and included the following:
 
