@@ -47,7 +47,7 @@ making users always get the result they were expecting.
 
 We've been enabling Read the Docs Addons by default on all projects using `build.commands` since then
 -- which was a workaround for those users wanting to skip this "behind the scenes" config manipulation,
-and it has shown worked great.
+and it has worked great.
 
 Another step towards this direction was the [removal of YAML manipulation for all MkDocs projects](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/), on Aril 2024.
 Since then, all projects building with MkDocs are already using Read the Docs Addons and they haven't reported any big issues.
