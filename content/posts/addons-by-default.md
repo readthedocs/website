@@ -90,6 +90,8 @@ html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
 
 # Tell Jinja2 templates the build is running on Read the Docs
 if os.environ.get("READTHEDOCS", "") == "True":
+    if "html_context" not in globals():
+        html_context = {}
     html_context["READTHEDOCS"] = True
 ```
 
@@ -122,4 +124,3 @@ If you want to enable Read the Docs Addons in your project, [follow these steps 
 
 [Let us know](https://docs.readthedocs.io/page/support.html) any feedback you may have about this change or any of the addons.
 We are happy to work together to keep improving them or fix any issue you may have with the migration.
-
