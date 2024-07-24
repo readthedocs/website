@@ -35,20 +35,6 @@
         <div class="stretched row">
 
           {% call pricing.plan(
-            name="Basic plan",
-            price="$50",
-            color="violet",
-          ) %}
-            <div class="ui list relaxed divided">
-              {# TODO: Replace "core" with better terms. Not sure what is best though.. #}
-              {{ pricing.plan_feature("<em>Includes all <b>core</b> features</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
-              {{ pricing.plan_feature("Concurrent builds", "2 concurrent builds", "fa-rectangle-vertical-history fa-swap-opacity") }}
-              {{ pricing.plan_feature("Support", "2 business day response", "fa-message-question") }}
-              {{ pricing.plan_feature("Single sign-on (SSO)", "With GitHub and GitLab", "fa-key-skeleton") }}
-            </div>
-          {% endcall %}
-
-          {% call pricing.plan(
             name="Advanced plan",
             price="$150",
             color="violet",
@@ -77,6 +63,34 @@
               {{ pricing.plan_feature("Single sign-on (SSO)", "With Google", "fa-key-skeleton") }}
             </div>
           {% endcall %}
+
+          <div class="column">
+            <div class="ui padded inverted violet segment">
+              <h3 class="ui small header">
+                <i class="fad fa-building icon"></i>
+                <span class="content">
+                  Enterprise plan
+                </span>
+              </h3>
+
+              <p>
+                If your organization has specific needs that aren't met by our self-serve plans, we offer enterprise plans that can be customized to your requirements.
+              </p>
+
+              <div class="ui inverted list relaxed divided">
+                {{ pricing.plan_feature("Custom builders", None, "fa-robot fa-swap-opacity") }}
+                {{ pricing.plan_feature("Support SLA", None, "fa-question") }}
+                {{ pricing.plan_feature("SAML SSO", None, "fa-shield-keyhole") }}
+                {{ pricing.plan_feature("Custom build images", None, "fa-forklift") }}
+                {{ pricing.plan_feature("Advanced audit tracking", None, "fa-eyes") }}
+                {{ pricing.plan_feature("Custom integrations", None, "fa-lightbulb") }}
+              </div>
+
+              <p class="ui center aligned basic segment">
+                <a class="ui inverted button" href="./enterprise/">Tell us more</a>
+              </p>
+            </div>
+          </div>
 
         </div>
       </div>
