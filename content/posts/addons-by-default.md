@@ -108,8 +108,9 @@ Version and pull request notifications were completely re-designed and the flyou
 for example.
 
 Depending on your project's configuration, the documentation tool and the theme you are using, you will notice these differences.
-We plan to release a new version of our theme to keep the flyout menu at the bottom left integrated with the navbar soon,
-and we are talking to other theme authors to communicate these changes and work with them towards a better integration.
+We ~~plan to release~~ released a new version of our theme to keep the flyout menu at the bottom left integrated with the navbar
+that you can install it as `sphinx-rtd-theme==2.1.0rc1`.
+We are also talking to other theme authors to communicate these changes and work with them towards a better integration.
 Expect news around this visual changes in the following months.
 
 
