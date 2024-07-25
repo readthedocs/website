@@ -32,7 +32,8 @@ and caused us to spend a large amount of time dealing with abuse.
 
 ## AI crawler abuse
 
-Here are a couple examples of the types of abuse we are seeing:
+We have been seeing a number of bad crawlers over the past few months,
+but here are a couple illustrative examples of the abuse we're seeing:
 
 ### 73 TB in May 2024 from one crawler
 
