@@ -4,8 +4,8 @@ category: Engineering
 tags: ai, crawlers, abuse
 authors: Eric Holscher
 status: published
-image: /images/posts/bandwidth-may-2024.png
-image_credit: Bandwidth usage in May 2024 showing a spike in traffic from an AI crawler.
+image: /images/headers/ai-crawlers.jpg
+image_credit: Photo by <a href="https://unsplash.com/@iizanyar?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Zanyar Ibrahim</a> on <a href="https://unsplash.com/photos/a-couple-of-people-that-are-sitting-in-a-car-JaUnya0pDIc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 In the last few months, we have noticed an increase in abusive site crawling,
 mainly from AI products and services. These products are recklessly crawling
