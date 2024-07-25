@@ -43,6 +43,70 @@ or support for Etags and Last-Modified headers which would have allowed the craw
 This is basic functionality that all web crawlers should support,
 and not having it is causing harm to the sites they are crawling.
 
+We do have a CDN, but this issue caused the requests to hit our origin servers directly.
+This was caused by the scraped trying to load the actual HTML files inside the htmlzip,
+which was causing the bot to get redirected to the same file over and over again.
+
+<details open>
+<summary>Example web requests</summary>
+
+<code>
+-> curl -IL "https://media.readthedocs.org/htmlzip/chainer/v1.24.0/_modules/chainer/testing/_modules/chainer/_modules/cupy/indexing/_modules/chainer/initializers/normal.html"
+HTTP/2 302
+date: Fri, 07 Jun 2024 17:28:27 GMT
+content-type: text/html
+content-length: 138
+location: https://buildmedia.readthedocs.org/media/htmlzip/chainer/v1.24.0/_modules/chainer/testing/_modules/chainer/_modules/cupy/indexing/_modules/chainer/initializers/normal.html
+x-backend: web-i-0674d3314b7db45b0
+access-control-allow-origin: *
+x-served: Nginx
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=H1nAF7FHjAxlMmhU3RLY88iJpWnIqc4VjDDldtRL.LA-1717781307-1.0.1.1-av1VTQgFX.8A.gsKIoCOHtLtn0qIpF16PVDnAMfJy_E3R_ie2NHVYd5jIc.gOkrlsM5fyEypz8_LLEvW.26iZA; path=/; expires=Fri, 07-Jun-24 17:58:27 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 89025bd2af9a5eda-PDX
+
+HTTP/2 302
+date: Fri, 07 Jun 2024 17:28:27 GMT
+content-type: text/html
+content-length: 138
+location: https://readthedocs.org/projects/chainer/downloads/htmlzip/v1.24.0/
+x-backend: web-i-02c6d21983ca2621b
+cf-cache-status: MISS
+expires: Fri, 07 Jun 2024 21:28:27 GMT
+cache-control: public, max-age=14400
+set-cookie: __cf_bm=X9a2LFI8Gccv.EJMU0QukNXkfwaVewTK5dXFpY.gu_c-1717781307-1.0.1.1-kJgZUv1hjG.Ygv6mxGViUR_VbsGBGnYbV5XFGxnDZ5vLM2YBKd_raTOyNYoWP1w__NV2ffaHwrWRF.fGYEY5mw; path=/; expires=Fri, 07-Jun-24 17:58:27 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 89025bd4ea93efd2-PDX
+
+HTTP/2 200
+date: Fri, 07 Jun 2024 17:28:28 GMT
+content-type: application/zip
+content-length: 5888860
+content-disposition: filename=docs-chainer-org-en-v1.24.0.zip
+x-amz-id-2: r6ae1JjSx/d1B78TGY/YF/lkf9vCSE+u850S2fE5WU1qMro1h7hL0SgVHMhw4jf32Q8VnQP8fLU=
+x-amz-request-id: BGX96S6R9JAWHN96
+last-modified: Thu, 11 Feb 2021 09:12:59 GMT
+etag: "c8cb418f5a8ff2e376fc5f7b7564e445"
+x-amz-meta-mtime: 1495712654.422637991
+accept-ranges: bytes
+x-served: Nginx-Proxito-Sendfile
+x-backend: web-i-0674d3314b7db45b0
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: DENY
+x-content-type-options: nosniff
+content-security-policy: block-all-mixed-content; object-src 'none'; frame-ancestors 'none'
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=nPfIjPuALi5x06S0mwKqhWniX4e7_Yh4dJo4fh_57nQ-1717781308-1.0.1.1-NG9BFnb0IWRcNzUQkuvWF4xT_8uGysYQPGkZMWzpJ3AFsgKF72FmQ0zT9kqmhCT1HHvoPVSxher.RfEzBw2NOg; path=/; expires=Fri, 07-Jun-24 17:58:28 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 89025bd76e545ee0-PDX
+
+</code>
+
+As you can see, this file was last modified in 2021,
+but it was downloaded hundreds of times.
+
+</details>
+
 ### 10 TB in June 2024 from another
 
 In June 2024, **someone used Facebook's content downloader to download 10 TB** of data, mostly htmlzip and PDF files. When we tried to email Facebook about it with the [contact information listed in the bot's user agent](http://www.facebook.com/externalhit_uatext.php), but the email bounced.
@@ -66,6 +130,7 @@ but it's very difficult for us to block on user agent because many real users us
 We have taken a few actions to try to mitigate this abuse:
 
 * We have temporarily blocked all traffic from bots [Cloudflare identifies as AI Crawlers](https://radar.cloudflare.com/traffic/verified-bots), while we figure out how to deal with this.
+* We have reconfigured our CDN to better cache these files, so that our origin servers are not hit as hard.
 * We have started monitoring our bandwidth usage more closely and are working on more aggressive rate limiting rules.
 
 ## Outcomes
@@ -75,6 +140,10 @@ bandwidth for our downloaded files has decreased by 75% (~800GB/day to ~200GB/da
 This is saving us around $50/day in bandwidth costs alone,
 along with large amount of server costs.
 
+Normal traffic would get cached by our CDN.
+But because many of these files are not downloaded often,
+as they are scraped the cache is expired and the requests hit our origin servers directly.
+
 ## Next steps
 
 We are asking all AI companies to be more respectful of the sites they are crawling.
@@ -83,8 +152,10 @@ irrespective of the other copyright and moral issues that are at play in the ind
 
 As a large host of open source documentation,
 we'd also love to work with these companies on deal to be able to crawl our site in a respectful way.
-We have webhooks and other mechanisms to alert them to changed content,
-but instead of working with us they are crawling the site, poorly.
+We could build an integration that would alert them to content changes,
+and download the files that have changed.
+However, none of these companies have reached out to us in any way,
+expect in response to abuse reports.
 
 If these companies wish to be good actors in the space,
 they need to start acting like it,
