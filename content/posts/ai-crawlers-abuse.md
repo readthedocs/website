@@ -1,4 +1,4 @@
-title: AI Crawlers need to be more respectful
+title: AI crawlers need to be more respectful
 date: 2024-07-25
 category: Engineering
 tags: ai, crawlers, abuse
@@ -12,15 +12,15 @@ mainly from AI products and services. These products are recklessly crawling
 many sites across the web, and we've already had to block several sources of abusive traffic.
 It feels like a new AI gold rush,
 and in their haste,
-some of these crawlers are behaving so badly that they are causing harm to the sites they are crawling.
+some of these crawlers are behaving in a way that harm the sites they depend on.
 
 At Read the Docs,
 we host documentation for many projects and are generally bot friendly,
 but the behavior of AI crawlers is currently causing us problems.
 We have noticed AI crawlers aggressively pulling content, seemingly without basic
-checks against abuse. Bots repeatedly download large files hundreds of
-times in a single day, with traffic sent from distributed sources without
-rate limiting or bandwidth limitations.
+checks against abuse.
+Bots repeatedly download large files hundreds of times daily,
+with traffic coming from distributed sources without rate or bandwidth limiting.
 
 AI crawlers are acting in a way that is not respectful to the sites they are crawling,
 and that is going to cause a backlash against AI crawlers in general.
@@ -32,11 +32,11 @@ and caused us to spend a large amount of time dealing with abuse.
 
 Here are a few examples of the types of abuse we are seeing:
 
-### 73 TB in March 2024 from one crawler
+### 73 TB in May 2024 from one crawler
 
 **One crawler downloaded 73 TB of htmlzip files in May 2024, with almost 10 TB in a single day**. This cost us over $5,000 in bandwidth charges, and we had to block the crawler. We emailed this company, reporting a bug in their crawler, and we're working with them on reimbursing us for the costs.
 
-![AI Crawler abuse, May 2024](/images/posts/bandwidth-may-2024.png)
+![AI crawler abuse, May 2024](/images/posts/bandwidth-may-2024.png)
 
 This was a bug in their crawler that was causing it to download the same files over and over again.
 There was no bandwidth limiting in place,
@@ -138,8 +138,8 @@ but it's very difficult for us to block on user agent because many real users us
 We have taken a few actions to try to mitigate this abuse:
 
 * We have temporarily blocked all traffic from bots [Cloudflare identifies as AI Crawlers](https://radar.cloudflare.com/traffic/verified-bots), while we figure out how to deal with this.
-* We have reconfigured our CDN to better cache these files, so that our origin servers are not hit as hard.
 * We have started monitoring our bandwidth usage more closely and are working on more aggressive rate limiting rules.
+* We will reconfigured our CDN to better cache these files, reducing the load on our origin servers.
 
 ## Outcomes
 
@@ -166,12 +166,12 @@ We are asking all AI companies to be more respectful of the sites they are crawl
 They are risking many sites blocking them for abuse,
 irrespective of the other copyright and moral issues that are at play in the industry.
 
-As a large host of open source documentation,
-we'd also love to work with these companies on deal to be able to crawl our site in a respectful way.
+As a major host of open source documentation,
+we'd love to work with these companies on a deal to crawl our site respectfully.
 We could build an integration that would alert them to content changes,
 and download the files that have changed.
-However, none of these companies have reached out to us in any way,
-expect in response to abuse reports.
+However, none of these companies have reached out to us,
+except in response to abuse reports.
 
 If these companies wish to be good actors in the space,
 they need to start acting like it,
