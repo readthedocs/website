@@ -2,7 +2,7 @@ Read the Docs website migration
 ===============================
 
 :date: Mar 9, 2023
-:category: Changelog
+:category: Engineering
 :tags: website, migration
 :authors: Eric Holscher
 :description: Read the Docs has a new home for website and content pages that were previously part of our application.
