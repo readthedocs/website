@@ -75,4 +75,17 @@ bandwidth for our downloaded files has decreased by 75% (~800GB/day to ~200GB/da
 This is saving us around $500/day in bandwidth costs alone,
 along with large amount of server costs.
 
-## Advice
+## Next steps
+
+We are asking all AI companies to be more respectful of the sites they are crawling.
+They are risking many sites blocking them for abuse,
+irrespective of the other copyright and moral issues that are at play in the industry.
+
+As a large host of open source documentation,
+we'd also love to work with these companies on deal to be able to crawl our site in a respectful way.
+We have webhooks and other mechanisms to alert them to changed content,
+but instead of working with us they are crawling the site, poorly.
+
+If these companies wish to be good actors in the space,
+they need to start acting like it,
+instead of burning bridges with many folks in the community.
