@@ -135,14 +135,22 @@ We have taken a few actions to try to mitigate this abuse:
 
 ## Outcomes
 
+Given that our Community site is only for hosting open source projects,
+AWS and Cloudflare do give us sponsored plans,
+but we only have a limited number of credits each year.
+These bandwidth costs mean that we will run out of AWS credits.
+
 By blocking these crawlers,
 bandwidth for our downloaded files has decreased by 75% (~800GB/day to ~200GB/day).
-This is saving us around $50/day in bandwidth costs alone,
-along with large amount of server costs.
+If all this traffic hit our origins servers,
+it would cost around $50/day, or $1,500/month,
+along with the increased load on our servers.
 
-Normal traffic would get cached by our CDN.
+Normal traffic gets cached by our CDN,
+and doesn't cost us anything for bandwidth.
 But because many of these files are not downloaded often,
-as they are scraped the cache is expired and the requests hit our origin servers directly.
+as they are scraped the cache is expired and the requests hit our origin servers directly,
+causing substantial bandwidth charges.
 
 ## Next steps
 
@@ -159,4 +167,4 @@ expect in response to abuse reports.
 
 If these companies wish to be good actors in the space,
 they need to start acting like it,
-instead of burning bridges with many folks in the community.
+instead of burning bridges with folks in the community.
