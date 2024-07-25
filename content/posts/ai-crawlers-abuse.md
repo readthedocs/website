@@ -5,7 +5,7 @@ category: Engineering
 tags: ai, crawlers, abuse
 authors: Eric Holscher
 status: published
-image: /images/headers/ai-crawlers.jpg
+image: https://about.readthedocs.com/images/headers/ai-crawlers.jpg
 image_credit: Photo by <a href="https://unsplash.com/@iizanyar?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Zanyar Ibrahim</a> on <a href="https://unsplash.com/photos/a-couple-of-people-that-are-sitting-in-a-car-JaUnya0pDIc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 In the last few months, we have noticed an increase in abusive site crawling,
