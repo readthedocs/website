@@ -7,19 +7,21 @@ status: published
 image:
 image_credit:
 
-Many AI companies are starting to crawl many pages on the web,
+In the last few months, we have noticed an increase in abusive site crawling,
+mainly from AI products and services. These products are recklessly crawling
+many sites across the web, and we've already had to block several sources of abusive traffic.
 trying to extract as much information as fast as possible.
 It feels like a new gold rush,
 and in their haste,
-some of these crawlers are being so badly they are causing harm to the sites they are crawling.
+some of these crawlers are behaving so badly that they are causing harm to the sites they are crawling.
 
 At Read the Docs,
 we host documentation for many projects and are generally bot friendly,
 but the behavior of AI crawlers is currently causing us problems.
-We host HTML zip files (``htmlzip``) of documentation for many projects,
-and these can be somewhat large.
-The AI Crawlers are downloading these files repeatedly,
-and without any rate or bandwidth limiting.
+We have noticed AI crawlers aggressively pulling content, seemingly without basic
+checks against abuse. Bots repeatedly download large files hundreds of
+times in a single day, with traffic sent from distributed sources without
+rate limiting or bandwidth limitations.
 
 AI crawlers are acting in a way that is not respectful to the sites they are crawling,
 and that is going to cause a backlash against AI crawlers in general.
@@ -29,11 +31,11 @@ and caused us to spend a large amount of time dealing with abuse.
 
 ## AI crawler abuse
 
-I want to start off with a few examples of the types of abuse we are seeing:
+Here are a few examples of the types of abuse we are seeing:
 
 ### 73 TB in March 2024 from one crawler
 
-**One crawler downloaded 73 TB of htmlzip files in May 2024, with almost 10 TB in a single day**. This cost us over $5,000 in bandwidth charges, and we had to block the crawler. We emailed this company, reporting a bug in their crawler, and we're working on them reimbursing us for the costs.
+**One crawler downloaded 73 TB of htmlzip files in May 2024, with almost 10 TB in a single day**. This cost us over $5,000 in bandwidth charges, and we had to block the crawler. We emailed this company, reporting a bug in their crawler, and we're working with them on reimbursing us for the costs.
 
 ![AI Crawler abuse, May 2024](/images/posts/bandwidth-may-2024.png)
 
@@ -109,19 +111,19 @@ We are planning to fix this redirect to point to the cached URL.
 
 </code>
 
-As you can see, this file was last modified in 2021,
-but it was downloaded hundreds of times.
+As you can see, this file was last modified in 2021.
+However, crawlers didn't have this basic check and instead repeatedly downloaded files like these hundreds of times each.
 
 </details>
 
 ### 10 TB in June 2024 from another
 
-In June 2024, **someone used Facebook's content downloader to download 10 TB** of data, mostly htmlzip and PDF files. When we tried to email Facebook about it with the [contact information listed in the bot's user agent](http://www.facebook.com/externalhit_uatext.php), but the email bounced.
+In June 2024, **someone used Facebook's content downloader to download 10 TB** of data, mostly htmlzip and PDF files. We tried to email Facebook about it with the [contact information listed in the bot's user agent](http://www.facebook.com/externalhit_uatext.php), but the email bounced.
 
 ![AI Crawler abuse, June 2024](/images/posts/bandwidth-june-2024.png)
 
 We think this was someone using Facebook's content downloader to download all of our files, but we aren't really sure.
-It would also be Meta crawling the site for their latest AI project,
+It could also be Meta crawling sites with their latest AI project,
 but the user agent is not clear.
 
 ## Actions taken
@@ -145,7 +147,7 @@ We have taken a few actions to try to mitigate this abuse:
 Given that our Community site is only for hosting open source projects,
 AWS and Cloudflare do give us sponsored plans,
 but we only have a limited number of credits each year.
-These bandwidth costs mean that we will run out of AWS credits.
+The additional bandwidth costs AI crawlers are currently causing will likely mean we will run out of AWS credits early.
 
 By blocking these crawlers,
 bandwidth for our downloaded files has decreased by 75% (~800GB/day to ~200GB/day).
