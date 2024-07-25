@@ -65,8 +65,8 @@ but it's very difficult for us to block on user agent because many real users us
 
 We have taken a few actions to try to mitigate this abuse:
 
-* We have rate limited all traffic from bots [Cloudflare identifies as AI Crawlers](https://radar.cloudflare.com/traffic/verified-bots).
-* We have started monitoring our bandwidth usage more closely and are working on more aggressive rate limiting.
+* We have temporarily blocked all traffic from bots [Cloudflare identifies as AI Crawlers](https://radar.cloudflare.com/traffic/verified-bots), while we figure out how to deal with this.
+* We have started monitoring our bandwidth usage more closely and are working on more aggressive rate limiting rules.
 
 ## Outcomes
 
