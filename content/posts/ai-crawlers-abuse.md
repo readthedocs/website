@@ -177,6 +177,10 @@ and download the files that have changed.
 However, none of these companies have reached out to us,
 except in response to abuse reports.
 
+We also ask that they implement basic checks in their crawlers for all sites.
+A good example is the [RFC2616Policy downloader from Scrapy](https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#scrapy.extensions.httpcache.RFC2616Policy),
+which implement many of these policies.
+
 If these companies wish to be good actors in the space,
 they need to start acting like it,
 instead of burning bridges with folks in the community.
