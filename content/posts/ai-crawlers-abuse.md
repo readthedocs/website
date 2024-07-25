@@ -72,7 +72,7 @@ We have taken a few actions to try to mitigate this abuse:
 
 By blocking these crawlers,
 bandwidth for our downloaded files has decreased by 75% (~800GB/day to ~200GB/day).
-This is saving us around $500/day in bandwidth costs alone,
+This is saving us around $50/day in bandwidth costs alone,
 along with large amount of server costs.
 
 ## Next steps
