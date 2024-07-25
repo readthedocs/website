@@ -142,7 +142,7 @@ We have taken a few actions to try to mitigate this abuse:
 
 * We have temporarily blocked all traffic from bots [Cloudflare identifies as AI Crawlers](https://radar.cloudflare.com/traffic/verified-bots), while we figure out how to deal with this.
 * We have started monitoring our bandwidth usage more closely and are working on more aggressive rate limiting rules.
-* We will reconfigured our CDN to better cache these files, reducing the load on our origin servers.
+* We will reconfigure our CDN to better cache these files, reducing the load on our origin servers.
 
 ## Outcomes
 
