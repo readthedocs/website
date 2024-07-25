@@ -159,9 +159,10 @@ along with the increased load on our servers.
 
 Normal traffic gets cached by our CDN,
 and doesn't cost us anything for bandwidth.
-But because many of these files are not downloaded often,
-as they are scraped the cache is expired and the requests hit our origin servers directly,
+But because many of these files are not downloaded often (and they're large),
+the cache is usually expired and the requests hit our origin servers directly,
 causing substantial bandwidth charges.
+Zipped documentation was designed for offline consumption by users, not for crawlers.
 
 ## Next steps
 
