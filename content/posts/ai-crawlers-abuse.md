@@ -13,7 +13,7 @@ mainly from AI products and services. These products are recklessly crawling
 many sites across the web, and we've already had to block several sources of abusive traffic.
 It feels like a new AI gold rush,
 and in their haste,
-some of these crawlers are behaving in a way that harm the sites they depend on.
+some of these crawlers are behaving in a way that harms the sites they depend on.
 
 At Read the Docs,
 we host documentation for many projects and are generally bot friendly,
@@ -32,7 +32,7 @@ and caused us to spend a large amount of time dealing with abuse.
 
 ## AI crawler abuse
 
-Here are a few examples of the types of abuse we are seeing:
+Here are a couple examples of the types of abuse we are seeing:
 
 ### 73 TB in May 2024 from one crawler
 
