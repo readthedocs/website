@@ -40,65 +40,72 @@ I want to start off with a few examples of the types of abuse we are seeing:
 This was a bug in their crawler that was causing it to download the same files over and over again.
 There was no bandwidth limiting in place,
 or support for Etags and Last-Modified headers which would have allowed the crawler to only download files that had changed.
-This is basic functionality that all web crawlers should support,
-and not having it is causing harm to the sites they are crawling.
+We have reported this issue to them,
+and hopefully the issue will be fixed.
 
-We do have a CDN, but this issue caused the requests to hit our origin servers directly.
-This was caused by the scraped trying to load the actual HTML files inside the htmlzip,
-which was causing the bot to get redirected to the same file over and over again.
+We do have a CDN for these files,
+but this request was for an old URL that had an old redirect in place.
+This redirect went to an old dashboard download URL,
+where we don't have CDN caching in place for security reasons around serving other dynamic content.
+We are planning to fix this redirect to point to the cached URL.
 
-<details open>
+<details>
 <summary>Example web requests</summary>
 
 <code>
--> curl -IL "https://media.readthedocs.org/htmlzip/chainer/v1.24.0/_modules/chainer/testing/_modules/chainer/_modules/cupy/indexing/_modules/chainer/initializers/normal.html"
-HTTP/2 302
-date: Fri, 07 Jun 2024 17:28:27 GMT
-content-type: text/html
-content-length: 138
-location: https://buildmedia.readthedocs.org/media/htmlzip/chainer/v1.24.0/_modules/chainer/testing/_modules/chainer/_modules/cupy/indexing/_modules/chainer/initializers/normal.html
-x-backend: web-i-0674d3314b7db45b0
-access-control-allow-origin: *
-x-served: Nginx
-cf-cache-status: DYNAMIC
-set-cookie: __cf_bm=H1nAF7FHjAxlMmhU3RLY88iJpWnIqc4VjDDldtRL.LA-1717781307-1.0.1.1-av1VTQgFX.8A.gsKIoCOHtLtn0qIpF16PVDnAMfJy_E3R_ie2NHVYd5jIc.gOkrlsM5fyEypz8_LLEvW.26iZA; path=/; expires=Fri, 07-Jun-24 17:58:27 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
-server: cloudflare
-cf-ray: 89025bd2af9a5eda-PDX
 
-HTTP/2 302
-date: Fri, 07 Jun 2024 17:28:27 GMT
-content-type: text/html
-content-length: 138
-location: https://readthedocs.org/projects/chainer/downloads/htmlzip/v1.24.0/
-x-backend: web-i-02c6d21983ca2621b
-cf-cache-status: MISS
-expires: Fri, 07 Jun 2024 21:28:27 GMT
-cache-control: public, max-age=14400
-set-cookie: __cf_bm=X9a2LFI8Gccv.EJMU0QukNXkfwaVewTK5dXFpY.gu_c-1717781307-1.0.1.1-kJgZUv1hjG.Ygv6mxGViUR_VbsGBGnYbV5XFGxnDZ5vLM2YBKd_raTOyNYoWP1w__NV2ffaHwrWRF.fGYEY5mw; path=/; expires=Fri, 07-Jun-24 17:58:27 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
-server: cloudflare
-cf-ray: 89025bd4ea93efd2-PDX
+    -> curl -IL "https://media.readthedocs.org/htmlzip/chainer/v1.24.0/_modules/chainer/testing/_modules/chainer/_modules/cupy/indexing/_modules/chainer/initializers/normal.html"
+    HTTP/2 302
+    date: Thu, 25 Jul 2024 16:24:18 GMT
+    content-type: text/html
+    content-length: 138
+    location: https://buildmedia.readthedocs.org/media/htmlzip/chainer/v1.24.0/_modules/chainer/testing/_modules/chainer/_modules/cupy/indexing/_modules/chainer/initializers/normal.html
+    x-backend: web-i-0af0e99066a6e05c0
+    access-control-allow-origin: *
+    x-served: Nginx
+    cf-cache-status: DYNAMIC
+    set-cookie: __cf_bm=el2_BxBK.IVRe0frkBCKVt4ZEEoNdu7qgNMmw6f_jnk-1721924658-1.0.1.1-5472IJ7kYN2nvJqesVHDhFEEN37XkJl4VlVdkRnm4qGuJ937zQ3jt20m7FUO0uEwM3KZib1T.Cum74f5JYw.CA; path=/; expires=Thu, 25-Jul-24 16:54:18 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+    set-cookie: _cfuvid=9fczwre8gaSAoQ.ZlxllMiRl4UYhu14Ylo4P2iCnXi0-1721924658187-0.0.1.1-604800000; path=/; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+    server: cloudflare
+    cf-ray: 8a8d7fd81d060943-SEA
 
-HTTP/2 200
-date: Fri, 07 Jun 2024 17:28:28 GMT
-content-type: application/zip
-content-length: 5888860
-content-disposition: filename=docs-chainer-org-en-v1.24.0.zip
-x-amz-id-2: r6ae1JjSx/d1B78TGY/YF/lkf9vCSE+u850S2fE5WU1qMro1h7hL0SgVHMhw4jf32Q8VnQP8fLU=
-x-amz-request-id: BGX96S6R9JAWHN96
-last-modified: Thu, 11 Feb 2021 09:12:59 GMT
-etag: "c8cb418f5a8ff2e376fc5f7b7564e445"
-x-amz-meta-mtime: 1495712654.422637991
-accept-ranges: bytes
-x-served: Nginx-Proxito-Sendfile
-x-backend: web-i-0674d3314b7db45b0
-referrer-policy: strict-origin-when-cross-origin
-x-frame-options: DENY
-x-content-type-options: nosniff
-content-security-policy: block-all-mixed-content; object-src 'none'; frame-ancestors 'none'
-cf-cache-status: DYNAMIC
-set-cookie: __cf_bm=nPfIjPuALi5x06S0mwKqhWniX4e7_Yh4dJo4fh_57nQ-1717781308-1.0.1.1-NG9BFnb0IWRcNzUQkuvWF4xT_8uGysYQPGkZMWzpJ3AFsgKF72FmQ0zT9kqmhCT1HHvoPVSxher.RfEzBw2NOg; path=/; expires=Fri, 07-Jun-24 17:58:28 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
-server: cloudflare
-cf-ray: 89025bd76e545ee0-PDX
+    HTTP/2 302
+    date: Thu, 25 Jul 2024 16:24:18 GMT
+    content-type: text/html
+    content-length: 138
+    location: https://readthedocs.org/projects/chainer/downloads/htmlzip/v1.24.0/
+    x-backend: web-i-092bc168f09ac4a16
+    cf-cache-status: HIT
+    age: 537
+    expires: Thu, 25 Jul 2024 20:24:18 GMT
+    cache-control: public, max-age=14400
+    set-cookie: __cf_bm=ixDGVanQai1fTO4Lcd_B6XcO1WvqzDOTNCek7E0ASfk-1721924658-1.0.1.1-Rf4yzlrlYxthDBPh6QZdnWQZWyY0LcA9bUyvCO4PT5V7tUauYKpuJaFO3z2x1dbEiVFOAdNrLfl8otSI9SafKA; path=/; expires=Thu, 25-Jul-24 16:54:18 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+    set-cookie: _cfuvid=zkcVPgO0M5MQp1TkcMb6e_UTjkYN98JwH5IVh_2X4wg-1721924658346-0.0.1.1-604800000; path=/; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+    server: cloudflare
+    cf-ray: 8a8d7fda9837c87c-SEA
+
+    HTTP/2 200
+    date: Thu, 25 Jul 2024 16:24:18 GMT
+    content-type: application/zip
+    content-length: 5888860
+    content-disposition: filename=docs-chainer-org-en-v1.24.0.zip
+    x-amz-id-2: +DjI2tMbUou9XNK5+G53Gyhah4lhBwAgnRiqBh9vsR3KzqxajSTC4B+eIQBY+pi+ZR6McRQngSI=
+    x-amz-request-id: Z502YT87WEMM3ZY9
+    last-modified: Thu, 11 Feb 2021 09:12:59 GMT
+    etag: "c8cb418f5a8ff2e376fc5f7b7564e445"
+    x-amz-meta-mtime: 1495712654.422637991
+    accept-ranges: bytes
+    x-served: Nginx-Proxito-Sendfile
+    x-backend: web-i-01ce033e08bb601ef
+    referrer-policy: strict-origin-when-cross-origin
+    x-frame-options: DENY
+    x-content-type-options: nosniff
+    content-security-policy: object-src 'none'; frame-ancestors 'none'
+    cf-cache-status: DYNAMIC
+    set-cookie: __cf_bm=qGTC_35C03_QI6rw.JyPZhFHpo2QxUy7DMMFJpjz2_U-1721924658-1.0.1.1-4iS9rZHPJmt_I5rQX4NuKr_pHQmCw0jvCzAIYX.CeUtGZh6hIZIjBWhlPoxEMjhsRcvbuTSpgSa9oltlvYDtEA; path=/; expires=Thu, 25-Jul-24 16:54:18 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+    set-cookie: _cfuvid=buQRaZWXJEn51CIpRsDW3E52DyDqEHd_sgY5PxOLfyE-1721924658779-0.0.1.1-604800000; path=/; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
+    server: cloudflare
+    cf-ray: 8a8d7fdbbf787565-SEA
 
 </code>
 
