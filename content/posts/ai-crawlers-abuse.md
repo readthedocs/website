@@ -1,5 +1,6 @@
 title: AI crawlers need to be more respectful
 date: 2024-07-25
+description: We talk a bit about the AI crawler abuse we are seeing at Read the Docs, and warn that this behavior is not sustainable.
 category: Engineering
 tags: ai, crawlers, abuse
 authors: Eric Holscher
@@ -20,7 +21,8 @@ but the behavior of AI crawlers is currently causing us problems.
 We have noticed AI crawlers aggressively pulling content, seemingly without basic
 checks against abuse.
 Bots repeatedly download large files hundreds of times daily,
-with traffic coming from distributed sources without rate or bandwidth limiting.
+partially from bugs in their crawlers,
+with traffic coming from many IP addresses without rate or bandwidth limiting.
 
 AI crawlers are acting in a way that is not respectful to the sites they are crawling,
 and that is going to cause a backlash against AI crawlers in general.
@@ -34,7 +36,7 @@ Here are a few examples of the types of abuse we are seeing:
 
 ### 73 TB in May 2024 from one crawler
 
-**One crawler downloaded 73 TB of htmlzip files in May 2024, with almost 10 TB in a single day**. This cost us over $5,000 in bandwidth charges, and we had to block the crawler. We emailed this company, reporting a bug in their crawler, and we're working with them on reimbursing us for the costs.
+**One crawler downloaded 73 TB of zipped HTML files in May 2024, with almost 10 TB in a single day**. This cost us over $5,000 in bandwidth charges, and we had to block the crawler. We emailed this company, reporting a bug in their crawler, and we're working with them on reimbursing us for the costs.
 
 ![AI crawler abuse, May 2024](/images/posts/bandwidth-may-2024.png)
 
@@ -117,7 +119,7 @@ However, crawlers didn't have this basic check and instead repeatedly downloaded
 
 ### 10 TB in June 2024 from another
 
-In June 2024, **someone used Facebook's content downloader to download 10 TB** of data, mostly htmlzip and PDF files. We tried to email Facebook about it with the [contact information listed in the bot's user agent](http://www.facebook.com/externalhit_uatext.php), but the email bounced.
+In June 2024, **someone used Facebook's content downloader to download 10 TB** of data, mostly Zipped HTML and PDF files. We tried to email Facebook about it with the [contact information listed in the bot's user agent](http://www.facebook.com/externalhit_uatext.php), but the email bounced.
 
 ![AI Crawler abuse, June 2024](/images/posts/bandwidth-june-2024.png)
 
@@ -131,9 +133,10 @@ We have IP-based rate limiting in place for many of our endpoints,
 however these crawlers are coming from a large number of IP addresses,
 so our rate limiting is not effective.
 
-These crawlers are using real user agents,
-which is a good thing and allows us to identify them,
-but it's very difficult for us to block on user agent because many real users use the same browsers with the same user agent.
+These crawlers are using real user agents that identify them,
+which is a good thing.
+However, we can't simply rate limit all user agents to our platform because many real users use the same browsers with the same user agent.
+(CDN providers: if you're reading this, there's an opportunity here!)
 
 We have taken a few actions to try to mitigate this abuse:
 
@@ -150,7 +153,7 @@ The additional bandwidth costs AI crawlers are currently causing will likely mea
 
 **By blocking these crawlers,
 bandwidth for our downloaded files has decreased by 75% (~800GB/day to ~200GB/day).**
-If all this traffic hit our origins servers,
+If all this traffic hit our origin servers,
 it would cost around $50/day, or $1,500/month,
 along with the increased load on our servers.
 
