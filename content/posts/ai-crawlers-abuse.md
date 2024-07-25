@@ -68,8 +68,6 @@ x-backend: web-i-0af0e99066a6e05c0
 access-control-allow-origin: *
 x-served: Nginx
 cf-cache-status: DYNAMIC
-set-cookie: __cf_bm=el2_BxBK.IVRe0frkBCKVt4ZEEoNdu7qgNMmw6f_jnk-1721924658-1.0.1.1-5472IJ7kYN2nvJqesVHDhFEEN37XkJl4VlVdkRnm4qGuJ937zQ3jt20m7FUO0uEwM3KZib1T.Cum74f5JYw.CA; path=/; expires=Thu, 25-Jul-24 16:54:18 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
-set-cookie: _cfuvid=9fczwre8gaSAoQ.ZlxllMiRl4UYhu14Ylo4P2iCnXi0-1721924658187-0.0.1.1-604800000; path=/; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
 server: cloudflare
 cf-ray: 8a8d7fd81d060943-SEA
 
@@ -83,8 +81,6 @@ cf-cache-status: HIT
 age: 537
 expires: Thu, 25 Jul 2024 20:24:18 GMT
 cache-control: public, max-age=14400
-set-cookie: __cf_bm=ixDGVanQai1fTO4Lcd_B6XcO1WvqzDOTNCek7E0ASfk-1721924658-1.0.1.1-Rf4yzlrlYxthDBPh6QZdnWQZWyY0LcA9bUyvCO4PT5V7tUauYKpuJaFO3z2x1dbEiVFOAdNrLfl8otSI9SafKA; path=/; expires=Thu, 25-Jul-24 16:54:18 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
-set-cookie: _cfuvid=zkcVPgO0M5MQp1TkcMb6e_UTjkYN98JwH5IVh_2X4wg-1721924658346-0.0.1.1-604800000; path=/; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
 server: cloudflare
 cf-ray: 8a8d7fda9837c87c-SEA
 
@@ -106,8 +102,6 @@ x-frame-options: DENY
 x-content-type-options: nosniff
 content-security-policy: object-src 'none'; frame-ancestors 'none'
 cf-cache-status: DYNAMIC
-set-cookie: __cf_bm=qGTC_35C03_QI6rw.JyPZhFHpo2QxUy7DMMFJpjz2_U-1721924658-1.0.1.1-4iS9rZHPJmt_I5rQX4NuKr_pHQmCw0jvCzAIYX.CeUtGZh6hIZIjBWhlPoxEMjhsRcvbuTSpgSa9oltlvYDtEA; path=/; expires=Thu, 25-Jul-24 16:54:18 GMT; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
-set-cookie: _cfuvid=buQRaZWXJEn51CIpRsDW3E52DyDqEHd_sgY5PxOLfyE-1721924658779-0.0.1.1-604800000; path=/; domain=.readthedocs.org; HttpOnly; Secure; SameSite=None
 server: cloudflare
 cf-ray: 8a8d7fdbbf787565-SEA
 
