@@ -233,44 +233,46 @@
   <div class="ui padded container">
 
     {% call pricing.feature_table() %}
-      {{ pricing.feature_row("Team management", "Control organization access with team permissions", "fa-users", on_community=False) }}
-      {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", "Best effort", "2 business days", "2 business days", ("1 business day", "olive")) }}
-      {{ pricing.feature_row("Ad free", "Documentation doesn't include ads", "fa-ad", on_community=False) }}
+      {{ pricing.feature_row("Pricing", "Monthly pricing, annual available", "fa-receipt", "<strong>Free for open source</strong>", "<strong>$50</strong>", "<strong>$150</strong>", "<strong>$250</strong>") }}
       {{ pricing.feature_row("API access", "Write your own integrations", "fa-sparkles") }}
+      {{ pricing.feature_row("Team management", "Control organization access with team permissions", "fa-users", on_community=False) }}
+      {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", ("Best effort", "white"), "2 business days", "2 business days", ("1 business day", "olive")) }}
+      {{ pricing.feature_row("Ad free", "Documentation doesn't include ads", "fa-ad", on_community=False) }}
 
       {{ pricing.header_row("Documentation authoring", "fa-typewriter") }}
-      {{ pricing.feature_row("Unlimited projects", "Manage and build any number of projects", "fa-infinity") }}
       {{ pricing.feature_row("Public repositories", "Clone public repositories", "fa-globe") }}
-      {{ pricing.feature_row("Private repositories", "Clone private repositories", "fa-eye-slash", on_community=False) }}
       {{ pricing.feature_row("Pull request preview", "Preview changes in review", "fa-code-compare") }}
+      {{ pricing.feature_row("Unlimited projects", "Manage and build any number of projects", "fa-infinity") }}
+      {{ pricing.feature_row("Private repositories", "Clone private repositories", "fa-eye-slash", on_community=False) }}
 
       {{ pricing.header_row("Documentation building", "fa-gears") }}
-      {{ pricing.feature_row("Automatic building", "Build every commit", "fa-gears") }}
       {{ pricing.feature_row("Build concurrency", "Concurrent build processes", "fa-rectangle-vertical-history fa-swap-opacity", 2, 2, 4, (6, "olive")) }}
-      {{ pricing.feature_row("Notifications", "Receive notifications build events", "fa-envelope-dot") }}
+      {{ pricing.feature_row("Custom theming", "Style your documentation however you want", "fa-paint-brush") }}
+      {{ pricing.feature_row("Automatic building", "Deploy your docs on every commit", "fa-gears") }}
+      {{ pricing.feature_row("Notifications", "Receive email or webhook notifications", "fa-envelope-dot") }}
       {{ pricing.feature_row("Environment variables", "Inject secrets into builds", "fa-lock-keyhole") }}
       {{ pricing.feature_row("Automation rules", "Automatically manage versions", "fa-robot") }}
 
       {{ pricing.header_row("Documentation hosting", "fa-browser") }}
       {{ pricing.feature_row("Documentation versioning", "Host multiple versions of your project", "fa-layer-group") }}
-      {{ pricing.feature_row("Documentation localization", "Host your project localized in multiple locales", "fa-language") }}
-      {{ pricing.feature_row("Reader authentication", "Require access to view your documentation", "fa-shield-keyhole", on_community=False) }}
-      {{ pricing.feature_row("Single sign-on", "Sign on with using external provider", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro=("GitHub, GitLab, and Google", "olive")) }}
-      {{ pricing.feature_row("Sharing", "Provide temporary access to private documentation", "fa-user-shield", on_community=False) }}
-      {{ pricing.feature_row("CDN hosting", "Reduce load times for your projects", "fa-clouds", on_community=True, on_basic="Public projects only", on_advanced="Public projects only", on_pro="Public projects only") }}
-      {{ pricing.feature_row("Custom domains", "Host projects on your own custom domain names", "fa-at", on_community="2", on_basic=False, on_advanced="5", on_pro="15") }}
-      {{ pricing.feature_row("Subprojects", "Organize projects using project nesting", "fa-diagram-nested") }}
+      {{ pricing.feature_row("Documentation localization", "Host your project localized in multiple languages", "fa-language") }}
+      {{ pricing.feature_row("Subprojects", "Host multiple projects on the same domain", "fa-diagram-nested") }}
       {{ pricing.feature_row("Integrated search", "Search across all of your projects", "fa-magnifying-glass") }}
-      {{ pricing.feature_row("Offline formats", "Download offline PDF and EPUB formats", "fa-file-pdf") }}
-      {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right", 100, 50, 250, (500, "olive")) }}
+      {{ pricing.feature_row("Offline formats", "Download HTML, PDF, or EPUB formats", "fa-file-pdf") }}
       {{ pricing.feature_row("Sitemap generation", "Automatically update your project's sitemap", "fa-sitemap") }}
-      {{ pricing.feature_row("Customizable error pages", "Manage your own HTTP error pages", "fa-palette") }}
-      {{ pricing.feature_row("Status badges", "Embeddable badges showing your project's status", "fa-badge-check") }}
-      {{ pricing.feature_row("Pageview analytics", "Collect statistics on visits to your projects", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive")) }}
-      {{ pricing.feature_row("Search analytics", "Collect statistics on search queries for your projects", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive")) }}
+      {{ pricing.feature_row("Customizable error pages", "Manage your own error pages", "fa-palette") }}
+      {{ pricing.feature_row("Status badges", "Show the status of your last build", "fa-badge-check") }}
+      {{ pricing.feature_row("CDN hosting", "Reduce load times for your projects", "fa-clouds") }}
       {{ pricing.feature_row("Authentication auditing", "Security log of all authentication across your projects", "fa-lock-keyhole", on_community="30 days", on_basic="30 days", on_advanced="30 days", on_pro=("90 days", "olive")) }}
-      {{ pricing.feature_row("Content embedding", "Embed your documentation in outside sources", "fa-object-subtract", on_basic=False) }}
-      {{ pricing.feature_row("URL customization", "Fine tune URLs used for your projects", "fa-route", on_community=False, on_basic=False, on_advanced=False, on_pro=True) }}
+      {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right", 100, 50, 250, (500, "olive")) }}
+      {{ pricing.feature_row("Documentation authentication", "Allow specific users to view your documentation", "fa-shield-keyhole", on_community=False) }}
+      {{ pricing.feature_row("Single sign-on", "Sign on using external provider", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro=("GitHub, GitLab, and Google", "olive")) }}
+      {{ pricing.feature_row("Documentation sharing", "Provide temporary access to private documentation", "fa-user-shield", on_community=False) }}
+      {{ pricing.feature_row("Custom domains", "Host documentation on your own domain name", "fa-at", on_community="2", on_basic=False, on_advanced="5", on_pro="15") }}
+      {{ pricing.feature_row("Pageview analytics", "Better understand your most read pages", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive")) }}
+      {{ pricing.feature_row("Search analytics", "Understand what users are searching for", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive")) }}
+      {{ pricing.feature_row("Content embedding", "Embed sections of your documentation via API", "fa-object-subtract", on_basic=False) }}
+      {{ pricing.feature_row("URL customization", "Use custom URL prefixes to match your site layout", "fa-route", on_community=False, on_basic=False, on_advanced=False, on_pro=True) }}
     {% endcall %}
 
   </div>
