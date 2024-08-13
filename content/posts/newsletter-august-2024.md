@@ -18,6 +18,7 @@ We posted two blog posts this month covering important things:
 We also have some updates on our platform:
 
 * We have a couple new versions of our Sphinx theme coming out, 2.1.0rc1 that [supports Addons](https://github.com/readthedocs/sphinx_rtd_theme/pull/1573), as well as 3.0 to support [Sphinx 8](https://github.com/readthedocs/sphinx_rtd_theme/issues/1582).
+* We officially [removed support for Google Analytics](https://github.com/readthedocs/readthedocs.org/pull/11532), which we historically had used for global statistics, but are now able to get good enough stats from CloudFlare and our own Read the Docs analytics.
 * [API v3](https://docs.readthedocs.io/en/stable/api/v3.html) now supports unauthenticated requests for many endpoints, which should make it easier to integrate in documentation pages.
 * We have marked Addons and Build Customization as generally available, no longer having a Beta label, as we're now confident in their stability and usability.
 * Our docs are getting consistent updates to add Addons, and work to improve the way we're explaining our core features like Versioning and Builds.
