@@ -1,4 +1,4 @@
-title: Read the Docs 10-year anniversary
+title: 10 years of open source sustainability
 date: 2024-08-15
 description: Reflecting on 10 years of trying to make open source sustainable
 category: Meta
@@ -8,7 +8,7 @@ status: published
 image: /images/10-year.jpg
 image_credit: Photo by <a href="https://unsplash.com/@adigold1?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adi Goldstein</a> on <a href="https://unsplash.com/photos/selective-focus-photography-of-assorted-color-balloons-Hli3R6LKibo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-Read the Docs was started at a [48-hour sprint in 2010](https://www.ericholscher.com/blog/2010/aug/16/announcing-read-docs/), and grew to become a large part of the documentation ecosystem within a few years.
+Read the Docs was started at a [48-hour sprint in 2010](https://www.ericholscher.com/blog/2010/aug/16/announcing-read-docs/), and grew to become a large part of the Python documentation ecosystem within a few years.
 Based on that success and the stressed that come with it, we [created a company](https://www.ericholscher.com/blog/2014/oct/24/announcing-read-the-docs-for-business/) to focus on sustainability in 2014.
 So we've been working on Read the Docs as a project for 14 years, and a company for 10 years.
 This post will reflect on the last 10 years of trying to make open source sustainable.
@@ -34,7 +34,6 @@ and we can focus on making things better.
 ## Lessons learned
 
 
-
 ## Gratitude
 
 We are grateful to have a team of 4 folks working full-time on Read the Docs.
@@ -45,4 +44,11 @@ We're thankful to be mostly bootstrapped, outside of 6% equity we gave to our in
 We are also grateful for the sponsored services from many tech companies, most importantly [AWS](https://aws.amazon.com/) and [Cloudflare](https://www.cloudflare.com/).
 This allows us to focus our funding on the team and core code, rather than infrastructure costs.
 
-##
+## Next steps
+
+Read the Docs started only supporting Sphinx, and now supports many other documentation tools.
+We've also finished up a large "magic removal" branch that has removed our modification of build configuration,
+with our [Addons](https://docs.readthedocs.io/en/stable/addons.html) built on top of any HTML output.
+
+This sets us up to continue to support the documentation ecosystem as the tools evolve.
+We're hopeful to have another 10 years of making open source sustainable, and work to support the open source community.
