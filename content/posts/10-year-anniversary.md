@@ -33,13 +33,18 @@ and we can focus on making things better.
 
 ## Lessons learned
 
+A few of the most important lessons from the last 10 years:
+
+* You don't get extra points for being open source or bootstrapped. People will compare you to proprietary, venture-backed services that have raised many millions of dollars. **We compete by focusing on documentation, a niche too small for most venture-backed businesses**. Venture-backed companies have to keep adding unrelated features in order to grow into other areas, and we can focus on our core competency.
+* Keeping trust in the community is the most important thing, because we're nothing without our users. It's a cliche, but trust is hard to earn and easy to lose. We continually think about how to balance sustainability with our the values of our users, and have made many decisions over the years about having "enough". **We can't maximize profit and continue to keep the trust of our community.**
+*
 
 ## Gratitude
 
 We are grateful to have a team of 4 folks working full-time on Read the Docs.
-The support of the Python community, the Django community, and the broader open source community has been amazing.
+The support of the Python community, the Django community, and the broader open source community has been very important to keeping us going over the years.
 We depend on the trust of the projects that use our platform, and we have a core value not to violate that trust.
-We're thankful to be mostly bootstrapped, outside of 6% equity we gave to our incubator, so that we don't have to follow the enshittification path of many venture-backed companies.
+We're thankful to be mostly bootstrapped, outside of 6% equity we gave to our incubator, so that we don't have to follow the *enshittification* path of many venture-backed companies.
 
 We are also grateful for the sponsored services from many tech companies, most importantly [AWS](https://aws.amazon.com/) and [Cloudflare](https://www.cloudflare.com/).
 This allows us to focus our funding on the team and core code, rather than infrastructure costs.
@@ -51,4 +56,5 @@ We've also finished up a large "magic removal" branch that has removed our modif
 with our [Addons](https://docs.readthedocs.io/en/stable/addons.html) built on top of any HTML output.
 
 This sets us up to continue to support the documentation ecosystem as the tools evolve.
-We're hopeful to have another 10 years of making open source sustainable, and work to support the open source community.
+We're excited about what we've accomplished,
+and hope to have another 10 years of making open source sustainable with you.
