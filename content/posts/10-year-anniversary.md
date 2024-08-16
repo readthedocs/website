@@ -16,7 +16,7 @@ This post will reflect on the last 10 years of trying to make open source sustai
 ## Our sustainability model
 
 We tried a number of different ways to make a sustainable open source project, really a service, over the years.
-The model that we've found that has worked for us currently is a version of the classic open source model used by GitHub, Travis CI, and others:
+The model that we've found that has worked for us currently is a version of the classic open source model used by Sentry, GitLab, and others:
 
 * We offer a free service (Read the Docs Community) for open source projects, supported by a single non-tracking ad on the documentation.
 * We offer a paid service (Read the Docs Business) for companies that need private repos and additional benefits that make sense for larger organizations.
@@ -39,6 +39,7 @@ A few of the most important lessons from the last 10 years:
 * Keeping trust in the community is the most important thing, because we're nothing without our users. It's a cliche, but trust is hard to earn and easy to lose. We continually think about how to balance sustainability with the values of our users, and have made many decisions over the years about having "enough". **We can't maximize profit and continue to keep the trust of our community.**
 * **Contribution is easier for less complex parts of the code base.** We worked for a long time to get contributors to the core [readthedocs.org repo](https://github.com/readthedocs/readthedocs.org/), but the complexity of the application makes it really hard to contribute. We've had more success with contributions on our Sphinx theme, Sphinx extensions, and other small Python & JavaScript projects.
 * **Being open source means capturing a small percentage of the value you create.** Back before we had a sustainable business model, I would get upset about the number of people telling me about how valuable it was for them hosting it themselves inside their company, while not contributing anything back. Now that we have a sustainable model and focused on having "enough" to keep the project going, I can see the benefits of the code being used in many places, even if we don't get direct contributions from those users. Though I do still wish they'd contribute back :)
+* **You have to be okay doing more with less.** Similar to the above themes on focus and value capture, our team has to ruthlessly prioritize what we work on. This also sometimes means that our users are frustrated that we can't prioritize their issues, but that's a natural tension. We also can't take as many risks in what we work on, but continually refine our core offerings as much as possible.
 
 ## Gratitude
 
@@ -53,11 +54,13 @@ This allows us to focus our funding on the team and core code base, rather than 
 ## Next steps
 
 Read the Docs started only supporting Sphinx, and now supports any documentation tool that generates HTML output.
-We've also finished up a large "magic removal" branch that has removed our modification of the documentation build process,
+We've also finished up a large "magic removal" effort that has removed our modification of the documentation build process,
 reducing the confusion that users hit building locally versus on Read the Docs.
-On top of that,
-we're layering our [Addons system](https://docs.readthedocs.io/en/stable/addons.html),
-which providers features for documentation readers on top of any tool.
+
+This leaves us with a much simpler system:
+
+* Our build system [now supports any documentation tool](https://docs.readthedocs.io/en/stable/build-customization.html) and should work the same as other build environments.
+* For built documentation we've added our [Addons system](https://docs.readthedocs.io/en/stable/addons.html) which providers features for documentation readers on top of any tool.
 
 This new architecture allows us to support the documentation ecosystem as the tools evolve,
 and focus on making a great experience for documentation authors and readers.
