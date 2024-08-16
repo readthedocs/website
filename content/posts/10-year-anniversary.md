@@ -11,7 +11,10 @@ image_credit: Photo by <a href="https://unsplash.com/@adigold1?utm_content=credi
 Read the Docs was started at a [48-hour open source sprint in 2010](https://www.ericholscher.com/blog/2010/aug/16/announcing-read-docs/), and grew to become a large part of the Python documentation ecosystem within a few years.
 Based on that success and the stress that came with it, we [created a company](https://www.ericholscher.com/blog/2014/oct/24/announcing-read-the-docs-for-business/) to focus on sustainability in 2014.
 We've been working on Read the Docs as a project for 14 years, and a company for 10 years.
-This post will reflect on the last 10 years of trying to make open source sustainable.
+
+We're excited to be celebrating our 10 year anniversary, and wanted to reflect on the journey that we've been on.
+Not too many people get the opportunity to work on an open source project for this long,
+and we're grateful to the community that has supported us over the years.
 
 ## Our sustainability model
 
@@ -65,4 +68,4 @@ This leaves us with a much simpler system:
 This new architecture allows us to support the documentation ecosystem as the tools evolve,
 and focus on making a great experience for documentation authors and readers.
 We're excited about everything that we've accomplished over the past 10 years,
-and hope to have another 10 years of making open source sustainable with you.
+and hope that our new approach will give us another 10 years of supporting open source documentation.
