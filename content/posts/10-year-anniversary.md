@@ -19,7 +19,7 @@ and we're grateful to the community that has supported us over the years.
 ## Our sustainability model
 
 We tried a number of different ways to make a sustainable open source project, really a service, over the years.
-The model that we've found that has worked for us currently is a version of the classic open source model used by Sentry, GitLab, and others:
+The model that works for us is a take on the classic "open core" model, but applied to a service versus the code base:
 
 * We offer a free service (Read the Docs Community) for open source projects, supported by a single non-tracking ad on the documentation.
 * We offer a paid service (Read the Docs Business) for companies that need private repos and additional benefits that make sense for larger organizations.
