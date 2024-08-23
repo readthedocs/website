@@ -21,7 +21,7 @@ and we're grateful to the community that has supported us over the years.
 We tried a number of different ways to make a sustainable open source project, really a service, over the years.
 The model that works for us is a take on the classic "open core" model, but applied to a service versus the code base:
 
-* We offer a free service (Read the Docs Community) for open source projects, supported by a single non-tracking ad on the documentation.
+* We offer a free service (Read the Docs Community) for open source projects, supported by [a single non-tracking ad](https://docs.readthedocs.io/en/stable/advertising/) on the documentation.
 * We offer a paid service (Read the Docs Business) for companies that need private repos and additional benefits that make sense for larger organizations.
 
 We tried relying on donations and other optional support, but that didn't work at all, and left us struggling with [mental health issues](https://ericholscher.com/blog/2018/feb/7/the-post-i-never-published/) and burnout.
