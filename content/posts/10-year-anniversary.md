@@ -1,5 +1,5 @@
 title: 10 years of attempting to make open source sustainable
-date: 2024-08-15
+date: 2024-08-26
 description: Reflecting on 10 years of trying to make open source sustainable
 category: Meta
 tags: meta, open-source, sustainability, anniversary
