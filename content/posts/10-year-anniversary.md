@@ -63,7 +63,7 @@ reducing the confusion that users hit building locally versus on Read the Docs.
 This leaves us with a much simpler system:
 
 * Our build system [now supports any documentation tool](https://docs.readthedocs.io/en/stable/build-customization.html) and should work the same as other build environments.
-* For built documentation we've added our [Addons system](https://docs.readthedocs.io/en/stable/addons.html) which providers features for documentation readers on top of any tool.
+* For built documentation we've added our [Addons system](https://docs.readthedocs.io/en/stable/addons.html) which provides features for documentation readers on top of any tool.
 
 This new architecture allows us to support the documentation ecosystem as the tools evolve,
 and focus on making a great experience for documentation authors and readers.
