@@ -1,6 +1,6 @@
-title: 10 years of attempting to make open source sustainable
+title: 10 years of sustainable open source
 date: 2024-08-26
-description: Reflecting on 10 years of trying to make open source sustainable
+description: Reflecting on 10 years of working on open source full-time
 category: Meta
 tags: meta, open-source, sustainability, anniversary
 authors: Eric Holscher
