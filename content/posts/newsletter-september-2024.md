@@ -24,7 +24,7 @@ You can always see the latest changes to our platforms in our [changelog 📃](h
 
 ## Upcoming changes
 
-* We're working on a project to make it [easier to understand what files have changed between versions](https://github.com/readthedocs/readthedocs.org/issues/11319), which will allow us to build a number of neat features like Redirect recommendations, and Pull Request page review suggestions.
+* We're working on a project to make it [easier to understand what files have changed between versions](https://github.com/readthedocs/readthedocs.org/issues/11319), which will allow us to build a number of neat features like redirect recommendations, and pull request page review suggestions.
 * We are looking at adding functionality similar to our [sphinx-hoverxref extension](https://github.com/readthedocs/sphinx-hoverxref) to our new documentation system, which support popups for cross-references in a single documentation page. This will work for all documentation tools, not just Sphinx.
 * We are planning to move our official documentation to https://docs.readthedocs.com to make it more obviously official. This should be a seamless transition for users, but we will be updating links in our documentation and on our website to reflect this change.
 
