@@ -1,5 +1,5 @@
 title: Read the Docs Newsletter - September 2024
-date: September 13, 2024
+date: September 10, 2024
 description: Company updates and new features from the last month, current focus, and upcoming features.
 category: Newsletter
 tags: newsletter, community
