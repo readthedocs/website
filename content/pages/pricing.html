@@ -41,7 +41,11 @@
             highlight=True,
           ) %}
             <div class="ui list relaxed divided">
-              {{ pricing.plan_feature("<em>Includes all <b>Basic plan</b> features</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
+              {# TODO: Replace "core" with better terms. Not sure what is best though.. #}
+              {{ pricing.plan_feature("<em>Includes all <b>core</b> features</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
+              {{ pricing.plan_feature("Support", "2 business day response", "fa-message-question") }}
+              {{ pricing.plan_feature("Single sign-on (SSO)", "With GitHub and GitLab", "fa-key-skeleton") }}
+
               {{ pricing.plan_feature("Concurrent builds", "4 concurrent builds", "fa-rectangle-vertical-history fa-swap-opacity") }}
               {{ pricing.plan_feature("Custom domains", "5 custom domains", "fa-at") }}
               {{ pricing.plan_feature("Search and pageview analytics", "30 day retention", "fa-line-chart") }}
