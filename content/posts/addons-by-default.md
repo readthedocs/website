@@ -109,7 +109,7 @@ for example.
 
 Depending on your project's configuration, the documentation tool and the theme you are using, you will notice these differences.
 We released a new version of our theme to keep the flyout menu at the bottom left integrated with the navbar
-that you can install it as `sphinx-rtd-theme==2.1.0rc2` and define [`flyout_display`](https://sphinx-rtd-theme.readthedocs.io/en/latest/configuring.html#confval-flyout_display) as `attached`.
+that you can install it as `sphinx-rtd-theme==3.0.0` and define [`flyout_display`](https://sphinx-rtd-theme.readthedocs.io/en/latest/configuring.html#confval-flyout_display) as `attached`.
 We are also talking to other theme authors to communicate these changes and work with them towards a better integration.
 Expect news around this visual changes in the following months.
 
