@@ -95,6 +95,10 @@ if os.environ.get("READTHEDOCS", "") == "True":
     html_context["READTHEDOCS"] = True
 ```
 
+This also means that Google Analytics will stop being injected automatically on those projects that were specifying their GA code and it will stop working.
+If you want to continue using Google Analytics in your project,
+we recommend using the [`sphinxcontrib-googleanalytics`](https://pypi.org/project/sphinxcontrib-googleanalytics/) Sphinx extension.
+
 In case you've found any difference in behavior after Read the Docs Addons has been enabled
 (see [How to opt-in to addons _now_](#how-to-opt-in-to-addons-now) to enable addons manually),
 and you've already added the previous chunk of code to your Sphinx's `conf.py` file,
