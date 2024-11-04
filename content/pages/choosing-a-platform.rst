@@ -35,7 +35,7 @@ Important points:
 .. raw:: html
 
    <div class="ui basic center aligned padded segment">
-     <a class="ui teal button" href="https://readthedocs.org/accounts/signup/" data-analytics="community-signup">Sign up for a free community account</a>
+     <a class="ui teal button" href="https://app.readthedocs.org/accounts/signup/" data-analytics="community-signup">Sign up for a free community account</a>
    </div>
 
 
