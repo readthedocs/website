@@ -1,5 +1,5 @@
 title: Read the Docs Newsletter - November 2024
-date: November 10, 2024
+date: November 11, 2024
 description: Company updates and new features from the last month, current focus, and upcoming features.
 category: Newsletter
 tags: newsletter, community
@@ -13,6 +13,7 @@ image_credit: Photo by <a href="https://unsplash.com/@hermanndoyo?utm_content=cr
 
 * The new **Community dashboard** at https://app.readthedocs.org will be made the default dashboard on November 12. We are still beta testing the Business dashboard, as it effects documentation authentication and requires a bit more testing. We expect to make the Business dashboard the default soon.
 * We've added **Multi-Factor Authentication (MFA)** to our platform, and it's now fully released. Give it a try to add an extra layer of security to your account.
+* We have added **Python 3.13** as a build option, along with `updating other build tools <https://github.com/readthedocs/readthedocs.org/pull/11742>`_. 
 * **Addons** continues to get iterative improvements, including allowing more granular configuration of documentation page documentations, and fixing bugs in the injection logic for large images.
 * Our **file tree diff** feature is now in testing, and will be rolled out into Addons in the near future. This will allow you to see what files have changed between versions of your documentation.
 * Similarly, **quick previews** when you hover a link is now in testing for Addons, and will be released soon. This will allow you to see a preview of the linked page when you hover over a link in your documentation.
