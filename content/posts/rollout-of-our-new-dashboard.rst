@@ -11,7 +11,7 @@
 
 For the last year, you may have seen notifications and hints asking you to try
 out our new dashboard. This new dashboard has been a long term project to
-completely replace our still original user interface with one that is more
+completely replace our original user interface with one that is more
 consistent and allows us to more easily build and maintain complex features.
 
 During the next few months, we will begin the transition to our new dashboard
@@ -26,8 +26,14 @@ The new dashboard will start to become the default dashboard
 
     - On `Read the Docs Community`_ this change will go into effect on **Nov 12th**
     - On `Read the Docs Business`_ this change will go into effect on **Dec 10th**
+    
+ 
+    To log in to the new dashboard:
 
-The legacy dashboard will be available until Mar 1st, 2025
+    - Users of `Read the Docs Community`_ can log in at https://app.readthedocs.org/account/login
+    - Users of `Read the Docs Business`_ can log in at https://app.readthedocs.com/account/login
+
+The legacy dashboard will be available until Mar 11th, 2025
     Our legacy dashboard will remain available while users are transitioning to
     our new dashboard. During this period, our legacy dashboard will no longer
     be receiving updates or new features, but it will remain active. Our legacy
