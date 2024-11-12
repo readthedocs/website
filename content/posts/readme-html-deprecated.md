@@ -36,5 +36,5 @@ Note these are only two possible ideas, but there may be other ways to achieve t
 
 > _**Tip**: you can create a redirect from `/README.html` to `/` to keep links pointing to the deprecated URL working._
 
-[Contact us](https://readthedocs.org/support/) if you have any questions,
+[Contact us](https://app.readthedocs.org/support/) if you have any questions,
 and let us know any inconvenient you may have with this change.

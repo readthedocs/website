@@ -134,5 +134,5 @@ and much more in near future!
 
 ## Contact
 
-[Contact us](https://readthedocs.org/support/) if you have any questions about the new beta Read the Docs Addons,
+[Contact us](https://app.readthedocs.org/support/) if you have any questions about the new beta Read the Docs Addons,
 or [open an issue](https://github.com/readthedocs/addons) to share any feedback you may have.

@@ -20,7 +20,7 @@ and we're excited to continue providing a world-class documentation platform and
 
 	Our posts from 2013_, 2014_, 2015_, 2016_, 2017_, 2018_, 2019_, 2020_, 2021_ are also available.
 
-.. _Read the Docs: https://readthedocs.org/
+.. _Read the Docs: https://app.readthedocs.org/
 .. _30 days: http://www.seethestats.com/site/readthedocs.org
 .. _2013: https://blog.readthedocs.com/read-the-docs-2013-stats/
 .. _2014: https://blog.readthedocs.com/read-the-docs-2014-stats/

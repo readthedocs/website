@@ -77,5 +77,5 @@ if you want to trigger a build each time a push is done to the original reposito
 
 ## Contact us
 
-[Contact us](https://readthedocs.org/support/) if you have any questions,
+[Contact us](https://app.readthedocs.org/support/) if you have any questions,
 and let us know any inconvenient you may have with this change.

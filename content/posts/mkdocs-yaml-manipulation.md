@@ -23,5 +23,5 @@ This simplification allows more complex configuration in the YAML by using the s
 [that wasn't previously supported due to security reasons](https://github.com/readthedocs/readthedocs.org/issues/8529).
 
 
-[Contact us](https://readthedocs.org/support/) if you have any questions,
+[Contact us](https://app.readthedocs.org/support/) if you have any questions,
 and let us know any inconvenient you may have with this change.
