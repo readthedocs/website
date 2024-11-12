@@ -1,5 +1,5 @@
 :title: Rollout of our new dashboard
-:date: 2024-11-11
+:date: 2024-11-12
 :description: Our new dashboard will begin rolling out to users.
               Learn what to expect and how it will affect you and your project.
 :category: Changelog
