@@ -26,8 +26,7 @@ The new dashboard will start to become the default dashboard
 
     - On `Read the Docs Community`_ this change will go into effect on **Nov 12th**
     - On `Read the Docs Business`_ this change will go into effect on **Dec 10th**
-    
- 
+     
     To log in to the new dashboard:
 
     - Users of `Read the Docs Community`_ can log in at https://app.readthedocs.org/account/login
@@ -62,13 +61,26 @@ introduced.
 Documentation page changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Project documentation will also receive an update with these dashboard changes.
-There are some points in hosted documentation where our own dashboard is
-surfaced, such as documentation error pages, authentication forms, and
-documentation sharing forms.
+Rollout of our new dashboard will also be apparent on hosted documentation.
+There are several pages in hosted documentation where our own dashboard is
+visible to readers:
 
-On Dec 10th, projects hosted on `Read the Docs Business`_ will also be updated
-to start using these new dashboard pages in their hosted documentation.
+Documentation error pages
+    We display an error page to readers when we encounter a problem with their
+    request, like when a requested file is missing (HTTP 404 error).
+
+    We do not show our error page when a custom 404 error page is provided by a
+    project.
+
+Authentication forms
+    This includes documentation authentication pages, such as password and
+    GitHub authentication, and documentation sharing pages, such as sharing
+    password entry.
+
+On **Dec 10th**, projects hosted on `Read the Docs Business`_ will
+use our new dashboard for these pages in their hosted documentation.
+
+*There will be no changes to user generated documentation otherwise.*
 
 If you would like to update your project to use these pages before then,
 `contact us`_.
