@@ -1,5 +1,5 @@
 title: Two-factor authentication is here!
-date: November 8, 2024
+date: November 18, 2024
 description: We're excited to announce that two-factor authentication is now available for all Read the Docs users.
 category: Feature announcement
 tags: authentication, security
@@ -10,8 +10,9 @@ image_credit: Photo by <a href="https://unsplash.com/@christianw?utm_content=cre
 
 We're excited to announce that two-factor authentication (2FA) is now available for all Read the Docs users!
 
-Two-factor authentication adds an extra layer of security to your account by requiring a second form of verification in addition to your password.
+Two-factor authentication adds an extra layer of security to your account by requiring a 6-digit code in addition to your password when you log in.
 This helps protect your account from unauthorized access, even if your password is compromised.
+You can use an authenticator app like Google Authenticator or Authy to generate the codes.
 
 You can enable two-factor authentication from our new dashboard at <https://app.readthedocs.org/accounts/2fa/> (or <https://app.readthedocs.com/accounts/2fa/> for Read the Docs for Business users),
 or by following the steps from [our documentation](https://docs.readthedocs.io/en/stable/guides/management/2fa.html).
