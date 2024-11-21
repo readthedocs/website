@@ -1,5 +1,5 @@
 title: Two-factor authentication is here!
-date: November 18, 2024
+date: November 21, 2024
 description: We're excited to announce that two-factor authentication is now available for all Read the Docs users.
 category: Feature announcement
 tags: authentication, security
