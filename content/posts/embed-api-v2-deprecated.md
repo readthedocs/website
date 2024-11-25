@@ -1,5 +1,5 @@
 title: Deprecation and removal of embed API v2
-date: November 21, 2024
+date: November 25, 2024
 description: Announcing the deprecation and removal of embed API v2.
 category: Changelog
 tags: api, deprecation
