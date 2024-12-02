@@ -34,24 +34,15 @@
                 # rust: "1.70"
                 # golang: "1.20"
 
+              # Support any tool with custom build commands
               commands:
-                  # Python
-                  # Install dependencies
-                  - pip install -r docs/requirements.txt
-                  # Build the site
-                  - make html
-                  # Copy generated files into Read the Docs directory
-                  - mkdir --parents $READTHEDOCS_OUTPUT/html/
-                  - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
-
-                  # Node
-                  # Install dependencies
-                  - cd docs/ && npm install
-                  # Build the site
-                  - cd docs/ && npm run build
-                  # Copy generated files into Read the Docs directory
-                  - mkdir --parents $READTHEDOCS_OUTPUT/html/
-                  - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
+                # Install dependencies
+                - cd docs/ && npm install
+                # Build the site
+                - cd docs/ && npm run build
+                # Copy generated files into Read the Docs directory
+                - mkdir --parents $READTHEDOCS_OUTPUT/html/
+                - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
 
             ```
             {% endmarkdown %}
@@ -95,7 +86,7 @@
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
-                  <span class="sub header">Copy this example, it probably does what you want 😉</span>
+                  <span class="sub header">Start with this example, and then adapt it.</span>
                 </span>
               </span>
 
