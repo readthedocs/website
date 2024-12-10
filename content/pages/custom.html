@@ -1,0 +1,124 @@
+{#
+  The goal of this page is to highlight the flexibility of our platform in supporting any documentation tool,
+  with full customization of the build commands you can run.
+#}
+
+{#
+  View this page at http://localhost:8080/tools/custom/
+#}
+
+<html>
+  <head>
+    <title>Host any documentation tool</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="tools/custom" />
+    <meta name="status" content="hidden" />
+    <meta name="description" content="Read the Docs supports any documentation tool by allowing full control of the build commands your project runs. Enjoy powerful features such as search-as-you-type, previews from Git, and much more." />
+  </head>
+  <body>
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/technical.html" as technical %}
+{% import "partials/homepage.html" as homepage %}
+
+<section>
+  {% call basic.header_image(
+    header="Deploy with any tool",
+    image="/images/homepage.png",
+    image_alt="Examples of Read the Docs hosted documentation",
+    vertical_align="middle")
+  %}
+    <p>
+        Read the Docs supports any documentation tool by allowing full control of the build commands your project runs.
+        Enjoy powerful features such as search-as-you-type, previews from Git, and much more.
+    </p>
+
+    <p class="ui basic padded vertical segment">
+      <a class="ui large teal stackable button"
+      data-analytics="signup-modal"
+       onclick="jQuery('#signup-modal').modal('show');">
+        <i class="fad fa-play icon"></i>
+        Create an account
+      </a>
+      <a href="https://docs.readthedocs.io/en/stable/build-customization.html#override-the-build-process" class="ui large stackable button">
+        Learn more
+      </a>
+    </p>
+  {% endcall %}
+</section>
+
+<section id="features">
+  {% call marketing.highlight_list() %}
+
+    {% call marketing.highlight_item(
+        icon="olive fa-people-arrows",
+        icon_style="--fa-secondary-color: violet; --fa-secondary-opacity: 1;",
+        header="Collaborate with deploy previews",
+        color="violet") %}
+      {% markdown %}
+      Receive feedback from your team,
+      and <strong>have confidence in changes</strong> before they go live.
+      {% endmarkdown %}
+    {% endcall %}
+
+    {% call marketing.highlight_item(
+        icon="yellow fa-magnifying-glass",
+        icon_style="--fa-secondary-color: white; --fa-secondary-opacity: 1;",
+        header="Always find what you need",
+        color="violet") %}
+      {% markdown %}
+      Search across all your projects with our search-as-you-type interface,
+      and <strong>never lose documentation again</strong>.
+      {% endmarkdown %}
+    {% endcall %}
+
+    {% call marketing.highlight_item(
+        icon="fa-cogs",
+        header="Full customization of build commands",
+        color="violet") %}
+      {% markdown %}
+      Customize the build commands to suit your project's needs.
+      <strong>Flexibility to support any tool</strong>.
+      {% endmarkdown %}
+    {% endcall %}
+
+  {% endcall %}
+</section>
+
+{# Try it out code block #}
+{% include "includes/try-it-out-custom.html" %}
+
+{% block homepage_bottom_callout %}
+<section>
+  <div class="ui very padded container">
+    <div class="ui grid center aligned">
+
+      <div class="row">
+        <div class="column twelve wide computer sixteen wide tablet">
+
+          <div class="ui basic vertical huge segment">
+            <p>
+              <b>Get started with any documentation tool today.</b>
+            </p>
+
+            <p>
+              <a class="ui large teal stackable button"
+              data-analytics="signup-modal"
+               onclick="jQuery('#signup-modal').modal('show');">
+              <i class="fad fa-play icon"></i>
+              Create an account
+            </a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock homepage_bottom_callout %}
+
+  </body>
+</html>
