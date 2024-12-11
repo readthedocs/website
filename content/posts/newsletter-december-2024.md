@@ -13,6 +13,8 @@ image_credit: Photo by <a href="https://unsplash.com/@thebeardbe?utm_content=cre
 * **Our new dashboard is now the default for all users.** This has been a long time coming, and we are excited to have have everyone migrated over. The old dashboard will be [removed on Mar 11th](https://about.readthedocs.com/blog/2024/11/rollout-of-our-new-dashboard/).
 * **[Link Previews](https://docs.readthedocs.io/en/stable/link-previews.html)** are now available in Addons. This feature allows you to see a preview of the linked page when you hover over a link in your documentation. This is a re-implementation of our [Sphinx extension](https://sphinx-hoverxref.readthedocs.io/) that works for any documentation tool.
 * We're adding additional documentation examples for documentation tools that are supported on Read the Docs. This month we added [Docusarus](https://docs.readthedocs.io/en/stable/intro/docusaurus.html) and [Markdoc](https://docs.readthedocs.io/en/stable/intro/markdoc.html).
+* All of our ``build.tools`` were [updated to their latest versions](https://github.com/readthedocs/readthedocs.org/pull/11742).
+* We added support for [longer environment variables](https://github.com/readthedocs/readthedocs.org/pull/11748), which some users were running into limits on.
 
 You can always see the latest changes to our platforms in our [changelog 📃](https://docs.readthedocs.io/page/changelog.html).
 
