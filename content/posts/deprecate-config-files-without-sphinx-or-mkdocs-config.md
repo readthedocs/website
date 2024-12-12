@@ -36,6 +36,6 @@ This will also allows us to better support projects that don't use Sphinx or MkD
 Deprecation timeline
 --------------------
 
-- **Monday, January 6, 2024**: Temporarily disallow projects without an explicit Sphinx or MkDocs configuration for 12 hours, from 00:01 PST to 11:59 PST.
+- **Monday, January 6, 2025**: Temporarily disallow projects without an explicit Sphinx or MkDocs configuration for 12 hours, from 00:01 PST to 11:59 PST.
 - **Monday, January 20, 2025**:Temporarily disallow projects without an explicit Sphinx or MkDocs configuration for 24 hours, from 00:01 PST to 23:59 PST.
 - **Monday, February 3, 2025**: Permanently disallow projects without an explicit Sphinx or MkDocs configuration.
