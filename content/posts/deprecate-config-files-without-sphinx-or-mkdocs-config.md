@@ -43,5 +43,5 @@ Deprecation timeline
 We will disallow building projects using Sphinx or MkDocs without an explicit Sphinx or MkDocs configuration in their configuration file on the following dates:
 
 - **Monday, January 6, 2025**: Temporarily disallow building projects for 12 hours, from 00:01 PST to 11:59 PST.
-- **Monday, January 20, 2025**:Temporarily disallow building projects for 24 hours, from 00:01 PST to 23:59 PST.
-- **Monday, February 3, 2025**: Permanently disallow building projects.
+- **Monday, January 13, 2025**:Temporarily disallow building projects for 24 hours, from 00:01 PST to 23:59 PST.
+- **Monday, January 20, 2025**: Permanently disallow building projects.
