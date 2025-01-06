@@ -32,7 +32,7 @@ The major steps here have been:
 * **Fully redesigned dashboard:** We've been working on a [new dashboard](https://about.readthedocs.com/blog/2024/11/rollout-of-our-new-dashboard/) that brings our site into the modern era. This has been fully rolled out to all users as the default, and we're continuing to improve it.
 * **Removing build magic:** Removing the injection of data or configuration into your documentation builds. We used to have a full Sphinx extension that we injected, and a lot of configuration file manipulation for both [Sphinx](https://about.readthedocs.com/blog/2024/07/addons-by-default/) and [MkDocs](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/). This has been removed, which means builds should happen exactly as they do locally.
 * **Adding build support for all tools:** We built support into our build system for [fully custom builds](https://blog.readthedocs.com/build-customization/), which allows any build process that outputs HTML to be hosted on Read the Docs.
-* **Adding frontend support for all tools:** We rebuilt our Flyout and JavaScript that is injected into your documentation builds as a set of [Read the Docs Addons](https://about.readthedocs.com/blog/2024/04/enable-beta-addons/). This enables granular configuration.
+* **Adding frontend support for all tools:** We rebuilt our [flyout menu](https://docs.readthedocs.io/en/stable/flyout-menu.html#addons-flyout-menu) and the JavaScript that is injected into your documentation builds as a set of [Read the Docs Addons](https://about.readthedocs.com/blog/2024/04/enable-beta-addons/). This enables granular configuration.
 * **Supporting custom integrations:** We're exposing all the data that we use to build Addons to documentation users, who can build [custom data integrations](https://docs.readthedocs.io/en/stable/flyout-menu.html#custom-event-integration). This allows you to integrate the versions from the API into a version selector, offline formats into a download UI, and provide an integrated UX for your users.
 
 The combination of all this work leads to a powerful place for Read the Docs in 2025.
@@ -84,7 +84,7 @@ Some neat examples of what folks have been building:
 * Offline formats that use the API to show the latest PDF or Epub downloads.
 * Search integrations that use the API to power a custom search interface.
 
-You can see an [integration example](https://test-builds.readthedocs.io/en/latest/) that shows how to use the API to build a custom version selector.
+You can see an [version selector integration example](https://sphinx-rtd-theme.readthedocs.io/en/stable/) that shows how to use the API to build a custom version selector.
 
 We're excited to see what you build with this data,
 and are always looking for feedback on how we can make it better.
