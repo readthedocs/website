@@ -7,7 +7,7 @@ build:
     nodejs: "14"
   commands:
     - pip install poetry
-    - poetry install
+    - poetry install --no-root
     - npm ci
     - poetry run npm run build-html
     - mkdir -p _readthedocs/html/
