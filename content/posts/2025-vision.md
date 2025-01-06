@@ -22,7 +22,7 @@ but then allow you to extend or replace them as needed.
 
 Below is a breakdown of how that plays out with each of the major parts of Read the Docs.
 
-## Major steps in 2024
+## Support for all documentation tools
 
 We've been working to expand build support beyond Sphinx and MkDocs,
 and build Addons for powerful frontend features that work on any tool.
