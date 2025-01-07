@@ -1,5 +1,5 @@
 title: Read the Docs Newsletter - January 2025
-date: January 11, 2025
+date: January 8, 2025
 description: Company updates and new features from the last month, current focus, and upcoming features.
 category: Newsletter
 tags: newsletter, community
