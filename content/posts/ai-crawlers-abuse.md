@@ -112,6 +112,8 @@ However, crawlers didn't have this basic check and instead repeatedly downloaded
 
 </details>
 
+**Note**: This company has been very responsive and did cover the cost of bandwidth for this abuse.
+
 ### 10 TB in June 2024 from another
 
 In June 2024, **someone used Facebook's content downloader to download 10 TB** of data, mostly Zipped HTML and PDF files. We tried to email Facebook about it with the [contact information listed in the bot's user agent](http://www.facebook.com/externalhit_uatext.php), but the email bounced.
@@ -121,6 +123,8 @@ In June 2024, **someone used Facebook's content downloader to download 10 TB** o
 We think this was someone using Facebook's content downloader to download all of our files, but we aren't really sure.
 It could also be Meta crawling sites with their latest AI project,
 but the user agent is not clear.
+
+**Note**: Facebook never replied to any of our emails, and continues to scrape us aggressively with their bots.
 
 ## Actions taken
 
