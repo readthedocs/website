@@ -1,5 +1,5 @@
 title: Read the Docs 2025 Vision: great support for all documentation tools
-date: 2025-01-01
+date: 2025-01-14
 description: Our vision for Read the Docs in 2025, supporting all documentation tools and enhancing frontend features with Addons.
 category: Meta
 tags: addons, vision, builders
