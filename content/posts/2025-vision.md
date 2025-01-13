@@ -29,7 +29,6 @@ and build Addons for powerful frontend features that work on any tool.
 
 The major steps here have been:
 
-* **Fully redesigned dashboard:** We've been working on a [new dashboard](https://about.readthedocs.com/blog/2024/11/rollout-of-our-new-dashboard/) that brings our site into the modern era. This has been fully rolled out to all users as the default, and we're continuing to improve it.
 * **Removing build magic:** Removing the injection of data or configuration into your documentation builds. We used to have a full Sphinx extension that we injected, and a lot of configuration file manipulation for both [Sphinx](https://about.readthedocs.com/blog/2024/07/addons-by-default/) and [MkDocs](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/). This has been removed, which means builds should happen exactly as they do locally.
 * **Adding build support for all tools:** We built support into our build system for [fully custom builds](https://blog.readthedocs.com/build-customization/), which allows any build process that outputs HTML to be hosted on Read the Docs.
 * **Adding frontend support for all tools:** We rebuilt our [flyout menu](https://docs.readthedocs.io/en/stable/flyout-menu.html#addons-flyout-menu) and the JavaScript that is injected into your documentation builds as a set of [Read the Docs Addons](https://about.readthedocs.com/blog/2024/04/enable-beta-addons/). This enables granular configuration.
@@ -57,9 +56,14 @@ we recommend starting with ``build.jobs`` to get a simple build working:
 This gives users an on-ramp into a simple build process,
 but allows advanced users to fully customize their build process as needed.
 
-## Addons make reading docs even better
+## Improved UX in our dashboard and docs pages
 
-Addons give you a set of features that are enabled by default,
+We've been working on a [new dashboard](https://about.readthedocs.com/blog/2024/11/rollout-of-our-new-dashboard/) that brings our site into the modern era.
+This has been fully rolled out to all users as the default,
+and we're continuing to improve it.
+
+[Addons](https://docs.readthedocs.io/en/stable/addons.html) is our approach to adding functionality to documentation pages.
+They give you a set of features that are enabled by default,
 but you can always choose to extend them or replace them fully.
 
 We're excited about the Addons we've already built:
