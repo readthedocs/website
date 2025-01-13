@@ -71,7 +71,7 @@ We're excited about the Addons we've already built:
 * [Traffic analytics](https://docs.readthedocs.io/en/stable/traffic-analytics.html) to understand how your documentation is being used, and where you can improve it.
 * [Notifications](https://docs.readthedocs.io/en/stable/doc-notifications.html) to alert users to out-of-date documentation, and other important information about their documentation builds.
 
-We have some more interesting ideas for additional Addons, like a [Command Palette](https://github.com/readthedocs/addons/pull/449) to expose all of the features of Read the Docs in a single searchable interface.
+We have some more interesting ideas for additional Addons, like a [command palette](https://github.com/readthedocs/addons/pull/449) to expose all of the features of Read the Docs in a single searchable interface.
 
 ### Integrate our data for a better UX
 
