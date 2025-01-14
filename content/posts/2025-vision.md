@@ -49,9 +49,8 @@ we recommend starting with ``build.jobs`` to get a simple build working:
 
 * Our [build process](https://docs.readthedocs.io/en/stable/builds.html) defines a set of jobs that run in sequence to build your documentation.
 * You can [extend the build process](https://docs.readthedocs.io/en/stable/build-customization.html#extend-the-build-process) by adding ``pre`` and ``post`` jobs to run before and after the main build.
-<!-- This isn't fully implemented yet, but it's coming soon: https://github.com/readthedocs/readthedocs.org/pull/11810 -->
 * You can [override the ``build.jobs``](https://docs.readthedocs.io/en/stable/config-file/v2.html#build-jobs) to fully customize the build process.
-* If you don't want to use our build process at all, you can [run a fully custom build](https://docs.readthedocs.io/en/stable/build-customization.html#override-the-build-process) with ``build.commands``, allowing you to bring an existing build process to Read the Docs.
+* If you don't want to use our build process at all, you can [run a fully custom build](https://docs.readthedocs.io/en/stable/config-file/v2.html#build-commands) with ``build.commands``, allowing you to bring an existing build process to Read the Docs.
 
 This gives users an on-ramp into a simple build process,
 but allows advanced users to fully customize their build process as needed.
@@ -79,7 +78,7 @@ We have some more interesting ideas for additional Addons, like a [command palet
 
 ### Integrate our data for a better UX
 
-With our [custom event integration](https://docs.readthedocs.io/en/stable/flyout-menu.html#custom-event-integration),
+With our [custom event integration](https://docs.readthedocs.io/en/stable/addons.html#addons-data-and-customization),
 you can always integrate the data provided by Read the Docs into your documentation.
 
 Some neat examples of what folks have been building:
