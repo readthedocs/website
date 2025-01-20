@@ -1,5 +1,5 @@
-title: Partially or completely override the build process
-date: January 15, 2025
+title: You can now partially or completely override the build process
+date: January 20, 2025
 description: Announcing support for partially or completely override build steps using the `build.jobs` configuration.
 category: Feature announcement
 tags: configuration-file
@@ -30,7 +30,9 @@ but use [rinohtype](https://www.mos6581.org/rinohtype/master/intro.html#sphinx-b
 ```yaml
 version: 2
 
-formats: [pdf, epub]
+formats:
+  - pdf
+  - epub
 
 sphinx:
   configuration: docs/conf.py
