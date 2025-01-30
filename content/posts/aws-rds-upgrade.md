@@ -1,5 +1,5 @@
-title: Read the Docs Maintenance Window - February 5
-date: 2024-02-14
+title: Read the Docs Maintenance Window - February 14
+date: 2024-01-31
 description: Upcoming upgrade for PostgreSQL to ensure minimal impact for our users.
 category: Engineering
 tags: aws, rds, postgres, upgrade
