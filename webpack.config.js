@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const NodemonPlugin = require("nodemon-webpack-plugin");
 
@@ -17,14 +17,14 @@ module.exports = (env, argv) => {
       moment: "moment",
     },
     output: {
-      filename: "js/[name].js?[hash]",
-      chunkFilename: "js/[name].js?[hash]",
+      filename: "js/[name].js?[fullhash]",
+      chunkFilename: "js/[name].js?[fullhash]",
       publicPath: "./",
       path: path.join(__dirname, "readthedocs_theme", "static"),
     },
     optimization: {
       minimize: is_production,
-      minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin({})],
+      minimizer: [new TerserPlugin(), new CssMinimizerPlugin({})],
       splitChunks: {
         cacheGroups: {
           commons: {
@@ -67,7 +67,7 @@ module.exports = (env, argv) => {
             {
               loader: "file-loader",
               options: {
-                name: "[name].[ext]?[hash]",
+                name: "[name].[ext]?[fullhash]",
                 outputPath: "css/images/",
                 publicPath: "images/",
               },
@@ -80,7 +80,7 @@ module.exports = (env, argv) => {
             {
               loader: "file-loader",
               options: {
-                name: "[name].[ext]?[hash]",
+                name: "[name].[ext]?[fullhash]",
                 outputPath: "css/fonts/",
                 publicPath: "fonts/",
               },
@@ -94,8 +94,8 @@ module.exports = (env, argv) => {
         DEBUG_MODE: !is_production,
       }),
       new MiniCssExtractPlugin({
-        filename: "css/[name].css?[hash]",
-        chunkFilename: "css/[name].css?[hash]",
+        filename: "css/[name].css?[fullhash]",
+        chunkFilename: "css/[name].css?[fullhash]",
       }),
       new webpack.ProvidePlugin({
         $: "jquery",
@@ -131,16 +131,25 @@ module.exports = (env, argv) => {
     },
     devServer: {
       open: false,
-      openPage: "index.html",
       hot: false,
       liveReload: true,
-      publicPath: "/theme/",
-      disableHostCheck: true,
+      allowedHosts: "all",
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
-      contentBase: [path.join(__dirname, "output")],
-      watchContentBase: true,
+      static: [
+        {
+          directory: path.join(__dirname, "output"),
+        },
+        {
+          directory: path.join(__dirname, "readthedocs_theme", "static"),
+          publicPath: "/theme/css/",
+        },
+        {
+          directory: path.join(__dirname, "readthedocs_theme", "static"),
+          publicPath: "./",
+        },
+      ]
     },
   };
 };
