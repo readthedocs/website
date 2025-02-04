@@ -3,6 +3,8 @@ name = "website"
 version = "1.0.0"
 description = "Read the Docs website"
 authors = ["Read the Docs, Inc"]
+# Don't try to install as a package
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
