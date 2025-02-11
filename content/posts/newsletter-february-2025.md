@@ -10,7 +10,7 @@ image_credit: Photo by <a href="https://unsplash.com/@sunshinevillage?utm_conten
 
 ## News and updates
 
-* We migrated our official documentation to ``docs.readthedocs.com``, with the primary user documentation at https://docs.readthedocs.com/platform/stable/.
+* We migrated our official documentation to `docs.readthedocs.com`, with the primary user documentation at <https://docs.readthedocs.com/platform/stable/>.
 * We are working to improve the process of changing the slug of a Version. This will make it easier to change the URL of a version without creating a new version. This is currently being tested in production and will be available soon.
 * We [added support for changing the flyout position in Addons](https://docs.readthedocs.com/platform/stable/flyout-menu.html#position), which allows you to control where the flyout appears on your documentation site.
 * Our [Visual diff](https://docs.readthedocs.io/en/stable/visual-diff.html) feature is getting closer to being widely released. This includes a user-facing UX for seeing what files changed in a PR build, and a way to see the visual diff.
