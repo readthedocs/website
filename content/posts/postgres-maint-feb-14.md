@@ -8,6 +8,7 @@ status: published
 image: /images/aws-rds-upgrade.png
 image_credit: Photo by <a href="https://unsplash.com/@scottrodgerson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Scott Rodgerson</a> on <a href="https://unsplash.com/photos/black-and-yellow-striped-line-BwMcYuHI9OI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
+**Note**: As of 3PM PST, this is now complete.
 
 We wanted to make you aware that on **Friday, February 14 at 2:00pm PST (5:00pm EST, 22:00 UTC)**, Read the Docs will be having a scheduled downtime of approximately 2 hours.
 This will impact both **Read the Docs Community** and **Read the Docs for Business**.
