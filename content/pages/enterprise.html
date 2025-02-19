@@ -33,7 +33,7 @@
       we offer enterprise plans that can be customized to your requirements.
     </p>
     <p class="ui center aligned basic segment">
-      <a class="ui large teal button" href="/pricing/enterprise/#enterprise-inquiry">Tell us about your requirements</a>
+      <a class="ui large teal button" href="/pricing/enterprise/#inquiry">Tell us about your requirements</a>
     </p>
     {% endcall %}
   </section>
@@ -83,16 +83,16 @@
 
 
   {# Enterprise customer callout #}
-  <section id="enterprise-inquiry">
+  <section id="inquiry">
     <div class="ui very padded text container">
-      <div class="ui inverted padded segment">
+      <div class="ui inverted center aligned padded segment">
 
         {# Create semantic UI form for inbound sales prospects #}
 
         <form method="POST" name="fa-form-1" class="ui inverted form"
           action="https://webhook.frontapp.com/forms/036c4169294f3b04abaa/Jd5Qy6b7AYZHFZ-iHZ9OtRFlYyZqTGhYZEYBmrsrhHaiRaYLlKHF9nqccJg7pewDwFUbEZ0klqlNdSs7BcUAoJO7aPapcC7JQBlYV5S1GZ04oPvbkzVvriejZRY"
           enctype="multipart/form-data" accept-charset="utf-8">
-          <h2 class="ui center aligned dividing header">Talk with a sales rep about an enterprise plan</h2>
+          <h2 class="ui center aligned dividing header">Talk with a sales rep</h2>
           <p>
             Let us know what you're looking for and we'll work with you to find the right solution.
           </p>
@@ -106,17 +106,7 @@
           </div>
           <div class="field">
             <label for="referral">How did you hear about us?</label>
-            <input type="text" name="referral" placeholder="My friend David from the Flask project recommended you">
-          </div>
-          <div class="field">
-            <label>What type of documentation are you interested in?</label>
-            <select class="ui dropdown" name="documentation-type">
-              <option value="">Select type of documentation</option>
-              <option value="Internal docs">Internal team documentation</option>
-              <option value="Public docs">Public product documentation</option>
-              <option value="Open source docs">Open source project documentation</option>
-              <option value="Other docs">Something else (explain below)</option>
-            </select>
+            <input type="text" name="referral" placeholder="A coworker has used Read the Docs before">
           </div>
           <div class="field">
             <label>Do you have any specific requirements or questions?</label>
