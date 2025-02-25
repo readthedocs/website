@@ -5,15 +5,19 @@
   :param title: Title of the person being quoted
   :param image: Image source URL for avatar
   :param company: Name of the company/organization featured
+  :param link: Optional link to the source of the testimonial
 
 #}
-{% macro testimonial(name, title, image, company) %}
+{% macro testimonial(name, title, image, company, link=None) %}
   <i class="fad fa-quotes big icon"></i>
   <blockquote class="ui big text">
     {{ caller() }}
   </blockquote>
 
   <div class="ui small header">
+    {% if link %}
+      <a href="{{ link }}" target="_blank" rel="noopener">
+    {% endif %}
     <img src="{{ image }}" class="ui avatar image" alt="{{ name }}, {{ title }}, {{ company }}" />
     <div class="content">
       {{ name }}
@@ -21,6 +25,9 @@
         {{ title }}, <i>{{ company }}</i>
       </div>
     </div>
+    {% if link %}
+        </a>
+    {% endif %}
   </div>
 {% endmacro %}
 

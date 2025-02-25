@@ -166,6 +166,41 @@
     {# Sphinx user testimonials #}
     {% include "includes/users-sphinx.html" %}
 
+    {# New developer testimonials #}
+    <section>
+      <div class="ui very padded container">
+        <div class="ui stackable equal width grid">
+          <div class="stretched row">
+            <div class="column">
+              <div class="ui very padded raised large segment">
+                {% call marketing.testimonial(
+                    name="Trevor James Smith",
+                    title="Developer",
+                    company="Ouranos",
+                    image="https://github.com/Zeitsperre.png",
+                    link="https://github.com/hydrologie/xdatasets/issues/32#issue-2019390201") %}
+                  Read the Docs is a solid documentation hosting platform that is used all over the place and has some nice features on top of being FOSS software.
+                {% endcall %}
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="ui very padded raised large segment">
+                {% call marketing.testimonial(
+                    name="Juan Luis Cano Rodríguez",
+                    title="Developer Advocate",
+                    company="Kedro",
+                    image="https://github.com/astrojuanlu.png",
+                    link="https://fosstodon.org/@kedro@social.lfx.dev/111608164611739960") %}
+                  The documentation is now easier to navigate, thanks to a new top navigation bar and a search-as-you-type modal courtesy of Read the Docs. Snappy docs are happy docs!
+                {% endcall %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {% block homepage_bottom_callout %}
     <section>
       <div class="ui very padded container">
