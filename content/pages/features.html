@@ -79,6 +79,7 @@
           </div>
         </div>
 
+
       </div>
     </div>
   </div>
@@ -186,6 +187,14 @@
           </div>
         </div>
       {% endblock authoring_details %}
+
+      <div class="ui basic segment">
+        <a href="/docs-as-code/" class="ui basic button">
+          <i class="fad fa-code-branch icon"></i>
+          Learn more about docs as code
+        </a>
+      </div>
+
 
     </div>
   </div>
@@ -303,14 +312,18 @@
         Supported on **GitHub** and **GitLab** repositories.
         {% endmarkdown %}
 
-        <a class="ui basic primary button" href="https://docs.readthedocs.io/en/stable/pull-requests.html">
-          Learn more
-        </a>
       {% endcall %}
+
+      <div class="ui basic segment">
+        <a href="/features/reader/" class="ui basic button">
+          <i class="fad fa-book-reader icon"></i>
+          Learn more about reader features
+        </a>
+      </div>
+
 
     </div>
   </div>
-
   {{ features_divide() }}
 
   <div class="ui very padded container" id="hosting">
