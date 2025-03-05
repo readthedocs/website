@@ -5,33 +5,6 @@
     <i class="fad fa-arrow-progress primary icon"></i>
     How Read the Docs works
   </a>
-  <a class="item" href="{{ SITEURL }}/pricing/">
-    <i class="fad fa-diagram-venn primary icon"></i>
-    Pricing
-  </a>
-  <a class="item" href="{{ SITEURL }}/pricing/enterprise/">
-    <i class="fad fa-briefcase primary icon"></i>
-    Enterprise plans
-  </a>
-
-  <div class="header">Features</div>
-  <a class="item" href="{{ SITEURL }}/docs-as-code/">
-    <i class="fad fa-pencil primary icon"></i>
-    Authoring features
-  </a>
-  <a class="item" href="{{ SITEURL }}/features/#building">
-    <i class="fad fa-gears primary icon"></i>
-    Building features
-  </a>
-  <a class="item" href="{{ SITEURL }}/features/#hosting">
-    <i class="fad fa-browser primary icon"></i>
-    Hosting features
-  </a>
-  <a class="item" href="{{ SITEURL }}/features/reader/">
-    <i class="fad fa-glasses primary icon"></i>
-    Reader features
-  </a>
-
   {#
     This is useful to link to, but submenus don't work as nicely on mobile and
     this isn't that high priority to put in the mobile menu.
@@ -53,6 +26,19 @@
   {% endif %}
 {% endmacro %}
 
+{# Pricing menu for plans and enterprise #}
+{% macro menu_pricing() %}
+  <div class="header">Plans</div>
+  <a class="item" href="{{ SITEURL }}/pricing/">
+    <i class="fad fa-diagram-venn primary icon"></i>
+    Standard plans
+  </a>
+  <a class="item" href="{{ SITEURL }}/pricing/enterprise/">
+    <i class="fad fa-briefcase primary icon"></i>
+    Enterprise plans
+  </a>
+{% endmacro %}
+
 {# Resources menu for secondary information and pages for search ranking #}
 {% macro menu_resources() %}
 
@@ -61,6 +47,8 @@
     <i class="fad fa-newspaper fa-swap-opacity primary icon"></i>
     Blog
   </a>
+
+  <div class="header">Help</div>
   <a class="item" href="http://status.readthedocs.com" target="_blank">
     {% block menu_help_status %}
       {% if has_status_check %}
@@ -80,7 +68,6 @@
     {% endblock menu_help_status %}
   </a>
 
-  <div class="header">Help</div>
   <a class="item" href="https://docs.readthedocs.io/page/support.html" target="_blank">
     <i class="fad fa-envelope primary icon"></i>
     Support
@@ -167,6 +154,8 @@
               <div class="divider"></div>
               {{ menu_product(with_more=False) }}
               <div class="divider"></div>
+              {{ menu_pricing() }}
+              <div class="divider"></div>
               {{ menu_resources() }}
 
             </div>
@@ -199,9 +188,18 @@
               </div>
             </div>
 
-            <a class="item" href="{{ SITEURL }}/pricing/">
+            <div
+                class="ui wide dropdown item"
+                data-module="dropdown"
+                data-module-on="hover">
+
               Pricing
-            </a>
+              <i class="dropdown fad fa-caret-down icon"></i>
+
+              <div class="menu">
+                {{ menu_pricing() }}
+              </div>
+            </div>
 
             <div
                 class="ui wide dropdown item"
