@@ -25,7 +25,7 @@ build:
   tools:
     ruby: "3.3"
   commands:
-    - gem install bundle
+    - gem install bundler
     - bundle install
     - jekyll build --destination $READTHEDOCS_OUTPUT/html
 ```
