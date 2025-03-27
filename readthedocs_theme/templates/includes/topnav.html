@@ -29,9 +29,13 @@
 {# Pricing menu for plans and enterprise #}
 {% macro menu_pricing() %}
   <div class="header">Plans</div>
-  <a class="item" href="{{ SITEURL }}/pricing/">
+  <a class="item" href="{{ SITEURL }}/pricing/#/business">
     <i class="fad fa-diagram-venn primary icon"></i>
-    Standard plans
+    Business plans
+  </a>
+  <a class="item" href="{{ SITEURL }}/pricing/#/community">
+    <i class="fad fa-diagram-venn primary icon"></i>
+    Community plans
   </a>
   <a class="item" href="{{ SITEURL }}/pricing/enterprise/">
     <i class="fad fa-briefcase primary icon"></i>
@@ -105,7 +109,7 @@
   </a>
   <a class="item" data-analytics="commercial-login" href="https://app.readthedocs.com/dashboard/">
     <i class="fad fa-building secondary icon"></i>
-    Read the Docs for Business
+    Read the Docs Business
 
     <p class="ui mini grey text">
       <code>https://readthedocs.com</code>
@@ -302,7 +306,7 @@
           <div class="seven wide computer sixteen wide tablet column">
             <div class="ui raised segment">
               <div class="ui header">
-                Read the Docs for Business
+                Read the Docs Business
                 <div class="sub header">
                   For commercial and non-free projects
                 </div>
