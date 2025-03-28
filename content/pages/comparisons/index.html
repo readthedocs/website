@@ -30,68 +30,32 @@
     <div class="ui very padded container">
       <div class="ui three stackable cards">
 
-        <a class="card" href="{{ SITE_URL }}/comparisons/github-pages/">
-          <div class="content">
-            <div class="ui basic padded segment">
-              <div class="ui small centered image">
-                <img src="{{ SITE_URL }}/images/github-logo.svg" alt="GitHub Pages logo">
-              </div>
-            </div>
-            <div class="header">
-              GitHub Pages
-            </div>
-            <div class="meta">Static site hosting</div>
-            <div class="description">
-              GitHub Pages is primarily for static hosting, but lacks documentation-specific features. See how Read the Docs compares.
-            </div>
-          </div>
-          <div class="ui bottom attached button">
-            <i class="fad fa-arrow-right icon"></i>
-            Compare with GitHub Pages
-          </div>
-        </a>
+        {{ basic.comparison_card(
+          url="/comparisons/github-pages/",
+          logo_url="/images/github-logo.svg",
+          logo_alt="GitHub Pages logo",
+          title="GitHub Pages",
+          meta="Static site hosting",
+          description="GitHub Pages is primarily for static hosting, but lacks documentation-specific features. See how Read the Docs compares."
+        ) }}
 
-        <a class="card" href="{{ SITE_URL }}/comparisons/gitbook/">
-          <div class="content">
-            <div class="ui basic padded segment">
-              <div class="ui small centered image">
-                <img src="{{ SITE_URL }}/images/gitbook-logo.svg" alt="GitBook logo">
-              </div>
-            </div>
-            <div class="header">
-              GitBook
-            </div>
-            <div class="meta">Documentation platform</div>
-            <div class="description">
-              GitBook offers documentation hosting but with limited flexibility. Learn how Read the Docs gives you more control.
-            </div>
-          </div>
-          <div class="ui bottom attached button">
-            <i class="fad fa-arrow-right icon"></i>
-            Compare with GitBook
-          </div>
-        </a>
+        {{ basic.comparison_card(
+          url="/comparisons/gitbook/",
+          logo_url="/images/gitbook-logo.svg",
+          logo_alt="GitBook logo",
+          title="GitBook",
+          meta="Documentation platform",
+          description="GitBook offers documentation hosting but with limited flexibility. Learn how Read the Docs gives you more control."
+        ) }}
 
-        <a class="card" href="{{ SITE_URL }}/comparisons/cloudflare-pages/">
-          <div class="content">
-            <div class="ui basic compact segment">
-              <div class="ui small centered image">
-                <img src="{{ SITE_URL }}/images/cloudflare-pages-logo.svg" alt="Cloudflare Pages logo">
-              </div>
-            </div>
-            <div class="header">
-              Cloudflare Pages
-            </div>
-            <div class="meta">Web hosting platform</div>
-            <div class="description">
-              Cloudflare Pages is built for SPA hosting. While useful for websites, it lacks documentation-specific features. See why Read the Docs is better suited for documentation needs.
-            </div>
-          </div>
-          <div class="ui bottom attached button">
-            <i class="fad fa-arrow-right icon"></i>
-            Compare with Cloudflare Pages
-          </div>
-        </a>
+        {{ basic.comparison_card(
+          url="/comparisons/cloudflare-pages/",
+          logo_url="/images/cloudflare-pages-logo.svg",
+          logo_alt="Cloudflare Pages logo",
+          title="Cloudflare Pages",
+          meta="Web hosting platform",
+          description="Cloudflare Pages is built for SPA hosting. While useful for websites, it lacks documentation-specific features. See why Read the Docs is better suited for documentation needs."
+        ) }}
 
       </div>
     </div>
