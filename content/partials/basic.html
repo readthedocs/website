@@ -123,9 +123,9 @@ See templates/pages/basic for more.
 {% macro comparison_card(url, logo_url, logo_alt, title, meta, description) %}
   <a class="card" href="{{ url }}">
     <div class="content">
-      <div class="ui basic padded segment">
+      <div class="ui basic padded segment" style="height: 100px; display: flex; align-items: center; justify-content: center;">
         <div class="ui small centered image">
-          <img src="{{ logo_url }}" alt="{{ logo_alt }}">
+          <img src="{{ logo_url }}" alt="{{ logo_alt }}" style="max-height: 50px; width: auto;">
         </div>
       </div>
       <div class="header">
