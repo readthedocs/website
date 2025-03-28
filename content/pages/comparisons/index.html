@@ -1,0 +1,96 @@
+{# View this page at http://localhost:8080/comparisons/ #}
+
+<html>
+  <head>
+    <title>Read the Docs vs Other Documentation Platforms</title>
+    <meta name="description" content="Compare Read the Docs features with other documentation platforms like GitHub Pages, GitBook, and Cloudflare Pages to find the best solution for your documentation needs." />
+    <meta name="template" content="page" />
+    <meta name="slug" content="comparisons" />
+    <meta name="status" content="hidden" />
+  </head>
+  <body>
+
+  {% import "partials/basic.html" as basic %}
+
+  <section>
+    {% call basic.header_lead(
+    header="Compare Read the Docs with other platforms")
+    %}
+    <p>
+      While there are many options for hosting documentation,
+      Read the Docs is purpose-built for technical documentation with features that make both documentation authors and readers more productive.
+    </p>
+    <p>
+      Compare Read the Docs with other popular documentation platforms to find the best solution for your needs.
+    </p>
+    {% endcall %}
+  </section>
+
+  <section>
+    <div class="ui very padded container">
+      <div class="ui three stackable cards">
+
+        {{ basic.comparison_card(
+          url="/comparisons/github-pages/",
+          logo_url="/images/github-logo.svg",
+          logo_alt="GitHub Pages logo",
+          title="GitHub Pages",
+          meta="Static site hosting",
+          description="GitHub Pages is primarily for static hosting, but lacks documentation-specific features. See how Read the Docs compares."
+        ) }}
+
+        {{ basic.comparison_card(
+          url="/comparisons/gitbook/",
+          logo_url="/images/gitbook-logo.svg",
+          logo_alt="GitBook logo",
+          title="GitBook",
+          meta="Documentation platform",
+          description="GitBook offers documentation hosting but with limited flexibility. Learn how Read the Docs gives you more control."
+        ) }}
+
+        {{ basic.comparison_card(
+          url="/comparisons/cloudflare-pages/",
+          logo_url="/images/cloudflare-pages-logo.svg",
+          logo_alt="Cloudflare Pages logo",
+          title="Cloudflare Pages",
+          meta="Web hosting platform",
+          description="Cloudflare Pages is built for SPA hosting and not documentation. See why Read the Docs is better suited for your docs."
+        ) }}
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Ready to get started? <i class="fad fa-rocket icon"></i>
+              </h2>
+
+              <p>
+                Read the Docs is the all-in-one solution that provides everything you need
+                for hosting documentation, from authentication to versioning.
+                Try it today and see the difference!
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button"
+                   data-analytics="signup-modal"
+                   onclick="jQuery('#signup-modal').modal('show');">
+                  <i class="fad fa-rocket icon"></i>
+                  Get started for free
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </body>
+</html>
