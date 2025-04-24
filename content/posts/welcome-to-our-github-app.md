@@ -24,7 +24,7 @@ GitHub Apps offer several improvements over traditional OAuth2 applications:
   The GitHub App subscribes to the events it needs automatically when you install it.
 - **No need for deploy keys.**
   To access private repositories the GitHub App uses a temporary read-only scoped token.
-- **TBD**
+- **Keeps working, even if access changes.**
   If the user who originally connected the repository loses access,
   the integration will continue working, since the GitHub App itself maintains access.
 - **Always in sync.**
