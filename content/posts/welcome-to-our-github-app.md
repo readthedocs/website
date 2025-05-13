@@ -16,7 +16,7 @@ GitHub Apps offer several improvements over traditional OAuth2 applications:
 
 - **More granular permissions.**
   The GitHub App allows us to request only the permissions we need
-  --no more broad, account-wide access.
+  -- no more broad, account-wide access.
 - **More control over repository access.**
   You can choose exactly which repositories Read the Docs can access,
   instead of granting access to all of them just to import a single one.
