@@ -107,3 +107,38 @@ See templates/pages/basic for more.
     <img class="ui fluid rounded image" src="{{ image }}" {%- if alt %} alt="{{ alt }}"{% endif -%} />
   </div>
 {% endmacro %}
+
+{#
+  Comparison card with logo and description
+
+  Used for platform comparison pages to show different services that can be compared.
+
+  :param url: URL to the comparison page
+  :param logo_url: URL to the platform logo
+  :param logo_alt: Alt text for the logo
+  :param title: Card title/platform name
+  :param meta: Short description below title
+  :param description: Main card description
+#}
+{% macro comparison_card(url, logo_url, logo_alt, title, meta, description) %}
+  <a class="card" href="{{ url }}">
+    <div class="content">
+      <div class="ui basic padded segment">
+        <div class="ui small centered image">
+          <img src="{{ logo_url }}" alt="{{ logo_alt }}">
+        </div>
+      </div>
+      <div class="header">
+        {{ title }}
+      </div>
+      <div class="meta">{{ meta }}</div>
+      <div class="description">
+        {{ description }}
+      </div>
+    </div>
+    <div class="ui button">
+      <i class="fad fa-arrow-right icon"></i>
+      Compare with {{ title }}
+    </div>
+  </a>
+{% endmacro %}
