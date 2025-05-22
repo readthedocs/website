@@ -12,7 +12,7 @@ They let you host multiple versions of your documentation.
 Each version has its own unique URL identifier (slug),
 which is used to access its documentation (`https://docs.example.com/en/my-version/`).
 
-This identifier is automatically generated from your branch or tag name.
+This identifier is automatically generated from your branch or tag name,
 but the resulting identifier may not always be what you want,
 or you may want to follow a different naming convention for your documentation.
 
