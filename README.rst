@@ -54,7 +54,7 @@ Or, to sync your environment exactly to the lockfile (if present):
 
 .. code-block:: console
 
-    $ uv pip sync
+    $ uv sync
 
 Local development and authoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -7,7 +7,7 @@ build:
     nodejs: "14"
   commands:
     - pip install uv
-    - uv pip sync
+    - uv sync
     - npm ci
     - uv run npm run build-html
     - mkdir -p _readthedocs/html/
