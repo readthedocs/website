@@ -6,9 +6,9 @@ build:
     python: "3.10"
     nodejs: "14"
   commands:
-    - pip install poetry
-    - poetry install
+    - pip install uv
+    - uv pip sync
     - npm ci
-    - poetry run npm run build-html
+    - uv run npm run build-html
     - mkdir -p _readthedocs/html/
     - cp -r output/* _readthedocs/html/
