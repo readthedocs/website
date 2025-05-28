@@ -23,28 +23,32 @@
           <div class="ui relaxed grid centered middle aligned">
             <div class="row">
 
-              <div class="seven wide computer twelve wide tablet sixteen wide mobile column">
+                <div class="seven wide computer twelve wide tablet sixteen wide mobile column">
                 {% block homepage_callout %}
                   <div class="ui large left aligned basic vertical segment">
-                    <h1 class="ui huge header">
-                      Documentation simplified
-                    </h1>
-                    <p>
-                      Build, host, and share documentation, all with a single platform.
-                    </p>
+                  <h1 class="ui huge header">
+                    Docs as Code for everyone
+                  </h1>
+                  <p>
+                    Empower your team with versioned documentation, seamless previews, and powerful authentication. All integrated into your Git workflow.
+                  </p>
 
-                    {% block homepage_callout_buttons %}
-                      <a class="ui large teal stackable button"
-                        data-analytics="signup-modal"
-                         onclick="jQuery('#signup-modal').modal('show');">
-                        <i class="fad fa-play icon"></i>
-                        Sign up now
-                      </a>
-                    {% endblock homepage_callout_buttons %}
+                  {% block homepage_callout_buttons %}
+                    <a class="ui large teal stackable button"
+                    data-analytics="signup-modal"
+                     onclick="jQuery('#signup-modal').modal('show');">
+                    <i class="fad fa-play icon"></i>
+                    Get started for free
+                    </a>
+                    <a href="/features/" class="ui large secondary stackable basic button">
+                    <i class="fad fa-sparkles icon"></i>
+                    Explore features
+                    </a>
+                  {% endblock homepage_callout_buttons %}
 
                   </div>
                 {% endblock homepage_callout %}
-              </div>
+                </div>
 
               {% block homepage_callout_image %}
                 <div class="column eight wide computer only">
