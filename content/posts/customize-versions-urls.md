@@ -1,5 +1,5 @@
 title: Customize the URLs for your versions
-date: May 23, 2025
+date: May 28, 2025
 description: Announcing the ability to customize the URLs your versions are served from.
 category: Feature announcement
 tags: hosting
