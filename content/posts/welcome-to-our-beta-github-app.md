@@ -50,18 +50,18 @@ Some things you should know before participating in the beta:
   you don't need to migrate them immediately.
 - Once you have connected your account to the new GitHub App,
   you won't be able to link projects to repositories authorized for the legacy OAuth2 application.
-  You'll need to install the GitHub App into the repository before linking it to a project on Read the Docs,
-  check [our documentation](https://docs.readthedocs.com/platform/stable/reference/git-integration.html) for more details.
+  You'll need to install the GitHub App into the repository before connecting it to a project on Read the Docs.
 - We recommend that you don't revoke access to the legacy OAuth2 application until the end of the beta period.
 
 If you would like to participate in the beta, you can follow these steps:
 
 - If you are an existing user with your GitHub account already linked to Read the Docs,
   you can start the migration process [from this page](https://readthedocs.org/accounts/migrate-to-github-app/).
+- If you are a new user, you can sign up using the new GitHub App [from this page](https://readthedocs.org/accounts/githubapp/login/).
 - If you are an existing user, but you don't have your GitHub account linked to Read the Docs,
   you can link your GitHub account to our new GitHub App [from this page](https://readthedocs.org/accounts/githubapp/login/?process=connect).
-- If you are a new user, you can sign up using the new GitHub App [from this page](https://readthedocs.org/accounts/githubapp/login/).
 
+You can read more in [our documentation](https://docs.readthedocs.com/platform/stable/reference/git-integration.html#github-app).
 If you run into issues or have questions, [contact us via support](https://docs.readthedocs.com/platform/stable/support.html).
 
 ## The future is looking bright
