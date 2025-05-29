@@ -1,4 +1,4 @@
-title: Welcome to our GitHub App (beta access)
+title: Announcing our GitHub App Beta
 date: 2025-06-02
 description:
 category: Feature announcement
@@ -9,7 +9,8 @@ image: /images/github-app.png
 image_credit: Photo by <a href="https://unsplash.com/@synkevych?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Roman Synkevych</a> on <a href="https://unsplash.com/photos/black-and-white-penguin-toy-wX2L8L-fGeA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 We are excited to announce that we are migrating from our legacy GitHub OAuth2 application to a modern [GitHub App](https://docs.github.com/en/apps/overview).
-You can start using the new GitHub App today by signing up for [beta access](#beta-access).
+You can start using the new GitHub App today on Community by signing up for [beta access](#beta-access),
+and we plan to start testing with our Business users soon.
 
 ## Why the change?
 
@@ -39,13 +40,13 @@ so we can smooth out any issues before the full rollout.
 
 Some things you should know before participating in the beta:
 
-- The beta is only available for Read the Docs Community users (<https://app.readthedocs.org>).
-  We will be expanding the beta to Read the Docs Business users (<https://app.readthedocs.com>) in the future.
+- The beta is only available for [Read the Docs Community](https://app.readthedocs.org) users.
+  We will be expanding the beta to [Read the Docs Business](https://app.readthedocs.com) users soon.
 - The beta is available for existing and new users.
 - Existing users will be prompted to authorize our new GitHub App.
   Your existing Read the Docs account will be linked to the new GitHub App,
   and you won’t lose access to your existing projects.
-- You will be able to migrate your existing projects to the new GitHub App from <https://readthedocs.org/accounts/migrate-to-github-app/>.
+- You will be able to migrate your existing projects to the new GitHub App using the [migration page](https://app.readthedocs.org/accounts/migrate-to-github-app/).
 - Your existing projects will continue working using the legacy OAuth2 application,
   you don't need to migrate them immediately.
 - Once you have connected your account to the new GitHub App,
@@ -56,7 +57,7 @@ Some things you should know before participating in the beta:
 If you would like to participate in the beta, you can follow these steps:
 
 - If you are an existing user with your GitHub account already linked to Read the Docs,
-  you can start the migration process [from this page](https://readthedocs.org/accounts/migrate-to-github-app/).
+  you can start the migration process from the [migration page](https://readthedocs.org/accounts/migrate-to-github-app/).
 - If you are a new user, you can sign up using the new GitHub App [from this page](https://readthedocs.org/accounts/githubapp/login/).
 - If you are an existing user, but you don't have your GitHub account linked to Read the Docs,
   you can link your GitHub account to our new GitHub App [from this page](https://readthedocs.org/accounts/githubapp/login/?process=connect).
