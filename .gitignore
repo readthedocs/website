@@ -11,3 +11,5 @@ node_modules/
 __pycache__
 
 output/
+
+src/website.egg-info/

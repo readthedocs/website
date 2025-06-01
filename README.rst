@@ -24,17 +24,17 @@ Usage
 Setting up your environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This package uses Poetry to manage Python dependencies and CSS and JS assets are
+This package uses [uv](https://github.com/astral-sh/uv) to manage Python dependencies and CSS and JS assets are
 built using a number of Node dependencies.
 
 You will need the following requirements:
 
 * Node.js version ``14``
 * Python version ``3.10`` (any release ``>=3.6`` works)
-* Poetry version ``1.2`` (any release ``>=1.1`` works)
+* uv (Use ``asdf`` or see https://github.com/astral-sh/uv for installation instructions)
 
 Using ``asdf`` is recommended but optional. The ``asdf`` commands below will
-install all system level dependencies for you, including Poetry.
+install all system level dependencies for you.
 
 .. code-block:: console
 
@@ -47,7 +47,7 @@ manually, you can install all package level dependencies with:
 
 .. code-block:: console
 
-    $ poetry install
+    $ uv sync
     $ npm install
 
 Local development and authoring
