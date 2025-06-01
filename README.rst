@@ -31,10 +31,10 @@ You will need the following requirements:
 
 * Node.js version ``14``
 * Python version ``3.10`` (any release ``>=3.6`` works)
-* uv (see https://github.com/astral-sh/uv for installation instructions)
+* uv (Use ``asdf`` or see https://github.com/astral-sh/uv for installation instructions)
 
 Using ``asdf`` is recommended but optional. The ``asdf`` commands below will
-install all system level dependencies for you, including Python and Node.js.
+install all system level dependencies for you.
 
 .. code-block:: console
 
