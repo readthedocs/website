@@ -47,14 +47,8 @@ manually, you can install all package level dependencies with:
 
 .. code-block:: console
 
-    $ uv pip install -r requirements.txt
-    $ npm install
-
-Or, to sync your environment exactly to the lockfile (if present):
-
-.. code-block:: console
-
     $ uv sync
+    $ npm install
 
 Local development and authoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
