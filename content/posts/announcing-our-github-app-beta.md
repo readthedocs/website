@@ -1,5 +1,5 @@
-title: Announcing our GitHub App Beta
-date: 2025-06-02
+title: Announcing our GitHub App beta
+date: 2025-06-24
 description:
 category: Feature announcement
 tags: website, migration, github, authentication
@@ -57,10 +57,12 @@ Some things you should know before participating in the beta:
 If you would like to participate in the beta, you can follow these steps:
 
 - If you are an existing user with your GitHub account already linked to Read the Docs,
-  you can start the migration process from the [migration page](https://readthedocs.org/accounts/migrate-to-github-app/).
-- If you are a new user, you can sign up using the new GitHub App [from this page](https://readthedocs.org/accounts/githubapp/login/).
+  you can start the migration process from the [migration page](https://app.readthedocs.org/accounts/migrate-to-github-app/).
+- If you are a new user, from the [signup page](https://app.readthedocs.org/accounts/signup/) click on "Sign up using GitHub",
+  and select "Sign up using GitHub App".
 - If you are an existing user, but you don't have your GitHub account linked to Read the Docs,
-  you can link your GitHub account to our new GitHub App [from this page](https://readthedocs.org/accounts/githubapp/login/?process=connect).
+  from the [connected services pages](https://app.readthedocs.org/accounts/3rdparty/) click on "Add new connection",
+  select "Connect to GitHub", and then select "Connect to GitHub App".
 
 You can read more in [our documentation](https://docs.readthedocs.com/platform/stable/reference/git-integration.html#github-app).
 If you run into issues or have questions, [contact us via support](https://docs.readthedocs.com/platform/stable/support.html).
