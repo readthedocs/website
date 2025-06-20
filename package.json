@@ -9,7 +9,7 @@
     "clean-html": "rm -rfv output/*; exit 0",
     "build": "npm run build-assets && npm run build-html",
     "build-assets": "npm run clean-assets && webpack --mode=production --progress --colors",
-    "build-html": "npm run clean-html && pelican content",
+    "build-html": "npm run clean-html && uv run pelican content",
     "dev": "webpack-dev-server --mode=development",
     "livereload": "npm run dev",
     "lint": "prettier --check 'src/**' '*.js' '*.json'",

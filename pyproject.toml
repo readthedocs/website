@@ -1,23 +1,21 @@
-[tool.poetry]
+[project]
 name = "website"
 version = "1.0.0"
 description = "Read the Docs website"
-authors = ["Read the Docs, Inc"]
-# Don't try to install as a package
-package-mode = false
-
-[tool.poetry.dependencies]
-python = "^3.10"
-Jinja2 = "~=3.0.3"
-pelican = "4.5.0"
-Markdown = "3.2"
-pelican-related-posts = "1.0.0"
-pre-commit = "2.16.0"
-pelican-jinja2content = "^1.0.1"
-jinja-markdown = "^1.210911"
-
-[tool.poetry.dev-dependencies]
+authors = [
+  { name = "Read the Docs, Inc" }
+]
+requires-python = ">=3.10"
+dependencies = [
+  "Jinja2 ~=3.0.3",
+  "pelican ==4.5.0",
+  "Markdown ==3.2",
+  "pelican-related-posts ==1.0.0",
+  "pre-commit ==2.16.0",
+  "pelican-jinja2content >=1.0.1",
+  "jinja-markdown >=1.210911"
+]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -28,9 +28,9 @@ commands:
               git status readthedocs_theme/ --porcelain
               exit 1
             fi
-      - run: pip install poetry
-      - run: poetry --no-ansi install
-      - run: poetry run pelican content -s publishconf.py
+      - run: pip install uv
+      - run: uv sync
+      - run: uv run pelican content -s publishconf.py
       - run: npx html-validate --formatter codeframe output/
 
 jobs:
