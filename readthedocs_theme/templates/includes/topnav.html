@@ -1,12 +1,3 @@
-{# The main product menu, for all high priority information #}
-{% macro menu_product(with_more=False) %}
-  <div class="header">About</div>
-  <a class="item" href="{{ SITEURL }}/features/">
-    <i class="fad fa-arrow-progress primary icon"></i>
-    How Read the Docs works
-  </a>
-{% endmacro %}
-
 {# Pricing menu for plans and enterprise #}
 {% macro menu_pricing() %}
   <div class="header">Plans</div>
@@ -139,7 +130,7 @@
               <div class="divider"></div>
               <a class="item" href="{{ SITEURL }}/features/">
                 <i class="fad fa-arrow-progress primary icon"></i>
-                How Read the Docs works
+                Product
               </a>
               <div class="divider"></div>
               {{ menu_pricing() }}
