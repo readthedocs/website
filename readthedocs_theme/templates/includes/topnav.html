@@ -5,25 +5,6 @@
     <i class="fad fa-arrow-progress primary icon"></i>
     How Read the Docs works
   </a>
-  {#
-    This is useful to link to, but submenus don't work as nicely on mobile and
-    this isn't that high priority to put in the mobile menu.
-  #}
-  {% if with_more %}
-    <div class="header">More</div>
-    <div class="item">
-      <i class="fad fa-rectangle-terminal primary icon"></i>
-      Featured tools
-      <i class="dropdown fad fa-caret-right icon"></i>
-      <div class="menu">
-        <a class="item" href="{{ SITEURL }}/tools/sphinx">Sphinx</a>
-        <a class="item" href="{{ SITEURL }}/tools/mkdocs">Mkdocs</a>
-        <a class="item" href="{{ SITEURL }}/tools/jupyter-book">Jupyter Book</a>
-        <a class="item" href="{{ SITEURL }}/tools/markdoc">Markdoc</a>
-        <a class="item" href="{{ SITEURL }}/tools/custom">Other tools</a>
-      </div>
-    </div>
-  {% endif %}
 {% endmacro %}
 
 {# Pricing menu for plans and enterprise #}
@@ -156,7 +137,10 @@
 
               {{ menu_log_in(with_signup=True) }}
               <div class="divider"></div>
-              {{ menu_product(with_more=False) }}
+              <a class="item" href="{{ SITEURL }}/features/">
+                <i class="fad fa-arrow-progress primary icon"></i>
+                How Read the Docs works
+              </a>
               <div class="divider"></div>
               {{ menu_pricing() }}
               <div class="divider"></div>
@@ -174,23 +158,9 @@
         <div class="twelve wide computer eleven wide tablet left aligned tablet only computer only column">
           <div class="ui big borderless secondary menu">
 
-            <div
-                class="ui wide dropdown item"
-                {#
-                  TODO this needs more flexibility to support more
-                  class="ui wide dropdown item{% if page and page.slug == 'features' %} active"
-                  aria-current="page{% endif %}"
-                #}
-                data-module="dropdown"
-                data-module-on="hover">
-
+            <a class="item" href="{{ SITEURL }}/features/">
               Product
-              <i class="dropdown fad fa-caret-down icon"></i>
-
-              <div class="menu">
-                {{ menu_product(with_more=True) }}
-              </div>
-            </div>
+            </a>
 
             <div
                 class="ui wide dropdown item"

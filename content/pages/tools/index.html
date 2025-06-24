@@ -1,0 +1,116 @@
+{# View this page at http://localhost:8080/tools/ #}
+
+<html>
+  <head>
+    <title>Documentation Tools Supported by Read the Docs</title>
+    <meta name="description" content="Read the Docs supports all major documentation tools including Sphinx, MkDocs, Jupyter Book, and Markdoc. Find the best tool for your documentation needs." />
+    <meta name="template" content="page" />
+    <meta name="slug" content="tools" />
+    <meta name="status" content="hidden" />
+  </head>
+  <body>
+
+  {% import "partials/basic.html" as basic %}
+
+  <section>
+    {% call basic.header_lead(
+    header="Host documentation with any tool")
+    %}
+    <p>
+      Read the Docs supports all the major documentation tools,
+      so you can choose the one that best fits your team's workflow and preferences.
+      From Python's native Sphinx to modern Markdown-based solutions,
+      we've got you covered.
+    </p>
+    <p>
+      Explore our tool-specific guides to see how Read the Docs enhances each documentation platform.
+    </p>
+    {% endcall %}
+  </section>
+
+  <section>
+    <div class="ui very padded container">
+      <div class="ui two stackable cards">
+
+        {{ basic.tool_card(
+          url="/tools/sphinx/",
+          logo_url="/images/sphinx-logo.png",
+          logo_alt="Sphinx logo",
+          title="Sphinx",
+          meta="Python documentation generator",
+          description="The original Python documentation tool. Perfect for API docs with autodoc and extensive cross-referencing capabilities."
+        ) }}
+
+        {{ basic.tool_card(
+          url="/tools/mkdocs/",
+          logo_url="/images/mkdocs-logo.png",
+          logo_alt="MkDocs logo",
+          title="MkDocs",
+          meta="Markdown documentation",
+          description="Fast, simple, and downright gorgeous docs from Markdown files. Great for project documentation and user guides."
+        ) }}
+
+        {{ basic.tool_card(
+          url="/tools/jupyter-book/",
+          logo_url="/images/jupyter-book-logo.png",
+          logo_alt="Jupyter Book logo",
+          title="Jupyter Book",
+          meta="Executable books and documents",
+          description="Build beautiful, publication-quality books and documents from computational content. Perfect for data science and research."
+        ) }}
+
+        {{ basic.tool_card(
+          url="/tools/markdoc/",
+          logo_url="/images/markdoc-logo.png",
+          logo_alt="Markdoc logo",
+          title="Markdoc",
+          meta="Powerful Markdown framework",
+          description="Stripe's powerful, flexible, Markdown-based authoring framework. Ideal for component-rich documentation sites."
+        ) }}
+
+        {{ basic.tool_card(
+          url="/tools/custom/",
+          logo_url="/images/homepage.png",
+          logo_alt="Read the Docs documentation examples",
+          title="Any Tool",
+          meta="Full build customization",
+          description="Use any documentation tool with custom build commands. Docusaurus, VuePress, Hugo, or anything else you need."
+        ) }}
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Ready to get started? <i class="fad fa-rocket icon"></i>
+              </h2>
+
+              <p>
+                Read the Docs works seamlessly with all major documentation tools.
+                Choose your preferred tool and get your documentation online in minutes
+                with powerful features like search, versioning, and collaboration built-in.
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button"
+                   data-analytics="signup-modal"
+                   onclick="jQuery('#signup-modal').modal('show');">
+                  <i class="fad fa-rocket icon"></i>
+                  Get started for free
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </body>
+</html>
