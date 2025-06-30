@@ -3,7 +3,7 @@
 <html>
   <head>
     <title>Read the Docs vs Other Documentation Platforms</title>
-    <meta name="description" content="Compare Read the Docs features with other documentation platforms like GitHub Pages, GitBook, and Cloudflare Pages to find the best solution for your documentation needs." />
+    <meta name="description" content="Compare Read the Docs features with other documentation platforms like GitHub Pages, GitBook, Cloudflare Pages, and Netlify to find the best solution for your documentation needs." />
     <meta name="template" content="page" />
     <meta name="slug" content="comparisons" />
     <meta name="status" content="hidden" />
@@ -28,7 +28,7 @@
 
   <section>
     <div class="ui very padded container">
-      <div class="ui three stackable cards">
+      <div class="ui four stackable cards">
 
         {{ basic.comparison_card(
           url="/comparisons/github-pages/",
@@ -55,6 +55,15 @@
           title="Cloudflare Pages",
           meta="Web hosting platform",
           description="Cloudflare Pages is built for SPA hosting and not documentation. See why Read the Docs is better suited for your docs."
+        ) }}
+
+        {{ basic.comparison_card(
+          url="/comparisons/netlify/",
+          logo_url="/images/netlify-logo.svg",
+          logo_alt="Netlify logo",
+          title="Netlify",
+          meta="Modern web platform",
+          description="Netlify excels at deploying web applications but lacks documentation-specific features. Learn why Read the Docs is purpose-built for docs."
         ) }}
 
       </div>
