@@ -56,27 +56,28 @@ but Read the Docs is unique in a few key ways:
 * **Visual diff**: See a diff of the rendered documentation when doing reviews, allowing you to easily see what changed in the docs.
 * **Offline formats**: We provide a way to download your documentation as a PDF or ePub, so you can read it offline.
 
-      <div class="ui padded container">
+    <div class="ui padded container">
         <div class="ui stackable equal width grid">
-          <div class="stretched row">
-            <div class="column">
-              <div class="ui padded raised large segment">
-                <i class="fad fa-quotes big icon" aria-hidden="true"></i>
-                <blockquote class="ui big text">
-                Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
-                </blockquote>
-                <div class="ui small header">
-                    <div class="content">
-                    Matt Fisher
-                    <div class="sub header">
-                        UC Berkeley Eric &amp; Wendy Schmidt Center for Data Science &amp; Environment
+            <div class="stretched row">
+                <div class="column">
+                    <div class="ui padded raised large segment">
+                        <i class="fad fa-quotes big icon" aria-hidden="true"></i>
+                        <blockquote class="ui big text">
+                            Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
+                        </blockquote>
+                        <div class="ui small header">
+                            <div class="content">
+                                Matt Fisher
+                                <div class="sub header">
+                                    UC Berkeley Eric &amp; Wendy Schmidt Center for Data Science &amp; Environment
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
 ## Thanks to AWS for supporting open source
 
