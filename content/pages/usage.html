@@ -1,0 +1,265 @@
+{#
+  The goal of this page is to explain in a simple way how users will use Read the Docs in their lives.
+#}
+<html>
+  <head>
+    <title>Using Read the Docs daily</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="usage" />
+    <meta name="status" content="hidden" />
+    <meta name="description" content="How to use Read the Docs in your daily basis to write, build and host your documentation." />
+  </head>
+  <body>
+
+{#
+  View this page at http://localhost:8080/usage/index.html
+#}
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/features.html" as about %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/technical.html" as technical %}
+{% import "partials/homepage.html" as homepage %}
+
+<section>
+  <div class="ui horizontally very padded container">
+    <div class="ui very padded centered grid">
+      <div class="middle aligned row">
+
+        <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+          <div class="ui large left aligned basic vertical segment">
+            <h1 class="ui huge header">
+              Read the Docs in your daily work
+            </h1>
+
+            <p>
+              Read the Docs helps you with building, reviewing and publishing documentation for your customers
+              by following the <em>docs as code</em> pattern that you may be already using.
+              Allow your readers to browse different versions of your documentation, switch between langauges and perform searches accross all your projects.
+              They will appreciate you are using Read the Docs for your documentation.
+            </p>
+
+            <div class="ui list">
+              <div class="item"><i class="fad fa-check secondary icon"></i>Write documentation using a rich ecosystem of tools and markups.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Preview each change before publishing.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Automatically deploy the documentation on merge.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Expose different versions of your documentation to readers.</div>
+            </div>
+
+            <p>
+              Read the Docs is the <em>all-in-one</em> solution for docs as code.
+            </p>
+
+          </div>
+        </div>
+
+        <div class="six wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui padded basic segment">
+            <div class="ui relaxed list">
+
+              {%- set header_1 = "Write the documentation" %}
+              {%- set slug_1 = "write" %}
+              {%- set icon_1 = "fa-pencil" -%}
+              <a href="#{{ slug_1 }}" class="ui small teal header item">
+                <i class="fad {{ icon_1 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_1 }}
+                  <span class="sub header">Write the documentation using your favourite editor and tool.</span>
+                </span>
+              </a>
+
+              {%- set header_2 = "Push the changes to Git" %}
+              {%- set slug_2 = "git-integration" %}
+              {%- set icon_2 = "fa-code-commit" -%}
+              <a href="#{{ slug_2 }}" class="ui small header item">
+                <i class="fad {{ icon_2 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_2 }}
+                  <span class="sub header">Collaborate with your team by following the pull request and review workflow.</span>
+                </span>
+              </a>
+
+              {%- set header_3 = "Preview your pull request" %}
+              {%- set slug_3 = "pull-request-previews" %}
+              {%- set icon_3 = "fa-file-plus-minus" -%}
+              <a href="#{{ slug_3 }}" class="ui small header item">
+                <i class="fad {{ icon_3 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_3 }}
+                  <span class="sub header">Verify changes to your documentation with a fully built documentation website for each pull request.</span>
+                </span>
+              </a>
+
+              {%- set header_4 = "Deploy with one click" %}
+              {%- set slug_4 = "one-click-deployment" %}
+              {%- set icon_4 = "fa-rocket" -%}
+              <a href="#{{ slug_4 }}" class="ui small header item">
+                <i class="fad {{ icon_4 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_4 }}
+                  <span class="sub header">Automatically deploy your documentation each time you <em>merge to main</em>.</span>
+                </span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% macro about_divide(text=None) %}
+  <div class="ui text container">
+    <div class="ui {%- if text %} horizontal {%- endif %} divider">
+      {% if text %}{{ text }}{% endif %}
+    </div>
+  </div>
+{% endmacro %}
+
+{{ about_divide() }}
+
+<section>
+  <div class="ui very padded container">
+    <div class="ui vertically padded centered grid" id="{{ slug_1 }}">
+
+      {% call about.step(
+          header=header_1,
+          image="/images/usage/code-editor-light.png",
+          image_alt="Visual Studio Code editor",
+          icon=icon_1) %}
+        {% markdown %}
+        Write documentation using your favourite editor and tool.
+        Read the Docs doesn't force you to use any one in particular.
+        No WebUI, or WYSIWYG editor. No lock-in.
+        You can use the one you already love.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/page/tutorial/">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_2 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_2,
+          image="/images/usage/pull-request-collaboration.png",
+          image_alt="Opened pull request on GitHub",
+          icon=icon_2) %}
+        {% markdown %}
+        Once you are done writing the documentation, push you changes to Git and open a pull request to collaborate with your team.
+        Accept or reject suggestions from your co-workers while previewing the live changes on Read the Docs.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/page/reference/git-integration.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_3 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_3,
+          image="/images/docs-as-code/visual-diff.png",
+          image_alt="Visual diff between two versions",
+          icon=icon_3) %}
+        {% markdown %}
+        When you open the pull request, you and your team can see the live changes on Read the Docs to evaluate the content,
+        but also looking for style and look & feel issues, that are impossible to find out from the diff code in the pull request.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/page/pull-requests.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_4 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_4,
+          image="/images/usage/documentation.png",
+          image_alt="Documentation built on Read the Docs",
+          icon=icon_4) %}
+      {% markdown %}
+      After getting an approval in your pull request from your team and merging it,
+      Read the Docs will build and deploy those changes to production automatically.
+      {% endmarkdown %}
+
+        {# TODO: Have a better docs page for deployment #}
+        <a class="ui basic primary button" href="https://docs.readthedocs.io/page/builds.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+
+      {% endcall %}
+
+    </div>
+  </div>
+
+</section>
+
+
+{# Try it out code block #}
+{% include "includes/try-it-out.html" %}
+
+{% block bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Save time and headaches!
+              </h2>
+
+              <p>
+                Simplify you day to day work by writing, building, previewing and publishing your documentation with Read the Docs.
+                Collaborate with all your team in an easy way that everybody understands and can immediately see the changes after pushing them to Git.
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                  <i class="fad fa-rocket icon"></i>
+                  Sign up now
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock bottom_callout %}
+
+  </body>
+</html>
