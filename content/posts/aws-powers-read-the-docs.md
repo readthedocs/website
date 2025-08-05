@@ -20,6 +20,20 @@ This post will cover a bit more about how we use AWS,
 the infrastructure we run on it,
 and how it helps us support the open source projects that rely on Read the Docs.
 
+## Our scale
+
+In the past 30 days, our Community hosting platform has:
+
+* Supported over **100,000 open source projects** with documentation hosting
+* Run over **350,000 documentation builds**
+* Handled over **250M documentation pageviews**
+* Served over **2.2 billion web requests**
+* Transferred over **45TB of data**
+
+Since our creation in 2010,
+we have been a cornerstone of the Python open source ecosystem,
+and now host documentation for many other languages and frameworks as well.
+
 ## Our infrastructure
 
 Read the Docs has a pretty simple architecture,
