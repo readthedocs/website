@@ -45,6 +45,9 @@ Here are just a few of the big projects whose docs we build and host:
 - [**Python Developers Guide**](https://devguide.python.org/) - the official guide for developing Python itself, maintained by the core developers.
 - Tens of thousands of other open-source libraries. Scroll almost any `requirements.txt` and you’ll see at least one project whose docs live on Read the Docs.
 
+> Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the generous Community plan, we couldn't have afforded anything close to the CI/build resources that we got with Read the Docs.
+> Max Hilbrunner, Godot Engine
+
 ## Features that make Read the Docs unique
 
 There are many places to host your documentation,
