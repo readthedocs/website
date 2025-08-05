@@ -43,7 +43,7 @@ Here are just a few of the big projects whose docs we build and host:
 - [**Godot Engine**](https://docs.godotengine.org/) – the open-source 2D/3D game engine behind thousands of indie titles and student projects.
 - [**Flask**](https://flask.palletsprojects.com/) – the Python web framework powering everything from hobby APIs to production workloads at scale.
 - [**Python Developers Guide**](https://devguide.python.org/) - the official guide for developing Python itself, maintained by the core developers.
-- Tens of thousands of other open-source libraries. Scroll almost any `requirements.txt` and you’ll see at least one project whose docs live on Read the Docs.
+- Tens of thousands of other open-source libraries. Scroll almost any ``requirements.txt`` and you’ll see at least one project whose docs we host.
 
     <div class="ui padded container">
         <div class="ui stackable equal width grid">
