@@ -70,7 +70,7 @@ Here are just a few of the big projects whose docs we build and host:
                         </blockquote>
                         <div class="ui small header">
                             <div class="content">
-                                Max Hilbrunner,
+                                Max Hilbrunner
                                 <div class="sub header">
                                     Godot Engine
                                 </div>
