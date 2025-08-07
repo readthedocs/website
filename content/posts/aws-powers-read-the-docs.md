@@ -53,8 +53,8 @@ We use a number of other AWS services as well, including Cloudwatch for monitori
 
 Here are just a few of the big projects whose docs we build and host:
 
-- [**Jupyter**](https://docs.jupyter.org/en/latest/) – the open source project that powers Jupyter Notebooks, used by millions of data scientists and educators worldwide.
 - [**Godot Engine**](https://docs.godotengine.org/) – the open-source 2D/3D game engine behind thousands of indie titles and student projects.
+- [**Jupyter**](https://docs.jupyter.org/en/latest/) – the open source project that powers Jupyter Notebooks, used by millions of data scientists and educators worldwide.
 - [**Flask**](https://flask.palletsprojects.com/) – the Python web framework powering everything from hobby APIs to production workloads at scale.
 - [**Python Developers Guide**](https://devguide.python.org/) - the official guide for developing Python itself, maintained by the core developers.
 - Tens of thousands of other open-source libraries. Scroll almost any ``requirements.txt`` and you’ll see at least one project whose docs we host.
