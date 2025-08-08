@@ -7,7 +7,7 @@ status: published
 image:
 image_credit:
 
-Read the Docs has been building and hosting documentation for open-source projects since 2010.
+Read the Docs has been building and hosting documentation for open source projects since 2010.
 We’re proud to be a part of the open source ecosystem,
 and today we wanted to take a moment to thank one of our biggest supporters: **Amazon Web Services**.
 
@@ -55,11 +55,11 @@ We use a number of other AWS services as well, including Cloudwatch for monitori
 
 Here are just a few of the big projects whose docs we build and host:
 
-- [**Godot Engine**](https://docs.godotengine.org/) – the open-source 2D/3D game engine behind thousands of indie titles and student projects.
+- [**Godot Engine**](https://docs.godotengine.org/) – the open source 2D/3D game engine behind thousands of indie titles and student projects.
 - [**Jupyter**](https://docs.jupyter.org/en/latest/) – the open source project that powers Jupyter Notebooks, used by millions of data scientists and educators worldwide.
 - [**Flask**](https://flask.palletsprojects.com/) – the Python web framework powering everything from hobby APIs to production workloads at scale.
 - [**Python Developers Guide**](https://devguide.python.org/) - the official guide for developing Python itself, maintained by the core developers.
-- Tens of thousands of other open-source libraries. Scroll almost any ``requirements.txt`` and you’ll see at least one project whose docs we host.
+- Tens of thousands of other open source libraries. Scroll almost any ``requirements.txt`` and you’ll see at least one project whose docs we host.
 
 <div class="ui very padded container">
   <div class="ui very padded raised segment">
