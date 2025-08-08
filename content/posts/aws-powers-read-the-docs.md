@@ -51,6 +51,8 @@ We use a number of other AWS services as well, including Cloudwatch for monitori
 
 ## A few of the projects we host
 
+{% import "partials/marketing.html" as marketing %}
+
 Here are just a few of the big projects whose docs we build and host:
 
 - [**Godot Engine**](https://docs.godotengine.org/) – the open-source 2D/3D game engine behind thousands of indie titles and student projects.
@@ -59,28 +61,18 @@ Here are just a few of the big projects whose docs we build and host:
 - [**Python Developers Guide**](https://devguide.python.org/) - the official guide for developing Python itself, maintained by the core developers.
 - Tens of thousands of other open-source libraries. Scroll almost any ``requirements.txt`` and you’ll see at least one project whose docs we host.
 
-    <div class="ui padded container">
-        <div class="ui stackable equal width grid">
-            <div class="stretched row">
-                <div class="column">
-                    <div class="ui padded raised large segment">
-                        <i class="fad fa-quotes big icon" aria-hidden="true"></i>
-                        <blockquote class="ui big text">
-                        Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the generous Community plan, we couldn't have afforded anything close to the CI/build resources that we got with Read the Docs.
-                        </blockquote>
-                        <div class="ui small header">
-                            <div class="content">
-                                Max Hilbrunner
-                                <div class="sub header">
-                                    Godot Engine
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="ui very padded container">
+  <div class="ui very padded raised segment">
+    {% call marketing.testimonial(
+        name="Max Hilbrunner",
+        title="Software and Game Developer",
+        company="Godot Engine",
+        image="https://avatars.githubusercontent.com/u/1654763?v=4",
+        link="https://docs.godotengine.org/") %}
+      Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the generous Community plan, we couldn't have afforded anything close to the CI/build resources that we got with Read the Docs.
+    {% endcall %}
+  </div>
+</div>
 
 ## Features that make Read the Docs unique
 
@@ -93,28 +85,18 @@ but Read the Docs is unique in a few key ways:
 * **Visual diff**: See a diff of the rendered documentation when doing reviews, allowing you to easily see what changed in the docs.
 * **Offline formats**: We provide a way to download your documentation as a PDF or ePub, so you can read it offline.
 
-    <div class="ui padded container">
-        <div class="ui stackable equal width grid">
-            <div class="stretched row">
-                <div class="column">
-                    <div class="ui padded raised large segment">
-                        <i class="fad fa-quotes big icon" aria-hidden="true"></i>
-                        <blockquote class="ui big text">
-                            Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
-                        </blockquote>
-                        <div class="ui small header">
-                            <div class="content">
-                                Matt Fisher
-                                <div class="sub header">
-                                    UC Berkeley Eric &amp; Wendy Schmidt Center for Data Science &amp; Environment
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="ui very padded container">
+  <div class="ui very padded raised segment">
+    {% call marketing.testimonial(
+        name="Matt Fisher",
+        title="Scientific Software Developer",
+        company="UC Berkeley Eric and Wendy Schmidt Center for Data Science and Environment",
+        image="https://github.com/mfisher87.png",
+        link="https://dse.berkeley.edu/") %}
+      Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
+    {% endcall %}
+  </div>
+</div>
 
 ## Thanks to AWS for supporting open source
 

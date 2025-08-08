@@ -10,24 +10,25 @@
 #}
 {% macro testimonial(name, title, image, company, link=None) %}
   <i class="fad fa-quotes big icon"></i>
-  <blockquote class="ui big text">
+  <blockquote class="ui large basic segment">
     {{ caller() }}
   </blockquote>
 
-  <div class="ui small header">
-    {% if link %}
-      <a href="{{ link }}" target="_blank" rel="noopener">
-    {% endif %}
-    <img src="{{ image }}" class="ui avatar image" alt="{{ name }}, {{ title }}, {{ company }}" />
-    <div class="content">
-      {{ name }}
-      <div class="sub header">
-        {{ title }}, <i>{{ company }}</i>
+  <div class="ui unstackable items">
+    <a class="item" {% if link %}href="{{ link }}"{% endif %} target="_blank" rel="noopener">
+      <div class="ui avatar tiny image"> 
+        <img class="ui image" src="{{ image }}" alt="{{ name }}, {{ title }}, {{ company }}" />
       </div>
-    </div>
-    {% if link %}
-        </a>
-    {% endif %}
+      <div class="content">
+        <div class="header">{{ name }}</div>
+        <div class="meta">
+          {{ title }}
+        </div>
+        <div class="extra">
+          {{ company }}
+        </div>
+      </div>
+    </a>
   </div>
 {% endmacro %}
 
