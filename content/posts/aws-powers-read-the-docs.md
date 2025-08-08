@@ -59,7 +59,7 @@ Here are just a few of the big projects whose docs we build and host:
 - [**Jupyter**](https://docs.jupyter.org/en/latest/) – the open source project that powers Jupyter Notebooks, used by millions of data scientists and educators worldwide.
 - [**Flask**](https://flask.palletsprojects.com/) – the Python web framework powering everything from hobby APIs to production workloads at scale.
 - [**Python Developers Guide**](https://devguide.python.org/) - the official guide for developing Python itself, maintained by the core developers.
-- Tens of thousands of other open source libraries. Scroll almost any ``requirements.txt`` and you’ll see at least one project whose docs we host.
+-  Tens of thousands of other open-source libraries. Browse the documentation of the libraries, software, and services you use and it won't take long to find a project whose docs we host.
 
 <div class="ui very padded container">
   <div class="ui very padded raised segment">
