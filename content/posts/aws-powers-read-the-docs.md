@@ -92,7 +92,7 @@ but Read the Docs is unique in a few key ways:
         title="Scientific Software Developer",
         company="UC Berkeley Eric and Wendy Schmidt Center for Data Science and Environment",
         image="https://github.com/mfisher87.png",
-        link="https://dse.berkeley.edu/") %}
+        link="https://jupytergis.readthedocs.io/") %}
       Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
     {% endcall %}
   </div>
