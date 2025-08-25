@@ -49,6 +49,44 @@ The major AWS services that we rely on are:
 
 We use a number of other AWS services as well, including Cloudwatch for monitoring, Route 53 for DNS, and many more.
 
+## AWS has enabled a better architecture
+
+Before we moved to AWS,
+we were running on dedicated servers.
+This meant that every build server and web server was a fixed resource,
+and we had to manually add and remove servers as needed.
+This led to a lot of wasted resources during off-peak times,
+and inability to scale up quickly during load spikes.
+
+To spin up a new web server,
+we'd have to copy TB of data from an existing server to a new one,
+which could take hours.
+Moving to AWS has allowed us to migrate this data into S3,
+and now servers can start up in seconds instead of hours.
+
+Similarly,
+our build servers now autoscale based on demand.
+We used to have to sit idly and watch our build queue grow during peak times,
+but now we know that the load will be handled automatically within a few minutes.
+
+This has led to a much better experience for our users,
+and allowed us to consider projects like pull request builds which we couldn't have supported before.
+Having pull request builds has increased our build demand,
+and requires more flexibility in our hosting infrastructure to expire them 30 days after the pull request is closed.
+
+<div class="ui very padded container">
+  <div class="ui very padded raised segment">
+    {% call marketing.testimonial(
+        name="Matt Fisher",
+        title="Scientific Software Developer",
+        company="UC Berkeley Eric and Wendy Schmidt Center for Data Science and Environment",
+        image="https://github.com/mfisher87.png",
+        link="https://jupytergis.readthedocs.io/") %}
+      Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
+    {% endcall %}
+  </div>
+</div>
+
 ## A few of the projects we host
 
 {% import "partials/marketing.html" as marketing %}
@@ -70,30 +108,6 @@ Here are just a few of the big projects whose docs we build and host:
         image="https://avatars.githubusercontent.com/u/1654763?v=4",
         link="https://docs.godotengine.org/") %}
       Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the generous Community plan, we couldn't have afforded anything close to the CI/build resources that we got with Read the Docs.
-    {% endcall %}
-  </div>
-</div>
-
-## Features that make Read the Docs unique
-
-There are many places to host your documentation,
-but Read the Docs is unique in a few key ways:
-
-* **Free for open source**: We provide free hosting for any open source project, with generous limits on builds and storage.
-* **Versioning**: Easily version your documentation with tags and branches, giving users access to the exact version of the docs they need.
-* **Pull request builds**: We automatically build pull requests, so you can see how your project changes over time.
-* **Visual diff**: See a diff of the rendered documentation when doing reviews, allowing you to easily see what changed in the docs.
-* **Offline formats**: We provide a way to download your documentation as a PDF or ePub, so you can read it offline.
-
-<div class="ui very padded container">
-  <div class="ui very padded raised segment">
-    {% call marketing.testimonial(
-        name="Matt Fisher",
-        title="Scientific Software Developer",
-        company="UC Berkeley Eric and Wendy Schmidt Center for Data Science and Environment",
-        image="https://github.com/mfisher87.png",
-        link="https://jupytergis.readthedocs.io/") %}
-      Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
     {% endcall %}
   </div>
 </div>
