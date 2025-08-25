@@ -59,7 +59,7 @@ This led to a lot of wasted resources during off-peak times,
 and inability to scale up quickly during load spikes.
 
 To spin up a new web server,
-we'd have to copy TB of data from an existing server to a new one,
+we'd have to copy terabytes of data from an existing server to a new one,
 which could take hours.
 Moving to AWS has allowed us to migrate this data into S3,
 and now servers can start up in seconds instead of hours.
