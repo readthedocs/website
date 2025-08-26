@@ -1,5 +1,5 @@
 title: Thanks to AWS for supporting Read the Docs for many years
-date: 2025-07-28
+date: 2025-09-03
 category: Meta
 tags: sponsors, aws, thanks
 authors: Eric Holscher
