@@ -4,8 +4,8 @@ category: Meta
 tags: sponsors, aws, thanks
 authors: Eric Holscher
 status: published
-image:
-image_credit:
+image: /images/thanks.jpg
+image_credit: Photo by <a href="https://unsplash.com/@wilhelmgunkel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Wilhelm Gunkel</a> on <a href="https://unsplash.com/photos/white-printer-paper-with-black-text-AKQlYooS72w?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 {% import "partials/marketing.html" as marketing %}
 
