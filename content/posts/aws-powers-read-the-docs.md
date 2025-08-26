@@ -7,6 +7,8 @@ status: published
 image:
 image_credit:
 
+{% import "partials/marketing.html" as marketing %}
+
 Read the Docs has been building and hosting documentation for open source projects since 2010.
 We’re proud to be a part of the open source ecosystem,
 and today we wanted to take a moment to thank one of our biggest supporters: **Amazon Web Services**.
@@ -89,7 +91,6 @@ and requires more flexibility in our hosting infrastructure to expire them 30 da
 
 ## A few of the projects we host
 
-{% import "partials/marketing.html" as marketing %}
 
 Here are just a few of the big projects whose docs we build and host:
 
