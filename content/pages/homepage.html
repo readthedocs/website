@@ -176,7 +176,34 @@
         <div class="ui stackable equal width grid">
           <div class="stretched row">
             <div class="column">
-              <div class="ui very padded raised large segment">
+              <div class="ui very padded raised segment">
+                {% call marketing.testimonial(
+                    name="Max Hilbrunner",
+                    title="Software and Game Developer",
+                    company="Godot Engine",
+                    image="https://avatars.githubusercontent.com/u/1654763?v=4",
+                    link="https://docs.godotengine.org/") %}
+                  Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the generous Community plan, we couldn't have afforded anything close to the CI/build resources that we got with Read the Docs.
+                {% endcall %}
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui very padded raised segment">
+                {% call marketing.testimonial(
+                    name="Matt Fisher",
+                    title="Scientific Software Developer",
+                    company="UC Berkeley Eric and Wendy Schmidt Center for Data Science and Environment",
+                    image="https://github.com/mfisher87.png",
+                    link="https://jupytergis.readthedocs.io/") %}
+                  Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
+                {% endcall %}
+              </div>
+            </div>
+          </div>
+          {#
+          <div class="stretched row">
+            <div class="column">
+              <div class="ui very padded raised segment">
                 {% call marketing.testimonial(
                     name="Trevor James Smith",
                     title="Developer",
@@ -187,9 +214,8 @@
                 {% endcall %}
               </div>
             </div>
-
             <div class="column">
-              <div class="ui very padded raised large segment">
+              <div class="ui very padded raised segment">
                 {% call marketing.testimonial(
                     name="Juan Luis Cano Rodríguez",
                     title="Developer Advocate",
@@ -201,6 +227,7 @@
               </div>
             </div>
           </div>
+          #}
         </div>
       </div>
     </section>

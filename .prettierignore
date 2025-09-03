@@ -6,3 +6,4 @@ examples/
 *.woff2
 *.ttf
 *.svg
+src/website.egg-info/
