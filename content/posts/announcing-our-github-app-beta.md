@@ -10,7 +10,7 @@ image_credit: Photo by <a href="https://unsplash.com/@synkevych?utm_content=cred
 
 We are excited to announce that we are migrating from our legacy GitHub OAuth2 application to a modern [GitHub App](https://docs.github.com/en/apps/overview).
 
-**Update**: The beta is available for [Read the Docs Community](https://app.readthedocs.org) and [Read the Docs Business](https://app.readthedocs.com) users as of October 14.
+**Update**: The GitHub App beta is available for [Read the Docs Community](https://app.readthedocs.org) and [Read the Docs Business](https://app.readthedocs.com) users as of October 14.
 
 ## Why the change?
 
