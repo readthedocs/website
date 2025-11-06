@@ -8,7 +8,7 @@ status: published
 image: /images/ssh-keys-with-write-access.png
 image_credit: Photo by <a href="https://unsplash.com/@scottrodgerson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Scott Rodgerson</a> on <a href="https://unsplash.com/photos/black-and-yellow-striped-line-BwMcYuHI9OI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-Starting on July 31, SSH keys linked to deploy keys with write permissions to a repository will be disabled.
+Starting on December 1st, SSH keys linked to deploy keys with write permissions to a repository will be disabled.
 If your project is still using one after this date, your project's builds will fail.
 
 Deploy keys are used by Read the Docs to clone private repositories and build your documentation.
