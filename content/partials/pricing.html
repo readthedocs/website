@@ -8,27 +8,36 @@
 {#
   Main plan block for commercial/community plan cards
 #}
-{% macro plan(name, price, color="teal", highlight=False) %}
-  <div class="{% if not price %} computer only {%- endif %} column">
-    <div class="ui {%- if price %} raised {{ color }} {%- else %} basic {%- endif %} segment">
+{% macro plan(name, price, color="teal", highlight=False, price_details=None) %}
+  {% set _price_details = price_details if price_details is not none else [] %}
+  {% if not _price_details and price %}
+    {% set _price_details = [(price, "per month")] %}
+  {% endif %}
+  {% set _has_price = _price_details | length > 0 %}
+  <div class="{% if not _has_price %} computer only {%- endif %} column">
+    <div class="ui {%- if _has_price %} raised {{ color }} {%- else %} basic {%- endif %} segment">
 
       <h2 class="ui small monospace center aligned header">
         {{ name }}
       </h2>
 
-      {% if price %}
-        <div class="ui horizontally fitted basic small segment">
-          <div class="ui tiny center aligned one statistics">
-            <div class="statistic">
-            <div class="value">
-              {{ price }}
-            </div>
-            <div class="label">
-              <span class="category">per month</span>
-            </div>
+      {% if _price_details %}
+        {% for value, label in _price_details %}
+          <div class="ui horizontally fitted basic small segment">
+            <div class="ui tiny center aligned one statistics">
+              <div class="statistic">
+                <div class="value">
+                  {{ value }}
+                </div>
+                {% if label %}
+                  <div class="label">
+                    <span class="category">{{ label }}</span>
+                  </div>
+                {% endif %}
+              </div>
             </div>
           </div>
-        </div>
+        {% endfor %}
       {% endif %}
 
       {{ caller() }}
