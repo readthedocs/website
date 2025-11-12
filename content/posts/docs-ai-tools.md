@@ -1,6 +1,6 @@
-title: How to integration AI and Documentation tools
+title: How to think about AI and documentation tools
 date: 2025-10-14
-description: Exploring the integration of AI tools with documentation platforms like Read the Docs.
+description: Exploring perspectives on AI tools and their role in documentation.
 category: Meta
 tags: vision, ai, docs, tools
 authors: Eric Holscher
@@ -11,7 +11,7 @@ image_credit: Photo by <a href="https://unsplash.com/@eclipticgraphic?utm_source
 
 AI has been a hot topic in docs for the past year.
 It's hard to figure out how to use it effectively,
-with hallucinations being the biggest problem.
+and hallucinations are a significant problem for many users and documentation authors.
 
 My views on AI have been shaped by the talk [Alex Garnett - Docs AI Tooling is Better (and Better for Us) than You Think](https://www.youtube.com/watch?v=6p6LttjaSNM&list=PLZAeFn6dfHplMbtJtidqFFtL7rt3ASNSR&index=9) from Write the Docs Portland 2025.
 
@@ -47,12 +47,12 @@ not generating new content that may or may not be correct.
 
 On top of the existing documentation,
 the talk references the ability to bring all the community spaces into a single interface.
-Bringing GitHub Issues, Forums, Pricing, and website information all into a single place.
+Bringing GitHub issues, forums, pricing, and website information all into a single place.
 
-Allowing LLMs to index user content is a challenge.
-You need to make sure the information is correct,
-otherwise the AI will be referencing incorrect data.
-But bringing in things you control like product Pricing,
+Allowing LLMs to index user-generated content like forum posts and GitHub issues is a challenge.
+The quality and accuracy of this content can vary significantly,
+and outdated or incorrect information could mislead users when surfaced by AI.
+But bringing in things you control like product pricing,
 and website information is a nice element.
 
 I'm personally excited about the larger vision here though,
