@@ -158,14 +158,14 @@
             price=None,
             price_details=[
               ("$5", "per month for individuals"),
-              ("$50", "per month for Enterprise accounts"),
+              ("$50", "per month for companies"),
             ],
             color="teal",
           ) %}
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("Ad free projects", "Disable ads on your projects", "fa-ad", color="light grey") }}
               {{ pricing.plan_feature("Support Read the Docs", "Keep our Community site sustainable", "fa-heart", color="red") }}
-              {{ pricing.plan_feature("Enterprise accounts", "Gold memberships are $50/month for Enterprise organizations", "fa-building", color="violet") }}
+              {{ pricing.plan_feature("Companies", "Gold memberships are $50/month for companies", "fa-building", color="violet") }}
             </div>
           {% endcall %}
 
