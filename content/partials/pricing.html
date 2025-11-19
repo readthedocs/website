@@ -8,12 +8,8 @@
 {#
   Main plan block for commercial/community plan cards
 #}
-{% macro plan(name, price, color="teal", highlight=False, price_details=None) %}
-  {% set _price_details = price_details if price_details is not none else [] %}
-  {% if not _price_details and price %}
-    {% set _price_details = [(price, "per month")] %}
-  {% endif %}
-  {% set _has_price = _price_details | length > 0 %}
+{% macro plan(name, price_details, color="teal", highlight=False) %}
+  {% set _has_price = price_details | length > 0 %}
   <div class="{% if not _has_price %} computer only {%- endif %} column">
     <div class="ui {%- if _has_price %} raised {{ color }} {%- else %} basic {%- endif %} segment">
 
@@ -21,8 +17,8 @@
         {{ name }}
       </h2>
 
-      {% if _price_details %}
-        {% for value, label in _price_details %}
+      {% if price_details %}
+        {% for value, label in price_details %}
           <div class="ui horizontally fitted basic small segment">
             <div class="ui tiny center aligned one statistics">
               <div class="statistic">
