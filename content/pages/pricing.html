@@ -151,7 +151,9 @@
                 </div>
               </div>
             </div>
-          {% endblock pricing_opensource %}          {% call pricing.plan(
+          {% endblock pricing_opensource %}
+
+          {% call pricing.plan(
             name="Gold membership",
             price_details=[
               ("$5", "per month for individuals"),
