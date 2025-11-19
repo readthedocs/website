@@ -132,22 +132,26 @@
         <div class="stretched row">
 
           {% block pricing_opensource %}
-            {% call pricing.plan(
-              name="Community",
-              price_details=[("Free", "for open source and community projects")],
-              color="teal",
-            ) %}
-              <div class="ui list relaxed divided">
-                {{ pricing.plan_feature("Concurrent builds", "2 concurrent builds", "fa-rectangle-vertical-history fa-swap-opacity") }}
-                {{ pricing.plan_feature("Public projects", "Host public documentation", "fa-globe") }}
-                {{ pricing.plan_feature("Public repositories", "Clone public repositories", "fa-globe") }}
-                {{ pricing.plan_feature("Custom domain", "2 custom domains", "fa-at") }}
-                {{ pricing.plan_feature("Ad supported", "Hosted documentation includes ads", "fa-ad") }}
-              </div>
-            {% endcall %}
-          {% endblock pricing_opensource %}
+            <div class="column">
+              <div class="ui raised teal segment">
+                <h2 class="ui small monospace center aligned header">
+                  Community
+                </h2>
 
-          {% call pricing.plan(
+                <p class="ui center aligned segment">
+                  Always <b>free</b> for <b>open source and community</b> projects.
+                </p>
+
+                <div class="ui list relaxed divided">
+                  {{ pricing.plan_feature("Concurrent builds", "2 concurrent builds", "fa-rectangle-vertical-history fa-swap-opacity") }}
+                  {{ pricing.plan_feature("Public projects", "Host public documentation", "fa-globe") }}
+                  {{ pricing.plan_feature("Public repositories", "Clone public repositories", "fa-globe") }}
+                  {{ pricing.plan_feature("Custom domain", "2 custom domains", "fa-at") }}
+                  {{ pricing.plan_feature("Ad supported", "Hosted documentation includes ads", "fa-ad") }}
+                </div>
+              </div>
+            </div>
+          {% endblock pricing_opensource %}          {% call pricing.plan(
             name="Gold membership",
             price_details=[
               ("$5", "per month for individuals"),
