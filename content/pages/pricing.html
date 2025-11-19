@@ -36,7 +36,7 @@
 
           {% call pricing.plan(
             name="Advanced plan",
-            price="$150",
+            price_details=[("$150", "per month")],
             color="violet",
             highlight=True,
           ) %}
@@ -54,7 +54,7 @@
 
           {% call pricing.plan(
             name="Pro plan",
-            price="$250",
+            price_details=[("$250", "per month")],
             color="violet",
           ) %}
             <div class="ui list relaxed divided">
@@ -155,7 +155,10 @@
 
           {% call pricing.plan(
             name="Gold membership",
-            price="$5",
+            price_details=[
+              ("$5", "per month for individuals"),
+              ("$50", "per month for companies"),
+            ],
             color="teal",
           ) %}
             <div class="ui list relaxed divided">
