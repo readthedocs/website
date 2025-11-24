@@ -15,6 +15,8 @@ and hallucinations are a significant problem for many users and documentation au
 
 My views on AI have been shaped by the talk [Alex Garnett - Docs AI Tooling is Better (and Better for Us) than You Think](https://www.youtube.com/watch?v=6p6LttjaSNM&list=PLZAeFn6dfHplMbtJtidqFFtL7rt3ASNSR&index=9) from Write the Docs Portland 2025.
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6p6LttjaSNM?si=VI9UYkG-Z8XNfwaq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Do what you love
 
 The primary takeaway I had from the talk is that we should think more about the parts of documentation we like doing.
