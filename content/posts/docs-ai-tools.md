@@ -1,5 +1,5 @@
 title: How to think about AI and documentation tools
-date: 2025-11-13
+date: 2025-11-24
 description: Exploring perspectives on AI tools and their role in documentation.
 category: Meta
 tags: vision, ai, docs, tools
