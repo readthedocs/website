@@ -116,7 +116,7 @@ this enables [HTTP compression and other optimizations](https://www.elastic.co/g
 
 Query times dropped from **60ms to 25ms** on Community and **60ms to 40ms** on Business.
 
-Note: The difference in improvement between Community and Business is likely due to the difference in the instance types used in each platform.
+**Note:** The difference in improvement between Community and Business is likely due to the difference in the instance types used in each platform.
 On Community, we use more powerful instances due to the higher storage needs.
 
 ## Conclusions
