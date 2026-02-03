@@ -52,15 +52,15 @@ and prepared the index for our next step: increasing the number of shards.
 
 ## Optimizing Elasticsearch queries
 
-We analyzed our queries for inefficiencies and found several opportunities:
+We analyzed our queries for inefficiencies and found several opportunities for improvement:
 
-- **Result Limits:** We were returning 50 results by default,
+- **Result limits:** We were returning 50 results by default,
   but most users rarely look past the first few.
   We reduced the default count to 15.
-- **Fuzzy Search:** Some search terms containing `~` (like shell prompts or UNIX paths)
+- **Fuzzy search:** Some search terms containing `~` (like shell prompts or UNIX paths)
   were triggering expensive [fuzzy searches](https://docs.readthedocs.com/platform/stable/server-side-search/syntax.html#special-queries) unintentionally.
   We changed the maximum number of expansions from 50 to 10 and increased the prefix length from 0 to 1.
-  See the [Elasticsearch documentation](https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-simple-query-string-query).
+  See the [Elasticsearch documentation](https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-simple-query-string-query) for more information about these parameters.
 
 ## Optimizing Elasticsearch configuration
 
@@ -88,14 +88,14 @@ The process took a couple of hours, and search remained available during the who
 This improved query averages from **90ms to 60ms** on Community and **80ms to 60ms** on Business.
 It also significantly sped up document indexing and deletions.
 
-NOTE: For Read the Docs Business, our index was smaller (around 100GB),
+**Note:** For Read the Docs Business, our index was smaller (around 100GB),
 but we still needed to increase the number of shards to improve performance,
 so we created a new index with 4 shards.
 
 ## Optimizing application logic
 
 We discovered that significant time was spent querying the database to serialize results (fetching project details, resolving URLs),
-and—on Read the Docs Business—performing permission checks.
+and on Read the Docs Business performing permission checks.
 
 This got worse as we enabled searching for subprojects by default,
 as searching on projects with many subprojects triggered multiple database queries per search.
@@ -153,10 +153,10 @@ _Average Elasticsearch query time on Read the Docs Business from the last 3 mont
 
 Some reasons why Read the Docs Business is still slower than Read the Docs Community:
 
-- More complex permission checks.
+- **More complex permission checks.**
   Since we host private projects, we need to ensure that users only see results from versions they have access to.
   This requires checking each version's permissions before including it in the search results.
-- No caching of search results.
+- **No caching of search results.**
   Due to the nature of private projects, we can't cache search results,
   as they may change based on user permissions.
 
@@ -186,6 +186,12 @@ While we are happy with the improvements we have made so far, there is still roo
 - Further optimize database queries.
   This is an ongoing effort, and we will continue to look for ways to reduce the number of queries and improve their efficiency,
   especially on Read the Docs Business, where we run these queries everywhere a resource is accessed.
+
+## Acknowledgements
+
+[Elastic](https://www.elastic.co/) sponsors Read the Docs Community with a free [Elastic Cloud](https://www.elastic.co/cloud) plan.
+We are grateful for their support in helping us provide search functionality to all our users,
+their support is key to keeping search fast and accessible for the whole community.
 
 ## Changes
 
