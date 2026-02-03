@@ -116,8 +116,8 @@ this enables [HTTP compression and other optimizations](https://www.elastic.co/g
 
 Query times dropped from **60ms to 25ms** on Community and **60ms to 40ms** on Business.
 
-Note: The difference in improvement between Community and Business is likely due to difference of the instance type used in each platform.
-On Community, we use a more powerful instances due to the higher storage needs.
+Note: The difference in improvement between Community and Business is likely due to the difference in the instance types used in each platform.
+On Community, we use more powerful instances due to the higher storage needs.
 
 ## Conclusions
 
@@ -180,7 +180,7 @@ While we are happy with the improvements we have made so far, there is still roo
 
 - Revisit the number of shards.
   We decided on the number of shards based on the size of the index before re-indexing,
-  but the resulted index was smaller than we expected (there was maybe some fragmentation on the old index).
+  but the resulting index was smaller than we expected (there was maybe some fragmentation on the old index).
   Reducing the number of shards could improve performance, but it's not clear by how much.
   As this requires re-indexing again, we won't do this unless we need to re-index for other reasons.
 - Further optimize database queries.
