@@ -112,7 +112,7 @@ this resulted in creating a new connection for each request.
 We revisited this, and enabled connection pooling without issues.
 
 We also used the recommended way to connect to Elastic Cloud using the `cloud_id` parameter,
-this enables HTTP compression and other optimizations.
+this enables [HTTP compression and other optimizations](https://www.elastic.co/guide/en/elasticsearch/client/python-api/8.19/connecting.html#connect-ec).
 
 Query times dropped from **60ms to 25ms** on Community and **60ms to 40ms** on Business.
 
