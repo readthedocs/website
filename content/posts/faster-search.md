@@ -85,7 +85,7 @@ To ensure minimal downtime during the process, we followed these steps:
 5. **Catch-up:** Indexed any new or updated documents added during re-indexing.
 
 The process took a couple of hours, and search remained available during the whole time.
-This improved query averages from **90ms to 60ms** on Community and **80ms to 60ms** on Business.
+This improved Elasticsearch query averages from **90ms to 60ms** on Community and **80ms to 60ms** on Business.
 It also significantly sped up document indexing and deletions.
 
 **Note:** For Read the Docs Business, our index was smaller (around 100GB),
@@ -114,7 +114,7 @@ We revisited this, and enabled connection pooling without issues.
 We also used the recommended way to connect to Elastic Cloud using the `cloud_id` parameter,
 this enables [HTTP compression and other optimizations](https://www.elastic.co/guide/en/elasticsearch/client/python-api/8.19/connecting.html#connect-ec).
 
-Query times dropped from **60ms to 25ms** on Community and **60ms to 40ms** on Business.
+Elasticsearch query times dropped from **60ms to 25ms** on Community and **60ms to 40ms** on Business.
 
 **Note:** The difference in improvement between Community and Business is likely due to the difference in the instance types used in each platform.
 On Community, we use more powerful instances due to the higher storage needs.
