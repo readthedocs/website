@@ -15,8 +15,8 @@ This makes it easy to provide LLM-friendly context about your project at:
 
 You can see these in action on our docs:
 
-* https://docs.readthedocs.com/llms.txt
-* https://docs.readthedocs.com/llms-full.txt
+* <https://docs.readthedocs.com/llms.txt>
+* <https://docs.readthedocs.com/llms-full.txt>
 
 Both files are served from your default version.
 If the file does not exist, or the default version is private, inactive, or unbuilt, we return a 404.
