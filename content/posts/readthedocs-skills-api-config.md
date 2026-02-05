@@ -4,7 +4,7 @@ description: Highlighting new Read the Docs skills for API v3 workflows and .rea
 category: Feature announcement
 tags: ai, api, configuration, skills
 authors: Eric Holscher
-status: draft
+status: published
 image: /images/ai-magic.jpg
 image_credit: Photo by <a href="https://unsplash.com/@almosbech?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Almos Bechtold</a> on <a href="https://unsplash.com/photos/woman-blowing-sprinkle-in-her-hand-AJ_Mou1FUS8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
@@ -28,7 +28,7 @@ You can also read the [Read the Docs Skills documentation](https://docs.readthed
 The [Read the Docs API skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-api/SKILL.md) gives your AI agent the ability to interact with the [Read the Docs REST API](https://docs.readthedocs.com/platform/stable/api/v3.html).
 This requires having an [API token](https://docs.readthedocs.com/platform/stable/api/v3.html#token) with the appropriate permissions.
 
-If you want to manage updates to your project (eg. adding a redirect for the current PR), this skill will help you do that.
+If you want to manage updates or changes to your project (eg. adding a redirect for the current PR, or triggering a new build), this skill will help you do that.
 
 ## Read the Docs Config Writer skill
 
@@ -36,11 +36,7 @@ The [Read the Docs Config Writer skill](https://github.com/readthedocs/skills/bl
 It has information about the actual configuration options available,
 and won't try to invent options that don't exist.
 
-Use this skill when you are:
-
-- Adding a new `.readthedocs.yaml` file.
-- Updating build images or tool versions.
-- Customizing build jobs, dependency installs, or search settings.
+This skill should automatically be used whenever you ask your agent to help you write or update a Read the Docs configuration file. 🪄
 
 ## Install the skills
 
