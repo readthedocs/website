@@ -21,6 +21,27 @@ You can easily read them to understand more about how they work.
 
 You can also read the [Read the Docs Skills documentation](https://docs.readthedocs.com/platform/stable/reference/agent-skills.html) for more background and usage guidance.
 
+![Read the Docs API skill example](/images/posts/skills-example.png)
+
+## Read the Docs API skill
+
+The [Read the Docs API skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-api/SKILL.md) gives your AI agent the ability to interact with the [Read the Docs REST API](https://docs.readthedocs.com/platform/stable/api/v3.html).
+This requires having an [API token](https://docs.readthedocs.com/platform/stable/api/v3.html#token) with the appropriate permissions.
+
+If you want to manage updates to your project (eg. adding a redirect for the current PR), this skill will help you do that.
+
+## Read the Docs Config Writer skill
+
+The [Read the Docs Config Writer skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-write-config/SKILL.md) helps you create or update `.readthedocs.yaml` files.
+It has information about the actual configuration options available,
+and won't try to invent options that don't exist.
+
+Use this skill when you are:
+
+- Adding a new `.readthedocs.yaml` file.
+- Updating build images or tool versions.
+- Customizing build jobs, dependency installs, or search settings.
+
 ## Install the skills
 
 Clone the repository and use the skills directly by copying them where your agent expects skills to be:
@@ -34,27 +55,6 @@ If your agent supports the [Agent Skills CLI](https://skills.sh/docs/cli), you c
 ```bash
 npx skills add readthedocs/skills
 ```
-
-## [Read the Docs API skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-api/SKILL.md)
-
-The Read the Docs API skill gives your AI agent the ability to interact with the [Read the Docs REST API](https://docs.readthedocs.com/platform/stable/api/v3.html).
-This requires having an [API token](https://docs.readthedocs.com/platform/stable/api/v3.html#token) with the appropriate permissions.
-
-If you want to manage updates to your project (eg. adding a redirect for the current PR), this skill will help you do that.
-
-![Read the Docs API skill example](/images/posts/skills-example.png)
-
-## [Read the Docs Config Writer skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-write-config/SKILL.md)
-
-The Read the Docs Config Writer skill helps you create or update `.readthedocs.yaml` files.
-It has information about the actual configuration options available,
-and won't try to invent options that don't exist.
-
-Use this skill when you are:
-
-- Adding a new `.readthedocs.yaml` file.
-- Updating build images or tool versions.
-- Customizing build jobs, dependency installs, or search settings.
 
 ## Give us feedback
 
