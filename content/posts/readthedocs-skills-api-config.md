@@ -23,7 +23,7 @@ You can also read the [Read the Docs Skills documentation](https://docs.readthed
 
 ## Install the skills
 
-Clone the repository and use the skill directories directly:
+Clone the repository and use the skills directly by copying them where your agent expects skills to be:
 
 ```bash
 git clone https://github.com/readthedocs/skills.git
@@ -42,7 +42,7 @@ This requires having an [API token](https://docs.readthedocs.com/platform/stable
 
 If you want to manage updates to your project (eg. adding a redirect for the current PR), this skill will help you do that.
 
-![Read the Docs API skill example](/images/skills-example.png)
+![Read the Docs API skill example](/images/posts/skills-example.png)
 
 ## [Read the Docs Config Writer skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-write-config/SKILL.md)
 
