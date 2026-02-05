@@ -1,5 +1,5 @@
 title: Making search faster for all projects
-date: February 2, 2026
+date: February 5, 2026
 description: We made several improvements to make search faster for all projects on Read the Docs.
 category: Engineering
 tags: performance, search
