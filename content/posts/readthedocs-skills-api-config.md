@@ -29,7 +29,7 @@ Clone the repository and use the skill directories directly:
 git clone https://github.com/readthedocs/skills.git
 ```
 
-If your agent supports the [Agent Skills CLI](https://whatisskills.com/cli-docs), you can install the repository with:
+If your agent supports the [Agent Skills CLI](https://skills.sh/docs/cli), you can install the repository with:
 
 ```bash
 npx skills add readthedocs/skills
