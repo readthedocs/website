@@ -24,7 +24,7 @@ Both files are served from your default version when:
 * The default version is **public**
 * The default version is **active**
 * The default version has been **built**
-* The llms.txt file exists in your build output
+* The ``llms.txt`` file exists in your build output
 
 To enable this, add llms.txt (and optionally llms-full.txt) to your build output using your documentation tool.
 For details and examples for Sphinx and MkDocs, see our [documentation](https://docs.readthedocs.com/platform/stable/reference/llms-txt.html).
