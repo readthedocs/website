@@ -21,9 +21,23 @@ You can easily read them to understand more about how they work.
 
 You can also read the [Read the Docs Skills documentation](https://docs.readthedocs.com/platform/stable/reference/agent-skills.html) for more background and usage guidance.
 
+## Install the skills
+
+Clone the repository and use the skill directories directly:
+
+```bash
+git clone https://github.com/readthedocs/skills.git
+```
+
+If your agent supports the [Agent Skills CLI](https://whatisskills.com/cli-docs), you can install the repository with:
+
+```bash
+npx skills add readthedocs/skills
+```
+
 ## [Read the Docs API skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-api/SKILL.md)
 
-The Read the Docs API skill gives your AI agent the ability to interact with the Read the Docs REST API.
+The Read the Docs API skill gives your AI agent the ability to interact with the [Read the Docs REST API](https://docs.readthedocs.com/platform/stable/api/v3.html).
 This requires having an [API token](https://docs.readthedocs.com/platform/stable/api/v3.html#token) with the appropriate permissions.
 
 If you want to manage updates to your project (eg. adding a redirect for the current PR), this skill will help you do that.
