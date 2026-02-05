@@ -21,7 +21,7 @@ You can easily read them to understand more about how they work.
 
 You can also read the [Read the Docs Skills documentation](https://docs.readthedocs.com/platform/stable/reference/agent-skills.html) for more background and usage guidance.
 
-## Read the Docs API skill
+## [Read the Docs API skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-api/SKILL.md)
 
 The Read the Docs API skill gives your AI agent the ability to interact with the Read the Docs REST API.
 This requires having an [API token](https://docs.readthedocs.com/platform/stable/api/v3.html#token) with the appropriate permissions.
@@ -30,7 +30,7 @@ If you want to manage updates to your project (eg. adding a redirect for the cur
 
 ![Read the Docs API skill example](/images/skills-example.png)
 
-## Read the Docs Config Writer skill
+## [Read the Docs Config Writer skill](https://github.com/readthedocs/skills/blob/main/skills/readthedocs-write-config/SKILL.md)
 
 The Read the Docs Config Writer skill helps you create or update `.readthedocs.yaml` files.
 It has information about the actual configuration options available,
