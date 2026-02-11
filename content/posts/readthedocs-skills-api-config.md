@@ -1,5 +1,5 @@
 title: Agent skills for the Read the Docs now available
-date: 2026-02-05
+date: 2026-02-11
 description: Highlighting new Read the Docs skills for API v3 workflows and .readthedocs.yaml configuration.
 category: Feature announcement
 tags: ai, api, configuration, skills
