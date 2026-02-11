@@ -1,5 +1,5 @@
 title: Agent skills for the Read the Docs now available
-date: 2026-02-05
+date: 2026-02-11
 description: Highlighting new Read the Docs skills for API v3 workflows and .readthedocs.yaml configuration.
 category: Feature announcement
 tags: ai, api, configuration, skills
@@ -13,7 +13,7 @@ Trying to figure out how to pass up-to-date information to AI agents is a hard p
 We have experimented with MCP servers and ``llms.txt``,
 but we have found that [Agent Skills](https://agentskills.io/home) are the current best way to handle this problem explicitly.
 
-We have been building the [Read the Docs Skills repo](https://github.com/readthedocs/skills) to allow more experimentation.
+We have been building the [Read the Docs Skills repository](https://github.com/readthedocs/skills) to allow more experimentation.
 Today we are highlighting two skills that we've found the most useful: the Read the Docs API skill and the Read the Docs Config skill.
 
 Each skill is a small, self-contained package with a `SKILL.md` that teaches an agent how to perform a specific task.
