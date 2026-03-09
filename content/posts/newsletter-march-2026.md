@@ -6,7 +6,7 @@ tags: newsletter, community
 authors: Manuel Kaufmann
 status: published
 image: /images/march-2026.jpg
-image_credit: Photo by <a href="https://unsplash.com/@yl1980s?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Yan Liu</a> on <a href="https://unsplash.com/photos/white-cherry-blossom-in-bloom-during-daytime-j3TrGxN_rCM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+image_credit: Photo by <a href="https://unsplash.com/@ryanserito?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">ryan serito</a> on <a href="https://unsplash.com/photos/yellow-and-red-flowers-on-green-grass-field-near-mountain-under-blue-sky-during-daytime-qOnMAuzV-GA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 Spring is arriving in many parts of the world, and we have a lot of product and platform updates to share from the last few weeks.
 
