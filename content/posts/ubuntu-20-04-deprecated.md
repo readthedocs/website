@@ -4,7 +4,9 @@ description: Read the Docs will remove the ubuntu-20.04 build image on June 1st,
 category: Changelog
 tags: builders, images, deprecation
 authors: Manuel Kaufmann
-
+image: /images/ubuntu-20-04-deprecated.jpg
+image_credit: Photo by <a href="https://unsplash.com/@thefredyjacob?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Fredy Jacob</a> on <a href="https://unsplash.com/photos/red-and-white-floppy-disk-on-white-surface-t0SlmanfFcg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
 We are announcing the deprecation of the `ubuntu-20.04` build image on Read the Docs.
 The removal date is set to **Monday, June 1st, 2026**.
 After this date, projects configured to build with `build.os: ubuntu-20.04` will stop building until they are updated to a supported Ubuntu image.
