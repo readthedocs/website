@@ -1,9 +1,10 @@
 title: Deprecation: removal of Ubuntu 20.04 LTS build image
-date: 2026-03-18
+date: 2026-03-26
 description: Read the Docs will remove the ubuntu-20.04 build image on June 1st, 2026.
 category: Changelog
 tags: builders, images, deprecation
 authors: Manuel Kaufmann
+status: published
 image: /images/ubuntu-20-04-deprecated.jpg
 image_credit: Photo by <a href="https://unsplash.com/@thefredyjacob?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Fredy Jacob</a> on <a href="https://unsplash.com/photos/red-and-white-floppy-disk-on-white-surface-t0SlmanfFcg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       
