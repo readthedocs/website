@@ -21,7 +21,7 @@ We want to give maintainers enough time to migrate before the image is removed.
 
 ## Deprecation timeline
 
-* **Wednesday, March 18, 2026**: Publish this deprecation announcement.
+* **Monday, March 30, 2026**: Publish this deprecation announcement.
 * **Before Monday, June 1, 2026**: Email maintainers of active projects that are still using `ubuntu-20.04`.
 * **Monday, June 1, 2026**: Remove the `ubuntu-20.04` build image from Read the Docs.
 
