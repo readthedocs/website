@@ -1,5 +1,5 @@
 title: Deprecation: removal of Ubuntu 20.04 LTS build image
-date: 2026-03-26
+date: 2026-03-30
 description: Read the Docs will remove the ubuntu-20.04 build image on June 1st, 2026.
 category: Changelog
 tags: builders, images, deprecation
@@ -29,6 +29,7 @@ We want to give maintainers enough time to migrate before the image is removed.
 
 If your project currently uses `ubuntu-20.04`, update your `.readthedocs.yaml` file to use a newer supported image instead.
 For most projects, we recommend migrating to `ubuntu-24.04` or `ubuntu-lts-latest`.
+In the following weeks, once it's officially released, we will expose `ubuntu-26.04` as well.
 
 ```yaml
 version: 2
