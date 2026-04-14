@@ -230,18 +230,23 @@ function showModalsByHash() {
     "#login": "#login-modal",
   };
 
-  const modalSignup = () => {
-    const modalTargetId = modalMap[jquery(location).attr("hash")];
+  const showModalForHash = () => {
+    const currentHash = window.location.hash;
+    const modalTargetId = modalMap[currentHash];
+    if (!modalTargetId) {
+      return;
+    }
+
     const modalTarget = jquery(modalTargetId);
-    if (modalTarget) {
+    if (modalTarget.length > 0) {
       modalTarget.modal("show");
     }
   };
 
   // Support both page load and manual hash change events
-  jquery(document).ready(modalSignup());
-  globalThis.addEventListener("hashchange", modalSignup);
+  showModalForHash();
+  globalThis.addEventListener("hashchange", showModalForHash);
 }
 
 // Mostly for testing
-export { jquery };
+export { jquery, showModalsByHash };
