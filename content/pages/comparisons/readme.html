@@ -17,9 +17,8 @@
 
 {#
   Framing notes — ReadMe is a direct doc-platform competitor, so this page
-  can't lean on "we're purpose-built for docs." ReadMe's distinct angle is its
-  hosted visual editor and API-explorer-first workflow. The honest contrast is
-  "docs as code vs. hosted editor":
+  can't lean on "we're purpose-built for docs." The core framing differences
+  are "docs as code vs. hosted editor":
 
     1. Docs-as-code: Sphinx/MkDocs/etc. in your repo, versioned with your code,
        reviewed in PRs — vs. ReadMe's WYSIWYG editor as the primary surface.
@@ -27,9 +26,6 @@
     3. Open source: the Read the Docs platform is open, your content is
        portable, and you can self-host the community edition.
     4. OSS-friendly economics: free Community tier, no per-seat pricing.
-
-  ReadMe genuinely wins on interactive API reference and personalized API-key
-  embedding. The "When ReadMe might fit better" callout says so out loud.
 #}
 
   <section>
@@ -37,8 +33,8 @@
     header="Docs as code, on an <em><strong>open</strong></em> platform")
     %}
     <p>
-      ReadMe is a hosted documentation platform built around a visual editor, an interactive API explorer, and per-user API key personalization.
-      If your product is a commercial REST API and your docs team lives in a browser-based WYSIWYG, ReadMe has a focused story.
+      ReadMe is a proprietary documentation platform built around a hosted visual editor.
+      If your docs team prefers editing in a browser-based WYSIWYG instead of a Git workflow, ReadMe has a focused story.
     </p>
     <p>
       Read the Docs takes a different approach: <strong>docs as code</strong>.
@@ -74,49 +70,6 @@
   </div>
 </section>
 
-  <section>
-    <div class="ui very padded container">
-      <div class="ui grid center aligned">
-        <div class="row">
-          <div class="column twelve wide computer sixteen wide tablet">
-            <div class="ui basic vertical segment">
-              <h3 class="ui center aligned header">
-                When ReadMe might be a better fit
-              </h3>
-              <p>
-                We'd rather be honest than oversell. ReadMe leads in a few areas worth acknowledging:
-              </p>
-            </div>
-            <div class="ui basic left aligned vertical segment">
-              <ul class="ui list">
-                <li>
-                  <strong>Interactive API reference from an OpenAPI spec.</strong>
-                  ReadMe's API explorer, code-snippet generation, and "Try It" request builder are deeply integrated with their editor.
-                  If interactive API reference pages are the core of your docs, they ship that out of the box.
-                </li>
-                <li>
-                  <strong>Personalized docs with user API keys.</strong>
-                  ReadMe can inject a logged-in developer's own API keys into code samples.
-                  That's a strong onboarding feature for a commercial API product.
-                </li>
-                <li>
-                  <strong>Developer metrics tied to API calls.</strong>
-                  ReadMe correlates doc usage with real API requests by endpoint and status code.
-                </li>
-              </ul>
-            </div>
-            <div class="ui basic vertical segment">
-              <p>
-                If all three describe your product and your docs team prefers a hosted WYSIWYG over a Git workflow, ReadMe is a reasonable choice.
-                If you want tool freedom, docs as code, open source, and an OSS-friendly price — keep reading.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 {# Try it out code block — the whole point of this comparison is that RTD works
    with whatever doc tool you already use, so use the custom config example. #}
 {% include "includes/try-it-out-custom.html" %}
@@ -133,8 +86,8 @@
               </h2>
 
               <p>
-                ReadMe is a reasonable pick if you want a hosted editor and an interactive API playground as the core of your docs experience.
-                But most documentation is read by developers and written by developers — it belongs in Git, reviewed in pull requests, versioned alongside the code it describes.
+                Most documentation is read by developers and written by developers — it belongs in Git, reviewed in pull requests, versioned alongside the code it describes.
+                ReadMe keeps your content in a proprietary hosted editor; Read the Docs keeps it in your repository, in the tool you already use.
               </p>
 
               <p>
