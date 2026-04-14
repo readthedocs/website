@@ -405,50 +405,36 @@
           image=None,
           icon=icon_5) %}
         {% markdown %}
-        Read the Docs is the **stable infrastructure layer** for documentation
-        in the AI era. We ship the LLM-friendly primitives your content needs,
-        so you can plug in any best-of-breed AI tool without rewriting your
-        docs or locking your content into a single vendor.
-
-        **Your content stays yours.** We don't train models on it, and we
-        never will. You bring the AI layer that fits your users.
+        The LLM-friendly primitives are built in &mdash; so you can plug in
+        the AI tools you already use, without rewrites or lock-in.
         {% endmarkdown %}
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="llms.txt support", icon="fad fa-file-lines") %}
         Serve <code>llms.txt</code> and <code>llms-full.txt</code> from your
-        documentation domain &mdash; the emerging standard for giving LLMs a
-        curated map of your content.
+        docs domain &mdash; a curated map of your content for any LLM.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Markdown content negotiation", icon="fad fa-arrow-down-up-across-line") %}
-        Every page is available as clean Markdown alongside its HTML &mdash;
-        the format LLMs and AI agents actually want to read. No scraping,
-        no lossy HTML-to-Markdown conversions.
+        Every page available as clean Markdown alongside HTML &mdash; the
+        format AI agents actually want to read.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Agent skills", icon="fad fa-user-robot") %}
-        Drop-in <a href="https://github.com/readthedocs/skills">Read the Docs Agent Skills</a>
-        teach Claude Code, Cursor, and other agents how to use our API and
-        write valid <code>.readthedocs.yaml</code> &mdash; without hallucinating.
+        <a href="https://github.com/readthedocs/skills">Read the Docs Agent Skills</a>
+        teach Claude Code, Cursor, and other agents to use our API and write
+        valid <code>.readthedocs.yaml</code>.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Bring your own AI", icon="fad fa-plug") %}
         Wire up <strong>Kapa</strong>, <strong>Inkeep</strong>,
         <strong>Algolia Ask AI</strong>, <strong>Mintlify AI</strong>, or your
-        own RAG pipeline. They all work great on top of Read the Docs.
+        own RAG &mdash; they all work on top of Read the Docs.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Your content is yours", icon="fad fa-shield-keyhole") %}
-        We don't train models on your docs and we don't sell your content to
-        AI companies. If you want to expose your docs to LLMs we make that
-        easy and explicit &mdash; if you don't, that's your call.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Open infrastructure, not lock-in", icon="fad fa-cubes") %}
-        The AI documentation space is moving fast. We focus on being the
-        dependable substrate underneath so you can swap AI layers without
-        re-platforming your docs.
+      {% call homepage.feature_detail_item(header="No training on your docs", icon="fad fa-shield-keyhole") %}
+        We don't train models on your content and we don't sell it.
+        Expose your docs to LLMs on your terms.
       {% endcall %}
 
     </div>
