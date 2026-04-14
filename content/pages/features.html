@@ -75,6 +75,16 @@
                   <span class="sub header">We manage building, hosting, authentication, search, and analytics for you</span>
                 </span>
               </a>
+
+              {%- set header_5 = "AI-ready infrastructure" %}
+              {%- set icon_5 = "fa-user-robot" -%}
+              <a href="#ai" class="ui small header item">
+                <i class="fad {{ icon_5 }} secondary big icon"></i>
+                <span class="content">
+                  {{ header_5 }}
+                  <span class="sub header">llms.txt, Markdown content negotiation, and agent skills &mdash; bring your own AI layer</span>
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -384,6 +394,67 @@
 
     </div>
   </div>
+
+  {{ features_divide() }}
+
+  <div class="ui very padded container" id="ai">
+    <div class="ui vertically padded centered grid">
+
+      {% call features.step(
+          header=header_5,
+          image=None,
+          icon=icon_5) %}
+        {% markdown %}
+        Read the Docs is the **stable infrastructure layer** for documentation
+        in the AI era. We ship the LLM-friendly primitives your content needs,
+        so you can plug in any best-of-breed AI tool without rewriting your
+        docs or locking your content into a single vendor.
+
+        **Your content stays yours.** We don't train models on it, and we
+        never will. You bring the AI layer that fits your users.
+        {% endmarkdown %}
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="llms.txt support", icon="fad fa-file-lines") %}
+        Serve <code>llms.txt</code> and <code>llms-full.txt</code> from your
+        documentation domain &mdash; the emerging standard for giving LLMs a
+        curated map of your content.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Markdown content negotiation", icon="fad fa-arrow-down-up-across-line") %}
+        Every page is available as clean Markdown alongside its HTML &mdash;
+        the format LLMs and AI agents actually want to read. No scraping,
+        no lossy HTML-to-Markdown conversions.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Agent skills", icon="fad fa-user-robot") %}
+        Drop-in <a href="https://github.com/readthedocs/skills">Read the Docs Agent Skills</a>
+        teach Claude Code, Cursor, and other agents how to use our API and
+        write valid <code>.readthedocs.yaml</code> &mdash; without hallucinating.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Bring your own AI", icon="fad fa-plug") %}
+        Wire up <strong>Kapa</strong>, <strong>Inkeep</strong>,
+        <strong>Algolia Ask AI</strong>, <strong>Mintlify AI</strong>, or your
+        own RAG pipeline. They all work great on top of Read the Docs.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Your content is yours", icon="fad fa-shield-keyhole") %}
+        We don't train models on your docs and we don't sell your content to
+        AI companies. We've publicly pushed back on
+        <a href="/blog/2024/07/ai-crawlers-abuse/">abusive AI crawlers</a> and
+        will keep doing so on behalf of our users.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Open infrastructure, not lock-in", icon="fad fa-cubes") %}
+        The AI documentation space is moving fast. We focus on being the
+        dependable substrate underneath so you can swap AI layers without
+        re-platforming your docs.
+      {% endcall %}
+
+    </div>
+  </div>
+
 </section>
 
 {# Second CTA #}
