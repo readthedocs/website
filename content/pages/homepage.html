@@ -68,13 +68,13 @@
       {% call marketing.highlight_list() %}
 
         {% call marketing.highlight_item(
-            icon="white fa-user-robot",
+            icon="white fa-face-monocle",
             icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-            header="Automatic deploy previews",
+            header="Pull request previews with visual diff",
             color="grey") %}
           <p>
-            Preview your documentation on every pull request.
-            Never guess what you're shipping again.
+            See the rendered changes in every pull request &mdash; not just
+            the source diff &mdash; with changed pages posted right in your PR.
           </p>
         {% endcall %}
 
@@ -127,9 +127,10 @@
               and offer your users a more powerful search with our  search API.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-code-compare") %}
-              Preview each pull request before releasing any changes,
-              allowing for fast collaboration across your organization.
+            {% call homepage.feature_detail_item(header="Pull request previews with visual diff", icon="fad fa-code-compare") %}
+              See the <strong>rendered</strong> differences in every PR &mdash;
+              not just the source diff &mdash; with a list of changed pages
+              posted right in your GitHub or GitLab pull request.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
