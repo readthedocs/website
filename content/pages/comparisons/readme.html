@@ -1,0 +1,157 @@
+{# View this page at http://localhost:8080/comparisons/readme/ #}
+
+<html>
+  <head>
+    <title>Read the Docs vs. ReadMe comparison</title>
+    <meta name="description" content="ReadMe is an API documentation platform built around a hosted editor and interactive API explorer. Read the Docs is for teams who write docs as code, on an open platform, with the tools they already use." />
+    <meta name="template" content="page" />
+    <meta name="slug" content="comparisons/readme" />
+    <meta name="status" content="hidden" />
+  </head>
+  <body>
+
+  {% import "partials/basic.html" as basic %}
+  {% import "partials/technical.html" as technical %}
+  {% import "partials/homepage.html" as homepage %}
+  {% import "partials/comparisons.html" as comparison %}
+
+{#
+  Framing notes — ReadMe is a direct doc-platform competitor, so this page
+  can't lean on "we're purpose-built for docs." ReadMe's distinct angle is its
+  hosted visual editor and API-explorer-first workflow. The honest contrast is
+  "docs as code vs. hosted editor":
+
+    1. Docs-as-code: Sphinx/MkDocs/etc. in your repo, versioned with your code,
+       reviewed in PRs — vs. ReadMe's WYSIWYG editor as the primary surface.
+    2. Tool freedom: any static doc tool, not a proprietary authoring app.
+    3. Open source: the Read the Docs platform is open, your content is
+       portable, and you can self-host the community edition.
+    4. OSS-friendly economics: free Community tier, no per-seat pricing.
+
+  ReadMe genuinely wins on interactive API reference and personalized API-key
+  embedding. The "When ReadMe might fit better" callout says so out loud.
+#}
+
+  <section>
+    {% call basic.header_lead(
+    header="Docs as code, on an <em><strong>open</strong></em> platform")
+    %}
+    <p>
+      ReadMe is a hosted documentation platform built around a visual editor, an interactive API explorer, and per-user API key personalization.
+      If your product is a commercial REST API and your docs team lives in a browser-based WYSIWYG, ReadMe has a focused story.
+    </p>
+    <p>
+      Read the Docs takes a different approach: <strong>docs as code</strong>.
+      Write in <strong>Sphinx, MkDocs, Docusaurus, Jupyter Book</strong>, or any other doc tool you already use.
+      Version them in the same Git repository as your code.
+      Review them in pull requests like any other change.
+      Publish on an <strong>open source platform</strong> that's hosted docs for Python, NumPy, PyTorch, Django, and tens of thousands of other projects for over 15 years.
+    </p>
+    <p>
+      No hosted editor. No per-seat pricing. Free forever for open source.
+    </p>
+    {% endcall %}
+  </section>
+
+<section id="compare">
+  <div class="ui padded container">
+
+    {% call comparison.feature_table(other_img="/images/readme-logo.svg", other_img_alt="ReadMe logo") %}
+    {{ comparison.feature_row("Build your site on the cloud", "Generate your site's content on the cloud", "fa-gears", on_other=True) }}
+    {{ comparison.feature_row("Deploy previews", "Solve style issues before deploying", "fa-rocket-launch", on_other=True) }}
+    {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass", on_other=True) }}
+    {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books", on_other=True) }}
+    {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed", on_other=True) }}
+    {{ comparison.feature_row("Private documention", "Give access only to trusted people", "fa-lock", on_other=True) }}
+    {{ comparison.feature_row("Git-backed authoring", "Write docs in your repo, review in pull requests", "fa-code-branch", on_other=True) }}
+    {{ comparison.feature_row("Documentation tool agnostic", "Use the documentation tool your team prefers (Sphinx, MkDocs, Docusaurus, Jupyter Book, etc)", "fa-book") }}
+    {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language") }}
+    {{ comparison.feature_row("No per-seat pricing", "Unlimited users on every plan", "fa-people-group") }}
+    {{ comparison.feature_row("Unlimited builds per month", "Trigger as many builds as you need", "fa-infinity") }}
+    {{ comparison.feature_row("Open Source", "Own your content, self-host if you want, contribute back", "fa-brands fa-osi") }}
+    {% endcall %}
+
+  </div>
+</section>
+
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical segment">
+              <h3 class="ui center aligned header">
+                When ReadMe might be a better fit
+              </h3>
+              <p>
+                We'd rather be honest than oversell. ReadMe leads in a few areas worth acknowledging:
+              </p>
+              <ul class="ui list" style="display: inline-block; text-align: left;">
+                <li>
+                  <strong>Interactive API reference from an OpenAPI spec.</strong>
+                  ReadMe's API explorer, code-snippet generation, and "Try It" request builder are deeply integrated with their editor.
+                  If interactive API reference pages are the core of your docs, they ship that out of the box.
+                </li>
+                <li>
+                  <strong>Personalized docs with user API keys.</strong>
+                  ReadMe can inject a logged-in developer's own API keys into code samples.
+                  That's a strong onboarding feature for a commercial API product.
+                </li>
+                <li>
+                  <strong>Developer metrics tied to API calls.</strong>
+                  ReadMe correlates doc usage with real API requests by endpoint and status code.
+                </li>
+              </ul>
+              <p>
+                If all three describe your product and your docs team prefers a hosted WYSIWYG over a Git workflow, ReadMe is a reasonable choice.
+                If you want tool freedom, docs as code, open source, and an OSS-friendly price — keep reading.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{# Try it out code block — the whole point of this comparison is that RTD works
+   with whatever doc tool you already use, so use the custom config example. #}
+{% include "includes/try-it-out-custom.html" %}
+
+  {% block homepage_bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Write docs like code <i class="fad fa-rocket icon"></i>
+              </h2>
+
+              <p>
+                ReadMe is a reasonable pick if you want a hosted editor and an interactive API playground as the core of your docs experience.
+                But most documentation is read by developers and written by developers — it belongs in Git, reviewed in pull requests, versioned alongside the code it describes.
+              </p>
+
+              <p>
+                Read the Docs gives you exactly that, on an open source platform that's served Python, Django, NumPy, PyTorch, Astropy, and tens of thousands of other projects for over 15 years.
+                Your Sphinx or MkDocs project stays yours — portable, self-hostable, free forever for open source.
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-rocket icon"></i>
+                Get started for free
+              </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock homepage_bottom_callout %}
+  </body>
+</html>
