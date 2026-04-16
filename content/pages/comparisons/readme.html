@@ -12,7 +12,6 @@
 
   {% import "partials/basic.html" as basic %}
   {% import "partials/technical.html" as technical %}
-  {% import "partials/homepage.html" as homepage %}
   {% import "partials/comparisons.html" as comparison %}
 
 {#
@@ -56,7 +55,7 @@
     {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass", on_other=True) }}
     {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books", on_other=True) }}
     {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed", on_other=True) }}
-    {{ comparison.feature_row("Private documention", "Give access only to trusted people", "fa-lock", on_other=True) }}
+    {{ comparison.feature_row("Private documentation", "Give access only to trusted people", "fa-lock", on_other=True) }}
     {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language", on_other=True) }}
     {{ comparison.feature_row("Interactive API reference", "Render an API explorer from your OpenAPI spec", "fa-plug", on_other=True, on_readthedocs=False) }}
     {{ comparison.feature_row("Documentation tool agnostic", "Use the documentation tool your team prefers (Sphinx, MkDocs, Docusaurus, Jupyter Book, etc)", "fa-book") }}
