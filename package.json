@@ -15,8 +15,9 @@
     "lint": "prettier --check 'src/**' '*.js' '*.json'",
     "format": "prettier --write 'src/**' '*.js' '*.json'",
     "validate": "npm run build-html && html-validate --formatter codeframe output/",
+    "check-links": "npm run build-html && uv run linkchecker --no-warnings --no-status output/index.html",
     "test": "jest --silent false src/js/tests/",
-    "checks": "npm run lint && npm run test && npm run validate"
+    "checks": "npm run lint && npm run test && npm run validate && npm run check-links"
   },
   "repository": {
     "type": "git",

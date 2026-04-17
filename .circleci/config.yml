@@ -32,6 +32,11 @@ commands:
       - run: uv sync
       - run: uv run pelican content -s publishconf.py
       - run: npx html-validate --formatter codeframe output/
+      - run:
+          name: Check for broken links
+          command: |
+            uv run pelican content -s pelicanconf.py -o output-linkcheck
+            uv run linkchecker --no-warnings --no-status output-linkcheck/index.html
 
 jobs:
   lint:

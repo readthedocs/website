@@ -13,7 +13,8 @@ dependencies = [
   "pelican-related-posts ==1.0.0",
   "pre-commit ==2.16.0",
   "pelican-jinja2content >=1.0.1",
-  "jinja-markdown >=1.210911"
+  "jinja-markdown >=1.210911",
+  "linkchecker >=10.5"
 ]
 
 [build-system]

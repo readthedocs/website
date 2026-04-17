@@ -13,3 +13,4 @@ __pycache__
 output/
 
 src/website.egg-info/
+output-linkcheck/
