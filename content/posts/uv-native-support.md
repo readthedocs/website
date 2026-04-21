@@ -1,5 +1,5 @@
 title: uv is now supported natively
-date: 2026-04-20
+date: 2026-04-21
 description: Announcing native uv support in .readthedocs.yaml for Python dependency installation.
 category: Feature announcement
 tags: configuration-file, python, uv
@@ -13,13 +13,16 @@ We are excited to announce that Read the Docs now supports [`uv`](https://docs.a
 This gives you a first-class way to install Python dependencies with `uv` during builds,
 without having to override install steps manually.
 
+`uv` is generally faster than `pip` for most operations,
+and many users will see real speedups in doc building by migrating to the toolchain. 
+
 ## How to use it
 
 Native `uv` support lives under `python.install`.
 Set `method: uv` and choose a `command`:
 
-- `sync` runs `uv sync` from your `pyproject.toml` or `uv.lock` file
-- `pip` runs `uv pip install` from a requirements file or path
+- **sync** runs `uv sync` from your `pyproject.toml` or `uv.lock` file
+- **pip** runs `uv pip install` from a requirements file or path
 
 Here is a small `.readthedocs.yaml` example using `uv sync`:
 
