@@ -15,7 +15,7 @@ This option uses `python setup.py install`, which is deprecated in the Python pa
 Read the Docs will remove support for it on **Wednesday, July 1st, 2026**.
 After this date, projects still using `python.install.method: setuptools` will fail their builds until they are updated.
 
-If your project is installing a local Python package with this configuration:
+Projects using this install method will have a configuration file that looks like this:
 
 ```yaml
 version: 2
@@ -26,7 +26,7 @@ python:
       path: .
 ```
 
-you should update it to use `pip` instead:
+These projects should update their configuration file to use `pip` instead:
 
 ```yaml
 version: 2
