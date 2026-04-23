@@ -323,7 +323,7 @@
     <div class="content">
       <div class="ui center aligned basic fitted segment">
         <p>
-          Which site hosts your project?
+          Log in to the site where your account is registered.
         </p>
       </div>
 
@@ -333,24 +333,12 @@
           <div class="seven wide computer sixteen wide tablet column">
             <div class="ui raised segment">
               <div class="ui header">
-                Read the Docs Community
-                <div class="sub header">
-                  For free and open-source projects
-                </div>
-              </div>
-
-              <div class="ui relaxed list">
-                <div class="item">
-                  <i class="fad fa-lock-open primary icon"></i>
-                  Clone public repositories
-                </div>
-                <div class="item">
-                  <i class="fad fa-eye primary icon"></i>
-                  Public documentation
-                </div>
-                <div class="item">
-                  <i class="fad fa-rectangle-ad primary icon"></i>
-                  Ads supported hosting
+                <i class="fad fa-people-group primary icon"></i>
+                <div class="content">
+                  Read the Docs Community
+                  <div class="sub header">
+                    For open-source projects
+                  </div>
                 </div>
               </div>
 
@@ -371,24 +359,12 @@
           <div class="seven wide computer sixteen wide tablet column">
             <div class="ui raised segment">
               <div class="ui header">
-                Read the Docs Business
-                <div class="sub header">
-                  For commercial and non-free projects
-                </div>
-              </div>
-
-              <div class="ui relaxed list">
-                <div class="item">
-                  <i class="fad fa-lock-keyhole primary icon"></i>
-                  Clone private and public repositories
-                </div>
-                <div class="item">
-                  <i class="fad fa-eye-slash primary icon"></i>
-                  Public and private documentation
-                </div>
-                <div class="item">
-                  <i class="fad fa-users primary icon"></i>
-                  Team management for your organization
+                <i class="fad fa-building secondary icon"></i>
+                <div class="content">
+                  Read the Docs Business
+                  <div class="sub header">
+                    For commercial projects
+                  </div>
                 </div>
               </div>
 
@@ -412,8 +388,8 @@
     </div>
 
     <div class="actions">
-      <a href="{{ SITE_URL }}/choosing-a-platform/" class="ui cancel button"><i class="fad fa-circle-question grey icon" aria-hidden="true"></i>Choosing a platform</a>
-      <a class="ui cancel button" data-analytics="login-to-signup" onclick="jQuery('#login-modal').modal('hide'); jQuery('#signup-modal').modal('show');"><i class="fad fa-plus grey icon" aria-hidden="true"></i>Sign up instead</a>
+      <a href="{{ SITE_URL }}/choosing-a-platform/" class="ui cancel button"><i class="fad fa-circle-question grey icon" aria-hidden="true"></i>Not sure which site?</a>
+      <a class="ui cancel button" data-analytics="login-to-signup" onclick="jQuery('#login-modal').modal('hide'); jQuery('#signup-modal').modal('show');"><i class="fad fa-plus grey icon" aria-hidden="true"></i>Don't have an account? Sign up</a>
     </div>
   </div>
 {% endblock login_modal %}
