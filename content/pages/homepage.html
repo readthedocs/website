@@ -122,14 +122,13 @@
               Flexible enough to work with any documentation tool.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
-              Easily search all your docs via our dashboard,
-              and offer your users a more powerful search with our  search API.
-            {% endcall %}
-
             {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-code-compare") %}
               Preview each pull request before releasing any changes,
               allowing for fast collaboration across your organization.
+            {% endcall %}
+
+            {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
+              Match your product release cycle with multiple versions of your docs. Automatically build versions from any branch or tag.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
