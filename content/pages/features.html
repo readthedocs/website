@@ -306,30 +306,24 @@
           image_alt="Read the Docs pull request review checks in a GitHub pull request",
           icon=icon_3) %}
         {% markdown %}
-        Rebuild your documentation and preview changes in every pull request.
-        Reviewers see exactly what's shipping &mdash; **rendered**, not raw diffs.
+        Preview changes in every pull request. Reviewers see the rendered result, not raw diffs.
 
-        Supported on **GitHub** and **GitLab** repositories.
+        Supported on **GitHub** and **GitLab**.
         {% endmarkdown %}
 
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Visual diff", icon="fad fa-face-monocle") %}
-        See the **rendered** differences between your pull request and the
-        live docs &mdash; not just the source diff. Catch broken layouts,
-        missing images, and unintended formatting changes before they ship.
+        See rendered differences between your PR and the live docs.
+        Catch broken layouts and formatting before they ship.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Files changed in your PR", icon="fad fa-file-pen") %}
-        Every PR build comment lists the documentation pages that actually
-        changed, with direct links to the rendered preview. Reviewers jump
-        straight to what matters &mdash; no hunting through the build.
+        Each PR build comment lists changed pages with links to the preview.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Pull request build status", icon="fad fa-circle-check") %}
-        First-class status checks in GitHub and GitLab pull requests, with
-        build logs and warnings surfaced inline so doc breakage blocks merge
-        the same way code breakage does.
+      {% call homepage.feature_detail_item(header="Build status checks", icon="fad fa-circle-check") %}
+        Doc build status in GitHub and GitLab, with warnings surfaced inline.
       {% endcall %}
 
       <div class="ui basic segment">
