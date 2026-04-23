@@ -41,13 +41,13 @@ readthedocs.com ("Read the Docs for Business")
     This Privacy Policy applies to this site in full without reservation.
 
 readthedocs.io, readthedocs-hosted.com, and other domains ("Documentation Sites")
-    These websites are where Read the Docs hosts documentation ("`User-Generated Content <{filename}/pages/terms-of-service.rst#user-generated-content>`_")
+    These websites are where Read the Docs hosts documentation ("`User-Generated Content </terms-of-service/#user-generated-content>`_")
     on behalf of documentation authors.
     A best effort is made to apply
     this Privacy Policy to these sites but the documentation
     may contain content and files created by documentation authors.
 
-All use of Read the Docs is subject to this Privacy Policy, together with our `Terms of service <{filename}/pages/terms-of-service.rst>`_.
+All use of Read the Docs is subject to this Privacy Policy, together with our `Terms of service </terms-of-service/>`_.
 
 
 What information Read the Docs collects and why
@@ -118,7 +118,7 @@ anyone (including us) may view their contents.
 If you have included private or sensitive information in your Documentation Site,
 such as email addresses, that information may be indexed by search engines or used by third parties.
 
-Read the Docs for Business may host `private projects <{filename}/pages/terms-of-service.rst#private-projects>`_ which we treat as confidential
+Read the Docs for Business may host `private projects </terms-of-service/#private-projects>`_ which we treat as confidential
 and we only access them for support reasons, with your consent, or if required to for security reasons
 
 If you're a **child under the age of 13**, you may not have an account on Read the Docs.

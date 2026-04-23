@@ -32,7 +32,7 @@ There's not going to be a test on it, but it's still useful information.*
 1. The "Agreement" refers, collectively, to all the terms, conditions, notices
    contained or referenced in this document (the "Terms of Service" or the "Terms")
    and all other operating rules, policies
-   (including our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_)
+   (including our `Privacy Policy </privacy-policy/>`_)
    and procedures that we may publish from time to time on our sites.
 2. Our "Service" or "Services" refers to the applications, software, products, and services provided by Read the Docs
    (see `Our services`_).
@@ -57,7 +57,7 @@ There's not going to be a test on it, but it's still useful information.*
    alone or together with other information, personally identify him or her.
    Information such as a user name and password, an email address,
    a real name, and a photograph are examples of User Personal Information.
-   Our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_ goes into more details on User Personal Information,
+   Our `Privacy Policy </privacy-policy/>`_ goes into more details on User Personal Information,
    what data Read the Docs collects, and why we collect it.
 
 
@@ -279,7 +279,7 @@ Exclusions
 
 If we have reason to believe the contents of a private project are in violation of the law or of these Terms,
 we have the right to access, review, and remove them.
-Additionally, we may be `compelled by law <{filename}/pages/privacy-policy.rst#how-we-respond-to-compelled-disclosure>`_
+Additionally, we may be `compelled by law </privacy-policy/#how-we-respond-to-compelled-disclosure>`_
 to disclose the contents of your private projects.
 
 
@@ -336,7 +336,7 @@ You may not share API tokens to exceed Read the Docs' rate limitations.
 You may not use the API to download data or Content from Read the Docs for spamming purposes,
 including for the purposes of selling Read the Docs users' personal information, such as to recruiters, headhunters, and job boards.
 
-All use of the Read the Docs API is subject to these Terms of Service and our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_.
+All use of the Read the Docs API is subject to these Terms of Service and our `Privacy Policy </privacy-policy/>`_.
 
 Read the Docs may offer subscription-based access to our API for those Users who require high-throughput access
 or access that would result in resale of Read the Docs' Service.
@@ -370,7 +370,7 @@ or User-Generated Content and integrates with the Service through Read the Docs'
 OAuth mechanism, or otherwise ("Developer Product"), and make it available for other Users,
 then you must comply with the following requirements:
 
-- You must comply with this Agreement and our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_.
+- You must comply with this Agreement and our `Privacy Policy </privacy-policy/>`_.
 - Except as otherwise permitted, such as by law or by a license,
   you must limit your usage of the User Personal Information or User-Generated Content you collect
   to that purpose for which the User has authorized its collection.
@@ -627,7 +627,7 @@ and the laws of the State of Oregon, without regard to conflict of law provision
 Non-assignability
 ~~~~~~~~~~~~~~~~~
 
-Read the Docs may assign or delegate these Terms of Service and/or our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_,
+Read the Docs may assign or delegate these Terms of Service and/or our `Privacy Policy </privacy-policy/>`_,
 in whole or in part, to any person or entity at any time with or without your consent,
 including the license grant in `License grant to us`_.
 You may not assign or delegate any rights or obligations under the Terms of Service or Privacy Policy without our prior written consent,
@@ -653,7 +653,7 @@ Amendments; complete agreement
 
 This Agreement may only be modified by a written amendment signed by an authorized representative of Read the Docs,
 or by the posting by Read the Docs of a revised version in accordance with `Changes to these terms`_.
-These Terms of Service, together with our `Privacy Policy <{filename}/pages/privacy-policy.rst>`_,
+These Terms of Service, together with our `Privacy Policy </privacy-policy/>`_,
 represent the complete and exclusive statement of the agreement between you and us.
 This Agreement supersedes any proposal or prior agreement oral or written,
 and any other communications between you and Read the Docs relating to the subject matter of these terms
