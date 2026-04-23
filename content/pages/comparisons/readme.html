@@ -1,0 +1,105 @@
+{# View this page at http://localhost:8080/comparisons/readme/ #}
+
+<html>
+  <head>
+    <title>Read the Docs vs. ReadMe comparison</title>
+    <meta name="description" content="ReadMe is an API documentation platform built around a hosted editor and interactive API explorer. Read the Docs is for teams who write docs as code, on an open platform, with the tools they already use." />
+    <meta name="template" content="page" />
+    <meta name="slug" content="comparisons/readme" />
+    <meta name="status" content="hidden" />
+  </head>
+  <body>
+
+  {% import "partials/basic.html" as basic %}
+  {% import "partials/technical.html" as technical %}
+  {% import "partials/comparisons.html" as comparison %}
+
+{#
+  Framing notes — ReadMe is a direct doc-platform competitor, so this page
+  can't lean on "we're purpose-built for docs." The core framing differences
+  are "docs as code vs. hosted editor":
+
+    1. Docs-as-code: Sphinx/MkDocs/etc. in your repo, versioned with your code,
+       reviewed in PRs — vs. ReadMe's WYSIWYG editor as the primary surface.
+    2. Tool freedom: any static doc tool, not a proprietary authoring app.
+    3. Open source: the Read the Docs platform is open, your content is
+       portable, and you can self-host the community edition.
+    4. OSS-friendly economics: free Community tier, no per-seat pricing.
+#}
+
+  <section>
+    {% call basic.header_lead(
+    header="Docs as code, on an <em><strong>open</strong></em> platform")
+    %}
+    <p>
+      ReadMe is a proprietary documentation platform built around a hosted visual editor.
+      If your docs team prefers editing in a browser-based WYSIWYG instead of a Git workflow, ReadMe has a focused story.
+    </p>
+    <p>
+      Read the Docs takes a different approach: <strong>docs as code</strong>.
+      Write in <strong>any doc tool</strong> your team already uses, versioned in the same Git repository as your code and reviewed in pull requests like any other change.
+      Over 15 years of reliable documentation hosting, trusted by engineering teams at <strong>AMD</strong> and <strong>Canonical</strong>, and by open source projects like <strong>Jupyter</strong> and <strong>Flask</strong>.
+    </p>
+    <p>
+      No hosted editor. No per-seat pricing. <strong>Business and Enterprise plans</strong> for commercial teams, with a free Community tier for open source.
+    </p>
+    {% endcall %}
+  </section>
+
+<section id="compare">
+  <div class="ui padded container">
+
+    {% call comparison.feature_table(other_img="/images/readme-logo.svg", other_img_alt="ReadMe logo") %}
+    {{ comparison.feature_row("Build your site on the cloud", "Generate your site's content on the cloud", "fa-gears", on_other=True) }}
+    {{ comparison.feature_row("Deploy previews", "Solve style issues before deploying", "fa-rocket-launch", on_other=True) }}
+    {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass", on_other=True) }}
+    {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books", on_other=True) }}
+    {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed", on_other=True) }}
+    {{ comparison.feature_row("Private documentation", "Give access only to trusted people", "fa-lock", on_other=True) }}
+    {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language", on_other=True) }}
+    {{ comparison.feature_row("Interactive API reference", "Render an API explorer from your OpenAPI spec", "fa-plug", on_other=True, on_readthedocs=False) }}
+    {{ comparison.feature_row("Documentation tool agnostic", "Use the documentation tool your team prefers (Sphinx, MkDocs, Docusaurus, Jupyter Book, etc)", "fa-book") }}
+    {{ comparison.feature_row("No per-seat pricing", "Unlimited users on every plan", "fa-people-group") }}
+    {{ comparison.feature_row("Open Source", "Own your content, self-host if you want, contribute back", "fa-brands fa-osi") }}
+    {% endcall %}
+
+  </div>
+</section>
+
+{# Try it out code block — the whole point of this comparison is that RTD works
+   with whatever doc tool you already use, so use the custom config example. #}
+{% include "includes/try-it-out-custom.html" %}
+
+  {% block homepage_bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Your docs belong next to your code <i class="fad fa-rocket icon"></i>
+              </h2>
+
+              <p>
+                Every commit builds a preview. Every release publishes a new version.
+                No separate editor, no docs drifting out of sync with the code they document.
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-rocket icon"></i>
+                Get started for free
+              </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock homepage_bottom_callout %}
+  </body>
+</html>

@@ -48,6 +48,8 @@ jquery(document).ready(() => {
 
   jquery("[data-module]").sui_module();
   jquery("[data-analytics]").plausible();
+
+  showModalsByHash();
 });
 
 /**
@@ -219,5 +221,32 @@ jquery.fn.tabmenu = function (settings) {
   });
 };
 
+/*
+ * Show modals when URL contains hash trigger
+ */
+function showModalsByHash() {
+  const modalMap = {
+    "#signup": "#signup-modal",
+    "#login": "#login-modal",
+  };
+
+  const showModalForHash = () => {
+    const currentHash = window.location.hash;
+    const modalTargetId = modalMap[currentHash];
+    if (!modalTargetId) {
+      return;
+    }
+
+    const modalTarget = jquery(modalTargetId);
+    if (modalTarget.length > 0) {
+      modalTarget.modal("show");
+    }
+  };
+
+  // Support both page load and manual hash change events
+  showModalForHash();
+  globalThis.addEventListener("hashchange", showModalForHash);
+}
+
 // Mostly for testing
-export { jquery };
+export { jquery, showModalsByHash };
