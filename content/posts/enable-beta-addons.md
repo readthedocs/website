@@ -70,7 +70,7 @@ comes from a pull request to clearly distinguish this version from the official 
 ![Flyout Addons](/images/addons-flyout.png)
 
 The _flyout_ is the small floating Read the Docs section where all the documentation versions and translations are listed.
-This allows readers to **find the exact version they are looking for** and also read the documention in their own language if it's available.
+This allows readers to **find the exact version they are looking for** and also read the documentation in their own language if it's available.
 Besides, it contains useful links to go to the project's home, builds page and offline formats such as PDFs and ebooks.
 
 ### Non-stable notification
