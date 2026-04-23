@@ -7,13 +7,11 @@
     <meta name="template" content="page" />
     <meta name="slug" content="comparisons/vercel" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="" />
   </head>
   <body>
 
   {% import "partials/basic.html" as basic %}
   {% import "partials/technical.html" as technical %}
-  {% import "partials/homepage.html" as homepage %}
   {% import "partials/comparisons.html" as comparison %}
 
   <section>
@@ -52,7 +50,7 @@
     {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language") }}
     {{ comparison.feature_row("Visual diff on deploy previews", "Visualize differences directly on the rendered version", "fa-face-monocle") }}
     {{ comparison.feature_row("Search analytics", "Explore what people search for in your docs", "fa-chart-simple") }}
-    {{ comparison.feature_row("Private documention", "Give access only to trusted people", "fa-lock") }}
+    {{ comparison.feature_row("Private documentation", "Give access only to trusted people", "fa-lock") }}
     {{ comparison.feature_row("Unlimited builds per month", "Trigger as many builds as you need", "fa-infinity") }}
     {{ comparison.feature_row("Open Source", "No lock in and contribute back", "fa-brands fa-osi") }}
     {% endcall %}
@@ -71,12 +69,12 @@
           <div class="column twelve wide computer sixteen wide tablet">
             <div class="ui basic vertical huge segment">
               <h2 class="ui center aligned header">
-                Built for docs, not just hosting. <i class="fad fa-rocket icon"></i>
+                Built for docs, not just hosting <i class="fad fa-rocket icon"></i>
               </h2>
 
               <p>
-                Vercel is a great web host, but documentation needs search, versioning, translations, and analytics out of the box.
-                Read the Docs hosts documentation for <strong>AMD</strong>, <strong>Canonical</strong>, <strong>Jupyter</strong>, and <strong>Flask</strong> &mdash; on a platform built specifically for technical docs, so your team doesn't have to reinvent them.
+                Documentation needs search, versioning, translations, and analytics out of the box.
+                Read the Docs provides all of that on a platform built specifically for technical docs.
               </p>
 
               <p>
