@@ -1,0 +1,105 @@
+{# View this page at http://localhost:8080/comparisons/mintlify/ #}
+
+<html>
+  <head>
+    <title>Read the Docs vs. Mintlify comparison</title>
+    <meta name="description" content="Mintlify is a polished proprietary documentation platform. Read the Docs is the open alternative that lets you keep your tools, your content, and your freedom to move." />
+    <meta name="template" content="page" />
+    <meta name="slug" content="comparisons/mintlify" />
+    <meta name="status" content="hidden" />
+  </head>
+  <body>
+
+  {% import "partials/basic.html" as basic %}
+  {% import "partials/technical.html" as technical %}
+  {% import "partials/comparisons.html" as comparison %}
+
+{#
+  Framing notes — Mintlify is a direct documentation-platform competitor, so the
+  "we're purpose-built for docs" angle we use against Netlify/Vercel/Cloudflare
+  doesn't apply. The core framing differences are:
+
+    1. Tool freedom: Sphinx, MkDocs, Docusaurus, Jupyter Book — any tool, not
+       locked to a proprietary MDX dialect.
+    2. Open source: the platform and ecosystem are open; your content is
+       portable and self-hostable.
+    3. OSS-friendly economics: free Community tier for open source projects.
+    4. Collaboration model: no per-seat caps.
+#}
+
+  <section>
+    {% call basic.header_lead(
+    header="Read the Docs is the <em><strong>open</strong></em> platform for your documentation")
+    %}
+    <p>
+      Mintlify is a proprietary documentation platform built around a vendor-specific MDX dialect.
+      If you want a fully managed, closed-source product, Mintlify may suit you.
+    </p>
+    <p>
+      Read the Docs takes a different approach: <strong>your tools, your content, your terms</strong>.
+      Write in <strong>any doc tool</strong> your team already uses, and publish on a platform trusted by engineering teams at <strong>AMD</strong> and <strong>Canonical</strong>, and by open source projects like <strong>Jupyter</strong> and <strong>Flask</strong> &mdash; over 15 years of reliable documentation hosting.
+    </p>
+    <p>
+      No lock-in. No per-seat pricing. <strong>Business and Enterprise plans</strong> for commercial teams, with a free Community tier for open source.
+    </p>
+    {% endcall %}
+  </section>
+
+<section id="compare">
+  <div class="ui padded container">
+
+    {% call comparison.feature_table(other_img="/images/mintlify-logo.svg", other_img_alt="Mintlify logo") %}
+    {{ comparison.feature_row("Build your site on the cloud", "Generate your site's content on the cloud", "fa-gears", on_other=True) }}
+    {{ comparison.feature_row("Deploy previews", "Solve style issues before deploying", "fa-rocket-launch", on_other=True) }}
+    {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass", on_other=True) }}
+    {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books", on_other=True) }}
+    {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language", on_other=True) }}
+    {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed", on_other=True) }}
+    {{ comparison.feature_row("Search analytics", "Explore what people search for in your docs", "fa-chart-simple", on_other=True) }}
+    {{ comparison.feature_row("Private documentation", "Give access only to trusted people", "fa-lock", on_other=True) }}
+    {{ comparison.feature_row("Documentation tool agnostic", "Use the documentation tool your team prefers (Sphinx, MkDocs, Docusaurus, Jupyter Book, etc)", "fa-book") }}
+    {{ comparison.feature_row("No per-seat pricing", "Unlimited users on every plan", "fa-people-group") }}
+    {{ comparison.feature_row("Unlimited builds per month", "Trigger as many builds as you need", "fa-infinity") }}
+    {{ comparison.feature_row("Open Source", "Own your content, self-host if you want, contribute back", "fa-brands fa-osi") }}
+    {% endcall %}
+
+  </div>
+</section>
+
+{# Try it out code block — use the custom config, since the whole point of this
+   comparison is that RTD works with whatever doc tool you already use. #}
+{% include "includes/try-it-out-custom.html" %}
+
+  {% block homepage_bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+            <div class="ui basic vertical huge segment">
+              <h2 class="ui center aligned header">
+                Keep your tools. Keep your content. <i class="fad fa-rocket icon"></i>
+              </h2>
+
+              <p>
+                Write in the doc tool your team already uses, keep your content portable,
+                and publish on an open platform with no vendor lock-in.
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button"
+                data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-rocket icon"></i>
+                Get started for free
+              </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock homepage_bottom_callout %}
+  </body>
+</html>
