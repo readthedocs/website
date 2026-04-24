@@ -3,7 +3,7 @@
 <html>
   <head>
     <title>Read the Docs vs Other Documentation Platforms</title>
-    <meta name="description" content="Compare Read the Docs features with other documentation platforms like GitHub Pages, GitBook, Cloudflare Pages, and Netlify to find the best solution for your documentation needs." />
+    <meta name="description" content="Compare Read the Docs with documentation platforms like GitBook, Mintlify, and ReadMe, and with web hosts like GitHub Pages, Cloudflare Pages, Netlify, and Vercel." />
     <meta name="template" content="page" />
     <meta name="slug" content="comparisons" />
     <meta name="status" content="hidden" />
@@ -28,6 +28,56 @@
 
   <section>
     <div class="ui very padded container">
+
+      <h2 class="ui header">Documentation platforms</h2>
+      <p>
+        Other platforms built for documentation, but with closed-source
+        tooling, proprietary editors, or per-seat pricing.
+      </p>
+
+      <div class="ui two stackable cards">
+
+        {{ basic.comparison_card(
+          url="/comparisons/gitbook/",
+          logo_url="/images/gitbook-logo.svg",
+          logo_alt="GitBook logo",
+          title="GitBook",
+          meta="Documentation platform",
+          description="GitBook offers documentation hosting but with limited flexibility. Learn how Read the Docs gives you more control."
+        ) }}
+
+        {{ basic.comparison_card(
+          url="/comparisons/mintlify/",
+          logo_url="/images/mintlify-logo.svg",
+          logo_alt="Mintlify logo",
+          title="Mintlify",
+          meta="Documentation platform",
+          description="Mintlify is a closed-source doc platform with per-seat pricing. See how Read the Docs gives you an open, docs-as-code alternative."
+        ) }}
+
+        {{ basic.comparison_card(
+          url="/comparisons/readme/",
+          logo_url="/images/readme-logo.svg",
+          logo_alt="ReadMe logo",
+          title="ReadMe",
+          meta="Documentation platform",
+          description="ReadMe is built around a hosted WYSIWYG editor. See how Read the Docs lets you write docs as code in any tool your team already uses."
+        ) }}
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ui very padded container">
+
+      <h2 class="ui header">Web hosting platforms</h2>
+      <p>
+        General-purpose web hosts that can serve documentation, but lack the
+        features that make docs-specific platforms productive for authors and
+        readers.
+      </p>
+
       <div class="ui two stackable cards">
 
         {{ basic.comparison_card(
@@ -37,15 +87,6 @@
           title="GitHub Pages",
           meta="Static site hosting",
           description="GitHub Pages is primarily for static hosting, but lacks documentation-specific features. See how Read the Docs compares."
-        ) }}
-
-        {{ basic.comparison_card(
-          url="/comparisons/gitbook/",
-          logo_url="/images/gitbook-logo.svg",
-          logo_alt="GitBook logo",
-          title="GitBook",
-          meta="Documentation platform",
-          description="GitBook offers documentation hosting but with limited flexibility. Learn how Read the Docs gives you more control."
         ) }}
 
         {{ basic.comparison_card(
@@ -64,6 +105,15 @@
           title="Netlify",
           meta="Modern web platform",
           description="Netlify was made for marketing sites and SPA hosting. See how Read the Docs is made for documentation."
+        ) }}
+
+        {{ basic.comparison_card(
+          url="/comparisons/vercel/",
+          logo_url="/images/vercel-logo.svg",
+          logo_alt="Vercel logo",
+          title="Vercel",
+          meta="Frontend cloud platform",
+          description="Vercel is a frontend cloud for Next.js apps. See how Read the Docs is purpose-built for technical documentation."
         ) }}
 
       </div>
