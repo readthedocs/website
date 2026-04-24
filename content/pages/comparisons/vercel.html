@@ -1,31 +1,33 @@
-{# View this page at http://localhost:8080/comparisons/netlify/ #}
+{# View this page at http://localhost:8080/comparisons/vercel/ #}
 
 <html>
   <head>
-    <title>Read the Docs vs. Netlify comparison</title>
-    <meta name="description" content="Netlify is a powerful platform for deploying modern web applications, but for technical documentation projects, Read the Docs provides specialized features that make documentation authoring and reading much better." />
+    <title>Read the Docs vs. Vercel comparison</title>
+    <meta name="description" content="Vercel is a powerful platform for deploying frontend applications, but for technical documentation projects, Read the Docs provides specialized features that make documentation authoring and reading much better." />
     <meta name="template" content="page" />
-    <meta name="slug" content="comparisons/netlify" />
+    <meta name="slug" content="comparisons/vercel" />
     <meta name="status" content="hidden" />
   </head>
   <body>
 
   {% import "partials/basic.html" as basic %}
   {% import "partials/technical.html" as technical %}
-  {% import "partials/homepage.html" as homepage %}
   {% import "partials/comparisons.html" as comparison %}
 
   <section>
     {% call basic.header_lead(
-    header="Read the Docs is the <em><strong>all-in-one</strong></em> solution for your documentation")
+    header="Read the Docs is <em><strong>purpose-built</strong></em> for your documentation")
     %}
     <p>
-      Netlify is fantastic for deploying modern web applications and static sites.
+      Vercel is fantastic for deploying frontend frameworks and modern web applications.
       However, when it comes to <strong>technical documentation</strong> and <strong>developer-focused content</strong>,
       Read the Docs is <em>the</em> purpose-built solution.
     </p>
     <p>
-      Discover why Read the Docs is the better choice for your documentation projects.
+      Publish on a platform trusted by engineering teams at <strong>AMD</strong> and <strong>Canonical</strong>, and by open source projects like <strong>Jupyter</strong> and <strong>Flask</strong> &mdash; over 15 years of reliable documentation hosting.
+    </p>
+    <p>
+      No per-seat pricing. <strong>Business and Enterprise plans</strong> for commercial teams, with a free Community tier for open source.
     </p>
     {% endcall %}
   </section>
@@ -33,7 +35,7 @@
 <section id="compare">
   <div class="ui padded container">
 
-    {% call comparison.feature_table(other_img="/images/netlify-logo.svg", other_img_alt="Netlify logo") %}
+    {% call comparison.feature_table(other_img="/images/vercel-logo.svg", other_img_alt="Vercel logo") %}
     {{ comparison.feature_row("Build your site on the cloud", "Generate your site's content on the cloud", "fa-gears", on_other=True) }}
     {{ comparison.feature_row("Deploy previews", "Solve style issues before deploying", "fa-rocket-launch", on_other=True) }}
     {{ comparison.feature_row("Static hosting", "Publish any static content", "fa-page", on_other=True) }}
@@ -67,13 +69,12 @@
           <div class="column twelve wide computer sixteen wide tablet">
             <div class="ui basic vertical huge segment">
               <h2 class="ui center aligned header">
-                Still not convinced? Try it yourself  <i class="fad fa-rocket icon"></i>
+                Built for docs, not just hosting <i class="fad fa-rocket icon"></i>
               </h2>
 
               <p>
-                Netlify excels at deploying modern web applications, but documentation requires specialized features like search, versioning, and analytics.
-                Read the Docs is the <em>all-in-one solution</em> built specifically for technical documentation,
-                providing everything you need without the complexity of building documentation features yourself.
+                Documentation needs search, versioning, translations, and analytics out of the box.
+                Read the Docs provides all of that on a platform built specifically for technical docs.
               </p>
 
               <p>

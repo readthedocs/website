@@ -23,25 +23,18 @@
             # (mkdocs build, sphinx-build, jupyter-book build, etc).
             version: 2
 
-            # Set the OS, Python version and other tools you might need
             build:
               os: ubuntu-24.04
               tools:
-                python: "3.12"
                 nodejs: "20"
-                # You can also specify other tool versions:
-                # rust: "1.70"
-                # golang: "1.20"
 
-              # Support any tool with custom build commands
               commands:
-                # Install dependencies
+                # Install dependencies and build the site
                 - cd docs/ && npm install
-                # Build the site
                 - cd docs/ && npm run build
-                # Copy generated files into Read the Docs directory
-                - mkdir --parents $READTHEDOCS_OUTPUT/html/
-                - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
+                # Copy output to Read the Docs
+                - mkdir -p $READTHEDOCS_OUTPUT/html/
+                - cp -r docs/build/* $READTHEDOCS_OUTPUT/html/
 
             ```
             {% endmarkdown %}
