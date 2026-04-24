@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="title" content="The documentation infrastructure layer" />
-    <meta name="description" content="Read the Docs runs the operational layer your documentation sits on: builds, hosting, versioning, search, translations, previews, and auth. Bring any tool. We handle the rest." />
+    <meta name="description" content="Read the Docs is the documentation infrastructure layer. Bring any tool — Sphinx, MkDocs, Jupyter Book — we handle builds, hosting, versioning, search, translations, previews, and auth." />
     <meta name="template" content="page" />
     <meta name="save_as" content="index.html" />
     <meta name="slug" content="homepage" />
@@ -17,63 +17,43 @@
     {% block homepage_notification %}
     {% endblock homepage_notification %}
 
-    {#
-      Hero: the central narrative.
-
-      Leads with the positioning sentence ("the documentation infrastructure
-      layer") and immediately offers two audience paths -- engineering teams
-      and open source projects -- rather than sending everyone to the same
-      signup modal. The sub-hero label reinforces the "we've run this for a
-      long time and we plan to run it for a long time" voice.
-    #}
     {% block homepage_callout_wrapper %}
       <section>
         <div class="ui padded hero container">
           <div class="ui relaxed grid centered middle aligned">
             <div class="row">
 
-                <div class="nine wide computer sixteen wide tablet sixteen wide mobile column">
+                <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
                 {% block homepage_callout %}
                   <div class="ui large left aligned basic vertical segment">
 
-                    <p>
-                      <span class="ui teal basic label">
-                        <i class="fad fa-server icon"></i>
-                        Running docs infrastructure since 2010
-                      </span>
-                    </p>
+                  <h1 class="ui huge header">
+                    The documentation infrastructure layer.
+                    <span class="sub header">
+                      Bring any tool &mdash; Sphinx, MkDocs, Jupyter Book, whatever comes next.
+                      We run the hard parts: builds, hosting, versioning, search, translations, previews, and auth.
+                    </span>
+                  </h1>
 
-                    <h1 class="ui huge header">
-                      The documentation infrastructure layer.
-                      <span class="sub header">
-                        Bring any tool &mdash; Sphinx, MkDocs, Docusaurus, Jupyter Book, whatever comes next.
-                        We run the hard parts: builds, hosting, versioning, search, translations, previews, and auth.
-                      </span>
-                    </h1>
-
-                    {% block homepage_callout_buttons %}
-                      <a class="ui large teal stackable button"
-                        data-analytics="signup-modal-hero-team"
-                        onclick="jQuery('#signup-modal').modal('show');">
-                        <i class="fad fa-building icon"></i>
-                        For engineering teams
-                      </a>
-                      <a href="/pricing/" class="ui large secondary stackable basic button">
-                        <i class="fad fa-heart icon"></i>
-                        For open source projects
-                      </a>
-
-                      <p class="hero-fineprint">
-                        Free for open source. 30-day trial on Business plans. No credit card required.
-                      </p>
-                    {% endblock homepage_callout_buttons %}
+                  {% block homepage_callout_buttons %}
+                    <a class="ui large teal stackable button"
+                      data-analytics="signup-modal"
+                      onclick="jQuery('#signup-modal').modal('show');">
+                      <i class="fad fa-play icon"></i>
+                      Get started for free
+                    </a>
+                    <a href="/features/" class="ui large secondary stackable basic button">
+                      <i class="fad fa-sparkles icon"></i>
+                      Explore features
+                    </a>
+                  {% endblock homepage_callout_buttons %}
 
                   </div>
                 {% endblock homepage_callout %}
                 </div>
 
               {% block homepage_callout_image %}
-                <div class="column seven wide computer only">
+                <div class="column eight wide computer only">
                   <div class="ui basic segment">
                     <img class="ui image fluid" src="{{ SITE_URL }}/images/homepage.png" alt="A terminal executing Git commands to build multiple versions of documentation" />
                   </div>
@@ -86,103 +66,102 @@
       </section>
     {% endblock homepage_callout_wrapper %}
 
-    {# Logos of businesses that use our product. #}
-    {% include "includes/business-logos.html" %}
-
-    {#
-      Narrative layer: the three "your team shouldn't have to..." arguments.
-
-      These sit at the top of the hierarchy (narratives > benefits > features).
-      Every card is written as an outcome the reader already cares about,
-      not as a feature we happen to ship.
-    #}
-    {% block homepage_narratives %}
+    {# Audience paths #}
+    {% block homepage_audience %}
       <section>
         <div class="ui very padded container">
-          <div class="ui basic center aligned segment">
-            <h2 class="ui large header">
-              Your engineering team shouldn&rsquo;t run a docs platform team.
-              <span class="sub header">
-                Docs-as-code is the right instinct. Hand-rolling it on a generic web host is not.
-                Read the Docs is the production-grade version of the pipeline you&rsquo;d otherwise build yourself &mdash;
-                maintained by a team that has thought about nothing else for fifteen years.
-              </span>
-            </h2>
-          </div>
-
-          {% call marketing.highlight_list() %}
-
-            {% call marketing.highlight_item(
-                icon="white fa-code-branch",
-                icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-                header="Ship versions without breaking the old ones",
-                color="grey") %}
-              <p>
-                Match your release cycle. Every branch and tag becomes a version automatically,
-                with canonical URLs, redirects, and a version flyout your users already know how to use.
-              </p>
-            {% endcall %}
-
-            {% call marketing.highlight_item(
-                icon="olive fa-code-pull-request",
-                header="Catch doc regressions before you merge",
-                color="black") %}
-              <p>
-                Every pull request gets its own live preview build with a diff against production.
-                Writers and engineers review the rendered output, not the raw diff.
-              </p>
-            {% endcall %}
-
-            {% call marketing.highlight_item(
-                icon="white fa-shield-halved",
-                icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
-                header="Keep control of your content and your users",
-                color="violet") %}
-              <p>
-                Private docs, SSO with GitHub or GitLab, per-team permissions, and audit logs.
-                Your source of truth stays in Git. We don&rsquo;t lock your content inside an editor.
-              </p>
-            {% endcall %}
-          {% endcall %}
-        </div>
-      </section>
-    {% endblock homepage_narratives %}
-
-    {#
-      Featured customer story: a named quote with a real outcome.
-
-      One strong quote with a named speaker is worth more than a logo strip
-      on its own. This is reusable on the enterprise page and comparison
-      pages.
-    #}
-    {% block homepage_featured_quote %}
-      <section>
-        <div class="ui very padded container">
-          <div class="ui centered grid">
-            <div class="twelve wide computer sixteen wide tablet sixteen wide mobile column">
+          <div class="ui stackable two column centered padded grid">
+            <div class="column">
               <div class="ui very padded raised segment">
-                {% call marketing.testimonial(
-                    name="Max Hilbrunner",
-                    title="Software and Game Developer",
-                    company="Godot Engine",
-                    image="https://avatars.githubusercontent.com/u/1654763?v=4",
-                    link="https://docs.godotengine.org/") %}
-                  Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the generous Community plan, we couldn&rsquo;t have afforded anything close to the CI/build resources that we got with Read the Docs.
-                {% endcall %}
+                <h3 class="ui header">
+                  <i class="fad fa-building teal icon"></i>
+                  <span class="content">
+                    For engineering teams
+                    <span class="sub header">Private docs, SSO, audit logs, and a 30-day free trial.</span>
+                  </span>
+                </h3>
+                <p>
+                  Your engineering team shouldn&rsquo;t run a docs platform team.
+                  We handle the infrastructure so your writers and developers
+                  ship documentation, not pipelines.
+                </p>
+                <a class="ui teal button"
+                  data-analytics="signup-modal-business"
+                  onclick="jQuery('#signup-modal').modal('show');">
+                  Start your free trial
+                </a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui very padded raised segment">
+                <h3 class="ui header">
+                  <i class="fad fa-heart violet icon"></i>
+                  <span class="content">
+                    For open source projects
+                    <span class="sub header">Free forever. No limits on builds or versions.</span>
+                  </span>
+                </h3>
+                <p>
+                  We&rsquo;ve hosted open source documentation since 2010.
+                  Flask, Jupyter, Godot, and thousands more trust us
+                  to keep their docs online and searchable.
+                </p>
+                <a class="ui violet basic button"
+                  data-analytics="signup-modal-community"
+                  onclick="jQuery('#signup-modal').modal('show');">
+                  Host your project
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
-    {% endblock homepage_featured_quote %}
+    {% endblock homepage_audience %}
 
-    {#
-      AI / LLM position statement.
+    {% include "includes/business-logos.html" %}
 
-      Stating a clear, confident position -- "we're the stable substrate;
-      bring your own AI layer" -- is better than silence, and aligns with the
-      infrastructure voice.
-    #}
+    <div class="ui divider"></div>
+
+    {# Narrative layer: outcomes, not features #}
+    {% block homepage_highlight %}
+      {% call marketing.highlight_list() %}
+
+        {% call marketing.highlight_item(
+            icon="white fa-code-branch",
+            icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
+            header="Ship versions without breaking the old ones",
+            color="grey") %}
+          <p>
+            Every branch and tag becomes a version automatically,
+            with canonical URLs, redirects, and a version flyout
+            your users already know how to use.
+          </p>
+        {% endcall %}
+
+        {% call marketing.highlight_item(
+            icon="olive fa-code-pull-request",
+            header="Catch doc regressions before you merge",
+            color="black") %}
+          <p>
+            Every pull request gets a live preview build with a visual diff
+            against production. Review rendered output, not raw markup.
+          </p>
+        {% endcall %}
+
+        {% call marketing.highlight_item(
+            icon="white fa-shield-halved",
+            icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
+            header="Your content stays yours",
+            color="violet") %}
+          <p>
+            Your source of truth stays in Git. We don&rsquo;t lock your content inside
+            an editor. Private docs, SSO, per-team permissions, and audit logs.
+          </p>
+        {% endcall %}
+      {% endcall %}
+    {% endblock homepage_highlight %}
+
+    {# AI / LLM position #}
     {% block homepage_ai_position %}
       <section id="homepage-ai">
         <div class="ui very padded container">
@@ -190,30 +169,20 @@
             <div class="fourteen wide computer sixteen wide tablet sixteen wide mobile column">
               <div class="ui light very padded segment">
                 <div class="ui stackable middle aligned grid">
-                  <div class="four wide computer sixteen wide tablet center aligned column">
+                  <div class="three wide computer sixteen wide tablet center aligned column">
                     <i class="fad fa-sparkles huge teal icon"
                        style="--fa-secondary-color: orange; --fa-secondary-opacity: 1.0;"></i>
-                    <h4 class="ui tiny grey header">
-                      Our stance on AI
-                    </h4>
                   </div>
-                  <div class="twelve wide computer sixteen wide tablet column">
+                  <div class="thirteen wide computer sixteen wide tablet column">
                     <h3 class="ui header">
-                      Your docs belong to you. We&rsquo;re the substrate your AI layer sits on.
+                      We&rsquo;re the substrate your AI layer sits on.
+                      <span class="sub header">Ready for the AI-powered documentation era.</span>
                     </h3>
                     <p>
-                      We publish <code>llms.txt</code> and Markdown exports on every project so your
-                      agents and search tools can read your docs the way they expect.
-                      We don&rsquo;t train models on your content, we don&rsquo;t lock you into a
-                      proprietary chat widget, and we don&rsquo;t charge you extra for the bytes
-                      an LLM pulls down. Bring Kapa, Inkeep, your own RAG pipeline, or nothing at all.
-                      The docs still work.
-                    </p>
-                    <p>
-                      <a href="https://docs.readthedocs.io/en/stable/reference/ai-content.html" class="ui small teal basic button">
-                        Read our AI content policy
-                        <i class="fad fa-arrow-right icon"></i>
-                      </a>
+                      Every project gets <code>llms.txt</code> and Markdown exports so your agents and
+                      search tools can read your docs natively. We don&rsquo;t train on your content,
+                      we don&rsquo;t lock you into a chat widget, and we don&rsquo;t charge extra for LLM access.
+                      Bring Kapa, Inkeep, your own RAG pipeline, or nothing at all.
                     </p>
                   </div>
                 </div>
@@ -224,18 +193,12 @@
       </section>
     {% endblock homepage_ai_position %}
 
-    {#
-      Trust signals / scale stats.
-
-      The "deliberately boring, in the Stripe sense" voice. Concrete numbers
-      beat adjectives. These are the same numbers already published on
-      /company/.
-    #}
+    {# Trust signals #}
     {% block homepage_scale %}
       <section id="homepage-scale">
         <div class="ui inverted grey very padded segment">
           <div class="ui container">
-            <div class="ui basic center aligned segment">
+            <div class="ui center aligned basic segment">
               <h3 class="ui inverted header">
                 Infrastructure you can plan a decade around.
                 <span class="sub header">
@@ -254,13 +217,13 @@
               </div>
               <div class="column">
                 <div class="ui inverted statistic">
-                  <div class="value">80,000+</div>
+                  <div class="value">80k+</div>
                   <div class="label">projects hosted</div>
                 </div>
               </div>
               <div class="column">
                 <div class="ui inverted statistic">
-                  <div class="value">100,000+</div>
+                  <div class="value">100k+</div>
                   <div class="label">writers &amp; developers</div>
                 </div>
               </div>
@@ -276,24 +239,14 @@
       </section>
     {% endblock homepage_scale %}
 
-    {#
-      Feature grid -- demoted from top of the page.
-
-      Features are now layer 3 in the hierarchy: they're proof for readers who
-      have already bought the narrative and want to confirm it's real.
-    #}
+    {# Features — demoted to layer 3 in the hierarchy #}
     {% block homepage_feature_detail %}
       <section id="features">
         <div class="ui very padded container">
 
-          <div class="ui basic center aligned segment">
-            <h3 class="ui large monospace header">
-              What&rsquo;s inside the infrastructure layer
-              <span class="sub header">
-                Everything a mature docs platform needs, available on day one.
-              </span>
-            </h3>
-          </div>
+          <h3 class="ui large center aligned monospace header">
+            What&rsquo;s inside the infrastructure layer
+          </h3>
 
           <div class="ui centered vertically padded container stackable grid">
 
@@ -303,18 +256,18 @@
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
-              Fast, typo-tolerant search across every version and every project, with a search API for your own UI.
+              Fast, typo-tolerant search across every version and project, with a search API for your own UI.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-code-compare") %}
-              Every PR gets a live build and a visual diff, so reviewers see the rendered output before merge.
+              Every PR gets a live build and a visual diff so reviewers see the rendered output before merge.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
-              Match your product release cycle. Automatically build versions from any branch or tag, with stable URLs and redirects.
+              Automatically build versions from any branch or tag, with stable URLs and redirects.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Private docs", icon="fad fa-lock", paid=True) %}
+            {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
               Clone private repositories from GitHub, GitLab, or Bitbucket. Keep internal docs internal.
             {% endcall %}
 
@@ -323,10 +276,10 @@
             {% endcall %}
 
             {% block features_cta %}
-              <div class="sixteen wide center aligned column">
+              <div class="ten wide computer sixteen wide tablet center aligned column">
                 <div class="ui basic padded vertical segment">
                   <a href="/features/" class="ui large secondary relaxed button">
-                    See every feature
+                    Discover all our features
                     <i class="fad fa-sparkles"></i>
                   </a>
                 </div>
@@ -344,16 +297,23 @@
     {# Sphinx user testimonials #}
     {% include "includes/users-sphinx.html" %}
 
-    {#
-      Secondary testimonial row.
-
-      One more named quote -- balances the Godot (OSS) story above with a
-      different angle on the same narrative.
-    #}
+    {# Developer testimonials #}
     <section>
       <div class="ui very padded container">
         <div class="ui stackable equal width grid">
           <div class="stretched row">
+            <div class="column">
+              <div class="ui very padded raised segment">
+                {% call marketing.testimonial(
+                    name="Max Hilbrunner",
+                    title="Software and Game Developer",
+                    company="Godot Engine",
+                    image="https://avatars.githubusercontent.com/u/1654763?v=4",
+                    link="https://docs.godotengine.org/") %}
+                  Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the generous Community plan, we couldn&rsquo;t have afforded anything close to the CI/build resources that we got with Read the Docs.
+                {% endcall %}
+              </div>
+            </div>
             <div class="column">
               <div class="ui very padded raised segment">
                 {% call marketing.testimonial(
@@ -371,43 +331,26 @@
       </div>
     </section>
 
-    {#
-      Final CTA: re-surface the two audience paths from the hero, so the
-      homepage ends with the same split it started with.
-    #}
     {% block homepage_bottom_callout %}
     <section>
       <div class="ui very padded container">
         <div class="ui grid center aligned">
 
           <div class="row">
-            <div class="column twelve wide computer sixteen wide tablet sixteen wide mobile">
+            <div class="column twelve wide computer sixteen wide tablet">
 
               <div class="ui basic vertical huge segment">
-                <h2 class="ui header">
-                  Get your docs online in five minutes.
-                  <span class="sub header">
-                    Import a repo, commit a <code>.readthedocs.yaml</code>, push. That&rsquo;s the whole setup.
-                  </span>
-                </h2>
+                <p>
+                  <b>Get your docs online in 5 minutes.</b>
+                </p>
 
-                <div class="ui basic padded segment">
+                <p>
                   <a class="ui large teal stackable button"
-                    data-analytics="signup-modal-footer-team"
+                    data-analytics="signup-modal"
                     onclick="jQuery('#signup-modal').modal('show');">
-                    <i class="fad fa-building icon"></i>
-                    Start a Business trial
+                    <i class="fad fa-play icon"></i>
+                    Create an account
                   </a>
-                  <a class="ui large secondary stackable basic button"
-                    data-analytics="signup-modal-footer-oss"
-                    onclick="jQuery('#signup-modal').modal('show');">
-                    <i class="fad fa-heart icon"></i>
-                    Host an open source project
-                  </a>
-                </div>
-
-                <p class="hero-fineprint">
-                  Free Community tier for open source. 30-day free trial on Business plans.
                 </p>
               </div>
 

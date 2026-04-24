@@ -1,37 +1,18 @@
 /* Homepage */
 #homepage {
-  // Small reassurance text under hero and footer CTAs
-  .hero-fineprint {
-    color: fade(@black, 55%);
-    font-size: 0.9rem;
-    margin-top: 0.75em;
-  }
-
-  // Tighten the hero label so it sits clean above the h1
-  .ui.padded.hero.container .ui.teal.basic.label {
-    margin-bottom: 0.75em;
-  }
-
-  // AI stance card -- soft background, distinct from the rest of the page
   #homepage-ai .ui.light.segment {
     border: 1px solid @lightGrey;
     border-radius: @defaultBorderRadius;
   }
 
-  // Scale / trust-signal strip -- Stripe-y, confident, boring
   #homepage-scale {
     .ui.inverted.grey.segment {
       border-radius: 0;
       margin: 0;
     }
-    .ui.inverted.statistic > .value {
-      font-size: 2.75rem !important;
-      font-weight: 700;
-    }
     .ui.inverted.statistic > .label {
       color: fade(@white, 75%);
       text-transform: none;
-      font-size: 0.9rem;
     }
     .ui.inverted.header .sub.header {
       color: fade(@white, 75%);
