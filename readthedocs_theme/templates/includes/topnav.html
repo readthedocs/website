@@ -182,14 +182,11 @@
             <div class="right menu">
 
               <div class="item">
-                <div class="ui floating top right pointing dropdown" data-module="dropdown" data-action="select" data-display-type="block">
-                  <a class="ui">
-                    Log in
-                  </a>
-                  <div class="menu">
-                    {{ menu_log_in(with_signup=False) }}
-                  </div>
-                </div>
+                <a class="ui"
+                   data-analytics="login-modal"
+                   onclick="jQuery('#login-modal').modal('show');">
+                  Log in
+                </a>
               </div>
 
               <div class="item">
