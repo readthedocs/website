@@ -119,33 +119,6 @@
   </div>
 {% endmacro %}
 
-<section id="ai">
-
-  {{ features_divide("AI-ready infrastructure") }}
-
-  <div class="ui very padded container">
-    <div class="ui vertically padded centered grid">
-
-      {% call homepage.feature_detail_item(header="llms.txt support", icon="fad fa-file-lines") %}
-        Serve <code>llms.txt</code> and <code>llms-full.txt</code> from your
-        docs domain. A standard index for any LLM.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Markdown content negotiation", icon="fad fa-arrow-down-up-across-line") %}
-        Request any page as Markdown using content negotiation.
-        Agents fetch clean text directly, without scraping your HTML.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Agent skills", icon="fad fa-user-robot") %}
-        <a href="https://github.com/readthedocs/skills">Skills</a> teach
-        Claude Code, Cursor, and other agents to use our API and write your
-        <code>.readthedocs.yaml</code>.
-      {% endcall %}
-
-    </div>
-  </div>
-</section>
-
 {{ features_divide() }}
 
 <section>
@@ -451,6 +424,33 @@
 
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+
+  {{ features_divide("AI-ready infrastructure") }}
+
+  <div class="ui very padded container">
+    <div class="ui vertically padded centered grid">
+
+      {% call homepage.feature_detail_item(header="llms.txt support", icon="fad fa-file-lines") %}
+        Serve <code>llms.txt</code> and <code>llms-full.txt</code> from your
+        docs domain. A standard index for any LLM.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Markdown content negotiation", icon="fad fa-arrow-down-up-across-line") %}
+        Request any page as Markdown using content negotiation.
+        Agents fetch clean text directly, without scraping your HTML.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Agent skills", icon="fad fa-user-robot") %}
+        <a href="https://github.com/readthedocs/skills">Skills</a> teach
+        Claude Code, Cursor, and other agents to use our API and write your
+        <code>.readthedocs.yaml</code>.
+      {% endcall %}
+
     </div>
   </div>
 </section>
