@@ -75,6 +75,7 @@
                   <span class="sub header">We manage building, hosting, authentication, search, and analytics for you</span>
                 </span>
               </a>
+
             </div>
           </div>
         </div>
@@ -399,6 +400,7 @@
 
     </div>
   </div>
+
 </section>
 
 {# Second CTA #}
@@ -426,39 +428,88 @@
   </div>
 </section>
 
-<section id="additional-features">
+<section id="ai">
 
-  {{ features_divide("Additional features") }}
+  {{ features_divide("AI-ready documentation") }}
 
-  <div class="ui very padded container" id="more">
-    <div class="ui vertically padded centered grid">
+  <div class="ui padded container">
+    <div class="ui centered grid">
+
+      {% call homepage.feature_detail_item(header="llms.txt support", icon="fad fa-file-lines") %}
+        Serve <code>llms.txt</code> and <code>llms-full.txt</code> from your
+        docs domain. A standard index for any LLM.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Markdown content negotiation", icon="fad fa-arrow-down-up-across-line") %}
+        Request any page as Markdown using content negotiation.
+        Agents fetch clean text directly, without scraping your HTML.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Agent skills", icon="fad fa-user-robot") %}
+        <a href="https://github.com/readthedocs/skills">Skills</a> teach
+        Claude Code, Cursor, and other agents to use our API and write your
+        <code>.readthedocs.yaml</code>.
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
+
+<section id="automation">
+
+  {{ features_divide("More build features") }}
+
+  <div class="ui padded container">
+    <div class="ui centered grid">
 
       {% call homepage.feature_detail_item(header="Automation rules", icon="fad fa-robot") %}
         Automatically increment your documentation versions, and rebuild on new version releases.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Subprojects", icon="fad fa-folder-tree") %}
-        Subprojects can share a search index and a custom domain, and can help logically group sets of multiple projects.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Environment variables", icon="fad fa-shield-keyhole") %}
         Use environment variables to provide secrets to your project's build commands.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
-        Avoid broken links by adding redirects for pages that have been moved or deleted.
+      {% call homepage.feature_detail_item(header="Notifications", icon="fad fa-envelope-dot") %}
+        Receive email notifications when a project build encounters an error.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Analytics", icon="fad fa-chart-column") %}
-        Track search query and documentation page traffic data with no additional services.
+    </div>
+  </div>
+</section>
+
+<section id="more-hosting">
+
+  {{ features_divide("More hosting features") }}
+
+  <div class="ui padded container">
+    <div class="ui centered grid">
+
+      {% call homepage.feature_detail_item(header="Subprojects", icon="fad fa-folder-tree") %}
+        Subprojects can share a search index and a custom domain, and can help logically group sets of multiple projects.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
+        Avoid broken links by adding redirects for pages that have been moved or deleted.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Webhooks", icon="fad fa-satellite-dish") %}
         Connect Read the Docs to other services by sending webhook events after each build.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Notifications", icon="fad fa-envelope-dot") %}
-        Receive email notifications when a project build encounters an error.
+    </div>
+  </div>
+</section>
+
+<section id="business">
+
+  {{ features_divide("Business &amp; team features") }}
+
+  <div class="ui padded container">
+    <div class="ui centered grid">
+
+      {% call homepage.feature_detail_item(header="Analytics", icon="fad fa-chart-column") %}
+        Track search query and documentation page traffic data with no additional services.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Audit log", icon="fad fa-clipboard-list", paid=True) %}
