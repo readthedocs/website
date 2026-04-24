@@ -15,6 +15,53 @@
   </a>
 {% endmacro %}
 
+{# Product menu for features, tools, and comparisons #}
+{% macro menu_product() %}
+
+  <div class="header">Product</div>
+  <a class="item" href="{{ SITEURL }}/features/">
+    <i class="fad fa-sparkles primary icon"></i>
+    Features
+  </a>
+  <a class="item" href="{{ SITEURL }}/docs-as-code/">
+    <i class="fad fa-code-branch primary icon"></i>
+    Docs as Code
+  </a>
+
+  <div class="header">Documentation tools</div>
+  <a class="item" href="{{ SITEURL }}/tools/sphinx/">
+    <i class="fad fa-terminal primary icon"></i>
+    Sphinx
+  </a>
+  <a class="item" href="{{ SITEURL }}/tools/mkdocs/">
+    <i class="fad fa-terminal primary icon"></i>
+    MkDocs
+  </a>
+  <a class="item" href="{{ SITEURL }}/tools/jupyter-book/">
+    <i class="fad fa-terminal primary icon"></i>
+    Jupyter Book
+  </a>
+  <a class="item" href="{{ SITEURL }}/tools/">
+    <i class="fad fa-ellipsis primary icon"></i>
+    All tools
+  </a>
+
+  <div class="header">Compare</div>
+  <a class="item" href="{{ SITEURL }}/comparisons/github-pages/">
+    <i class="fad fa-diagram-venn primary icon"></i>
+    vs. GitHub Pages
+  </a>
+  <a class="item" href="{{ SITEURL }}/comparisons/gitbook/">
+    <i class="fad fa-diagram-venn primary icon"></i>
+    vs. GitBook
+  </a>
+  <a class="item" href="{{ SITEURL }}/comparisons/">
+    <i class="fad fa-ellipsis primary icon"></i>
+    All comparisons
+  </a>
+
+{% endmacro %}
+
 {# Resources menu for secondary information and pages for search ranking #}
 {% macro menu_resources() %}
 
@@ -128,10 +175,7 @@
 
               {{ menu_log_in(with_signup=True) }}
               <div class="divider"></div>
-              <a class="item" href="{{ SITEURL }}/features/">
-                <i class="fad fa-arrow-progress primary icon"></i>
-                Product
-              </a>
+              {{ menu_product() }}
               <div class="divider"></div>
               {{ menu_pricing() }}
               <div class="divider"></div>
@@ -149,9 +193,18 @@
         <div class="twelve wide computer eleven wide tablet left aligned tablet only computer only column">
           <div class="ui big borderless secondary menu">
 
-            <a class="item" href="{{ SITEURL }}/features/">
+            <div
+                class="ui wide dropdown item"
+                data-module="dropdown"
+                data-module-on="hover">
+
               Product
-            </a>
+              <i class="dropdown fad fa-caret-down icon"></i>
+
+              <div class="menu">
+                {{ menu_product() }}
+              </div>
+            </div>
 
             <div
                 class="ui wide dropdown item"
