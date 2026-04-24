@@ -17,6 +17,7 @@
     {% block homepage_notification %}
     {% endblock homepage_notification %}
 
+    {# ── Hero ── #}
     {% block homepage_callout_wrapper %}
       <section>
         <div class="ui padded hero container">
@@ -66,50 +67,48 @@
       </section>
     {% endblock homepage_callout_wrapper %}
 
-    {# Audience paths #}
+    {# ── Audience paths ── #}
     {% block homepage_audience %}
       <section>
         <div class="ui very padded container">
           <div class="ui stackable two column centered padded grid">
             <div class="column">
-              <div class="ui very padded raised segment">
-                <h3 class="ui header">
-                  <i class="fad fa-building teal icon"></i>
-                  <span class="content">
-                    For engineering teams
-                    <span class="sub header">Private docs, SSO, audit logs, and a 30-day free trial.</span>
-                  </span>
+              <div class="ui very padded inverted teal raised segment">
+                <i class="fad fa-building big icon"></i>
+                <h3 class="ui inverted header">
+                  For engineering teams
+                  <span class="sub header">Private docs, SSO, audit logs, and a 30-day free trial.</span>
                 </h3>
                 <p>
                   Your engineering team shouldn&rsquo;t run a docs platform team.
                   We handle the infrastructure so your writers and developers
                   ship documentation, not pipelines.
                 </p>
-                <a class="ui teal button"
+                <a class="ui inverted basic button"
                   data-analytics="signup-modal-business"
                   onclick="jQuery('#signup-modal').modal('show');">
                   Start your free trial
+                  <i class="fad fa-arrow-right icon"></i>
                 </a>
               </div>
             </div>
             <div class="column">
-              <div class="ui very padded raised segment">
-                <h3 class="ui header">
-                  <i class="fad fa-heart violet icon"></i>
-                  <span class="content">
-                    For open source projects
-                    <span class="sub header">Free forever. No limits on builds or versions.</span>
-                  </span>
+              <div class="ui very padded inverted violet raised segment">
+                <i class="fad fa-heart big icon"></i>
+                <h3 class="ui inverted header">
+                  For open source projects
+                  <span class="sub header">Free forever. No limits on builds or versions.</span>
                 </h3>
                 <p>
                   We&rsquo;ve hosted open source documentation since 2010.
                   Flask, Jupyter, Godot, and thousands more trust us
                   to keep their docs online and searchable.
                 </p>
-                <a class="ui violet basic button"
+                <a class="ui inverted basic button"
                   data-analytics="signup-modal-community"
                   onclick="jQuery('#signup-modal').modal('show');">
                   Host your project
+                  <i class="fad fa-arrow-right icon"></i>
                 </a>
               </div>
             </div>
@@ -120,9 +119,13 @@
 
     {% include "includes/business-logos.html" %}
 
-    <div class="ui divider"></div>
+    <div class="ui container">
+      <div class="ui horizontal divider">
+        <i class="fad fa-layer-group icon"></i>
+      </div>
+    </div>
 
-    {# Narrative layer: outcomes, not features #}
+    {# ── Narrative highlights ── #}
     {% block homepage_highlight %}
       {% call marketing.highlight_list() %}
 
@@ -161,7 +164,61 @@
       {% endcall %}
     {% endblock homepage_highlight %}
 
-    {# AI / LLM position #}
+    {# ── Visual feature showcase with images ── #}
+    {% block homepage_showcase %}
+      <section>
+        <div class="ui very padded container">
+
+          <div class="ui vertically padded centered grid">
+
+            {% call basic.header_image(
+                header="Versioned docs that match your release cycle",
+                image=SITE_URL ~ "/images/docs-as-code/flyout-zoomed.png",
+                image_alt="Flyout showing versions of a documentation project",
+                use_large_image=False,
+                vertical_align="middle") %}
+              <p>
+                Users of your v1.x shouldn&rsquo;t be reading v2.0 docs.
+                We build every branch, every tag, and give each version its own URL.
+                A flyout menu lets readers switch between versions instantly.
+              </p>
+              <a class="ui basic primary button" href="/features/">
+                <i class="fad fa-sparkles icon"></i>
+                Learn about versioning
+              </a>
+            {% endcall %}
+
+          </div>
+
+          <div class="ui container">
+            <div class="ui divider"></div>
+          </div>
+
+          <div class="ui vertically padded centered grid">
+
+            {% call basic.header_image(
+                header="Review every change before it ships",
+                image=SITE_URL ~ "/images/docs-as-code/visual-diff.png",
+                image_alt="Visual diff between two versions",
+                use_large_image=False,
+                vertical_align="middle") %}
+              <p>
+                Open a pull request and we build a full preview of the docs, complete with a
+                visual diff so reviewers see exactly what readers will see. No guessing.
+              </p>
+              <a class="ui basic primary button" href="/features/">
+                <i class="fad fa-sparkles icon"></i>
+                Learn about PR previews
+              </a>
+            {% endcall %}
+
+          </div>
+
+        </div>
+      </section>
+    {% endblock homepage_showcase %}
+
+    {# ── AI / LLM position ── #}
     {% block homepage_ai_position %}
       <section id="homepage-ai">
         <div class="ui very padded container">
@@ -193,7 +250,7 @@
       </section>
     {% endblock homepage_ai_position %}
 
-    {# Trust signals #}
+    {# ── Trust signals ── #}
     {% block homepage_scale %}
       <section id="homepage-scale">
         <div class="ui inverted grey very padded segment">
@@ -239,7 +296,7 @@
       </section>
     {% endblock homepage_scale %}
 
-    {# Features — demoted to layer 3 in the hierarchy #}
+    {# ── Features grid ── #}
     {% block homepage_feature_detail %}
       <section id="features">
         <div class="ui very padded container">
@@ -294,10 +351,10 @@
     {# Try it out code block #}
     {% include "includes/try-it-out.html" %}
 
-    {# Sphinx user testimonials #}
+    {# Project showcase #}
     {% include "includes/users-sphinx.html" %}
 
-    {# Developer testimonials #}
+    {# ── Developer testimonials ── #}
     <section>
       <div class="ui very padded container">
         <div class="ui stackable equal width grid">
@@ -331,6 +388,7 @@
       </div>
     </section>
 
+    {# ── Bottom CTA ── #}
     {% block homepage_bottom_callout %}
     <section>
       <div class="ui very padded container">
