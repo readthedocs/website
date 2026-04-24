@@ -68,13 +68,12 @@
       {% call marketing.highlight_list() %}
 
         {% call marketing.highlight_item(
-            icon="white fa-user-robot",
+            icon="white fa-face-monocle",
             icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-            header="Automatic deploy previews",
+            header="Pull request previews with visual diff",
             color="grey") %}
           <p>
-            Preview your documentation on every pull request.
-            Never guess what you're shipping again.
+            See exactly what changed in the rendered documentation, not just the source.
           </p>
         {% endcall %}
 
@@ -122,9 +121,8 @@
               Flexible enough to work with any documentation tool.
             {% endcall %}
 
-            {% call homepage.feature_detail_item(header="Pull request previews", icon="fad fa-code-compare") %}
-              Preview each pull request before releasing any changes,
-              allowing for fast collaboration across your organization.
+            {% call homepage.feature_detail_item(header="Pull request previews with visual diff", icon="fad fa-code-compare") %}
+              See the rendered diff and files changed, posted in every GitHub and GitLab pull request.
             {% endcall %}
 
             {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}

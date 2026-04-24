@@ -309,12 +309,25 @@
           image_alt="Read the Docs pull request review checks in a GitHub pull request",
           icon=icon_3) %}
         {% markdown %}
-        Rebuild your documentation and preview changes in every pull request.
-        Share changes easily and help catch errors before shipping documentation updates.
+        Preview changes in [every pull request](https://docs.readthedocs.com/platform/stable/pull-requests.html).
+        Reviewers see the rendered result, not raw diffs.
 
-        Supported on **GitHub** and **GitLab** repositories.
+        Supported on **GitHub** and **GitLab**.
         {% endmarkdown %}
 
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Visual diff", icon="fad fa-face-monocle") %}
+        See rendered differences between your pull request and the live docs and
+        catch layout and formatting issues before they ship.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Files changed in your PR", icon="fad fa-file-pen") %}
+        Each pull request build comment lists the files changed, with links to the preview.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Build status checks", icon="fad fa-circle-check") %}
+        Documentation build status on every pull request, with warnings surfaced inline.
       {% endcall %}
 
       <div class="ui basic segment">
