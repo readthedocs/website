@@ -119,6 +119,33 @@
   </div>
 {% endmacro %}
 
+<section id="ai">
+
+  {{ features_divide("AI-ready infrastructure") }}
+
+  <div class="ui very padded container">
+    <div class="ui vertically padded centered grid">
+
+      {% call homepage.feature_detail_item(header="llms.txt support", icon="fad fa-file-lines") %}
+        Serve <code>llms.txt</code> and <code>llms-full.txt</code> from your
+        docs domain. A standard index for any LLM.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Markdown content negotiation", icon="fad fa-arrow-down-up-across-line") %}
+        Request any page as Markdown using content negotiation.
+        Agents fetch clean text directly, without scraping your HTML.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Agent skills", icon="fad fa-user-robot") %}
+        <a href="https://github.com/readthedocs/skills">Skills</a> teach
+        Claude Code, Cursor, and other agents to use our API and write your
+        <code>.readthedocs.yaml</code>.
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
+
 {{ features_divide() }}
 
 <section>
@@ -403,33 +430,6 @@
 
 </section>
 
-<section id="ai">
-
-  {{ features_divide("AI-ready infrastructure") }}
-
-  <div class="ui very padded container">
-    <div class="ui vertically padded centered grid">
-
-      {% call homepage.feature_detail_item(header="llms.txt support", icon="fad fa-file-lines") %}
-        Serve <code>llms.txt</code> and <code>llms-full.txt</code> from your
-        docs domain. A standard index for any LLM.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Markdown content negotiation", icon="fad fa-arrow-down-up-across-line") %}
-        Request any page as Markdown using content negotiation.
-        Agents fetch clean text directly, without scraping your HTML.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Agent skills", icon="fad fa-user-robot") %}
-        <a href="https://github.com/readthedocs/skills">Skills</a> teach
-        Claude Code, Cursor, and other agents to use our API and write your
-        <code>.readthedocs.yaml</code>.
-      {% endcall %}
-
-    </div>
-  </div>
-</section>
-
 {# Second CTA #}
 <section>
   <div class="ui padded container">
@@ -455,19 +455,15 @@
   </div>
 </section>
 
-<section id="additional-features">
+<section id="automation">
 
-  {{ features_divide("Additional features") }}
+  {{ features_divide("Automation &amp; configuration") }}
 
-  <div class="ui very padded container" id="more">
+  <div class="ui very padded container">
     <div class="ui vertically padded centered grid">
 
       {% call homepage.feature_detail_item(header="Automation rules", icon="fad fa-robot") %}
         Automatically increment your documentation versions, and rebuild on new version releases.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Subprojects", icon="fad fa-folder-tree") %}
-        Subprojects can share a search index and a custom domain, and can help logically group sets of multiple projects.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Environment variables", icon="fad fa-shield-keyhole") %}
@@ -478,16 +474,31 @@
         Avoid broken links by adding redirects for pages that have been moved or deleted.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Analytics", icon="fad fa-chart-column") %}
-        Track search query and documentation page traffic data with no additional services.
-      {% endcall %}
-
       {% call homepage.feature_detail_item(header="Webhooks", icon="fad fa-satellite-dish") %}
         Connect Read the Docs to other services by sending webhook events after each build.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Notifications", icon="fad fa-envelope-dot") %}
         Receive email notifications when a project build encounters an error.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Subprojects", icon="fad fa-folder-tree") %}
+        Subprojects can share a search index and a custom domain, and can help logically group sets of multiple projects.
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
+
+<section id="insights">
+
+  {{ features_divide("Insights &amp; management") }}
+
+  <div class="ui very padded container">
+    <div class="ui vertically padded centered grid">
+
+      {% call homepage.feature_detail_item(header="Analytics", icon="fad fa-chart-column") %}
+        Track search query and documentation page traffic data with no additional services.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Audit log", icon="fad fa-clipboard-list", paid=True) %}
