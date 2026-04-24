@@ -430,7 +430,7 @@
 
 <section id="ai">
 
-  {{ features_divide("AI-ready infrastructure") }}
+  {{ features_divide("AI-ready documentation") }}
 
   <div class="ui padded container">
     <div class="ui centered grid">
@@ -457,7 +457,7 @@
 
 <section id="automation">
 
-  {{ features_divide("Build process") }}
+  {{ features_divide("More build features") }}
 
   <div class="ui padded container">
     <div class="ui centered grid">
@@ -470,6 +470,29 @@
         Use environment variables to provide secrets to your project's build commands.
       {% endcall %}
 
+      {% call homepage.feature_detail_item(header="Notifications", icon="fad fa-envelope-dot") %}
+        Receive email notifications when a project build encounters an error.
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
+
+<section id="more-hosting">
+
+  {{ features_divide("More hosting features") }}
+
+  <div class="ui padded container">
+    <div class="ui centered grid">
+
+      {% call homepage.feature_detail_item(header="Subprojects", icon="fad fa-folder-tree") %}
+        Subprojects can share a search index and a custom domain, and can help logically group sets of multiple projects.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
+        Avoid broken links by adding redirects for pages that have been moved or deleted.
+      {% endcall %}
+
       {% call homepage.feature_detail_item(header="Webhooks", icon="fad fa-satellite-dish") %}
         Connect Read the Docs to other services by sending webhook events after each build.
       {% endcall %}
@@ -478,32 +501,9 @@
   </div>
 </section>
 
-<section id="management">
+<section id="business">
 
-  {{ features_divide("Hosting documentation") }}
-
-  <div class="ui padded container">
-    <div class="ui centered grid">
-
-      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
-        Avoid broken links by adding redirects for pages that have been moved or deleted.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Notifications", icon="fad fa-envelope-dot") %}
-        Receive email notifications when a project build encounters an error.
-      {% endcall %}
-
-      {% call homepage.feature_detail_item(header="Subprojects", icon="fad fa-folder-tree") %}
-        Subprojects can share a search index and a custom domain, and can help logically group sets of multiple projects.
-      {% endcall %}
-
-    </div>
-  </div>
-</section>
-
-<section id="insights">
-
-  {{ features_divide("Maintaining projects") }}
+  {{ features_divide("Business &amp; team features") }}
 
   <div class="ui padded container">
     <div class="ui centered grid">
