@@ -457,7 +457,7 @@
 
 <section id="automation">
 
-  {{ features_divide("Automation &amp; configuration") }}
+  {{ features_divide("Build process") }}
 
   <div class="ui very padded container">
     <div class="ui vertically padded centered grid">
@@ -470,12 +470,23 @@
         Use environment variables to provide secrets to your project's build commands.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
-        Avoid broken links by adding redirects for pages that have been moved or deleted.
-      {% endcall %}
-
       {% call homepage.feature_detail_item(header="Webhooks", icon="fad fa-satellite-dish") %}
         Connect Read the Docs to other services by sending webhook events after each build.
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
+
+<section id="management">
+
+  {{ features_divide("Hosting documentation") }}
+
+  <div class="ui very padded container">
+    <div class="ui vertically padded centered grid">
+
+      {% call homepage.feature_detail_item(header="Redirects", icon="fad fa-signs-post") %}
+        Avoid broken links by adding redirects for pages that have been moved or deleted.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Notifications", icon="fad fa-envelope-dot") %}
@@ -492,7 +503,7 @@
 
 <section id="insights">
 
-  {{ features_divide("Insights &amp; management") }}
+  {{ features_divide("Maintaining projects") }}
 
   <div class="ui very padded container">
     <div class="ui vertically padded centered grid">
