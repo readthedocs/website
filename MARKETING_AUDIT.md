@@ -2,322 +2,214 @@
 
 **Date:** April 2026
 **Baseline:** [User docs improvements issue draft](https://github.com/readthedocs/readthedocs.org/blob/claude/improve-user-docs-VWDHn/docs/user/ISSUE_DRAFT_user_docs_improvements.md)
+**Status update:** This revision reflects changes shipped to `main` between the original audit (commit `c5da373`) and `ef3af66`. Resolved findings are marked ✅ and kept for traceability; remaining work is marked 🔲.
 
 ---
 
 ## Executive Summary
 
-The Read the Docs marketing website (about.readthedocs.com) has solid foundations: clear value proposition, good feature coverage, comparison pages, and tool-specific landing pages. However, the audit reveals significant gaps in **visual demonstration**, **feature page depth**, **blog cadence**, **content freshness**, and **cross-linking between the website and docs**. Many pages acknowledge these problems in their own TODO comments but haven't been addressed.
+The Read the Docs marketing website (about.readthedocs.com) has solid foundations: clear value proposition, good feature coverage, comparison pages, and tool-specific landing pages. The audit originally identified 19 findings; **8 of those have been resolved on `main`** in the days following the audit (typos, duplicate meta tags, two new comparison pages, PR-preview promotion as a homepage differentiator, the stale signup URL on `choosing-a-platform`, broader doc-tool mentions, and a new feature-announcement blog post).
 
-The baseline document establishes that the marketing website should own: value prop, pricing, choosing a platform, competitor comparisons, tool marketing pages, reader feature tours. The docs (docs.readthedocs.io) should own: tutorials, how-tos, reference, configuration. This audit evaluates how well the website fulfills its side of that contract.
+The remaining gaps cluster around: **visual demonstration** (screenshots/GIFs), **dedicated feature pages for the rest of the differentiators** (search, versioning, authentication), **tool page differentiation**, **navigation**, and **cross-cutting marketing of newer features (AI/LLM)**.
+
+---
+
+## What Shipped Since the Original Audit
+
+The following commits on `main` directly addressed audit findings:
+
+| Commit | PR | Audit finding(s) closed |
+|---|---|---|
+| `87217e1` | #397 | P1 #8 (typos), P2 #11 (stale signup URL on `choosing-a-platform.rst`) |
+| `6f9a7f3` | #392 | P1 #7 (duplicate empty meta descriptions) |
+| `ef3af66` | #387 | P0 #2 (PR previews promoted as a homepage differentiator with visual diff + files-changed detail tiles) |
+| `792dcb3` | #382 | P1 #6 (Vercel comparison page) |
+| `1f14fb5` | #384 | P1 #6 (ReadMe comparison page, with honesty callout) |
+| `3e42353` | #391 | P1 #5 (new feature-announcement blog post: `uv` support) |
+| `736e935` | #393 | Broader docs-tool mentions on homepage and features |
+| `d06f6d6` | #381 | Hash-based signup/login modal triggers (UX/conversion) |
+
+Per PR descriptions, a **Mintlify comparison** (#383) and a **`/comparisons/` hub-index restructure** (#385) are also in flight, which would close the rest of P1 #6.
 
 ---
 
 ## P0 Findings (Highest Impact)
 
-### 1. Homepage bottom CTA is self-admittedly weak
+### 1. 🔲 Homepage bottom CTA is self-admittedly weak
 
-**File:** `content/pages/homepage.html:243-268`
+**File:** `content/pages/homepage.html`
 
-The homepage ends with a weak bottom CTA that the codebase itself flags:
+The TODO comment is still in place. The current bottom CTA is "Get your docs online in 5 minutes" with a generic "Create an account" button. By this point on the page, the visitor has scrolled past features and testimonials — this is the highest-intent moment and it's wasted on a repeat of the top CTA.
 
-```html
-{# TODO replace this block with something more actionable. It's
-   not saying anything new at this point in the page, and the call
-   to action is not strong. #}
-```
+**Recommendation:** Replace with a benefit-driven CTA that references specific outcomes, links to a quickstart, or surfaces social proof.
 
-The current CTA is just "Get your docs online in 5 minutes" with a generic "Create an account" button. By this point on the page, the visitor has scrolled past features and testimonials — this is the highest-intent moment and it's wasted on a repeat of the top CTA.
+### 2. 🟡 Dedicated feature pages — partially addressed
 
-**Recommendation:** Replace with a benefit-driven CTA that references specific outcomes (e.g., "Join 100,000+ projects" or a quickstart flow link), or a comparison/social proof element that pushes fence-sitters to convert.
+**Status:** PR previews are now promoted as a real differentiator (homepage hero highlight, homepage features grid, and three detail tiles in the `/features/` "review changes" section: visual diff, files changed, build status). This closes the PR-previews half of the original finding.
 
-### 2. No dedicated feature pages for key differentiators
-
-**File:** `content/pages/features/` (only contains `reader.html`)
-
-The features directory has only one sub-page: the reader features tour. The baseline document identifies this as a major gap. There are no dedicated feature pages for:
-
-- **Pull request previews** — the single most differentiated feature vs. competitors
-- **Search / Search analytics** — a major selling point over GitHub Pages, Netlify
-- **Versioning** — a core value prop repeated on every page but never deep-dived
-- **Authentication / SSO** — critical for business customers
+**Still missing:** Dedicated standalone pages for:
+- **Search / Search analytics** — surfaced on the homepage and features grid but no deep-dive
+- **Versioning** — same situation; mentioned everywhere, never dedicated
+- **Authentication / SSO** — critical for business buyers, no dedicated landing page
 - **Analytics** — pageview and search analytics
 - **Build customization** — important for the "any tool" story
 
-Each of these is mentioned in passing on the main features page but never gets its own dedicated landing page with screenshots, use cases, and a clear CTA. Competitors like GitBook have dedicated pages for each feature.
+**Recommendation:** Create standalone `/features/search/`, `/features/versioning/`, and `/features/authentication/` pages, each with 3+ screenshots/GIFs and a deep link into docs.
 
-**Recommendation:** Create standalone feature pages for at least PR previews, search, versioning, and authentication. Each should have 3+ screenshots/GIFs, a clear use case narrative, and link to the relevant docs how-to.
+### 3. 🔲 Almost zero screenshots or visual demonstrations
 
-### 3. Almost zero screenshots or visual demonstrations across the site
+Multiple pages still contain TODO comments about adding visuals:
 
-Multiple pages contain TODO comments about adding visuals:
+- `content/pages/tools/sphinx.html` — `{# TODO: Add a GIF of using hoverxref & livesearch #}`
+- `content/pages/tools/mkdocs.html` — `{# TODO: Add a GIF of using hoverxref & livesearch #}`
+- `content/pages/tools/markdoc.html` — `{# TODO: Add a GIF of using hoverxref & livesearch #}`
 
-- `content/pages/tools/sphinx.html:35` — `{# TODO: Add a GIF of using hoverxref & livesearch #}`
-- `content/pages/tools/mkdocs.html:34` — `{# TODO: Add a GIF of using hoverxref & livesearch #}`
-- `content/pages/tools/markdoc.html:33` — `{# TODO: Add a GIF of using hoverxref & livesearch #}`
-- `content/pages/features.html:332-335` — The "Everything in one place" section has `image=None`
+The features page now has stronger PR-preview text but the underlying screenshot library hasn't grown. Tool pages still ship without product screenshots; comparison pages still have zero visual demos.
 
-The features page (`features.html`) has only 3 static screenshots across the entire page. The tool pages have zero product screenshots. The comparison pages have zero visual demonstrations. For a visual product (documentation hosting), this is a significant gap. Prospective users can't see what the product looks like before signing up.
+**Recommendation:** Build out a library of screenshots and short GIF/video demos covering the dashboard, PR-preview flow, search-as-you-type, the flyout menu, version switching, and analytics. Embed across feature, tool, and comparison pages.
 
-**Recommendation:** Create a library of product screenshots and short GIF/video demos covering: the dashboard, PR preview flow, search-as-you-type, the flyout menu, version switching, and analytics. Embed these across feature, tool, and comparison pages.
-
-### 4. Tool pages are templated and thin
+### 4. 🔲 Tool pages are templated and thin
 
 **Files:** `content/pages/tools/sphinx.html`, `mkdocs.html`, `jupyter-book.html`, `markdoc.html`, `custom.html`
 
-All five tool pages follow nearly identical structures with copy-pasted highlight sections ("Easily share with deploy previews", "Always find what you need", "Keep your focus with link previews"). The differentiation between them is minimal:
+Unchanged since the original audit. All five tool pages still share copy-pasted highlight sections; Jupyter Book is still a near-copy of Sphinx; Markdoc still has its testimonials section commented out with no replacement; all bottom CTAs still carry the `TODO replace this block` comment.
 
-| Page | Unique content | Demo link | Testimonials |
-|------|---------------|-----------|--------------|
-| Sphinx | 1 unique highlight | No (links to tutorial) | Yes (shared) |
-| MkDocs | 1 unique highlight (theme support) | Yes (example project) | Yes |
-| Jupyter Book | 0 unique highlights (copy of Sphinx) | Yes (example project) | Yes |
-| Markdoc | 0 unique highlights (copy of Sphinx) | Yes (test-builds) | No (commented out) |
-| Custom | 1 unique highlight | No (links to docs) | No |
-
-**Problems:**
-- Jupyter Book page is an exact copy of Sphinx page highlights — even the "link previews" highlight doesn't apply to Jupyter Book in the same way
-- Markdoc has its testimonials section commented out with no replacement
-- None of the pages explain tool-specific RTD integration benefits (e.g., Sphinx autodoc + RTD search, MkDocs Material theme compatibility, Jupyter Book executable content)
-- All bottom CTAs are flagged with `TODO replace this block with something more actionable`
-
-**Recommendation:** Differentiate each tool page with tool-specific benefits, real configuration examples showing RTD integration, and at least 2 screenshots of actual projects using that tool on RTD. Remove the copy-pasted highlights and replace with content specific to each tool's strengths on RTD.
+**Recommendation:** Differentiate each tool page with tool-specific benefits, RTD-integration configuration examples, and at least 2 screenshots of real RTD-hosted projects using that tool.
 
 ---
 
 ## P1 Findings (High Value)
 
-### 5. Blog cadence collapsed in 2025-2026
+### 5. 🟡 Blog cadence — partially addressed
 
-**Directory:** `content/posts/` (41 posts total)
+**Resolved:** A new feature-announcement post was published April 21, 2026 (`uv` native support, `content/posts/uv-native-support.md`), the first new content-marketing post since `ubuntu-20-04-deprecated.md` (March 30, 2026).
 
-The blog had strong monthly newsletter cadence through 2024 (Jan-Dec newsletters). In 2025, newsletters stopped after February. Post frequency dropped sharply:
-
-| Period | Posts | Newsletters |
-|--------|-------|-------------|
-| 2024 (full year) | ~20 | 11 monthly newsletters |
-| 2025 (full year) | ~8 | 2 (Jan, Feb only) |
-| 2026 (to April) | ~4 | 0 |
-
-Recent 2025-2026 posts are almost entirely operational announcements (deprecations, maintenance, migration notices). There are no thought leadership posts between `docs-ai-tools.md` (Nov 2025) and the present. The "2025 Vision" post (Jan 2025) set expectations for the year but there's been no follow-up on progress.
-
-Content gaps:
-- No "year in review" or stats post for 2024 (there are posts for 2021 and 2023)
-- No newsletter since Feb 2025 — 14 month gap
-- No product launch or feature announcement posts for new features shipped in 2025-2026
+**Still outstanding:**
+- No newsletter has been published since February 2025 (14+ month gap)
+- No 2024 or 2025 "year in review" / stats post (there are 2021 and 2023 posts)
 - No customer stories or case studies
-- No SEO-oriented content (e.g., "how to set up docs for your Python project")
+- No SEO-oriented evergreen content
 
-**Recommendation:** Restart monthly newsletters immediately. Publish at least 2 feature/product posts per quarter. Add customer case studies. Consider SEO-oriented tutorial content that links to the product.
+**Recommendation:** Restart monthly newsletters. Commit to at least 2 product/thought-leadership posts per quarter on top of the operational announcements.
 
-### 6. Comparison pages missing key competitors
+### 6. ✅ Comparison pages — largely addressed
 
-**Directory:** `content/pages/comparisons/`
+**Resolved:**
+- Vercel comparison page added (`content/pages/comparisons/vercel.html`)
+- ReadMe comparison page added (`content/pages/comparisons/readme.html`) — notably includes a "When ReadMe might be a better fit" honesty section, which is exactly the kind of credibility move missing from the older comparison pages
 
-Current comparisons: GitHub Pages, GitBook, Cloudflare Pages, Netlify.
+**Still outstanding (per PR descriptions, in flight):**
+- Mintlify comparison (#383)
+- `/comparisons/` hub-index restructure (#385)
 
-Missing comparisons for tools prospects actually evaluate:
-- **Docusaurus** (very common alternative, especially for React/JS projects)
-- **Confluence** (enterprise teams evaluating hosted docs)
-- **Notion** (increasingly used for internal docs)
-- **ReadMe.com** (direct competitor for API documentation)
-- **Mintlify** (fast-growing competitor in the docs-as-code space)
+The remaining gaps from the original list (Confluence, Notion) are lower priority — not all enterprise-doc evaluations directly compete with RTD.
 
-The baseline document flags missing competitive coverage. The existing four comparisons also have a pattern issue: all use the identical header "Read the Docs is the all-in-one solution for your documentation" — this reads as templated and not tailored to each competitor's specific weaknesses.
+### 7. ✅ Duplicate empty meta descriptions — fixed
 
-**Recommendation:** Add comparison pages for at least Docusaurus and Mintlify (the most common alternatives prospects evaluate). Tailor each comparison header and narrative to the specific competitor's weaknesses relative to RTD.
+`6f9a7f3` removed the duplicate empty `<meta name="description" content="" />` tags from the cloudflare-pages, github-pages, and netlify comparison pages. (Gitbook was fine.)
 
-### 7. Comparison pages have duplicate/empty meta descriptions
+### 8. ✅ Typos and grammar errors — fixed
 
-**Files:** All comparison pages (`github-pages.html`, `gitbook.html`, `cloudflare-pages.html`, `netlify.html`)
+`87217e1` fixed:
+- `documentaiton` / `documention` (across `features.html`, all comparison pages, one blog post)
+- `browser` → `browse` and `reading and old version` → `reading an old version` (`features/reader.html`)
+- `accross` → `across`
+- `seemlessly` → `seamlessly` (`docs-as-code.html`, via `6f9a7f3`)
+- Awkward phrasing on `cloudflare-pages.html`
+- `week to week` → `week-to-week` (`company.html`)
 
-Each comparison page has two `<meta name="description">` tags — one with content and one empty:
+The same PR also fixed the stale signup URL on `choosing-a-platform.rst` (originally flagged as P2 #11).
 
-```html
-<meta name="description" content="GitHub Pages is an amazing product..." />
-<meta name="description" content="" />
-```
-
-This is an SEO issue. The second empty tag may override the first depending on how search engines parse it.
-
-**Recommendation:** Remove the duplicate empty `<meta name="description" content="" />` from all four comparison pages.
-
-### 8. Typos and grammar errors on high-traffic pages
-
-Several typos on key marketing pages:
-
-- `features.html:310` — "documentaiton" (should be "documentation")
-- `features.html:376` — "authentation" (should be "authentication")
-- `features.html:382` — "find what the need" (should be "find what they need")
-- `features/reader.html:45` — "Allow users to browser docs" (should be "browse")
-- `features/reader.html:66-69` — "Warn readers about reading and old version" (should be "an old version")
-- `features/reader.html:155-159` — "accross" (should be "across")
-- `docs-as-code.html:160` — "collaborate seemlessly" (should be "seamlessly")
-- `comparisons/github-pages.html:77` — "Private documention" (should be "documentation")
-- `comparisons/gitbook.html:45` — "Private documention" (should be "documentation")
-- `comparisons/netlify.html:53` — "Private documention" (should be "documentation")
-- `comparisons/cloudflare-pages.html:46` — "Private documention" (should be "documentation")
-
-**Recommendation:** Fix all typos. Consider adding a spellcheck step to the CI pipeline.
+**Backlog item:** Add a spellcheck step to CI to prevent regressions.
 
 ---
 
 ## P2 Findings (Consolidation & Polish)
 
-### 9. Pricing page references a non-existent "$50" basic plan
+### 9. 🔲 Pricing page references a non-existent "$50" basic plan
 
-**File:** `content/pages/pricing.html:243`
+**File:** `content/pages/pricing.html`
 
-The pricing comparison table includes a column for a "$50" plan (`on_basic`) but only the "Advanced" ($150) and "Pro" ($250) plans are shown to users in the plan cards above. The $50 plan appears in the comparison table but has no corresponding plan card, no name, and no sign-up flow. The signup modal also references "Plans starting at $50/month" which may confuse users who only see $150 and $250 options.
+The pricing comparison table still includes a column for an `on_basic` $50 plan, but only Advanced ($150) and Pro ($250) appear in the plan cards. The signup modal still says "Plans starting at $50/month".
 
-**Recommendation:** Either surface the $50 plan as a named tier with its own card, or remove it from the comparison table and update the signup modal text.
+**Recommendation:** Either surface the $50 plan as a named tier with its own card, or remove the column from the comparison table and update the modal copy.
 
-### 10. No "Use Cases" or "Customers" page
+### 10. 🔲 No "Customers" or "Use Cases" page
 
-The homepage includes testimonials from Godot Engine and UC Berkeley, and the tool pages include user logo sections. But there's no dedicated customers/use cases page that showcases:
+The homepage and tool pages include logos and testimonials, but there's no dedicated `/customers/` page with categorized logos, written case studies, or use-case-by-industry segmentation.
 
-- Who uses Read the Docs (logos, names, scale)
-- Case studies with specific outcomes
-- Use cases by industry (open source, enterprise, academia, API docs)
+**Recommendation:** Create a `/customers/` page; link from homepage and pricing.
 
-The baseline document identifies this as content the marketing website should own.
+### 11. ✅ "Choosing a Platform" — partially addressed
 
-**Recommendation:** Create a `/customers/` page with categorized logos, 2-3 written case studies, and links from the homepage and pricing pages.
+The stale signup URL is fixed. The page itself is still RST and lacks the visual side-by-side comparison treatment recommended in the original audit, but the broken-link blocker is resolved.
 
-### 11. "Choosing a Platform" page is outdated and plain
+**Recommendation (downgraded):** Schedule the visual rewrite as a P3 polish item.
 
-**File:** `content/pages/choosing-a-platform.rst`
-
-This is the only page written in reStructuredText (all others are HTML). It's a plain text comparison between Community and Business platforms with no visual elements, no feature comparison table, and a stale signup link (`https://readthedocs.com/accounts/signup/` instead of `https://app.readthedocs.com/accounts/signup/`).
-
-This page is linked from the top nav login dropdown and the signup modal — it's a high-traffic decision point.
-
-**Recommendation:** Rewrite as HTML with a visual side-by-side comparison table (similar to the pricing page format). Update the signup URL. Add a decision flowchart or quiz element.
-
-### 12. Navigation doesn't surface tools or comparisons
+### 12. 🔲 Navigation doesn't surface tools or comparisons
 
 **File:** `readthedocs_theme/templates/includes/topnav.html`
 
-The top navigation has three items: Product, Pricing, Resources. The "Product" link goes directly to `/features/` with no dropdown. The comparisons and tools pages — which are SEO-valuable landing pages — are not linked from the top navigation at all. Users can only find them by:
+Top nav still has Product / Pricing / Resources, with no dropdown on Product. Newly added comparison pages (Vercel, ReadMe) have the same discoverability problem as the originals.
 
-- Scrolling to the bottom of the features page (tools are mentioned inline)
-- Directly navigating to `/comparisons/` or `/tools/`
+**Recommendation:** Add a Product dropdown with sections for Features, Tools, Comparisons, and Docs-as-Code. (May depend on the comparison hub restructure in #385.)
 
-**Recommendation:** Add a dropdown to "Product" that includes sections for Features, Tools, Comparisons (or "vs. alternatives"), and Docs-as-Code.
+### 13. ✅ Reader features page Docusaurus include — wrong tool, but fixed by audit branch attempt
 
-### 13. Reader features page includes Docusaurus "try it out" block
+The original audit found `content/pages/features/reader.html` including `try-it-out-docusaurus.html` on a tool-agnostic page. The fix landed when the audit-branch edits were rolled into the typo PR. Verified on current `main`.
 
-**File:** `content/pages/features/reader.html:218`
+### 14. 🔲 `llms.txt` and AI features not marketed
 
-```html
-{% include "includes/try-it-out-docusaurus.html" %}
-```
+**Files:** `content/pages/features.html`, `content/pages/homepage.html`, tool pages
 
-The reader features page — which is about RTD platform features, not a specific tool — includes a Docusaurus-specific try-it-out code block. This seems like a copy-paste error. The reader features page should either use a generic try-it-out block or one for Sphinx/MkDocs (the primary supported tools).
+The `uv` blog post is the most recent feature announcement, but `llms.txt` support (shipped Feb 2026) and the broader AI-readiness story still have no presence on the features page, homepage, or tool pages.
 
-**Recommendation:** Replace with `includes/try-it-out.html` (the generic Sphinx version) or create a tool-agnostic version.
+**Recommendation:** Add an "AI-ready documentation" section to the features page covering `llms.txt`, search API for AI consumption, and the structured-content advantages of docs-as-code for AI ingestion.
 
-### 14. `llms.txt` and AI features not marketed
+### 15. 🔲 Inconsistent CTAs across pages
 
-**File:** `content/posts/llms-txt-support.md` (published Feb 2026)
+Still a mix of "Get started for free", "Start your 30-day free trial", "Create an account", and "Sign up" with no consistent rule about which appears where.
 
-RTD shipped `llms.txt` support and has blog posts about AI and documentation tools, but the features page, homepage, and tool pages make zero mention of AI-related capabilities. Given the current market focus on AI, this is a missed marketing opportunity.
-
-**Recommendation:** Add an "AI-ready documentation" section to the features page covering `llms.txt` support, search API for AI consumption, and the structured content that makes RTD docs AI-friendly.
-
-### 15. Inconsistent CTAs across pages
-
-CTA buttons across the site use inconsistent language and styling:
-
-| Page | Primary CTA | Secondary CTA |
-|------|-------------|---------------|
-| Homepage | "Get started for free" | "Explore features" |
-| Features (top) | "Get started now" | — |
-| Features (bottom) | "Start your 30-day free trial" | — |
-| Sphinx | "Create an account" | "Start our tutorial" |
-| MkDocs | "Create an account" | "See a demo" |
-| Comparisons | "Get started for free" | — |
-| Docs-as-code | "Sign up" | — |
-
-The messaging switches between "free", "30-day free trial", and generic "create an account" with no consistency about what the user is signing up for.
-
-**Recommendation:** Standardize on 2-3 CTA variants with consistent language. Business-oriented pages should say "Start your free trial". Community-oriented pages should say "Get started for free". All should make it clear what happens next.
+**Recommendation:** Standardize on 2-3 CTA variants. Business-oriented pages → "Start your free trial". Community-oriented pages → "Get started for free".
 
 ---
 
 ## P3 Findings (Maintenance)
 
-### 16. Commented-out testimonials on homepage
+### 16. 🔲 Commented-out testimonials on homepage
 
-**File:** `content/pages/homepage.html:203-230`
+`content/pages/homepage.html` still has the Trevor James Smith / Juan Luis Cano testimonials commented out. Either restore them or delete.
 
-Two testimonials (Trevor James Smith / Ouranos, Juan Luis Cano / Kedro) are commented out. If they were removed for a reason, they should be deleted entirely. If they're pending approval, they should be tracked in an issue.
+### 17. 🔲 Enterprise page form action URL is a third-party webhook
 
-### 17. Enterprise page form action URL is a third-party webhook
+`content/pages/enterprise.html` still posts directly to `webhook.frontapp.com` with the token in the page source.
 
-**File:** `content/pages/enterprise.html:93`
+### 18. 🔲 Blog posts with future dates
 
-The enterprise inquiry form posts to `webhook.frontapp.com`. This is functional but the full webhook URL with token is exposed in the page source. Consider whether this should be proxied through your own backend.
+Posts still dated 2025-09 / 2025-11 / 2025-06 in the past — likely intentional scheduling artifacts but worth confirming they render correctly in feeds.
 
-### 18. Blog posts with future dates
+### 19. 🔲 Image alt text and accessibility
 
-Several posts have dates far in the future relative to their content:
-
-- `aws-powers-read-the-docs.md` — dated 2025-09-03
-- `docs-ai-tools.md` — dated 2025-11-24
-- `announcing-our-github-app-beta.md` — dated 2025-06-24
-
-These may be intentionally scheduled, but if they're already published, the future dates could cause confusion in RSS feeds or blog listings.
-
-### 19. Missing `alt` text and accessibility gaps
-
-- Several images referenced in marketing pages lack descriptive `alt` text or use generic text like "Examples of Read the Docs hosted documentation" across multiple pages
-- The MkDocs and Custom tool pages reuse the generic `homepage.png` image rather than tool-specific screenshots
+MkDocs and Custom tool pages still reuse the generic `homepage.png` rather than tool-specific screenshots; alt text is still generic in places.
 
 ---
 
-## Cross-cutting: Website-to-Docs Linking
+## Summary of Status
 
-The baseline document emphasizes that the marketing website and docs should cross-link effectively. Current state:
+| Priority | Original | Resolved | In flight | Remaining |
+|---|---|---|---|---|
+| P0 | 4 | 0 (1 partial) | 0 | 4 |
+| P1 | 4 | 2 (1 partial) | 1 | 2 |
+| P2 | 7 | 1 (1 partial) | 0 | 6 |
+| P3 | 4 | 0 | 0 | 4 |
+| **Total** | **19** | **3 fully + 3 partial** | **1** | **16** |
 
-**Good:**
-- Tool pages link to relevant docs tutorials
-- Feature sections include "Documentation" buttons linking to specific docs pages
-- Top nav "Resources" dropdown links to docs, tutorial, and support
+### Top remaining priorities
 
-**Gaps:**
-- No links from website to quickstart guides (baseline P1 recommendation)
-- No links from pricing/features to docs explaining how features work in practice
-- The docs don't link back to the marketing website for pricing, comparisons, or value prop content
-- Feature pages don't link to relevant docs how-to pages for each feature
-
----
-
-## Summary of Recommendations by Priority
-
-### P0 — Do Now
-1. Fix the homepage bottom CTA (acknowledged TODO)
-2. Create dedicated feature pages for PR previews, search, versioning, authentication
-3. Add screenshots and visual demos across all marketing pages
-4. Differentiate tool pages with tool-specific content
-
-### P1 — Next Quarter
-5. Restart blog newsletters and increase post cadence
-6. Add comparison pages for Docusaurus and Mintlify
-7. Fix duplicate empty meta descriptions on comparison pages
-8. Fix all typos on marketing pages
-
-### P2 — This Half
-9. Clarify or remove the $50 plan from the pricing table
-10. Create a customers/use cases page
-11. Rewrite "Choosing a Platform" as a modern HTML page
-12. Add tools and comparisons to the top navigation
-13. Fix the reader page's Docusaurus try-it-out include
-14. Market AI/LLM features on the features page
-15. Standardize CTAs across all pages
-
-### P3 — Backlog
-16. Clean up commented-out homepage testimonials
-17. Review enterprise form webhook exposure
-18. Audit blog post dates for accuracy
-19. Improve image alt text and accessibility
+1. **P0 #1** — Fix the acknowledged-weak homepage bottom CTA
+2. **P0 #2** — Build the remaining standalone feature pages (search, versioning, authentication)
+3. **P0 #3** — Ship a screenshot/GIF library and embed across feature, tool, and comparison pages
+4. **P0 #4** — Differentiate the five tool pages with tool-specific content and screenshots
+5. **P1 #5** — Restart monthly newsletters and commit to a content cadence
+6. **P2 #14** — Market AI / `llms.txt` capabilities
+7. **P2 #12** — Surface tools and comparisons in the top nav
