@@ -3,29 +3,46 @@
 <html>
   <head>
     <title>Read the Docs vs. GitBook comparison</title>
-    <meta name="description" content="For technical teams looking for an open source alternative to GitBook with more flexibility, Read the Docs is the perfect solution." />
+    <meta name="description" content="GitBook is a polished collaborative documentation platform. Read the Docs is the open alternative for technical teams who write docs as code in the tools they already use." />
     <meta name="template" content="page" />
     <meta name="slug" content="comparisons/gitbook" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="" />
   </head>
   <body>
 
   {% import "partials/basic.html" as basic %}
   {% import "partials/technical.html" as technical %}
-  {% import "partials/homepage.html" as homepage %}
   {% import "partials/comparisons.html" as comparison %}
+
+{#
+  Framing notes — GitBook is a direct doc-platform competitor, so this page
+  doesn't lean on "we're purpose-built for docs." The core framing differences
+  are:
+
+    1. Tool freedom: Sphinx, MkDocs, Docusaurus, Jupyter Book — vs. GitBook's
+       proprietary block-based editor as the primary authoring surface.
+    2. Docs as code: docs in your repo, reviewed in pull requests, versioned
+       with the code they describe.
+    3. Open source: the Read the Docs platform is open, content is portable,
+       Community edition is self-hostable.
+    4. OSS-friendly economics: free Community tier, no per-seat pricing.
+#}
 
   <section>
     {% call basic.header_lead(
-    header="Read the Docs is the <em><strong>all-in-one</strong></em> solution for documentation")
+    header="Read the Docs is the <em><strong>open</strong></em> platform for technical documentation")
     %}
     <p>
-      GitBook is great. However, it lacks many features we consider <em>essential</em> for technical teams.
-      <strong>Read the Docs</strong> is <em>the</em> perfect solution for software documentation.
+      GitBook is a proprietary documentation platform built around a hosted block-based editor.
+      If your docs team prefers editing in a WYSIWYG instead of a Git workflow, GitBook has a focused story.
     </p>
     <p>
-      Let's compare it to know what you can expect when deploying your project's documentation to Read the Docs.
+      Read the Docs takes a different approach: <strong>your tools, your content, your terms</strong>.
+      Write in <strong>any doc tool</strong> your team already uses, versioned in the same Git repository as your code and reviewed in pull requests like any other change.
+      Publish on a platform trusted by engineering teams at <strong>AMD</strong> and <strong>Canonical</strong>, and by open source projects like <strong>Jupyter</strong> and <strong>Flask</strong> &mdash; over 15 years of reliable documentation hosting.
+    </p>
+    <p>
+      No proprietary editor. No per-seat pricing. <strong>Business and Enterprise plans</strong> for commercial teams, with a free Community tier for open source.
     </p>
     {% endcall %}
   </section>
@@ -40,6 +57,7 @@
     {{ comparison.feature_row("Search", "Always find what you are looking for", "fa-magnifying-glass", on_other=True) }}
     {{ comparison.feature_row("Multiple versions", "Publish multiple versions of your documentation", "fa-books", on_other=True) }}
     {{ comparison.feature_row("Page analytics", "Understand how people browse your documentation", "fa-chart-mixed", on_other=True) }}
+    {{ comparison.feature_row("Search analytics", "Explore what people search for in your docs", "fa-chart-simple", on_other=True) }}
     {{ comparison.feature_row("Redirects", "Redirect users to the right page", "fa-arrows-turn-right", on_other=True) }}
     {{ comparison.feature_row("Translations", "Serve translated versions of your docs", "fa-language", on_other=True) }}
     {{ comparison.feature_row("Private documentation", "Give access only to trusted people", "fa-lock", on_other=True) }}
@@ -48,7 +66,6 @@
     {{ comparison.feature_row("Visual diff on deploy previews", "Visualize differences directly on the rendered version", "fa-face-monocle") }}
     {{ comparison.feature_row("Custom 404 pages", "Style 404 pages with context-related information", "fa-xmark") }}
     {{ comparison.feature_row("Custom \"robots.txt\"", "Improve your SEO by telling bots how to explore your site", "fa-robot") }}
-    {{ comparison.feature_row("Search analytics", "Explore what people search for in your docs", "fa-chart-simple") }}
     {{ comparison.feature_row("Open Source", "No lock in and contribute back", "fa-brands fa-osi") }}
     {{ comparison.feature_row("Documentation tool agnostic", "Use the documentation tool your team prefers (Sphinx, MkDocs, Docusaurus, etc)", "fa-book") }}
     {{ comparison.feature_row("Custom theme", "Style the documentation as you like", "fa-pen-swirl") }}
@@ -68,13 +85,12 @@
           <div class="column twelve wide computer sixteen wide tablet">
             <div class="ui basic vertical huge segment">
               <h2 class="ui center aligned header">
-                Still not convinced? Try it yourself  <i class="fad fa-rocket icon"></i>
+                Keep your tools. Keep your content. <i class="fad fa-rocket icon"></i>
               </h2>
 
               <p>
-                GitBook is a great product, but gives few options because of their <strong>closed source software solution</strong>.
-                For publishing <em>great documentation</em> without vendor lock in and features that your readers will love,
-                Read the Docs is the all-in-one solution that provides everything you need out of the box, from analytics to SSO.
+                Write in the doc tool your team already uses, keep your content in Git,
+                and publish on an open platform with no vendor lock-in.
               </p>
 
               <p>
