@@ -182,14 +182,11 @@
             <div class="right menu">
 
               <div class="item">
-                <div class="ui floating top right pointing dropdown" data-module="dropdown" data-action="select" data-display-type="block">
-                  <a class="ui">
-                    Log in
-                  </a>
-                  <div class="menu">
-                    {{ menu_log_in(with_signup=False) }}
-                  </div>
-                </div>
+                <a class="ui"
+                   data-analytics="login-modal"
+                   onclick="jQuery('#login-modal').modal('show');">
+                  Log in
+                </a>
               </div>
 
               <div class="item">
@@ -313,3 +310,83 @@
     </div>
   </div>
 {% endblock signup_modal %}
+
+{% block login_modal %}
+<div class="ui modal"
+       id="login-modal"
+       data-module="modal"
+       data-inverted="true">
+    <div class="header">Log in to Read the Docs</div>
+    <div class="content">
+      <div class="ui center aligned basic fitted segment">
+        <p>
+          Log in to the site where your account is registered.
+        </p>
+      </div>
+
+      <div class="ui stacking centered grid">
+        <div class="stretched row">
+
+          <div class="seven wide computer sixteen wide tablet column">
+            <div class="ui raised segment">
+              <div class="ui header">
+                <i class="fad fa-people-group primary icon"></i>
+                <div class="content">
+                  Read the Docs Community
+                  <div class="sub header">
+                    For open-source projects
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui center aligned basic fitted segment">
+                <p>
+                  <code>https://readthedocs.org</code>
+                </p>
+
+                <a class="ui primary center aligned button"
+                  data-analytics="community-login"
+                   href="https://app.readthedocs.org/dashboard/">
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="seven wide computer sixteen wide tablet column">
+            <div class="ui raised segment">
+              <div class="ui header">
+                <i class="fad fa-building secondary icon"></i>
+                <div class="content">
+                  Read the Docs Business
+                  <div class="sub header">
+                    For commercial projects
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui center aligned basic fitted segment">
+                <p>
+                  <code>https://readthedocs.com</code>
+                </p>
+
+                <a class="ui primary center aligned button"
+                  data-analytics="commercial-login"
+                   href="https://app.readthedocs.com/dashboard/">
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="actions">
+      <a href="{{ SITE_URL }}/choosing-a-platform/" class="ui cancel button"><i class="fad fa-circle-question grey icon" aria-hidden="true"></i>Not sure which site?</a>
+      <a class="ui cancel button" data-analytics="login-to-signup" onclick="jQuery('#login-modal').modal('hide'); jQuery('#signup-modal').modal('show');"><i class="fad fa-plus grey icon" aria-hidden="true"></i>Don't have an account? Sign up</a>
+    </div>
+  </div>
+{% endblock login_modal %}
