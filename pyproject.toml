@@ -11,7 +11,7 @@ dependencies = [
   "pelican ==4.5.0",
   "Markdown ==3.2",
   "pelican-related-posts ==1.0.0",
-  "pre-commit ==2.16.0",
+  "pre-commit >=3.2",
   "pelican-jinja2content >=1.0.1",
   "jinja-markdown >=1.210911"
 ]
