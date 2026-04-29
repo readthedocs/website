@@ -1,3 +1,13 @@
+// Sticky on the <th> cells (not <thead>) so the table layout is preserved
+// while pinned -- a position:fixed/sticky <thead> detaches from the table and
+// collapses columns to their declared "wide" widths, shifting the logos.
+#feature-table thead.sticky-header th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+
 /* Pricing page - tables
  * TODO replace this with native SUI, these aren't needed. */
 #pricing #tables {
