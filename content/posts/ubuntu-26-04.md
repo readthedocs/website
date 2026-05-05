@@ -1,5 +1,5 @@
 title: Ubuntu 26.04 LTS available
-date: 2026-03-25
+date: 2026-05-05
 description: The latest Ubuntu 26.04 LTS version is available to build documentation projects on Read the Docs.
 category: Changelog
 tags: builders, docker, images
