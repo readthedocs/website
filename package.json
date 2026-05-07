@@ -91,8 +91,5 @@
         }
       }
     ]
-  },
-  "dependencies": {
-    "fomantic-ui-less": "^2.9.4"
   }
 }
