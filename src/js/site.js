@@ -178,7 +178,7 @@ jquery.fn.plausible = function () {
           });
           setTimeout(() => {
             console.debug(
-              "Plausible: didn't receive response, continuing anyways"
+              "Plausible: didn't receive response, continuing anyways",
             );
             redirect_link();
           }, 150);

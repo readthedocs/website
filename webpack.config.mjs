@@ -134,10 +134,7 @@ export default (env, argv) => {
         exec: "uv run pelican content",
         script: "",
         args: [],
-        watch: [
-          path.resolve("readthedocs_theme"),
-          path.resolve("content"),
-        ],
+        watch: [path.resolve("readthedocs_theme"), path.resolve("content")],
         ext: "md,rst,html",
         delay: "1000",
         verbose: true,

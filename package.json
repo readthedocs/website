@@ -12,8 +12,8 @@
     "build-html": "npm run clean-html && uv run pelican content",
     "dev": "webpack-dev-server --mode=development",
     "livereload": "npm run dev",
-    "lint": "prettier --check 'src/**' '*.js' '*.json'",
-    "format": "prettier --write 'src/**' '*.js' '*.json'",
+    "lint": "prettier --check 'src/**' '*.mjs' '*.json'",
+    "format": "prettier --write 'src/**' '*.mjs' '*.json'",
     "validate": "npm run build-html && html-validate --formatter codeframe output/",
     "test": "jest --silent false src/js/tests/",
     "checks": "npm run lint && npm run test && npm run validate"
