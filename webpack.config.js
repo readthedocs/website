@@ -21,6 +21,7 @@ module.exports = (env, argv) => {
       chunkFilename: "js/[name].js?[hash]",
       publicPath: "./",
       path: path.join(__dirname, "readthedocs_theme", "static"),
+      hashFunction: "sha512",
     },
     optimization: {
       minimize: is_production,

@@ -29,8 +29,7 @@
   },
   "homepage": "https://github.com/readthedocs/website#readme",
   "engines": {
-    "node": "<15.0.0",
-    "npm": "<7.0.0"
+    "node": ">22.0.0"
   },
   "dependencies": {
     "prettier": "^2.5.0"
@@ -62,7 +61,7 @@
     "sanitize-html": "^1.23.0",
     "style-loader": "^0.23.1",
     "url-loader": "^0.6.2",
-    "webpack": "^4.43.0",
+    "webpack": "^4.47.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.1",
