@@ -31,7 +31,7 @@ a rule can also match against:
 
 - **Changed files** — using `fnmatch` patterns (e.g. `docs/*.rst`, `.readthedocs.yaml`).
 - **Commit message** — using a Python regular expression (e.g. `^docs:`).
-- **Pull request labels** — using a Python regular expression (e.g. `^docs|build$`).
+- **Pull request labels** — using a Python regular expression (e.g. `^(docs|build)$`).
 
 All the configured filters must match for the rule to fire.
 
@@ -69,7 +69,7 @@ You will simply find new fields available the next time you edit them.
 
 ## Try it out
 
-Head over to your project's :guilabel:`Settings → Automation Rules` page to take it for a spin,
+Head over to your project's **Settings → Automation Rules** page to take it for a spin,
 and check our [Automation Rules documentation](https://docs.readthedocs.com/platform/stable/automation-rules.html)
 for the full reference and more examples.
 
