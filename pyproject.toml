@@ -11,11 +11,15 @@ dependencies = [
   "pelican ==4.5.0",
   "Markdown ==3.2",
   "pelican-related-posts ==1.0.0",
-  "pre-commit ==2.16.0",
   "pelican-jinja2content >=1.0.1",
-  "jinja-markdown >=1.210911"
+  "jinja-markdown >=1.210911",
 ]
 
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.0",
+]
