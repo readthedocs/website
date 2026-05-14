@@ -1,269 +1,272 @@
 <html>
-  <head>
-    <meta name="title" content="Full featured documentation deployment platform" />
-    <meta name="description" content="Read the Docs is a documentation building and hosting platform aimed at helping developers creating documentation from code with versioned documentation, integrated search, pull request previews and more." />
-    <meta name="template" content="page" />
-    <meta name="save_as" content="index.html" />
-    <meta name="slug" content="homepage" />
-    <meta name="status" content="hidden" />
-  </head>
-  <body>
 
-    {% import "partials/basic.html" as basic %}
-    {% import "partials/homepage.html" as homepage %}
-    {% import "partials/marketing.html" as marketing %}
-    {% import "partials/technical.html" as technical %}
+<head>
+  <meta name="title" content="Full featured documentation deployment platform" />
+  <meta name="description"
+    content="Read the Docs is a documentation building and hosting platform aimed at helping developers creating documentation from code with versioned documentation, integrated search, pull request previews and more." />
+  <meta name="template" content="page" />
+  <meta name="save_as" content="index.html" />
+  <meta name="slug" content="homepage">
+  <meta name="status" content="hidden" />
+</head>
 
-    {% block homepage_notification %}
-    {% endblock homepage_notification %}
+<body>
 
-    {% block homepage_callout_wrapper %}
-      <section>
-        <div class="ui padded hero container">
-          <div class="ui relaxed grid centered middle aligned">
-            <div class="row">
+  {% import "partials/basic.html" as basic %}
+  {% import "partials/homepage.html" as homepage %}
+  {% import "partials/marketing.html" as marketing %}
+  {% import "partials/technical.html" as technical %}
 
-                <div class="seven wide computer twelve wide tablet sixteen wide mobile column">
-                {% block homepage_callout %}
-                  <div class="ui large left aligned basic vertical segment">
-                  <h1 class="ui huge header">
-                    Docs as Code for everyone
-                  </h1>
-                  <p>
-                    Empower your team with versioned documentation, seamless previews, and powerful authentication. All integrated into your Git workflow.
-                  </p>
+  {% block homepage_notification %}
+  {% endblock homepage_notification %}
 
-                  {% block homepage_callout_buttons %}
-                    <a class="ui large teal stackable button"
-                    data-analytics="signup-modal"
-                     onclick="jQuery('#signup-modal').modal('show');">
-                    <i class="fad fa-play icon"></i>
-                    Get started for free
-                    </a>
-                    <a href="/features/" class="ui large secondary stackable basic button">
-                    <i class="fad fa-sparkles icon"></i>
-                    Explore features
-                    </a>
-                  {% endblock homepage_callout_buttons %}
+  {% block homepage_callout_wrapper %}
+  <section>
+    <div class="ui padded hero container">
+      <div class="ui relaxed grid centered middle aligned">
+        <div class="row">
 
-                  </div>
-                {% endblock homepage_callout %}
-                </div>
+          <div class="seven wide computer twelve wide tablet sixteen wide mobile column">
+            {% block homepage_callout %}
+            <div class="ui large left aligned basic vertical segment">
+              <h1 class="ui huge header">
+                Your Documentation Infrastructure Layer
+              </h1>
+              <p>
+                Connect your Git repository and treat docs like code.
+                We run the hard parts: builds, previews, auth -- so you can focus on creating great docs.
+              </p>
 
-              {% block homepage_callout_image %}
-                <div class="column eight wide computer only">
-                  <div class="ui basic segment">
-                    <img class="ui image fluid" src="{{ SITE_URL }}/images/homepage.png" alt="A terminal executing Git commands to build multiple versions of documentation" />
-                  </div>
-                </div>
-              {% endblock homepage_callout_image %}
+              {% block homepage_callout_buttons %}
+              <a class="ui large teal stackable button" data-analytics="signup-modal"
+                onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-play icon"></i>
+                Get started for free
+              </a>
+              {% endblock homepage_callout_buttons %}
 
+            </div>
+            {% endblock homepage_callout %}
+          </div>
+
+          {% block homepage_callout_image %}
+          <div class="column eight wide computer only">
+            <div class="ui basic segment">
+              <img class="ui image fluid" src="{{ SITE_URL }}/images/homepage.png"
+                alt="A terminal executing Git commands to build multiple versions of documentation" />
             </div>
           </div>
-        </div>
-      </section>
-    {% endblock homepage_callout_wrapper %}
+          {% endblock homepage_callout_image %}
 
-    {% block homepage_highlight %}
-      {% call marketing.highlight_list() %}
-
-        {% call marketing.highlight_item(
-            icon="white fa-face-monocle",
-            icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-            header="Pull request previews with visual diff",
-            color="grey") %}
-          <p>
-            See exactly what changed in the rendered documentation, not just the source.
-          </p>
-        {% endcall %}
-
-        {% call marketing.highlight_item(
-          icon="olive fa-terminal",
-          header="Ideal developer experience",
-          color="black") %}
-        <p class="small" >
-          Write documentation with Git and your favorite text editor.
-          Developers and writers both love <strong>docs as code</strong>.
-        </p>
-      {% endcall %}
-
-        {% call marketing.highlight_item(
-            icon="white fa-key-skeleton",
-            icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
-            header="Work privately or publicly",
-            color="violet") %}
-          <p>
-            Share content with just your team, or with the whole world.
-            Sync permissions from GitHub, or manage custom permissions for your projects.
-          </p>
-        {% endcall %}
-      {% endcall %}
-    {% endblock homepage_highlight %}
-
-    {# Logos of businesses that use our product. #}
-    {% include "includes/business-logos.html" %}
-
-
-    <div class="ui divider"></div>
-
-    {% block homepage_feature_detail %}
-      <section id="features">
-        <div class="ui very padded container">
-
-          <h3 class="ui large monospace header">
-            Features
-          </h3>
-
-          <div class="ui centered vertically padded container stackable grid">
-
-            {% call homepage.feature_detail_item(header="Supports any doc tool", icon="fad fa-terminal") %}
-              Integrated support for <strong><a href="/tools/sphinx/">Sphinx</a></strong>, <strong><a href="/tools/mkdocs/">MkDocs</a></strong>, <strong><a href="/tools/jupyter-book/">Jupyter Book</a></strong>, <strong>Docusaurus</strong>, and more.
-              Flexible enough to work with any documentation tool.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="Pull request previews with visual diff", icon="fad fa-code-compare") %}
-              See the rendered diff and files changed, posted in every GitHub and GitLab pull request.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
-              Match your product release cycle with multiple versions of your docs. Automatically build versions from any branch or tag.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
-              Clone private repositories using a connected GitHub, GitLab, or Bitbucket account,
-              or clone from any Git provider with an SSH key.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
-              Control who has access to your documentation with integrated authentication.
-              Enable <strong>SSO with GitHub or GitLab</strong> to easily manage permissions in one place.
-            {% endcall %}
-
-            {% call homepage.feature_detail_item(header="AI agent integration", icon="fad fa-user-robot") %}
-              Support for llms.txt, Markdown content negotiation, and agent skills make your documentation ready for any AI tool.
-            {% endcall %}
-
-            {% block features_cta %}
-              <div class="ten wide computer sixteen wide tablet center aligned column">
-                <div class="ui basic padded vertical segment">
-
-                <a href="/features/" class="ui large secondary relaxed button">
-                  Discover all our features
-                  <i class="fad fa-sparkles"></i>
-                </a>
-                </div>
-
-              </div>
-            {% endblock features_cta %}
-
-          </div>
-        </div>
-      </section>
-    {% endblock homepage_feature_detail %}
-
-    {# Try it out code block #}
-    {% include "includes/try-it-out.html" %}
-
-    {# Sphinx user testimonials #}
-    {% include "includes/users-sphinx.html" %}
-
-    {# New developer testimonials #}
-    <section>
-      <div class="ui very padded container">
-        <div class="ui stackable equal width grid">
-          <div class="stretched row">
-            <div class="column">
-              <div class="ui very padded raised segment">
-                {% call marketing.testimonial(
-                    name="Max Hilbrunner",
-                    title="Software and Game Developer",
-                    company="Godot Engine",
-                    image="https://avatars.githubusercontent.com/u/1654763?v=4",
-                    link="https://docs.godotengine.org/") %}
-                  Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the generous Community plan, we couldn't have afforded anything close to the CI/build resources that we got with Read the Docs.
-                {% endcall %}
-              </div>
-            </div>
-            <div class="column">
-              <div class="ui very padded raised segment">
-                {% call marketing.testimonial(
-                    name="Matt Fisher",
-                    title="Scientific Software Developer",
-                    company="UC Berkeley Eric and Wendy Schmidt Center for Data Science and Environment",
-                    image="https://github.com/mfisher87.png",
-                    link="https://jupytergis.readthedocs.io/") %}
-                  Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the best and most trustworthy implementation out there.
-                {% endcall %}
-              </div>
-            </div>
-          </div>
-          {#
-          <div class="stretched row">
-            <div class="column">
-              <div class="ui very padded raised segment">
-                {% call marketing.testimonial(
-                    name="Trevor James Smith",
-                    title="Developer",
-                    company="Ouranos",
-                    image="https://github.com/Zeitsperre.png",
-                    link="https://github.com/hydrologie/xdatasets/issues/32#issue-2019390201") %}
-                  Read the Docs is a solid documentation hosting platform that is used all over the place and has some nice features on top of being FOSS software.
-                {% endcall %}
-              </div>
-            </div>
-            <div class="column">
-              <div class="ui very padded raised segment">
-                {% call marketing.testimonial(
-                    name="Juan Luis Cano Rodríguez",
-                    title="Developer Advocate",
-                    company="Kedro",
-                    image="https://github.com/astrojuanlu.png",
-                    link="https://fosstodon.org/@kedro@social.lfx.dev/111608164611739960") %}
-                  The documentation is now easier to navigate, thanks to a new top navigation bar and a search-as-you-type modal courtesy of Read the Docs. Snappy docs are happy docs!
-                {% endcall %}
-              </div>
-            </div>
-          </div>
-          #}
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+  {% endblock homepage_callout_wrapper %}
 
-    {% block homepage_bottom_callout %}
-    <section>
-      <div class="ui very padded container">
-        <div class="ui grid center aligned">
+  {% block homepage_highlight %}
+  {% call marketing.highlight_list() %}
 
-          <div class="row">
-            <div class="column twelve wide computer sixteen wide tablet">
+  <div class="five wide computer twelve wide tablet left aligned column">
+    <div class="ui inverted black stacked very padded large segment">
+      <i class="fad olive fa-code-pull-request big shadowed icon" aria-hidden="true"></i>
 
-              {#
-                TODO replace this block with something more actionable. It's
-                not saying anything new at this point in the page, and the call
-                to action is not strong.
-              #}
-              <div class="ui basic vertical huge segment">
-                <p>
-                  <b>Get your docs online in 5 minutes.</b>
-                </p>
+      <h2 class="ui small left aligned monospace header">
+        Catch doc regressions before you merge
+      </h2>
 
-                <p>
-                  <a class="ui large teal stackable button"
-                  data-analytics="signup-modal"
-                   onclick="jQuery('#signup-modal').modal('show');">
+      <p>
+        Every pull request gets a live preview build with a visual diff
+        against production. Review rendered output, not raw markup.
+      </p>
+
+
+    </div>
+  </div>
+
+  {% call marketing.highlight_item(
+  icon="white fa-key-skeleton",
+  icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
+  header="Decide who sees your docs",
+  color="violet") %}
+  <p>
+    Control who can access your docs, from your internal team to the whole world.
+    Enable <strong>SSO with GitHub or GitLab</strong> to manage permissions from one place.
+  </p>
+  {% endcall %}
+  {% endcall %}
+  {% endblock homepage_highlight %}
+
+  {# Logos of businesses that use our product. #}
+  {% include "includes/business-logos.html" %}
+
+  <div class="ui divider"></div>
+
+  {% block homepage_feature_detail %}
+  <section id="features">
+    <div class="ui centered very padded container">
+
+      <h3 class="ui huge center aligned header">
+        Features
+      </h3>
+
+      <div class="ui centered vertically padded container stackable grid">
+
+        {% call homepage.feature_detail_item(header="Supports any documentation tool", icon="fad fa-terminal") %}
+        Integrated support for <strong><a href="/tools/sphinx/">Sphinx</a></strong>, <strong><a
+            href="/tools/mkdocs/">MkDocs</a></strong>, <strong>Docusaurus</strong>, and more.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="AI agent integration", icon="fad fa-user-robot") %}
+        Built-in llms.txt, Markdown, and agent skills make your documentation ready for any AI tool.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Preview your changes", icon="fad
+        fa-code-compare") %}
+        Preview your rendered documentation before deploying, and catch mistakes before they go live.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
+        Match your product release cycle with multiple versions of your docs. Automatically build versions from any
+        branch or tag.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
+        Clone private repositories using a connected GitHub, GitLab, or Bitbucket account,
+        or clone from any Git provider with an SSH key.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
+        Control who has access to your documentation with integrated authentication.
+        Enable <strong>SSO with GitHub or GitLab</strong> to easily manage permissions in one place.
+        {% endcall %}
+
+        {% block features_cta %}
+        <div class="ten wide computer sixteen wide tablet center aligned column">
+          <div class="ui basic padded vertical segment">
+
+            <a href="/features/" class="ui large secondary relaxed button">
+              Discover all our features
+              <i class="fad fa-sparkles"></i>
+            </a>
+          </div>
+
+        </div>
+        {% endblock features_cta %}
+
+      </div>
+    </div>
+  </section>
+  {% endblock homepage_feature_detail %}
+
+  {# Try it out code block #}
+  {% include "includes/try-it-out.html" %}
+
+  {# Sphinx user testimonials #}
+  {% include "includes/users-sphinx.html" %}
+
+  {# New developer testimonials #}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui stackable equal width grid">
+        <div class="stretched row">
+          <div class="column">
+            <div class="ui very padded raised segment">
+              {% call marketing.testimonial(
+              name="Max Hilbrunner",
+              title="Software and Game Developer",
+              company="Godot Engine",
+              image="https://avatars.githubusercontent.com/u/1654763?v=4",
+              link="https://docs.godotengine.org/") %}
+              Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the
+              generous Community plan, we couldn't have afforded anything close to the CI/build resources that we got
+              with Read the Docs.
+              {% endcall %}
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui very padded raised segment">
+              {% call marketing.testimonial(
+              name="Matt Fisher",
+              title="Scientific Software Developer",
+              company="UC Berkeley Eric and Wendy Schmidt Center for Data Science and Environment",
+              image="https://github.com/mfisher87.png",
+              link="https://jupytergis.readthedocs.io/") %}
+              Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the
+              best and most trustworthy implementation out there.
+              {% endcall %}
+            </div>
+          </div>
+        </div>
+        {#
+        <div class="stretched row">
+          <div class="column">
+            <div class="ui very padded raised segment">
+              {% call marketing.testimonial(
+              name="Trevor James Smith",
+              title="Developer",
+              company="Ouranos",
+              image="https://github.com/Zeitsperre.png",
+              link="https://github.com/hydrologie/xdatasets/issues/32#issue-2019390201") %}
+              Read the Docs is a solid documentation hosting platform that is used all over the place and has some nice
+              features on top of being FOSS software.
+              {% endcall %}
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui very padded raised segment">
+              {% call marketing.testimonial(
+              name="Juan Luis Cano Rodríguez",
+              title="Developer Advocate",
+              company="Kedro",
+              image="https://github.com/astrojuanlu.png",
+              link="https://fosstodon.org/@kedro@social.lfx.dev/111608164611739960") %}
+              The documentation is now easier to navigate, thanks to a new top navigation bar and a search-as-you-type
+              modal courtesy of Read the Docs. Snappy docs are happy docs!
+              {% endcall %}
+            </div>
+          </div>
+        </div>
+        #}
+      </div>
+    </div>
+  </section>
+
+  {% block homepage_bottom_callout %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui grid center aligned">
+
+        <div class="row">
+          <div class="column twelve wide computer sixteen wide tablet">
+
+            {#
+            TODO replace this block with something more actionable. It's
+            not saying anything new at this point in the page, and the call
+            to action is not strong.
+            #}
+            <div class="ui basic vertical huge segment">
+              <p>
+                <b>Get your docs online in 5 minutes.</b>
+              </p>
+
+              <p>
+                <a class="ui large teal stackable button" data-analytics="signup-modal"
+                  onclick="jQuery('#signup-modal').modal('show');">
                   <i class="fad fa-play icon"></i>
                   Create an account
                 </a>
-                </p>
-              </div>
-
+              </p>
             </div>
+
           </div>
-
         </div>
-      </div>
-    </section>
-    {% endblock homepage_bottom_callout %}
 
-  </body>
+      </div>
+    </div>
+  </section>
+  {% endblock homepage_bottom_callout %}
+
+</body>
+
 </html>
