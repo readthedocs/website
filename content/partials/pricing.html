@@ -80,7 +80,7 @@
 
     {% macro _feature_table_row() %}
       <tr>
-        <th class="eight wide" scope="col"></th>
+        <th class="six wide" scope="col"></th>
         {% if show_community_features %}
           <th class="two wide center aligned" scope="col">
             <a class="ui teal button" href="./#/community">Community</a>
@@ -93,7 +93,10 @@
           <a class="ui violet button" href="./#/business/advanced">Advanced</a>
         </th>
         <th class="two wide center aligned" scope="col">
-          <a class="ui violet button" href="./#/business/pro">Pro</a>
+          <a class="ui purple button" href="./#/business/pro">Pro</a>
+        </th>
+        <th class="two wide center aligned" scope="col">
+          <a class="ui black button" href="./enterprise/">Enterprise</a>
         </th>
       </tr>
     {% endmacro %}
@@ -121,7 +124,7 @@
   Again, this supports the `show_community_features` global, until we confirm
   this mixed display is not confusing.
 #}
-{% macro feature_row(name, description, icon, on_community=True, on_basic=True, on_advanced=True, on_pro=True) %}
+{% macro feature_row(name, description, icon, on_community=True, on_basic=True, on_advanced=True, on_pro=True, on_enterprise=True) %}
   <tr>
     <td>
       <div class="ui small header">
@@ -140,6 +143,7 @@
     {{ feature_row_cell(on_basic) }}
     {{ feature_row_cell(on_advanced) }}
     {{ feature_row_cell(on_pro) }}
+    {{ feature_row_cell(on_enterprise) }}
   </tr>
 {% endmacro %}
 
@@ -182,7 +186,7 @@
 #}
 {% macro header_row(name, icon) %}
   <tr class="grey">
-    <td colspan="5">
+    <td colspan="6">
       <i class="fad {{ icon }} large black icon"></i>
       {{ name }}
     </td>

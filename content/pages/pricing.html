@@ -40,7 +40,7 @@
             color="violet",
           ) %}
             <div class="ui list relaxed divided">
-              {{ pricing.plan_feature("<em>Includes all <b>core</b> features</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
+              {{ pricing.plan_feature("<em>Includes everything in <b>Basic</b>, plus:</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
               {{ pricing.plan_feature("Support", "2 business day response", "fa-message-question") }}
               {{ pricing.plan_feature("Single sign-on (SSO)", "With GitHub and GitLab", "fa-key-skeleton") }}
 
@@ -262,23 +262,23 @@
     </h2>
 
     {% call pricing.feature_table() %}
-      {{ pricing.feature_row("Pricing", "Monthly pricing, annual available", "fa-receipt", "<strong>Free for open source</strong>", "<strong>$50</strong>", "<strong>$150</strong>", "<strong>$250</strong>") }}
-      {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", ("Best effort", "white"), "2 business days", "2 business days", ("1 business day", "olive")) }}
+      {{ pricing.feature_row("Pricing", "Monthly pricing, annual available", "fa-receipt", "<strong>Free for open source</strong>", "<strong>$50</strong>", "<strong>$150</strong>", "<strong>$250</strong>", "<strong>$999+</strong>") }}
+      {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", ("Best effort", "white"), "2 business days", "2 business days", ("1 business day", "olive"), ("SLA-backed", "olive")) }}
       {{ pricing.feature_row("Ad free", "Documentation doesn't include ads", "fa-ad", on_community=False) }}
 
       {{ pricing.header_row("Documentation building", "fa-gears") }}
-      {{ pricing.feature_row("Build concurrency", "Concurrent build processes", "fa-rectangle-vertical-history fa-swap-opacity", 2, 2, 4, (6, "olive")) }}
+      {{ pricing.feature_row("Build concurrency", "Concurrent build processes", "fa-rectangle-vertical-history fa-swap-opacity", 2, 2, 4, (6, "olive"), ("Custom", "olive")) }}
 
       {{ pricing.header_row("Documentation hosting", "fa-browser") }}
-      {{ pricing.feature_row("Custom domains", "Host documentation on your own domain name", "fa-at", on_community="2", on_basic=False, on_advanced="5", on_pro="15") }}
-      {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right", 100, 50, 250, (500, "olive")) }}
-      {{ pricing.feature_row("Pageview analytics", "Better understand your most read pages", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive")) }}
-      {{ pricing.feature_row("Search analytics", "Understand what users are searching for", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive")) }}
+      {{ pricing.feature_row("Custom domains", "Host documentation on your own domain name", "fa-at", on_community="2", on_basic=False, on_advanced="5", on_pro="15", on_enterprise=("Custom", "olive")) }}
+      {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right", 100, 50, 250, (500, "olive"), ("Custom", "olive")) }}
+      {{ pricing.feature_row("Pageview analytics", "Better understand your most read pages", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive"), on_enterprise=("Custom", "olive")) }}
+      {{ pricing.feature_row("Search analytics", "Understand what users are searching for", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive"), on_enterprise=("Custom", "olive")) }}
       {{ pricing.feature_row("URL customization", "Use custom URL prefixes to match your site layout", "fa-route", on_community=False, on_basic=False, on_advanced=False, on_pro=True) }}
 
       {{ pricing.header_row("Authentication & access", "fa-shield-keyhole") }}
-      {{ pricing.feature_row("Single sign-on", "Sign on using external provider", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro=("GitHub, GitLab, and Google", "olive")) }}
-      {{ pricing.feature_row("Authentication auditing", "Security log of all authentication across your projects", "fa-lock-keyhole", on_community="30 days", on_basic="30 days", on_advanced="30 days", on_pro=("90 days", "olive")) }}
+      {{ pricing.feature_row("Single sign-on", "Sign on using external provider", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro=("GitHub, GitLab, and Google", "olive"), on_enterprise=("Adds SAML", "olive")) }}
+      {{ pricing.feature_row("Authentication auditing", "Security log of all authentication across your projects", "fa-lock-keyhole", on_community="30 days", on_basic="30 days", on_advanced="30 days", on_pro=("90 days", "olive"), on_enterprise=("Custom", "olive")) }}
       {{ pricing.feature_row("Private repositories", "Clone private repositories", "fa-eye-slash", on_community=False) }}
       {{ pricing.feature_row("Documentation authentication", "Allow specific users to view your documentation", "fa-shield-keyhole", on_community=False) }}
     {% endcall %}
@@ -291,6 +291,9 @@
       <a class="ui violet basic button" href="/features/">
         See the full list of features
         <i class="fad fa-arrow-right icon"></i>
+      </a>
+      <a class="ui violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup-compare">
+        Start your 30-day free trial
       </a>
     </div>
 
