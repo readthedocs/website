@@ -54,7 +54,7 @@
           ) %}
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("2 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
-              {{ pricing.plan_feature("Private repositories", None, "fa-eye-slash") }}
+              {{ pricing.plan_feature("Private repositories", None, "fa-lock-keyhole") }}
               {{ pricing.plan_feature("Documentation authentication", None, "fa-shield-keyhole") }}
               {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-key-skeleton") }}
               {{ pricing.plan_feature("2 business day support", None, "fa-message-question") }}
@@ -132,7 +132,7 @@
       {{ pricing.feature_row("URL customization", "Use custom URL prefixes to match your site layout", "fa-route", on_basic=False, on_advanced=False, on_pro=True) }}
       {{ pricing.feature_row("Single sign-on", "Sign on using external provider", "fa-right-to-bracket", on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro="GitHub, GitLab, and Google") }}
       {{ pricing.feature_row("Authentication auditing", "Security log of all authentication across your projects", "fa-lock-keyhole", on_basic="30 days", on_advanced="30 days", on_pro="90 days") }}
-      {{ pricing.feature_row("Private repositories", "Clone private repositories", "fa-eye-slash") }}
+      {{ pricing.feature_row("Private repositories", "Clone private repositories", "fa-lock-keyhole") }}
       {{ pricing.feature_row("Documentation authentication", "Allow specific users to view your documentation", "fa-shield-keyhole") }}
     {% endcall %}
 
