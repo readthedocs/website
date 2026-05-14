@@ -47,6 +47,25 @@
         <div class="stretched row">
 
           {% call pricing.plan(
+            name="Basic plan",
+            tagline="For small teams getting started with private docs.",
+            price_details=[("$50", "per month")],
+            color="",
+          ) %}
+            <div class="ui list relaxed divided">
+              {{ pricing.plan_feature("2 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
+              {{ pricing.plan_feature("Private repositories", None, "fa-eye-slash") }}
+              {{ pricing.plan_feature("Documentation authentication", None, "fa-shield-keyhole") }}
+              {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-key-skeleton") }}
+              {{ pricing.plan_feature("2 business day support", None, "fa-message-question") }}
+            </div>
+
+            <p class="ui center aligned basic segment">
+              <a class="ui basic violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">Start free trial</a>
+            </p>
+          {% endcall %}
+
+          {% call pricing.plan(
             name="Advanced plan",
             tagline="For hosting public docs at your own domain.",
             price_details=[("$150", "per month")],
@@ -87,50 +106,16 @@
             </p>
           {% endcall %}
 
-          <div class="column">
-            <div class="ui padded segment">
-              <h2 class="ui center aligned header">
-                Enterprise plan
-                <span class="sub header">For organizations with custom requirements.</span>
-              </h2>
-
-              <div class="ui horizontally fitted basic small segment">
-                <div class="ui tiny center aligned one statistics">
-                  <div class="statistic">
-                    <div class="value">
-                      $10k+
-                    </div>
-                    <div class="label">
-                      <span class="category">per year</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="ui list relaxed divided">
-                {{ pricing.plan_feature("Custom builders", None, "fa-robot fa-swap-opacity") }}
-                {{ pricing.plan_feature("Support SLA", None, "fa-question") }}
-                {{ pricing.plan_feature("SAML SSO", None, "fa-shield-keyhole") }}
-                {{ pricing.plan_feature("Custom build images", None, "fa-forklift") }}
-                {{ pricing.plan_feature("Advanced audit tracking", None, "fa-eyes") }}
-                {{ pricing.plan_feature("Custom integrations", None, "fa-lightbulb") }}
-              </div>
-
-              <p class="ui center aligned basic segment">
-                <a class="ui basic violet button" href="./enterprise/">Talk to sales</a>
-              </p>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
 
     <div class="ui basic center aligned padded segment">
       <p>
-        <b>Basic &mdash; $50/month.</b>
-        For small teams getting started with private docs &mdash; private
-        hosting with team authentication and SSO. <a href="#compare">Compare plans</a>.
+        <b>Enterprise &mdash; from $10k/year.</b>
+        For organizations with custom requirements &mdash; SAML SSO, dedicated
+        builders, advanced audit tracking, and a support SLA.
+        <a href="./enterprise/">Talk to sales</a>.
       </p>
     </div>
 
