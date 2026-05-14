@@ -34,6 +34,27 @@
   overflow-x: scroll;
 }
 
+// Soft gradient transition above the page footer so the bright page
+// content fades into the dark footer instead of meeting it at a hard edge.
+body > footer.ui.inverted.attached.segment {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -6rem;
+    height: 6rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(37, 42, 49, 0),
+      rgba(37, 42, 49, 1)
+    );
+    pointer-events: none;
+  }
+}
+
 // Article styles for docutils reST and Markdown
 .ui.docutils.container,
 .ui.docutils.segment {
