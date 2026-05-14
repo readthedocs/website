@@ -11,7 +11,9 @@
           {{ name }}
         </h2>
         {% if tagline %}
-          <p><small>{{ tagline }}</small></p>
+          <div class="ui {%- if inverted %} inverted {%- endif %} tiny header">
+            <span class="sub header">{{ tagline }}</span>
+          </div>
         {% endif %}
       </div>
 
