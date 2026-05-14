@@ -44,8 +44,8 @@ body > footer.ui.inverted.attached.segment {
     position: absolute;
     left: 0;
     right: 0;
-    top: -6rem;
-    height: 6rem;
+    top: -2rem;
+    height: 2rem;
     background: linear-gradient(
       to bottom,
       rgba(37, 42, 49, 0),
