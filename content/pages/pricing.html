@@ -44,7 +44,7 @@
 
     <div class="ui horizontally fitted basic segment">
       <div class="ui centered three column tablet stackable grid">
-        <div class="stretched row">
+        <div class="row">
 
           {% call pricing.plan(
             name="Basic plan",
@@ -66,8 +66,9 @@
             tagline="For hosting public docs at your own domain.",
             price_details=[("$150", "per month")],
             color="violet",
+            inverted=True,
           ) %}
-            <div class="ui list relaxed divided">
+            <div class="ui inverted list relaxed divided">
               {{ pricing.plan_feature("4 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
               {{ pricing.plan_feature("5 custom domains", None, "fa-at") }}
               {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-key-skeleton") }}

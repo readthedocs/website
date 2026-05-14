@@ -1,12 +1,12 @@
 {#
   Main plan block for commercial plan cards
 #}
-{% macro plan(name, price_details, color="teal", highlight=False, tagline=None) %}
+{% macro plan(name, price_details, color="teal", highlight=False, tagline=None, inverted=False) %}
   {% set _has_price = price_details | length > 0 %}
   <div class="{% if not _has_price %} computer only {%- endif %} column">
-    <div class="ui {%- if _has_price %} raised padded {{ color }} {%- else %} basic {%- endif %} segment">
+    <div class="ui {%- if _has_price %} raised padded {%- if inverted %} inverted {%- endif %} {{ color }} {%- else %} basic {%- endif %} segment">
 
-      <h2 class="ui center aligned header">
+      <h2 class="ui {%- if inverted %} inverted {%- endif %} center aligned header">
         {{ name }}
         {% if tagline %}
           <span class="sub header">{{ tagline }}</span>
@@ -16,7 +16,7 @@
       {% if price_details %}
         {% for value, label in price_details %}
           <div class="ui horizontally fitted basic small segment">
-            <div class="ui tiny center aligned one statistics">
+            <div class="ui tiny center aligned {%- if inverted %} inverted {%- endif %} one statistics">
               <div class="statistic">
                 <div class="value">
                   {{ value }}
