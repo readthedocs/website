@@ -7,11 +7,10 @@ It supports multiple documentation tools (Sphinx, MkDocs, etc.) and automaticall
 
 **Technology Stack:**
 - Python 3.x
-- Django web framework
-- Docker and Docker Compose for development
-- PostgreSQL database
-- Elasticsearch for search
-- Redis for caching and Celery for background tasks
+- Pelican static site generator
+- Node.js for asset compilation
+- Webpack for building frontend assets
+- Semantic UI theme
 
 ## Commits
 
@@ -51,17 +50,18 @@ It supports multiple documentation tools (Sphinx, MkDocs, etc.) and automaticall
 ## Code Quality
 
 - Follow PEP 8 style guidelines
-- Use Django conventions and best practices
+- Use Pelican conventions and best practices
 - Use type hints for function signatures
 - Write clear, concise docstrings for public functions and classes
 - Run linters and formatters using `tox -e pre-commit` before committing code
 
 ## Front-end
 
-- Most templates/css/js are in a separate repository (https://github.com/readthedocs/ext-theme/).
+- Asset building and hot-reloading is handled by Webpack (`npm run dev`).
+- CSS/JS files are built directly into `readthedocs_theme/static/`.
+- We use `prettier` for automatic formatting of CSS and JS files.
 
 ## Security
 
-- Follow Django security best practices
+- Follow web security best practices
 - Be aware of OWASP top 10 vulnerabilities
-- Use Django's built-in security features (CSRF, XSS protection, etc.)
