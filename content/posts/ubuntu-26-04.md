@@ -15,4 +15,3 @@ We plan to update the [`build.os: "ubuntu-lts-latest"`](https://docs.readthedocs
 
 [Let us know](https://docs.readthedocs.io/en/stable/support.html) any feedback you may have about this new Ubuntu 26.04 LTS image,
 or if your documentation project has special needs that are not covered by Ubuntu images.
-

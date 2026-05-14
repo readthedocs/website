@@ -7,7 +7,7 @@ Read the Docs newsletter - March 2022
 :authors: Eric Holscher
 :description: Company updates and new features from the last month, current focus, and upcoming features.
 :status: draft
-:image: 
+:image:
 :image_credit:
 
 It's been pretty quiet on the company front in February,
