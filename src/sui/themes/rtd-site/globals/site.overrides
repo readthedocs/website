@@ -34,27 +34,11 @@
   overflow-x: scroll;
 }
 
-// Soft gradient transition above the page footer so the bright page
-// content fades into the dark footer instead of meeting it at a hard edge.
+// Round the top corners of the page footer so it reads as a panel
+// tucked under the content rather than a slab meeting it at a hard edge.
 body > footer.ui.inverted.attached.segment {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -4rem;
-    height: 4rem;
-    background: linear-gradient(
-      to bottom,
-      rgba(37, 42, 49, 0) 0%,
-      rgba(37, 42, 49, 0.05) 60%,
-      rgba(37, 42, 49, 0.25) 85%,
-      rgba(37, 42, 49, 1) 100%
-    );
-    pointer-events: none;
-  }
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
 }
 
 // Article styles for docutils reST and Markdown
