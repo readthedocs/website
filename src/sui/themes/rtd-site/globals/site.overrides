@@ -34,20 +34,44 @@
   overflow-x: scroll;
 }
 
-// Light pre-footer band that sits between the page content and the dark
-// footer, giving the eye a stepping stone instead of a hard light->dark cut.
+// Inverse (concave) rounded corners at the top of the footer: the dark
+// area curves outward to meet the page content, so the content above
+// reads as if it tucks into the footer rather than landing on a slab.
 body > footer.ui.inverted.attached.segment {
   position: relative;
-  margin-top: 4rem;
 
-  &::before {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
+    bottom: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #252a31;
+  }
+
+  &::before {
     left: 0;
+    -webkit-mask: radial-gradient(
+      circle at top right,
+      transparent 1.5rem,
+      #000 1.51rem
+    );
+    mask: radial-gradient(
+      circle at top right,
+      transparent 1.5rem,
+      #000 1.51rem
+    );
+  }
+
+  &::after {
     right: 0;
-    top: -4rem;
-    height: 4rem;
-    background: @offWhite;
+    -webkit-mask: radial-gradient(
+      circle at top left,
+      transparent 1.5rem,
+      #000 1.51rem
+    );
+    mask: radial-gradient(circle at top left, transparent 1.5rem, #000 1.51rem);
   }
 }
 
