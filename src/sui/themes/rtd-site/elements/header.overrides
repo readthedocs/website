@@ -1,3 +1,8 @@
+// Because h1.ui.medium.header is still sized as an h1
+.ui.medium.header {
+  font-size: @mediumFontSize;
+}
+
 /* Header after a divider header */
 .ui.header.divider + .ui.header {
   margin-top: e(%("calc(-1rem + %d)", @headerLineHeightOffset));
