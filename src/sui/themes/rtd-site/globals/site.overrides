@@ -34,6 +34,47 @@
   overflow-x: scroll;
 }
 
+// Inverse (concave) rounded corners at the top of the footer: the dark
+// area curves outward to meet the page content, so the content above
+// reads as if it tucks into the footer rather than landing on a slab.
+body > footer.ui.inverted.attached.segment {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #252a31;
+  }
+
+  &::before {
+    left: 0;
+    -webkit-mask: radial-gradient(
+      circle at top right,
+      transparent 1.5rem,
+      #000 1.51rem
+    );
+    mask: radial-gradient(
+      circle at top right,
+      transparent 1.5rem,
+      #000 1.51rem
+    );
+  }
+
+  &::after {
+    right: 0;
+    -webkit-mask: radial-gradient(
+      circle at top left,
+      transparent 1.5rem,
+      #000 1.51rem
+    );
+    mask: radial-gradient(circle at top left, transparent 1.5rem, #000 1.51rem);
+  }
+}
+
 // Article styles for docutils reST and Markdown
 .ui.docutils.container,
 .ui.docutils.segment {
