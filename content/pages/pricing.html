@@ -48,7 +48,7 @@
 
           {% call pricing.plan(
             name="Basic",
-            tagline="For small teams getting started with private docs.",
+            tagline="For small teams getting started.",
             price_details=[("$50", "per month")],
             color="",
           ) %}
@@ -63,10 +63,11 @@
 
           {% call pricing.plan(
             name="Advanced",
-            tagline="For hosting public docs at your own domain.",
+            tagline="For growing teams with custom domains.",
             price_details=[("$150", "per month")],
             color="violet",
             inverted=True,
+            highlight=True,
           ) %}
             <div class="ui inverted list relaxed divided">
               {{ pricing.plan_feature("4 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
@@ -79,14 +80,14 @@
 
           {% call pricing.plan(
             name="Pro",
-            tagline="For organizations with scale and security needs.",
+            tagline="For larger organizations operating at scale.",
             price_details=[("$250", "per month")],
             color="",
           ) %}
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("6 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
               {{ pricing.plan_feature("15 custom domains", None, "fa-at") }}
-              {{ pricing.plan_feature("SSO with Google", None, "fa-key-skeleton") }}
+              {{ pricing.plan_feature("SSO with GitHub, GitLab, and Google", None, "fa-key-skeleton") }}
               {{ pricing.plan_feature("500 redirects", None, "fa-diamond-turn-right") }}
               {{ pricing.plan_feature("1 business day support", None, "fa-message-question") }}
             </div>
@@ -188,12 +189,12 @@
 <section id="pricing-questions">
   <div class="ui padded container">
     <div class="ui secondary center aligned padded segment">
-      <h3 class="ui small center aligned header">
+      <h2 class="ui medium center aligned header">
         <span class="content">
           <i class="fad fa-question-circle icon"></i>
           Not sure which plan fits?
         </span>
-      </h3>
+      </h2>
       <p>
         Tell us about your team and we'll help you find the right plan.
       </p>
