@@ -8,10 +8,10 @@
 {#
   Main plan block for commercial/community plan cards
 #}
-{% macro plan(name, price_details, color="teal", highlight=False, tagline=None, inverted=False) %}
+{% macro plan(name, price_details, color="teal", highlight=False, tagline=None) %}
   {% set _has_price = price_details | length > 0 %}
   <div class="{% if not _has_price %} computer only {%- endif %} column">
-    <div class="ui {%- if _has_price %} raised {%- if inverted %} inverted {%- endif %} {{ color }} {%- else %} basic {%- endif %} segment">
+    <div class="ui {%- if _has_price %} raised {{ color }} {%- else %} basic {%- endif %} segment">
 
       <h2 class="ui center aligned header">
         {{ name }}
