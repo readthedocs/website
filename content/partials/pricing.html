@@ -51,9 +51,9 @@
   Includes an icon, header text, and description line of text. Each item should
   have all of these defined.
 #}
-{% macro plan_feature(name, description, icon, color=None) %}
-  <div class="left aligned item">
-    <i class="fad {%- if color %} {{ color }} {%- endif %} {{ icon }} medium middle aligned icon"></i>
+{% macro plan_feature(name, description, icon, color=None, included=True) %}
+  <div class="left aligned {%- if not included %} disabled {%- endif %} item">
+    <i class="fad {%- if color %} {{ color }} {%- endif %} {%- if included %} {{ icon }} {%- else %} fa-circle-xmark {%- endif %} medium middle aligned icon"></i>
     <div class="content">
       <div class="header">{{ name }}</div>
       {% if description %}
