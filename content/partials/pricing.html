@@ -68,7 +68,7 @@
   The plan feature comparison table
 #}
 {% macro feature_table() %}
-  <table class="ui mini unstackable celled table" id="feature-table">
+  <table class="ui mini unstackable celled head first stuck table" id="feature-table">
 
     {% macro _feature_table_row() %}
       <tr>
@@ -85,7 +85,7 @@
       </tr>
     {% endmacro %}
 
-    <thead class="ui sticky" data-module="sticky" data-module-context="#feature-table">
+    <thead>
       {{ _feature_table_row() }}
     </thead>
     <tbody>

@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5.0.2
+  node: circleci/node@6.3.0
 
 commands:
   run-lint:
@@ -16,7 +16,7 @@ commands:
     steps:
       - checkout
       - node/install:
-          node-version: '14.18'
+          node-version: "22.11"
       - run: npm ci
       - run: npm run build-assets
       - run:
@@ -36,7 +36,7 @@ commands:
 jobs:
   lint:
     docker:
-      - image: "cimg/node:14.18"
+      - image: "cimg/node:22.11"
     steps:
       - run-lint: {}
   build:
