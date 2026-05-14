@@ -37,14 +37,6 @@
                 We run the hard parts: builds, previews, auth -- so you can focus on creating great docs.
               </p>
 
-              {% block homepage_callout_buttons %}
-              <a class="ui large teal stackable button" data-analytics="signup-modal"
-                onclick="jQuery('#signup-modal').modal('show');">
-                <i class="fad fa-play icon"></i>
-                Get started for free
-              </a>
-              {% endblock homepage_callout_buttons %}
-
             </div>
             {% endblock homepage_callout %}
           </div>
@@ -63,6 +55,9 @@
     </div>
   </section>
   {% endblock homepage_callout_wrapper %}
+
+  {# Logos of businesses that use our product. #}
+  {% include "includes/business-logos.html" %}
 
   {% block homepage_audience %}
   <div class="ui padded container">
@@ -119,9 +114,6 @@
     </div>
   </div>
   {% endblock homepage_audience %}
-
-  {# Logos of businesses that use our product. #}
-  {% include "includes/business-logos.html" %}
 
   <div class="ui divider"></div>
 
