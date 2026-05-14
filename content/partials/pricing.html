@@ -1,12 +1,5 @@
 {#
-  It's not yet clear if the community plan features on the feature table help
-  explain the difference between community/commercial, or if it makes it less
-  obvious that community is only for open source projects.
-#}
-{% set show_community_features = True %}
-
-{#
-  Main plan block for commercial/community plan cards
+  Main plan block for commercial plan cards
 #}
 {% macro plan(name, price_details, color="teal", highlight=False, tagline=None) %}
   {% set _has_price = price_details | length > 0 %}
@@ -73,20 +66,13 @@
 
 {#
   The plan feature comparison table
-
-  This uses the global `show_community_features` for now. This is so we have a
-  quick switch to flip if it is too confusing to have community and commercial
-  plans illustrated side by side, or if we see more business customers leak over.
 #}
 {% macro feature_table() %}
   <table class="ui mini unstackable celled table" id="feature-table">
 
     {% macro _feature_table_row() %}
       <tr>
-        <th class="eight wide" scope="col"></th>
-        {% if show_community_features %}
-          <th class="two wide center aligned" scope="col">Community</th>
-        {% endif %}
+        <th class="ten wide" scope="col"></th>
         <th class="two wide center aligned" scope="col">Basic</th>
         <th class="two wide center aligned" scope="col">Advanced</th>
         <th class="two wide center aligned" scope="col">Pro</th>
@@ -112,11 +98,8 @@
   description line of text. The remaining parameters control what is shown
   for each plan. These can be binary values to output check marks, `None` to
   be blank, or a string to output text to the plan's cell.
-
-  Again, this supports the `show_community_features` global, until we confirm
-  this mixed display is not confusing.
 #}
-{% macro feature_row(name, description, icon, on_community=True, on_basic=True, on_advanced=True, on_pro=True) %}
+{% macro feature_row(name, description, icon, on_basic=True, on_advanced=True, on_pro=True) %}
   <tr>
     <td>
       <div class="ui small header">
@@ -129,9 +112,6 @@
         </div>
       </div>
     </td>
-    {% if show_community_features %}
-      {{ feature_row_cell(on_community) }}
-    {% endif %}
     {{ feature_row_cell(on_basic) }}
     {{ feature_row_cell(on_advanced) }}
     {{ feature_row_cell(on_pro) }}
@@ -177,7 +157,7 @@
 #}
 {% macro header_row(name, icon) %}
   <tr class="grey">
-    <td colspan="5">
+    <td colspan="4">
       <i class="fad {{ icon }} large black icon"></i>
       {{ name }}
     </td>
