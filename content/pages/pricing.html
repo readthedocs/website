@@ -108,11 +108,61 @@
 
       <div class="ui basic center aligned padded segment">
         <a class="ui violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">Start free trial</a>
-        <p class="ui basic segment">
-          Just one internal team? <b>Basic</b> is <b>$50/month</b>.
-          <a href="#compare">Compare plans</a>.
-        </p>
       </div>
+
+      {% block pricing_basic %}
+        <div class="ui padded container">
+          <div class="ui segment">
+            <div class="ui stackable grid">
+
+              <div class="six wide column">
+                <h3 class="ui small monospace header">
+                  Basic plan
+                  <span class="sub header">For a single internal team.</span>
+                </h3>
+                <div class="ui tiny one statistics">
+                  <div class="statistic">
+                    <div class="value">$50</div>
+                    <div class="label">
+                      <span class="category">per month</span>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Private documentation hosting with the core features
+                  your team needs &mdash; without the extras for larger
+                  organizations.
+                </p>
+              </div>
+
+              <div class="five wide column">
+                <h4 class="ui small header">
+                  <i class="fad fa-browser icon"></i>
+                  <span class="content">Building and hosting</span>
+                </h4>
+                <div class="ui list relaxed">
+                  {{ pricing.plan_feature("2 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
+                  {{ pricing.plan_feature("50 redirects", None, "fa-diamond-turn-right") }}
+                </div>
+              </div>
+
+              <div class="five wide column">
+                <h4 class="ui small header">
+                  <i class="fad fa-shield-keyhole icon"></i>
+                  <span class="content">Authentication and access</span>
+                </h4>
+                <div class="ui list relaxed">
+                  {{ pricing.plan_feature("Private repositories", None, "fa-eye-slash") }}
+                  {{ pricing.plan_feature("Documentation authentication", None, "fa-shield-keyhole") }}
+                  {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-right-to-bracket") }}
+                  {{ pricing.plan_feature("30-day auth auditing", None, "fa-lock-keyhole") }}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      {% endblock pricing_basic %}
 
 
     {% block pricing_community_callout %}
