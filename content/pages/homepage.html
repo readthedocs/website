@@ -109,8 +109,6 @@
   {# Logos of businesses that use our product. #}
   {% include "includes/business-logos.html" %}
 
-  <div class="ui divider"></div>
-
   {% block homepage_highlight %}
   {% call marketing.highlight_list() %}
 
@@ -138,14 +136,15 @@
   {% endcall %}
   {% endblock homepage_highlight %}
 
-  <div class="ui divider"></div>
-
   {% block homepage_feature_detail %}
   <section id="features">
     <div class="ui centered very padded container">
 
       <h3 class="ui huge center aligned header">
         Features
+        <span class="sub header">
+          Everything you need to build, host, and maintain your documentation.
+        </span>
       </h3>
 
       <div class="ui centered vertically padded container stackable grid">
@@ -159,8 +158,7 @@
          Support for llms.txt, markdown content negotiation, and agent skills make your documentation ready for any AI tool.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Preview your changes", icon="fad
-        fa-code-compare") %}
+        {% call homepage.feature_detail_item(header="Preview your changes", icon="fad fa-code-compare") %}
         Preview your rendered documentation before deploying, and catch mistakes before they go live.
         {% endcall %}
 
