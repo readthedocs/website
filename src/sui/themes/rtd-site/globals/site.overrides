@@ -34,11 +34,21 @@
   overflow-x: scroll;
 }
 
-// Round the top corners of the page footer so it reads as a panel
-// tucked under the content rather than a slab meeting it at a hard edge.
+// Light pre-footer band that sits between the page content and the dark
+// footer, giving the eye a stepping stone instead of a hard light->dark cut.
 body > footer.ui.inverted.attached.segment {
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
+  position: relative;
+  margin-top: 4rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -4rem;
+    height: 4rem;
+    background: @offWhite;
+  }
 }
 
 // Article styles for docutils reST and Markdown
