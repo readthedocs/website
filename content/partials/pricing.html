@@ -154,20 +154,3 @@
     <td class="center aligned disabled"><i class="fad fa-circle-xmark large icon"></i></td>
   {% endif %}
 {% endmacro %}
-
-{#
-  Feature table dividing header row
-
-  This is an optional way to break up the feature table into a more scannable
-  table. It adds a mostly blank row, with just a header.
-#}
-{% macro header_row(name, icon) %}
-  <tr class="grey">
-    <td colspan="4">
-      <div class="ui small header">
-        <i class="fad {{ icon }} icon"></i>
-        <div class="content">{{ name }}</div>
-      </div>
-    </td>
-  </tr>
-{% endmacro %}
