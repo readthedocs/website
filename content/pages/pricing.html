@@ -111,50 +111,41 @@
 
       {% block pricing_basic %}
         <div class="ui padded container">
-          <div class="ui segment">
+          <div class="ui basic segment">
             <div class="ui stackable grid">
 
               <div class="six wide column">
-                <h3 class="ui small monospace header">
-                  Basic plan
-                  <span class="sub header">For a single internal team.</span>
+                <h3 class="ui small header">
+                  Basic plan &mdash; $50/month
+                  <div class="sub header">For a single internal team.</div>
                 </h3>
-                <div class="ui tiny one statistics">
-                  <div class="statistic">
-                    <div class="value">$50</div>
-                    <div class="label">
-                      <span class="category">per month</span>
-                    </div>
-                  </div>
-                </div>
                 <p>
                   Private documentation hosting with the core features
-                  your team needs &mdash; without the extras for larger
-                  organizations.
+                  your team needs.
                 </p>
               </div>
 
               <div class="five wide column">
-                <h4 class="ui small header">
+                <h4 class="ui tiny header">
                   <i class="fad fa-browser icon"></i>
                   <span class="content">Building and hosting</span>
                 </h4>
-                <div class="ui list relaxed">
-                  {{ pricing.plan_feature("2 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
-                  {{ pricing.plan_feature("50 redirects", None, "fa-diamond-turn-right") }}
+                <div class="ui small list">
+                  <div class="item">2 concurrent builds</div>
+                  <div class="item">50 redirects</div>
                 </div>
               </div>
 
               <div class="five wide column">
-                <h4 class="ui small header">
+                <h4 class="ui tiny header">
                   <i class="fad fa-shield-keyhole icon"></i>
                   <span class="content">Authentication and access</span>
                 </h4>
-                <div class="ui list relaxed">
-                  {{ pricing.plan_feature("Private repositories", None, "fa-eye-slash") }}
-                  {{ pricing.plan_feature("Documentation authentication", None, "fa-shield-keyhole") }}
-                  {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-right-to-bracket") }}
-                  {{ pricing.plan_feature("30-day auth auditing", None, "fa-lock-keyhole") }}
+                <div class="ui small list">
+                  <div class="item">Private repositories</div>
+                  <div class="item">Documentation authentication</div>
+                  <div class="item">SSO with GitHub and GitLab</div>
+                  <div class="item">30-day auth auditing</div>
                 </div>
               </div>
 
