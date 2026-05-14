@@ -65,14 +65,13 @@
   {% endblock homepage_callout_wrapper %}
 
   {% block homepage_audience %}
-  <div class="ui very padded wide container">
-    <div class="ui stackable two column centered padded grid">
+  <div class="ui padded container">
+    <div class="ui stackable two column centered grid">
 
       <div class="column">
-        <div class="ui inverted violet stacked very padded large segment">
-          <i class="fad fa-building big shadowed icon" aria-hidden="true"></i>
-
+        <div class="ui inverted violet stacked padded segment">
           <h2 class="ui small left aligned header">
+            <i class="fad fa-building icon"></i>
             For engineering teams
           </h2>
 
@@ -81,21 +80,6 @@
             We run the infrastructure so your writers and developers ship
             documentation, not pipelines.
           </p>
-
-          <div class="ui inverted relaxed list">
-            <div class="item">
-              <i class="fad fa-key-skeleton icon"></i>
-              <div class="content">
-                Decide who sees your docs with private documentation and SSO.
-              </div>
-            </div>
-            <div class="item">
-              <i class="fad fa-code-compare icon"></i>
-              <div class="content">
-                Catch doc regressions before you merge with pull request previews.
-              </div>
-            </div>
-          </div>
 
           <a class="ui inverted basic button" href="https://app.readthedocs.com/accounts/signup/"
             data-analytics="commercial-signup">
@@ -106,10 +90,9 @@
       </div>
 
       <div class="column">
-        <div class="ui inverted teal stacked very padded large segment">
-          <i class="fad fa-trees big shadowed icon" aria-hidden="true"></i>
-
+        <div class="ui inverted teal stacked padded segment">
           <h2 class="ui small left aligned header">
+            <i class="fad fa-trees icon"></i>
             For open source projects
           </h2>
 
@@ -118,21 +101,6 @@
             open source documentation since 2010 — Flask, Jupyter, Godot, and
             thousands more trust us to keep their docs online and searchable.
           </p>
-
-          <div class="ui inverted relaxed list">
-            <div class="item">
-              <i class="fad fa-code-compare icon"></i>
-              <div class="content">
-                Catch doc regressions before you merge with pull request previews.
-              </div>
-            </div>
-            <div class="item">
-              <i class="fad fa-layer-group icon"></i>
-              <div class="content">
-                Versioned docs with no limits on builds or versions.
-              </div>
-            </div>
-          </div>
 
           <a class="ui inverted basic button" href="https://app.readthedocs.org/accounts/signup/"
             data-analytics="community-signup">
@@ -148,6 +116,35 @@
 
   {# Logos of businesses that use our product. #}
   {% include "includes/business-logos.html" %}
+
+  <div class="ui divider"></div>
+
+  {% block homepage_highlight %}
+  {% call marketing.highlight_list() %}
+
+  {% call marketing.highlight_item(
+  icon="white fa-code-compare",
+  icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
+  header="Catch doc regressions before you merge",
+  color="black") %}
+  <p>
+    Every pull request gets a live preview build with a visual diff
+    against production. Review rendered output, not raw markup.
+  </p>
+  {% endcall %}
+
+  {% call marketing.highlight_item(
+  icon="white fa-key-skeleton",
+  icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
+  header="Decide who sees your docs",
+  color="violet") %}
+  <p>
+    Control who can access your docs, from your internal team to the whole world.
+    Enable <strong>SSO with GitHub or GitLab</strong> to manage permissions from one place.
+  </p>
+  {% endcall %}
+  {% endcall %}
+  {% endblock homepage_highlight %}
 
   <div class="ui divider"></div>
 
