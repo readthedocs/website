@@ -107,52 +107,12 @@
 
       <div class="ui basic center aligned padded segment">
         <a class="ui violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">Start free trial</a>
+        <p class="ui basic segment">
+          <b>Basic &mdash; $50/month.</b>
+          For a single internal team. Includes all building, hosting, and authentication features,
+          with smaller team limits. <a href="#compare">Compare plans</a>.
+        </p>
       </div>
-
-      {% block pricing_basic %}
-        <div class="ui padded container">
-          <div class="ui basic segment">
-            <div class="ui stackable grid">
-
-              <div class="six wide column">
-                <h3 class="ui small header">
-                  Basic plan &mdash; $50/month
-                  <div class="sub header">For a single internal team.</div>
-                </h3>
-                <p>
-                  Private documentation hosting with the core features
-                  your team needs.
-                </p>
-              </div>
-
-              <div class="five wide column">
-                <h4 class="ui tiny header">
-                  <i class="fad fa-browser icon"></i>
-                  <span class="content">Building and hosting</span>
-                </h4>
-                <div class="ui small list">
-                  <div class="item">2 concurrent builds</div>
-                  <div class="item">50 redirects</div>
-                </div>
-              </div>
-
-              <div class="five wide column">
-                <h4 class="ui tiny header">
-                  <i class="fad fa-shield-keyhole icon"></i>
-                  <span class="content">Authentication and access</span>
-                </h4>
-                <div class="ui small list">
-                  <div class="item">Private repositories</div>
-                  <div class="item">Documentation authentication</div>
-                  <div class="item">SSO with GitHub and GitLab</div>
-                  <div class="item">30-day auth auditing</div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      {% endblock pricing_basic %}
 
 
     {% block pricing_community_callout %}
