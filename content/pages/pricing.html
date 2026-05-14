@@ -53,11 +53,12 @@
             name="Pro plan",
             tagline="For larger teams and multiple products.",
             price_details=[("$250", "per month")],
-            color="violet",
+            color="purple",
             highlight=True,
+            inverted=True,
           ) %}
-            <div class="ui list relaxed divided">
-              {{ pricing.plan_feature("<em>Everything in <b>Advanced</b>, plus:</em>", "<a href='#compare'>Compare plans</a>", "fa-object-intersect", color="violet") }}
+            <div class="ui inverted list relaxed divided">
+              {{ pricing.plan_feature("<em>Everything in <b>Advanced</b>, plus:</em>", "<a href='#compare'>Compare plans</a>", "fa-object-intersect") }}
               {{ pricing.plan_feature("6 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
               {{ pricing.plan_feature("15 custom domains", None, "fa-at") }}
               {{ pricing.plan_feature("SSO with Google", None, "fa-key-skeleton") }}
@@ -69,7 +70,7 @@
 
           <div class="column">
             <div class="ui padded segment">
-              <h2 class="ui monospace center aligned header">
+              <h2 class="ui center aligned header">
                 Enterprise plan
                 <span class="sub header">For organizations with custom requirements.</span>
               </h2>
@@ -147,7 +148,7 @@
           {% block pricing_opensource %}
             <div class="column">
               <div class="ui raised teal segment">
-                <h2 class="ui monospace center aligned header">
+                <h2 class="ui center aligned header">
                   Community
                 </h2>
 
