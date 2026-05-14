@@ -65,7 +65,7 @@ It supports multiple documentation tools (Sphinx, MkDocs, etc.) and automaticall
 
 - Build layouts and components from Semantic UI (Fomantic) classes first. Reach for custom CSS only when no combination of existing classes works.
 - Never use inline styles (`style="..."` attributes) or `<style>` blocks in templates. The one exception is Font Awesome duotone icon variables (`--fa-*`).
-- When custom CSS is unavoidable, add it to `src/css/site.less` under the "Site overrides" section, and run `npm run build-assets` to recompile.
+- When custom CSS is unavoidable, add it to the relevent module overrides file in `src/sui/`, never add these rules to `src/css/site.less` directly. Run `npm run build-assets` to recompile.
 - Write custom CSS as reusable Semantic UI-style variations (e.g. `.ui.grayscale.image`) rather than one-off ID or element selectors, and apply them as classes in the markup.
 
 ## Security
