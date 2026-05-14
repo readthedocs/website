@@ -38,10 +38,8 @@
             name="Advanced plan",
             price_details=[("$150", "per month")],
             color="violet",
-            highlight=True,
           ) %}
             <div class="ui list relaxed divided">
-              {# TODO: Replace "core" with better terms. Not sure what is best though.. #}
               {{ pricing.plan_feature("<em>Includes all <b>core</b> features</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
               {{ pricing.plan_feature("Support", "2 business day response", "fa-message-question") }}
               {{ pricing.plan_feature("Single sign-on (SSO)", "With GitHub and GitLab", "fa-key-skeleton") }}
@@ -56,6 +54,7 @@
             name="Pro plan",
             price_details=[("$250", "per month")],
             color="violet",
+            highlight=True,
           ) %}
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("<em>Includes all <b>Advanced plan</b> features</em>", "<a href='#compare'>Compare plan features</a>", "fa-object-intersect", color="violet") }}
@@ -70,12 +69,22 @@
 
           <div class="column">
             <div class="ui padded inverted violet segment">
-              <h3 class="ui small header">
-                <i class="fad fa-building icon"></i>
-                <span class="content">
-                  Enterprise plan
-                </span>
-              </h3>
+              <h2 class="ui small monospace center aligned header">
+                Enterprise plan
+              </h2>
+
+              <div class="ui horizontally fitted basic small segment">
+                <div class="ui inverted tiny center aligned one statistics">
+                  <div class="statistic">
+                    <div class="value">
+                      $999+
+                    </div>
+                    <div class="label">
+                      <span class="category">per month</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <p>
                 If your organization has specific needs that aren't met by our self-serve plans, we offer enterprise plans that can be customized to your requirements.
@@ -101,6 +110,11 @@
 
       <div class="ui basic center aligned padded segment">
         <a class="ui violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">Start your 30-day free trial</a>
+        <p class="ui basic segment">
+          Just need the essentials? Our <b>Basic plan</b> starts at <b>$50/month</b>
+          and includes all core documentation building and hosting features.
+          <a href="#compare">See how it compares</a>.
+        </p>
       </div>
 
 
@@ -235,52 +249,49 @@
   </div>
 </section>
 
-{# Compare plan features with a table #}
+{# Compare plan features with a table — focused on plan differences #}
 <section id="compare">
   <div class="ui padded container">
 
+    <h2 class="ui medium header">
+      Compare plans
+      <span class="sub header">
+        The key differences between our plans, side by side.
+      </span>
+    </h2>
+
     {% call pricing.feature_table() %}
       {{ pricing.feature_row("Pricing", "Monthly pricing, annual available", "fa-receipt", "<strong>Free for open source</strong>", "<strong>$50</strong>", "<strong>$150</strong>", "<strong>$250</strong>") }}
-      {{ pricing.feature_row("API access", "Write your own integrations", "fa-sparkles") }}
-      {{ pricing.feature_row("Team management", "Control organization access with team permissions", "fa-users", on_community=False) }}
       {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", ("Best effort", "white"), "2 business days", "2 business days", ("1 business day", "olive")) }}
       {{ pricing.feature_row("Ad free", "Documentation doesn't include ads", "fa-ad", on_community=False) }}
 
-      {{ pricing.header_row("Documentation authoring", "fa-typewriter") }}
-      {{ pricing.feature_row("Public repositories", "Clone public repositories", "fa-globe") }}
-      {{ pricing.feature_row("Pull request preview", "Preview changes in review", "fa-code-compare") }}
-      {{ pricing.feature_row("Unlimited projects", "Manage and build any number of projects", "fa-infinity") }}
-      {{ pricing.feature_row("Private repositories", "Clone private repositories", "fa-eye-slash", on_community=False) }}
-
       {{ pricing.header_row("Documentation building", "fa-gears") }}
       {{ pricing.feature_row("Build concurrency", "Concurrent build processes", "fa-rectangle-vertical-history fa-swap-opacity", 2, 2, 4, (6, "olive")) }}
-      {{ pricing.feature_row("Custom theming", "Style your documentation however you want", "fa-paint-brush") }}
-      {{ pricing.feature_row("Automatic building", "Deploy your docs on every commit", "fa-gears") }}
-      {{ pricing.feature_row("Notifications", "Receive email or webhook notifications", "fa-envelope-dot") }}
-      {{ pricing.feature_row("Environment variables", "Inject secrets into builds", "fa-lock-keyhole") }}
-      {{ pricing.feature_row("Automation rules", "Automatically manage versions", "fa-robot") }}
 
       {{ pricing.header_row("Documentation hosting", "fa-browser") }}
-      {{ pricing.feature_row("Documentation versioning", "Host multiple versions of your project", "fa-layer-group") }}
-      {{ pricing.feature_row("Documentation localization", "Host your project localized in multiple languages", "fa-language") }}
-      {{ pricing.feature_row("Subprojects", "Host multiple projects on the same domain", "fa-diagram-nested") }}
-      {{ pricing.feature_row("Integrated search", "Search across all of your projects", "fa-magnifying-glass") }}
-      {{ pricing.feature_row("Offline formats", "Download HTML, PDF, or EPUB formats", "fa-file-pdf") }}
-      {{ pricing.feature_row("Sitemap generation", "Automatically update your project's sitemap", "fa-sitemap") }}
-      {{ pricing.feature_row("Customizable error pages", "Manage your own error pages", "fa-palette") }}
-      {{ pricing.feature_row("Status badges", "Show the status of your last build", "fa-badge-check") }}
-      {{ pricing.feature_row("CDN hosting", "Reduce load times for your projects", "fa-clouds") }}
-      {{ pricing.feature_row("Authentication auditing", "Security log of all authentication across your projects", "fa-lock-keyhole", on_community="30 days", on_basic="30 days", on_advanced="30 days", on_pro=("90 days", "olive")) }}
-      {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right", 100, 50, 250, (500, "olive")) }}
-      {{ pricing.feature_row("Documentation authentication", "Allow specific users to view your documentation", "fa-shield-keyhole", on_community=False) }}
-      {{ pricing.feature_row("Single sign-on", "Sign on using external provider", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro=("GitHub, GitLab, and Google", "olive")) }}
-      {{ pricing.feature_row("Documentation sharing", "Provide temporary access to private documentation", "fa-user-shield", on_community=False) }}
       {{ pricing.feature_row("Custom domains", "Host documentation on your own domain name", "fa-at", on_community="2", on_basic=False, on_advanced="5", on_pro="15") }}
+      {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right", 100, 50, 250, (500, "olive")) }}
       {{ pricing.feature_row("Pageview analytics", "Better understand your most read pages", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive")) }}
       {{ pricing.feature_row("Search analytics", "Understand what users are searching for", "fa-chart-line", on_community="30 days", on_basic=False, on_advanced="30 days", on_pro=("90 days", "olive")) }}
-      {{ pricing.feature_row("Content embedding", "Embed sections of your documentation via API", "fa-object-subtract", on_basic=False) }}
       {{ pricing.feature_row("URL customization", "Use custom URL prefixes to match your site layout", "fa-route", on_community=False, on_basic=False, on_advanced=False, on_pro=True) }}
+
+      {{ pricing.header_row("Authentication & access", "fa-shield-keyhole") }}
+      {{ pricing.feature_row("Single sign-on", "Sign on using external provider", "fa-right-to-bracket", on_community=None, on_basic="GitHub and GitLab", on_advanced="GitHub and GitLab", on_pro=("GitHub, GitLab, and Google", "olive")) }}
+      {{ pricing.feature_row("Authentication auditing", "Security log of all authentication across your projects", "fa-lock-keyhole", on_community="30 days", on_basic="30 days", on_advanced="30 days", on_pro=("90 days", "olive")) }}
+      {{ pricing.feature_row("Private repositories", "Clone private repositories", "fa-eye-slash", on_community=False) }}
+      {{ pricing.feature_row("Documentation authentication", "Allow specific users to view your documentation", "fa-shield-keyhole", on_community=False) }}
     {% endcall %}
+
+    <div class="ui basic center aligned padded segment">
+      <p>
+        Every plan includes our core documentation building and hosting features
+        &mdash; automatic builds, versioning, search, pull request previews, CDN hosting, and more.
+      </p>
+      <a class="ui violet basic button" href="/features/">
+        See the full list of features
+        <i class="fad fa-arrow-right icon"></i>
+      </a>
+    </div>
 
   </div>
 </section>
