@@ -100,7 +100,7 @@ export default (env, argv) => {
               options: {
                 name: "[name].[ext]?[contenthash]",
                 outputPath: "css/images/",
-                publicPath: "images/",
+                publicPath: "../css/images/",
               },
             },
           ],
@@ -109,9 +109,8 @@ export default (env, argv) => {
           test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
           type: "asset/resource",
           generator: {
-            filename: "[name][ext]?[contenthash]",
-            outputPath: "css/fonts/",
-            publicPath: "fonts/",
+            filename: "css/fonts/[name][ext]?[contenthash]",
+            publicPath: "../",
           },
         },
       ],
