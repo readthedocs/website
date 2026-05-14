@@ -25,15 +25,17 @@
   {% endmacro %}
 
   <section>
-    {% call basic.header_lead(
-    header="Read the Docs is the <em><strong>all-in-one</strong></em> solution for enterprise software documentation")
-    %}
+    {% call basic.header_lead(header="Enterprise plans") %}
     <p>
-      If your organization has specific needs that aren't met by our self-serve plans,
-      we offer enterprise plans that can be customized to your requirements.
+      For organizations with custom requirements.
+      From <strong>$999/month</strong>, with SAML SSO, dedicated builders,
+      compliance-grade auditing, and a negotiated support SLA.
     </p>
-    <p class="ui center aligned basic segment">
-      <a class="ui large teal button" href="/pricing/enterprise/#inquiry">Tell us about your requirements</a>
+    <p class="ui basic segment">
+      <a class="ui large violet button" href="/pricing/enterprise/#inquiry">Talk to sales</a>
+      <a class="ui large basic button" href="/pricing/">
+        See all plans
+      </a>
     </p>
     {% endcall %}
   </section>
@@ -49,34 +51,76 @@
       <div class="ui vertically padded centered grid">
 
         {% call homepage.feature_detail_item(header="Custom builders", icon="fad fa-robot") %}
-        Add a dedicated, custom builder to your organization to support large or frequently built documentation projects.
-        Custom builders can include <em>additional memory and compute resources</em>.
+        Dedicated builders with <em>additional memory and compute</em>,
+        for large or frequently built documentation projects.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Support SLA", icon="fad fa-question") %}
-        Get <em>guaranteed support response times</em> for your most important documentation projects.
+        <em>Guaranteed response times</em> for your most critical documentation,
+        negotiated as part of your contract.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="SAML SSO", icon="fad fa-shield-keyhole") %}
-        We support custom SAML SSO integrations, including <em>Okta or Active Directory</em>.
+        Single sign-on with <em>Okta, Active Directory</em>,
+        or any SAML 2.0 identity provider.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Custom build images", icon="fad fa-forklift") %}
-        Does your documentation have <em>specific build requirements or need GPU support</em>?
-        We support custom Docker images for your builds to keep them fast and reliable.
+        Bring your own Docker image for <em>special build requirements
+        or GPU workloads</em>.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Advanced audit tracking", icon="fad fa-eyes") %}
-        If you have compliance requirements or need to track who is accessing your documentation,
-        our <em>forever audit logs and analytics data</em> can help.
+        <em>Indefinite audit log and analytics retention</em>
+        to meet your compliance and security needs.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Custom integrations", icon="fad fa-lightbulb") %}
-        Have additional needs that we haven't addressed here?
-        We're happy to work with your team to work with additional requirements you have,
-        tell us about them below.
+        Have a different requirement?
+        Tell us below and we'll see what we can do.
         {% endcall %}
 
+      </div>
+    </div>
+  </section>
+
+
+  <section id="enterprise-faq">
+    {{ about_divide("Enterprise FAQ") }}
+
+    <div class="ui very padded container">
+      <div class="ui basic segment">
+        <div class="ui stackable two column grid">
+
+          <div class="column">
+            <h3 class="ui small header">What's the minimum contract?</h3>
+            <p>
+              Enterprise plans are annual, with multi-year options.
+              Payment by invoice or purchase order.
+            </p>
+
+            <h3 class="ui small header">Do you sign DPAs and MSAs?</h3>
+            <p>
+              Yes. We'll work with your legal team to put the right paperwork in place
+              before your account goes live.
+            </p>
+          </div>
+
+          <div class="column">
+            <h3 class="ui small header">Can I trial Enterprise?</h3>
+            <p>
+              Start on our self-serve Pro plan to evaluate the platform,
+              or talk to us about a custom proof of concept.
+            </p>
+
+            <h3 class="ui small header">What's the support SLA?</h3>
+            <p>
+              Response times are negotiated per contract &mdash; typically
+              within hours for urgent issues, with a named support contact.
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -92,9 +136,9 @@
         <form method="POST" name="fa-form-1" class="ui inverted form"
           action="https://webhook.frontapp.com/forms/036c4169294f3b04abaa/Jd5Qy6b7AYZHFZ-iHZ9OtRFlYyZqTGhYZEYBmrsrhHaiRaYLlKHF9nqccJg7pewDwFUbEZ0klqlNdSs7BcUAoJO7aPapcC7JQBlYV5S1GZ04oPvbkzVvriejZRY"
           enctype="multipart/form-data" accept-charset="utf-8">
-          <h2 class="ui center aligned dividing header">Let us know how we can help</h2>
+          <h2 class="ui center aligned dividing header">Talk to sales</h2>
           <p>
-            Tell us what you're trying to do and we'll work with you to find the right solution.
+            Tell us what you're trying to do and we'll find the right solution.
           </p>
           <div class="field">
             <label>Name</label>
@@ -112,11 +156,9 @@
             <label>Do you have any specific requirements or questions?</label>
             <textarea name="body" rows="2" required placeholder="We really need SAML support with Okta"></textarea>
           </div>
-          <button class="ui inverted button" type="submit">Submit</button>
+          <button class="ui inverted button" type="submit">Contact sales</button>
           <p>
-            <em>
-            We will reach out to you within 24 hours to discuss your requirements.
-            </em>
+            <em>We'll get back to you within one business day.</em>
           </p>
         </form>
       </div>
