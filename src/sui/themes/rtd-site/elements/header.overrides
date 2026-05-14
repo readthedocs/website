@@ -3,16 +3,6 @@
   margin-top: e(%("calc(-1rem + %d)", @headerLineHeightOffset));
 }
 
-/* Pricing plan card header: extra padding, larger title, smaller subhead */
-.ui.pricing-plan.header {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1.4em;
-}
-.ui.pricing-plan.header > .sub.header {
-  font-size: 0.75em;
-}
-
 /* Treat a header in a center aligned column as a block */
 .ui.grid,
 .ui.grid > .row {
