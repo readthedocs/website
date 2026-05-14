@@ -29,7 +29,7 @@ built using a number of Node dependencies.
 
 You will need the following requirements:
 
-* Node.js version ``14``
+* Node.js version ``22``
 * Python version ``3.10`` (any release ``>=3.6`` works)
 * uv (Use ``asdf`` or see https://github.com/astral-sh/uv for installation instructions)
 

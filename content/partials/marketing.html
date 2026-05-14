@@ -15,7 +15,7 @@
   </blockquote>
 
   <div class="ui unstackable items">
-    <a class="item" {% if link %}href="{{ link }}"{% endif %} target="_blank" rel="noopener">
+    <a class="item" {% if link %}href="{{ link }}" target="_blank" rel="noopener"{% endif %}>
       <div class="ui avatar tiny image"> 
         <img class="ui image" src="{{ image }}" alt="{{ name }}, {{ title }}, {{ company }}" />
       </div>
@@ -85,7 +85,7 @@
       <i class="fad {{ icon }} big shadowed icon"
          {%- if icon_style %} style="{{ icon_style }}"{% endif %}></i>
 
-      <h2 class="ui small left aligned monospace header">
+      <h2 class="ui small left aligned header">
         {{ header }}
       </h2>
 
