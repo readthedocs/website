@@ -26,7 +26,7 @@ The new dashboard will start to become the default dashboard
 
     - On `Read the Docs Community`_ this change will go into effect on **Nov 12th**
     - On `Read the Docs Business`_ this change will go into effect on **Dec 10th**
-     
+
     To log in to the new dashboard:
 
     - Users of `Read the Docs Community`_ can log in at https://app.readthedocs.org/account/login

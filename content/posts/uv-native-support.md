@@ -7,14 +7,14 @@ authors: Manuel Kaufmann
 status: published
 image: /images/uv.jpg
 image_credit: Photo by <a href="https://unsplash.com/@pointblanq?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Point Blanq</a> on <a href="https://unsplash.com/photos/people-on-beach-during-sunset-D8AhlqaofJg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      
+
 
 We are excited to announce that Read the Docs now supports [`uv`](https://docs.astral.sh/uv/) natively in `.readthedocs.yaml` configuration file.
 This gives you a first-class way to install Python dependencies with `uv` during builds,
 without having to override install steps manually.
 
 `uv` is generally faster than `pip` for most operations,
-and many users will see real speedups in doc building by migrating to the toolchain. 
+and many users will see real speedups in doc building by migrating to the toolchain.
 
 ## How to use it
 

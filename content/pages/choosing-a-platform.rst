@@ -71,4 +71,3 @@ Questions?
 
 If you have a question about which platform would be best,
 email us at support@readthedocs.org.
-

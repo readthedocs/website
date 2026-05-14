@@ -2,9 +2,9 @@
 
 import sys
 
-project = 'site-communtiy'
-copyright = '2022, Test'
-author = 'Test'
+project = "site-communtiy"
+copyright = "2022, Test"
+author = "Test"
 
 extensions = []
 
