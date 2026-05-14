@@ -47,7 +47,7 @@
         <div class="row">
 
           {% call pricing.plan(
-            name="Basic plan",
+            name="Basic",
             tagline="For small teams getting started with private docs.",
             price_details=[("$50", "per month")],
             color="",
@@ -62,7 +62,7 @@
           {% endcall %}
 
           {% call pricing.plan(
-            name="Advanced plan",
+            name="Advanced",
             tagline="For hosting public docs at your own domain.",
             price_details=[("$150", "per month")],
             color="violet",
@@ -78,13 +78,12 @@
           {% endcall %}
 
           {% call pricing.plan(
-            name="Pro plan",
+            name="Pro",
             tagline="For organizations with scale and security needs.",
             price_details=[("$250", "per month")],
-            color="",
+            color="violet",
           ) %}
             <div class="ui list relaxed divided">
-              {{ pricing.plan_feature("<em>Everything in <b>Advanced</b>, plus:</em>", "<a href='#compare'>Compare plans</a>", "fa-object-intersect", color="violet") }}
               {{ pricing.plan_feature("6 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
               {{ pricing.plan_feature("15 custom domains", None, "fa-at") }}
               {{ pricing.plan_feature("SSO with Google", None, "fa-key-skeleton") }}
@@ -109,8 +108,8 @@
         <b>Enterprise &mdash; from $10k/year.</b>
         For organizations with custom requirements &mdash; SAML SSO, dedicated
         builders, advanced audit tracking, and a support SLA.
-        <a href="./enterprise/">Talk to sales</a>.
       </p>
+      <a class="ui basic violet button" href="./enterprise/">Talk to sales</a>
     </div>
 
   </div>
