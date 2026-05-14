@@ -37,14 +37,6 @@
                 We run the hard parts: builds, previews, auth -- so you can focus on creating great docs.
               </p>
 
-              {% block homepage_callout_buttons %}
-              <a class="ui large teal stackable button" data-analytics="signup-modal"
-                onclick="jQuery('#signup-modal').modal('show');">
-                <i class="fad fa-play icon"></i>
-                Get started for free
-              </a>
-              {% endblock homepage_callout_buttons %}
-
             </div>
             {% endblock homepage_callout %}
           </div>
@@ -64,25 +56,72 @@
   </section>
   {% endblock homepage_callout_wrapper %}
 
-  {% block homepage_highlight %}
-  {% call marketing.highlight_list() %}
+  {% block homepage_audience %}
+  <div class="ui padded container">
+    <div class="ui stackable two column centered grid">
 
-  <div class="five wide computer twelve wide tablet left aligned column">
-    <div class="ui inverted black stacked very padded large segment">
-      <i class="fad olive fa-code-pull-request big shadowed icon" aria-hidden="true"></i>
+      <div class="column">
+        <div class="ui inverted violet padded segment">
+          <h2 class="ui small left aligned header">
+            <i class="fad fa-building icon"></i>
+            For engineering and docs teams
+          </h2>
 
-      <h2 class="ui small left aligned header">
-        Catch doc regressions before you merge
-      </h2>
+          <p>
+            Your engineering team shouldn't have to run a docs platform team.
+            We run the infrastructure so your writers and developers ship
+            documentation, not pipelines.
+          </p>
 
-      <p>
-        Every pull request gets a live preview build with a visual diff
-        against production. Review rendered output, not raw markup.
-      </p>
+          <a class="ui inverted basic button" href="https://app.readthedocs.com/accounts/signup/"
+            data-analytics="commercial-signup">
+            Start your 30-day free trial
+            <i class="fas fa-arrow-right icon"></i>
+          </a>
+        </div>
+      </div>
 
+      <div class="column">
+        <div class="ui inverted teal padded segment">
+          <h2 class="ui small left aligned header">
+            <i class="fad fa-trees icon"></i>
+            For open source projects
+          </h2>
+
+          <p>
+            Always free for open source and community projects. We've hosted
+            open source documentation since 2010 — Flask, Jupyter, Godot, and
+            thousands more trust us to keep their docs online and searchable.
+          </p>
+
+          <a class="ui inverted basic button" href="https://app.readthedocs.org/accounts/signup/"
+            data-analytics="community-signup">
+            Host your project for free
+            <i class="fas fa-arrow-right icon"></i>
+          </a>
+        </div>
+      </div>
 
     </div>
   </div>
+  {% endblock homepage_audience %}
+
+  {# Logos of businesses that use our product. #}
+  {% include "includes/business-logos.html" %}
+
+  {% block homepage_highlight %}
+  {% call marketing.highlight_list() %}
+
+  {% call marketing.highlight_item(
+  icon="white fa-code-compare",
+  icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
+  header="Catch doc regressions before you merge",
+  color="black") %}
+  <p>
+    Every pull request gets a live preview build with a visual diff
+    against production. Review rendered output, not raw markup.
+  </p>
+  {% endcall %}
 
   {% call marketing.highlight_item(
   icon="white fa-key-skeleton",
@@ -97,17 +136,15 @@
   {% endcall %}
   {% endblock homepage_highlight %}
 
-  {# Logos of businesses that use our product. #}
-  {% include "includes/business-logos.html" %}
-
-  <div class="ui divider"></div>
-
   {% block homepage_feature_detail %}
   <section id="features">
     <div class="ui centered very padded container">
 
       <h3 class="ui huge center aligned header">
         Features
+        <span class="sub header">
+          Everything you need to build, host, and maintain your documentation.
+        </span>
       </h3>
 
       <div class="ui centered vertically padded container stackable grid">
@@ -121,8 +158,7 @@
          Support for llms.txt, markdown content negotiation, and agent skills make your documentation ready for any AI tool.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Preview your changes", icon="fad
-        fa-code-compare") %}
+        {% call homepage.feature_detail_item(header="Preview your changes", icon="fad fa-code-compare") %}
         Preview your rendered documentation before deploying, and catch mistakes before they go live.
         {% endcall %}
 
@@ -251,10 +287,10 @@
               </p>
 
               <p>
-                <a class="ui large teal stackable button" data-analytics="signup-modal"
-                  onclick="jQuery('#signup-modal').modal('show');">
-                  <i class="fad fa-play icon"></i>
+                <a class="ui large teal stackable button" href="https://app.readthedocs.org/accounts/signup/"
+                  data-analytics="community-signup">
                   Create an account
+                  <i class="fas fa-arrow-right icon"></i>
                 </a>
               </p>
             </div>
