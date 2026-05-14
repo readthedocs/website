@@ -43,7 +43,7 @@
 {% block content %}
 
   <section>
-    <div class="ui very padded container">
+    <div class="ui padded container">
       {% block content_breadcrumbs %}
         <div class="ui breadcrumb">
           <a class="section" href="/">Home</a>
@@ -51,17 +51,11 @@
           <div class="active section">Blog</div>
         </div>
       {% endblock content_breadcrumbs %}
-
-      {% block content_title %}
-        <div class="ui header">
-          Latest blog posts
-        </div>
-      {% endblock content_title %}
     </div>
   </section>
 
   <section>
-    <div class="ui very padded container">
+    <div class="ui padded container">
 
       {# Latest two posts are large, use 2 columns #}
       <div class="ui two cards stackable">
