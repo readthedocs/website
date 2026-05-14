@@ -15,3 +15,16 @@
 img.emojione {
   height: 1em;
 }
+
+/* Grayscale variation, useful for logo grids */
+.ui.grayscale.image,
+.ui.grayscale.image img {
+  filter: grayscale(100%);
+}
+
+/* Logo variation: normalize images to a consistent height regardless of aspect ratio */
+.ui.logo.image,
+.ui.logo.image img {
+  width: auto;
+  height: 2.5rem;
+}
