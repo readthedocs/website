@@ -35,7 +35,7 @@
 
         <div class="sixteen wide tablet four wide computer column">
           <a class="ui inverted fluid basic button" href="https://app.readthedocs.org/accounts/signup/" data-analytics="community-signup">
-            Get started free
+            Sign up
           </a>
         </div>
 
@@ -59,17 +59,13 @@
               {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-key-skeleton") }}
               {{ pricing.plan_feature("2 business day support", None, "fa-message-question") }}
             </div>
-
-            <p class="ui center aligned basic segment">
-              <a class="ui basic violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">Start free trial</a>
-            </p>
           {% endcall %}
 
           {% call pricing.plan(
             name="Advanced plan",
             tagline="For hosting public docs at your own domain.",
             price_details=[("$150", "per month")],
-            color="",
+            color="violet",
           ) %}
             <div class="ui list relaxed divided">
               {{ pricing.plan_feature("4 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
@@ -78,10 +74,6 @@
               {{ pricing.plan_feature("30-day analytics retention", None, "fa-line-chart") }}
               {{ pricing.plan_feature("2 business day support", None, "fa-message-question") }}
             </div>
-
-            <p class="ui center aligned basic segment">
-              <a class="ui basic violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">Start free trial</a>
-            </p>
           {% endcall %}
 
           {% call pricing.plan(
@@ -100,14 +92,16 @@
               {{ pricing.plan_feature("90-day authentication auditing", None, "fa-user-check") }}
               {{ pricing.plan_feature("1 business day support", None, "fa-message-question") }}
             </div>
-
-            <p class="ui center aligned basic segment">
-              <a class="ui violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">Start free trial</a>
-            </p>
           {% endcall %}
 
         </div>
       </div>
+    </div>
+
+    <div class="ui basic center aligned padded segment">
+      <a class="ui large violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">
+        Start your 30-day free trial
+      </a>
     </div>
 
     <div class="ui basic center aligned padded segment">
