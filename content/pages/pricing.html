@@ -57,7 +57,7 @@
               {{ pricing.plan_feature("Private repositories", None, "fa-lock-keyhole") }}
               {{ pricing.plan_feature("Documentation authentication", None, "fa-shield-keyhole") }}
               {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-key-skeleton") }}
-              {{ pricing.plan_feature("2 business day support", None, "fa-message-question") }}
+              {{ pricing.plan_feature("3 business day support", None, "fa-message-question") }}
             </div>
           {% endcall %}
 
@@ -123,7 +123,7 @@
 
     {% call pricing.feature_table() %}
       {{ pricing.feature_row("Pricing", "Monthly pricing, annual available", "fa-receipt", "<strong>$50</strong>", "<strong>$150</strong>", "<strong>$250</strong>") }}
-      {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", "2 business days", "2 business days", "1 business day") }}
+      {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", "3 business days", "2 business days", "1 business day") }}
       {{ pricing.feature_row("Build concurrency", "Concurrent build processes", "fa-rectangle-vertical-history fa-swap-opacity", 2, 4, 6) }}
       {{ pricing.feature_row("Custom domains", "Host documentation on your own domain name", "fa-at", on_basic=False, on_advanced="5", on_pro="15") }}
       {{ pricing.feature_row("Redirects", "Redirect requests for moved and deleted content", "fa-diamond-turn-right", 50, 250, 500) }}
