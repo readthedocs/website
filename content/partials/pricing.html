@@ -6,16 +6,14 @@
   <div class="{% if not _has_price %} computer only {%- endif %} column">
     <div class="ui {%- if _has_price %} raised padded {%- if inverted %} inverted {%- endif %} {{ color }} {%- else %} basic {%- endif %} segment">
 
-      <div class="ui basic vertically fitted center aligned segment">
-        <h2 class="ui {%- if inverted %} inverted {%- elif color %} {{ color }} {%- endif %} header">
-          {{ name }}
-        </h2>
-        {% if tagline %}
-          <div class="ui {%- if inverted %} inverted {%- endif %} small header">
-            {{ tagline }}
-          </div>
-        {% endif %}
-      </div>
+      <h2 class="ui {%- if inverted %} inverted {%- elif color %} {{ color }} {%- endif %} center aligned header">
+        {{ name }}
+      </h2>
+      {% if tagline %}
+        <div class="ui {%- if inverted %} inverted {%- endif %} small center aligned header">
+          {{ tagline }}
+        </div>
+      {% endif %}
 
       {% if price_details %}
         {% for value, label in price_details %}
