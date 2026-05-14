@@ -73,9 +73,15 @@
     {% macro _feature_table_row() %}
       <tr>
         <th class="ten wide" scope="col"></th>
-        <th class="two wide center aligned" scope="col">Basic</th>
-        <th class="two wide center aligned" scope="col">Advanced</th>
-        <th class="two wide center aligned" scope="col">Pro</th>
+        <th class="two wide center aligned" scope="col">
+          <div class="ui small header">Basic</div>
+        </th>
+        <th class="two wide center aligned" scope="col">
+          <div class="ui small header">Advanced</div>
+        </th>
+        <th class="two wide center aligned violet" scope="col">
+          <div class="ui small inverted header">Pro</div>
+        </th>
       </tr>
     {% endmacro %}
 
@@ -158,8 +164,10 @@
 {% macro header_row(name, icon) %}
   <tr class="grey">
     <td colspan="4">
-      <i class="fad {{ icon }} large black icon"></i>
-      {{ name }}
+      <div class="ui small header">
+        <i class="fad {{ icon }} icon"></i>
+        <div class="content">{{ name }}</div>
+      </div>
     </td>
   </tr>
 {% endmacro %}
