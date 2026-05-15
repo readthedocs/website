@@ -14,7 +14,7 @@ Two-factor authentication adds an extra layer of security to your account by req
 This helps protect your account from unauthorized access, even if your password is compromised.
 You can use an authenticator app like Google Authenticator or Authy to generate the codes.
 
-You can enable two-factor authentication from our new dashboard at <https://app.readthedocs.org/accounts/2fa/> (or <https://app.readthedocs.com/accounts/2fa/> for Read the Docs for Business users),
+You can enable two-factor authentication from our new dashboard at <https://app.readthedocs.org/accounts/2fa/> (or <https://app.readthedocs.com/accounts/2fa/> for Read the Docs Business users),
 or by following the steps from [our documentation](https://docs.readthedocs.io/en/stable/guides/management/2fa.html).
 
 We'd like to give a special thanks to the [django-allauth](https://allauth.org/) project for providing the foundation for our authentication system,

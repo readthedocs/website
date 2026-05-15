@@ -11,7 +11,7 @@ image_credit: Photo by <a href="https://unsplash.com/@scottrodgerson?utm_content
 **Note**: As of 3PM PST, this is now complete.
 
 We wanted to make you aware that on **Friday, February 14 at 2:00pm PST (5:00pm EST, 22:00 UTC)**, Read the Docs will be having a scheduled downtime of approximately 2 hours.
-This will impact both **Read the Docs Community** and **Read the Docs for Business**.
+This will impact both **Read the Docs Community** and **Read the Docs Business**.
 We expect the downtime to only last for 15-30 minutes, but we are scheduling a longer window to account for any unforeseen issues.
 
 During this maintenance window, public documentation will continue to be online but new documentation builds will not trigger and the Read the Docs dashboard will be unavailable.

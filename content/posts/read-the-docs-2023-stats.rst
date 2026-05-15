@@ -93,12 +93,12 @@ Funding
 Overall our community site continues to be sustainable,
 and we're excited to be able to work on open source with a small team everyday.
 
-We have additional revenue from our `Read the Docs for Business`_ & EthicalAds_.
+We have additional revenue from our `Read the Docs Business`_ & EthicalAds_.
 Both of these continue to be great sources of revenue for us,
 and we're excited to continue proving the concept of ethical advertising.
 
 .. _EthicalAds: https://www.ethicalads.io/
-.. _Read the Docs for Business: https://about.readthedocs.com/
+.. _Read the Docs Business: https://about.readthedocs.com/
 
 .. The advertising revenue is ad revenue for RTD itself. Gotten from the Read the Docs publisher on EthicalAds.
 
