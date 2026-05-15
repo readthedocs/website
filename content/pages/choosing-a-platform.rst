@@ -1,11 +1,11 @@
 :title: Choosing a platform
-:description: Learn more about the differences between Read the Docs community and Read the Docs for Business and which one is right for you.
+:description: Learn more about the differences between Read the Docs community and Read the Docs Business and which one is right for you.
 :template: docutils_page
 
 .. TODO: Figure out how to reuse substitions
 
 .. |org_brand| replace:: Read the Docs Community
-.. |com_brand| replace:: Read the Docs for Business
+.. |com_brand| replace:: Read the Docs Business
 
 Choosing a platform
 ===================
@@ -41,8 +41,8 @@ Important points:
 
 .. _EthicalAds: https://www.ethicalads.io/
 
-Read the Docs for Business
---------------------------
+Read the Docs Business
+----------------------
 
 |com_brand| is meant for companies and users who have more complex requirements
 for their documentation project. This can include commercial projects with

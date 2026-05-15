@@ -16,7 +16,7 @@ Read the Docs had a lot of good things happen this year.
 
 We did a majority of the work on our `CZI grant <https://blog.readthedocs.com/czi-grant-announcement/>`_,
 grew our team from 5 to 8,
-and continued to grow our `EthicalAds network`_ & `Read the Docs for Business`_.
+and continued to grow our `EthicalAds network`_ & `Read the Docs Business`_.
 It's been another year of steady growth,
 and we hope to continue that into 2022.
 
@@ -108,15 +108,15 @@ Funding
 * $380,000 advertising (from $234,000)
 * $35,000 Gold users and donations (from $30,000)
 * 8 paid staff (from 5)
-* We have additional revenue from our `Read the Docs for Business`_, but aren't including that in our community funding overview
+* We have additional revenue from our `Read the Docs Business`_, but aren't including that in our community funding overview
 
 We are excited to continue to grow our advertising business,
 and expand it to the larger community.
-We are also seeing continued growth of our paid product, `Read the Docs for Business`_,
+We are also seeing continued growth of our paid product, `Read the Docs Business`_,
 which is allowing us to fund further growth of the Read the Docs codebase for all our users.
 
 .. _EthicalAds: https://www.ethicalads.io/
-.. _Read the Docs for Business: https://readthedocs.com/
+.. _Read the Docs Business: https://readthedocs.com/
 
 
 Conclusion
