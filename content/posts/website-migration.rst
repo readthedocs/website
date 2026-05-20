@@ -12,7 +12,7 @@ Read the Docs website migration
 
 Read the Docs is in the process of migrating our primary marketing website to a single site: https://about.readthedocs.com.
 The new site offers users more information about our products and their features,
-in a combined presentation of what was previously divided between two websites (Read the Docs Community and Read the Docs for Business).
+in a combined presentation of what was previously divided between two websites (Read the Docs Community and Read the Docs Business).
 At the same time, the new site will also serve as a single entrypoint for users that are logging in to Read the Docs accounts.
 There has been a good deal of confusion around our two sites,
 and this change makes it more clear which site you're going to.

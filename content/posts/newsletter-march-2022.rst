@@ -24,7 +24,7 @@ New features
 In February we continued to work on refactors and internal changes.
 Among the major user-facing changes:
 
-- **We now have the CDN on Read the Docs for Business in beta**, with a couple accounts testing it. If you're interested, please `contact us`_.
+- **We now have the CDN on Read the Docs Business in beta**, with a couple accounts testing it. If you're interested, please `contact us`_.
 - You can now `cancel builds <https://github.com/readthedocs/readthedocs.org/pull/8850>`_ via a button in the dashboard. This will save resources, and allow you to ensure that you don't hit concurrency limits if you trigger a few builds at once.
 - Projects that are imported via the API are now required to have a VCS repository linked to them, if your organization has `VCS SSO <https://docs.readthedocs.io/en/latest/commercial/single-sign-on.html#sso-with-vcs-provider-github-bitbucket-or-gitlab>`_ turned on, so that users will be able to access it.
 

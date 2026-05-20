@@ -70,7 +70,7 @@ readthedocs.org ("Read the Docs Community")
     This Website is used by documentation authors and project maintainers for
     writing and distributing technical documentation.
 
-readthedocs.com ("Read the Docs for Business")
+readthedocs.com ("Read the Docs Business")
     This Website is a commercial hosted offering for hosting private
     documentation for corporate clients.
 
@@ -250,7 +250,7 @@ as necessary to render our Websites and provide our Services.
 Private projects
 ----------------
 
-**Short version:** *You may connect Read the Docs for Business to your private repositories or host documentation privately.
+**Short version:** *You may connect Read the Docs Business to your private repositories or host documentation privately.
 We treat the content of these private projects as confidential,
 and we only access it for support reasons, with your consent, or if required to for security reasons.*
 
@@ -435,7 +435,7 @@ Upgrades, downgrades, and changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - We will immediately bill you when you upgrade from the free plan to any paying plan
-  (either Read the Docs for Business or a Gold membership).
+  (either Read the Docs Business or a Gold membership).
 - If you change from a monthly billing plan to a yearly billing plan,
   Read the Docs will bill you for a full year at the next monthly billing date.
 - If you upgrade to a higher level of service, we will bill you for the upgraded plan immediately.
