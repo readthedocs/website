@@ -1,4 +1,4 @@
-title: Automation Rules v2: webhook filters and more flexible matching
+title: Automation rules: webhook filters and more flexible matching
 date: 2026-05-05
 description: Automation rules are now more powerful — match multiple version types in a single rule, filter builds by changed files, commit message or pull request labels, and trigger builds on demand.
 category: Feature announcement
@@ -11,8 +11,7 @@ image_credit: Photo by <a href="https://unsplash.com/@jontyson?utm_content=credi
 [Automation rules](https://docs.readthedocs.com/platform/stable/automation-rules.html) let project maintainers
 automate actions on new branches and tags pushed to their Git repository:
 activate a version, hide it, set it as default, delete it on branch deletion, and more.
-Today we are announcing **Automation Rules v2**,
-a redesign that makes rules more flexible and unlocks a long-requested capability:
+Today we are announcing several new features to automation rules that will make rules more flexible and unlock a long-requested capability:
 **filtering builds based on the contents of a webhook event**.
 
 ## What's new
@@ -56,9 +55,10 @@ so you can temporarily turn a rule off without losing its configuration.
 
 ## Where it works
 
-Webhook filters rely on the data sent by your Git provider.
-For now, they are supported on projects connected through our
-[GitHub App integration](https://docs.readthedocs.com/platform/stable/reference/git-integration.html).
+Webhook filters rely on the detailed event data sent by your Git provider,
+so they **require the [GitHub App integration](https://docs.readthedocs.com/platform/stable/reference/git-integration.html)**.
+If your project is still connected through the older OAuth integration —
+or hosted on another provider — you will need to migrate to the GitHub App to use webhook filters.
 Version-only rules (the existing "Activate version", "Hide version", etc.) keep working on every provider as before.
 
 ## Migration
@@ -69,8 +69,8 @@ You will simply find new fields available the next time you edit them.
 
 ## Try it out
 
-Head over to your project's **Settings → Automation Rules** page to take it for a spin,
-and check our [Automation Rules documentation](https://docs.readthedocs.com/platform/stable/automation-rules.html)
+Head over to your project's **Settings → Automation rules** page to take it for a spin,
+and check our [documentation on automation rules](https://docs.readthedocs.com/platform/stable/automation-rules.html)
 for the full reference and more examples.
 
 As always, [let us know](https://app.readthedocs.org/support/) what you think
