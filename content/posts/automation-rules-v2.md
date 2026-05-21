@@ -1,5 +1,5 @@
 title: Automation rules: webhook filters and more flexible matching
-date: 2026-05-05
+date: 2026-05-26
 description: Automation rules are now more powerful — match multiple version types in a single rule, filter builds by changed files, commit message or pull request labels, and trigger builds on demand.
 category: Feature announcement
 tags: hosting, automation, github
@@ -55,10 +55,9 @@ so you can temporarily turn a rule off without losing its configuration.
 
 ## Where it works
 
-Webhook filters rely on the detailed event data sent by your Git provider,
-so they **require the [GitHub App integration](https://docs.readthedocs.com/platform/stable/reference/git-integration.html)**.
-If your project is still connected through the older OAuth integration —
-or hosted on another provider — you will need to migrate to the GitHub App to use webhook filters.
+Webhook filters rely on the data sent by your Git provider.
+For now, they are supported on projects connected through our
+[GitHub App integration](https://docs.readthedocs.com/platform/stable/reference/git-integration.html).
 Version-only rules (the existing "Activate version", "Hide version", etc.) keep working on every provider as before.
 
 ## Migration
