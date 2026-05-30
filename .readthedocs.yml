@@ -8,6 +8,7 @@ build:
   commands:
     - pip install uv
     - uv sync
+    - npm install -g "npm@11.10"
     - npm ci
     - uv run npm run build-html
     - mkdir -p _readthedocs/html/

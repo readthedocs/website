@@ -18,7 +18,7 @@ commands:
       - checkout
       - node/install:
           node-version: "22.11"
-      - run: sudo npm install -g "npm@11.10"
+      - run: npm install -g "npm@11.10"
       - run: npm ci
       - run: npm run build-assets
       - run:
