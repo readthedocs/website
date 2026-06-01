@@ -4,8 +4,11 @@ build:
   os: ubuntu-26.04
   tools:
     python: "3.10"
-    nodejs: "24.16.0"
+    # TODO just install 24.16 when we finally support it
+    nodejs: "24"
   commands:
+    - asdf install nodejs 24.16.0
+    - asdf global nodejs 24.16.0
     - pip install uv
     - uv sync
     - npm ci
