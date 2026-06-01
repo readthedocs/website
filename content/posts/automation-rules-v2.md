@@ -1,5 +1,5 @@
 title: Automation rules: webhook filters and more flexible matching
-date: 2026-05-26
+date: 2026-06-01
 description: Automation rules are now more powerful — match multiple version types in a single rule, filter builds by changed files, commit message or pull request labels, and trigger builds on demand.
 category: Feature announcement
 tags: hosting, automation, github
