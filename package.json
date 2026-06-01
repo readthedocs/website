@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/readthedocs/website#readme",
   "engines": {
-    "node": ">24.0.0",
-    "npm": ">11.10.0"
+    "node": ">=24.16.0",
+    "npm": ">=11.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
