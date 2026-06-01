@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/readthedocs/website#readme",
   "engines": {
-    "node": ">22.0.0",
+    "node": ">24.0.0",
     "npm": ">11.10.0"
   },
   "devDependencies": {

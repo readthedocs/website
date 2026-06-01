@@ -29,7 +29,7 @@ built using a number of Node dependencies.
 
 You will need the following requirements:
 
-* Node.js version ``22``
+* Node.js version ``24``
 * NPM version ``11.10``
 * Python version ``3.10`` (any release ``>=3.6`` works)
 * uv (Use ``asdf`` or see https://github.com/astral-sh/uv for installation instructions)
@@ -42,7 +42,6 @@ install all system level dependencies for you.
     $ cp .tool-versions-example .tool-versions
     $ asdf install
     $ asdf reshim
-    $ npm install -g 'npm@11.10'
 
 With the correct system dependencies configured, either with ``asdf`` or
 manually, you can install all package level dependencies with:
