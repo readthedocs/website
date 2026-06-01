@@ -4,7 +4,7 @@ build:
   os: ubuntu-26.04
   tools:
     python: "3.10"
-    nodejs: "24"
+    nodejs: "24.16.0"
   commands:
     - pip install uv
     - uv sync
