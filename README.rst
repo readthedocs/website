@@ -29,7 +29,8 @@ built using a number of Node dependencies.
 
 You will need the following requirements:
 
-* Node.js version ``22``
+* Node.js version ``24``
+* NPM version ``11.10``
 * Python version ``3.10`` (any release ``>=3.6`` works)
 * uv (Use ``asdf`` or see https://github.com/astral-sh/uv for installation instructions)
 
@@ -115,17 +116,11 @@ Linting is required for every pull request, skipping this step can cause the
 build to fail if your formatting doesn't match the intended output from
 ``prettier``.
 
-To run linting checks, which will only report errors:
+All linting is set up to run via ``pre-commit``:
 
 .. code:: console
 
-    $ npm run lint
-
-To automatically format code:
-
-.. code:: console
-
-    $ npm run format
+    $ pre-commit
 
 Authoring content
 -----------------
