@@ -49,6 +49,7 @@
     "lato-font": "^3.0.0",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
+    "lit": "^3.3.3",
     "matchdep": "~2.0.0",
     "mini-css-extract-plugin": "^2.7.6",
     "nodemon-webpack-plugin": "^4.7.0",
