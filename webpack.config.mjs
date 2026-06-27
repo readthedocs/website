@@ -18,7 +18,9 @@ export default (env, argv) => {
     },
     output: {
       filename: is_production ? "js/[name].js?[contenthash]" : "js/[name].js",
-      chunkFilename: is_production ? "js/[name].js?[contenthash]" : "js/[name].js",
+      chunkFilename: is_production
+        ? "js/[name].js?[contenthash]"
+        : "js/[name].js",
       publicPath: "./",
       path: path.resolve(path.join("readthedocs_theme", "static")),
     },
