@@ -17,8 +17,10 @@ export default (env, argv) => {
       moment: "moment",
     },
     output: {
-      filename: "js/[name].js?[contenthash]",
-      chunkFilename: "js/[name].js?[contenthash]",
+      filename: is_production ? "js/[name].js?[contenthash]" : "js/[name].js",
+      chunkFilename: is_production
+        ? "js/[name].js?[contenthash]"
+        : "js/[name].js",
       publicPath: "./",
       path: path.resolve(path.join("readthedocs_theme", "static")),
     },
@@ -160,7 +162,7 @@ export default (env, argv) => {
         "Access-Control-Allow-Origin": "*",
       },
       devMiddleware: {
-        publicPath: path.resolve("output"),
+        publicPath: "/theme/",
         index: true,
       },
       static: {
