@@ -49,6 +49,7 @@
     "lato-font": "^3.0.0",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
+    "lit": "^3.3.3",
     "matchdep": "~2.0.0",
     "mini-css-extract-plugin": "^2.7.6",
     "nodemon-webpack-plugin": "^4.7.0",
@@ -65,19 +66,13 @@
     "webpack-shell-plugin": "^0.5.0",
     "webpack-watch-files-plugin": "^1.2.1"
   },
-  "babel": {
-    "env": {
-      "test": {
-        "plugins": [
-          "@babel/plugin-transform-modules-commonjs"
-        ]
-      }
-    }
-  },
   "jest": {
     "globals": {
       "__webpack_public_path__": null
-    }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(lit|@lit|lit-html|lit-element)/)"
+    ]
   },
   "prettier": {
     "overrides": [
