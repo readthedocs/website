@@ -5,9 +5,20 @@ newsletters, announcements, and CTAs. Everything here is drawn from patterns in
 our existing published copy, so it describes how we *already* sound at our best,
 and makes it repeatable.
 
-> **How to use this:** Read the principles once. When writing, lean on the
-> "Tone by context" section for the situation you're in, and run the checklist
-> at the end before publishing.
+## How this guide gets used
+
+- **Drafting** — read the principles once, then write. The "Tone by context"
+  table and the bad-news pattern below are skeletons: follow them step by step
+  when writing an announcement, deprecation, or incident post.
+- **AI-assisted drafting** — this guide is referenced from `AGENTS.md`, so AI
+  tools working in this repo load it automatically. Treat AI drafts like any
+  other draft: verify against the checklist, don't assume.
+- **Reviewing** — in PR review, cite a checklist item or section instead of
+  arguing taste from scratch. "Needs a number behind this claim" travels
+  better than "this feels off."
+- **Keeping it alive** — when a copy debate gets settled in a PR, record the
+  decision here. If the guide fails to answer the same question twice, that's
+  a missing section.
 
 ---
 
@@ -123,6 +134,21 @@ and honest about what happens next. No fake urgency, no dark patterns.
 
 ---
 
+## Before and after
+
+The fastest way to calibrate. The left column is generic SaaS copy; the right
+column is how we actually say it (all real quotes from our published copy).
+
+| Instead of | We write |
+|---|---|
+| "A revolutionary platform that seamlessly automates your documentation workflow." | "Connect your Git repository and treat docs like code. We run the hard parts: builds, previews, auth." |
+| "Blazing-fast builds on cutting-edge infrastructure." | "`uv` is generally faster than `pip` for most operations, and many users will see real speedups in doc building." |
+| "Trusted by industry leaders worldwide." | "We've hosted open source documentation since 2010 — Flask, Jupyter, Godot, and thousands more trust us to keep their docs online." |
+| "We regret to inform you of upcoming changes to version control support." | "We are announcing the deprecation of support for Bazaar, Mercurial, and Subversion starting on **Monday, June 3rd, 2024**." |
+| "Powerful enterprise-grade security features." | "Control who can access your docs, from your internal team to the whole world." |
+
+---
+
 ## Tone by context
 
 Voice stays constant; tone shifts with the situation.
@@ -182,9 +208,9 @@ example → contact us.
 - **Blog markdown style:** we often break sentences onto separate lines by clause
   in `.md`/`.rst` source. It renders as normal prose but keeps diffs clean —
   match the surrounding file.
-- **Emoji / playfulness:** sparing and genuine — a closing 🚀 or ❤️, an occasional
-  *":)"* or a line like *"Snappy docs are happy docs!"* Never in serious posts
-  (incidents, deprecations, security).
+- **Playfulness:** sparing and genuine — an occasional *":)"* in a blog post,
+  a rocket or heart icon in page chrome. Never in serious posts (incidents,
+  deprecations, security).
 - **Links:** link generously to docs, related posts, and evidence (issues, data).
   Claims should be checkable.
 
