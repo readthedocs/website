@@ -44,6 +44,9 @@ PLUGINS = ["related_posts", "jinja2content", "readthedocs_theme.plugins.html_dir
 # Feed (RSS/Atom) settings
 FEED_DOMAIN = SITEURL
 FEED_ATOM = "feeds/atom.xml"
+# Keep this at 1. The feed drives the RSS-to-email automation on our mailing
+# platform, which treats any entry it has not seen before as a new post to send.
+# Raising this exposes older posts to that automation and mails them out again.
 FEED_MAX_ITEMS = 1
 FEED_RSS = None  # No rss
 FEED_ALL_ATOM = None  # No translation
