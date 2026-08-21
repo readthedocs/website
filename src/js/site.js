@@ -2,6 +2,7 @@ import jquery from "jquery";
 import Plausible from "plausible-tracker";
 
 import * as components from "./components";
+import { captureFirstTouch, decorateSignupLinks } from "./attribution";
 
 // Even though we do this at Webpack to give a jQuery global, seems we also have
 // to do this again here.
@@ -50,6 +51,9 @@ jquery(document).ready(() => {
 
   jquery("[data-module]").sui_module();
   jquery("[data-analytics]").plausible();
+
+  captureFirstTouch();
+  decorateSignupLinks();
 
   showModalsByHash();
 });
