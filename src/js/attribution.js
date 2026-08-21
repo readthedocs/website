@@ -18,12 +18,6 @@
 const STORAGE_KEY = "rtd-attribution";
 const UTM_PARAMS = ["utm_source", "utm_medium", "utm_campaign"];
 
-// Visits from the dashboard are existing users coming back to read the
-// marketing site, not a source of new signups. Hosted documentation
-// (readthedocs.io) is deliberately not in this list -- those readers are
-// people we do want to convert.
-const SELF_REFERRAL_HOSTS = ["app.readthedocs.org", "app.readthedocs.com"];
-
 /** Get the stored `ref`, or null when unset or localStorage is unavailable. */
 function getStoredAttribution() {
   try {
@@ -42,21 +36,22 @@ function buildRef(parts) {
   return parts.map((part) => part.trim().replace(/\//g, "-")).join("/");
 }
 
-/** Get the referring domain, or an empty string if it isn't a real source. */
+/**
+ * Get the referring domain, or an empty string for our own pages.
+ *
+ * Referrals from the dashboard are kept. Anyone following an old
+ * `readthedocs.org` link is logged out when they land here -- that is the
+ * only case where the dashboard sends someone our way -- so those are new
+ * visitors, not existing users. The dashboard already tags the ones it
+ * redirects with `?ref=readthedocs.org`.
+ */
 function getReferrerHost() {
   if (!document.referrer) {
     return "";
   }
   try {
     const { hostname } = new URL(document.referrer);
-    if (
-      !hostname ||
-      hostname === window.location.hostname ||
-      SELF_REFERRAL_HOSTS.includes(hostname)
-    ) {
-      return "";
-    }
-    return hostname;
+    return hostname === window.location.hostname ? "" : hostname;
   } catch (error) {
     return "";
   }

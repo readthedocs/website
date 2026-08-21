@@ -54,12 +54,14 @@ describe("captureFirstTouch", () => {
     expect(getStoredAttribution()).toBe("news.ycombinator.com");
   });
 
-  test("ignores referrals from our own dashboard", () => {
-    setReferrer("https://app.readthedocs.org/dashboard/");
+  test("keeps referrals from the dashboard", () => {
+    // Only logged out visitors are sent here from the dashboard, so these
+    // are people following old readthedocs.org links, not existing users.
+    setReferrer("https://app.readthedocs.org/projects/pip/");
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBeNull();
+    expect(getStoredAttribution()).toBe("app.readthedocs.org");
   });
 
   test("keeps referrals from hosted documentation", () => {
@@ -68,6 +70,14 @@ describe("captureFirstTouch", () => {
     captureFirstTouch();
 
     expect(getStoredAttribution()).toBe("docs.example.readthedocs.io");
+  });
+
+  test("keeps the ref the dashboard tags old links with", () => {
+    setPageUrl("/?ref=readthedocs.org");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toBe("readthedocs.org");
   });
 
   test("ignores internal referrals", () => {
