@@ -1,26 +1,22 @@
 /**
- * First-touch attribution
+ * Signup attribution
  *
- * The marketing site and the dashboard are on different domains, so the
- * dashboard can't see where a visitor originally came from -- by the time
- * they click "sign up", the referrer is just this site. To close that gap,
- * we store the visitor's first-touch attribution (UTM parameters and
- * external referrer) in localStorage on their first visit, and forward it
- * to the dashboard as query parameters on signup links. The dashboard
- * captures these at signup and stores them on the user.
+ * The marketing site and the dashboard are on different domains, so by the
+ * time a visitor clicks "sign up", the dashboard only sees this site as the
+ * referrer -- not where they originally came from. To close that gap, we
+ * store the visitor's first-touch attribution (UTM parameters, or the
+ * referring domain as `ref`) in localStorage, and add it to signup links.
+ * The dashboard stores it on the user at signup.
+ *
+ * Keep the parameter list in sync with `AttributionMiddleware` in the
+ * readthedocs.org repository, which ignores anything else.
  */
 
 const STORAGE_KEY = "rtd-attribution";
-const UTM_PARAMS = [
-  "utm_source",
-  "utm_medium",
-  "utm_campaign",
-  "utm_content",
-  "utm_term",
-];
+const PARAMS = ["utm_source", "utm_medium", "utm_campaign", "ref"];
 
 /**
- * Get the stored first-touch attribution, or null.
+ * Get the stored attribution, or null.
  *
  * Returns null when localStorage is unavailable (private browsing) or the
  * stored value is corrupt.
@@ -35,30 +31,27 @@ function getStoredAttribution() {
 }
 
 /**
- * Store first-touch attribution from the current page URL and referrer.
+ * Store attribution from the current page URL and referrer.
  *
- * First touch wins: once attribution is stored, later visits never
- * overwrite it. Visits without any signal (no UTM parameters and no
- * external referrer) store nothing.
+ * First touch wins: once stored, later visits never overwrite it. Visits
+ * without any attribution signal store nothing.
  */
 function captureFirstTouch() {
   if (getStoredAttribution()) {
     return;
   }
 
-  const params = new URLSearchParams(window.location.search);
+  const search = new URLSearchParams(window.location.search);
   const data = {};
-  for (const param of UTM_PARAMS) {
-    const value = params.get(param);
+  for (const param of PARAMS) {
+    const value = search.get(param);
     if (value) {
       data[param] = value;
     }
   }
 
-  const ref = params.get("ref");
-  if (ref) {
-    data.ref = ref;
-  } else if (document.referrer) {
+  // Fall back to the referring domain, so organic traffic is attributed too.
+  if (!data.ref && document.referrer) {
     try {
       const referrer = new URL(document.referrer);
       if (referrer.hostname && referrer.hostname !== window.location.hostname) {
@@ -81,10 +74,10 @@ function captureFirstTouch() {
 }
 
 /**
- * Forward stored attribution on dashboard signup links.
+ * Add stored attribution to dashboard signup links.
  *
- * Appends the stored UTM parameters and ``ref`` to every signup link,
- * without overriding parameters a link already sets explicitly.
+ * Parameters already set on a link win, as those are more specific than
+ * whatever the visitor arrived with.
  */
 function decorateSignupLinks() {
   const data = getStoredAttribution();
@@ -95,7 +88,7 @@ function decorateSignupLinks() {
   for (const link of document.querySelectorAll('a[href*="/accounts/signup"]')) {
     try {
       const url = new URL(link.href);
-      for (const param of [...UTM_PARAMS, "ref"]) {
+      for (const param of PARAMS) {
         if (data[param] && !url.searchParams.has(param)) {
           url.searchParams.set(param, data[param]);
         }

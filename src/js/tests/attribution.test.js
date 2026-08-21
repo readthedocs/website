@@ -35,6 +35,14 @@ describe("captureFirstTouch", () => {
     });
   });
 
+  test("ignores parameters the dashboard doesn't store", () => {
+    setPageUrl("/?utm_source=newsletter&utm_term=docs");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toEqual({ utm_source: "newsletter" });
+  });
+
   test("stores external referrer hostname", () => {
     setReferrer("https://news.ycombinator.com/item?id=1");
 
