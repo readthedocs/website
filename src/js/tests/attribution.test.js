@@ -27,7 +27,7 @@ describe("captureFirstTouch", () => {
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBe("newsletter/email/launch");
+    expect(getStoredAttribution()).toEqual({ ref: "newsletter/email/launch" });
   });
 
   test("drops trailing parts that are missing", () => {
@@ -35,7 +35,7 @@ describe("captureFirstTouch", () => {
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBe("newsletter");
+    expect(getStoredAttribution()).toEqual({ ref: "newsletter" });
   });
 
   test("keeps position when a middle part is missing", () => {
@@ -43,41 +43,51 @@ describe("captureFirstTouch", () => {
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBe("newsletter//launch");
+    expect(getStoredAttribution()).toEqual({ ref: "newsletter//launch" });
   });
 
-  test("falls back to the referring domain", () => {
+  test("records the referring domain", () => {
     setReferrer("https://news.ycombinator.com/item?id=1");
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBe("news.ycombinator.com");
+    expect(getStoredAttribution()).toEqual({
+      referrer: "news.ycombinator.com",
+    });
   });
 
-  test("keeps referrals from the dashboard", () => {
-    // Only logged out visitors are sent here from the dashboard, so these
-    // are people following old readthedocs.org links, not existing users.
-    setReferrer("https://app.readthedocs.org/projects/pip/");
+  test("records a ref and a referrer together", () => {
+    setPageUrl("/?utm_source=newsletter");
+    setReferrer("https://news.ycombinator.com/");
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBe("app.readthedocs.org");
+    expect(getStoredAttribution()).toEqual({
+      ref: "newsletter",
+      referrer: "news.ycombinator.com",
+    });
   });
 
-  test("keeps referrals from hosted documentation", () => {
+  test("prefers the referrer the dashboard passes along", () => {
+    // The dashboard knows the original referrer of an old readthedocs.org
+    // link, which is lost by the time the visitor reaches us.
+    setPageUrl("/?ref=readthedocs.org&referrer=docs.python.org");
+    setReferrer("https://app.readthedocs.org/");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toEqual({
+      ref: "readthedocs.org",
+      referrer: "docs.python.org",
+    });
+  });
+
+  test("records referrals from hosted documentation", () => {
     setReferrer("https://docs.example.readthedocs.io/en/latest/");
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBe("docs.example.readthedocs.io");
-  });
-
-  test("keeps the ref the dashboard tags old links with", () => {
-    setPageUrl("/?ref=readthedocs.org");
-
-    captureFirstTouch();
-
-    expect(getStoredAttribution()).toBe("readthedocs.org");
+    expect(getStoredAttribution().referrer).toBe("docs.example.readthedocs.io");
   });
 
   test("ignores internal referrals", () => {
@@ -88,24 +98,6 @@ describe("captureFirstTouch", () => {
     expect(getStoredAttribution()).toBeNull();
   });
 
-  test("a campaign wins over the referrer", () => {
-    setPageUrl("/?utm_source=newsletter");
-    setReferrer("https://news.ycombinator.com/");
-
-    captureFirstTouch();
-
-    expect(getStoredAttribution()).toBe("newsletter");
-  });
-
-  test("an explicit ref wins over the referrer", () => {
-    setPageUrl("/?ref=pycon-2026");
-    setReferrer("https://news.ycombinator.com/");
-
-    captureFirstTouch();
-
-    expect(getStoredAttribution()).toBe("pycon-2026");
-  });
-
   test("first touch is not overwritten", () => {
     setPageUrl("/?utm_source=first");
     captureFirstTouch();
@@ -113,7 +105,7 @@ describe("captureFirstTouch", () => {
     setPageUrl("/?utm_source=second");
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBe("first");
+    expect(getStoredAttribution()).toEqual({ ref: "first" });
   });
 
   test("stores nothing without an attribution signal", () => {
@@ -127,7 +119,7 @@ describe("captureFirstTouch", () => {
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toBe("blog-post");
+    expect(getStoredAttribution()).toEqual({ ref: "blog-post" });
   });
 });
 
@@ -140,14 +132,16 @@ describe("decorateSignupLinks", () => {
     `;
   });
 
-  test("adds the stored ref to signup links", () => {
+  test("adds the stored attribution to signup links", () => {
     setPageUrl("/?utm_source=newsletter&utm_medium=email");
+    setReferrer("https://news.ycombinator.com/");
     captureFirstTouch();
 
     decorateSignupLinks();
 
     const url = new URL(document.getElementById("community").href);
     expect(url.searchParams.get("ref")).toBe("newsletter/email");
+    expect(url.searchParams.get("referrer")).toBe("news.ycombinator.com");
   });
 
   test("does not override a ref already on the link", () => {
