@@ -4,37 +4,69 @@
  * The marketing site and the dashboard are on different domains, so by the
  * time a visitor clicks "sign up", the dashboard only sees this site as the
  * referrer -- not where they originally came from. To close that gap, we
- * store the visitor's first-touch attribution (UTM parameters, or the
- * referring domain as `ref`) in localStorage, and add it to signup links.
- * The dashboard stores it on the user at signup.
+ * resolve where a visitor first arrived from and pass it to the dashboard as
+ * a single `ref` parameter on signup links, which the dashboard stores on
+ * the user at signup.
  *
- * Keep the parameter list in sync with `AttributionMiddleware` in the
- * readthedocs.org repository, which ignores anything else.
+ * The value is `source/medium/campaign`, with only the source required, so
+ * both `hn` and `newsletter/email/launch` are valid. UTM parameters stay on
+ * this site for Plausible, which reads them natively; `ref` is only the
+ * resolved answer we hand over. Keep this in sync with
+ * `AttributionMiddleware` in the readthedocs.org repository.
  */
 
 const STORAGE_KEY = "rtd-attribution";
-const PARAMS = ["utm_source", "utm_medium", "utm_campaign", "ref"];
+const UTM_PARAMS = ["utm_source", "utm_medium", "utm_campaign"];
 
-/**
- * Get the stored attribution, or null.
- *
- * Returns null when localStorage is unavailable (private browsing) or the
- * stored value is corrupt.
- */
+// Visits from the dashboard are existing users coming back to read the
+// marketing site, not a source of new signups. Hosted documentation
+// (readthedocs.io) is deliberately not in this list -- those readers are
+// people we do want to convert.
+const SELF_REFERRAL_HOSTS = ["app.readthedocs.org", "app.readthedocs.com"];
+
+/** Get the stored `ref`, or null when unset or localStorage is unavailable. */
 function getStoredAttribution() {
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
+    return window.localStorage.getItem(STORAGE_KEY);
   } catch (error) {
     return null;
   }
 }
 
+/** Join parts into a `ref`, dropping empty trailing ones. */
+function buildRef(parts) {
+  while (parts.length && !parts[parts.length - 1]) {
+    parts.pop();
+  }
+  // Slashes separate the parts, so they can't appear inside one.
+  return parts.map((part) => part.trim().replace(/\//g, "-")).join("/");
+}
+
+/** Get the referring domain, or an empty string if it isn't a real source. */
+function getReferrerHost() {
+  if (!document.referrer) {
+    return "";
+  }
+  try {
+    const { hostname } = new URL(document.referrer);
+    if (
+      !hostname ||
+      hostname === window.location.hostname ||
+      SELF_REFERRAL_HOSTS.includes(hostname)
+    ) {
+      return "";
+    }
+    return hostname;
+  } catch (error) {
+    return "";
+  }
+}
+
 /**
- * Store attribution from the current page URL and referrer.
+ * Store where this visitor came from.
  *
  * First touch wins: once stored, later visits never overwrite it. Visits
- * without any attribution signal store nothing.
+ * with nothing to attribute store nothing.
  */
 function captureFirstTouch() {
   if (getStoredAttribution()) {
@@ -42,58 +74,44 @@ function captureFirstTouch() {
   }
 
   const search = new URLSearchParams(window.location.search);
-  const data = {};
-  for (const param of PARAMS) {
-    const value = search.get(param);
-    if (value) {
-      data[param] = value;
-    }
-  }
+  const utm = UTM_PARAMS.map((param) => search.get(param) || "");
 
-  // Fall back to the referring domain, so organic traffic is attributed too.
-  if (!data.ref && document.referrer) {
-    try {
-      const referrer = new URL(document.referrer);
-      if (referrer.hostname && referrer.hostname !== window.location.hostname) {
-        data.ref = referrer.hostname;
-      }
-    } catch (error) {
-      // Unparseable referrer, nothing to store.
-    }
-  }
+  // A campaign link wins, then a `ref` someone linked here with, then
+  // wherever the visitor came from.
+  const ref = utm[0]
+    ? buildRef(utm)
+    : buildRef([search.get("ref") || getReferrerHost()]);
 
-  if (Object.keys(data).length === 0) {
+  if (!ref) {
     return;
   }
 
   try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    window.localStorage.setItem(STORAGE_KEY, ref);
   } catch (error) {
     // localStorage unavailable, attribution is best effort.
   }
 }
 
 /**
- * Add stored attribution to dashboard signup links.
+ * Add the stored `ref` to dashboard signup links.
  *
- * Parameters already set on a link win, as those are more specific than
- * whatever the visitor arrived with.
+ * A `ref` already on a link wins, as it's more specific than wherever the
+ * visitor happened to arrive from.
  */
 function decorateSignupLinks() {
-  const data = getStoredAttribution();
-  if (!data) {
+  const ref = getStoredAttribution();
+  if (!ref) {
     return;
   }
 
   for (const link of document.querySelectorAll('a[href*="/accounts/signup"]')) {
     try {
       const url = new URL(link.href);
-      for (const param of PARAMS) {
-        if (data[param] && !url.searchParams.has(param)) {
-          url.searchParams.set(param, data[param]);
-        }
+      if (!url.searchParams.has("ref")) {
+        url.searchParams.set("ref", ref);
+        link.href = url.toString();
       }
-      link.href = url.toString();
     } catch (error) {
       // Relative or malformed href, leave the link untouched.
     }

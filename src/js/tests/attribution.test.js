@@ -4,8 +4,6 @@ import {
   getStoredAttribution,
 } from "../attribution";
 
-const STORAGE_KEY = "rtd-attribution";
-
 function setPageUrl(path) {
   window.history.replaceState({}, "", path);
 }
@@ -24,34 +22,55 @@ beforeEach(() => {
 });
 
 describe("captureFirstTouch", () => {
-  test("stores UTM parameters", () => {
+  test("builds a ref from UTM parameters", () => {
+    setPageUrl("/?utm_source=newsletter&utm_medium=email&utm_campaign=launch");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toBe("newsletter/email/launch");
+  });
+
+  test("drops trailing parts that are missing", () => {
+    setPageUrl("/?utm_source=newsletter");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toBe("newsletter");
+  });
+
+  test("keeps position when a middle part is missing", () => {
     setPageUrl("/?utm_source=newsletter&utm_campaign=launch");
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toEqual({
-      utm_source: "newsletter",
-      utm_campaign: "launch",
-    });
+    expect(getStoredAttribution()).toBe("newsletter//launch");
   });
 
-  test("ignores parameters the dashboard doesn't store", () => {
-    setPageUrl("/?utm_source=newsletter&utm_term=docs");
-
-    captureFirstTouch();
-
-    expect(getStoredAttribution()).toEqual({ utm_source: "newsletter" });
-  });
-
-  test("stores external referrer hostname", () => {
+  test("falls back to the referring domain", () => {
     setReferrer("https://news.ycombinator.com/item?id=1");
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toEqual({ ref: "news.ycombinator.com" });
+    expect(getStoredAttribution()).toBe("news.ycombinator.com");
   });
 
-  test("ignores internal referrer", () => {
+  test("ignores referrals from our own dashboard", () => {
+    setReferrer("https://app.readthedocs.org/dashboard/");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toBeNull();
+  });
+
+  test("keeps referrals from hosted documentation", () => {
+    setReferrer("https://docs.example.readthedocs.io/en/latest/");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toBe("docs.example.readthedocs.io");
+  });
+
+  test("ignores internal referrals", () => {
     setReferrer("http://localhost/some-page/");
 
     captureFirstTouch();
@@ -59,13 +78,22 @@ describe("captureFirstTouch", () => {
     expect(getStoredAttribution()).toBeNull();
   });
 
-  test("ref parameter wins over referrer", () => {
-    setPageUrl("/?ref=producthunt");
+  test("a campaign wins over the referrer", () => {
+    setPageUrl("/?utm_source=newsletter");
     setReferrer("https://news.ycombinator.com/");
 
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toEqual({ ref: "producthunt" });
+    expect(getStoredAttribution()).toBe("newsletter");
+  });
+
+  test("an explicit ref wins over the referrer", () => {
+    setPageUrl("/?ref=pycon-2026");
+    setReferrer("https://news.ycombinator.com/");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toBe("pycon-2026");
   });
 
   test("first touch is not overwritten", () => {
@@ -75,13 +103,21 @@ describe("captureFirstTouch", () => {
     setPageUrl("/?utm_source=second");
     captureFirstTouch();
 
-    expect(getStoredAttribution()).toEqual({ utm_source: "first" });
+    expect(getStoredAttribution()).toBe("first");
   });
 
   test("stores nothing without an attribution signal", () => {
     captureFirstTouch();
 
-    expect(window.localStorage.getItem(STORAGE_KEY)).toBeNull();
+    expect(getStoredAttribution()).toBeNull();
+  });
+
+  test("escapes slashes inside a part", () => {
+    setPageUrl("/?utm_source=blog/post");
+
+    captureFirstTouch();
+
+    expect(getStoredAttribution()).toBe("blog-post");
   });
 });
 
@@ -89,31 +125,29 @@ describe("decorateSignupLinks", () => {
   beforeEach(() => {
     document.body.innerHTML = `
       <a id="community" href="https://app.readthedocs.org/accounts/signup/">Sign up</a>
-      <a id="commercial" href="https://app.readthedocs.com/accounts/signup/?utm_source=pricing">Sign up</a>
+      <a id="commercial" href="https://app.readthedocs.com/accounts/signup/?ref=pricing">Sign up</a>
       <a id="login" href="https://app.readthedocs.org/dashboard/">Log in</a>
     `;
   });
 
-  test("appends stored attribution to signup links", () => {
-    setPageUrl("/?utm_source=newsletter");
-    setReferrer("https://news.ycombinator.com/");
+  test("adds the stored ref to signup links", () => {
+    setPageUrl("/?utm_source=newsletter&utm_medium=email");
     captureFirstTouch();
 
     decorateSignupLinks();
 
     const url = new URL(document.getElementById("community").href);
-    expect(url.searchParams.get("utm_source")).toBe("newsletter");
-    expect(url.searchParams.get("ref")).toBe("news.ycombinator.com");
+    expect(url.searchParams.get("ref")).toBe("newsletter/email");
   });
 
-  test("does not override parameters already on the link", () => {
+  test("does not override a ref already on the link", () => {
     setPageUrl("/?utm_source=newsletter");
     captureFirstTouch();
 
     decorateSignupLinks();
 
     const url = new URL(document.getElementById("commercial").href);
-    expect(url.searchParams.get("utm_source")).toBe("pricing");
+    expect(url.searchParams.get("ref")).toBe("pricing");
   });
 
   test("leaves other links alone", () => {
