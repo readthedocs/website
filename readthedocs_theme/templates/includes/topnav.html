@@ -1,11 +1,11 @@
 {# Pricing menu for plans and enterprise #}
 {% macro menu_pricing() %}
   <div class="header">Plans</div>
-  <a class="item" href="{{ SITEURL }}/pricing/#/business">
+  <a class="item" href="{{ SITEURL }}/pricing/#business">
     <i class="fad fa-diagram-venn primary icon"></i>
     Business plans
   </a>
-  <a class="item" href="{{ SITEURL }}/pricing/#/community">
+  <a class="item" href="{{ SITEURL }}/pricing/#community">
     <i class="fad fa-diagram-venn primary icon"></i>
     Community plans
   </a>
@@ -95,11 +95,6 @@
       Sign up
     </a>
   {% endif %}
-
-  <a class="item" href="/choosing-a-platform/">
-    <i class="fad fa-circle-question grey icon"></i>
-    Choosing a platform
-  </a>
 {% endmacro %}
 
 {# Application links to sign up #}
@@ -294,8 +289,8 @@
     </div>
 
     <div class="actions">
-      <a href="{{ SITE_URL }}/choosing-a-platform/" class="ui cancel button"><i class="fad fa-circle-question grey icon" aria-hidden="true"></i>Choosing a platform</a>
-      <a href="{{ SITE_URL }}/features/" class="ui cancel button"><i class="fad fa-sparkles grey icon" aria-hidden="true"></i>Explore all the features</a>
+      <a href="{{ SITEURL }}/pricing/#community" class="ui cancel button"><i class="fad fa-circle-question grey icon" aria-hidden="true"></i>Compare Community and Business</a>
+      <a href="{{ SITEURL }}/features/" class="ui cancel button"><i class="fad fa-sparkles grey icon" aria-hidden="true"></i>Explore all the features</a>
     </div>
   </div>
 {% endblock signup_modal %}
