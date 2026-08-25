@@ -51,12 +51,10 @@
       #}
       {% block topnav_mobile_menu %}
         <div class="five wide mobile only right aligned column">
-          <div class="ui dropdown" data-module="dropdown" data-action="select">
+          <div class="ui wide dropdown" data-module="dropdown" data-action="select">
             <i class="fad fa-bars large icon" style="--fa-secondary-opacity: 0.8;"></i>
             {# The trigger sits at the right edge of the viewport, so the menu
-               has to open leftwards from it. `left` right-aligns the menu to
-               the trigger; dropping `wide` lets it size to its content instead
-               of a fixed 320px, which does not fit a 320px viewport. #}
+               has to open leftwards from it. #}
             <div class="left menu">
 
               <a class="item" href="{{ SITEURL }}/features/">
