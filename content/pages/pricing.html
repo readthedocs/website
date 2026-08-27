@@ -15,7 +15,7 @@
   {% block pricing_business_header %}
     <div class="ui very padded container">
       <h1 class="ui header">
-        Our plans
+        Plans and pricing
         <span class="sub header">
           Get started for free with a 30-day trial.
         </span>
@@ -30,12 +30,12 @@
 
         <div class="sixteen wide tablet twelve wide computer middle aligned column">
           <i class="fad fa-trees icon"></i>
-          <b>Open source?</b> Read the Docs Community is free, forever.
+          <b>Documenting an open source project?</b> Read the Docs Community is free, forever.
         </div>
 
         <div class="sixteen wide tablet four wide computer middle aligned column">
           <a class="ui inverted fluid button" href="https://app.readthedocs.org/accounts/signup/" data-analytics="community-signup">
-            Sign up for open source
+            Host your project for free
           </a>
         </div>
 
@@ -104,10 +104,10 @@
 
     <div class="ui basic center aligned padded segment">
       <p>
-        <b>Enterprise &mdash; from $10k/year.</b>
-        For organizations with custom requirements &mdash; SAML SSO, dedicated
+        <b>Need more?</b>
+        Enterprise plans start at $10k/year and offer SAML SSO, dedicated
         builders, advanced audit tracking, and a support SLA.
-        <a href="./enterprise/">Learn more about Enterprise &rarr;</a>
+        <a href="/pricing/enterprise/">Learn more about Enterprise &rarr;</a>
       </p>
     </div>
 
@@ -121,7 +121,7 @@
     <h2 class="ui header">Compare plans</h2>
 
     {% call pricing.feature_table() %}
-      {{ pricing.feature_row("Pricing", "Monthly pricing, annual available", "fa-receipt", "<strong>$50</strong>", "<strong>$150</strong>", "<strong>$250</strong>") }}
+      {{ pricing.feature_row("Pricing", "Billed monthly, with annual plans available", "fa-receipt", "<strong>$50</strong>", "<strong>$150</strong>", "<strong>$250</strong>") }}
       {{ pricing.feature_row("Email support", "Get help with your projects and documentation", "fa-message-question", "3 business days", "2 business days", "1 business day") }}
       {{ pricing.feature_row("Build concurrency", "Concurrent build processes", "fa-rectangle-vertical-history fa-swap-opacity", 2, 4, 6) }}
       {{ pricing.feature_row("Custom domains", "Host documentation on your own domain name", "fa-at", on_basic=False, on_advanced="5", on_pro="15") }}
@@ -157,13 +157,13 @@
         <div class="column">
           <h3 class="ui small header">What happens when the trial ends?</h3>
           <p>
-            Nothing automatic &mdash; we'll only ask for payment
-            if you decide to keep going.
+            We won't charge you automatically &mdash; you only pay
+            if you decide to continue.
           </p>
 
           <h3 class="ui small header">Can I switch plans later?</h3>
           <p>
-            Yes, change plans anytime.
+            Yes &mdash; you can upgrade or downgrade at any time.
           </p>
         </div>
 
@@ -191,7 +191,7 @@
       <h3 class="ui small center aligned header">
         <span class="content">
           <i class="fad fa-question-circle icon"></i>
-          Not sure which plan fits?
+          Not sure which plan is right for you?
         </span>
       </h3>
       <p>
