@@ -171,7 +171,7 @@ The June 2026 DDoS attack reinforced several critical takeaways for running high
 
 * **Aggressively cache**: Cache everything, whether it's a simple static file, a 404, or a temporary redirect. Even setting a short cache window of a few minutes will ensure that these resources can't be used to attack our infrastructure. The default settings on the CDN and in most web frameworks are not what a service like Read the Docs wants.
 
-* **Protect cache-miss surfaces**: Attackers actively search for non-cacheable paths (e.g. dynamic redirects, search endpoints, and 404s). Cache where possible, and if caching isn't feasible, try to handle as much on the edge as possible with workers or similar services.
+* **Protect cache-miss surfaces**: Attackers actively search for non-cacheable paths (e.g. dynamic redirects, search endpoints, and 404s). Cache where possible, and if caching isn't feasible, try to handle as much on the edge as possible.
 
 * **Targeted challenges beat blunt instruments**: Combining bot management heuristics with rate limits allowed us to mitigate the attack with minimal impact on legitimate users.
 
