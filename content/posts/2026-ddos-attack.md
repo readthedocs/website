@@ -1,4 +1,4 @@
-title: DDoS Attack against Read the Docs
+title: Understanding the Recent DDoS Attack against Read the Docs
 date: 2026-08-31
 description: A deep dive into the massive June 2026 DDoS attack on Read the Docs, the attack patterns we observed, and the mitigations and defenses we used to defend our infrastructure.
 category: Engineering
@@ -32,7 +32,8 @@ and what strategies actually helped us (mostly) maintain availability throughout
 ## Evolution of DDoS attacks
 
 Read the Docs has historically been very tolerant toward spiders and bots scraping documentation we host, and IP-based rate limiting solved most abuse problems.
-Starting about two years ago, we began seeing a significant uptick as [AI crawlers]({filename}ai-crawlers-abuse.md) became more prevalent. It became straightforward to plug an AI-generated scraper into a proxy network. Our defenses adapted to that fairly easily, but the June attack was over 10x larger than anything we had faced.
+Starting about two years ago, we began seeing a significant uptick as [AI crawlers]({filename}ai-crawlers-abuse.md) became more prevalent and it seems [other members of the dev infrastructure community](https://people.kernel.org/monsieuricon/creepy-crawlies) are seeing similar issues.
+It became straightforward to plug an AI-generated scraper into a proxy network. Our defenses adapted to that fairly easily, but the June attack was over 10x larger than anything we had faced.
 
 Key characteristics of this attack included:
 
@@ -56,7 +57,9 @@ The requests either originated from a small set of countries,
 or a small set of IP blocks,
 or they had a small set of browser signatures.
 This attack was truly global.
-It came from every country all at once, which is a nightmare for point-of-presence-based rate limiting rules.
+It came from every country all at once,
+which is a nightmare when rate limiting rules are applied per Cloudflare colo.
+It's hard to craft rules that can limit a distributed attack while not hitting legitimate bots scraping at a reasonable rate from a single IP or subnet.
 
 At one point when the attackers focused on redirects,
 they were overwhelming a hardcoded Nginx redirect (a simple `rewrite` regex directive)
