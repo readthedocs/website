@@ -43,7 +43,7 @@ Key characteristics of this attack included:
 
 * **Header & TLS randomization**: The attackers systematically randomized HTTP request headers and TLS connection parameters to evade signature-based filters (JA3/JA4).
 
-* **Limitations of automated CDN defenses**: Read the Docs uses Cloudflare and while Cloudflare's automated DDoS protection mitigated some traffic originating from what they called "known botnets", the overwhelming majority appeared as seemingly legitimate HTTP traffic.
+* **Limitations of automated CDN defenses**: Read the Docs uses Cloudflare and while Cloudflare's automated DDoS protection mitigated some traffic originating from what they called "known botnets", a big part of the attack passed that first check and got through to our rate limiting and WAF rules.
 
 * **Cache evasion**: Attackers found and deliberately targeted URLs that resulted in cache misses, such as non-existent pages with unique paths (404s) as well as temporary redirects (302s).
 
