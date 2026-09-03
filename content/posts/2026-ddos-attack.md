@@ -1,4 +1,4 @@
-title: Understanding the Recent DDoS Attack against Read the Docs
+title: Understanding the Recent DDoS Attack Against Read the Docs
 date: 2026-08-31
 description: A deep dive into the massive June 2026 DDoS attack on Read the Docs, the attack patterns we observed, and the mitigations and defenses we used to defend our infrastructure.
 category: Engineering
