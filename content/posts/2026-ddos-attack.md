@@ -187,3 +187,7 @@ they are no longer reserved for big enterprise targets.
 They are becoming the baseline reality for any high-profile public service.
 Our ops team is back to getting a full night's sleep,
 but we're viewing this as more like an extended reprieve rather than attacks being a thing of the past.
+
+---
+
+See [HackerNews post](https://news.ycombinator.com/item?id=49628614) for more discussion.
