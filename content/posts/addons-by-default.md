@@ -31,7 +31,7 @@ and included the following:
 - Adding JS and CSS files.
 - Defining the Read the Docs theme by default.
 - Injecting extra data into Sphinx's `html_context` to make it available from Jinja2 templates.
-- Configurating the LaTeX engine for Japanese and Chinese projects.
+- Configuring the LaTeX engine for Japanese and Chinese projects.
 - Setting the canonical URL based on the domain defined in Read the Docs.
 - ... and others.
 
@@ -49,7 +49,7 @@ We've been enabling Read the Docs Addons by default on all projects using `build
 -- which was a workaround for those users wanting to skip this "behind the scenes" config manipulation,
 and it has worked great.
 
-Another step towards this direction was the [removal of YAML manipulation for all MkDocs projects](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/), on Aril 2024.
+Another step towards this direction was the [removal of YAML manipulation for all MkDocs projects](https://about.readthedocs.com/blog/2024/03/mkdocs-yaml-manipulation/), on April 2024.
 Since then, all projects building with MkDocs are already using Read the Docs Addons and they haven't reported any big issues.
 
 All of this step-by-step changes have given us the confidence to make the last step and **plan the removal of the config manipulation for Sphinx projects** as well,
