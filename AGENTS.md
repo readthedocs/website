@@ -38,6 +38,11 @@ It supports multiple documentation tools (Sphinx, MkDocs, etc.) and automaticall
 * Always use the marketing name used in the public-facing docs, and not the internal code names referenced in code.
 * The ``user`` directory is public docs, and ``dev`` is dev-focused. Most of what we do is focus on the user-facing docs.
 
+## Marketing copy
+
+* Site pages, blog posts, and newsletters under ``content/`` follow the voice and tone guide in ``voice-and-tone-guide.md``.
+* Run new copy through the checklist at the end of that guide before finalizing.
+
 ## Testing
 
 - Use `pytest` as the testing framework
