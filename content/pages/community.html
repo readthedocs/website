@@ -1,7 +1,8 @@
 {#
   Landing page for Read the Docs Community, the free site for open source projects.
-  Copy on this page is reused from the homepage, pricing page, the choosing a
-  platform page, and the user documentation, so keep it in sync with those.
+  The goal of this page is to explain what the Community site is, who it is for,
+  and how it is funded. Copy is reused from the homepage, features, pricing, and
+  choosing a platform pages, and from the user documentation, so keep it in sync.
 #}
 {# View this page at http://localhost:8080/community/ #}
 
@@ -19,95 +20,343 @@
 <body>
 
   {% import "partials/basic.html" as basic %}
+  {% import "partials/features.html" as about %}
   {% import "partials/homepage.html" as homepage %}
   {% import "partials/marketing.html" as marketing %}
   {% import "partials/technical.html" as technical %}
 
-  {% macro about_divide(text=None) %}
+  {% macro section_header(header, subheader=None, color="teal") %}
   <div class="ui text container">
-    <div class="ui {%- if text %} horizontal {%- endif %} divider">
-      {% if text %}{{ text }}{% endif %}
-    </div>
+    <h2 class="ui large center aligned {{ color }} accent header">
+      {{ header }}
+      {% if subheader %}
+      <span class="sub header">{{ subheader }}</span>
+      {% endif %}
+    </h2>
   </div>
   {% endmacro %}
 
-  <section>
-    {% call basic.header_lead(header="Read the Docs Community") %}
-    <p>
-      <strong>Always free for open source and community projects.</strong>
-      We've hosted open source documentation since 2010 &mdash; Flask, Jupyter, Godot,
-      and thousands more trust us to keep their docs online and searchable.
-    </p>
-    <p>
-      Read the Docs Community is exclusively for hosting open source documentation.
-      We support open source communities by providing free documentation building and hosting services,
-      for projects of all sizes.
-    </p>
-    <div class="ui list">
-      <div class="item"><i class="fad fa-lock-open teal icon"></i><div class="content">Clone public repositories</div></div>
-      <div class="item"><i class="fad fa-eye teal icon"></i><div class="content">Public documentation</div></div>
-      <div class="item"><i class="fad fa-rectangle-ad teal icon"></i><div class="content">Ads supported hosting</div></div>
-      <div class="item"><i class="fad fa-globe teal icon"></i><div class="content">Hosted at readthedocs.org</div></div>
+  {# Hero #}
+  <section class="ui teal hero band segment">
+    <div class="ui horizontally very padded container">
+      <div class="ui very padded centered grid">
+        <div class="middle aligned row">
+
+          <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+            <div class="ui large left aligned basic vertical segment">
+              <div class="ui large teal basic label">
+                <i class="fad fa-trees icon"></i>
+                Free for open source, forever
+              </div>
+
+              <h1 class="ui huge header">
+                Read the Docs Community
+                <span class="sub header">Free documentation hosting for open source, since 2010</span>
+              </h1>
+
+              <p>
+                <strong>Always free for open source and community projects.</strong>
+                We've hosted open source documentation since 2010 &mdash; Flask, Jupyter, Godot,
+                and thousands more trust us to keep their docs online and searchable.
+              </p>
+
+              <p>
+                Read the Docs Community is exclusively for hosting open source documentation.
+                We support open source communities by providing free documentation building and hosting services,
+                for projects of all sizes.
+              </p>
+
+              <div class="ui relaxed list">
+                <div class="item"><i class="fad fa-lock-open teal icon"></i><div class="content">Clone public repositories</div></div>
+                <div class="item"><i class="fad fa-eye teal icon"></i><div class="content">Public documentation</div></div>
+                <div class="item"><i class="fad fa-rectangle-ad teal icon"></i><div class="content">Ads supported hosting</div></div>
+                <div class="item"><i class="fad fa-globe teal icon"></i><div class="content">Hosted at readthedocs.org</div></div>
+              </div>
+
+              <p class="ui basic padded vertical segment">
+                <a class="ui large teal stackable button" href="https://app.readthedocs.org/accounts/signup/"
+                  data-analytics="community-signup">
+                  <i class="fad fa-rocket icon"></i>
+                  Host your project for free
+                </a>
+                <a class="ui large basic stackable button" href="#compare">
+                  <i class="fad fa-scale-balanced icon"></i>
+                  Compare with Business
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="six wide computer twelve wide tablet sixteen wide mobile column">
+            <div class="ui raised padded segment">
+              <div class="ui relaxed list">
+
+                {%- set header_1 = "Build automatically" %}
+                {%- set slug_1 = "building" %}
+                {%- set icon_1 = "fa-gears" -%}
+                <a href="#{{ slug_1 }}" class="ui small teal header item">
+                  <i class="fad {{ icon_1 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_1 }}
+                    <span class="sub header">Update your documentation whenever you push changes.</span>
+                  </span>
+                </a>
+
+                {%- set header_2 = "Preview your changes" %}
+                {%- set slug_2 = "previews" %}
+                {%- set icon_2 = "fa-code-compare" -%}
+                <a href="#{{ slug_2 }}" class="ui small header item">
+                  <i class="fad {{ icon_2 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_2 }}
+                    <span class="sub header">Verify changes to your documentation during review.</span>
+                  </span>
+                </a>
+
+                {%- set header_3 = "Versioned docs" %}
+                {%- set slug_3 = "versions" %}
+                {%- set icon_3 = "fa-layer-group" -%}
+                <a href="#{{ slug_3 }}" class="ui small header item">
+                  <i class="fad {{ icon_3 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_3 }}
+                    <span class="sub header">Give your users documentation for their exact version of your project.</span>
+                  </span>
+                </a>
+
+                {%- set header_4 = "Search as you type" %}
+                {%- set slug_4 = "search" %}
+                {%- set icon_4 = "fa-magnifying-glass" -%}
+                <a href="#{{ slug_4 }}" class="ui small header item">
+                  <i class="fad {{ icon_4 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_4 }}
+                    <span class="sub header">Quickly find exactly what you are looking for.</span>
+                  </span>
+                </a>
+
+                {%- set header_5 = "Funded by EthicalAds" %}
+                {%- set slug_5 = "funding" %}
+                {%- set icon_5 = "fa-rectangle-ad" -%}
+                <a href="#{{ slug_5 }}" class="ui small header item">
+                  <i class="fad {{ icon_5 }} secondary big icon"></i>
+                  <span class="content">
+                    {{ header_5 }}
+                    <span class="sub header">One non-tracking ad keeps open source hosting free.</span>
+                  </span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-    <p class="ui basic segment">
-      <a class="ui large teal button" href="https://app.readthedocs.org/accounts/signup/"
-        data-analytics="community-signup">
-        Host your project for free
-        <i class="fas fa-arrow-right icon"></i>
-      </a>
-      <a class="ui large basic button" href="/choosing-a-platform/">
-        Choosing a platform
-      </a>
-    </p>
-    {% endcall %}
   </section>
 
-  <section id="community-features">
-
-    {{ about_divide("What's included") }}
-
+  {# Scale #}
+  <section class="ui band segment" id="scale">
     <div class="ui very padded container">
+      <div class="ui four small landing statistics">
+        <div class="statistic">
+          <div class="value">100,000+</div>
+          <div class="label">Open source projects</div>
+        </div>
+        <div class="statistic">
+          <div class="value">250M+</div>
+          <div class="label">Pageviews every month</div>
+        </div>
+        <div class="statistic">
+          <div class="value">350,000+</div>
+          <div class="label">Builds every month</div>
+        </div>
+        <div class="statistic">
+          <div class="value">2010</div>
+          <div class="label">Hosting open source since</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Highlights #}
+  <section id="highlights">
+    <div class="ui very padded container">
+      <div class="ui three column stackable stretched grid">
+
+        <div class="column">
+          <div class="ui inverted teal highlight segment">
+            <i class="fad fa-trees icon"></i>
+            <h2 class="ui small inverted header">Free, forever</h2>
+            <p>
+              Open source project hosting is always free.
+              Documenting an open source project? There is no plan to pick and no card to enter.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui inverted black highlight segment">
+            <i class="fad fa-code-branch icon"></i>
+            <h2 class="ui small inverted header">Treat docs like code</h2>
+            <p>
+              Connect your Git repository and treat docs like code.
+              We run the hard parts: builds, previews, search &mdash;
+              so you can focus on creating great docs.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui inverted violet highlight segment">
+            <i class="fab fa-osi icon"></i>
+            <h2 class="ui small inverted header">Open source, all the way down</h2>
+            <p>
+              All of the source code for Read the Docs is open source.
+              You are welcome to contribute the features you want or run your own instance.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# Feature steps #}
+  <section>
+    <div class="ui very padded container">
+      {{ section_header("Everything you need to host your docs",
+                        "Building, hosting, CDN, and search are all included, so you can maintain your documentation without managing extra services.") }}
+    </div>
+
+    <div class="ui very padded container" id="{{ slug_1 }}">
+      <div class="ui vertically padded centered grid">
+        {% call about.step(
+            header=header_1,
+            image="/images/features/building.png",
+            image_alt="Project building on Read the Docs",
+            image_class="framed",
+            icon=icon_1) %}
+          {% markdown %}
+          Your documentation is rebuilt whenever a change is detected in your repository,
+          so every version of your documentation is **always up to date**.
+
+          Whether your project is **Python** or **Node.js**, your project controls
+          what dependencies to install and how to generate your documentation.
+          Integrated support for **[Sphinx](/tools/sphinx/)**, **[MkDocs](/tools/mkdocs/)**,
+          **Docusaurus**, and more.
+          {% endmarkdown %}
+          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/builds.html">
+            <i class="fad fa-book icon" aria-hidden="true"></i>
+            Documentation
+          </a>
+        {% endcall %}
+      </div>
+    </div>
+
+    <div class="ui very padded container" id="{{ slug_2 }}">
+      <div class="ui vertically padded centered grid">
+        {% call about.step(
+            header=header_2,
+            image="/images/features/review.png",
+            image_alt="Read the Docs pull request review checks in a GitHub pull request",
+            image_class="framed",
+            icon=icon_2) %}
+          {% markdown %}
+          Preview changes in [every pull request](https://docs.readthedocs.com/platform/stable/pull-requests.html).
+          Reviewers see the rendered result, not raw diffs.
+
+          Every time you push a commit to a pull request,
+          Read the Docs will build your documentation and show you the changes,
+          with a **visual diff** against the live docs.
+          Supported on **GitHub** and **GitLab**.
+          {% endmarkdown %}
+          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/pull-requests.html">
+            <i class="fad fa-book icon" aria-hidden="true"></i>
+            Documentation
+          </a>
+        {% endcall %}
+      </div>
+    </div>
+
+    <div class="ui very padded container" id="{{ slug_3 }}">
+      <div class="ui vertically padded centered grid">
+        {% call about.step(
+            header=header_3,
+            image="/images/features/flyout.png",
+            image_alt="Read the Docs flyout showing versions of a documentation project",
+            image_class="framed",
+            icon=icon_3) %}
+          {% markdown %}
+          Read the Docs can host multiple versions of your docs.
+          Keep your 1.0 and 2.0 documentation online,
+          so your users can always find the right version.
+
+          Build multiple versions from commits, branches, or tags in your repository,
+          and let your users select between **multiple versions and translations**
+          using the flyout menu.
+          {% endmarkdown %}
+          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/versions.html">
+            <i class="fad fa-book icon" aria-hidden="true"></i>
+            Documentation
+          </a>
+        {% endcall %}
+      </div>
+    </div>
+
+    <div class="ui very padded container" id="{{ slug_4 }}">
+      <div class="ui vertically padded centered grid">
+        {% call about.step(
+            header=header_4,
+            image="/images/features/search.png",
+            image_alt="Search as you type",
+            image_class="framed",
+            icon=icon_4) %}
+          {% markdown %}
+          Always find what you are looking for at the tip of your fingers with our powerful ElasticSearch engine.
+          Search on a **single or across multiple projects** at once.
+          {% endmarkdown %}
+          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/server-side-search/index.html">
+            <i class="fad fa-book icon" aria-hidden="true"></i>
+            Documentation
+          </a>
+        {% endcall %}
+      </div>
+    </div>
+  </section>
+
+  {# Reader features #}
+  <section class="ui band segment" id="reader-features">
+    <div class="ui very padded container">
+      {{ section_header("Give your readers a great experience",
+                        "Documentation UX is as important as the content itself. Give your readers a number of in-documentation features that they'll love.") }}
+
       <div class="ui vertically padded centered grid">
 
-        {% call homepage.feature_detail_item(header="Free, forever", icon="fad fa-trees") %}
-        Open source project hosting is <em>always free</em>.
-        Documentation is organized by projects, and you can invite other collaborators as maintainers.
+        {% call homepage.feature_detail_item(header="Offline formats", icon="fad fa-file-pdf") %}
+        Output PDF and EPUB formats for your documentation, for offline and cross-device viewing.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Public Git repositories", icon="fad fa-lock-open") %}
-        Clone public repositories from <em>GitHub, GitLab, and Bitbucket</em>,
-        or manually connect to any repository provider that supports Git.
+        {% call homepage.feature_detail_item(header="Notifications", icon="fad fa-messages") %}
+        Warn readers about reading an old version of the documentation,
+        and reduce support requests from old versions of your project.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Public documentation", icon="fad fa-earth-americas") %}
-        All documentation is <em>publicly accessible to the world</em>,
-        hosted on our global CDN with SSL automatically configured.
-        {% endcall %}
-
-        {% call homepage.feature_detail_item(header="Supports any documentation tool", icon="fad fa-terminal") %}
-        Integrated support for <strong><a href="/tools/sphinx/">Sphinx</a></strong>,
-        <strong><a href="/tools/mkdocs/">MkDocs</a></strong>, <strong>Docusaurus</strong>, and more.
-        {% endcall %}
-
-        {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
-        Match your product release cycle with multiple versions of your docs.
-        Automatically build versions from any branch or tag.
-        {% endcall %}
-
-        {% call homepage.feature_detail_item(header="Preview your changes", icon="fad fa-code-compare") %}
-        Preview your rendered documentation before deploying, and catch mistakes before they go live.
-        {% endcall %}
-
-        {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
-        Help your users find what they need with integrated search across all your projects and versions.
+        {% call homepage.feature_detail_item(header="Link previews", icon="fad fa-eye") %}
+        Provide context on every internal link in your docs with instant preview links.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-at") %}
         Use your own custom domain for your hosted documentation, with SSL automatically configured.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Offline formats", icon="fad fa-file-pdf") %}
-        Output PDF and EPUB formats for your documentation, for offline and cross-device viewing.
+        {% call homepage.feature_detail_item(header="Traffic analytics", icon="fad fa-chart-line") %}
+        See which documents your users are reading,
+        so you can focus on expanding and updating parts people are reading most.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Localization", icon="fad fa-language") %}
+        Integrate with localization tools to translate your documentation in multiple languages.
         {% endcall %}
 
         <div class="ten wide computer sixteen wide tablet center aligned column">
@@ -118,60 +367,98 @@
             </a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  {# Supported tools #}
+  <section id="tools">
+    <div class="ui very padded container">
+      {{ section_header("Host documentation with any tool",
+                        "From a robust tool like Sphinx to more light weight Markdown-based solutions, we've got you covered.") }}
+
+      <div class="ui four stackable lifted cards">
+
+        {{ basic.tool_card(
+          url="/tools/sphinx/",
+          title="Sphinx",
+          meta="Python documentation generator",
+          description="The original Python documentation tool. Perfect for API docs with autodoc and extensive cross-referencing capabilities."
+        ) }}
+
+        {{ basic.tool_card(
+          url="/tools/mkdocs/",
+          title="MkDocs",
+          meta="Markdown documentation",
+          description="Fast, simple, and downright gorgeous docs from Markdown files. Great for project documentation and user guides."
+        ) }}
+
+        {{ basic.tool_card(
+          url="/tools/markdoc/",
+          title="Markdoc",
+          meta="Powerful Markdown framework",
+          description="Stripe's powerful, flexible, Markdown-based authoring framework. Ideal for component-rich documentation sites."
+        ) }}
+
+        {{ basic.tool_card(
+          url="/tools/custom/",
+          title="Custom tools",
+          meta="Full build customization",
+          description="Use any documentation tool with custom build commands. Docusaurus, VuePress, Hugo, or anything else you need."
+        ) }}
 
       </div>
     </div>
   </section>
 
-  <section id="funding">
-
-    {{ about_divide("How it's funded") }}
-
-    {% call marketing.highlight_list() %}
-
-    {% call marketing.highlight_item(
-    icon="white fa-rectangle-ad",
-    icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-    header="Supported by EthicalAds",
-    color="teal") %}
-    <p>
-      All documentation sites include a single non-tracking ad from
-      <a class="ui inverted text" href="https://www.ethicalads.io/?ref=rtd">EthicalAds</a>.
-      We don't track you, sell your data, or anything else.
-      We simply show ads to users, based on the content of the pages you look at.
-    </p>
-    <p>
-      We also give 10% of our ad space to community projects,
-      as our way of saying thanks to the open source community.
-    </p>
-    {% endcall %}
-
-    {% call marketing.highlight_item(
-    icon="white fa-building",
-    icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
-    header="Funded by Read the Docs Business",
-    color="violet") %}
-    <p>
-      Read the Docs is run by a small team and mostly bootstrapped &mdash;
-      companies paying for private documentation hosting are what fund the free community site.
-    </p>
-    <p>
-      We believe that having both paying customers and ethical advertising
-      is the best way to create a sustainable platform for our users.
-      <a class="ui inverted text" href="/business/">Learn more about Read the Docs Business &rarr;</a>
-    </p>
-    {% endcall %}
-
-    {% endcall %}
-  </section>
-
-  {# Open source users #}
-  {% include "includes/users-sphinx.html" %}
-
-  {# Open source testimonials #}
-  <section>
+  {# Social proof #}
+  <section class="ui band segment" id="users">
     <div class="ui very padded container">
-      <div class="ui stackable equal width grid">
+      {{ section_header("Trusted by the projects you already use",
+                        "Flask, Jupyter, Godot, and thousands more trust us to keep their docs online and searchable.") }}
+
+      <div class="ui three link stackable lifted cards">
+        <a href="https://flask.palletsprojects.com/" class="card">
+          <div class="content">
+            <div class="ui center aligned basic segment">
+              <img class="ui small image" src="/images/flask-logo.png" alt="Flask logo" />
+            </div>
+            <div class="header">Flask</div>
+            <div class="meta">Web Framework</div>
+            <div class="description">
+              Flask is a Python web framework built with a small core and easy-to-extend philosophy.
+            </div>
+          </div>
+        </a>
+
+        <a href="https://docs.jupyter.org/" class="card">
+          <div class="content">
+            <div class="ui center aligned basic segment">
+              <img class="ui small image" src="/images/jupyter-logo.png" alt="Jupyter logo">
+            </div>
+            <div class="header">Jupyter</div>
+            <div class="meta">Data Science Environment</div>
+            <div class="description">
+              Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
+            </div>
+          </div>
+        </a>
+
+        <a href="https://docs.godotengine.org/" class="card">
+          <div class="content">
+            <div class="ui center aligned basic segment">
+              <img class="ui small image" src="/images/godot-logo.png" alt="Godot Engine logo">
+            </div>
+            <div class="header">Godot Engine</div>
+            <div class="meta">Game Engine</div>
+            <div class="description">
+              Godot Engine is a free and open source community-driven 2D and 3D game engine.
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="ui vertically padded stackable equal width grid">
         <div class="stretched row">
           <div class="column">
             <div class="ui very padded raised segment">
@@ -205,41 +492,146 @@
     </div>
   </section>
 
-  <section id="open-source">
-
-    {{ about_divide("Open source, all the way down") }}
-
+  {# Funding #}
+  <section id="{{ slug_5 }}">
     <div class="ui very padded container">
+      {{ section_header("How free hosting stays free",
+                        "We believe that having both paying customers and ethical advertising is the best way to create a sustainable platform for our users.") }}
+
       <div class="ui stackable equal width grid">
         <div class="stretched row">
 
-          <div class="left aligned column">
-            <div class="ui very padded raised inverted teal large segment">
-              <h4 class="ui header">
-                <i class="fad fa-code-branch icon"></i>
-                Built for the open source community
-              </h4>
+          <div class="column">
+            <div class="ui inverted teal highlight segment">
+              <i class="fad fa-rectangle-ad icon"></i>
+              <h3 class="ui small inverted header">Supported by EthicalAds</h3>
               <p>
-                Read the Docs was founded to improve documentation in the open source community.
-                Our vision is to be the best place to host software documentation using a docs-as-code approach.
+                Read the Docs is a large, free web service.
+                All documentation sites include a single non-tracking ad from
+                <a href="https://www.ethicalads.io/?ref=rtd">EthicalAds</a>,
+                the advertising model we want to exist.
+              </p>
+              <div class="ui inverted relaxed list">
+                <div class="item"><i class="fad fa-check icon"></i><div class="content">We don't track you</div></div>
+                <div class="item"><i class="fad fa-check icon"></i><div class="content">We don't sell your data</div></div>
+                <div class="item"><i class="fad fa-check icon"></i><div class="content">We host everything ourselves, no third-party scripts or images</div></div>
+              </div>
+              <p>
+                We also give 10% of our ad space to community projects,
+                as our way of saying thanks to the open source community.
               </p>
             </div>
           </div>
 
-          <div class="left aligned column">
-            <div class="ui padded basic segment">
+          <div class="column">
+            <div class="ui inverted violet highlight segment">
+              <i class="fad fa-building icon"></i>
+              <h3 class="ui small inverted header">Funded by Read the Docs Business</h3>
               <p>
-                All of the source code for Read the Docs is open source.
-                You are welcome to contribute the features you want or run your own instance.
+                Read the Docs is run by a small team and mostly bootstrapped &mdash;
+                companies paying for private documentation hosting are what fund the free community site.
               </p>
+              <p>
+                Our bootstrapped company is owned and fully controlled by the founders,
+                and fully funded by our customers and advertisers.
+                This allows us to <strong>focus 100% on our users</strong>.
+              </p>
+              <a class="ui inverted basic button" href="/business/">
+                Learn about Read the Docs Business
+                <i class="fas fa-arrow-right icon"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ui basic center aligned very padded segment">
+        <p>
+          Running Read the Docs isn't free, and the site wouldn't be where it is today
+          without generous support of our sponsors.
+        </p>
+        <div class="ui large horizontal divided list">
+          <div class="item">
+            <i class="fab fa-aws big grey icon"></i>
+            <div class="content">
+              <a class="header" href="https://aws.amazon.com/" rel="noopener" target="_blank">AWS</a>
+              <div class="description">Hosting</div>
+            </div>
+          </div>
+          <div class="item">
+            <i class="fab fa-cloudflare big grey icon"></i>
+            <div class="content">
+              <a class="header" href="https://cloudflare.com" rel="noopener" target="_blank">Cloudflare</a>
+              <div class="description">DNS &amp; SSL</div>
+            </div>
+          </div>
+          <div class="item">
+            <i class="fad fa-magnifying-glass big grey icon"></i>
+            <div class="content">
+              <a class="header" href="https://www.elastic.co/" rel="noopener" target="_blank">Elastic</a>
+              <div class="description">Search</div>
+            </div>
+          </div>
+          <div class="item">
+            <i class="fad fa-flask big grey icon"></i>
+            <div class="content">
+              <a class="header" href="https://chanzuckerberg.com/" rel="noopener" target="_blank">Chan Zuckerberg Initiative</a>
+              <div class="description">Scientific documentation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Open source philosophy #}
+  <section class="ui band segment" id="open-source">
+    <div class="ui very padded container">
+      {{ section_header("Built for the open source community") }}
+
+      <div class="ui stackable equal width grid">
+        <div class="stretched row">
+
+          <div class="column">
+            <div class="ui very padded raised segment">
+              <h3 class="ui header">
+                <i class="fad fa-heart teal icon"></i>
+                <span class="content">Our mission</span>
+              </h3>
+              <p>
+                Read the Docs was founded to improve documentation in the open source community.
+                Our vision is to be the best place to host software documentation using a docs-as-code approach.
+              </p>
+              <p>
+                Documenting projects is hard, hosting them shouldn't be.
+                Read the Docs was created to make hosting documentation simple:
+                to encourage people to write documentation by removing the barrier of entry to hosting,
+                and to create a central platform for people to find documentation.
+              </p>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="ui very padded raised segment">
+              <h3 class="ui header">
+                <i class="fab fa-github teal icon"></i>
+                <span class="content">Community supported</span>
+              </h3>
               <p>
                 Read the Docs is open source and community supported.
                 It depends on people like you contributing to development, support, and operations.
               </p>
-              <a class="ui basic primary button" href="https://docs.readthedocs.com/dev/latest/contribute.html">
-                <i class="fab fa-github icon" aria-hidden="true"></i>
-                Contribute
-              </a>
+              <p>
+                <a class="ui basic primary button" href="https://docs.readthedocs.com/dev/latest/contribute.html">
+                  <i class="fad fa-code-pull-request icon" aria-hidden="true"></i>
+                  Contribute
+                </a>
+                <a class="ui basic button" href="https://docs.readthedocs.com/platform/stable/team.html">
+                  <i class="fad fa-people-group icon" aria-hidden="true"></i>
+                  Meet the community team
+                </a>
+              </p>
             </div>
           </div>
 
@@ -248,45 +640,63 @@
     </div>
   </section>
 
-  <section id="community-faq">
-    {{ about_divide("Community FAQ") }}
+  {# Community vs Business #}
+  {% with highlight="community" %}
+    {% include "includes/platform-comparison.html" %}
+  {% endwith %}
 
+  {# FAQ #}
+  <section class="ui band segment" id="community-faq">
     <div class="ui very padded container">
-      <div class="ui basic segment">
-        <div class="ui stackable two column grid">
+      {{ section_header("Community FAQ") }}
 
-          <div class="column">
-            <h3 class="ui small header">Is it really free?</h3>
-            <p>
-              Yes. Open source documentation is always free on Read the Docs Community,
-              supported by a single non-tracking ad on the documentation.
-            </p>
+      <div class="ui stackable two column grid">
 
-            <h3 class="ui small header">Can I host private documentation?</h3>
-            <p>
-              Read the Docs Community only supports public Git repositories,
-              and all documentation is publicly accessible to the world.
-              For private repositories and documentation that requires authentication,
-              use <a href="/business/">Read the Docs Business</a>.
-            </p>
-          </div>
+        <div class="column">
+          <h3 class="ui small header">Is it really free?</h3>
+          <p>
+            Yes. Open source documentation is always free on Read the Docs Community,
+            supported by a single non-tracking ad on the documentation.
+          </p>
 
-          <div class="column">
-            <h3 class="ui small header">What support is included?</h3>
-            <p>
-              Email support is included for issues with our platform.
-              Read the Docs does not offer support for questions or problems with documentation tools or content.
-              <a href="https://docs.readthedocs.com/platform/stable/support.html">Learn how to get support &rarr;</a>
-            </p>
+          <h3 class="ui small header">Can I host private documentation?</h3>
+          <p>
+            Read the Docs Community only supports public Git repositories,
+            and all documentation is publicly accessible to the world.
+            For private repositories and documentation that requires authentication,
+            use <a href="/business/">Read the Docs Business</a>.
+          </p>
 
-            <h3 class="ui small header">How do builds compare to Read the Docs Business?</h3>
-            <p>
-              Read the Docs Community has less build time and fewer build resources (memory &amp; CPU).
-              See <a href="/choosing-a-platform/">Choosing a platform</a> for all the differences.
-            </p>
-          </div>
-
+          <h3 class="ui small header">Which Git providers are supported?</h3>
+          <p>
+            Read the Docs integrates with GitHub, GitLab, and Bitbucket
+            and can clone and build documentation from any hosted repository.
+            You can also manually connect to any repository provider that supports Git.
+          </p>
         </div>
+
+        <div class="column">
+          <h3 class="ui small header">What support is included?</h3>
+          <p>
+            Email support is included for issues with our platform.
+            Read the Docs does not offer support for questions or problems with documentation tools or content.
+            <a href="https://docs.readthedocs.com/platform/stable/support.html">Learn how to get support &rarr;</a>
+          </p>
+
+          <h3 class="ui small header">How do builds compare to Read the Docs Business?</h3>
+          <p>
+            Read the Docs Community has less build time and fewer build resources (memory &amp; CPU).
+            See <a href="/choosing-a-platform/">Choosing a platform</a> for all the differences.
+          </p>
+
+          <h3 class="ui small header">Can I use my own domain?</h3>
+          <p>
+            Yes. By configuring a custom domain for your project,
+            your project can serve documentation from a domain you control,
+            for instance <code>docs.example.com</code>.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -294,25 +704,26 @@
   {# Try it out code block #}
   {% include "includes/try-it-out.html" %}
 
+  {# Bottom CTA #}
   <section>
     <div class="ui very padded container">
-      <div class="ui grid center aligned">
-        <div class="row">
-          <div class="column twelve wide computer sixteen wide tablet">
-            <div class="ui basic vertical huge segment">
-              <p>
-                <b>Get your docs online in 5 minutes.</b>
-              </p>
-              <p>
-                <a class="ui large teal stackable button" href="https://app.readthedocs.org/accounts/signup/"
-                  data-analytics="community-signup">
-                  Host your project for free
-                  <i class="fas fa-arrow-right icon"></i>
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
+      <div class="ui inverted cta segment">
+        <h2 class="ui huge header">Get your docs online in 5 minutes</h2>
+        <p>
+          Free for open source, forever.
+          Sign up with GitHub or your email, import your project, and your docs build on every commit.
+        </p>
+        <p>
+          <a class="ui huge teal stackable button" href="https://app.readthedocs.org/accounts/signup/"
+            data-analytics="community-signup">
+            <i class="fad fa-rocket icon"></i>
+            Host your project for free
+          </a>
+          <a href="https://docs.readthedocs.io/page/tutorial/index.html" class="ui huge inverted basic stackable button">
+            <i class="fad fa-book icon"></i>
+            Start our tutorial
+          </a>
+        </p>
       </div>
     </div>
   </section>

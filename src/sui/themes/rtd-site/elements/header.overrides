@@ -16,3 +16,32 @@
     display: inline-block;
   }
 }
+
+/* Accent header: a short colored bar under a section heading */
+.ui.accent.header {
+  &::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 0.25rem;
+    margin-top: 0.75rem;
+    border-radius: 0.125rem;
+    background-color: @primaryColor;
+  }
+  &.center.aligned::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.ui.ui.teal.accent.header {
+  color: @textColor;
+  &::after {
+    background-color: @teal;
+  }
+}
+.ui.ui.violet.accent.header {
+  color: @textColor;
+  &::after {
+    background-color: @violet;
+  }
+}

@@ -1,0 +1,10 @@
+/* Landing variation: colored values for headline numbers */
+.ui.landing.statistics .statistic > .value,
+.ui.landing.statistic > .value {
+  color: @primaryColor;
+  font-weight: @bold;
+}
+.ui.violet.landing.statistics .statistic > .value,
+.ui.violet.landing.statistic > .value {
+  color: @violet;
+}
