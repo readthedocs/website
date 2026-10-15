@@ -5,11 +5,11 @@
 #}
 <html>
   <head>
-    <title>Documentation previews for every Django pull request</title>
+    <title>Pull request previews for Django docs</title>
     <meta name="template" content="page" />
     <meta name="slug" content="django" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="Read the Docs is built with Django and hosts the docs of Wagtail, Django Channels, django CMS and thousands more. Get a live preview, a list of files changed, and a visual diff for every docs pull request." />
+    <meta name="description" content="Read the Docs is built with Django and hosts docs for Wagtail, django CMS, Django Channels and thousands more. Preview every docs pull request with a list of files changed and a visual diff." />
   </head>
   <body>
 
@@ -34,16 +34,16 @@
             </h1>
 
             <p>
-              Read the Docs is built with Django,
-              and has hosted documentation for open and closed source projects for over 15 years.
-              Connect your Git repository and treat docs like code.
+              Built with Django.
+              15 years of hosting documentation for open and closed source projects.
+              Connect your Git repository and treat your docs like code.
             </p>
 
             {# This should be a list of benefits, not features, since we have a feature listing in the side nav #}
             <div class="ui list">
-              <div class="item"><i class="fad fa-check secondary icon"></i>Build your docs for every pull request, and rebuild on every push.</div>
-              <div class="item"><i class="fad fa-check secondary icon"></i>See the list of files changed right in the pull request.</div>
-              <div class="item"><i class="fad fa-check secondary icon"></i>Review rendered output with a visual diff, instead of raw markup.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Every pull request gets a live preview.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>See which pages changed, right in the pull request.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Review the rendered pages, not the markup.</div>
               <div class="item"><i class="fad fa-check secondary icon"></i>Always free for open source projects.</div>
             </div>
 
@@ -72,7 +72,7 @@
                 <i class="fad {{ icon_1 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_1 }}
-                  <span class="sub header">A fully built documentation website for each pull request.</span>
+                  <span class="sub header">A live build of your docs for each pull request.</span>
                 </span>
               </a>
 
@@ -94,7 +94,7 @@
                 <i class="fad {{ icon_3 }} secondary big icon"></i>
                 <span class="content">
                   {{ header_3 }}
-                  <span class="sub header">Changes highlighted on the rendered documentation pages.</span>
+                  <span class="sub header">Changes highlighted on the rendered pages.</span>
                 </span>
               </a>
 
@@ -106,7 +106,7 @@
                 <span class="content">
                   {{ header_4 }}
                   <span class="ui tiny teal label">New</span>
-                  <span class="sub header">Build in GitHub Actions and upload the result to Read the Docs.</span>
+                  <span class="sub header">Build your docs anywhere and upload the result.</span>
                 </span>
               </a>
 
@@ -139,14 +139,11 @@
           image_alt="Read the Docs build status checks on a GitHub pull request",
           icon=icon_1) %}
         {% markdown %}
-        Read the Docs builds your documentation for every new pull request.
-        Previewing changes during review makes it easier to
-        **catch formatting and display issues before they go live**.
+        We build your documentation for every pull request, and rebuild it on every push.
+        **Catch formatting and display issues before they go live.**
 
-        We create and build a new version when a pull request is opened,
-        and rebuild it whenever a new commit is pushed.
-        The build status shows as one of your pull request's checks,
-        and updates to success or failure when the build completes.
+        The build shows up as a check on the pull request,
+        so you know when the preview is ready or the build failed.
         {% endmarkdown %}
 
         <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/pull-requests.html">
@@ -169,12 +166,11 @@
           image_alt="A pull request comment with a link to the preview and a table of files changed",
           icon=icon_2) %}
         {% markdown %}
-        We create a comment on the pull request including a link to the preview of the documentation,
-        and a list of the **files that changed** between the pull request
-        and the latest version of your documentation.
+        We comment on the pull request with a link to the preview
+        and a list of the **files that changed** compared to the latest version of your docs.
 
-        Every page is linked, so reviewers jump straight to the rendered result.
-        Add patterns for pages that always change, like archives or changelogs, and they're ignored.
+        Each page is linked, so reviewers jump straight to the rendered result.
+        Pages that always change, like changelogs, can be ignored with a pattern.
         {% endmarkdown %}
 
         <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html#show-build-overview-in-pull-requests">
@@ -197,15 +193,13 @@
           image_alt="Visual diff highlighting changed text on a documentation page",
           icon=icon_3) %}
         {% markdown %}
-        While seeing changes in source files is helpful,
-        it can be difficult to understand how those changes will look in the rendered documentation.
-        Visual diff shows proposed changes by
-        **visually highlighting the differences** between the pull request
-        and the latest version of your documentation.
+        A source diff doesn't show how a change looks once rendered.
+        Visual diff **highlights the differences** between the pull request
+        and the latest version of your docs, right on the page.
 
-        Pick any changed page from the menu on the preview,
+        Pick a changed page from the menu on the preview,
         jump between changed sections with the arrows,
-        and press `d` to toggle the diff on and off.
+        and press `d` to toggle the diff.
         {% endmarkdown %}
 
         <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html">
@@ -227,14 +221,13 @@
           image=None,
           icon=icon_4) %}
         {% markdown %}
-        Direct upload lets you **build your documentation anywhere**,
-        for example in GitHub Actions or in any other continuous integration service,
-        and upload the resulting files to Read the Docs for hosting.
+        **Build your documentation anywhere**, like GitHub Actions or any other CI service,
+        and upload the result to Read the Docs.
 
-        A push to `main` updates the `main` version,
+        A push to `main` updates `main`,
         a new tag creates a new version,
-        and a pull request creates a pull request preview.
-        Uploaded documentation keeps all the hosting features you already know:
+        and a pull request creates a preview.
+        Uploaded docs keep every hosting feature:
         versions, pull request previews, search, custom domains and downloadable formats.
         {% endmarkdown %}
 
@@ -270,7 +263,7 @@
   <div class="ui container">
     {{ basic.header_icon(
         header="Django projects on Read the Docs",
-        subheader="Django's own documentation offers its offline HTML, PDF and ePub downloads through Read the Docs, and these Django projects host their docs with us.",
+        subheader="Django's own docs serve their HTML, PDF and ePub downloads from Read the Docs. These projects host their docs with us too.",
         icon="green fa-people-group",
         icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
     ) }}
@@ -282,7 +275,7 @@
           <div class="header">Wagtail</div>
           <div class="meta">Content management system</div>
           <div class="description">
-            The open source CMS built on Django, used by NASA, Google, and the NHS.
+            Built on Django and used by NASA, Google, and the NHS.
           </div>
         </div>
       </a>
@@ -292,7 +285,7 @@
           <div class="header">django CMS</div>
           <div class="meta">Content management system</div>
           <div class="description">
-            An enterprise content management system built on Django, maintained since 2007.
+            Built on Django and maintained since 2007.
           </div>
         </div>
       </a>
@@ -302,7 +295,7 @@
           <div class="header">Django Channels</div>
           <div class="meta">Async and WebSockets</div>
           <div class="description">
-            Extends Django to handle WebSockets, chat protocols, and other async workloads.
+            Extends Django to WebSockets and other async protocols.
           </div>
         </div>
       </a>
@@ -312,7 +305,7 @@
           <div class="header">Django Debug Toolbar</div>
           <div class="meta">Developer tooling</div>
           <div class="description">
-            A configurable set of panels that display debug information about the current request.
+            Panels showing debug information about the current request.
           </div>
         </div>
       </a>
@@ -322,7 +315,7 @@
           <div class="header">Cookiecutter Django</div>
           <div class="meta">Project template</div>
           <div class="description">
-            A framework for jumpstarting production-ready Django projects quickly.
+            A template for production-ready Django projects.
           </div>
         </div>
       </a>
@@ -330,9 +323,9 @@
       <a href="https://django-extensions.readthedocs.io/" class="card">
         <div class="content">
           <div class="header">Django Extensions</div>
-          <div class="meta">Management commands</div>
+          <div class="meta">Project utilities</div>
           <div class="description">
-            A collection of custom extensions and management commands for Django.
+            Extra management commands and helpers for Django.
           </div>
         </div>
       </a>
@@ -341,7 +334,7 @@
 
     <div class="ui basic padded vertical segment">
       <p>
-        Plus thousands more, including
+        And thousands more, including
         <a href="https://django-filter.readthedocs.io/">django-filter</a>,
         <a href="https://django-storages.readthedocs.io/">django-storages</a>,
         <a href="https://django-import-export.readthedocs.io/">django-import-export</a>,
@@ -349,7 +342,7 @@
         <a href="https://django-crispy-forms.readthedocs.io/">django-crispy-forms</a>,
         <a href="https://django-oscar.readthedocs.io/">django-oscar</a>, and
         <a href="https://docs.celeryq.dev/">Celery</a>.
-        Read the Docs is itself a Django application, and
+        Read the Docs itself is a Django app,
         <a href="https://github.com/readthedocs/readthedocs.org">open source</a> since 2010.
       </p>
     </div>
@@ -370,8 +363,8 @@
               Preview your next docs pull request
             </h2>
             <p>
-              Pull request previews are enabled by default on new projects.
-              Import your repository and open a pull request to see them in action.
+              Pull request previews are on by default.
+              Import your repository and open a pull request to try them.
             </p>
 
             <p>
