@@ -23,11 +23,28 @@
 {% import "partials/technical.html" as technical %}
 
 <section>
-  <div class="ui horizontally very padded container">
-    <div class="ui very padded centered grid">
+  <div class="ui horizontally padded hero container">
+    <div class="ui relaxed centered computer reversed grid">
       <div class="middle aligned row">
 
-        <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+        <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui basic vertical segment">
+            {# Muted looping clip of visual diff on a pull request preview, with a still frame as the poster. #}
+            <figure class="ui basic segment">
+              <!-- [html-validate-disable-next no-autoplay: muted, looping clip with no audio] -->
+              <video class="ui rounded fluid image"
+                     autoplay muted loop playsinline
+                     poster="/images/django/visual-diff-poster.png">
+                <source src="/images/django/visual-diff.mp4" type="video/mp4">
+              </video>
+              <figcaption class="ui small center aligned grey header">
+                Visual diff on a pull request preview
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
           <div class="ui large left aligned basic vertical segment">
             <h1 class="ui huge header">
               Get live previews for every docs pull request
@@ -39,7 +56,6 @@
               Connect your Git repository and treat your docs like code.
             </p>
 
-            {# This should be a list of benefits, not features, since we have a feature listing in the side nav #}
             <div class="ui list">
               <div class="item"><i class="fad fa-check secondary icon"></i>Every pull request gets a live preview.</div>
               <div class="item"><i class="fad fa-check secondary icon"></i>See which pages changed, right in the pull request.</div>
@@ -61,60 +77,70 @@
           </div>
         </div>
 
-        <div class="six wide computer twelve wide tablet sixteen wide mobile column">
-          <div class="ui padded basic segment">
-            <div class="ui relaxed list">
-
-              {%- set header_1 = "Pull request previews" %}
-              {%- set slug_1 = "pull-request-previews" %}
-              {%- set icon_1 = "fa-code-pull-request" -%}
-              <a href="#{{ slug_1 }}" class="ui small teal header item">
-                <i class="fad {{ icon_1 }} secondary big icon"></i>
-                <span class="content">
-                  {{ header_1 }}
-                  <span class="sub header">A live build of your docs for each pull request.</span>
-                </span>
-              </a>
-
-              {%- set header_2 = "Files changed" %}
-              {%- set slug_2 = "files-changed" %}
-              {%- set icon_2 = "fa-file-plus-minus" -%}
-              <a href="#{{ slug_2 }}" class="ui small header item">
-                <i class="fad {{ icon_2 }} secondary big icon"></i>
-                <span class="content">
-                  {{ header_2 }}
-                  <span class="sub header">A comment on the pull request listing the pages that changed.</span>
-                </span>
-              </a>
-
-              {%- set header_3 = "Visual diff" %}
-              {%- set slug_3 = "visual-diff" %}
-              {%- set icon_3 = "fa-code-compare" -%}
-              <a href="#{{ slug_3 }}" class="ui small header item">
-                <i class="fad {{ icon_3 }} secondary big icon"></i>
-                <span class="content">
-                  {{ header_3 }}
-                  <span class="sub header">Changes highlighted on the rendered pages.</span>
-                </span>
-              </a>
-
-              {%- set header_4 = "Direct upload" %}
-              {%- set slug_4 = "direct-upload" %}
-              {%- set icon_4 = "fa-cloud-arrow-up" -%}
-              <a href="#{{ slug_4 }}" class="ui small header item">
-                <i class="fad {{ icon_4 }} secondary big icon"></i>
-                <span class="content">
-                  {{ header_4 }}
-                  <span class="ui tiny teal label">New</span>
-                  <span class="sub header">Build your docs anywhere and upload the result.</span>
-                </span>
-              </a>
-
-            </div>
-          </div>
-        </div>
-
       </div>
+    </div>
+  </div>
+</section>
+
+{# Section headers, anchors and icons shared with the feature sections below. #}
+{%- set header_1 = "Pull request previews" %}
+{%- set slug_1 = "pull-request-previews" %}
+{%- set icon_1 = "fa-code-pull-request" %}
+{%- set header_2 = "Files changed" %}
+{%- set slug_2 = "files-changed" %}
+{%- set icon_2 = "fa-file-plus-minus" %}
+{%- set header_3 = "Visual diff" %}
+{%- set slug_3 = "visual-diff" %}
+{%- set icon_3 = "fa-code-compare" %}
+{%- set header_4 = "Direct upload" %}
+{%- set slug_4 = "direct-upload" %}
+{%- set icon_4 = "fa-cloud-arrow-up" %}
+
+<section>
+  <div class="ui padded container">
+    <div class="ui stackable two column centered grid">
+
+      <div class="column">
+        <div class="ui inverted violet padded segment">
+          <h2 class="ui small left aligned header">
+            <i class="fad fa-building icon"></i>
+            For engineering and docs teams
+          </h2>
+
+          <p>
+            Private repositories, single sign-on, and access control for your product and internal docs.
+            We run the infrastructure so your team ships documentation instead of pipelines.
+          </p>
+
+          <a class="ui inverted basic button" href="https://app.readthedocs.com/accounts/signup/"
+            data-analytics="commercial-signup">
+            Start your 30-day free trial
+            <i class="fas fa-arrow-right icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="ui inverted teal padded segment">
+          <h2 class="ui small left aligned header">
+            <i class="fad fa-trees icon"></i>
+            For open source projects
+          </h2>
+
+          <p>
+            Always free for open source and community projects.
+            We've hosted open source documentation since 2010,
+            including Wagtail, Django Channels, and thousands of Django packages.
+          </p>
+
+          <a class="ui inverted basic button" href="https://app.readthedocs.org/accounts/signup/"
+            data-analytics="community-signup">
+            Host your project for free
+            <i class="fas fa-arrow-right icon"></i>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -217,7 +243,7 @@
     <div class="ui vertically padded centered grid">
 
       {% call about.step(
-          header=header_4,
+          header=header_4 ~ ' <span class="ui tiny teal label">Beta</span>',
           image=None,
           icon=icon_4) %}
         {% markdown %}
@@ -229,6 +255,9 @@
         and a pull request creates a preview.
         Uploaded docs keep every hosting feature:
         versions, pull request previews, search, custom domains and downloadable formats.
+
+        Direct upload is in beta.
+        [Contact support](https://docs.readthedocs.com/platform/stable/support.html) to enable it on your project.
         {% endmarkdown %}
 
         <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/guides/build/direct-upload.html">
