@@ -1,0 +1,423 @@
+{#
+  The goal of this page is to land Django developers coming from the Django docs ad.
+  It focuses on pull request previews, the files changed comment, and visual diff,
+  and highlights that Read the Docs is itself built with Django.
+#}
+<html>
+  <head>
+    <title>Pull request previews for Django docs</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="django" />
+    <meta name="status" content="hidden" />
+    <meta name="description" content="Read the Docs is built with Django and hosts docs for Wagtail, django CMS, Django Channels and thousands more. Preview every docs pull request with a list of files changed and a visual diff." />
+  </head>
+  <body>
+
+{#
+  View this page at http://localhost:8080/django/
+#}
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/features.html" as about %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/technical.html" as technical %}
+
+<section>
+  <div class="ui horizontally padded hero container">
+    <div class="ui relaxed centered computer reversed grid">
+      <div class="middle aligned row">
+
+        <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui basic vertical segment">
+            {# Muted looping clip of visual diff on a pull request preview, with a still frame as the poster. #}
+            <figure class="ui basic segment">
+              <!-- [html-validate-disable-next no-autoplay: muted, looping clip with no audio] -->
+              <video class="ui rounded fluid image"
+                     autoplay muted loop playsinline
+                     poster="/images/django/visual-diff-poster.png">
+                <source src="/images/django/visual-diff.mp4" type="video/mp4">
+              </video>
+              <figcaption class="ui small center aligned grey header">
+                From the files changed comment to the visual diff
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui large left aligned basic vertical segment">
+            <h1 class="ui huge header">
+              Get live previews for every docs pull request
+            </h1>
+
+            <p>
+              Built with Django.
+              15 years of hosting documentation for open and closed source projects.
+              Connect your Git repository and treat your docs like code.
+            </p>
+
+            <div class="ui list">
+              <div class="item"><i class="fad fa-check secondary icon"></i>Every pull request gets a live preview.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>See which pages changed, right in the pull request.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Review the rendered pages, not the markup.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Always free for open source projects.</div>
+            </div>
+
+            <p class="ui basic padded vertical segment">
+              <a class="ui large teal stackable button"
+                 data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-play icon"></i>
+                Create an account
+              </a>
+              <a href="https://docs.readthedocs.com/platform/stable/pull-requests.html" class="ui large stackable button">
+                How it works
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Section headers, anchors and icons shared with the feature sections below. #}
+{%- set header_1 = "Pull request previews" %}
+{%- set slug_1 = "pull-request-previews" %}
+{%- set icon_1 = "fa-code-pull-request" %}
+{%- set header_2 = "Files changed" %}
+{%- set slug_2 = "files-changed" %}
+{%- set icon_2 = "fa-file-plus-minus" %}
+{%- set header_3 = "Visual diff" %}
+{%- set slug_3 = "visual-diff" %}
+{%- set icon_3 = "fa-code-compare" %}
+{%- set header_4 = "Direct upload" %}
+{%- set slug_4 = "direct-upload" %}
+{%- set icon_4 = "fa-cloud-arrow-up" %}
+
+<section>
+  <div class="ui padded container">
+    <div class="ui stackable two column centered grid">
+
+      <div class="column">
+        <div class="ui inverted violet padded segment">
+          <span class="ui top right attached label">Business</span>
+          <h2 class="ui small left aligned header">
+            <i class="fad fa-building icon"></i>
+            For engineering and docs teams
+          </h2>
+
+          <p>
+            Private repositories, single sign-on, and access control for your product and internal docs.
+            We run the infrastructure so your team ships documentation instead of pipelines.
+          </p>
+
+          <a class="ui inverted basic button" href="https://app.readthedocs.com/accounts/signup/"
+            data-analytics="commercial-signup">
+            Start your 30-day free trial
+            <i class="fas fa-arrow-right icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="ui inverted teal padded segment">
+          <span class="ui top right attached label">Community</span>
+          <h2 class="ui small left aligned header">
+            <i class="fad fa-trees icon"></i>
+            For open source projects
+          </h2>
+
+          <p>
+            Always free for open source and community projects.
+            We've hosted open source documentation since 2010,
+            including Wagtail, Django Channels, and thousands of Django packages.
+          </p>
+
+          <a class="ui inverted basic button" href="https://app.readthedocs.org/accounts/signup/"
+            data-analytics="community-signup">
+            Host your project for free
+            <i class="fas fa-arrow-right icon"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="django-projects">
+  <div class="ui container">
+    {{ basic.header_icon(
+        header="Django projects on Read the Docs",
+        subheader="Django's own docs point to Read the Docs for their PDF and ePub downloads. These projects host their docs with us.",
+        icon="green fa-people-group",
+        icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
+    ) }}
+
+    <div class="ui three link stackable cards">
+
+      <a href="https://docs.wagtail.org/" class="card">
+        <div class="content">
+          <div class="header">Wagtail</div>
+          <div class="meta">Content management system</div>
+          <div class="description">
+            Built on Django and used by NASA, Google, and the NHS.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://docs.django-cms.org/" class="card">
+        <div class="content">
+          <div class="header">django CMS</div>
+          <div class="meta">Content management system</div>
+          <div class="description">
+            Built on Django and maintained since 2007.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://channels.readthedocs.io/" class="card">
+        <div class="content">
+          <div class="header">Django Channels</div>
+          <div class="meta">Async and WebSockets</div>
+          <div class="description">
+            Extends Django to WebSockets and other async protocols.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://django-debug-toolbar.readthedocs.io/" class="card">
+        <div class="content">
+          <div class="header">Django Debug Toolbar</div>
+          <div class="meta">Developer tooling</div>
+          <div class="description">
+            Panels showing debug information about the current request.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://cookiecutter-django.readthedocs.io/" class="card">
+        <div class="content">
+          <div class="header">Cookiecutter Django</div>
+          <div class="meta">Project template</div>
+          <div class="description">
+            A template for production-ready Django projects.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://django-extensions.readthedocs.io/" class="card">
+        <div class="content">
+          <div class="header">Django Extensions</div>
+          <div class="meta">Project utilities</div>
+          <div class="description">
+            Extra management commands and helpers for Django.
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="ui basic padded vertical segment">
+      <p>
+        And thousands more, including
+        <a href="https://django-filter.readthedocs.io/">django-filter</a>,
+        <a href="https://django-storages.readthedocs.io/">django-storages</a>,
+        <a href="https://django-import-export.readthedocs.io/">django-import-export</a>,
+        <a href="https://django-tables2.readthedocs.io/">django-tables2</a>,
+        <a href="https://django-crispy-forms.readthedocs.io/">django-crispy-forms</a>,
+        <a href="https://django-oscar.readthedocs.io/">django-oscar</a>, and
+        <a href="https://docs.celeryq.dev/">Celery</a>.
+        Read the Docs itself is a Django app,
+        <a href="https://github.com/readthedocs/readthedocs.org">open source</a> since 2010.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% macro about_divide(text=None) %}
+  <div class="ui text container">
+    <div class="ui {%- if text %} horizontal {%- endif %} divider">
+      {% if text %}{{ text }}{% endif %}
+    </div>
+  </div>
+{% endmacro %}
+
+{{ about_divide() }}
+
+<section>
+  <div class="ui very padded container" id="{{ slug_1 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_1,
+          image="/images/features/review.png",
+          image_alt="Read the Docs build status checks on a GitHub pull request",
+          icon=icon_1) %}
+        {% markdown %}
+        We build your documentation for every pull request, and rebuild it on every push.
+        **Catch formatting and display issues before they go live.**
+
+        The build shows up as a check on the pull request,
+        so you know when the preview is ready or the build failed.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/pull-requests.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_2 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_2,
+          image="/images/django/files-changed-comment.png",
+          image_alt="A pull request comment with a link to the preview and a table of files changed",
+          icon=icon_2) %}
+        {% markdown %}
+        We comment on the pull request with a link to the preview
+        and a list of the **files that changed** compared to the latest version of your docs.
+
+        Each page is linked, so reviewers jump straight to the rendered result.
+        Pages that always change, like changelogs, can be ignored with a pattern.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html#show-build-overview-in-pull-requests">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_3 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_3,
+          image="/images/docs-as-code/visual-diff.png",
+          image_alt="Visual diff highlighting changed text on a documentation page",
+          icon=icon_3) %}
+        {% markdown %}
+        A source diff doesn't show how a change looks once rendered.
+        Visual diff **highlights the differences** between the pull request
+        and the latest version of your docs, right on the page.
+
+        Pick a changed page from the menu on the preview,
+        jump between changed sections with the arrows,
+        and press `d` to toggle the diff.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_4 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_4 ~ ' <span class="ui tiny teal label">Beta</span>',
+          image=None,
+          icon=icon_4) %}
+        {% markdown %}
+        **Build your documentation anywhere**, like GitHub Actions or any other CI service,
+        and upload the result to Read the Docs.
+
+        A push to `main` updates `main`,
+        a new tag creates a new version,
+        and a pull request creates a preview.
+        Uploaded docs keep every hosting feature:
+        versions, pull request previews, search, custom domains and downloadable formats.
+
+        Direct upload is in beta.
+        [Contact support](https://docs.readthedocs.com/platform/stable/support.html) to enable it on your project.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/guides/build/direct-upload.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+      {# Same column as the screenshot in the sections above. Keep lines short, the column is narrow. #}
+      <div class="left aligned sixteen wide mobile eight wide tablet six wide computer column">
+        {% call technical.code_block(title="<code>.github/workflows/docs.yaml</code>", icon="fa-file") %}
+        {% markdown %}
+
+        ```yaml
+        - run: make -C docs html
+
+        - uses: readthedocs/upload-action@v1
+          with:
+            token: ${{ "{{" }} secrets.RTD_TOKEN {{ "}}" }}
+            project-slug: my-project
+            html: docs/_build/html
+        ```
+
+        {% endmarkdown %}
+        {% endcall %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# Try it out code block #}
+{% include "includes/try-it-out.html" %}
+
+{% block bottom_callout %}
+<section>
+  <div class="ui very padded container">
+    <div class="ui grid center aligned">
+      <div class="row">
+        <div class="column twelve wide computer sixteen wide tablet">
+          <div class="ui basic vertical huge segment">
+            <h2 class="ui center aligned header">
+              Preview your next docs pull request
+            </h2>
+            <p>
+              Pull request previews are on by default.
+              Import your repository and open a pull request to try them.
+            </p>
+
+            <p>
+              <a class="ui large teal stackable button"
+                 data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-rocket icon"></i>
+                Start for free
+              </a>
+              <a href="https://docs.readthedocs.com/platform/stable/guides/pull-requests.html" class="ui large basic stackable button">
+                <i class="fad fa-book icon"></i>
+                Read the guide
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock bottom_callout %}
+
+  </body>
+</html>
