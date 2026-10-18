@@ -57,8 +57,8 @@
 
             <div class="ui list">
               <div class="item"><i class="fad fa-check secondary icon"></i>See which pages changed, right in the pull request.</div>
-              <div class="item"><i class="fad fa-check secondary icon"></i>Build status on every push, as a pull request check.</div>
-              <div class="item"><i class="fad fa-check secondary icon"></i>Always free for open source projects.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Works with Sphinx, MkDocs, Docusaurus, and more.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Set up in minutes with a single YAML file.</div>
             </div>
 
             <p class="ui basic padded vertical segment">
@@ -129,8 +129,8 @@
 
           <p>
             Always free for open source and community projects.
-            Versioned docs, search, and pull request previews on every project, with no credit card.
-            We've kept open source documentation online since 2010.
+            We've hosted open source documentation since 2010,
+            and thousands of Django packages trust us to keep their docs online and searchable.
           </p>
 
           <a class="ui inverted basic button" href="https://app.readthedocs.org/accounts/signup/"
@@ -211,10 +211,10 @@
           icon=icon_1) %}
         {% markdown %}
         We build your documentation for every pull request, and rebuild it on every push.
-        **Catch formatting and display issues before they go live.**
-
         The build shows up as a check on the pull request,
         so you know when the preview is ready or the build failed.
+
+        Supported on **GitHub** and **GitLab**.
         {% endmarkdown %}
 
         <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/pull-requests.html">
@@ -242,6 +242,7 @@
 
         Each page is linked, so reviewers jump straight to the rendered result.
         Pages that always change, like changelogs, can be ignored with a pattern.
+        Available for projects connected through the GitHub App.
         {% endmarkdown %}
 
         <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html#show-build-overview-in-pull-requests">
@@ -344,24 +345,20 @@
       <div class="row">
         <div class="column twelve wide computer sixteen wide tablet">
           <div class="ui basic vertical huge segment">
-            <h2 class="ui center aligned header">
-              Preview your next docs pull request
-            </h2>
             <p>
-              Pull request previews are on by default.
-              Import your repository and open a pull request to try them.
+              <b>Ship your Django docs with confidence</b>
+            </p>
+            <p>
+              Publish versioned docs, serve API references with integrated search,
+              and preview every change in your pull requests.
             </p>
 
             <p>
               <a class="ui large teal stackable button"
                  data-analytics="signup-modal"
                  onclick="jQuery('#signup-modal').modal('show');">
-                <i class="fad fa-rocket icon"></i>
+                <i class="fad fa-play icon"></i>
                 Start for free
-              </a>
-              <a href="https://docs.readthedocs.com/platform/stable/guides/pull-requests.html" class="ui large basic stackable button">
-                <i class="fad fa-book icon"></i>
-                Read the guide
               </a>
             </p>
           </div>
