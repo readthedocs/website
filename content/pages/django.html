@@ -5,11 +5,11 @@
 #}
 <html>
   <head>
-    <title>Pull request previews for Django docs</title>
+    <title>Catch doc regressions before you merge</title>
     <meta name="template" content="page" />
     <meta name="slug" content="django" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="Read the Docs is built with Django and hosts docs for Wagtail, django CMS, Django Channels and thousands more. Preview every docs pull request with a list of files changed and a visual diff." />
+    <meta name="description" content="Every docs pull request gets a live preview with a list of files changed and a visual diff against production. Built with Django, and used by Django's own documentation." />
   </head>
   <body>
 
@@ -47,19 +47,17 @@
         <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
           <div class="ui large left aligned basic vertical segment">
             <h1 class="ui huge header">
-              Get live previews for every docs pull request
+              Catch doc regressions before you merge
             </h1>
 
             <p>
-              Built with Django.
-              15 years of hosting documentation for open and closed source projects.
-              Connect your Git repository and treat your docs like code.
+              Every pull request gets a live preview build with a visual diff against production.
+              Review rendered output, instead of raw markup.
             </p>
 
             <div class="ui list">
-              <div class="item"><i class="fad fa-check secondary icon"></i>Every pull request gets a live preview.</div>
               <div class="item"><i class="fad fa-check secondary icon"></i>See which pages changed, right in the pull request.</div>
-              <div class="item"><i class="fad fa-check secondary icon"></i>Review the rendered pages, not the markup.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Build status on every push, as a pull request check.</div>
               <div class="item"><i class="fad fa-check secondary icon"></i>Always free for open source projects.</div>
             </div>
 
@@ -131,8 +129,7 @@
 
           <p>
             Always free for open source and community projects.
-            We've hosted open source documentation since 2010,
-            including Wagtail, Django Channels, and thousands of Django packages.
+            We've hosted open source documentation since 2010.
           </p>
 
           <a class="ui inverted basic button" href="https://app.readthedocs.org/accounts/signup/"
@@ -147,93 +144,24 @@
   </div>
 </section>
 
-<section id="django-projects">
-  <div class="ui container">
+<section id="django">
+  <div class="ui text container">
     {{ basic.header_icon(
-        header="Django projects on Read the Docs",
-        subheader="Django's own docs point to Read the Docs for their PDF and ePub downloads. These projects host their docs with us.",
+        header="Django's own documentation uses Read the Docs",
+        subheader="The official Django docs point to Read the Docs for their PDF and ePub downloads.",
         icon="green fa-people-group",
         icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
     ) }}
 
-    <div class="ui three link stackable cards">
-
-      <a href="https://docs.wagtail.org/" class="card">
-        <div class="content">
-          <div class="header">Wagtail</div>
-          <div class="meta">Content management system</div>
-          <div class="description">
-            Built on Django and used by NASA, Google, and the NHS.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://docs.django-cms.org/" class="card">
-        <div class="content">
-          <div class="header">django CMS</div>
-          <div class="meta">Content management system</div>
-          <div class="description">
-            Built on Django and maintained since 2007.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://channels.readthedocs.io/" class="card">
-        <div class="content">
-          <div class="header">Django Channels</div>
-          <div class="meta">Async and WebSockets</div>
-          <div class="description">
-            Extends Django to WebSockets and other async protocols.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://django-debug-toolbar.readthedocs.io/" class="card">
-        <div class="content">
-          <div class="header">Django Debug Toolbar</div>
-          <div class="meta">Developer tooling</div>
-          <div class="description">
-            Panels showing debug information about the current request.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://cookiecutter-django.readthedocs.io/" class="card">
-        <div class="content">
-          <div class="header">Cookiecutter Django</div>
-          <div class="meta">Project template</div>
-          <div class="description">
-            A template for production-ready Django projects.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://django-extensions.readthedocs.io/" class="card">
-        <div class="content">
-          <div class="header">Django Extensions</div>
-          <div class="meta">Project utilities</div>
-          <div class="description">
-            Extra management commands and helpers for Django.
-          </div>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="ui basic padded vertical segment">
-      <p>
-        And thousands more, including
-        <a href="https://django-filter.readthedocs.io/">django-filter</a>,
-        <a href="https://django-storages.readthedocs.io/">django-storages</a>,
-        <a href="https://django-import-export.readthedocs.io/">django-import-export</a>,
-        <a href="https://django-tables2.readthedocs.io/">django-tables2</a>,
-        <a href="https://django-crispy-forms.readthedocs.io/">django-crispy-forms</a>,
-        <a href="https://django-oscar.readthedocs.io/">django-oscar</a>, and
-        <a href="https://docs.celeryq.dev/">Celery</a>.
-        Read the Docs itself is a Django app,
-        <a href="https://github.com/readthedocs/readthedocs.org">open source</a> since 2010.
-      </p>
-    </div>
+    <p>
+      Read the Docs is itself an
+      <a href="https://github.com/readthedocs/readthedocs.org">open source</a> Django app.
+      <a href="https://docs.wagtail.org/">Wagtail</a>,
+      <a href="https://docs.django-cms.org/">django CMS</a>,
+      <a href="https://channels.readthedocs.io/">Django Channels</a> and
+      <a href="https://django-debug-toolbar.readthedocs.io/">Django Debug Toolbar</a>
+      host their documentation here too.
+    </p>
   </div>
 </section>
 
