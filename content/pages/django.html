@@ -94,6 +94,51 @@
 {%- set slug_4 = "direct-upload" %}
 {%- set icon_4 = "fa-cloud-arrow-up" %}
 
+<section id="django">
+  <div class="ui container">
+    {{ basic.header_icon(
+        header="Django's own documentation uses Read the Docs",
+        subheader="The official Django docs point to Read the Docs for their <a href=\"https://django.readthedocs.io/_/downloads/en/stable/pdf/\">PDF</a> and <a href=\"https://django.readthedocs.io/_/downloads/en/stable/epub/\">ePub</a> downloads, and Read the Docs is itself an <a href=\"https://github.com/readthedocs/readthedocs.org\">open source</a> Django app.",
+        icon="green fa-people-group",
+        icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
+    ) }}
+
+    <div class="ui three link stackable cards">
+
+      <a href="https://docs.wagtail.org/" class="card">
+        <div class="content">
+          <div class="header">Wagtail</div>
+          <div class="meta">Content management system</div>
+          <div class="description">
+            Built on Django and used by NASA, Google, and the NHS.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://docs.celeryq.dev/" class="card">
+        <div class="content">
+          <div class="header">Celery</div>
+          <div class="meta">Task queue</div>
+          <div class="description">
+            Background tasks and scheduling for Django and Python apps.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://channels.readthedocs.io/" class="card">
+        <div class="content">
+          <div class="header">Django Channels</div>
+          <div class="meta">Async and WebSockets</div>
+          <div class="description">
+            Extends Django to WebSockets and other async protocols.
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="ui padded container">
     <div class="ui stackable two column centered stretched grid">
@@ -145,50 +190,6 @@
   </div>
 </section>
 
-<section id="django">
-  <div class="ui container">
-    {{ basic.header_icon(
-        header="Django's own documentation uses Read the Docs",
-        subheader="The official Django docs point to Read the Docs for their <a href=\"https://django.readthedocs.io/_/downloads/en/stable/pdf/\">PDF</a> and <a href=\"https://django.readthedocs.io/_/downloads/en/stable/epub/\">ePub</a> downloads, and Read the Docs is itself an <a href=\"https://github.com/readthedocs/readthedocs.org\">open source</a> Django app.",
-        icon="green fa-people-group",
-        icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
-    ) }}
-
-    <div class="ui three link stackable cards">
-
-      <a href="https://docs.wagtail.org/" class="card">
-        <div class="content">
-          <div class="header">Wagtail</div>
-          <div class="meta">Content management system</div>
-          <div class="description">
-            Built on Django and used by NASA, Google, and the NHS.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://docs.celeryq.dev/" class="card">
-        <div class="content">
-          <div class="header">Celery</div>
-          <div class="meta">Task queue</div>
-          <div class="description">
-            Background tasks and scheduling for Django and Python apps.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://channels.readthedocs.io/" class="card">
-        <div class="content">
-          <div class="header">Django Channels</div>
-          <div class="meta">Async and WebSockets</div>
-          <div class="description">
-            Extends Django to WebSockets and other async protocols.
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
 
 {% macro about_divide(text=None) %}
   <div class="ui text container">
