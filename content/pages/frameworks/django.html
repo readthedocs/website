@@ -21,6 +21,8 @@
 {% import "partials/basic.html" as basic %}
 {% import "partials/features.html" as about %}
 {% import "partials/marketing.html" as marketing %}
+{% import "partials/homepage.html" as homepage %}
+{# The try-it-out include uses technical.code_block. #}
 {% import "partials/technical.html" as technical %}
 
 <section>
@@ -91,9 +93,6 @@
 {%- set header_3 = "Visual diff" %}
 {%- set slug_3 = "visual-diff" %}
 {%- set icon_3 = "fa-code-compare" %}
-{%- set header_4 = "Direct upload" %}
-{%- set slug_4 = "direct-upload" %}
-{%- set icon_4 = "fa-cloud-arrow-up" %}
 
 <section id="django">
   <div class="ui container">
@@ -286,52 +285,53 @@
     </div>
   </div>
 
-  {{ about_divide() }}
+</section>
 
-  <div class="ui very padded container" id="{{ slug_4 }}">
-    <div class="ui vertically padded centered grid">
+<section id="features">
+  <div class="ui centered very padded container">
 
-      {% call about.step(
-          header=header_4 ~ ' <span class="ui tiny teal label">Beta</span>',
-          image=None,
-          icon=icon_4) %}
-        {% markdown %}
-        **Build your documentation anywhere**, like GitHub Actions or any other CI service,
-        and upload the result to Read the Docs.
+    <h2 class="ui huge center aligned header">
+      Everything else you get
+      <span class="sub header">
+        The rest of what you need to build, host, and maintain your documentation.
+      </span>
+    </h2>
 
-        A push to `main` updates `main`,
-        a new tag creates a new version,
-        and a pull request creates a preview.
-        Uploaded docs keep every hosting feature:
-        versions, pull request previews, search, custom domains and downloadable formats.
+    <div class="ui centered vertically padded container stackable grid">
 
-        Direct upload is in beta.
-        [Contact support](https://docs.readthedocs.com/platform/stable/support.html) to enable it on your project.
-        {% endmarkdown %}
-
-        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/guides/build/direct-upload.html">
-          <i class="fad fa-book icon" aria-hidden="true"></i>
-          Documentation
-        </a>
+      {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
+      Match your release cycle with multiple versions of your docs.
+      Automatically build versions from any branch or tag.
       {% endcall %}
 
-      {# Same column as the screenshot in the sections above. Keep lines short, the column is narrow. #}
-      <div class="left aligned sixteen wide mobile eight wide tablet six wide computer column">
-        {% call technical.code_block(title="<code>.github/workflows/docs.yaml</code>", icon="fa-file") %}
-        {% markdown %}
+      {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-magnifying-glass") %}
+      Help your users find what they need with search across all your projects and versions.
+      {% endcall %}
 
-        ```yaml
-        - run: make -C docs html
+      {% call homepage.feature_detail_item(header="AI agent integration", icon="fad fa-user-robot") %}
+      Support for llms.txt, Markdown content negotiation, and agent skills make your documentation ready for any AI tool.
+      {% endcall %}
 
-        - uses: readthedocs/upload-action@v1
-          with:
-            token: ${{ "{{" }} secrets.RTD_TOKEN {{ "}}" }}
-            project-slug: my-project
-            html: docs/_build/html
-        ```
+      {% call homepage.feature_detail_item(header="Offline formats", icon="fad fa-file-pdf") %}
+      Output PDF and ePub formats for your documentation, for offline and cross-device viewing.
+      {% endcall %}
 
-        {% endmarkdown %}
-        {% endcall %}
+      {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-globe") %}
+      Use your own custom domain for your hosted documentation, with SSL automatically configured.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
+      Control who has access to your documentation with integrated authentication.
+      Enable <strong>SSO with GitHub or GitLab</strong> to manage permissions in one place.
+      {% endcall %}
+
+      <div class="ten wide computer sixteen wide tablet center aligned column">
+        <div class="ui basic padded vertical segment">
+          <a href="/features/" class="ui large secondary relaxed button">
+            Discover all our features
+            <i class="fad fa-sparkles"></i>
+          </a>
+        </div>
       </div>
 
     </div>
