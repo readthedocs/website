@@ -42,8 +42,8 @@
                      onclick="this.paused ? this.play() : this.pause();">
                 <source src="/images/django/visual-diff.mp4" type="video/mp4">
               </video>
-              <figcaption class="ui small center aligned grey header">
-                From the files changed comment to the visual diff. Click to pause.
+              <figcaption class="ui tiny center aligned grey header">
+                From the files changed comment on GitHub to the visual diff on Read the Docs. Click to pause.
               </figcaption>
             </figure>
           </div>
@@ -99,10 +99,12 @@
     {{ basic.header_icon(
         header="Django's own documentation uses Read the Docs",
         header_level="h2",
-        subheader="The official Django docs point to Read the Docs for their <a href=\"https://django.readthedocs.io/_/downloads/en/stable/pdf/\">PDF</a> and <a href=\"https://django.readthedocs.io/_/downloads/en/stable/epub/\">ePub</a> downloads.",
+        subheader="The <a href=\"https://docs.djangoproject.com/en/stable/\">official Django docs</a> point to Read the Docs for their PDF and ePub downloads.",
         icon="green fa-people-group",
         icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
     ) }}
+
+    <div class="ui horizontal divider">Join thousands of Django projects</div>
 
     <div class="ui three link stackable cards">
 
@@ -151,48 +153,30 @@
   <div class="ui padded container">
     <div class="ui stackable two column centered stretched grid">
 
-      <div class="column">
-        <div class="ui inverted violet padded segment">
-          <span class="ui top right attached label">Business</span>
-          <h2 class="ui small left aligned header">
-            <i class="fad fa-building icon"></i>
-            For engineering and docs teams
-          </h2>
+      {% call marketing.audience_block(
+          header="For engineering and docs teams",
+          icon="fa-building",
+          label="Business",
+          color="violet",
+          cta="Start your 30-day free trial",
+          href="https://app.readthedocs.com/accounts/signup/",
+          analytics="commercial-signup") %}
+        Private repositories, single sign-on, and access control for your product and internal docs.
+        We run the hosting, so your team can focus on writing instead of maintaining docs infrastructure.
+      {% endcall %}
 
-          <p>
-            Private repositories, single sign-on, and access control for your product and internal docs.
-            We run the hosting, so your team can focus on writing instead of maintaining docs infrastructure.
-          </p>
-
-          <a class="ui inverted basic button" href="https://app.readthedocs.com/accounts/signup/"
-            data-analytics="commercial-signup">
-            Start your 30-day free trial
-            <i class="fas fa-arrow-right icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="ui inverted teal padded segment">
-          <span class="ui top right attached label">Community</span>
-          <h2 class="ui small left aligned header">
-            <i class="fad fa-trees icon"></i>
-            For open source projects
-          </h2>
-
-          <p>
-            Always free for open source and community projects.
-            We've hosted open source documentation since 2010,
-            and thousands of Django packages trust us to keep their docs online and searchable.
-          </p>
-
-          <a class="ui inverted basic button" href="https://app.readthedocs.org/accounts/signup/"
-            data-analytics="community-signup">
-            Host your project for free
-            <i class="fas fa-arrow-right icon"></i>
-          </a>
-        </div>
-      </div>
+      {% call marketing.audience_block(
+          header="For open source projects",
+          icon="fa-trees",
+          label="Community",
+          color="teal",
+          cta="Host your project for free",
+          href="https://app.readthedocs.org/accounts/signup/",
+          analytics="community-signup") %}
+        Always free for open source and community projects.
+        We've hosted open source documentation since 2010,
+        and thousands of Django packages trust us to keep their docs online and searchable.
+      {% endcall %}
 
     </div>
   </div>
@@ -248,6 +232,7 @@
         {% markdown %}
         We comment on the pull request with a link to the preview
         and a list of the **files that changed** compared to the latest version of your docs.
+        These are the rendered pages that changed, not the files in the Git diff.
 
         Each page is linked, so reviewers jump straight to the rendered result.
         Pages that always change, like changelogs, can be ignored with a pattern.
@@ -279,8 +264,7 @@
         and the latest version of your docs, right on the page.
 
         Pick a changed page from the menu on the preview,
-        jump between changed sections with the arrows,
-        and press `d` to toggle the diff.
+        and jump between changed sections with the arrows.
         {% endmarkdown %}
 
         <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html">
