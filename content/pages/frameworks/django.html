@@ -5,11 +5,12 @@
 #}
 <html>
   <head>
-    <title>Catch doc regressions before you merge</title>
+    <title>Django documentation hosting with pull request previews</title>
     <meta name="template" content="page" />
     <meta name="slug" content="frameworks/django" />
     <meta name="status" content="hidden" />
-    <meta name="description" content="Every docs pull request gets a live preview with a list of files changed and a visual diff against production. Built with Django, and used by Django's own documentation." />
+    <meta name="description" content="Host your Django project's docs on Read the Docs: a live preview, the files changed and a visual diff for every pull request. Free for open source." />
+    <meta name="image" content="/images/django/visual-diff-poster.png" />
   </head>
   <body>
 
@@ -96,6 +97,7 @@
   <div class="ui container">
     {{ basic.header_icon(
         header="Django's own documentation uses Read the Docs",
+        header_level="h2",
         subheader="The official Django docs point to Read the Docs for their <a href=\"https://django.readthedocs.io/_/downloads/en/stable/pdf/\">PDF</a> and <a href=\"https://django.readthedocs.io/_/downloads/en/stable/epub/\">ePub</a> downloads, and Read the Docs is itself an <a href=\"https://github.com/readthedocs/readthedocs.org\">open source</a> Django app.",
         icon="green fa-people-group",
         icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
@@ -233,7 +235,7 @@
       {% call about.step(
           header=header_2,
           image="/images/django/files-changed-comment.png",
-          image_alt="A pull request comment with a link to the preview and a table of files changed",
+          image_alt="A pull request comment with a link to the preview and a list of the files changed",
           icon=icon_2) %}
         {% markdown %}
         We comment on the pull request with a link to the preview
