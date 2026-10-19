@@ -33,13 +33,15 @@
             {# Muted looping clip of visual diff on a pull request preview, with a still frame as the poster. #}
             <figure class="ui basic segment">
               <!-- [html-validate-disable-next no-autoplay: muted, looping clip with no audio] -->
+              {# Native controls cover the clip on mobile until playback settles, so toggle on click instead. #}
               <video class="ui rounded fluid image"
-                     autoplay muted loop playsinline controls
-                     poster="/images/django/visual-diff-poster.png">
+                     autoplay muted loop playsinline
+                     poster="/images/django/visual-diff-poster.png"
+                     onclick="this.paused ? this.play() : this.pause();">
                 <source src="/images/django/visual-diff.mp4" type="video/mp4">
               </video>
               <figcaption class="ui small center aligned grey header">
-                From the files changed comment to the visual diff
+                From the files changed comment to the visual diff. Click to pause.
               </figcaption>
             </figure>
           </div>
