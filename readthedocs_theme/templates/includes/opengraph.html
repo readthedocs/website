@@ -1,5 +1,4 @@
-{#- Link preview (Open Graph, Twitter card) and canonical URL tags.
-    Scrapers ignore relative URLs, so these are built on SITEURL. -#}
+{#- Link preview and canonical URL tags. Scrapers ignore relative URLs. -#}
 <meta property="og:site_name" content="{{ SITENAME }}" />
 
 {%- set og_object = article|default(page)|default(None) %}
@@ -10,8 +9,7 @@
   {%- set og_image = SITEURL ~ og_image %}
 {%- endif %}
 
-{#- The canonical URL is the output path minus index.html. Local builds use
-    RELATIVE_URLS, which makes SITEURL a path like "..", so they skip the tag. #}
+{#- No canonical on local builds, where RELATIVE_URLS makes SITEURL "..". #}
 {%- if SITEURL.startswith("http") and output_file %}
   {%- set og_path = output_file %}
   {%- if og_path.endswith("index.html") %}
