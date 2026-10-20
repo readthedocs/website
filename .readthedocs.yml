@@ -15,3 +15,28 @@ build:
     - uv run npm run build-html
     - mkdir -p _readthedocs/html/
     - cp -r output/* _readthedocs/html/
+
+# The search window (the Read the Docs search addon). Patterns match the
+# built HTML files, like pricing/index.html.
+search:
+  ranking:
+    # Product pages should win over the blog on a tie. Newsletters and
+    # legal pages are rarely what someone searching the site wants.
+    blog/*: -1
+    blog/*/*/newsletter-*/*: -3
+    privacy-policy/index.html: -2
+    terms-of-service/index.html: -2
+  ignore:
+    # Read the Docs' defaults.
+    - search.html
+    - search/index.html
+    - 404.html
+    - 404/index.html
+    # Error pages, which only make sense when served as errors.
+    - errors/*
+    # The blog's listing, category and tag pages, which repeat the posts.
+    - blog/index*.html
+    - blog/category/*
+    - blog/tag/*
+    # Drafts are written to the output but aren't linked anywhere.
+    - drafts/*
