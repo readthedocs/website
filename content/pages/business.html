@@ -27,12 +27,14 @@
 
   {% macro section_header(header, subheader=None, color="violet") %}
   <div class="ui text container">
-    <h2 class="ui large center aligned {{ color }} accent header">
-      {{ header }}
-      {% if subheader %}
-      <span class="sub header">{{ subheader }}</span>
-      {% endif %}
-    </h2>
+    <div class="ui basic vertical segment">
+      <h2 class="ui large center aligned {{ color }} accent header">
+        {{ header }}
+        {% if subheader %}
+        <span class="sub header">{{ subheader }}</span>
+        {% endif %}
+      </h2>
+    </div>
   </div>
   {% endmacro %}
 
@@ -378,7 +380,7 @@
     <div class="ui very padded container">
       {{ section_header("Business FAQ") }}
 
-      <div class="ui vertically padded stackable two column grid">
+      <div class="ui stackable two column grid">
 
         <div class="column">
           <h3 class="ui small header">What happens when the trial ends?</h3>

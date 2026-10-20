@@ -18,9 +18,7 @@
 }
 
 /* Accent header: a short colored bar under a section heading */
-.ui.ui.accent.header {
-  margin-bottom: 2rem;
-
+.ui.accent.header {
   &::after {
     content: "";
     display: block;
