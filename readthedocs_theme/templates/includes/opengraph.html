@@ -1,11 +1,5 @@
-{#-
-  Link preview (Open Graph and Twitter card) and canonical URL metadata.
-
-  Social scrapers ignore relative URLs, so the page and image URLs are
-  prefixed with SITEURL. On Read the Docs that is the canonical URL of the
-  build (production or a pull request preview); locally it is empty, and the
-  URL tags are skipped.
--#}
+{#- Link preview (Open Graph, Twitter card) and canonical URL tags.
+    Scrapers ignore relative URLs, so these are built on SITEURL. -#}
 <meta property="og:site_name" content="{{ SITENAME }}" />
 
 {%- set og_object = article|default(page)|default(None) %}
@@ -16,9 +10,8 @@
   {%- set og_image = SITEURL ~ og_image %}
 {%- endif %}
 
-{#- The page's own URL: where Pelican writes it, without the index.html.
-    Only on Read the Docs, where SITEURL is absolute; local builds use
-    relative URLs, which make no sense as a canonical. #}
+{#- The canonical URL is the output path minus index.html. Local builds have a
+    relative SITEURL and get none. #}
 {%- if SITEURL.startswith("http") and output_file %}
   {%- set og_path = output_file %}
   {%- if og_path.endswith("index.html") %}
