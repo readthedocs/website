@@ -1,0 +1,443 @@
+{#
+  Landing page for Read the Docs Business, the paid site for companies.
+  The goal of this page is to explain what the Business site is, who it is for,
+  and what it adds over the Community site. It is not a feature tour: that
+  lives on /features/ and /pricing/. Copy is reused from the homepage, features,
+  pricing, and choosing a platform pages, and from the user documentation, so
+  keep it in sync.
+#}
+{# View this page at http://localhost:8080/business/ #}
+
+<html>
+
+<head>
+  <title>Read the Docs Business</title>
+  <meta name="template" content="page" />
+  <meta name="slug" content="business" />
+  <meta name="status" content="hidden" />
+  <meta name="description"
+    content="Read the Docs Business is for companies with more complex requirements for their documentation: private repositories, documentation that requires authentication, team management, and priority support. Start a 30-day free trial." />
+</head>
+
+<body>
+
+  {% import "partials/homepage.html" as homepage %}
+  {% import "partials/marketing.html" as marketing %}
+  {% import "partials/pricing.html" as pricing %}
+
+  {% macro section_header(header, subheader=None, color="violet") %}
+  <div class="ui text container">
+    <div class="ui basic vertical segment">
+      <h2 class="ui large center aligned {{ color }} accent header">
+        {{ header }}
+        {% if subheader %}
+        <span class="sub header">{{ subheader }}</span>
+        {% endif %}
+      </h2>
+    </div>
+  </div>
+  {% endmacro %}
+
+  {# Hero #}
+  <section class="ui vertical hero segment">
+    <div class="ui horizontally very padded container">
+      <div class="ui very padded centered grid">
+        <div class="middle aligned row">
+
+          <div class="ten wide computer sixteen wide tablet sixteen wide mobile column">
+            <div class="ui large left aligned basic vertical segment">
+              <div class="ui large violet basic label">
+                <i class="fad fa-building icon"></i>
+                For engineering and docs teams
+              </div>
+
+              <h1 class="ui huge header">
+                Read the Docs Business
+                <span class="sub header">Documentation hosting for companies, since 2014</span>
+              </h1>
+
+              <p>
+                <strong>Your engineering team shouldn't have to run a docs platform team.</strong>
+                We run the infrastructure so your writers and developers
+                can focus on creating great docs.
+              </p>
+
+              <p>
+                Read the Docs Business is meant for companies and users who have more complex requirements
+                for their documentation project.
+                This can include commercial projects with private source code,
+                projects that can only be viewed with authentication,
+                and even large scale projects that are publicly available.
+              </p>
+
+              <div class="ui relaxed list">
+                <div class="item"><i class="fad fa-lock-keyhole violet icon"></i><div class="content">Clone private and public repositories</div></div>
+                <div class="item"><i class="fad fa-eye-slash violet icon"></i><div class="content">Public and private documentation</div></div>
+                <div class="item"><i class="fad fa-users violet icon"></i><div class="content">Team management for your organization</div></div>
+                <div class="item"><i class="fad fa-globe violet icon"></i><div class="content">Hosted at readthedocs.com</div></div>
+              </div>
+
+              <p class="ui basic padded vertical segment">
+                <a class="ui large violet stackable button" href="https://app.readthedocs.com/accounts/signup/"
+                  data-analytics="commercial-signup">
+                  <i class="fad fa-rocket icon"></i>
+                  Start your 30-day free trial
+                </a>
+                <a class="ui large basic stackable button" href="#plans">
+                  <i class="fad fa-receipt icon"></i>
+                  See plans and pricing
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="six wide computer twelve wide tablet sixteen wide mobile column">
+            <div class="ui raised padded segment">
+              <div class="ui relaxed list">
+
+                <a href="#features" class="ui small violet header item">
+                  <i class="fad fa-shield-keyhole secondary big icon"></i>
+                  <span class="content">
+                    What Business adds
+                    <span class="sub header">Private repositories, private docs, teams, single sign-on, and support.</span>
+                  </span>
+                </a>
+
+                <a href="#plans" class="ui small header item">
+                  <i class="fad fa-receipt secondary big icon"></i>
+                  <span class="content">
+                    Plans and pricing
+                    <span class="sub header">Plans starting at $50/month, with a 30-day free trial.</span>
+                  </span>
+                </a>
+
+                <a href="#compare" class="ui small header item">
+                  <i class="fad fa-scale-balanced secondary big icon"></i>
+                  <span class="content">
+                    Community or Business?
+                    <span class="sub header">The key differences between our two sites.</span>
+                  </span>
+                </a>
+
+                <a href="#business-faq" class="ui small header item">
+                  <i class="fad fa-circle-question secondary big icon"></i>
+                  <span class="content">
+                    Questions about the trial
+                    <span class="sub header">What happens when it ends, billing, and support.</span>
+                  </span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Logos of businesses that use our product. #}
+  <section class="ui vertical light segment" id="customers">
+    <div class="ui container">
+      <h2 class="ui center aligned header">
+        Trusted by engineering and docs teams
+        <span class="sub header">Companies have hosted their documentation with us since 2014.</span>
+      </h2>
+    </div>
+    {% include "includes/business-logos.html" %}
+  </section>
+
+  {# Highlights #}
+  <section id="highlights">
+    <div class="ui very padded container">
+      <div class="ui three column stackable stretched grid">
+
+        <div class="column">
+          <div class="ui inverted black very padded raised highlight segment">
+            <p><i class="fad fa-code-compare big icon"></i></p>
+            <h2 class="ui small inverted header">Catch doc regressions before you merge</h2>
+            <p>
+              Every pull request gets a live preview build with a visual diff
+              against production. Review rendered output, instead of raw markup.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui inverted violet very padded raised highlight segment">
+            <p><i class="fad fa-key-skeleton big icon"></i></p>
+            <h2 class="ui small inverted header">Decide who sees your docs</h2>
+            <p>
+              Control who can access your docs, from your internal team to the whole world.
+              Enable <strong>SSO with GitHub or GitLab</strong> to manage permissions from one place.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui inverted teal very padded raised highlight segment">
+            <p><i class="fad fa-message-question big icon"></i></p>
+            <h2 class="ui small inverted header">Priority support, no ads</h2>
+            <p>
+              A dedicated support team responds to support requests during business hours,
+              and all commercially hosted documentation is always ad-free.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# What Business adds #}
+  <section id="features">
+    <div class="ui very padded container">
+      {{ section_header("What Business adds",
+                        "In addition to providing the same features as Read the Docs Community, commercial subscriptions add additional features and run on separate infrastructure.") }}
+
+      <div class="ui vertically padded centered grid">
+
+        {% call homepage.feature_detail_item(header="Private repositories", icon="fad fa-lock") %}
+        Clone private repositories using a connected <em>GitHub, GitLab, or Bitbucket</em> account,
+        or clone from any Git provider with an SSH key.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Private documentation", icon="fad fa-eye-slash") %}
+        Host private versions that <em>require authentication to view</em>,
+        and allow specific users to view your documentation.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Share private documentation", icon="fad fa-shield-keyhole") %}
+        Share a project with contractors or partners,
+        or share documentation for your product only to specific customers,
+        using <em>secret links, passwords, or HTTP header tokens</em>.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Organizations and teams", icon="fad fa-users") %}
+        Documentation is organized by organization, giving more control over permissions.
+        Define both <em>individual and team permissions</em> for your projects.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Single sign-on", icon="fad fa-fingerprint") %}
+        Enable <strong>SSO with GitHub, GitLab, or Google</strong>
+        to easily manage permissions in one place.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Priority support", icon="fad fa-message-question") %}
+        A dedicated support team responds during business hours,
+        with <em>faster response times and support SLAs</em> available with plan upgrades.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="More build resources", icon="fad fa-gears") %}
+        More build time and more build resources (memory &amp; CPU),
+        with concurrent builds on every plan.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Audit logging and analytics", icon="fad fa-chart-line") %}
+        A security log of all authentication across your projects,
+        plus pageview and search analytics to better understand your most read pages.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Advertising-free", icon="fad fa-rectangle-ad") %}
+        All commercially hosted documentation is <em>always ad-free</em>.
+        {% endcall %}
+
+        <div class="ten wide computer sixteen wide tablet center aligned column">
+          <div class="ui basic padded vertical segment">
+            <p>
+              Every plan includes automatic builds, versioning, search, pull request previews, and CDN hosting.
+            </p>
+            <a href="/features/" class="ui large secondary relaxed button">
+              Discover all our features
+              <i class="fad fa-sparkles"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Plans #}
+  <section class="ui vertical light segment" id="plans">
+    <div class="ui very padded container">
+      {{ section_header("Get started for free with a 30-day trial",
+                        "We won't charge you automatically &mdash; you only pay if you decide to continue.") }}
+
+      <div class="ui horizontally fitted basic segment">
+        <div class="ui centered three column tablet stackable grid">
+          <div class="stretched row">
+
+            {% call pricing.plan(
+              name="Basic",
+              tagline="For small teams getting started with private docs.",
+              price_details=[("$50", "per month")],
+              color="",
+            ) %}
+              <div class="ui list relaxed divided">
+                {{ pricing.plan_feature("2 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
+                {{ pricing.plan_feature("Shared domain", None, "fa-at") }}
+                {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-key-skeleton") }}
+                {{ pricing.plan_feature("3 business day support", None, "fa-message-question") }}
+              </div>
+            {% endcall %}
+
+            {% call pricing.plan(
+              name="Advanced",
+              tagline="For hosting public docs at your own domain.",
+              price_details=[("$150", "per month")],
+              color="violet",
+              inverted=True,
+            ) %}
+              <div class="ui inverted list relaxed divided">
+                {{ pricing.plan_feature("4 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
+                {{ pricing.plan_feature("5 custom domains", None, "fa-at") }}
+                {{ pricing.plan_feature("SSO with GitHub and GitLab", None, "fa-key-skeleton") }}
+                {{ pricing.plan_feature("2 business day support", None, "fa-message-question") }}
+              </div>
+            {% endcall %}
+
+            {% call pricing.plan(
+              name="Pro",
+              tagline="For organizations with scale and security needs.",
+              price_details=[("$250", "per month")],
+              color="",
+            ) %}
+              <div class="ui list relaxed divided">
+                {{ pricing.plan_feature("6 concurrent builds", None, "fa-rectangle-vertical-history fa-swap-opacity") }}
+                {{ pricing.plan_feature("15 custom domains", None, "fa-at") }}
+                {{ pricing.plan_feature("SSO with Google", None, "fa-key-skeleton") }}
+                {{ pricing.plan_feature("1 business day support", None, "fa-message-question") }}
+              </div>
+            {% endcall %}
+
+          </div>
+        </div>
+      </div>
+
+      <div class="ui basic center aligned padded segment">
+        <a class="ui large violet button" href="https://app.readthedocs.com/accounts/signup/"
+          data-analytics="commercial-signup">
+          <i class="fad fa-rocket icon"></i>
+          Start your 30-day free trial
+        </a>
+        <a class="ui large basic button" href="/pricing/">
+          Compare all plan features
+        </a>
+      </div>
+
+      <div class="ui basic center aligned segment">
+        <p>
+          <b>Need more?</b>
+          Enterprise plans start at $10,000 per year and offer SAML SSO, dedicated
+          builders, advanced audit tracking, and a support SLA.
+          <a href="/pricing/enterprise/">Learn more about Enterprise &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {# Community vs Business #}
+  {% with highlight="business" %}
+    {% include "includes/platform-comparison.html" %}
+  {% endwith %}
+
+  {# Which site is right for you #}
+  <section id="audiences">
+    <div class="ui padded container">
+      <div class="ui stackable two column centered stretched grid">
+
+        {% call marketing.audience_block(
+            header="For engineering and docs teams",
+            icon="fa-building",
+            label="Business",
+            color="violet",
+            cta="Start your 30-day free trial",
+            href="https://app.readthedocs.com/accounts/signup/",
+            analytics="commercial-signup") %}
+          Private repositories, single sign-on, and access control for your product and internal docs.
+          We run the hosting, so your team can focus on writing instead of maintaining docs infrastructure.
+        {% endcall %}
+
+        {% call marketing.audience_block(
+            header="For open source projects",
+            icon="fa-trees",
+            label="Community",
+            color="teal",
+            cta="Host your project for free",
+            href="https://app.readthedocs.org/accounts/signup/",
+            analytics="community-signup") %}
+          Always free for open source and community projects.
+          We've hosted open source documentation since 2010,
+          and thousands of projects trust us to keep their docs online and searchable.
+        {% endcall %}
+
+      </div>
+    </div>
+  </section>
+
+  {# FAQ #}
+  <section class="ui vertical light segment" id="business-faq">
+    <div class="ui very padded container">
+      {{ section_header("Business FAQ") }}
+
+      <div class="ui stackable two column grid">
+
+        <div class="column">
+          <h3 class="ui small header">What happens when the trial ends?</h3>
+          <p>
+            We won't charge you automatically &mdash; you only pay
+            if you decide to continue.
+          </p>
+
+          <h3 class="ui small header">Is my documentation indexed during the trial?</h3>
+          <p>
+            During the trial period, your documentation is served with a <code>noindex</code> robots directive,
+            so search engines won't index it.
+            Subscribe to a paid plan to make your documentation indexable.
+          </p>
+        </div>
+
+        <div class="column">
+          <h3 class="ui small header">Do you offer annual pricing or purchase orders?</h3>
+          <p>
+            Yes. Annual plans are available on every paid tier and can be paid by invoice or purchase order.
+          </p>
+
+          <h3 class="ui small header">What about open source projects?</h3>
+          <p>
+            Open source documentation is always free on
+            <a href="/community/">Read the Docs Community</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# Bottom CTA #}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui inverted black very padded center aligned cta segment">
+        <h2 class="ui huge inverted header">Focus on creating great docs</h2>
+        <p class="ui text container">
+          Connect your Git repository and treat docs like code.
+          We run the hard parts: builds, previews, auth &mdash; so you can focus on creating great docs.
+        </p>
+        <p>
+          <a class="ui huge violet stackable button" href="https://app.readthedocs.com/accounts/signup/"
+            data-analytics="commercial-signup">
+            <i class="fad fa-rocket icon"></i>
+            Start your 30-day free trial
+          </a>
+          <a class="ui huge inverted basic stackable button" href="/pricing/enterprise/#inquiry">
+            <i class="fad fa-messages icon"></i>
+            Talk to us
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
