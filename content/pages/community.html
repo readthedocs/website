@@ -246,7 +246,7 @@
           Integrated support for **[Sphinx](/tools/sphinx/)**, **[MkDocs](/tools/mkdocs/)**,
           **Docusaurus**, and more.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/builds.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/builds.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Documentation
           </a>
@@ -269,9 +269,13 @@
           Every time you push a commit to a pull request,
           Read the Docs will build your documentation and show you the changes,
           with a **visual diff** against the live docs.
+
+          We comment on the pull request with a link to the preview
+          and a list of the **files that changed** compared to the latest version of your docs.
+          These are the rendered pages that changed, not the files in the Git diff.
           Supported on **GitHub** and **GitLab**.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/pull-requests.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/pull-requests.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Documentation
           </a>
@@ -296,7 +300,7 @@
           and let your users select between **multiple versions and translations**
           using the flyout menu.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/versions.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/versions.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Documentation
           </a>
@@ -316,7 +320,7 @@
           Always find what you are looking for at the tip of your fingers with our powerful ElasticSearch engine.
           Search on a **single or across multiple projects** at once.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/server-side-search/index.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/server-side-search/index.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Documentation
           </a>
@@ -417,29 +421,44 @@
       {{ section_header("Trusted by the projects you already use",
                         "Flask, Jupyter, Godot, and thousands more trust us to keep their docs online and searchable.") }}
 
-      <div class="ui three link stackable lifted cards">
+      <div class="ui four link stackable lifted cards">
         <a href="https://flask.palletsprojects.com/" class="card">
           <div class="content">
             <div class="ui center aligned basic segment">
               <img class="ui small image" src="/images/flask-logo.png" alt="Flask logo" />
             </div>
             <div class="header">Flask</div>
-            <div class="meta">Web Framework</div>
+            <div class="meta">Custom domain</div>
             <div class="description">
-              Flask is a Python web framework built with a small core and easy-to-extend philosophy.
+              The Flask docs are served from the project's own domain, flask.palletsprojects.com,
+              with SSL automatically configured.
             </div>
           </div>
         </a>
 
-        <a href="https://docs.jupyter.org/" class="card">
+        <a href="https://docs.djangoproject.com/en/stable/" class="card">
+          <div class="content">
+            <div class="ui center aligned basic segment">
+              <i class="fad fa-file-pdf huge teal icon"></i>
+            </div>
+            <div class="header">Django</div>
+            <div class="meta">Offline formats</div>
+            <div class="description">
+              The official Django docs point to Read the Docs for their PDF and ePub downloads.
+            </div>
+          </div>
+        </a>
+
+        <a href="https://jupytergis.readthedocs.io/" class="card">
           <div class="content">
             <div class="ui center aligned basic segment">
               <img class="ui small image" src="/images/jupyter-logo.png" alt="Jupyter logo">
             </div>
             <div class="header">Jupyter</div>
-            <div class="meta">Data Science Environment</div>
+            <div class="meta">Pull request previews</div>
             <div class="description">
-              Jupyter Notebook is a web-based interactive computational environment for creating notebook documents.
+              Projects in the Jupyter ecosystem, like JupyterGIS,
+              review every docs change with pull request builds.
             </div>
           </div>
         </a>
@@ -450,9 +469,10 @@
               <img class="ui small image" src="/images/godot-logo.png" alt="Godot Engine logo">
             </div>
             <div class="header">Godot Engine</div>
-            <div class="meta">Game Engine</div>
+            <div class="meta">Free builds for a volunteer team</div>
             <div class="description">
-              Godot Engine is a free and open source community-driven 2D and 3D game engine.
+              A small volunteer team maintains the Godot docs,
+              with the build resources of the Community plan.
             </div>
           </div>
         </a>
@@ -623,13 +643,13 @@
                 It depends on people like you contributing to development, support, and operations.
               </p>
               <p>
-                <a class="ui basic primary button" href="https://docs.readthedocs.com/dev/latest/contribute.html">
-                  <i class="fad fa-code-pull-request icon" aria-hidden="true"></i>
-                  Contribute
+                <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/open-source-philosophy.html">
+                  <i class="fab fa-osi icon" aria-hidden="true"></i>
+                  Our open source philosophy
                 </a>
-                <a class="ui basic button" href="https://docs.readthedocs.com/platform/stable/team.html">
-                  <i class="fad fa-people-group icon" aria-hidden="true"></i>
-                  Meet the community team
+                <a class="ui basic button" href="https://docs.readthedocs.com/platform/stable/story.html">
+                  <i class="fad fa-book-open icon" aria-hidden="true"></i>
+                  The story of Read the Docs
                 </a>
               </p>
             </div>
@@ -644,6 +664,40 @@
   {% with highlight="community" %}
     {% include "includes/platform-comparison.html" %}
   {% endwith %}
+
+  {# Which site is right for you #}
+  <section id="audiences">
+    <div class="ui padded container">
+      <div class="ui stackable two column centered stretched grid">
+
+        {% call marketing.audience_block(
+            header="For engineering and docs teams",
+            icon="fa-building",
+            label="Business",
+            color="violet",
+            cta="Start your 30-day free trial",
+            href="https://app.readthedocs.com/accounts/signup/",
+            analytics="commercial-signup") %}
+          Private repositories, single sign-on, and access control for your product and internal docs.
+          We run the hosting, so your team can focus on writing instead of maintaining docs infrastructure.
+        {% endcall %}
+
+        {% call marketing.audience_block(
+            header="For open source projects",
+            icon="fa-trees",
+            label="Community",
+            color="teal",
+            cta="Host your project for free",
+            href="https://app.readthedocs.org/accounts/signup/",
+            analytics="community-signup") %}
+          Always free for open source and community projects.
+          We've hosted open source documentation since 2010,
+          and thousands of projects trust us to keep their docs online and searchable.
+        {% endcall %}
+
+      </div>
+    </div>
+  </section>
 
   {# FAQ #}
   <section class="ui band segment" id="community-faq">
@@ -719,7 +773,7 @@
             <i class="fad fa-rocket icon"></i>
             Host your project for free
           </a>
-          <a href="https://docs.readthedocs.io/page/tutorial/index.html" class="ui huge inverted basic stackable button">
+          <a href="https://docs.readthedocs.com/platform/stable/tutorial/index.html" class="ui huge inverted basic stackable button">
             <i class="fad fa-book icon"></i>
             Start our tutorial
           </a>

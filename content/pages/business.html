@@ -160,7 +160,13 @@
   </section>
 
   {# Logos of businesses that use our product. #}
-  <section class="ui band segment">
+  <section class="ui band segment" id="customers">
+    <div class="ui container">
+      <h2 class="ui center aligned header">
+        Trusted by engineering and docs teams
+        <span class="sub header">Companies have hosted their documentation with us since 2014.</span>
+      </h2>
+    </div>
     {% include "includes/business-logos.html" %}
   </section>
 
@@ -228,7 +234,7 @@
           Integrating directly with your Git provider allows developers and documentation authors to collaborate seamlessly.
           Write docs with your favorite editor, commit changes using version control, and preview changes during review.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/reference/git-integration.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/reference/git-integration.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Documentation
           </a>
@@ -249,7 +255,7 @@
           Sharing private documentation is useful for giving quick access to your documentation to users outside of your organization,
           using secret links, passwords, or HTTP header tokens that you can revoke at any time.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/commercial/sharing.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/commercial/sharing.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Documentation
           </a>
@@ -302,11 +308,11 @@
           and manage who has access to projects directly from your Git provider,
           or sign on with **Google Workspace** and manage permissions with teams.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/commercial/organizations.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/commercial/organizations.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Organizations
           </a>
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/commercial/single-sign-on.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/commercial/single-sign-on.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Single sign-on
           </a>
@@ -329,9 +335,13 @@
 
           See rendered differences between your pull request and the live docs,
           and catch layout and formatting issues before they ship.
+
+          We comment on the pull request with a link to the preview
+          and a list of the **files that changed** compared to the latest version of your docs.
+          These are the rendered pages that changed, not the files in the Git diff.
           Supported on **GitHub** and **GitLab**.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/pull-requests.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/pull-requests.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Documentation
           </a>
@@ -355,7 +365,7 @@
           A **security log** of all authentication across your projects
           helps meet your compliance and security needs.
           {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.io/page/traffic-analytics.html">
+          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/traffic-analytics.html">
             <i class="fad fa-book icon" aria-hidden="true"></i>
             Documentation
           </a>
@@ -495,6 +505,40 @@
   {% with highlight="business" %}
     {% include "includes/platform-comparison.html" %}
   {% endwith %}
+
+  {# Which site is right for you #}
+  <section id="audiences">
+    <div class="ui padded container">
+      <div class="ui stackable two column centered stretched grid">
+
+        {% call marketing.audience_block(
+            header="For engineering and docs teams",
+            icon="fa-building",
+            label="Business",
+            color="violet",
+            cta="Start your 30-day free trial",
+            href="https://app.readthedocs.com/accounts/signup/",
+            analytics="commercial-signup") %}
+          Private repositories, single sign-on, and access control for your product and internal docs.
+          We run the hosting, so your team can focus on writing instead of maintaining docs infrastructure.
+        {% endcall %}
+
+        {% call marketing.audience_block(
+            header="For open source projects",
+            icon="fa-trees",
+            label="Community",
+            color="teal",
+            cta="Host your project for free",
+            href="https://app.readthedocs.org/accounts/signup/",
+            analytics="community-signup") %}
+          Always free for open source and community projects.
+          We've hosted open source documentation since 2010,
+          and thousands of projects trust us to keep their docs online and searchable.
+        {% endcall %}
+
+      </div>
+    </div>
+  </section>
 
   {# FAQ #}
   <section class="ui band segment" id="business-faq">
