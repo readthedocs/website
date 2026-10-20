@@ -10,8 +10,8 @@
   {%- set og_image = SITEURL ~ og_image %}
 {%- endif %}
 
-{#- The canonical URL is the output path minus index.html. Local builds have a
-    relative SITEURL and get none. #}
+{#- The canonical URL is the output path minus index.html. Local builds use
+    RELATIVE_URLS, which makes SITEURL a path like "..", so they skip the tag. #}
 {%- if SITEURL.startswith("http") and output_file %}
   {%- set og_path = output_file %}
   {%- if og_path.endswith("index.html") %}
