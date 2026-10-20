@@ -1,5 +1,8 @@
 import jquery from "jquery";
-import Plausible from "plausible-tracker";
+import {
+  init as plausibleInit,
+  track as plausibleTrack,
+} from "@plausible-analytics/tracker";
 
 import * as components from "./components";
 
@@ -125,45 +128,6 @@ jquery.fn.sui_module = function () {
 };
 
 /**
- * Detect headless and automated browsers, which should not be tracked
- *
- * Bots and scrapers driving a real browser engine execute our JS and would
- * otherwise show up as pageviews. Plausible's own ``script.js`` skips these
- * browsers, but the ``plausible-tracker`` library does not, so the same checks
- * are replicated here. Set ``window.__plausible`` to force tracking from an
- * automated browser, for example when testing.
- */
-export function isAutomatedBrowser() {
-  const automated =
-    window._phantom ||
-    window.__nightmare ||
-    window.navigator.webdriver ||
-    window.Cypress;
-  return Boolean(automated) && !window.__plausible;
-}
-
-/**
- * Track a pageview only once the page is visible to the user
- *
- * Browsers prerender and prefetch pages that the user may never open. Delaying
- * the pageview until the page becomes visible avoids counting these, matching
- * the behavior of Plausible's own ``script.js``.
- */
-export function trackPageviewWhenVisible(trackPageview) {
-  if (document.visibilityState === "visible") {
-    trackPageview();
-    return;
-  }
-  const onVisible = () => {
-    if (document.visibilityState === "visible") {
-      document.removeEventListener("visibilitychange", onVisible);
-      trackPageview();
-    }
-  };
-  document.addEventListener("visibilitychange", onVisible);
-}
-
-/**
  * Plausible tracking module
  *
  * This reuses jQuery to provide explicit tracking of events at Plausible. To
@@ -176,22 +140,16 @@ export function trackPageviewWhenVisible(trackPageview) {
  * In the case of a link with a ``href`` attribute, the link will continue
  * redirecting after the callback from Plausible fires off.
  *
- * Automated browsers are not tracked, see :func:`isAutomatedBrowser`.
+ * Pageviews are captured automatically on initialization. The official
+ * Plausible tracker also skips automated browsers and waits until the page is
+ * visible before counting a pageview.
  */
 jquery.fn.plausible = function () {
-  if (isAutomatedBrowser()) {
-    console.debug("Plausible: ignoring automated browser");
-    return this;
-  }
-
-  let plausible_settings = { domain: "about.readthedocs.com" };
-  if (DEBUG_MODE) {
-    plausible_settings.trackLocalhost = true;
-  }
-  const { trackEvent, trackPageview } = Plausible(plausible_settings);
-
-  // Track pageview for all pages, once the page is actually shown to the user
-  trackPageviewWhenVisible(trackPageview);
+  plausibleInit({
+    domain: "about.readthedocs.com",
+    captureOnLocalhost: DEBUG_MODE,
+    logging: DEBUG_MODE,
+  });
 
   return this.each((index, elem) => {
     elem.addEventListener("click", on_click_event);
@@ -217,7 +175,7 @@ jquery.fn.plausible = function () {
           }
         }
         for (const event_name of event_names) {
-          trackEvent(event_name, {
+          plausibleTrack(event_name, {
             callback: () => {
               console.debug("Plausible: tracked event", event_name);
               redirect_link();
