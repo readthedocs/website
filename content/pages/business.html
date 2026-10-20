@@ -1,9 +1,10 @@
 {#
   Landing page for Read the Docs Business, the paid site for companies.
   The goal of this page is to explain what the Business site is, who it is for,
-  and what it adds over the Community site. Copy is reused from the homepage,
-  features, pricing, and choosing a platform pages, and from the user
-  documentation, so keep it in sync.
+  and what it adds over the Community site. It is not a feature tour: that
+  lives on /features/ and /pricing/. Copy is reused from the homepage, features,
+  pricing, and choosing a platform pages, and from the user documentation, so
+  keep it in sync.
 #}
 {# View this page at http://localhost:8080/business/ #}
 
@@ -20,11 +21,8 @@
 
 <body>
 
-  {% import "partials/basic.html" as basic %}
-  {% import "partials/features.html" as about %}
   {% import "partials/homepage.html" as homepage %}
   {% import "partials/marketing.html" as marketing %}
-  {% import "partials/technical.html" as technical %}
   {% import "partials/pricing.html" as pricing %}
 
   {% macro section_header(header, subheader=None, color="violet") %}
@@ -95,58 +93,35 @@
             <div class="ui raised padded segment">
               <div class="ui relaxed list">
 
-                {%- set header_1 = "Private repositories" %}
-                {%- set slug_1 = "private-repositories" %}
-                {%- set icon_1 = "fa-code-commit" -%}
-                <a href="#{{ slug_1 }}" class="ui small violet header item">
-                  <i class="fad {{ icon_1 }} secondary big icon"></i>
+                <a href="#features" class="ui small violet header item">
+                  <i class="fad fa-shield-keyhole secondary big icon"></i>
                   <span class="content">
-                    {{ header_1 }}
-                    <span class="sub header">Build documentation from private GitHub, GitLab, and Bitbucket repositories.</span>
+                    What Business adds
+                    <span class="sub header">Private repositories, private docs, teams, single sign-on, and support.</span>
                   </span>
                 </a>
 
-                {%- set header_2 = "Private documentation" %}
-                {%- set slug_2 = "private-documentation" %}
-                {%- set icon_2 = "fa-shield-keyhole" -%}
-                <a href="#{{ slug_2 }}" class="ui small header item">
-                  <i class="fad {{ icon_2 }} secondary big icon"></i>
+                <a href="#plans" class="ui small header item">
+                  <i class="fad fa-receipt secondary big icon"></i>
                   <span class="content">
-                    {{ header_2 }}
-                    <span class="sub header">Decide who sees your docs, from your internal team to the whole world.</span>
-                  </span>
-                </a>
-
-                {%- set header_3 = "Organizations and single sign-on" %}
-                {%- set slug_3 = "organizations" %}
-                {%- set icon_3 = "fa-users" -%}
-                <a href="#{{ slug_3 }}" class="ui small header item">
-                  <i class="fad {{ icon_3 }} secondary big icon"></i>
-                  <span class="content">
-                    {{ header_3 }}
-                    <span class="sub header">Manage permissions for your whole organization from one place.</span>
-                  </span>
-                </a>
-
-                {%- set header_4 = "Pull request previews" %}
-                {%- set slug_4 = "previews" %}
-                {%- set icon_4 = "fa-code-compare" -%}
-                <a href="#{{ slug_4 }}" class="ui small header item">
-                  <i class="fad {{ icon_4 }} secondary big icon"></i>
-                  <span class="content">
-                    {{ header_4 }}
-                    <span class="sub header">Catch doc regressions before you merge.</span>
-                  </span>
-                </a>
-
-                {%- set header_5 = "Plans and pricing" %}
-                {%- set slug_5 = "plans" %}
-                {%- set icon_5 = "fa-receipt" -%}
-                <a href="#{{ slug_5 }}" class="ui small header item">
-                  <i class="fad {{ icon_5 }} secondary big icon"></i>
-                  <span class="content">
-                    {{ header_5 }}
+                    Plans and pricing
                     <span class="sub header">Plans starting at $50/month, with a 30-day free trial.</span>
+                  </span>
+                </a>
+
+                <a href="#compare" class="ui small header item">
+                  <i class="fad fa-scale-balanced secondary big icon"></i>
+                  <span class="content">
+                    Community or Business?
+                    <span class="sub header">The key differences between our two sites.</span>
+                  </span>
+                </a>
+
+                <a href="#business-faq" class="ui small header item">
+                  <i class="fad fa-circle-question secondary big icon"></i>
+                  <span class="content">
+                    Questions about the trial
+                    <span class="sub header">What happens when it ends, billing, and support.</span>
                   </span>
                 </a>
 
@@ -212,192 +187,43 @@
     </div>
   </section>
 
-  {# Feature steps #}
-  <section>
+  {# What Business adds #}
+  <section id="features">
     <div class="ui very padded container">
-      {{ section_header("Built for private documentation",
-                        "The largest difference between the community solution and our commercial offering is the ability to connect to private repositories, restrict documentation access to certain users, or share private documentation via private hyperlinks.") }}
-    </div>
-
-    <div class="ui very padded container" id="{{ slug_1 }}">
-      <div class="ui vertically padded centered grid">
-        {% call about.step(
-            header=header_1,
-            image="/images/docs-as-code/gh-integration.png",
-            image_alt="Read the Docs checks on GitHub",
-            image_class="framed",
-            icon=icon_1) %}
-          {% markdown %}
-          Clone private repositories using a connected **GitHub**, **GitLab**, or **Bitbucket** account,
-          or clone from any Git provider with an SSH key.
-
-          Integrating directly with your Git provider allows developers and documentation authors to collaborate seamlessly.
-          Write docs with your favorite editor, commit changes using version control, and preview changes during review.
-          {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/reference/git-integration.html">
-            <i class="fad fa-book icon" aria-hidden="true"></i>
-            Documentation
-          </a>
-        {% endcall %}
-      </div>
-    </div>
-
-    <div class="ui very padded container" id="{{ slug_2 }}">
-      <div class="ui vertically padded centered grid">
-        {% call about.step(
-            header=header_2,
-            image=None,
-            icon=icon_2) %}
-          {% markdown %}
-          Host private versions that **require authentication to view**,
-          alongside public documentation for your users and customers.
-
-          Sharing private documentation is useful for giving quick access to your documentation to users outside of your organization,
-          using secret links, passwords, or HTTP header tokens that you can revoke at any time.
-          {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/commercial/sharing.html">
-            <i class="fad fa-book icon" aria-hidden="true"></i>
-            Documentation
-          </a>
-        {% endcall %}
-
-        <div class="center aligned sixteen wide mobile eight wide tablet six wide computer column">
-          <div class="ui left aligned very padded raised segment">
-            <h3 class="ui small header">For every project type</h3>
-            <div class="ui relaxed list">
-              <div class="item">
-                <i class="fad fa-earth-americas violet icon"></i>
-                <div class="content">Host <b>public</b> documentation for users</div>
-              </div>
-              <div class="item">
-                <i class="fad fa-people-group violet icon"></i>
-                <div class="content">Share documentation internally using <b>teams</b></div>
-              </div>
-              <div class="item">
-                <i class="fad fa-shield-keyhole violet icon"></i>
-                <div class="content">Grant access using <b>sharing tokens</b></div>
-              </div>
-              <div class="item">
-                <i class="fad fa-handshake violet icon"></i>
-                <div class="content">Share a project with <b>contractors or partners</b></div>
-              </div>
-              <div class="item">
-                <i class="fad fa-window violet icon"></i>
-                <div class="content">Embed documentation in a <b>SaaS application dashboard</b></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui very padded container" id="{{ slug_3 }}">
-      <div class="ui vertically padded centered grid">
-        {% call about.step(
-            header=header_3,
-            image="/images/new-dashboard.png",
-            image_alt="The Read the Docs dashboard",
-            image_class="framed",
-            icon=icon_3) %}
-          {% markdown %}
-          On Read the Docs Business, your account is linked to an **organization**.
-          Organizations allow you to define both individual and team permissions for your projects,
-          giving more control over who can view and edit your documentation.
-
-          Enable **single sign-on with GitHub, GitLab, or Bitbucket**
-          and manage who has access to projects directly from your Git provider,
-          or sign on with **Google Workspace** and manage permissions with teams.
-          {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/commercial/organizations.html">
-            <i class="fad fa-book icon" aria-hidden="true"></i>
-            Organizations
-          </a>
-          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/commercial/single-sign-on.html">
-            <i class="fad fa-book icon" aria-hidden="true"></i>
-            Single sign-on
-          </a>
-        {% endcall %}
-      </div>
-    </div>
-
-    <div class="ui very padded container" id="{{ slug_4 }}">
-      <div class="ui vertically padded centered grid">
-        {% call about.step(
-            header=header_4,
-            image="/images/docs-as-code/visual-diff.png",
-            image_alt="Visual diff between two versions",
-            image_class="framed",
-            icon=icon_4) %}
-          {% markdown %}
-          Once you have your documentation in Git, you can preview changes before merging them.
-          Every time you push a commit to a pull request,
-          Read the Docs will build your documentation and show you the changes.
-
-          See rendered differences between your pull request and the live docs,
-          and catch layout and formatting issues before they ship.
-
-          We comment on the pull request with a link to the preview
-          and a list of the **files that changed** compared to the latest version of your docs.
-          These are the rendered pages that changed, not the files in the Git diff.
-          Supported on **GitHub** and **GitLab**.
-          {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/pull-requests.html">
-            <i class="fad fa-book icon" aria-hidden="true"></i>
-            Documentation
-          </a>
-        {% endcall %}
-      </div>
-    </div>
-
-    <div class="ui very padded container" id="analytics">
-      <div class="ui vertically padded centered grid">
-        {% call about.step(
-            header="Analytics and audit logging",
-            image="/images/features/analytics.png",
-            image_alt="Traffic analytics for a documentation project",
-            image_class="framed",
-            icon="fa-chart-line") %}
-          {% markdown %}
-          Traffic analytics let you see *which* documents your users are reading,
-          and search analytics show you what they are searching for,
-          so you can focus on expanding and updating the parts people are reading most.
-
-          A **security log** of all authentication across your projects
-          helps meet your compliance and security needs.
-          {% endmarkdown %}
-          <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/traffic-analytics.html">
-            <i class="fad fa-book icon" aria-hidden="true"></i>
-            Documentation
-          </a>
-        {% endcall %}
-      </div>
-    </div>
-  </section>
-
-  {# Everything else #}
-  <section class="ui band segment" id="everything-else">
-    <div class="ui very padded container">
-      {{ section_header("Everything from Community, on separate infrastructure",
-                        "In addition to providing the same features as Read the Docs Community, commercial subscriptions to Read the Docs add additional features and run on separate infrastructure.") }}
+      {{ section_header("What Business adds",
+                        "In addition to providing the same features as Read the Docs Community, commercial subscriptions add additional features and run on separate infrastructure.") }}
 
       <div class="ui vertically padded centered grid">
 
-        {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
-        Match your product release cycle with multiple versions of your docs.
-        Automatically build versions from any branch or tag.
+        {% call homepage.feature_detail_item(header="Private repositories", icon="fad fa-lock") %}
+        Clone private repositories using a connected <em>GitHub, GitLab, or Bitbucket</em> account,
+        or clone from any Git provider with an SSH key.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-at") %}
-        Use your own custom domain for your hosted documentation, with SSL automatically configured.
+        {% call homepage.feature_detail_item(header="Private documentation", icon="fad fa-eye-slash") %}
+        Host private versions that <em>require authentication to view</em>,
+        and allow specific users to view your documentation.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
-        Help your users find what they need with integrated search across all your projects and versions.
+        {% call homepage.feature_detail_item(header="Share private documentation", icon="fad fa-shield-keyhole") %}
+        Share a project with contractors or partners,
+        or share documentation for your product only to specific customers,
+        using <em>secret links, passwords, or HTTP header tokens</em>.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Supports any documentation tool", icon="fad fa-terminal") %}
-        Integrated support for <strong><a href="/tools/sphinx/">Sphinx</a></strong>,
-        <strong><a href="/tools/mkdocs/">MkDocs</a></strong>, <strong>Docusaurus</strong>, and more.
+        {% call homepage.feature_detail_item(header="Organizations and teams", icon="fad fa-users") %}
+        Documentation is organized by organization, giving more control over permissions.
+        Define both <em>individual and team permissions</em> for your projects.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Single sign-on", icon="fad fa-fingerprint") %}
+        Enable <strong>SSO with GitHub, GitLab, or Google</strong>
+        to easily manage permissions in one place.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Priority support", icon="fad fa-message-question") %}
+        A dedicated support team responds during business hours,
+        with <em>faster response times and support SLAs</em> available with plan upgrades.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="More build resources", icon="fad fa-gears") %}
@@ -405,13 +231,20 @@
         with concurrent builds on every plan.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Offline formats", icon="fad fa-file-pdf") %}
-        Output PDF and EPUB formats for your documentation,
-        for offline viewing, regulatory compliance, and archiving.
+        {% call homepage.feature_detail_item(header="Audit logging and analytics", icon="fad fa-chart-line") %}
+        A security log of all authentication across your projects,
+        plus pageview and search analytics to better understand your most read pages.
+        {% endcall %}
+
+        {% call homepage.feature_detail_item(header="Advertising-free", icon="fad fa-rectangle-ad") %}
+        All commercially hosted documentation is <em>always ad-free</em>.
         {% endcall %}
 
         <div class="ten wide computer sixteen wide tablet center aligned column">
           <div class="ui basic padded vertical segment">
+            <p>
+              Every plan includes automatic builds, versioning, search, pull request previews, and CDN hosting.
+            </p>
             <a href="/features/" class="ui large secondary relaxed button">
               Discover all our features
               <i class="fad fa-sparkles"></i>
@@ -423,7 +256,7 @@
   </section>
 
   {# Plans #}
-  <section id="{{ slug_5 }}">
+  <section class="ui band segment" id="plans">
     <div class="ui very padded container">
       {{ section_header("Get started for free with a 30-day trial",
                         "We won't charge you automatically &mdash; you only pay if you decide to continue.") }}
@@ -560,23 +393,12 @@
             so search engines won't index it.
             Subscribe to a paid plan to make your documentation indexable.
           </p>
-
-          <h3 class="ui small header">Can I switch plans later?</h3>
-          <p>
-            Yes &mdash; you can upgrade or downgrade at any time.
-          </p>
         </div>
 
         <div class="column">
           <h3 class="ui small header">Do you offer annual pricing or purchase orders?</h3>
           <p>
             Yes. Annual plans are available on every paid tier and can be paid by invoice or purchase order.
-          </p>
-
-          <h3 class="ui small header">What support is included?</h3>
-          <p>
-            Our team responds to support requests within 2 business days or earlier for most plans.
-            Faster support response times and support SLAs are available with plan upgrades.
           </p>
 
           <h3 class="ui small header">What about open source projects?</h3>
@@ -589,9 +411,6 @@
       </div>
     </div>
   </section>
-
-  {# Try it out code block #}
-  {% include "includes/try-it-out.html" %}
 
   {# Bottom CTA #}
   <section>

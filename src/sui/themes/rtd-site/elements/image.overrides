@@ -28,11 +28,3 @@ img.emojione {
   width: auto;
   height: 2.5rem;
 }
-
-/* Framed variation: product screenshots with a border and soft shadow */
-.ui.framed.image,
-.ui.framed.image img {
-  border: 1px solid @lightGrey;
-  border-radius: @defaultBorderRadius * 2;
-  box-shadow: 0 12px 32px -12px fade(@black, 40%);
-}
