@@ -1,18 +1,45 @@
+{#-
+  Link preview (Open Graph and Twitter card) and canonical URL metadata.
+
+  Social scrapers ignore relative URLs, so the page and image URLs are
+  prefixed with SITEURL. On Read the Docs that is the canonical URL of the
+  build (production or a pull request preview); locally it is empty, and the
+  URL tags are skipped.
+-#}
 <meta property="og:site_name" content="{{ SITENAME }}" />
 
 {%- set og_object = article|default(page)|default(None) %}
 {%- set og_title = og_object.title|default("Read the Docs", true)|striptags|escape %}
 {%- set og_description = og_object.description|default("")|striptags|escape %}
 {%- set og_image = og_object.image|default("/images/logo-opengraph.png") %}
+{%- if not og_image.startswith("http") %}
+  {%- set og_image = SITEURL ~ og_image %}
+{%- endif %}
 
-<meta property="og:type" content="article" />
+{#- The page's own URL: where Pelican writes it, without the index.html.
+    Only on Read the Docs, where SITEURL is absolute; local builds use
+    relative URLs, which make no sense as a canonical. #}
+{%- if SITEURL.startswith("http") and output_file %}
+  {%- set og_path = output_file %}
+  {%- if og_path.endswith("index.html") %}
+    {%- set og_path = og_path[:-10] %}
+  {%- endif %}
+  {%- set og_url = SITEURL ~ "/" ~ og_path %}
+{%- endif %}
+
+{% if og_url is defined %}
+<link rel="canonical" href="{{ og_url }}" />
+<meta property="og:url" content="{{ og_url }}" />
+{% endif %}
+<meta property="og:type" content="{{ 'article' if article else 'website' }}" />
 <meta property="og:title" content="{{ og_title }}" />
-<meta property="twitter:title" content="{{ og_title }}" />
 <meta name="description" content="{{ og_description }}" />
 <meta property="og:description" content="{{ og_description }}" />
-<meta property="twitter:description" content="{{ og_description }}" />
-<meta property="og:image" content="{{ site_url }}{{ og_image }}" />
-<meta property="twitter:image" content="{{ site_url }}{{ og_image }}" />
+<meta property="og:image" content="{{ og_image }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ og_title }}" />
+<meta name="twitter:description" content="{{ og_description }}" />
+<meta name="twitter:image" content="{{ og_image }}" />
 {% for tag in og_object.tags %}
 <meta name="tags" content="{{ tag }}" />
 {% endfor %}
