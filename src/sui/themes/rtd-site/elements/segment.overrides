@@ -36,63 +36,19 @@
   }
 }
 
-/* Band: a full-width tinted section, used to break up long landing pages */
-.ui.band.segment {
-  margin: 0;
-  padding: 1em 0;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  background-color: @offWhite;
-}
-
-/* Hero band: a soft gradient behind the lead of a landing page */
-.ui.hero.band.segment {
-  padding: 1em 0 2em;
-  background-color: @white;
+/* Hero: a soft gradient behind the lead of a landing page */
+.ui.hero.segment {
   background-image: linear-gradient(
     160deg,
-    fade(@teal, 12%) 0%,
+    fade(@teal, 14%) 0%,
     @white 55%,
-    fade(@violet, 8%) 100%
-  );
-}
-.ui.teal.hero.band.segment {
-  background-image: linear-gradient(
-    160deg,
-    fade(@teal, 16%) 0%,
-    @white 60%,
-    fade(@teal, 6%) 100%
-  );
-}
-.ui.violet.hero.band.segment {
-  background-image: linear-gradient(
-    160deg,
-    fade(@violet, 14%) 0%,
-    @white 60%,
-    fade(@violet, 6%) 100%
+    fade(@violet, 10%) 100%
   );
 }
 
-/* Highlight: inverted gradient panels for the big value propositions */
+/* Highlight: gradient backgrounds for inverted colored panels */
 .ui.inverted.highlight.segment {
-  padding: 2.5em 2em;
   border-radius: @defaultBorderRadius * 2;
-  box-shadow: 0 12px 30px -14px fade(@black, 50%);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-
-  > .icon {
-    display: block;
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-  }
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -16px fade(@black, 60%);
-  }
 }
 .ui.inverted.teal.highlight.segment {
   background-image: linear-gradient(135deg, @teal, darken(@teal, 12%));
@@ -104,30 +60,12 @@
   background-image: linear-gradient(135deg, lighten(@black, 10%), @black);
 }
 
-/* CTA: the closing call to action on a landing page */
+/* CTA: a glow behind the closing call to action on a landing page */
 .ui.inverted.cta.segment {
-  padding: 4em 2em;
-  text-align: center;
   border-radius: @defaultBorderRadius * 2;
-  background-color: @black;
   background-image:
     radial-gradient(circle at 15% 20%, fade(@teal, 45%), transparent 45%),
     radial-gradient(circle at 85% 85%, fade(@violet, 55%), transparent 45%);
-
-  .ui.header {
-    color: @white;
-  }
-  p {
-    max-width: 40em;
-    margin: 0 auto 1.5em;
-    font-size: 1.15em;
-  }
-}
-
-/* Colored segments recolor their links, but colored buttons keep white text */
-.ui.segment:not(.inverted)
-  a.ui.button:not(.basic):is(.primary, .secondary, .teal, .violet, .black) {
-  color: @white;
 }
 
 /* Scrollable: wide content, such as a comparison table, scrolls sideways

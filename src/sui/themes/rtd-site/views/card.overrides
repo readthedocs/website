@@ -52,16 +52,3 @@ a.card,
 a.card:hover {
   text-decoration: none;
 }
-
-/* Lifted variation: cards rise on hover */
-.ui.lifted.cards > .card,
-.ui.lifted.card {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px -10px fade(@black, 35%);
-  }
-}

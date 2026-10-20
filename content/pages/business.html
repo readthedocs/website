@@ -39,7 +39,7 @@
   {% endmacro %}
 
   {# Hero #}
-  <section class="ui violet hero band segment">
+  <section class="ui vertical hero segment">
     <div class="ui horizontally very padded container">
       <div class="ui very padded centered grid">
         <div class="middle aligned row">
@@ -137,7 +137,7 @@
   </section>
 
   {# Logos of businesses that use our product. #}
-  <section class="ui band segment" id="customers">
+  <section class="ui vertical light segment" id="customers">
     <div class="ui container">
       <h2 class="ui center aligned header">
         Trusted by engineering and docs teams
@@ -153,8 +153,8 @@
       <div class="ui three column stackable stretched grid">
 
         <div class="column">
-          <div class="ui inverted black highlight segment">
-            <i class="fad fa-code-compare icon"></i>
+          <div class="ui inverted black very padded raised highlight segment">
+            <p><i class="fad fa-code-compare big icon"></i></p>
             <h2 class="ui small inverted header">Catch doc regressions before you merge</h2>
             <p>
               Every pull request gets a live preview build with a visual diff
@@ -164,8 +164,8 @@
         </div>
 
         <div class="column">
-          <div class="ui inverted violet highlight segment">
-            <i class="fad fa-key-skeleton icon"></i>
+          <div class="ui inverted violet very padded raised highlight segment">
+            <p><i class="fad fa-key-skeleton big icon"></i></p>
             <h2 class="ui small inverted header">Decide who sees your docs</h2>
             <p>
               Control who can access your docs, from your internal team to the whole world.
@@ -175,8 +175,8 @@
         </div>
 
         <div class="column">
-          <div class="ui inverted teal highlight segment">
-            <i class="fad fa-message-question icon"></i>
+          <div class="ui inverted teal very padded raised highlight segment">
+            <p><i class="fad fa-message-question big icon"></i></p>
             <h2 class="ui small inverted header">Priority support, no ads</h2>
             <p>
               A dedicated support team responds to support requests during business hours,
@@ -258,7 +258,7 @@
   </section>
 
   {# Plans #}
-  <section class="ui band segment" id="plans">
+  <section class="ui vertical light segment" id="plans">
     <div class="ui very padded container">
       {{ section_header("Get started for free with a 30-day trial",
                         "We won't charge you automatically &mdash; you only pay if you decide to continue.") }}
@@ -376,7 +376,7 @@
   </section>
 
   {# FAQ #}
-  <section class="ui band segment" id="business-faq">
+  <section class="ui vertical light segment" id="business-faq">
     <div class="ui very padded container">
       {{ section_header("Business FAQ") }}
 
@@ -417,9 +417,9 @@
   {# Bottom CTA #}
   <section>
     <div class="ui very padded container">
-      <div class="ui inverted cta segment">
-        <h2 class="ui huge header">Focus on creating great docs</h2>
-        <p>
+      <div class="ui inverted black very padded center aligned cta segment">
+        <h2 class="ui huge inverted header">Focus on creating great docs</h2>
+        <p class="ui text container">
           Connect your Git repository and treat docs like code.
           We run the hard parts: builds, previews, auth &mdash; so you can focus on creating great docs.
         </p>

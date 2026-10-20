@@ -37,7 +37,7 @@
   {% endmacro %}
 
   {# Hero #}
-  <section class="ui teal hero band segment">
+  <section class="ui vertical hero segment">
     <div class="ui horizontally very padded container">
       <div class="ui very padded centered grid">
         <div class="middle aligned row">
@@ -133,9 +133,9 @@
   </section>
 
   {# Scale #}
-  <section class="ui band segment" id="scale">
+  <section class="ui vertical light segment" id="scale">
     <div class="ui very padded container">
-      <div class="ui four small landing statistics">
+      <div class="ui four small teal statistics">
         <div class="statistic">
           <div class="value">100,000+</div>
           <div class="label">Open source projects</div>
@@ -162,8 +162,8 @@
       <div class="ui three column stackable stretched grid">
 
         <div class="column">
-          <div class="ui inverted teal highlight segment">
-            <i class="fad fa-trees icon"></i>
+          <div class="ui inverted teal very padded raised highlight segment">
+            <p><i class="fad fa-trees big icon"></i></p>
             <h2 class="ui small inverted header">Free, forever</h2>
             <p>
               Open source project hosting is always free.
@@ -173,8 +173,8 @@
         </div>
 
         <div class="column">
-          <div class="ui inverted black highlight segment">
-            <i class="fad fa-code-branch icon"></i>
+          <div class="ui inverted black very padded raised highlight segment">
+            <p><i class="fad fa-code-branch big icon"></i></p>
             <h2 class="ui small inverted header">Treat docs like code</h2>
             <p>
               Connect your Git repository and treat docs like code.
@@ -185,8 +185,8 @@
         </div>
 
         <div class="column">
-          <div class="ui inverted violet highlight segment">
-            <i class="fab fa-osi icon"></i>
+          <div class="ui inverted violet very padded raised highlight segment">
+            <p><i class="fab fa-osi big icon"></i></p>
             <h2 class="ui small inverted header">Open source, all the way down</h2>
             <p>
               All of the source code for Read the Docs is open source.
@@ -249,12 +249,12 @@
   </section>
 
   {# Social proof #}
-  <section class="ui band segment" id="users">
+  <section class="ui vertical light segment" id="users">
     <div class="ui very padded container">
       {{ section_header("Trusted by the projects you already use",
                         "Flask, Jupyter, Godot, and thousands more trust us to keep their docs online and searchable.") }}
 
-      <div class="ui four link stackable lifted cards">
+      <div class="ui four link stackable cards">
         <a href="https://flask.palletsprojects.com/" class="card">
           <div class="content">
             <div class="ui center aligned basic segment">
@@ -338,8 +338,8 @@
         <div class="stretched row">
 
           <div class="column">
-            <div class="ui inverted teal highlight segment">
-              <i class="fad fa-rectangle-ad icon"></i>
+            <div class="ui inverted teal very padded raised highlight segment">
+              <p><i class="fad fa-rectangle-ad big icon"></i></p>
               <h3 class="ui small inverted header">Supported by EthicalAds</h3>
               <p>
                 All documentation sites include a single non-tracking ad from
@@ -355,8 +355,8 @@
           </div>
 
           <div class="column">
-            <div class="ui inverted violet highlight segment">
-              <i class="fad fa-building icon"></i>
+            <div class="ui inverted violet very padded raised highlight segment">
+              <p><i class="fad fa-building big icon"></i></p>
               <h3 class="ui small inverted header">Funded by Read the Docs Business</h3>
               <p>
                 Read the Docs is run by a small team and mostly bootstrapped &mdash;
@@ -426,7 +426,7 @@
   </section>
 
   {# FAQ #}
-  <section class="ui band segment" id="community-faq">
+  <section class="ui vertical light segment" id="community-faq">
     <div class="ui very padded container">
       {{ section_header("Community FAQ") }}
 
@@ -470,9 +470,9 @@
   {# Bottom CTA #}
   <section>
     <div class="ui very padded container">
-      <div class="ui inverted cta segment">
-        <h2 class="ui huge header">Get your docs online in 5 minutes</h2>
-        <p>
+      <div class="ui inverted black very padded center aligned cta segment">
+        <h2 class="ui huge inverted header">Get your docs online in 5 minutes</h2>
+        <p class="ui text container">
           Free for open source, forever.
           Sign up with GitHub or your email, import your project, and your docs build on every commit.
         </p>
