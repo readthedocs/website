@@ -44,27 +44,20 @@
       </h2>
     </div>
 
-    <table class="ui small unstackable celled head first stuck table">
+    <div class="ui basic fitted scrollable segment">
+    <table class="ui mini unstackable celled head first stuck table">
       <thead>
         <tr>
           <th class="eight wide" scope="col"></th>
           <th class="four wide center aligned" scope="col">
-            <div class="ui small {% if highlight == "community" %}teal{% endif %} header">
-              <i class="fad fa-trees icon"></i>
-              <div class="content">
-                Read the Docs Community
-                <div class="sub header">readthedocs.org</div>
-              </div>
-            </div>
+            <i class="fad fa-trees {% if highlight == "community" %}teal{% endif %} icon"></i>
+            <strong class="ui {% if highlight == "community" %}teal{% endif %} text">Read the Docs Community</strong>
+            <div class="ui tiny grey text">readthedocs.org</div>
           </th>
           <th class="four wide center aligned" scope="col">
-            <div class="ui small {% if highlight == "business" %}violet{% endif %} header">
-              <i class="fad fa-building icon"></i>
-              <div class="content">
-                Read the Docs Business
-                <div class="sub header">readthedocs.com</div>
-              </div>
-            </div>
+            <i class="fad fa-building {% if highlight == "business" %}violet{% endif %} icon"></i>
+            <strong class="ui {% if highlight == "business" %}violet{% endif %} text">Read the Docs Business</strong>
+            <div class="ui tiny grey text">readthedocs.com</div>
           </th>
         </tr>
       </thead>
@@ -80,6 +73,7 @@
         {{ row("Automatic builds, versioning, search, and previews", "Included on every project", "fa-box-check", True, True) }}
       </tbody>
     </table>
+    </div>
 
     <div class="ui basic center aligned segment">
       <p>

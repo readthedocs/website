@@ -129,3 +129,10 @@
   a.ui.button:not(.basic):is(.primary, .secondary, .teal, .violet, .black) {
   color: @white;
 }
+
+/* Scrollable: wide content, such as a comparison table, scrolls sideways
+ * instead of widening the page on small screens. Fomantic's own scrolling
+ * variation caps the height on phones, which is not wanted here. */
+.ui.scrollable.segment {
+  overflow-x: auto;
+}
