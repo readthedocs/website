@@ -44,7 +44,8 @@
     "file-loader": "^6.2.0",
     "html-validate": "^7.1.2",
     "imports-loader": "^4.0.1",
-    "jest": "^26.4.2",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
     "jquery": "^3.4.1",
     "jquery-address": "^1.6.0",
     "lato-font": "^3.0.0",
@@ -71,9 +72,7 @@
       "__webpack_public_path__": null,
       "DEBUG_MODE": false
     },
-    "moduleNameMapper": {
-      "^@plausible-analytics/tracker$": "<rootDir>/node_modules/@plausible-analytics/tracker/plausible.js"
-    },
+    "testEnvironment": "jsdom",
     "transformIgnorePatterns": [
       "/node_modules/(?!(lit|@lit|lit-html|lit-element|@plausible-analytics)/)"
     ]
