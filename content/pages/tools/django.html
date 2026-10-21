@@ -52,7 +52,7 @@
         <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
           <div class="ui large left aligned basic vertical segment">
             <h1 class="ui huge header">
-              Catch doc regressions before you merge
+              Catch problems with your docs before merging
             </h1>
 
             <p>
@@ -97,23 +97,31 @@
 <section id="django">
   <div class="ui container">
     {{ basic.header_icon(
-        header="Django's own documentation uses Read the Docs",
+        header="Join thousands of Django projects",
         header_level="h2",
-        subheader="The <a href=\"https://docs.djangoproject.com/en/stable/\">official Django docs</a> point to Read the Docs for their PDF and ePub downloads.",
+        subheader="Django and the projects around it host their documentation on Read the Docs, each in their own way.",
         icon="green fa-people-group",
         icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
     ) }}
 
-    <div class="ui horizontal divider">Join thousands of Django projects</div>
+    <div class="ui four link stackable cards">
 
-    <div class="ui three link stackable cards">
+      <a href="https://docs.djangoproject.com/en/stable/" class="card">
+        <div class="content">
+          <div class="header">Django</div>
+          <div class="meta">Web framework</div>
+          <div class="description">
+            The official docs point to Read the Docs for their PDF and ePub downloads.
+          </div>
+        </div>
+      </a>
 
       <a href="https://docs.wagtail.org/" class="card">
         <div class="content">
           <div class="header">Wagtail</div>
           <div class="meta">Content management system</div>
           <div class="description">
-            Open source, built on Django, with a structured page editor.
+            Serves the docs for every release from its own domain, docs.wagtail.org.
           </div>
         </div>
       </a>
@@ -123,7 +131,7 @@
           <div class="header">Celery</div>
           <div class="meta">Task queue</div>
           <div class="description">
-            Background tasks and scheduling for Django and Python apps.
+            Builds versioned docs on Read the Docs and serves them at docs.celeryq.dev.
           </div>
         </div>
       </a>
@@ -133,7 +141,7 @@
           <div class="header">Django Channels</div>
           <div class="meta">Async and WebSockets</div>
           <div class="description">
-            Extends Django to WebSockets and other async protocols.
+            Hosts its docs at channels.readthedocs.io, rebuilt on every push.
           </div>
         </div>
       </a>
@@ -142,8 +150,7 @@
 
     <div class="ui basic center aligned vertical segment">
       <p class="ui grey text">
-        Read the Docs is itself a Django app, open source since 2010.
-        <a href="https://github.com/readthedocs/readthedocs.org">Read the source on GitHub</a>.
+        Read the Docs is itself a Django app, <a href="/company/">open source since 2010</a>.
       </p>
     </div>
   </div>
