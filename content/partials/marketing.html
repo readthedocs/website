@@ -94,3 +94,39 @@
     </div>
   </div>
 {% endmacro %}
+
+{#
+  Audience sign-up block: a colored segment with a product label in the corner
+
+  Used in pairs, inside a `ui stackable two column centered stretched grid`,
+  to point each audience at the right product. The caller provides the body text.
+
+  :param header: Header text
+  :param icon: Font Awesome icon name for the header
+  :param label: Product label shown in the top right corner, e.g. "Business"
+  :param color: Segment color, e.g. "violet" or "teal"
+  :param cta: Button text
+  :param href: Button link
+  :param analytics: Value for the button's data-analytics attribute
+#}
+{% macro audience_block(header, icon, label, color, cta, href, analytics) %}
+  <div class="column">
+    <div class="ui inverted {{ color }} padded segment">
+      <h2 class="ui small left aligned header">
+        <i class="fad {{ icon }} icon"></i>
+        {{ header }}
+      </h2>
+      {# After the header on purpose: a top attached label as first child pushes the next element down 2rem. #}
+      <span class="ui top right attached label">{{ label }}</span>
+
+      <p>
+        {{ caller() }}
+      </p>
+
+      <a class="ui inverted basic button" href="{{ href }}" data-analytics="{{ analytics }}">
+        {{ cta }}
+        <i class="fas fa-arrow-right icon"></i>
+      </a>
+    </div>
+  </div>
+{% endmacro %}
