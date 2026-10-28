@@ -99,7 +99,7 @@
     {{ basic.header_icon(
         header="Join some of the most important Django projects",
         header_level="h2",
-        subheader="Django and the projects around it preview their pull requests and host their docs on Read the Docs.",
+        subheader="Django and the projects around it preview their pull requests and host their docs on Read the Docs. We're a Django app ourselves, <a href=\"/company/\">open source since 2010</a>.",
         icon="green fa-people-group",
         icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
     ) }}
@@ -108,6 +108,9 @@
 
       <a href="https://docs.djangoproject.com/en/stable/" class="card">
         <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/django-logo.svg" alt="Django logo" />
+          </div>
           <div class="header">Django</div>
           <div class="meta">Web framework</div>
           <div class="description">
@@ -119,6 +122,9 @@
 
       <a href="https://docs.wagtail.org/" class="card">
         <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/wagtail-logo.svg" alt="Wagtail logo" />
+          </div>
           <div class="header">Wagtail</div>
           <div class="meta">Content management system</div>
           <div class="description">
@@ -130,6 +136,9 @@
 
       <a href="https://docs.celeryq.dev/" class="card">
         <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/celery-logo.png" alt="Celery logo" />
+          </div>
           <div class="header">Celery</div>
           <div class="meta">Task queue</div>
           <div class="description">
@@ -138,12 +147,6 @@
         </div>
       </a>
 
-    </div>
-
-    <div class="ui basic center aligned vertical segment">
-      <p class="ui grey text">
-        Read the Docs is itself a Django app, <a href="/company/">open source since 2010</a>.
-      </p>
     </div>
   </div>
 </section>
