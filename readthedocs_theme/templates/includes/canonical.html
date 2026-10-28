@@ -1,0 +1,17 @@
+{#-
+  Canonical URL for every generated page, so query string variants
+  (like ``?ref=`` from the readthedocs.org redirect) and ``index.html``
+  paths are indexed as the clean URL.
+
+  Only when ``SITEURL`` is absolute: local builds use relative URLs.
+  Error pages are served at any path, so they don't get one.
+-#}
+{%- if SITEURL and not RELATIVE_URLS and not (page and page.template == "error") %}
+  {%- set canonical_path = output_file %}
+  {%- if canonical_path == "index.html" %}
+    {%- set canonical_path = "" %}
+  {%- elif canonical_path.endswith("/index.html") %}
+    {%- set canonical_path = canonical_path[:-10] %}
+  {%- endif %}
+<link rel="canonical" href="{{ SITEURL }}/{{ canonical_path }}" />
+{%- endif %}

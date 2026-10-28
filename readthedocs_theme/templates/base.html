@@ -11,6 +11,7 @@
     {%- macro opengraph() %}{% include 'includes/opengraph.html' %}{% endmacro %}
 
     {{ opengraph()|indent(4) }}
+    {% include 'includes/canonical.html' %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/theme/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ SITEURL }}/theme/img/favicon-32x32.png">
