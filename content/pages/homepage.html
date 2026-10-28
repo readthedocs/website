@@ -202,69 +202,17 @@
   {# Sphinx user testimonials #}
   {% include "includes/users-sphinx.html" %}
 
-  {# New developer testimonials #}
-  <section>
+  <section id="quotes">
     <div class="ui very padded container">
       <div class="ui stackable equal width grid">
         <div class="stretched row">
           <div class="column">
-            <div class="ui very padded raised segment">
-              {% call marketing.testimonial(
-              name="Max Hilbrunner",
-              title="Software and Game Developer",
-              company="Godot Engine",
-              image="https://avatars.githubusercontent.com/u/1654763?v=4",
-              link="https://docs.godotengine.org/") %}
-              Read the Docs plays a large part in enabling a small volunteer team to maintain our docs. Without the
-              generous Community plan, we couldn't have afforded anything close to the CI/build resources that we got
-              with Read the Docs.
-              {% endcall %}
-            </div>
+            {% include "includes/testimonial-godot.html" %}
           </div>
           <div class="column">
-            <div class="ui very padded raised segment">
-              {% call marketing.testimonial(
-              name="Matt Fisher",
-              title="Scientific Software Developer",
-              company="UC Berkeley Eric and Wendy Schmidt Center for Data Science and Environment",
-              image="https://github.com/mfisher87.png",
-              link="https://jupytergis.readthedocs.io/") %}
-              Read the Docs is a critical component of the open source software ecosystem. And their PR builds are the
-              best and most trustworthy implementation out there.
-              {% endcall %}
-            </div>
+            {% include "includes/testimonial-jupytergis.html" %}
           </div>
         </div>
-        {#
-        <div class="stretched row">
-          <div class="column">
-            <div class="ui very padded raised segment">
-              {% call marketing.testimonial(
-              name="Trevor James Smith",
-              title="Developer",
-              company="Ouranos",
-              image="https://github.com/Zeitsperre.png",
-              link="https://github.com/hydrologie/xdatasets/issues/32#issue-2019390201") %}
-              Read the Docs is a solid documentation hosting platform that is used all over the place and has some nice
-              features on top of being FOSS software.
-              {% endcall %}
-            </div>
-          </div>
-          <div class="column">
-            <div class="ui very padded raised segment">
-              {% call marketing.testimonial(
-              name="Juan Luis Cano Rodríguez",
-              title="Developer Advocate",
-              company="Kedro",
-              image="https://github.com/astrojuanlu.png",
-              link="https://fosstodon.org/@kedro@social.lfx.dev/111608164611739960") %}
-              The documentation is now easier to navigate, thanks to a new top navigation bar and a search-as-you-type
-              modal courtesy of Read the Docs. Snappy docs are happy docs!
-              {% endcall %}
-            </div>
-          </div>
-        </div>
-        #}
       </div>
     </div>
   </section>
