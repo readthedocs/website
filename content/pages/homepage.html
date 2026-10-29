@@ -13,6 +13,7 @@
 <body>
 
   {% import "partials/basic.html" as basic %}
+  {% import "partials/features.html" as features %}
   {% import "partials/homepage.html" as homepage %}
   {% import "partials/marketing.html" as marketing %}
   {% import "partials/technical.html" as technical %}
@@ -110,30 +111,60 @@
   {% include "includes/business-logos.html" %}
 
   {% block homepage_highlight %}
-  {% call marketing.highlight_list() %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui vertically padded centered grid">
 
-  {% call marketing.highlight_item(
-  icon="white fa-code-compare",
-  icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-  header="Catch doc regressions before you merge",
-  color="black") %}
-  <p>
-    Every pull request gets a live preview build with a visual diff
-    against production. Review rendered output, instead of raw markup.
-  </p>
-  {% endcall %}
+        {% call features.step(
+        header="Catch doc regressions before you merge",
+        image="/images/django/visual-diff.png",
+        image_alt="Visual diff on a pull request preview, highlighting one changed line in a numbered list",
+        icon="fa-code-compare") %}
+        {% markdown %}
+        Every pull request gets a **live preview build** with a visual diff against production.
+        Review rendered output, instead of raw markup.
 
-  {% call marketing.highlight_item(
-  icon="white fa-key-skeleton",
-  icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
-  header="Decide who sees your docs",
-  color="violet") %}
-  <p>
-    Control who can access your docs, from your internal team to the whole world.
-    Enable <strong>SSO with GitHub or GitLab</strong> to manage permissions from one place.
-  </p>
-  {% endcall %}
-  {% endcall %}
+        We comment on the pull request with the pages that changed,
+        so reviewers jump straight to the rendered result.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+        {% endcall %}
+
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <div class="ui divider"></div>
+    </div>
+
+    <div class="ui very padded container">
+      <div class="ui vertically padded centered grid">
+
+        {% call features.step(
+        header="Decide who sees your docs",
+        image="/images/features/sso.png",
+        image_alt="Organization authorization settings, with Read the Docs teams, Git provider, and Google Workspace options",
+        icon="fa-key-skeleton") %}
+        {% markdown %}
+        Control who can access your docs, from your internal team to the whole world.
+
+        Enable **SSO with GitHub or GitLab** to reuse your repository permissions,
+        or manage access with Read the Docs teams.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/commercial/single-sign-on.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+        {% endcall %}
+
+      </div>
+    </div>
+  </section>
   {% endblock homepage_highlight %}
 
   {% block homepage_feature_detail %}
