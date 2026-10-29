@@ -172,9 +172,9 @@
     <div class="ui centered very padded container">
 
       <h3 class="ui huge center aligned header">
-        Features
+        More features
         <span class="sub header">
-          Everything you need to build, host, and maintain your documentation.
+          Everything else you need to build, host, and maintain your documentation.
         </span>
       </h3>
 
@@ -190,8 +190,8 @@
         tool.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Preview your changes", icon="fad fa-code-compare") %}
-        Preview your rendered documentation before deploying, and catch mistakes before they go live.
+        {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-magnifying-glass") %}
+        Help your users find what they need with search across all your projects and versions.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
@@ -204,9 +204,8 @@
         or clone from any Git provider with an SSH key.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
-        Control who has access to your documentation with integrated authentication.
-        Enable <strong>SSO with GitHub or GitLab</strong> to easily manage permissions in one place.
+        {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-globe") %}
+        Use your own custom domain for your hosted documentation, with SSL automatically configured.
         {% endcall %}
 
         {% block features_cta %}
