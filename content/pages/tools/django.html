@@ -1,0 +1,371 @@
+{#
+  The goal of this page is to land Django developers coming from the Django docs ad.
+  It focuses on pull request previews, the files changed comment, and visual diff,
+  and highlights that Read the Docs is itself built with Django.
+#}
+<html>
+  <head>
+    <title>Django docs hosting with pull request previews</title>
+    <meta name="template" content="page" />
+    <meta name="slug" content="tools/django" />
+    <meta name="status" content="hidden" />
+    <meta name="description" content="Host your Django project's docs on Read the Docs: a live preview, the files changed and a visual diff for every pull request. Free for open source." />
+    <meta name="image" content="/images/django/visual-diff-poster.png" />
+  </head>
+  <body>
+
+{#
+  View this page at http://localhost:8080/tools/django/
+#}
+
+{% import "partials/basic.html" as basic %}
+{% import "partials/features.html" as about %}
+{% import "partials/marketing.html" as marketing %}
+{% import "partials/homepage.html" as homepage %}
+{# The try-it-out include uses technical.code_block. #}
+{% import "partials/technical.html" as technical %}
+
+<section>
+  <div class="ui horizontally padded hero container">
+    <div class="ui relaxed centered computer reversed grid">
+      <div class="middle aligned row">
+
+        <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui basic vertical segment">
+            {# Muted looping clip of visual diff on a pull request preview, with a still frame as the poster. #}
+            <figure class="ui basic segment">
+              <!-- [html-validate-disable-next no-autoplay: muted, looping clip with no audio] -->
+              {# Native controls cover the clip on mobile until playback settles, so toggle on click instead. #}
+              <video class="ui rounded fluid image"
+                     autoplay muted loop playsinline
+                     poster="/images/django/visual-diff-poster.png"
+                     onclick="this.paused ? this.play() : this.pause();">
+                <source src="/images/django/visual-diff.mp4" type="video/mp4">
+              </video>
+              <figcaption class="ui tiny center aligned grey header">
+                From the files changed comment on GitHub to the visual diff on Read the Docs. Click to pause.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="eight wide computer twelve wide tablet sixteen wide mobile column">
+          <div class="ui large left aligned basic vertical segment">
+            <h1 class="ui huge header">
+              Catch problems with your docs before merging
+            </h1>
+
+            <p>
+              Every pull request on your Django project's docs gets a live preview build
+              with a visual diff against production.
+              Review rendered output, instead of raw markup.
+            </p>
+
+            <div class="ui list">
+              <div class="item"><i class="fad fa-check secondary icon"></i>See which pages changed, right in the pull request.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Works with any documentation tool.</div>
+              <div class="item"><i class="fad fa-check secondary icon"></i>Deploys automatically when you merge.</div>
+            </div>
+
+            <p class="ui basic padded vertical segment">
+              <a class="ui large teal stackable button"
+                 data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-play icon"></i>
+                Create an account
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Section headers, anchors and icons shared with the feature sections below. #}
+{%- set header_1 = "Pull request previews" %}
+{%- set slug_1 = "pull-request-previews" %}
+{%- set icon_1 = "fa-code-pull-request" %}
+{%- set header_2 = "Files changed" %}
+{%- set slug_2 = "files-changed" %}
+{%- set icon_2 = "fa-file-plus-minus" %}
+{%- set header_3 = "Visual diff" %}
+{%- set slug_3 = "visual-diff" %}
+{%- set icon_3 = "fa-code-compare" %}
+
+<section id="django">
+  <div class="ui container">
+    {{ basic.header_icon(
+        header="Join some of the most important Django projects",
+        header_level="h2",
+        subheader="Django and the projects around it preview their pull requests and host their docs on Read the Docs. We're a Django app ourselves, <a href=\"/company/\">open source since 2010</a>.",
+        icon="green fa-people-group",
+        icon_style="--fa-secondary-color: #0C4B33; --fa-secondary-opacity: 1;"
+    ) }}
+
+    <div class="ui three link stackable cards">
+
+      <a href="https://docs.djangoproject.com/en/stable/" class="card">
+        <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/django-logo.svg" alt="Django logo" />
+          </div>
+          <div class="header">Django</div>
+          <div class="meta">Web framework</div>
+          <div class="description">
+            Previews every pull request, keeps dozens of versions online,
+            and offers PDF and ePub downloads from the official docs.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://docs.wagtail.org/" class="card">
+        <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/wagtail-logo.svg" alt="Wagtail logo" />
+          </div>
+          <div class="header">Wagtail</div>
+          <div class="meta">Content management system</div>
+          <div class="description">
+            Previews every pull request, serves dozens of versions from a custom domain,
+            and understands its readers with traffic analytics.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://docs.celeryq.dev/" class="card">
+        <div class="content">
+          <div class="ui center aligned basic segment">
+            <img class="ui small image" src="{{ SITE_URL }}/images/celery-logo.png" alt="Celery logo" />
+          </div>
+          <div class="header">Celery</div>
+          <div class="meta">Task queue</div>
+          <div class="description">
+            Previews every pull request and serves dozens of versions from a custom domain.
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="ui hidden section divider"></div>
+
+<section>
+  <div class="ui padded container">
+    <div class="ui stackable two column centered stretched grid">
+
+      {% call marketing.audience_block(
+          header="For engineering and docs teams",
+          icon="fa-building",
+          label="Business",
+          color="violet",
+          cta="Start your 30-day free trial",
+          href="https://app.readthedocs.com/accounts/signup/",
+          analytics="commercial-signup") %}
+        Private repositories, single sign-on, and access control for your product and internal docs.
+        We run the hosting, so your team can focus on writing instead of maintaining docs infrastructure.
+      {% endcall %}
+
+      {% call marketing.audience_block(
+          header="For open source projects",
+          icon="fa-trees",
+          label="Community",
+          color="teal",
+          cta="Host your project for free",
+          href="https://app.readthedocs.org/accounts/signup/",
+          analytics="community-signup") %}
+        Always free for open source and community projects.
+        We've hosted open source documentation since 2010,
+        and thousands of projects trust us to keep their docs online and searchable.
+      {% endcall %}
+
+    </div>
+  </div>
+</section>
+
+
+{% macro about_divide(text=None) %}
+  <div class="ui text container">
+    <div class="ui {%- if text %} horizontal {%- endif %} divider">
+      {% if text %}{{ text }}{% endif %}
+    </div>
+  </div>
+{% endmacro %}
+
+{{ about_divide() }}
+
+<section>
+  <div class="ui very padded container" id="{{ slug_1 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_1,
+          image="/images/features/review.png",
+          image_alt="Read the Docs build status checks on a GitHub pull request",
+          icon=icon_1) %}
+        {% markdown %}
+        We build your documentation for every pull request, and rebuild it on every push.
+        The build shows up as a check on the pull request,
+        so you know when the preview is ready or the build failed.
+
+        Supported on **GitHub** and **GitLab**.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/pull-requests.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_2 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_2,
+          image="/images/django/files-changed-comment.png",
+          image_alt="A pull request comment with a link to the preview and a list of the files changed",
+          icon=icon_2) %}
+        {% markdown %}
+        We comment on the pull request with a link to the preview
+        and a list of the **files that changed** compared to the latest version of your docs.
+        These are the rendered pages that changed, not the files in the Git diff.
+
+        Each page is linked, so reviewers jump straight to the rendered result.
+        Pages that always change, like changelogs, can be ignored with a pattern.
+        Available for projects connected through the GitHub App.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html#show-build-overview-in-pull-requests">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+  {{ about_divide() }}
+
+  <div class="ui very padded container" id="{{ slug_3 }}">
+    <div class="ui vertically padded centered grid">
+
+      {% call about.step(
+          header=header_3,
+          image="/images/django/visual-diff.png",
+          image_alt="Visual diff on a pull request preview, highlighting one changed line in a numbered list",
+          icon=icon_3) %}
+        {% markdown %}
+        A source diff doesn't show how a change looks once rendered.
+        Visual diff **highlights the differences** between the pull request
+        and the latest version of your docs, right on the page.
+
+        Pick a changed page from the menu on the preview,
+        and jump between changed sections with the arrows.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+      {% endcall %}
+
+    </div>
+  </div>
+
+</section>
+
+<section id="features">
+  <div class="ui centered very padded container">
+
+    <h2 class="ui huge center aligned header">
+      Everything else you get
+      <span class="sub header">
+        The rest of what you need to build, host, and maintain your documentation.
+      </span>
+    </h2>
+
+    <div class="ui centered vertically padded container stackable grid">
+
+      {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
+      Match your release cycle with multiple versions of your docs.
+      Automatically build versions from any branch or tag.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-magnifying-glass") %}
+      Help your users find what they need with search across all your projects and versions.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="AI agent integration", icon="fad fa-user-robot") %}
+      Support for llms.txt, Markdown content negotiation, and agent skills make your documentation ready for any AI tool.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Offline formats", icon="fad fa-file-pdf") %}
+      Output PDF and ePub formats for your documentation, for offline and cross-device viewing.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-globe") %}
+      Use your own custom domain for your hosted documentation, with SSL automatically configured.
+      {% endcall %}
+
+      {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
+      Control who has access to your documentation with integrated authentication.
+      Enable <strong>SSO with GitHub or GitLab</strong> to manage permissions in one place.
+      {% endcall %}
+
+      <div class="ten wide computer sixteen wide tablet center aligned column">
+        <div class="ui basic padded vertical segment">
+          <a href="/features/" class="ui large secondary relaxed button">
+            Discover all our features
+            <i class="fad fa-sparkles"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# Try it out code block #}
+{% include "includes/try-it-out.html" %}
+
+{% block bottom_callout %}
+<section>
+  <div class="ui very padded container">
+    <div class="ui grid center aligned">
+      <div class="row">
+        <div class="column twelve wide computer sixteen wide tablet">
+          <div class="ui basic vertical huge segment">
+            <p>
+              <b>Ship your Django docs with confidence</b>
+            </p>
+            <p>
+              Publish versioned docs, serve API references with integrated search,
+              and preview every change in your pull requests.
+            </p>
+
+            <p>
+              <a class="ui large teal stackable button"
+                 data-analytics="signup-modal"
+                 onclick="jQuery('#signup-modal').modal('show');">
+                <i class="fad fa-play icon"></i>
+                Start for free
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock bottom_callout %}
+
+  </body>
+</html>

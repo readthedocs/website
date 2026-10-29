@@ -79,10 +79,11 @@ See templates/pages/basic for more.
   :param size: Size of the header. Default: "large"
   :param subheader: Subheader text
   :param icon_style: Inline styles for Font Awesome icon
+  :param header_level: Heading element. Default: "h3"
 #}
-{% macro header_icon(header, icon, size="large", subheader="", icon_style=None) %}
+{% macro header_icon(header, icon, size="large", subheader="", icon_style=None, header_level="h3") %}
   <div class="ui basic very padded vertical segment">
-    <h3 class="ui {{ size }} header">
+    <{{ header_level }} class="ui {{ size }} header">
       <i class="fad {{ icon }} icon"
          {%- if icon_style %} style="{{ icon_style }}"{% endif %}></i>
       <span class="content">
@@ -91,7 +92,7 @@ See templates/pages/basic for more.
           <span class="sub header">{{ subheader }}</span>
         {% endif %}
       </span>
-    </h3>
+    </{{ header_level }}>
   </div>
 {% endmacro %}
 
