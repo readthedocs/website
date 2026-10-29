@@ -1,3 +1,5 @@
+{% import "partials/basic.html" as basic %}
+
 {#
   The header and supporting image for each about section/step
 
@@ -6,6 +8,7 @@
   :param header: Header text
   :param icon: Font Awesome icon for the icon header.
   :param image_alt: Alt text for the image
+  :param business: Mark the feature as Business only
 #}
 {% macro step(image, header, icon=None, image_alt=None, business=False) %}
 <div class="sixteen wide mobile sixteen wide tablet ten wide computer column">
@@ -18,12 +21,7 @@
       <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer column">
         <h2 class="ui header">
           {{ header }}
-          {% if business %}
-          <span class="sub header">
-            <i class="fad fa-square-dollar violet icon"></i>
-            <span class="ui violet text">Paid plan feature</span>
-          </span>
-          {% endif %}
+          {% if business %}{{ basic.business_label() }}{% endif %}
         </h2>
 
         {{ caller() }}

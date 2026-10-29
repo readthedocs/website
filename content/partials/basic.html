@@ -173,3 +173,11 @@ See templates/pages/basic for more.
     </div>
   </a>
 {% endmacro %}
+
+{# Marks a feature as only available on Read the Docs for Business. #}
+{% macro business_label() %}
+  <span class="sub header">
+    <i class="fad fa-square-dollar violet icon"></i>
+    <span class="ui violet text">Business feature</span>
+  </span>
+{% endmacro %}
