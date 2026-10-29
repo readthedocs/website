@@ -1,0 +1,36 @@
+// Lato, subset to the Latin characters the site uses. Regenerate from the
+// lato-font package with fonttools:
+//   pyftsubset lato-*.woff2 --unicodes=@{unicode-range} --layout-features='*' --no-hinting --flavor=woff2
+@unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+  U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191-2193, U+2212, U+2215,
+  U+FEFF, U+FFFD;
+
+.lato(@family; @weight; @style; @file) {
+  @font-face {
+    font-family: @family;
+    font-weight: @weight;
+    font-style: @style;
+    text-rendering: optimizeLegibility;
+    src: url("../fonts/@{file}.woff2") format("woff2");
+    unicode-range: @unicode-range;
+  }
+}
+
+.lato("Lato"; 100; normal; "lato-hairline");
+.lato("Lato"; 100; italic; "lato-hairline-italic");
+.lato("Lato"; 200; normal; "lato-thin");
+.lato("Lato"; 200; italic; "lato-thin-italic");
+.lato("Lato"; 300; normal; "lato-light");
+.lato("Lato"; 300; italic; "lato-light-italic");
+.lato("Lato"; 400; normal; "lato-normal");
+.lato("Lato"; 400; italic; "lato-normal-italic");
+.lato("Lato Medium"; 400; normal; "lato-medium");
+.lato("Lato Medium"; 400; italic; "lato-medium-italic");
+.lato("Lato"; 500; normal; "lato-semibold");
+.lato("Lato"; 500; italic; "lato-semibold-italic");
+.lato("Lato"; 600; normal; "lato-bold");
+.lato("Lato"; 600; italic; "lato-bold-italic");
+.lato("Lato"; 800; normal; "lato-heavy");
+.lato("Lato"; 800; italic; "lato-heavy-italic");
+.lato("Lato"; 900; normal; "lato-black");
+.lato("Lato"; 900; italic; "lato-black-italic");
