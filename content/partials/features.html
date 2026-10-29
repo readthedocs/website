@@ -7,7 +7,7 @@
   :param icon: Font Awesome icon for the icon header.
   :param image_alt: Alt text for the image
 #}
-{% macro step(image, header, icon=None, image_alt=None, paid=False) %}
+{% macro step(image, header, icon=None, image_alt=None, business=False) %}
 <div class="sixteen wide mobile sixteen wide tablet ten wide computer column">
     <div class="ui grid">
       <div class="right aligned three wide tablet three wide computer only column">
@@ -18,7 +18,7 @@
       <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer column">
         <h2 class="ui header">
           {{ header }}
-          {% if paid %}
+          {% if business %}
           <span class="sub header">
             <i class="fad fa-square-dollar violet icon"></i>
             <span class="ui violet text">Paid plan feature</span>
