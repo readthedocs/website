@@ -13,6 +13,7 @@
 <body>
 
   {% import "partials/basic.html" as basic %}
+  {% import "partials/features.html" as features %}
   {% import "partials/homepage.html" as homepage %}
   {% import "partials/marketing.html" as marketing %}
   {% import "partials/technical.html" as technical %}
@@ -110,30 +111,58 @@
   {% include "includes/business-logos.html" %}
 
   {% block homepage_highlight %}
-  {% call marketing.highlight_list() %}
+  <section>
+    <div class="ui very padded container">
+      <div class="ui vertically padded centered grid">
 
-  {% call marketing.highlight_item(
-  icon="white fa-code-compare",
-  icon_style="--fa-secondary-color: skyblue; --fa-secondary-opacity: 1.0",
-  header="Catch doc regressions before you merge",
-  color="black") %}
-  <p>
-    Every pull request gets a live preview build with a visual diff
-    against production. Review rendered output, instead of raw markup.
-  </p>
-  {% endcall %}
+        {% call features.step(
+        header="Pull request previews",
+        image="/images/django/files-changed-comment.png",
+        image_alt="A pull request comment with a link to the preview and a list of the files changed",
+        icon="fa-code-pull-request") %}
+        {% markdown %}
+        Every pull request gets a **live preview build**, so you review rendered output instead of raw markup.
 
-  {% call marketing.highlight_item(
-  icon="white fa-key-skeleton",
-  icon_style="--fa-secondary-color: orangered; --fa-secondary-opacity: 1.0",
-  header="Decide who sees your docs",
-  color="violet") %}
-  <p>
-    Control who can access your docs, from your internal team to the whole world.
-    Enable <strong>SSO with GitHub or GitLab</strong> to manage permissions from one place.
-  </p>
-  {% endcall %}
-  {% endcall %}
+        We comment on the pull request with the pages that changed,
+        so reviewers jump straight to the rendered result.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/pull-requests.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+        {% endcall %}
+
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <div class="ui divider"></div>
+    </div>
+
+    <div class="ui very padded container">
+      <div class="ui vertically padded centered grid">
+
+        {% call features.step(
+        header="Visual diff",
+        image="/images/django/visual-diff.png",
+        image_alt="Visual diff on a pull request preview, highlighting one changed line in a numbered list",
+        icon="fa-code-compare") %}
+        {% markdown %}
+        A source diff doesn't show how a change looks once rendered.
+        Visual diff **highlights the differences** between the pull request
+        and the latest version of your docs, right on the page.
+        {% endmarkdown %}
+
+        <a class="ui basic primary button" href="https://docs.readthedocs.com/platform/stable/visual-diff.html">
+          <i class="fad fa-book icon" aria-hidden="true"></i>
+          Documentation
+        </a>
+        {% endcall %}
+
+      </div>
+    </div>
+  </section>
   {% endblock homepage_highlight %}
 
   {% block homepage_feature_detail %}
@@ -141,9 +170,9 @@
     <div class="ui centered very padded container">
 
       <h3 class="ui huge center aligned header">
-        Features
+        More features
         <span class="sub header">
-          Everything you need to build, host, and maintain your documentation.
+          Everything else you need to build, host, and maintain your documentation.
         </span>
       </h3>
 
@@ -159,8 +188,8 @@
         tool.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Preview your changes", icon="fad fa-code-compare") %}
-        Preview your rendered documentation before deploying, and catch mistakes before they go live.
+        {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-magnifying-glass") %}
+        Help your users find what they need with search across all your projects and versions.
         {% endcall %}
 
         {% call homepage.feature_detail_item(header="Versioned docs", icon="fad fa-layer-group") %}
@@ -168,14 +197,14 @@
         branch or tag.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
+        {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", business=True) %}
         Clone private repositories using a connected GitHub, GitLab, or Bitbucket account,
         or clone from any Git provider with an SSH key.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
-        Control who has access to your documentation with integrated authentication.
-        Enable <strong>SSO with GitHub or GitLab</strong> to easily manage permissions in one place.
+        {% call homepage.feature_detail_item(header="Single sign-on", icon="fad fa-fingerprint", business=True) %}
+        Control who can access your docs, from your internal team to the whole world.
+        Enable <strong>SSO with GitHub or GitLab</strong> to manage permissions in one place.
         {% endcall %}
 
         {% block features_cta %}

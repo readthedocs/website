@@ -1,5 +1,7 @@
+{% import "partials/basic.html" as basic %}
+
 {# For features list section. A left floated icon and supporting header/text #}
-{% macro feature_detail_item(header, icon, paid=False) %}
+{% macro feature_detail_item(header, icon, business=False) %}
   <div class="sixteen wide mobile eight wide tablet five wide computer column">
     <div class="ui padded grid">
       <div class="three wide computer two wide tablet three wide mobile right aligned column">
@@ -8,12 +10,7 @@
       <div class="thirteen wide computer fourteen wide tablet thirteen wide mobile left aligned column">
         <h3 class="ui small header">
           {{ header }}
-          {% if paid %}
-          <span class="sub header">
-            <i class="fad fa-square-dollar violet icon"></i>
-            <span class="ui violet text">Paid plan feature</span>
-          </span>
-          {% endif %}
+          {% if business %}{{ basic.business_label() }}{% endif %}
         </h3>
         <p>
           {{ caller() }}
