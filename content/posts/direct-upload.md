@@ -27,7 +27,7 @@ Add one step to your GitHub Actions workflow after the step that builds your doc
 ```yaml
 - uses: readthedocs/upload-action@v1
   with:
-    token: ${{ secrets.READTHEDOCS_TOKEN }}
+    token: {% raw %}${{ secrets.READTHEDOCS_TOKEN }}{% endraw %}
     project-slug: my-project
     html: _build/html
 ```
@@ -46,7 +46,7 @@ You can also upload optional PDF, ePub or zipped HTML files:
 ```yaml
 - uses: readthedocs/upload-action@v1
   with:
-    token: ${{ secrets.READTHEDOCS_TOKEN }}
+    token: {% raw %}${{ secrets.READTHEDOCS_TOKEN }}{% endraw %}
     project-slug: my-project
     html: _build/html
     pdf: _build/latex/my-project.pdf
