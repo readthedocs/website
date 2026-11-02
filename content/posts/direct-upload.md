@@ -4,6 +4,7 @@ description: Build your documentation in your own CI and upload it to Read the D
 category: Feature announcement
 tags: builds, github-actions, ci, hosting
 authors: Manuel Kaufmann
+status: published
 image: /images/posts/direct-upload.jpg
 image_credit: Photo by <a href="https://unsplash.com/@smithsonian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Smithsonian</a> on <a href="https://unsplash.com/photos/vintage-printing-press-in-a-factory-setting-NRteT1L3t0M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
