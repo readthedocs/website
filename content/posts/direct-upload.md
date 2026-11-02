@@ -24,13 +24,15 @@ including versions, pull request previews, search, Addons, custom domains and do
 
 Add one step to your GitHub Actions workflow after the step that builds your docs:
 
+{% raw %}
 ```yaml
 - uses: readthedocs/upload-action@v1
   with:
-    token: {% raw %}${{ secrets.READTHEDOCS_TOKEN }}{% endraw %}
+    token: ${{ secrets.READTHEDOCS_TOKEN }}
     project-slug: my-project
     html: _build/html
 ```
+{% endraw %}
 
 That's it.
 The action figures out the branch, tag or pull request from the workflow event.
@@ -43,15 +45,17 @@ so those workflows cannot upload a preview.
 
 You can also upload optional PDF, ePub or zipped HTML files:
 
+{% raw %}
 ```yaml
 - uses: readthedocs/upload-action@v1
   with:
-    token: {% raw %}${{ secrets.READTHEDOCS_TOKEN }}{% endraw %}
+    token: ${{ secrets.READTHEDOCS_TOKEN }}
     project-slug: my-project
     html: _build/html
     pdf: _build/latex/my-project.pdf
     epub: _build/epub/my-project.epub
 ```
+{% endraw %}
 
 If you not using GitHub Actions you can use the
 [command line client](https://github.com/readthedocs/readthedocs-cli)
