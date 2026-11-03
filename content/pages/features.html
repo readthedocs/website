@@ -8,6 +8,7 @@
   </head>
   <body>
 
+{% import "partials/basic.html" as basic %}
 {% import "partials/homepage.html" as homepage %}
 {% import "partials/features.html" as features %}
 
@@ -275,10 +276,7 @@
                     <i class="fad fa-lock primary icon"></i>
                     <span class="content">
                       Private repository support
-                      <span class="sub header">
-                        <i class="fad fa-square-dollar violet icon"></i>
-                        <span class="ui violet text">Paid plan feature</span>
-                      </span>
+                      {{ basic.business_label() }}
                     </span>
                   </h4>
 
@@ -386,8 +384,8 @@
         </div>
       </div>
 
-      {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", paid=True) %}
-        Control who has access to your documentation with integrated authentation and sharing tokens.
+      {% call homepage.feature_detail_item(header="Authentication", icon="fad fa-fingerprint", business=True) %}
+        Control who has access to your documentation with integrated authentication and sharing tokens.
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Bring your domain", icon="fad fa-at") %}
@@ -395,7 +393,7 @@
       {% endcall %}
 
       {% call homepage.feature_detail_item(header="Integrated search", icon="fad fa-search") %}
-        Help your users find what the need with integrated search across all your projects and versions.
+        Help your users find what they need with integrated search across all your projects and versions.
       {% endcall %}
 
     </div>
@@ -511,11 +509,12 @@
         Track search query and documentation page traffic data with no additional services.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Audit log", icon="fad fa-clipboard-list", paid=True) %}
-        Track and review authentication attempts for your organization and all of your private documentation projects.
+      {% call homepage.feature_detail_item(header="Audit log", icon="fad fa-clipboard-list") %}
+        Review sign-ins and invitations on your account.
+        Business plans add an organization log, with every authentication attempt on your private documentation.
       {% endcall %}
 
-      {% call homepage.feature_detail_item(header="Team management", icon="fad fa-people-group", paid=True) %}
+      {% call homepage.feature_detail_item(header="Team management", icon="fad fa-people-group", business=True) %}
         Control access to your projects within your organization and group projects by teams.
       {% endcall %}
 
