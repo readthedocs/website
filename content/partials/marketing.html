@@ -112,11 +112,12 @@
 {% macro audience_block(header, icon, label, color, cta, href, analytics) %}
   <div class="column">
     <div class="ui inverted {{ color }} padded segment">
-      <span class="ui top right attached label">{{ label }}</span>
       <h2 class="ui small left aligned header">
         <i class="fad {{ icon }} icon"></i>
         {{ header }}
       </h2>
+      {# After the header on purpose: a top attached label as first child pushes the next element down 2rem. #}
+      <span class="ui top right attached label">{{ label }}</span>
 
       <p>
         {{ caller() }}
