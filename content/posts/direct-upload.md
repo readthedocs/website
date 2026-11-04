@@ -18,7 +18,7 @@ or a build you are already running somewhere else and don't want to run twice.
 With **direct upload**, you can build your documentation wherever you want
 and upload the result to Read the Docs for hosting.
 Your uploaded documentation still gets the hosting features you expect,
-including versions, pull request previews, search, Addons, custom domains and downloadable formats.
+including versions, pull request previews, search, Addons, custom domains and offline formats.
 
 ## How it works
 
@@ -43,7 +43,7 @@ just like builds that run on Read the Docs.
 GitHub does not make repository secrets available to workflows for pull requests from forks,
 so those workflows cannot upload a preview.
 
-You can also upload optional PDF, ePub or zipped HTML files:
+You can also upload optional PDF, EPUB, or zipped HTML files:
 
 {% raw %}
 ```yaml
@@ -70,25 +70,25 @@ uvx --from readthedocs-upload readthedocs upload \
 
 ## Why we built this
 
-Read the Docs has always been a *Continuous Documentation Deployment* platform:
+Read the Docs has always been a *continuous documentation deployment* platform:
 you push to Git, we build and host.
 The building part is what makes it easy to get started,
 but it is also what gets in the way when your project has specific needs
-than the standard build doesn't cover.
+that the standard build doesn't cover.
 
 We have heard from teams that build their docs with tools we don't support,
 that need access to internal services during the build,
 or that simply want a single build for both their tests and their docs.
 Direct upload gives those teams the hosting side features of
-Read the Docs without asking them to move their build.
+Read the Docs without asking them to change how they build their docs.
 
 ## Beta access
 
-Direct upload is still in beta and is available on Read the Docs Community and Read the Docs for Business.
+Direct upload is still in beta and is available on Read the Docs Community and Read the Docs Business.
 
 - For an existing project, [contact support](https://docs.readthedocs.com/platform/stable/support.html)
   and ask us to enable direct upload.
-- For a new project, [start the import process with direct upload](https://app.readthedocs.org/dashboard/import/?direct_upload=1) enabled by default.
+- For a new project, [create a project with direct upload](https://app.readthedocs.org/dashboard/import/?direct_upload=1) enabled by default and Read the Docs builders disabled.
 
 See the [direct upload documentation](https://docs.readthedocs.com/platform/stable/guides/build/direct-upload.html)
 for the full guide, including details about versions and uploading from other CI services.
