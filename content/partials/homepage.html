@@ -10,7 +10,9 @@
       <div class="thirteen wide computer fourteen wide tablet thirteen wide mobile left aligned column">
         <h3 class="ui small header">
           {{ header }}
-          {% if business %}{{ basic.business_label() }}{% endif %}
+          {% if business %}
+          <span class="sub header">{{ basic.business_label() }}</span>
+          {% endif %}
         </h3>
         <p>
           {{ caller() }}
