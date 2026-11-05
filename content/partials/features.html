@@ -6,8 +6,9 @@
   :param header: Header text
   :param icon: Font Awesome icon for the icon header.
   :param image_alt: Alt text for the image
+  :param image_class: Extra classes for the image, such as "framed"
 #}
-{% macro step(image, header, icon=None, image_alt=None) %}
+{% macro step(image, header, icon=None, image_alt=None, image_class="") %}
 <div class="sixteen wide mobile sixteen wide tablet ten wide computer column">
     <div class="ui grid">
       <div class="right aligned three wide tablet three wide computer only column">
@@ -28,7 +29,7 @@
 
   {% if image %}
     <div class="center aligned sixteen wide mobile eight wide tablet six wide computer column">
-      <img src="{{ image }}" class="ui rounded centered image" alt="{{ image_alt }}" />
+      <img src="{{ image }}" class="ui rounded centered {{ image_class }} image" alt="{{ image_alt }}" />
     </div>
   {% endif %}
 {% endmacro %}
