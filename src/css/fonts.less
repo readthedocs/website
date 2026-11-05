@@ -1,0 +1,20 @@
+// Lato weights the site uses, subset to Latin from the lato-font package:
+//   pyftsubset lato-*.woff2 --layout-features='*' --no-hinting --flavor=woff2 \
+//     --unicodes=U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191-2193,U+2212,U+2215,U+FEFF,U+FFFD
+.lato(@weight; @style; @file) {
+  @font-face {
+    font-family: Lato;
+    font-weight: @weight;
+    font-style: @style;
+    src: url("../fonts/@{file}.woff2") format("woff2");
+  }
+}
+
+.lato(400; normal; "lato-normal");
+.lato(400; italic; "lato-normal-italic");
+.lato(600; normal; "lato-bold");
+.lato(600; italic; "lato-bold-italic");
+.lato(800; normal; "lato-heavy");
+.lato(800; italic; "lato-heavy-italic");
+.lato(900; normal; "lato-black");
+.lato(900; italic; "lato-black-italic");
