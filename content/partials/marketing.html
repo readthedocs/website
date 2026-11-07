@@ -108,8 +108,9 @@
   :param cta: Button text
   :param href: Button link
   :param analytics: Value for the button's data-analytics attribute
+  :param items: Optional list of (icon, text) pairs shown as a checklist under the body text
 #}
-{% macro audience_block(header, icon, label, color, cta, href, analytics) %}
+{% macro audience_block(header, icon, label, color, cta, href, analytics, items=None) %}
   <div class="column">
     <div class="ui inverted {{ color }} padded segment">
       <h2 class="ui small left aligned header">
@@ -122,6 +123,17 @@
       <p>
         {{ caller() }}
       </p>
+
+      {% if items %}
+        <div class="ui inverted list">
+          {% for item_icon, text in items %}
+            <div class="item">
+              <i class="fad {{ item_icon }} icon"></i>
+              {{ text }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
 
       <a class="ui inverted basic button" href="{{ href }}" data-analytics="{{ analytics }}">
         {{ cta }}
