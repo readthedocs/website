@@ -2,7 +2,7 @@ import jquery from "jquery";
 import { LitElement, html } from "lit";
 import { ref, createRef } from "lit/directives/ref.js";
 import { when } from "lit/directives/when.js";
-import { PLATFORMS, platformUrl } from "./platform";
+import { PLATFORMS, knownPlatform, platformUrl } from "./platform";
 
 /**
  * Render a menu with a link to ``next`` on each platform
@@ -38,7 +38,8 @@ function platformMenu(next, target = "") {
  * that point to pages on our dashboard. This element will show a popup with a
  * simple selection that links to the correct URL on each platform, so that we
  * don't need to manually call out links to each any time we post links on our
- * website.
+ * website. If the visitor is known to use only one platform, the link opens
+ * that platform directly instead.
  *
  * Usage:
  *
@@ -64,8 +65,17 @@ export class PlatformChooserElement extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener("click", () => {
-      this.popup("show");
+    this.addEventListener("click", (event) => {
+      if (this.refPopup.value?.contains(event.target)) {
+        return;
+      }
+      event.preventDefault();
+      const platform = knownPlatform();
+      if (platform) {
+        window.open(platformUrl(platform, this.next), "_blank");
+      } else {
+        this.popup("show");
+      }
     });
   }
 
@@ -117,13 +127,22 @@ customElements.define("readthedocs-platform-chooser", PlatformChooserElement);
 /**
  * PlatformLinksElement
  *
- * Used on the ``/go/`` page, to link to the ``next`` query parameter path on
- * each platform. Use this page for plain links, such as in docs or email:
+ * Used on the ``/go/`` page. Redirects to the ``next`` query parameter path on
+ * the only platform the visitor uses, or shows a chooser if we know of none or
+ * of both.
  *
  *   https://about.readthedocs.com/go/?next=/accounts/edit/
  **/
 export class PlatformLinksElement extends LitElement {
   next = new URLSearchParams(window.location.search).get("next");
+
+  connectedCallback() {
+    super.connectedCallback();
+    const platform = knownPlatform();
+    if (platform) {
+      window.location.replace(platformUrl(platform, this.next));
+    }
+  }
 
   createRenderRoot() {
     return this;
