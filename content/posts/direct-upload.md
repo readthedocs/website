@@ -15,7 +15,7 @@ a tool we don't support,
 a secret that can't leave your CI,
 or a build you are already running somewhere else and don't want to run twice.
 
-With **direct upload**, you can build your documentation wherever you want
+With **[direct upload](https://docs.readthedocs.com/platform/stable/guides/build/direct-upload.html)**, you can build your documentation wherever you want
 and upload the result to Read the Docs for hosting.
 Your uploaded documentation still gets the hosting features you expect,
 including versions, pull request previews, search, Addons, custom domains and offline formats.
