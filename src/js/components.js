@@ -125,7 +125,7 @@ export class PlatformChooserElement extends LitElement {
 customElements.define("readthedocs-platform-chooser", PlatformChooserElement);
 
 /**
- * PlatformRedirectElement
+ * PlatformLinksElement
  *
  * Used on the ``/go/`` page. Redirects to the ``next`` query parameter path on
  * the only platform the visitor uses, or shows a chooser if we know of none or
@@ -133,7 +133,7 @@ customElements.define("readthedocs-platform-chooser", PlatformChooserElement);
  *
  *   https://about.readthedocs.com/go/?next=/accounts/edit/
  **/
-export class PlatformRedirectElement extends LitElement {
+export class PlatformLinksElement extends LitElement {
   next = new URLSearchParams(window.location.search).get("next");
 
   connectedCallback() {
@@ -155,4 +155,4 @@ export class PlatformRedirectElement extends LitElement {
     `;
   }
 }
-customElements.define("readthedocs-platform-redirect", PlatformRedirectElement);
+customElements.define("readthedocs-platform-links", PlatformLinksElement);
