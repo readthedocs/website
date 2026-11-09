@@ -1,0 +1,13 @@
+{% import "partials/marketing.html" as marketing %}
+
+<div class="ui very padded raised segment">
+  {% call marketing.testimonial(
+    name="Trevor James Smith",
+    title="Developer",
+    company="Ouranos",
+    image="https://github.com/Zeitsperre.png",
+    link="https://github.com/hydrologie/xdatasets/issues/32#issue-2019390201") %}
+    Read the Docs is a solid documentation hosting platform that is used all over the place and has some nice
+    features on top of being FOSS software.
+  {% endcall %}
+</div>

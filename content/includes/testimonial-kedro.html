@@ -1,0 +1,13 @@
+{% import "partials/marketing.html" as marketing %}
+
+<div class="ui very padded raised segment">
+  {% call marketing.testimonial(
+    name="Juan Luis Cano Rodríguez",
+    title="Developer Advocate",
+    company="Kedro",
+    image="https://github.com/astrojuanlu.png",
+    link="https://fosstodon.org/@kedro@social.lfx.dev/111608164611739960") %}
+    The documentation is now easier to navigate, thanks to a new top navigation bar and a search-as-you-type
+    modal courtesy of Read the Docs. Snappy docs are happy docs!
+  {% endcall %}
+</div>
