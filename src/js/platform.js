@@ -1,6 +1,7 @@
 /**
  * Remember which dashboard platforms a visitor uses, in this browser only.
- * A platform is remembered when the visitor clicks a link to its dashboard.
+ * Each click on a link to a platform's dashboard is counted, and a platform
+ * counts as used after two clicks.
  */
 
 export const PLATFORMS = {
@@ -16,20 +17,19 @@ export const PLATFORMS = {
 
 const STORAGE_KEY = "readthedocs-platforms";
 
-function loadPlatforms() {
+function loadClicks() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
   } catch {
-    return [];
+    return {};
   }
 }
 
 /** The platform to use, if the visitor has only used one */
 export function knownPlatform() {
-  const platforms = loadPlatforms();
-  return platforms.length === 1 && platforms[0] in PLATFORMS
-    ? platforms[0]
-    : null;
+  const clicks = loadClicks();
+  const used = Object.keys(PLATFORMS).filter((key) => clicks[key] >= 2);
+  return used.length === 1 ? used[0] : null;
 }
 
 /** Dashboard URL for a path; anything that isn't a path goes to the dashboard */
@@ -47,9 +47,10 @@ export function trackPlatformLinks() {
         href.startsWith(`${PLATFORMS[key].url}/`),
       );
       if (platform) {
-        const platforms = new Set(loadPlatforms()).add(platform);
+        const clicks = loadClicks();
+        clicks[platform] = (clicks[platform] || 0) + 1;
         try {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify([...platforms]));
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(clicks));
         } catch {}
       }
     },
