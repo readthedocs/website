@@ -1,5 +1,8 @@
 import jquery from "jquery";
-import Plausible from "plausible-tracker";
+import {
+  init as plausibleInit,
+  track as plausibleTrack,
+} from "@plausible-analytics/tracker";
 
 import * as components from "./components";
 
@@ -136,17 +139,17 @@ jquery.fn.sui_module = function () {
  *
  * In the case of a link with a ``href`` attribute, the link will continue
  * redirecting after the callback from Plausible fires off.
+ *
+ * Pageviews are captured automatically on initialization. The official
+ * Plausible tracker also skips automated browsers and waits until the page is
+ * visible before counting a pageview.
  */
 jquery.fn.plausible = function () {
-  let plausible_settings = { domain: "about.readthedocs.com" };
-  if (DEBUG_MODE) {
-    plausible_settings.trackLocalhost = true;
-  }
-  const { trackEvent } = Plausible(plausible_settings);
-  const { trackPageview } = Plausible(plausible_settings);
-
-  // Track pageview for all pages
-  trackPageview();
+  plausibleInit({
+    domain: "about.readthedocs.com",
+    captureOnLocalhost: DEBUG_MODE,
+    logging: DEBUG_MODE,
+  });
 
   return this.each((index, elem) => {
     elem.addEventListener("click", on_click_event);
@@ -172,7 +175,7 @@ jquery.fn.plausible = function () {
           }
         }
         for (const event_name of event_names) {
-          trackEvent(event_name, {
+          plausibleTrack(event_name, {
             callback: () => {
               console.debug("Plausible: tracked event", event_name);
               redirect_link();
