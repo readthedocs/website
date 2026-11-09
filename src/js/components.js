@@ -2,7 +2,7 @@ import jquery from "jquery";
 import { LitElement, html } from "lit";
 import { ref, createRef } from "lit/directives/ref.js";
 import { when } from "lit/directives/when.js";
-import { PLATFORMS, getOnlyPlatform, platformUrl } from "./platform";
+import { PLATFORMS, knownPlatform, platformUrl } from "./platform";
 
 /**
  * Render a menu with a link to ``next`` on each platform
@@ -70,7 +70,7 @@ export class PlatformChooserElement extends LitElement {
         return;
       }
       event.preventDefault();
-      const platform = getOnlyPlatform();
+      const platform = knownPlatform();
       if (platform) {
         window.open(platformUrl(platform, this.next), "_blank");
       } else {
@@ -138,7 +138,7 @@ export class PlatformRedirectElement extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    const platform = getOnlyPlatform();
+    const platform = knownPlatform();
     if (platform) {
       window.location.replace(platformUrl(platform, this.next));
     }

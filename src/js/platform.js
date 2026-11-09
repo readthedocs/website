@@ -1,9 +1,6 @@
 /**
- * Remember which dashboard platforms a visitor uses
- *
- * Platforms are stored in this browser only, as a list of ``community`` and/or
- * ``business``. A platform is added when the visitor follows a link to that
- * platform's dashboard from this site.
+ * Remember which dashboard platforms a visitor uses, in this browser only.
+ * A platform is remembered when the visitor clicks a link to its dashboard.
  */
 
 export const PLATFORMS = {
@@ -19,67 +16,41 @@ export const PLATFORMS = {
 
 const STORAGE_KEY = "readthedocs-platforms";
 
-export function getPlatforms() {
+function loadPlatforms() {
   try {
-    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-    return stored.filter((platform) => platform in PLATFORMS);
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
   } catch {
     return [];
   }
 }
 
-export function rememberPlatform(platform) {
-  const platforms = getPlatforms();
-  if (platform in PLATFORMS && !platforms.includes(platform)) {
-    platforms.push(platform);
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(platforms));
-    } catch {
-      // Storage may be unavailable, the chooser will keep asking.
-    }
-  }
+/** The platform to use, if the visitor has only used one */
+export function knownPlatform() {
+  const platforms = loadPlatforms();
+  return platforms.length === 1 && platforms[0] in PLATFORMS
+    ? platforms[0]
+    : null;
 }
 
-/**
- * Return the only platform the visitor uses, or ``null`` if we know of none
- * or of both.
- */
-export function getOnlyPlatform() {
-  const platforms = getPlatforms();
-  return platforms.length === 1 ? platforms[0] : null;
-}
-
-/** Return the platform a URL points to, if any */
-export function platformForUrl(url) {
-  for (const [platform, { url: base }] of Object.entries(PLATFORMS)) {
-    if (url === base || url.startsWith(`${base}/`)) {
-      return platform;
-    }
-  }
-  return null;
-}
-
-/**
- * Build a dashboard URL from a path. Only paths are accepted, so this can't be
- * used to redirect to another host.
- */
+/** Dashboard URL for a path; anything that isn't a path goes to the dashboard */
 export function platformUrl(platform, next) {
-  let path = next || "/dashboard/";
-  if (!path.startsWith("/") || path.startsWith("//") || path.includes("\\")) {
-    path = "/dashboard/";
-  }
-  return `${PLATFORMS[platform].url}${path}`;
+  const path = next?.startsWith("/") ? next : "/dashboard/";
+  return PLATFORMS[platform].url + path;
 }
 
-/** Remember platforms from clicks on any dashboard link on this site */
-export function trackPlatformLinks(root = document) {
-  root.addEventListener(
+export function trackPlatformLinks() {
+  document.addEventListener(
     "click",
     (event) => {
-      const link = event.target.closest && event.target.closest("a[href]");
-      const platform = link && platformForUrl(link.href);
+      const href = event.target.closest("a[href]")?.href || "";
+      const platform = Object.keys(PLATFORMS).find((key) =>
+        href.startsWith(`${PLATFORMS[key].url}/`),
+      );
       if (platform) {
-        rememberPlatform(platform);
+        const platforms = new Set(loadPlatforms()).add(platform);
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify([...platforms]));
+        } catch {}
       }
     },
     { capture: true },
