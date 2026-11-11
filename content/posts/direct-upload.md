@@ -55,7 +55,7 @@ You can also upload optional PDF, EPUB, or zipped HTML files:
 ```
 {% endraw %}
 
-If you not using GitHub Actions you can use the
+If you are not using GitHub Actions, you can use the
 [command line client](https://github.com/readthedocs/readthedocs-cli)
 from another CI service or your laptop:
 
