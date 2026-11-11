@@ -29,7 +29,6 @@ Add one step to your GitHub Actions workflow after the step that builds your doc
 - uses: readthedocs/upload-action@v1
   with:
     token: ${{ secrets.READTHEDOCS_TOKEN }}
-    project-slug: my-project
     html: _build/html
 ```
 {% endraw %}
@@ -50,7 +49,6 @@ You can also upload optional PDF, EPUB, or zipped HTML files:
 - uses: readthedocs/upload-action@v1
   with:
     token: ${{ secrets.READTHEDOCS_TOKEN }}
-    project-slug: my-project
     html: _build/html
     pdf: _build/latex/my-project.pdf
     epub: _build/epub/my-project.epub
@@ -63,9 +61,9 @@ from another CI service or your laptop:
 
 ```bash
 export READTHEDOCS_TOKEN=...
-uvx --from readthedocs-upload readthedocs upload \
-    --project-slug my-project \
-    --html _build/html
+uvx --from readthedocs-upload \
+    readthedocs upload \
+      --html _build/html
 ```
 
 ## Why we built this
