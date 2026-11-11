@@ -1,5 +1,5 @@
 title: Build your documentation anywhere, host it on Read the Docs
-date: 2026-11-02
+date: 2026-11-11
 description: Build your documentation in your own CI and upload it to Read the Docs for hosting with direct upload.
 category: Feature announcement
 tags: builds, github-actions, ci, hosting
