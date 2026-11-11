@@ -82,11 +82,32 @@ Read the Docs without asking them to change how they build their docs.
 
 ## Beta access
 
-Direct upload is still in beta and is available on Read the Docs Community and Read the Docs Business.
+Direct upload is in _beta_ on Read the Docs Community and Read the Docs Business.
 
-- For an existing project, [contact support](https://docs.readthedocs.com/platform/stable/support.html)
-  and ask us to enable direct upload.
-- For a new project, [create a project with direct upload](https://app.readthedocs.org/dashboard/import/?direct_upload=1) enabled by default and Read the Docs builders disabled.
+<div class="ui raised segment">
+
+  <div class="ui small header">Add a new project with direct upload</div>
+
+  <p>
+    Create a project with direct upload enabled by default
+    and Read the Docs builders disabled:
+  </p>
+
+  <div class="ui basic fitted segment">
+    <readthedocs-platform-chooser next="/dashboard/import/?direct_upload=1">
+      <div class="ui basic fitted center aligned segment">
+        <button class="ui teal button">
+          Add a project with direct upload
+          <i class="fas fa-external-link icon"></i>
+        </button>
+      </div>
+    </readthedocs-platform-chooser>
+  </div>
+
+</div>
+
+Already have a project? [Contact support](https://docs.readthedocs.com/platform/stable/support.html)
+to enable direct upload.
 
 See the [direct upload documentation](https://docs.readthedocs.com/platform/stable/guides/build/direct-upload.html)
 for the full guide, including details about versions and uploading from other CI services.
