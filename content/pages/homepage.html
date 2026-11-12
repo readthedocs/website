@@ -168,12 +168,12 @@
         branch or tag.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", paid=True) %}
+        {% call homepage.feature_detail_item(header="Private repository support", icon="fad fa-lock", business=True) %}
         Clone private repositories using a connected GitHub, GitLab, or Bitbucket account,
         or clone from any Git provider with an SSH key.
         {% endcall %}
 
-        {% call homepage.feature_detail_item(header="Single-Sign On", icon="fad fa-fingerprint", paid=True) %}
+        {% call homepage.feature_detail_item(header="Single sign-on", icon="fad fa-fingerprint", business=True) %}
         Control who has access to your documentation with integrated authentication.
         Enable <strong>SSO with GitHub or GitLab</strong> to easily manage permissions in one place.
         {% endcall %}
@@ -288,8 +288,9 @@
               </p>
 
               <p>
-                <a class="ui large teal stackable button" href="https://app.readthedocs.org/accounts/signup/"
-                  data-analytics="community-signup">
+                <a class="ui large teal stackable button"
+                  data-analytics="signup-modal"
+                  onclick="jQuery('#signup-modal').modal('show');">
                   Create an account
                   <i class="fas fa-arrow-right icon"></i>
                 </a>
