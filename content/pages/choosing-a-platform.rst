@@ -36,6 +36,7 @@ Important points:
 
    <div class="ui basic center aligned padded segment">
      <a class="ui teal button" href="https://app.readthedocs.org/accounts/signup/" data-analytics="community-signup">Sign up for a free community account</a>
+     <a class="ui basic button" href="/community/">Learn more about Read the Docs Community</a>
    </div>
 
 
@@ -64,6 +65,7 @@ Important points:
 
    <div class="ui basic center aligned padded segment">
      <a class="ui violet button" href="https://app.readthedocs.com/accounts/signup/" data-analytics="commercial-signup">Start your 30-day free trial</a>
+     <a class="ui basic button" href="/business/">Learn more about Read the Docs Business</a>
    </div>
 
 Questions?
