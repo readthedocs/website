@@ -2,7 +2,7 @@ import jquery from "jquery";
 import { LitElement, html } from "lit";
 import { ref, createRef } from "lit/directives/ref.js";
 import { when } from "lit/directives/when.js";
-import { PLATFORMS, nextFromHref, platformUrl } from "./platform";
+import { PLATFORMS, platformUrl } from "./platform";
 
 /**
  * Render a menu with a link to ``next`` on each platform
@@ -40,15 +40,13 @@ function platformMenu(next, target = "") {
  * don't need to manually call out links to each any time we post links on our
  * website.
  *
- * Wrap a plain link to the ``/go/`` page. Without JavaScript, such as in our
- * Atom feed and the newsletter emails built from it, the link goes to the
- * ``/go/`` chooser page. On our site, clicking it shows the popup instead:
+ * Usage, with a link to the ``/go/`` page for feeds and email:
  *
  *   <readthedocs-platform-chooser description="See account preferences for which platform?">
  *     <a href="https://about.readthedocs.com/go/?next=/accounts/edit/">Open account preferences</a>
  *   </readthedocs-platform-chooser>
  *
- * @property {string} next - The URL path to link to, defaults to the link's ``next``
+ * @property {string} next - The URL path to link to, defaults to the link's
  * @property {string} description - Description for the popup
  **/
 export class PlatformChooserElement extends LitElement {
@@ -62,16 +60,15 @@ export class PlatformChooserElement extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener("click", async (event) => {
+    this.addEventListener("click", (event) => {
       if (this.refPopup.value?.contains(event.target)) {
         return;
       }
       event.preventDefault();
-      // Children aren't parsed yet when the element connects, so read the
-      // link's ``next`` on click instead
-      this.next ??= nextFromHref(event.target.closest("a[href]")?.href);
-      await this.updateComplete;
-      this.popup("show");
+      this.next ??= new URL(event.target.closest("a").href).searchParams.get(
+        "next",
+      );
+      this.updateComplete.then(() => this.popup("show"));
     });
   }
 

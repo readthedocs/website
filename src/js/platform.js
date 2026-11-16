@@ -14,12 +14,3 @@ export function platformUrl(platform, next) {
   const path = next?.startsWith("/") ? next : "/dashboard/";
   return PLATFORMS[platform].url + path;
 }
-
-/** The ``next`` path from a ``/go/?next=`` link, if the link has one */
-export function nextFromHref(href) {
-  try {
-    return new URL(href).searchParams.get("next");
-  } catch {
-    return null;
-  }
-}
