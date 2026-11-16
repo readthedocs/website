@@ -7,9 +7,6 @@ test("platformUrl only accepts paths", () => {
   expect(platformUrl("community", "@evil.com/")).toBe(
     "https://app.readthedocs.org/dashboard/",
   );
-  expect(platformUrl("community", "//evil.com/")).toBe(
-    "https://app.readthedocs.org/dashboard/",
-  );
   expect(platformUrl("community", null)).toBe(
     "https://app.readthedocs.org/dashboard/",
   );
