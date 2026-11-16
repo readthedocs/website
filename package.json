@@ -36,6 +36,7 @@
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
+    "@plausible-analytics/tracker": "^0.4.6",
     "@readthedocs/sui-common-theme": "github:readthedocs/sui-common-theme#f86e1d2",
     "babel-loader": "^8.1.3",
     "css-loader": "^6.8.1",
@@ -43,7 +44,8 @@
     "file-loader": "^6.2.0",
     "html-validate": "^7.1.2",
     "imports-loader": "^4.0.1",
-    "jest": "^26.4.2",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
     "jquery": "^3.4.1",
     "jquery-address": "^1.6.0",
     "lato-font": "^3.0.0",
@@ -53,7 +55,6 @@
     "matchdep": "~2.0.0",
     "mini-css-extract-plugin": "^2.7.6",
     "nodemon-webpack-plugin": "^4.7.0",
-    "plausible-tracker": "^0.3.8",
     "prettier": "^3.0.3",
     "resolve-url-loader": "^5.0.0",
     "sanitize-html": "^2.11.0",
@@ -68,10 +69,12 @@
   },
   "jest": {
     "globals": {
-      "__webpack_public_path__": null
+      "__webpack_public_path__": null,
+      "DEBUG_MODE": false
     },
+    "testEnvironment": "jsdom",
     "transformIgnorePatterns": [
-      "/node_modules/(?!(lit|@lit|lit-html|lit-element)/)"
+      "/node_modules/(?!(lit|@lit|lit-html|lit-element|@plausible-analytics)/)"
     ]
   },
   "prettier": {
