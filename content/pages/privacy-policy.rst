@@ -206,12 +206,12 @@ Email newsletter
 ++++++++++++++++
 
 If you sign up for the Read the Docs email newsletter,
-your email address and name will be stored by MailerLite.
+your email address will be stored by Buttondown.
 This newsletter is separate from creating a Read the Docs account and
 signing up for Read the Docs does not opt you in for the newsletter.
 
 You can manage your email subscription
-including unsubscribing and deleting your records with MailerLite.
+including unsubscribing and deleting your records with Buttondown.
 There is a link to do so in the footer of any newsletter you receive from us.
 
 Public information on Read the Docs
