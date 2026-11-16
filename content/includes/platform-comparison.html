@@ -1,0 +1,89 @@
+{#
+  Side-by-side comparison of Read the Docs Community and Read the Docs Business.
+  Rows come from the choosing a platform page, so keep them in sync.
+
+  :param highlight: Which column to emphasize, "community" or "business"
+#}
+{% set highlight = highlight | default("community") %}
+
+{% macro cell(value) %}
+  {% if value == True %}
+    <td class="center aligned positive"><i class="fad fa-circle-check large icon"></i></td>
+  {% elif value == False %}
+    <td class="center aligned disabled"><i class="fad fa-circle-xmark large icon"></i></td>
+  {% else %}
+    <td class="center aligned">{{ value }}</td>
+  {% endif %}
+{% endmacro %}
+
+{% macro row(name, description, icon, community, business) %}
+  <tr>
+    <td>
+      <div class="ui small header">
+        <i class="fad {{ icon }} icon"></i>
+        <div class="content">
+          {{ name }}
+          <div class="sub header">{{ description }}</div>
+        </div>
+      </div>
+    </td>
+    {{ cell(community) }}
+    {{ cell(business) }}
+  </tr>
+{% endmacro %}
+
+<section id="compare">
+  <div class="ui padded container">
+
+    <div class="ui text container">
+      <div class="ui basic vertical segment">
+        <h2 class="ui large center aligned {% if highlight == "business" %}violet{% else %}teal{% endif %} accent header">
+          Community or Business?
+          <span class="sub header">
+            Many of our features are available on both platforms, with some key differences.
+          </span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="ui basic fitted scrollable segment">
+    <table class="ui mini unstackable celled head first stuck table">
+      <thead>
+        <tr>
+          <th class="eight wide" scope="col"></th>
+          <th class="four wide center aligned" scope="col">
+            <i class="fad fa-trees {% if highlight == "community" %}teal{% endif %} icon"></i>
+            <strong class="ui {% if highlight == "community" %}teal{% endif %} text">Read the Docs Community</strong>
+            <div class="ui tiny grey text">readthedocs.org</div>
+          </th>
+          <th class="four wide center aligned" scope="col">
+            <i class="fad fa-building {% if highlight == "business" %}violet{% endif %} icon"></i>
+            <strong class="ui {% if highlight == "business" %}violet{% endif %} text">Read the Docs Business</strong>
+            <div class="ui tiny grey text">readthedocs.com</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ row("Pricing", "What it costs to host your documentation", "fa-receipt", "Free, forever", "From $50 per month") }}
+        {{ row("Git repositories", "Where your documentation source lives", "fa-code-branch", "Public only", "Private and public") }}
+        {{ row("Documentation access", "Who can read your published docs", "fa-eye", "Public", "Public and private") }}
+        {{ row("Advertising", "How the hosting is funded", "fa-rectangle-ad", "One EthicalAds ad", "No advertising") }}
+        {{ row("Build resources", "Build time, memory, and CPU", "fa-gears", "Standard", "More build time and resources") }}
+        {{ row("Single sign-on", "Sign on using an external provider", "fa-right-to-bracket", False, "GitHub, GitLab, and Google") }}
+        {{ row("Permissions", "How documentation is organized", "fa-users", "Projects with maintainers", "Organizations with teams") }}
+        {{ row("Support", "Help with your projects and documentation", "fa-message-question", "Platform issues by email", "Priority support in business hours") }}
+        {{ row("Automatic builds, versioning, search, and previews", "Included on every project", "fa-box-check", True, True) }}
+      </tbody>
+    </table>
+    </div>
+
+    <div class="ui basic center aligned segment">
+      <p>
+        Still not sure?
+        <a href="/choosing-a-platform/">Read the full comparison</a>
+        or email us at <a href="mailto:support@readthedocs.org">support@readthedocs.org</a>.
+      </p>
+    </div>
+
+  </div>
+</section>
