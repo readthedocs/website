@@ -11,6 +11,15 @@ export const PLATFORMS = {
 
 /** Dashboard URL for a path; anything that isn't a path goes to the dashboard */
 export function platformUrl(platform, next) {
-  const path = next?.startsWith("/") ? next : "/dashboard/";
-  return PLATFORMS[platform].url + path;
+  const isPath = next?.startsWith("/") && !next.startsWith("//");
+  return PLATFORMS[platform].url + (isPath ? next : "/dashboard/");
+}
+
+/** The ``next`` path from a ``/go/?next=`` link, if the link has one */
+export function nextFromHref(href) {
+  try {
+    return new URL(href).searchParams.get("next");
+  } catch {
+    return null;
+  }
 }
