@@ -40,17 +40,13 @@ function platformMenu(next, target = "") {
  * don't need to manually call out links to each any time we post links on our
  * website.
  *
- * Usage:
+ * Usage, with a link to the ``/go/`` page for feeds and email:
  *
- *   <readthedocs-platform-chooser next="/accounts/edit/" description="See account preferences for which platform?">
- *     <a href="#">Open account preferences</a>
+ *   <readthedocs-platform-chooser description="See account preferences for which platform?">
+ *     <a href="https://about.readthedocs.com/go/?next=/accounts/edit/">Open account preferences</a>
  *   </readthedocs-platform-chooser>
  *
- * For a plain link, such as in docs or email, use the ``/go/`` page instead:
- *
- *   https://about.readthedocs.com/go/?next=/accounts/edit/
- *
- * @property {string} next - The URL path to link to
+ * @property {string} next - The URL path to link to, defaults to the link's
  * @property {string} description - Description for the popup
  **/
 export class PlatformChooserElement extends LitElement {
@@ -64,8 +60,16 @@ export class PlatformChooserElement extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener("click", () => {
-      this.popup("show");
+    this.addEventListener("click", (event) => {
+      const modified = event.metaKey || event.ctrlKey || event.shiftKey;
+      if (modified || this.refPopup.value?.contains(event.target)) {
+        return;
+      }
+      event.preventDefault();
+      this.next ??= new URL(event.target.closest("a").href).searchParams.get(
+        "next",
+      );
+      this.updateComplete.then(() => this.popup("show"));
     });
   }
 

@@ -94,14 +94,14 @@ Direct upload is in _beta_ on Read the Docs Community and Read the Docs Business
   </p>
 
   <div class="ui basic fitted segment">
-    <readthedocs-platform-chooser next="/dashboard/import/?direct_upload=1">
-      <div class="ui basic fitted center aligned segment">
-        <button class="ui teal button">
+    <div class="ui basic fitted center aligned segment">
+      <readthedocs-platform-chooser>
+        <a class="ui teal button" href="https://about.readthedocs.com/go/?next=/dashboard/import/%3Fdirect_upload%3D1">
           Add a project with direct upload
           <i class="fas fa-external-link icon"></i>
-        </button>
-      </div>
-    </readthedocs-platform-chooser>
+        </a>
+      </readthedocs-platform-chooser>
+    </div>
   </div>
 
 </div>
