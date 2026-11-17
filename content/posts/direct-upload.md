@@ -96,14 +96,14 @@ It's still in _beta_, so we'd love to hear your [feedback](https://docs.readthed
   </p>
 
   <div class="ui basic fitted segment">
-    <readthedocs-platform-chooser next="/dashboard/import/">
-      <div class="ui basic fitted center aligned segment">
-        <button class="ui teal button">
+    <div class="ui basic fitted center aligned segment">
+      <readthedocs-platform-chooser>
+        <a class="ui teal button" href="https://about.readthedocs.com/go/?next=/dashboard/import/">
           Add a project with direct upload
           <i class="fas fa-external-link icon"></i>
-        </button>
-      </div>
-    </readthedocs-platform-chooser>
+        </a>
+      </readthedocs-platform-chooser>
+    </div>
   </div>
 
 </div>

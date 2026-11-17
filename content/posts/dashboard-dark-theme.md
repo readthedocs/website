@@ -42,14 +42,14 @@ The options available for the dashboard theme preference are:
   </p>
 
   <div class="ui basic fitted segment">
-    <readthedocs-platform-chooser next="/accounts/preferences/">
-      <div class="ui basic fitted center aligned segment">
-        <button class="ui teal button">
+    <div class="ui basic fitted center aligned segment">
+      <readthedocs-platform-chooser>
+        <a class="ui teal button" href="https://about.readthedocs.com/go/?next=/accounts/preferences/">
           Open account dashboard preferences
           <i class="fas fa-external-link icon"></i>
-        </button>
-      </div>
-    </readthedocs-platform-chooser>
+        </a>
+      </readthedocs-platform-chooser>
+    </div>
   </div>
 
   <p class="ui small text">
@@ -60,5 +60,5 @@ The options available for the dashboard theme preference are:
 
 </div>
 
-As always, <readthedocs-platform-chooser next="/support"><a href="#_">open a support request</a></readthedocs-platform-chooser>
+As always, <readthedocs-platform-chooser><a href="https://about.readthedocs.com/go/?next=/support">open a support request</a></readthedocs-platform-chooser>
 to let us know what you think or [open an issue](https://github.com/readthedocs/readthedocs.org/issues) if you hit any rough edges.
