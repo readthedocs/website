@@ -82,9 +82,9 @@ Read the Docs without asking them to change how they build their docs.
 
 ## Getting started
 
-Direct upload is available to everyone on Read the Docs Community and Read the Docs Business,
-and it's still in _beta_, so we'd love to hear your feedback.
+Direct upload is available to everyone on Read the Docs Community and Read the Docs Business.
 When adding a new project, choose **Build externally and upload** in the configuration step.
+It's still in _beta_, so we'd love to hear your feedback.
 
 <div class="ui raised segment">
 
