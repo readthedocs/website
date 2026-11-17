@@ -5,24 +5,31 @@ import { when } from "lit/directives/when.js";
 import { PLATFORMS, platformUrl } from "./platform";
 
 /**
- * Render a button for each platform, linking to ``next`` on it
+ * Render a menu with a link to ``next`` on each platform
  *
  * @param {string} next - The URL path to link to
  * @param {string} target - Link target attribute
  */
 function platformMenu(next, target = "") {
-  return Object.keys(PLATFORMS).map((platform) => {
-    const url = platformUrl(platform, next);
-    return html`
-      <div class="ui center aligned basic fitted segment">
-        <a class="ui fluid primary button" href="${url}" target="${target}">
-          ${PLATFORMS[platform].name}
-          <i class="fas fa-arrow-right icon"></i>
-        </a>
-        <p class="ui grey text">${url.replace("https://", "")}</p>
-      </div>
-    `;
-  });
+  return html`
+    <div class="ui big vertical fluid menu">
+      ${Object.keys(PLATFORMS).map(
+        (platform) => html`
+          <a
+            class="item"
+            href="${platformUrl(platform, next)}"
+            target="${target}"
+          >
+            <i class="fas fa-chevron-right icon"></i>
+            <strong>${PLATFORMS[platform].name}</strong>
+            <div class="ui grey text">
+              ${PLATFORMS[platform].url.replace("https://", "")}
+            </div>
+          </a>
+        `,
+      )}
+    </div>
+  `;
 }
 
 /**
@@ -129,7 +136,14 @@ export class PlatformLinksElement extends LitElement {
 
   render() {
     return html`
-      <p>To continue, select which platform you normally use:</p>
+      <p>
+        To
+        continue${when(
+          this.next?.startsWith("/"),
+          () => html` to <code>${this.next}</code>`,
+        )},
+        select which platform you normally use:
+      </p>
       ${platformMenu(this.next)}
     `;
   }
