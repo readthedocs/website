@@ -29,7 +29,7 @@ test("shows the popup with the link's next path on click", async () => {
   expect(event.defaultPrevented).toBe(true);
   expect(chooser.next).toBe("/dashboard/import/?direct_upload=1");
   expect(
-    [...chooser.querySelectorAll(".popup a.item")].map((a) => a.href),
+    [...chooser.querySelectorAll(".popup a.button")].map((a) => a.href),
   ).toEqual([
     "https://app.readthedocs.org/dashboard/import/?direct_upload=1",
     "https://app.readthedocs.com/dashboard/import/?direct_upload=1",

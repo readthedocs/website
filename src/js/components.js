@@ -5,30 +5,24 @@ import { when } from "lit/directives/when.js";
 import { PLATFORMS, platformUrl } from "./platform";
 
 /**
- * Render a menu with a link to ``next`` on each platform
+ * Render a button for each platform, linking to ``next`` on it
  *
  * @param {string} next - The URL path to link to
  * @param {string} target - Link target attribute
  */
 function platformMenu(next, target = "") {
-  return html`
-    <div class="ui small vertical fluid menu">
-      ${Object.keys(PLATFORMS).map(
-        (platform) => html`
-          <a
-            class="item"
-            href="${platformUrl(platform, next)}"
-            target="${target}"
-          >
-            <div class="ui header">
-              ${PLATFORMS[platform].name}
-              <div class="sub header">${PLATFORMS[platform].url}</div>
-            </div>
-          </a>
-        `,
-      )}
-    </div>
-  `;
+  return Object.keys(PLATFORMS).map((platform) => {
+    const url = platformUrl(platform, next);
+    return html`
+      <div class="ui center aligned basic fitted segment">
+        <a class="ui fluid primary button" href="${url}" target="${target}">
+          ${PLATFORMS[platform].name}
+          <i class="fas fa-arrow-right icon"></i>
+        </a>
+        <p class="ui grey text">${url.replace("https://", "")}</p>
+      </div>
+    `;
+  });
 }
 
 /**
