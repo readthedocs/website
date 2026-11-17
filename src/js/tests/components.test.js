@@ -35,3 +35,14 @@ test("shows the popup with the link's next path on click", async () => {
     "https://app.readthedocs.com/dashboard/import/?direct_upload=1",
   ]);
 });
+
+test("lets modified clicks open the /go/ link", () => {
+  const link = document.querySelector("readthedocs-platform-chooser a");
+  const event = new MouseEvent("click", {
+    bubbles: true,
+    cancelable: true,
+    metaKey: true,
+  });
+  link.dispatchEvent(event);
+  expect(event.defaultPrevented).toBe(false);
+});

@@ -61,7 +61,8 @@ export class PlatformChooserElement extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener("click", (event) => {
-      if (this.refPopup.value?.contains(event.target)) {
+      const modified = event.metaKey || event.ctrlKey || event.shiftKey;
+      if (modified || this.refPopup.value?.contains(event.target)) {
         return;
       }
       event.preventDefault();
