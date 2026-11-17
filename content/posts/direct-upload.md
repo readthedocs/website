@@ -80,23 +80,25 @@ or that simply want a single build for both their tests and their docs.
 Direct upload gives those teams the hosting side features of
 Read the Docs without asking them to change how they build their docs.
 
-## Beta access
+## Getting started
 
-Direct upload is in _beta_ on Read the Docs Community and Read the Docs Business.
+Direct upload is available to everyone on Read the Docs Community and Read the Docs Business.
+When adding a new project, choose **Build externally and upload** in the configuration step.
+It's still in _beta_, so we'd love to hear your [feedback](https://docs.readthedocs.com/platform/stable/support.html).
 
 <div class="ui raised segment">
 
   <div class="ui small header">Add a new project with direct upload</div>
 
   <p>
-    Create a project with direct upload enabled by default
+    Create a project with direct upload enabled
     and Read the Docs builders disabled:
   </p>
 
   <div class="ui basic fitted segment">
     <div class="ui basic fitted center aligned segment">
       <readthedocs-platform-chooser>
-        <a class="ui teal button" href="https://about.readthedocs.com/go/?next=/dashboard/import/%3Fdirect_upload%3D1">
+        <a class="ui teal button" href="https://about.readthedocs.com/go/?next=/dashboard/import/">
           Add a project with direct upload
           <i class="fas fa-external-link icon"></i>
         </a>
