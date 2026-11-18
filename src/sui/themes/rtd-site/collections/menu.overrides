@@ -7,3 +7,8 @@
   float: none;
   margin: 0;
 }
+
+// Keep menu items readable in a popup opened from centered content
+.ui.popup > .ui.vertical.menu .item {
+  text-align: left;
+}

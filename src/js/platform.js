@@ -1,10 +1,12 @@
 export const PLATFORMS = {
   community: {
     name: "Read the Docs Community",
+    description: "For free and open-source projects",
     url: "https://app.readthedocs.org",
   },
   business: {
     name: "Read the Docs Business",
+    description: "For commercial and non-free projects",
     url: "https://app.readthedocs.com",
   },
 };

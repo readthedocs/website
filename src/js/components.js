@@ -22,6 +22,7 @@ function platformMenu(next, target = "") {
           >
             <i class="fas fa-chevron-right middle aligned icon"></i>
             <strong>${PLATFORMS[platform].name}</strong>
+            <div>${PLATFORMS[platform].description}</div>
             <div class="ui grey text">
               ${PLATFORMS[platform].url.replace("https://", "")}
             </div>
