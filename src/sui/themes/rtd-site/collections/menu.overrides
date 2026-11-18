@@ -1,0 +1,9 @@
+// Vertically center an item's icon, for items with more than one line
+.ui.vertical.menu .item > i.middle.aligned.icon {
+  position: absolute;
+  top: 50%;
+  right: @itemHorizontalPadding;
+  transform: translateY(-50%);
+  float: none;
+  margin: 0;
+}

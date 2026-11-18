@@ -20,7 +20,7 @@ function platformMenu(next, target = "") {
             href="${platformUrl(platform, next)}"
             target="${target}"
           >
-            <i class="fas fa-chevron-right icon"></i>
+            <i class="fas fa-chevron-right middle aligned icon"></i>
             <strong>${PLATFORMS[platform].name}</strong>
             <div class="ui grey text">
               ${PLATFORMS[platform].url.replace("https://", "")}
@@ -136,14 +136,16 @@ export class PlatformLinksElement extends LitElement {
 
   render() {
     return html`
-      <p>
-        To
-        continue${when(
-          this.next?.startsWith("/"),
-          () => html` to <code>${this.next}</code>`,
-        )},
-        select which platform you normally use:
-      </p>
+      ${when(
+        this.next?.startsWith("/"),
+        () => html`
+          <div class="ui secondary segment">
+            <i class="fas fa-link icon"></i>
+            <strong>${this.next}</strong>
+          </div>
+        `,
+      )}
+      <p>To continue, select which platform you normally use:</p>
       ${platformMenu(this.next)}
     `;
   }
