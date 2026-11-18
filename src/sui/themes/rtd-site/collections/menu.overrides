@@ -12,3 +12,7 @@
 .ui.popup > .ui.vertical.menu .item {
   text-align: left;
 }
+
+.ui.vertical.menu .item > .ui.header {
+  margin: 0;
+}

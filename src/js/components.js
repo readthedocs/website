@@ -12,7 +12,7 @@ import { PLATFORMS, platformUrl } from "./platform";
  */
 function platformMenu(next, target = "") {
   return html`
-    <div class="ui big vertical fluid menu">
+    <div class="ui vertical fluid menu">
       ${Object.keys(PLATFORMS).map(
         (platform) => html`
           <a
@@ -20,12 +20,14 @@ function platformMenu(next, target = "") {
             href="${platformUrl(platform, next)}"
             target="${target}"
           >
-            <i class="fas fa-chevron-right middle aligned icon"></i>
-            <strong>${PLATFORMS[platform].name}</strong>
-            <div>${PLATFORMS[platform].description}</div>
-            <div class="ui grey text">
-              ${PLATFORMS[platform].url.replace("https://", "")}
+            <div class="ui header">
+              ${PLATFORMS[platform].name}
+              <div class="sub header">${PLATFORMS[platform].description}</div>
+              <div class="sub header">
+                ${PLATFORMS[platform].url.replace("https://", "")}
+              </div>
             </div>
+            <i class="fas fa-chevron-right middle aligned icon"></i>
           </a>
         `,
       )}
@@ -137,15 +139,13 @@ export class PlatformLinksElement extends LitElement {
 
   render() {
     return html`
-      ${when(
-        this.next?.startsWith("/"),
-        () => html`
-          <div class="ui secondary segment">
-            <i class="fas fa-link icon"></i>
-            <strong>${this.next}</strong>
-          </div>
-        `,
-      )}
+      <h1 class="ui header">
+        Choose your platform
+        ${when(
+          this.next?.startsWith("/"),
+          () => html`<div class="sub header">${this.next}</div>`,
+        )}
+      </h1>
       <p>To continue, select which platform you normally use:</p>
       ${platformMenu(this.next)}
     `;
