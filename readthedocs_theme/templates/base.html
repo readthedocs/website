@@ -43,6 +43,8 @@
       <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
 
+    <link rel="preload" href="{{ SITEURL }}/theme/css/fonts/lato-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="{{ SITEURL }}/theme/css/fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/site.css" />
     {#
       This is our only external dependency. It's a fast way to get all the
